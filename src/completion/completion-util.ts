@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import { type DocumentAttribute, type DocumentEvent, localDocument } from '@/document';
-import { type ExtensionConfigutation, type ExtensionLanguage, type TagObject } from '@/types/index';
+import { localDocument } from '@/document/index';
+import { type DocumentAttribute, type DocumentEvent, type ExtensionConfigutation, type ExtensionLanguage, type TagObject } from '@/types/index';
 
 /**
  *当输入单词或触发字符时补全

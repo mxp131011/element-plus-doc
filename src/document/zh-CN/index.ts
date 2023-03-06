@@ -81,7 +81,7 @@ import elscrollbar from './el-scrollbar';
 import elspace from './el-space';
 import eltreeselect from './el-tree-select';
 
-export default {
+export const cnDocument = {
   'el-alert': elalert,
   'el-aside': elaside,
   'el-autocomplete': elautocomplete,
@@ -165,3 +165,4 @@ export default {
   'el-space': elspace,
   'el-tree-select': eltreeselect,
 };
+export type CnDocument = typeof cnDocument;

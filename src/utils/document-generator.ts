@@ -1,6 +1,5 @@
 import { MarkdownString } from 'vscode';
-import { type ExtensionLanguage } from '@/types/index';
-import { type BaseDocument, type DocumentAttribute, type DocumentMethod, type DocumentScopedSlot, type DocumentSlot } from '@/document';
+import type { BaseDocument, DocumentAttribute, DocumentMethod, DocumentScopedSlot, DocumentSlot, ExtensionLanguage, LocalDocumentKey } from '@/types/index';
 
 export class HoverDocumentGenerator {
   // eslint-disable-next-line no-use-before-define
@@ -16,7 +15,7 @@ export class HoverDocumentGenerator {
    * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
-  private generateAttribute<T extends BaseDocument>(document: T, tag: string, attribute: string, language: string): MarkdownString {
+  private generateAttribute<T extends BaseDocument>(document: T, tag: LocalDocumentKey, attribute: string, language: string): MarkdownString {
     let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const attributes = document.attributes || []; // 取得属性列表
@@ -235,7 +234,7 @@ export class HoverDocumentGenerator {
    * @param {string} attribute - 属性 文档对象具体的属性值
    * @memberof HoverDocumentGenerator
    */
-  private generateOther<T extends BaseDocument>(document: T, tag: string, attribute: string): MarkdownString {
+  private generateOther<T extends BaseDocument>(document: T, tag: LocalDocumentKey, attribute: string): MarkdownString {
     let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const attributes = document[attribute] || [];
@@ -272,7 +271,7 @@ export class HoverDocumentGenerator {
    * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
-  public generate<T extends BaseDocument>(document: T, key: string, tag: string, attr: string, language: ExtensionLanguage): MarkdownString {
+  public generate<T extends BaseDocument>(document: T, key: string, tag: LocalDocumentKey, attr: string, language: ExtensionLanguage): MarkdownString {
     let markdownString: MarkdownString = new MarkdownString('');
     switch (key) {
       case 'attributes':

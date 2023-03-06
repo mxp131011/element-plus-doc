@@ -71,7 +71,7 @@ import eltransfer from './el-transfer';
 import eltree from './el-tree';
 import elupload from './el-upload';
 
-export default {
+export const enDocument = {
   'el-alert': elalert,
   'el-aside': elaside,
   'el-autocomplete': elautocomplete,
@@ -145,3 +145,5 @@ export default {
   'el-tree': eltree,
   'el-upload': elupload,
 };
+
+export type EnDocument = typeof enDocument;

@@ -1,8 +1,8 @@
 import { Hover, type HoverProvider, type MarkdownString, Position, type ProviderResult, Range, type TextDocument, workspace } from 'vscode';
-import { type ElDocument, localDocument } from '@/document';
+import { localDocument } from '@/document/index';
 import { HoverDocumentGenerator } from '@/utils/document-generator';
 import { toKebabCase } from '../utils';
-import { type ExtensionConfigutation, type ExtensionLanguage, type TagObject } from '@/types/index';
+import type { ElDocument, ExtensionConfigutation, ExtensionLanguage, LocalDocumentKey, TagObject } from '@/types/index';
 
 export class ElementHoverProvier implements HoverProvider {
   private _position!: Position;
@@ -22,12 +22,12 @@ export class ElementHoverProvier implements HoverProvider {
     if (!/^[E|e]l/.test(tag?.text || '')) {
       // 如果不是element的标签(E|el开头) 则返回 null 表示没有hover
       return null;
+    } else {
+      const attr = this.getAttr();
+      const range = this.getHoverRange(attr);
+
+      return this.getHoverInstance(tag, attr, range);
     }
-
-    const attr = this.getAttr();
-    const range = this.getHoverRange(attr);
-
-    return this.getHoverInstance(tag, attr, range);
   }
 
   /**
@@ -156,7 +156,7 @@ export class ElementHoverProvier implements HoverProvider {
     const config = workspace.getConfiguration().get<ExtensionConfigutation>('elementv-snippet');
     const language = config?.language || 'zh-CN';
 
-    const kebabCaseTag = toKebabCase(tag?.text) as keyof (typeof localDocument)[typeof language];
+    const kebabCaseTag = toKebabCase(tag?.text);
     const kebabCaseAttr = toKebabCase(attr);
 
     return this.createHoverInstance(language, kebabCaseTag, kebabCaseAttr, range);
@@ -169,7 +169,7 @@ export class ElementHoverProvier implements HoverProvider {
    * @param attr - 属性
    * @param range - 范围
    */
-  public createHoverInstance<T extends ExtensionLanguage>(language: T, tag: keyof (typeof localDocument)[T], attr: string, range: Range): Hover | null {
+  public createHoverInstance<T extends ExtensionLanguage>(language: T, tag: string, attr: string, range: Range): Hover | null {
     const document = localDocument[language];
     const newAttr = tag === attr ? '' : attr;
 
@@ -177,13 +177,7 @@ export class ElementHoverProvier implements HoverProvider {
       const tagDocument = document[tag] || {};
       const hoverMarkdownStrings: MarkdownString[] = [];
       Object.keys(tagDocument).forEach((key: string) => {
-        const hoverMarkdownString: MarkdownString = HoverDocumentGenerator.getInstance().generate<ElDocument>(
-          tagDocument,
-          key,
-          tag as string,
-          newAttr,
-          language
-        );
+        const hoverMarkdownString: MarkdownString = HoverDocumentGenerator.getInstance().generate<ElDocument>(tagDocument, key, tag, newAttr, language);
         if (hoverMarkdownString) {
           hoverMarkdownStrings.push(hoverMarkdownString);
         }
