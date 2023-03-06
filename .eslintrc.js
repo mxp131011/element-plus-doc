@@ -708,7 +708,7 @@ function getTypescriptRules() {
     // 禁止声明空接口
     '@typescript-eslint/no-empty-interface': 'error',
     // 禁止使用any
-    '@typescript-eslint/no-explicit-any': ['error', { ignoreRestArgs: true }],
+    '@typescript-eslint/no-explicit-any': ['off', { ignoreRestArgs: true }],
     // 不允许额外的非空断言
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
     // 禁止将类用作命名空间
@@ -762,13 +762,13 @@ function getTypescriptRules() {
     // 禁止调用具有any类型值的函数 💭
     '@typescript-eslint/no-unsafe-argument': 'error',
     // 不允许将any类型值分配给变量和属性 💭
-    '@typescript-eslint/no-unsafe-assignment': 'error',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
     // 不允许调用带有any类型的值 💭
     '@typescript-eslint/no-unsafe-call': 'error',
     // 禁止不安全声明合并
     '@typescript-eslint/no-unsafe-declaration-merging': 'error',
     // 禁止成员访问any类型为的值 💭
-    '@typescript-eslint/no-unsafe-member-access': 'error',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
     // 禁止从函数返回带有any类型的值 💭
     '@typescript-eslint/no-unsafe-return': 'error',
     // 禁止不会更改模块文件中的任何内容的空导出

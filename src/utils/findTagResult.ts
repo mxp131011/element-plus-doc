@@ -29,17 +29,27 @@ const mapValue: MapValue[] = [
   { value: 'form-item', mapValue: 'form' },
 ];
 
-export default function findTagResult(list: Node[], result: ProviderResult<DocumentLink>[], document: vscode.TextDocument, pattern: RegExp) {
+/**
+ *
+ *链接
+ */
+export default function findTagResult(list: Node[], result: ProviderResult<DocumentLink[]>, document: vscode.TextDocument, pattern: RegExp) {
+  // eslint-disable-next-line @typescript-eslint/prefer-for-of
   for (let i = 0; i < list.length; i++) {
     if (pattern.test(list[i]!.tag!)) {
       const componentName = mapValue.find((val) => val.value === list[i]!.tag?.replace(pattern, ''));
       const range: Range = new Range(document.positionAt(list[i]!.start + 1), document.positionAt(list[i]!.start + Number(list[i]!.tag?.length) + 1));
-      result.push({
-        range,
-        target: vscode.Uri.parse(`http://element-plus.org/zh-CN/component/${componentName ? componentName.mapValue : list[i]!.tag?.replace(pattern, '')}.html`),
-      });
+      if (Array.isArray(result)) {
+        result.push({
+          range,
+          target: vscode.Uri.parse(
+            `https://element-plus.org/zh-CN/component/${componentName ? componentName.mapValue : list[i]!.tag?.replace(pattern, '')}.html`
+          ),
+        });
+      }
     }
     findTagResult(list[i]!.children, result, document, pattern);
   }
+  console.log('aaa====', result);
   return result;
 }

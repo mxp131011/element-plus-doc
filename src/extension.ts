@@ -14,6 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
     { scheme: 'file', pattern: '**/*.vue' },
     {
       provideDocumentLinks(document) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any
         const htmlDocument = languageServiceHtml.parseHTMLDocument(document as any);
         return findTagResult(htmlDocument.roots, [], document, /^el-/);
       },

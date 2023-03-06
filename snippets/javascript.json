@@ -86,8 +86,8 @@
     "prefix": "submit",
     "body": [
       "async submit() {",
-      "  const $form: any = this.$refs.form as unknown;",
-      "  const isValid = await $form.validate();",
+      "  const \\$form: any = this.\\$refs.form as unknown;",
+      "  const isValid = await \\$form.validate();",
       "  if (!isValid) return;",
       "  this.loading = true;",
       "  try {",

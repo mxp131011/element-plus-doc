@@ -13,9 +13,11 @@ import {
 } from 'vscode';
 
 import { type DocumentAttribute, type DocumentEvent, localDocument } from '@/document';
-import { type ExtensionConfigutation, ExtensionLanguage } from '..';
+import { type ExtensionConfigutation, type ExtensionLanguage } from '../index';
 
 export class ElementCompletionItemProvider implements CompletionItemProvider {
+  private defLanguage: ExtensionLanguage = 'zh-CN';
+
   private _document!: TextDocument;
 
   private _position!: Position;
@@ -115,7 +117,7 @@ export class ElementCompletionItemProvider implements CompletionItemProvider {
    * @param tag - 标签
    * @param attr - 属性
    */
-  public isAttrValueStart(tag: Record<string, unknown> | undefined, attr: string) {
+  public isAttrValueStart(tag: Record<string, any> | undefined, attr: string) {
     return Boolean(tag) && Boolean(attr);
   }
 
@@ -144,10 +146,10 @@ export class ElementCompletionItemProvider implements CompletionItemProvider {
    */
   public getAttrValues(tag: string, attr: string): string[] {
     const config = workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
-    const language = config?.language || ExtensionLanguage.cn;
-    const document: Record<string, unknown> | undefined = localDocument[language];
+    const language = config?.language || this.defLanguage;
+    const document: Record<string, any> | undefined = localDocument[language];
     const attributes: DocumentAttribute[] = document?.[tag].attributes || [];
-    const attribute: DocumentAttribute | undefined = attributes.find((attribute) => attribute.name === attr);
+    const attribute: DocumentAttribute | undefined = attributes.find((_attribute) => _attribute.name === attr);
     if (!attribute) {
       return [];
     }
@@ -184,7 +186,7 @@ export class ElementCompletionItemProvider implements CompletionItemProvider {
   public getEventCompletionItems(tag: string): CompletionItem[] {
     const completionItems: CompletionItem[] = [];
     const config = workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
-    const language = config?.language || ExtensionLanguage.cn;
+    const language = config?.language || this.defLanguage;
     const document: Record<string, any> | undefined = localDocument[language];
     const preText = this.getTextBeforePosition(this._position);
     const prefix = preText.replace(/.*@([\w-]*)$/, '$1');
@@ -216,7 +218,7 @@ export class ElementCompletionItemProvider implements CompletionItemProvider {
   public getAttrCompletionItems(tag: string): CompletionItem[] {
     const completionItems: CompletionItem[] = [];
     const config = workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
-    const language = config?.language || ExtensionLanguage.cn;
+    const language = config?.language || this.defLanguage;
     const document: Record<string, any> | undefined = localDocument[language];
     const preText = this.getTextBeforePosition(this._position);
     const prefix = preText.replace(/.*[\s@:]/g, '');
@@ -255,7 +257,7 @@ export class ElementCompletionItemProvider implements CompletionItemProvider {
   public getTagCompletionItems(): CompletionItem[] {
     const completionItems: CompletionItem[] = [];
     const config = workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
-    const language = config?.language || ExtensionLanguage.cn;
+    const language = config?.language || this.defLanguage;
     const preText = this.getTextBeforePosition(this._position);
     const document: Record<string, any> = localDocument[language] || {};
     Object.keys(document).forEach((key) => {

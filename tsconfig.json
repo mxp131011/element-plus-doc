@@ -24,7 +24,7 @@
     "noFallthroughCasesInSwitch": true, // 报告 switch 语句的 fallthrough 错误。(即,不允许 switch 的 case 语句贯穿)
     "useUnknownInCatchVariables": false, // 类型捕获子句变量为'unknown'而不是'any'
     "removeComments": true, // 移除注释
-    "noEmit": true, // 禁止编译器生成文件
+    "noEmit": false, // 禁止编译器生成文件
     "newLine": "lf", // 设置生成文件的换行符
     "forceConsistentCasingInFileNames": true, // 强制文件名的大小写一致
     "strictFunctionTypes": true, // 在赋值函数时,请检查以确保参数和返回值是子类型兼容的
@@ -40,5 +40,5 @@
     // "importsNotUsedAsValues": "error", // 强制对类型使用“import type”而不是“import”(ts5.0废弃)
     "skipLibCheck": true
   },
-  "include": ["./src", ".eslintrc.js"]
+  "include": ["./src"]
 }

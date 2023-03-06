@@ -1,13 +1,10 @@
 import { MarkdownString } from 'vscode';
-import { type ExtensionLanguage } from '../';
-import { type DocumentAttribute } from '@/document';
-import { type BaseDocument } from '@/document';
-import { type DocumentMethod } from '@/document';
-import { type DocumentScopedSlot } from '@/document';
-import { type DocumentSlot } from '@/document';
+import { type ExtensionLanguage } from '../index';
+import { type BaseDocument, type DocumentAttribute, type DocumentMethod, type DocumentScopedSlot, type DocumentSlot } from '@/document';
 
 export class HoverDocumentGenerator {
-  static instance: HoverDocumentGenerator;
+  // eslint-disable-next-line no-use-before-define
+  private static instance: HoverDocumentGenerator;
 
   /**
    * 生成属性文档表格
@@ -42,7 +39,7 @@ export class HoverDocumentGenerator {
       });
     } else {
       // 属性和标签不一样 显示标签下的某个属性的信息
-      const row = attributes.find((row: DocumentAttribute) => row.name === attribute);
+      const row = attributes.find((_row: DocumentAttribute) => _row.name === attribute);
       if (row) {
         markdownString.appendMarkdown(`|${row.name}|${row.description}|${row.type}|${row.value}|${row.default}|\r`);
         isUndefined = false;
@@ -86,7 +83,7 @@ export class HoverDocumentGenerator {
       });
     } else {
       // 属性和标签不一样 显示标签下的某个属性的信息
-      const row = methods.find((row: DocumentMethod) => row.name === attribute);
+      const row = methods.find((_row: DocumentMethod) => _row.name === attribute);
       if (row) {
         markdownString.appendMarkdown(`|${row.name}|${row.description}|${row.parameter}|\r`);
         isUndefined = false;
@@ -130,7 +127,7 @@ export class HoverDocumentGenerator {
       });
     } else {
       // 属性和标签不一样 显示标签下的某个属性的信息
-      const row = events.find((row: DocumentMethod) => row.name === attribute);
+      const row = events.find((_row: DocumentMethod) => _row.name === attribute);
       if (row) {
         markdownString.appendMarkdown(`|${row.name}|${row.description}|${row.parameter}|\r`);
         isUndefined = false;
@@ -174,7 +171,7 @@ export class HoverDocumentGenerator {
       });
     } else {
       // 属性和标签不一样 显示标签下的某个属性的信息
-      const row = slots.find((row: DocumentSlot) => row.name === attribute);
+      const row = slots.find((_row: DocumentSlot) => _row.name === attribute);
       if (row) {
         markdownString.appendMarkdown(`|${row.name}|${row.description}|\r`);
         isUndefined = false;
@@ -218,7 +215,7 @@ export class HoverDocumentGenerator {
       });
     } else {
       // 属性和标签不一样 显示标签下的某个属性的信息
-      const row = scopedSlots.find((row: DocumentScopedSlot) => row.name === attribute);
+      const row = scopedSlots.find((_row: DocumentScopedSlot) => _row.name === attribute);
       if (row) {
         markdownString.appendMarkdown(`|${row.name}|${row.description}|\r`);
         isUndefined = false;
@@ -236,8 +233,6 @@ export class HoverDocumentGenerator {
    * @param {T} document - 文档 具体标签对应的文档
    * @param {string} tag - 标签
    * @param {string} attribute - 属性 文档对象具体的属性值
-   * @param {string} language - 语言
-   * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
   private generateOther<T extends BaseDocument>(document: T, tag: string, attribute: string): MarkdownString {
@@ -277,7 +272,7 @@ export class HoverDocumentGenerator {
    * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
-  generate<T extends BaseDocument>(document: T, key: string, tag: string, attr: string, language: ExtensionLanguage): MarkdownString {
+  public generate<T extends BaseDocument>(document: T, key: string, tag: string, attr: string, language: ExtensionLanguage): MarkdownString {
     let markdownString: MarkdownString = new MarkdownString('');
     switch (key) {
       case 'attributes':
@@ -302,7 +297,7 @@ export class HoverDocumentGenerator {
     return markdownString;
   }
 
-  static getInstance(): HoverDocumentGenerator {
+  public static getInstance(): HoverDocumentGenerator {
     if (!this.instance) {
       this.instance = new HoverDocumentGenerator();
     }

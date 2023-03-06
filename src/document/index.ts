@@ -1,8 +1,7 @@
-import { ExtensionLanguage } from '../';
+import { type ExtensionLanguage } from '../index';
 
 /**
  * 文档属性类型
- * @export
  * @interface DocumentAttribute
  */
 export interface DocumentAttribute {
@@ -20,7 +19,6 @@ export interface DocumentAttribute {
 
 /**
  * 文档事件类型
- * @export
  * @interface DocumentEvent
  */
 export interface DocumentEvent {
@@ -34,7 +32,6 @@ export interface DocumentEvent {
 
 /**
  * 文档方法类型
- * @export
  * @interface DocumentMethod
  */
 export interface DocumentMethod {
@@ -48,7 +45,6 @@ export interface DocumentMethod {
 
 /**
  * 文档插槽类型
- * @export
  * @interface DocumentSlot
  */
 export interface DocumentSlot {
@@ -60,14 +56,12 @@ export interface DocumentSlot {
 
 /**
  * 文档范围方法类型
- * @export
  * @interface DocumentScopedSlot
  */
 export type DocumentScopedSlot = DocumentSlot;
 
 /**
  * 基础文档接口
- * @export
  * @interface BaseDocument
  */
 export interface BaseDocument {
@@ -81,7 +75,6 @@ export interface BaseDocument {
 /**
  * ElementUI文档类型
  * 用于扩展具有其他字段的文档类型
- * @export
  * @interface ElDocument
  * @augments {BaseDocument}
  */
@@ -94,16 +87,15 @@ export interface ElDocument extends BaseDocument {
 
 /**
  * 本地化文档类型
- * @export
- * @type LocalDocument
  */
-export type LocalDocument = Record<string, Record<string, any>>;
 
 import CnDocument from './zh-CN';
 import EnDocument from './en-US';
 
+type LocalDocument = { [key in ExtensionLanguage]: typeof CnDocument | typeof EnDocument };
+
 // 统一导出文档
 export const localDocument: LocalDocument = {
-  [ExtensionLanguage.en]: EnDocument,
-  [ExtensionLanguage.cn]: CnDocument,
+  'zh-CN': CnDocument,
+  'en-US': EnDocument,
 };
