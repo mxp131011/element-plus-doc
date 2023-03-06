@@ -1,55 +1,57 @@
 import { type Node } from 'vscode-html-languageservice';
-import { type MapValue } from '../typing/index';
 import * as vscode from 'vscode';
-import { type DocumentLink, type ProviderResult, Range } from 'vscode';
-
-const mapValue: MapValue[] = [
-  { value: 'table-column', mapValue: 'table' },
-  { value: 'input-search', mapValue: 'input' },
-  { value: 'row', mapValue: 'layout' },
-  { value: 'col', mapValue: 'layout' },
-  { value: 'header', mapValue: 'container' },
-  { value: 'main', mapValue: 'container' },
-  { value: 'footer', mapValue: 'container' },
-  { value: 'aside', mapValue: 'container' },
-  { value: 'breadcrumb-item', mapValue: 'breadcrumb' },
-  { value: 'radio-group', mapValue: 'radio' },
-  { value: 'checkbox-group', mapValue: 'checkbox' },
-  { value: 'tab-pane', mapValue: 'tabs' },
-  { value: 'menu-item', mapValue: 'menu' },
-  { value: 'submenu', mapValue: 'menu' },
-  { value: 'anchor-link', mapValue: 'anchor' },
-  { value: 'timeline-item', mapValue: 'timeline' },
-  { value: 'collapse-item', mapValue: 'collapse' },
-  { value: 'descriptions-item', mapValue: 'descriptions' },
-  { value: 'dropdown-menu', mapValue: 'dropdown' },
-  { value: 'dropdown-item', mapValue: 'dropdown' },
-  { value: 'carousel-item', mapValue: 'carousel' },
-  { value: 'step', mapValue: 'steps' },
-  { value: 'form-item', mapValue: 'form' },
-];
+import { type DocumentLink, Range } from 'vscode';
+import { type ExtensionLanguage } from '@/types/index';
 
 /**
- *
- *链接
+ * tag对应的文档链接
  */
-export default function findTagResult(list: Node[], result: ProviderResult<DocumentLink[]>, document: vscode.TextDocument, pattern: RegExp) {
-  // eslint-disable-next-line @typescript-eslint/prefer-for-of
-  for (let i = 0; i < list.length; i++) {
-    if (pattern.test(list[i]!.tag!)) {
-      const componentName = mapValue.find((val) => val.value === list[i]!.tag?.replace(pattern, ''));
-      const range: Range = new Range(document.positionAt(list[i]!.start + 1), document.positionAt(list[i]!.start + Number(list[i]!.tag?.length) + 1));
-      if (Array.isArray(result)) {
-        result.push({
-          range,
-          target: vscode.Uri.parse(
-            `https://element-plus.org/zh-CN/component/${componentName ? componentName.mapValue : list[i]!.tag?.replace(pattern, '')}.html`
-          ),
-        });
+const tagDocObj: Record<string, string> = {
+  'el-table-column': 'table',
+  'el-input-search': 'input',
+  'el-row': 'layout',
+  'el-col': 'layout',
+  'el-header': 'container',
+  'el-main': 'container',
+  'el-footer': 'container',
+  'el-aside': 'container',
+  'el-breadcrumb-item': 'breadcrumb',
+  'el-radio-group': 'radio',
+  'el-checkbox-group': 'checkbox',
+  'el-tab-pane': 'tabs',
+  'el-menu-item': 'menu',
+  'el-submenu': 'menu',
+  'el-anchor-link': 'anchor',
+  'el-timeline-item': 'timeline',
+  'el-collapse-item': 'collapse',
+  'el-descriptions-item': 'descriptions',
+  'el-dropdown-menu': 'dropdown',
+  'el-dropdown-item': 'dropdown',
+  'el-carousel-item': 'carousel',
+  'el-step': 'steps',
+  'el-form-item': 'form',
+};
+
+/**
+ * 给element-plus的每个组件添加官方文档链接
+ */
+export function addTagLink(list: Node[], result: DocumentLink[], document: vscode.TextDocument, language: ExtensionLanguage) {
+  /** 文档基础链接 */
+  const basUrl = 'https://element-plus.org/';
+
+  /** 文档的语言 */
+  for (const item of list) {
+    // 判断tag是不是以el-开头
+    if (item.tag && item.tag.startsWith('el-')) {
+      // 如果存在就添加链接
+      if (item.tag in tagDocObj) {
+        const range: Range = new Range(document.positionAt(item.start + 1), document.positionAt(item.start + Number(item.tag?.length) + 1));
+        result.push({ range, target: vscode.Uri.parse(`${basUrl}/${language}/component/${tagDocObj[item.tag]}.html`) });
       }
     }
-    findTagResult(list[i]!.children, result, document, pattern);
+    // 递归遍历
+    item.children && addTagLink(item.children, result, document, language);
   }
-  console.log('aaa====', result);
+
   return result;
 }
