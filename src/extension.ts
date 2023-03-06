@@ -3,7 +3,7 @@ import * as htmlLanguageService from 'vscode-html-languageservice';
 import { addTagLink } from './utils/findTagResult';
 import { type ExtensionLanguage } from '@/types/index';
 import { ElementHoverProvier } from './hover-tips/element-hover-provider';
-import { MyCompletionItemProvider } from './completion/element-completion-item-povider';
+import { MyCompletionItemProvider } from './completion/MyCompletionItemProvider';
 
 /**
  * 激活的入口
@@ -31,7 +31,8 @@ export function activate(context: vscode.ExtensionContext) {
       }
     )
   );
-  // 当用户输入那些字符时触发补全
+
+  /** 当用户输入那些字符时触发补全 */
   const triggerCharacters = ['', ' ', ':', '<', '""', '=', "'", '/', '@', '(', '-'];
 
   /** 用户输入时添加智能补全 */
