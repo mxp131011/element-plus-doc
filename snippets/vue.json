@@ -1,0 +1,59 @@
+{
+  "vue": {
+    "prefix": "vue",
+    "body": [
+      "<template>",
+      "  <div>",
+      "    $1",
+      "  </div>",
+      "</template>",
+      "",
+      "<script lang=\"ts\">",
+      "import { defineComponent } from 'vue'",
+      "",
+      "export default defineComponent({",
+      "  setup (props, context) {",
+      "    return {",
+      "      $2",
+      "    }",
+      "  },",
+      "})",
+      "</script>",
+      "",
+      "<style scoped>",
+      "$4",
+      "</style>",
+      ""
+    ],
+    "description": "vue template"
+  },
+  "dialog": {
+    "prefix": "dialog",
+    "body": [
+      "<template>",
+      "  <el-dialog title=\"title\" width=\"600px\" v-model=\"visible\" @close=\"onClose\">",
+      "    <span>这是一条信息</span>",
+      "    <template #footer>",
+      "      <span class=\"dialog-footer\">",
+      "        <el-button size=\"small\" @click=\"handleCancel\">取 消</el-button>",
+      "        <el-button size=\"small\" type=\"primary\" @click=\"handleOk\" :loading=\"confirmLoading\">确 定</el-button>",
+      "      </span>",
+      "    </template>",
+      "  </el-dialog>",
+      "</template>",
+      "",
+      "<script lang=\"ts\">",
+      "import { defineComponent } from 'vue'",
+      "export default defineComponent({",
+      "  setup (props, context) {",
+      "    return {",
+      "      confirmLoading: false,",
+      "      visible: false,",
+      "    }",
+      "  },",
+      "})",
+      "</script>"
+    ],
+    "description": "a-model template"
+  }
+}

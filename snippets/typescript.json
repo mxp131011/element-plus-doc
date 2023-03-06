@@ -1,0 +1,153 @@
+{
+  "navigateTo": {
+    "prefix": "navigateTo",
+    "body": [
+      "navigateTo(path: string) {\n\tthis.\\$router.push(path)\n},"
+    ],
+    "description": "路由跳转"
+  },
+  "rules": {
+    "prefix": "rules",
+    "body": [
+      "rules: {",
+      "  name: [{ required: true, message: '$1', trigger: '$2' }],",
+      "}"
+    ]
+  },
+  "success": {
+    "prefix": "success",
+    "body": [
+      "this.\\$message.success($1);"
+    ],
+    "description": "成功提示"
+  },
+  "info": {
+    "prefix": "info",
+    "body": [
+      "this.\\$message.info($1);"
+    ],
+    "description": "温馨提示"
+  },
+  "error": {
+    "prefix": "error",
+    "body": [
+      "this.\\$message.error($1);"
+    ],
+    "description": "错误提示"
+  },
+  "warning": {
+    "prefix": "warning",
+    "body": [
+      "this.\\$message.warning($1);"
+    ],
+    "description": "警告提示"
+  },
+  "alert": {
+    "prefix": "alert",
+    "body": [
+      "this.\\$alert('内容', '标题', {",
+      "  confirmButtonText: '确定',",
+      "  callback: action => {",
+      "    if (action === 'confirm') {",
+      "      $1",
+      "    }",
+      "  }",
+      "});"
+    ],
+    "description": "确认弹窗"
+  },
+  "notify.success": {
+    "prefix": "notify.success",
+    "body": [
+      "this.\\$notify.success({",
+      "  title: '成功',",
+      "  message: '$1',",
+      "});"
+    ],
+    "description": "成功弹窗"
+  },
+  "notify.warning": {
+    "prefix": "notify.warning",
+    "body": [
+      "this.\\$notify.warning({",
+      "  title: '警告',",
+      "  message: '$1',",
+      "});"
+    ],
+    "description": "成功弹窗"
+  },
+  "notify.info": {
+    "prefix": "notify.info",
+    "body": [
+      "this.\\$notify.info({",
+      "  title: '温馨提示',",
+      "  message: '$1',",
+      "});"
+    ],
+    "description": "提示弹窗"
+  },
+  "notify.error": {
+    "prefix": "notify.error",
+    "body": [
+      "this.\\$notify.error({",
+      "  title: '错误',",
+      "  message: '$1',",
+      "});"
+    ],
+    "description": "错误弹窗"
+  },
+  "getDate": {
+    "prefix": "getDate",
+    "body": [
+      "getDate(e: any) {",
+      "  if (e) {",
+      "    this.formData.time = e.unix();",
+      "  } else {",
+      "    this.formData.time = undefined;",
+      "  }",
+      "},"
+    ],
+    "description": "日期选择函数"
+  },
+  "getDateRange": {
+    "prefix": "getDateRange",
+    "body": [
+      "getDateRange(e: any[]) {",
+      "  if (e.length) {",
+      "    this.formData.startTime = e[0].unix();",
+      "    this.formData.endTime = e[0].unix();",
+      "  } else {",
+      "    this.formData.startTime = undefined;",
+      "    this.formData.endTime = undefined;",
+      "  }",
+      "},"
+    ],
+    "description": "日期范围选择函数"
+  },
+  "submit": {
+    "prefix": "submit",
+    "body": [
+      "async submit() {",
+      "  const $form: any = this.$refs.form as unknown;",
+      "  const isValid = await $form.validate();",
+      "  if (!isValid) return;",
+      "  this.loading = true;",
+      "  try {",
+      "    $1",
+      "  } finally {",
+      "    this.loading = false;",
+      "  }",
+      "},"
+    ],
+    "description": "表单提交"
+  },
+  "options": {
+    "prefix": "options",
+    "body": [
+      "{",
+      "  value: '$1',",
+      "  label: '$2',",
+      "},"
+    ]
+  }
+}
