@@ -6,11 +6,7 @@
   },
   "rules": {
     "prefix": "rules",
-    "body": [
-      "rules: {",
-      "  name: [{ required: true, message: '$1', trigger: '$2' }],",
-      "}"
-    ]
+    "body": ["rules: {", "  name: [{ required: true, message: '$1', trigger: '$2' }],", "}"]
   },
   "success": {
     "prefix": "success",
@@ -48,55 +44,27 @@
   },
   "notify.success": {
     "prefix": "notify.success",
-    "body": [
-      "this.\\$notify.success({",
-      "  title: '成功',",
-      "  message: '$1',",
-      "});"
-    ],
+    "body": ["this.\\$notify.success({", "  title: '成功',", "  message: '$1',", "});"],
     "description": "成功弹窗"
   },
   "notify.warning": {
     "prefix": "notify.warning",
-    "body": [
-      "this.\\$notify.warning({",
-      "  title: '警告',",
-      "  message: '$1',",
-      "});"
-    ],
+    "body": ["this.\\$notify.warning({", "  title: '警告',", "  message: '$1',", "});"],
     "description": "成功弹窗"
   },
   "notify.info": {
     "prefix": "notify.info",
-    "body": [
-      "this.\\$notify.info({",
-      "  title: '温馨提示',",
-      "  message: '$1',",
-      "});"
-    ],
+    "body": ["this.\\$notify.info({", "  title: '温馨提示',", "  message: '$1',", "});"],
     "description": "提示弹窗"
   },
   "notify.error": {
     "prefix": "notify.error",
-    "body": [
-      "this.\\$notify.error({",
-      "  title: '错误',",
-      "  message: '$1',",
-      "});"
-    ],
+    "body": ["this.\\$notify.error({", "  title: '错误',", "  message: '$1',", "});"],
     "description": "错误弹窗"
   },
   "getDate": {
     "prefix": "getDate",
-    "body": [
-      "getDate(e: any) {",
-      "  if (e) {",
-      "    this.formData.time = e.unix();",
-      "  } else {",
-      "    this.formData.time = undefined;",
-      "  }",
-      "},"
-    ],
+    "body": ["getDate(e: any) {", "  if (e) {", "    this.formData.time = e.unix();", "  } else {", "    this.formData.time = undefined;", "  }", "},"],
     "description": "日期选择函数"
   },
   "getDateRange": {

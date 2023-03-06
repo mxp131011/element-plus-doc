@@ -1,13 +1,13 @@
-import { ElDocument } from "@/document";
-import { DocumentAttribute } from "@/document";
+import { ElDocument } from '@/document';
+import { DocumentAttribute } from '@/document';
 
 export const attributes: DocumentAttribute[] = [
   {
-    name: "height",
-    description: "顶栏高度",
-    type: "string",
-    value: "—",
-    default: "60px",
+    name: 'height',
+    description: '顶栏高度',
+    type: 'string',
+    value: '—',
+    default: '60px',
   },
 ];
 

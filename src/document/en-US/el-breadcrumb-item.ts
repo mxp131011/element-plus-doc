@@ -1,20 +1,20 @@
-import { ElDocument } from "@/document";
-import { DocumentAttribute } from "@/document";
+import { ElDocument } from '@/document';
+import { DocumentAttribute } from '@/document';
 
 export const attributes: DocumentAttribute[] = [
   {
-    name: "to",
-    description: "target route of the link, same as `to` of `vue-router`",
-    type: "string/object",
-    value: "—",
-    default: "—",
+    name: 'to',
+    description: 'target route of the link, same as `to` of `vue-router`',
+    type: 'string/object',
+    value: '—',
+    default: '—',
   },
   {
-    name: "replace",
-    description: "if `true`, the navigation will not leave a history record",
-    type: "boolean",
-    value: "—",
-    default: "false",
+    name: 'replace',
+    description: 'if `true`, the navigation will not leave a history record',
+    type: 'boolean',
+    value: '—',
+    default: 'false',
   },
 ];
 

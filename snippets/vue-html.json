@@ -16,16 +16,12 @@
   },
   "confirm": {
     "prefix": "el-confirm",
-    "body": [
-      "<el-button type=\"primary\" @click=\"confirm()\" :loading=\"confirmLoading\">确认</el-button>"
-    ],
+    "body": ["<el-button type=\"primary\" @click=\"confirm()\" :loading=\"confirmLoading\">确认</el-button>"],
     "description": "确认按钮组件"
   },
   "cancel": {
     "prefix": "el-cancel",
-    "body": [
-      "<el-button type=\"default\" @click=\"cancel()\">取消</el-button>"
-    ],
+    "body": ["<el-button type=\"default\" @click=\"cancel()\">取消</el-button>"],
     "description": "取消按钮组件"
   },
   "link": {
@@ -64,11 +60,7 @@
   },
   "tabs": {
     "prefix": "el-tabs",
-    "body": [
-      "<el-tabs v-model=\"activeKey\">",
-      "  <el-tab-pane key=\"1\" tab=\"$1\">$2</el-tab-pane>",
-      "</el-tabs>"
-    ],
+    "body": ["<el-tabs v-model=\"activeKey\">", "  <el-tab-pane key=\"1\" tab=\"$1\">$2</el-tab-pane>", "</el-tabs>"],
     "description": "标签页组件"
   },
   "tab-pane": {
@@ -154,12 +146,7 @@
   },
   "timeline": {
     "prefix": "el-timeline",
-    "body": [
-      "<el-timeline :reverse=\"false\">",
-      "  <el-timeline-item>$1</el-timeline-item>",
-      "  <el-timeline-item>$2</el-timeline-item>",
-      "</el-timeline>"
-    ],
+    "body": ["<el-timeline :reverse=\"false\">", "  <el-timeline-item>$1</el-timeline-item>", "  <el-timeline-item>$2</el-timeline-item>", "</el-timeline>"],
     "description": "时间轴组件"
   },
   "timeline-item": {
@@ -169,27 +156,17 @@
   },
   "collapse": {
     "prefix": "el-collapse",
-    "body": [
-      "<el-collapse v-model=\"activeKey\">",
-      "  <el-collapse-item name=\"1\" title=\"$1\">$2</el-collapse-item>",
-      "</el-collapse>"
-    ],
+    "body": ["<el-collapse v-model=\"activeKey\">", "  <el-collapse-item name=\"1\" title=\"$1\">$2</el-collapse-item>", "</el-collapse>"],
     "description": "折叠面板组件"
   },
   "collapse-item": {
     "prefix": "el-collapse-item",
-    "body": [
-      "<el-collapse-item name=\"$1\" title=\"$2\">$3</el-collapse-item>"
-    ],
+    "body": ["<el-collapse-item name=\"$1\" title=\"$2\">$3</el-collapse-item>"],
     "description": "折叠面板子组件"
   },
   "descriptions": {
     "prefix": "el-descriptions",
-    "body": [
-      "<el-descriptions title=\"$1\">",
-      "  <el-descriptions-item label=\"$2\">$3</el-descriptions-item>",
-      "</el-descriptions>"
-    ],
+    "body": ["<el-descriptions title=\"$1\">", "  <el-descriptions-item label=\"$2\">$3</el-descriptions-item>", "</el-descriptions>"],
     "description": "描述列表组件"
   },
   "descriptions-item": {
@@ -328,14 +305,7 @@
   },
   "card": {
     "prefix": "el-card",
-    "body": [
-      "<el-card>",
-      "  <template slot=\"header\">",
-      "    $1",
-      "  </template>",
-      "  $2",
-      "</el-card>"
-    ],
+    "body": ["<el-card>", "  <template slot=\"header\">", "    $1", "  </template>", "  $2", "</el-card>"],
     "description": "卡片组件"
   },
   "carousel": {
@@ -379,9 +349,7 @@
   },
   "input-number": {
     "prefix": "el-input-number",
-    "body": [
-      "<el-input-number :min=\"$1\" :max=\"$2\" v-model=\"value\" :step=\"1\" />"
-    ],
+    "body": ["<el-input-number :min=\"$1\" :max=\"$2\" v-model=\"value\" :step=\"1\" />"],
     "description": "数字输入框组件"
   },
   "avatar": {
@@ -426,20 +394,12 @@
   },
   "popover": {
     "prefix": "el-popover",
-    "body": [
-      "<el-popover width=\"200\" title=\"$1\" content=\"$2\" trigger=\"hover\" placement=\"bottom\" >",
-      "  $2",
-      "</el-popover>"
-    ],
+    "body": ["<el-popover width=\"200\" title=\"$1\" content=\"$2\" trigger=\"hover\" placement=\"bottom\" >", "  $2", "</el-popover>"],
     "description": "气泡组件"
   },
   "tooltip": {
     "prefix": "el-tooltip",
-    "body": [
-      "<el-tooltip effect=\"dark\" content=\"$1\" placement=\"bottom\">",
-      "  $2",
-      "</el-tooltip>"
-    ],
+    "body": ["<el-tooltip effect=\"dark\" content=\"$1\" placement=\"bottom\">", "  $2", "</el-tooltip>"],
     "description": "文字提示组件"
   },
   "tag": {
@@ -459,30 +419,22 @@
   },
   "time-select": {
     "prefix": "el-time-select",
-    "body": [
-      "<el-time-select v-model=\"value\" :picker-options=\"{ start: '00:00', step: '00:15', end: '24:00' }\" placeholder=\"$1\" />"
-    ],
+    "body": ["<el-time-select v-model=\"value\" :picker-options=\"{ start: '00:00', step: '00:15', end: '24:00' }\" placeholder=\"$1\" />"],
     "description": "时间选择器"
   },
   "time-picker": {
     "prefix": "el-time-picker",
-    "body": [
-      "<el-time-picker v-model=\"value\" value-format=\"HH:mm:ss\" @change=\"getTime\" />"
-    ],
+    "body": ["<el-time-picker v-model=\"value\" value-format=\"HH:mm:ss\" @change=\"getTime\" />"],
     "description": "时间选择器"
   },
   "date-picker": {
     "prefix": "el-date-picker",
-    "body": [
-      "<el-date-picker v-model=\"value\" type=\"datetime\" value-format=\"YYYY-MM-DD HH:mm:ss\" @change=\"getDate\" />"
-    ],
+    "body": ["<el-date-picker v-model=\"value\" type=\"datetime\" value-format=\"YYYY-MM-DD HH:mm:ss\" @change=\"getDate\" />"],
     "description": "日期选择器"
   },
   "range-picker": {
     "prefix": "el-date-picker",
-    "body": [
-      "<el-date-picker type=\"datetimerange\" v-model=\"value\" format=\"YYYY-MM-DD HH:mm:ss\" @change=\"getDateRange\" />"
-    ],
+    "body": ["<el-date-picker type=\"datetimerange\" v-model=\"value\" format=\"YYYY-MM-DD HH:mm:ss\" @change=\"getDateRange\" />"],
     "description": "日期范围选择器"
   },
   "rate": {
@@ -531,9 +483,7 @@
   },
   "cascader": {
     "prefix": "el-cascader",
-    "body": [
-      "<el-cascader v-model=\"value\" :options=\"options\" placeholder=\"Please select\" @change=\"onChange\" />"
-    ],
+    "body": ["<el-cascader v-model=\"value\" :options=\"options\" placeholder=\"Please select\" @change=\"onChange\" />"],
     "description": "级联选择组件"
   },
   "cascader-panel": {
@@ -578,21 +528,12 @@
   },
   "tree": {
     "prefix": "el-tree",
-    "body": [
-      "<el-tree :data=\"data\" :props=\"defaultProps\" @node-click=\"handleNodeClick\" />"
-    ],
+    "body": ["<el-tree :data=\"data\" :props=\"defaultProps\" @node-click=\"handleNodeClick\" />"],
     "description": "树形结构组件"
   },
   "tree-select": {
     "prefix": "el-tree-select",
-    "body": [
-      "<el-tree-select",
-      "  v-model=\"value\"",
-      "  :data=\"data\"",
-      "  :render-after-expand=\"true\"",
-      "  show-checkbox",
-      ">"
-    ],
+    "body": ["<el-tree-select", "  v-model=\"value\"", "  :data=\"data\"", "  :render-after-expand=\"true\"", "  show-checkbox", ">"],
     "description": "树形选择器组件"
   },
   "page-header": {
@@ -648,21 +589,12 @@
   },
   "form-item": {
     "prefix": "el-form-item",
-    "body": [
-      "<el-form-item label=\"$1\" prop=\"$2\">",
-      "  $3",
-      "</el-form-item>"
-    ],
+    "body": ["<el-form-item label=\"$1\" prop=\"$2\">", "  $3", "</el-form-item>"],
     "description": "表单子组件"
   },
   "row": {
     "prefix": "el-row",
-    "body": [
-      "<el-row :gutter=\"0\">",
-      "  <el-col :span=\"12\">$1</el-col>",
-      "  <el-col :span=\"12\">$2</el-col>",
-      "</el-row>"
-    ],
+    "body": ["<el-row :gutter=\"0\">", "  <el-col :span=\"12\">$1</el-col>", "  <el-col :span=\"12\">$2</el-col>", "</el-row>"],
     "description": "栅格布局组件"
   },
   "col": {
