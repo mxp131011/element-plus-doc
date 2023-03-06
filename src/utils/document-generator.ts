@@ -1,27 +1,26 @@
 import { MarkdownString } from 'vscode';
-import { ExtensionLanguage } from '../';
-import { DocumentAttribute } from '@/document';
-import { BaseDocument } from '@/document';
-import { DocumentMethod } from '@/document';
-import { DocumentScopedSlot } from '@/document';
-import { DocumentSlot } from '@/document';
+import { type ExtensionLanguage } from '../';
+import { type DocumentAttribute } from '@/document';
+import { type BaseDocument } from '@/document';
+import { type DocumentMethod } from '@/document';
+import { type DocumentScopedSlot } from '@/document';
+import { type DocumentSlot } from '@/document';
 
 export class HoverDocumentGenerator {
   static instance: HoverDocumentGenerator;
 
   /**
    * 生成属性文档表格
-   *
    * @template T type extends BaseDocument
-   * @param {T} document 文档 具体标签对应的文档
-   * @param {string} tag 标签
-   * @param {string} attribute 属性 在标签的属性上悬停时具有
-   * @param {string} language 语言
-   * @return {*}  {MarkdownString}
+   * @param {T} document - 文档 具体标签对应的文档
+   * @param {string} tag - 标签
+   * @param {string} attribute - 属性 在标签的属性上悬停时具有
+   * @param {string} language - 语言
+   * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
   private generateAttribute<T extends BaseDocument>(document: T, tag: string, attribute: string, language: string): MarkdownString {
-    let isUndefined: boolean = true; // 标记是否具有文档
+    let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const attributes = document.attributes || []; // 取得属性列表
     if (attributes.length) {
@@ -57,17 +56,16 @@ export class HoverDocumentGenerator {
 
   /**
    * 生成方法文档表格
-   *
    * @template T type extends BaseDocument
-   * @param {T} document 文档 具体标签对应的文档
-   * @param {string} tag 标签
-   * @param {string} attribute 属性 在标签的属性上悬停时具有
-   * @param {string} language 语言
-   * @return {*}  {MarkdownString}
+   * @param {T} document - 文档 具体标签对应的文档
+   * @param {string} tag - 标签
+   * @param {string} attribute - 属性 在标签的属性上悬停时具有
+   * @param {string} language - 语言
+   * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
   private generateMethods<T extends BaseDocument>(document: T, tag: string, attribute: string, language: string): MarkdownString {
-    let isUndefined: boolean = true; // 标记是否具有文档
+    let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const methods = document.methods || [];
     if (methods.length) {
@@ -102,17 +100,16 @@ export class HoverDocumentGenerator {
 
   /**
    * 生成事件文档表格
-   *
    * @template T type extends BaseDocument
-   * @param {T} document 文档 具体标签对应的文档
-   * @param {string} tag 标签
-   * @param {string} attribute 属性 在标签的属性上悬停时具有
-   * @param {string} language 语言
-   * @return {*}  {MarkdownString}
+   * @param {T} document - 文档 具体标签对应的文档
+   * @param {string} tag - 标签
+   * @param {string} attribute - 属性 在标签的属性上悬停时具有
+   * @param {string} language - 语言
+   * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
   private generateEvents<T extends BaseDocument>(document: T, tag: string, attribute: string, language: string): MarkdownString {
-    let isUndefined: boolean = true; // 标记是否具有文档
+    let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const events = document.events || [];
     if (events.length) {
@@ -147,17 +144,16 @@ export class HoverDocumentGenerator {
 
   /**
    * 生成插槽文档表格
-   *
    * @template T type extends BaseDocument
-   * @param {T} document 文档 具体标签对应的文档
-   * @param {string} tag 标签
-   * @param {string} attribute 属性 在标签的属性上悬停时具有
-   * @param {string} language 语言
-   * @return {*}  {MarkdownString}
+   * @param {T} document - 文档 具体标签对应的文档
+   * @param {string} tag - 标签
+   * @param {string} attribute - 属性 在标签的属性上悬停时具有
+   * @param {string} language - 语言
+   * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
   private generateSlots<T extends BaseDocument>(document: T, tag: string, attribute: string, language: string): MarkdownString {
-    let isUndefined: boolean = true; // 标记是否具有文档
+    let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const slots = document.slots || [];
     if (slots.length) {
@@ -192,17 +188,16 @@ export class HoverDocumentGenerator {
 
   /**
    * 生成局部插槽文档表格
-   *
    * @template T type extends BaseDocument
-   * @param {T} document 文档 具体标签对应的文档
-   * @param {string} tag 标签
-   * @param {string} attribute 属性 在标签的属性上悬停时具有
-   * @param {string} language 语言
-   * @return {*}  {MarkdownString}
+   * @param {T} document - 文档 具体标签对应的文档
+   * @param {string} tag - 标签
+   * @param {string} attribute - 属性 在标签的属性上悬停时具有
+   * @param {string} language - 语言
+   * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
   private generateScopedSlots<T extends BaseDocument>(document: T, tag: string, attribute: string, language: string): MarkdownString {
-    let isUndefined: boolean = true; // 标记是否具有文档
+    let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const scopedSlots = document.scopedSlots || [];
     if (scopedSlots.length) {
@@ -237,17 +232,16 @@ export class HoverDocumentGenerator {
 
   /**
    * 生成其他文档表格
-   *
    * @template T type extends BaseDocument
-   * @param {T} document 文档 具体标签对应的文档
-   * @param {string} tag 标签
-   * @param {string} attribute 属性 文档对象具体的属性值
-   * @param {string} language 语言
-   * @return {*}  {MarkdownString}
+   * @param {T} document - 文档 具体标签对应的文档
+   * @param {string} tag - 标签
+   * @param {string} attribute - 属性 文档对象具体的属性值
+   * @param {string} language - 语言
+   * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
   private generateOther<T extends BaseDocument>(document: T, tag: string, attribute: string): MarkdownString {
-    let isUndefined: boolean = true; // 标记是否具有文档
+    let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const attributes = (document as any)[attribute] || [];
     if (attributes.length) {
@@ -274,14 +268,13 @@ export class HoverDocumentGenerator {
 
   /**
    * 宣统提示文档生成入口
-   *
    * @template T 文档类型
-   * @param {T} document 文档
-   * @param {string} key 属性key
-   * @param {string} tag 文档标签
-   * @param {string} attr 文档属性
-   * @param {ExtensionLanguage} language 语言
-   * @return {*}  {MarkdownString}
+   * @param {T} document - 文档
+   * @param {string} key - 属性key
+   * @param {string} tag - 文档标签
+   * @param {string} attr - 文档属性
+   * @param {ExtensionLanguage} language - 语言
+   * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
   generate<T extends BaseDocument>(document: T, key: string, tag: string, attr: string, language: ExtensionLanguage): MarkdownString {

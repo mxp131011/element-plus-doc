@@ -1,16 +1,19 @@
-import { HoverProvider, TextDocument, Position, ProviderResult, Hover, workspace, MarkdownString, Range } from 'vscode';
+import { Hover, type HoverProvider, type MarkdownString, Position, type ProviderResult, Range, type TextDocument, workspace } from 'vscode';
 
-import { ElDocument, localDocument } from '@/document';
+import { type ElDocument, localDocument } from '@/document';
 import { HoverDocumentGenerator } from '@/utils/document-generator';
 import { toKebabCase } from '../utils';
-import { ExtensionConfigutation, ExtensionLanguage } from '../';
-import { TagObject } from '.';
+import { type ExtensionConfigutation, ExtensionLanguage } from '../';
+import { type TagObject } from '.';
 
 export class ElementHoverProvier implements HoverProvider {
   private _position!: Position;
+
   private _document!: TextDocument;
-  private tagReg: RegExp = /<([\w-]+)\s*/g;
-  private attrReg: RegExp = /(?:\(|\s*)([\w-]+)=?/;
+
+  private tagReg = /<([\w-]+)\s*/g;
+
+  private attrReg = /(?:\(|\s*)([\w-]+)=?/;
 
   provideHover(document: TextDocument, position: Position): ProviderResult<Hover> {
     this._document = document;
@@ -59,15 +62,15 @@ export class ElementHoverProvier implements HoverProvider {
    */
   getAttr(): string {
     const txt = this.getTextAfterPosition(this._position);
-    let end = txt.length;
-    let start = txt.lastIndexOf(' ', this._position.character) + 1;
-    let parsedTxt = this._document.getText(new Range(this._position.line, start, this._position.line, end));
+    const end = txt.length;
+    const start = txt.lastIndexOf(' ', this._position.character) + 1;
+    const parsedTxt = this._document.getText(new Range(this._position.line, start, this._position.line, end));
     return this.matchAttr(this.attrReg, parsedTxt);
   }
 
   /**
    * 获取高亮范围
-   * @param attr 属性名称
+   * @param attr - 属性名称
    */
   getHoverRange(attr: string): Range {
     const line = this._document.lineAt(this._position.line).text;
@@ -79,13 +82,13 @@ export class ElementHoverProvier implements HoverProvider {
 
   /**
    * 匹配标签
-   * @param reg 匹配模式串
-   * @param txt 待匹配字符
-   * @param line 匹配行
+   * @param reg - 匹配模式串
+   * @param txt - 待匹配字符
+   * @param line - 匹配行
    */
   matchTag(reg: RegExp, txt: string, line: number): TagObject | string | undefined {
     let match: RegExpExecArray | null;
-    let arr: TagObject[] = [];
+    const arr: TagObject[] = [];
 
     if (
       /<\/?[-\w]+[^<>]*>[\s\w]*<?\s*[\w-]*$/.test(txt) ||
@@ -104,9 +107,8 @@ export class ElementHoverProvier implements HoverProvider {
 
   /**
    * 匹配标签
-   *
-   * @param reg 匹配模式
-   * @param txt 待匹配字符
+   * @param reg - 匹配模式
+   * @param txt - 待匹配字符
    */
   matchAttr(reg: RegExp, txt: string): string {
     let match: RegExpExecArray | null;
@@ -119,7 +121,7 @@ export class ElementHoverProvier implements HoverProvider {
 
   /**
    * 获取前置内容
-   * @param position 位置信息
+   * @param position - 位置信息
    */
   getTextBeforePosition(position: Position): string {
     const wordRange = this._document.getWordRangeAtPosition(position);
@@ -131,8 +133,7 @@ export class ElementHoverProvier implements HoverProvider {
 
   /**
    * 获取当前位置直到单词结束的内容
-   *
-   * @param position 文档位置
+   * @param position - 文档位置
    */
   getTextAfterPosition(position: Position): string {
     const wordRange = this._document.getWordRangeAtPosition(position);
@@ -149,10 +150,9 @@ export class ElementHoverProvier implements HoverProvider {
 
   /**
    * 获取Hover实例
-   *
-   * @param tag 标签
-   * @param attr 属性
-   * @param range 区域
+   * @param tag - 标签
+   * @param attr - 属性
+   * @param range - 区域
    */
   getHoverInstance(tag: TagObject | undefined, attr: string, range: Range) {
     const config = workspace.getConfiguration().get<ExtensionConfigutation>('elementv-snippet');
@@ -166,14 +166,13 @@ export class ElementHoverProvier implements HoverProvider {
 
   /**
    * 创建Hover实例
-   *
-   * @param language 语言
-   * @param tag 标签
-   * @param attr 属性
-   * @param range 范围
+   * @param language - 语言
+   * @param tag - 标签
+   * @param attr - 属性
+   * @param range - 范围
    */
-  createHoverInstance(language: ExtensionLanguage, tag: string, attr: string, range: Range): null | Hover {
-    let document: Record<string, any> | undefined = localDocument[language];
+  createHoverInstance(language: ExtensionLanguage, tag: string, attr: string, range: Range): Hover | null {
+    const document: Record<string, any> | undefined = localDocument[language];
     if (tag === attr) {
       attr = '';
     }

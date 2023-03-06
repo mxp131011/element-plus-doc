@@ -1,5 +1,5 @@
-import { ElDocument } from '@/document';
-import { DocumentAttribute } from '@/document';
+import { type ElDocument } from '@/document';
+import { type DocumentAttribute } from '@/document';
 
 export const attributes: DocumentAttribute[] = [
   {

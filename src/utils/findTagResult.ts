@@ -1,7 +1,7 @@
-import { Node } from 'vscode-html-languageservice';
-import { MapValue } from '../typing/index';
+import { type Node } from 'vscode-html-languageservice';
+import { type MapValue } from '../typing/index';
 import * as vscode from 'vscode';
-import { type ProviderResult, type DocumentLink, Range } from 'vscode';
+import { type DocumentLink, type ProviderResult, Range } from 'vscode';
 
 const mapValue: MapValue[] = [
   { value: 'table-column', mapValue: 'table' },
@@ -31,11 +31,11 @@ const mapValue: MapValue[] = [
 
 export default function findTagResult(list: Node[], result: ProviderResult<DocumentLink>[], document: vscode.TextDocument, pattern: RegExp) {
   for (let i = 0; i < list.length; i++) {
-    if (pattern.test(list[i]!.tag as string)) {
+    if (pattern.test(list[i]!.tag!)) {
       const componentName = mapValue.find((val) => val.value === list[i]!.tag?.replace(pattern, ''));
       const range: Range = new Range(document.positionAt(list[i]!.start + 1), document.positionAt(list[i]!.start + Number(list[i]!.tag?.length) + 1));
       result.push({
-        range: range,
+        range,
         target: vscode.Uri.parse(`http://element-plus.org/zh-CN/component/${componentName ? componentName.mapValue : list[i]!.tag?.replace(pattern, '')}.html`),
       });
     }

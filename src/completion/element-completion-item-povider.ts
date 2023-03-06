@@ -1,34 +1,37 @@
 import type { TagObject } from '@/hover-tips/index';
 import {
-  CompletionItemProvider,
-  TextDocument,
-  Position,
-  ProviderResult,
-  Range,
-  CompletionItem,
-  CompletionList,
+  type CompletionItem,
   CompletionItemKind,
-  workspace,
+  type CompletionItemProvider,
+  type CompletionList,
+  Position,
+  type ProviderResult,
+  Range,
   SnippetString,
+  type TextDocument,
+  workspace,
 } from 'vscode';
 
-import { localDocument } from '@/document';
-import { ExtensionConfigutation, ExtensionLanguage } from '..';
-import { DocumentAttribute, DocumentEvent } from '@/document';
+import { type DocumentAttribute, type DocumentEvent, localDocument } from '@/document';
+import { type ExtensionConfigutation, ExtensionLanguage } from '..';
 
-export class ElementCompletionItemProvider implements CompletionItemProvider<CompletionItem> {
+export class ElementCompletionItemProvider implements CompletionItemProvider {
   private _document!: TextDocument;
+
   private _position!: Position;
-  private tagReg: RegExp = /<([\w-]+)\s*/g;
-  private attrReg: RegExp = /(?:\(|\s*)([\w-]+)=['"][^'"]*/;
-  private tagStartReg: RegExp = /<([\w-]*)$/;
+
+  private tagReg = /<([\w-]+)\s*/g;
+
+  private attrReg = /(?:\(|\s*)([\w-]+)=['"][^'"]*/;
+
+  private tagStartReg = /<([\w-]*)$/;
 
   /**
    * 获取前置标签
    */
-  getPreTag(): TagObject | undefined {
+  public getPreTag(): TagObject | undefined {
     let line = this._position.line;
-    let tag: TagObject | string | undefined;
+    let tag: TagObject | string | undefined = undefined;
     let txt = this.getTextBeforePosition(this._position);
 
     while (this._position.line - line < 10 && line >= 0) {
@@ -40,7 +43,7 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
         return undefined;
       }
       if (tag) {
-        return <TagObject>tag;
+        return tag as TagObject;
       }
       line--;
     }
@@ -50,22 +53,21 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
   /**
    * 获取前置属性
    */
-  getPreAttr(): string {
-    let txt = this.getTextBeforePosition(this._position).replace(/"[^'"]*(\s*)[^'"]*$/, '');
-    let end = this._position.character;
-    let start = txt.lastIndexOf(' ', end) + 1;
-    let parsedTxt = this._document.getText(new Range(this._position.line, start, this._position.line, end));
+  public getPreAttr(): string {
+    const txt = this.getTextBeforePosition(this._position).replace(/"[^'"]*(\s*)[^'"]*$/, '');
+    const end = this._position.character;
+    const start = txt.lastIndexOf(' ', end) + 1;
+    const parsedTxt = this._document.getText(new Range(this._position.line, start, this._position.line, end));
     return this.matchAttr(this.attrReg, parsedTxt);
   }
 
   /**
    * 匹配属性
-   *
-   * @param reg 匹配模式
-   * @param txt 匹配文本
+   * @param reg - 匹配模式
+   * @param txt - 匹配文本
    */
-  matchAttr(reg: RegExp, txt: string): string {
-    let match: RegExpExecArray | null;
+  public matchAttr(reg: RegExp, txt: string): string {
+    let match: RegExpExecArray | null = null;
     match = reg.exec(txt);
     if (!/"[^"]*"/.test(txt) && match) {
       return match[1] || '';
@@ -75,13 +77,13 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
 
   /**
    * 匹配标签
-   * @param reg 匹配模式
-   * @param txt 匹配文本
-   * @param line 当前行
+   * @param reg - 匹配模式
+   * @param txt - 匹配文本
+   * @param line - 当前行
    */
-  matchTag(reg: RegExp, txt: string, line: number): TagObject | string | undefined {
-    let match: RegExpExecArray | null;
-    let arr: TagObject[] = [];
+  public matchTag(reg: RegExp, txt: string, line: number): TagObject | string | undefined {
+    let match: RegExpExecArray | null = null;
+    const arr: TagObject[] = [];
 
     if (
       /<\/?[-\w]+[^<>]*>[\s\w]*<?\s*[\w-]*$/.test(txt) ||
@@ -100,52 +102,50 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
 
   /**
    * 获取当前位置之前的字符串
-   *
-   * @param position 位置
+   * @param position - 位置
    */
-  getTextBeforePosition(position: Position): string {
-    var start = new Position(position.line, 0);
-    var range = new Range(start, position);
+  public getTextBeforePosition(position: Position): string {
+    const start = new Position(position.line, 0);
+    const range = new Range(start, position);
     return this._document.getText(range);
   }
 
   /**
    * 是否位属性值的开始
-   * @param tag 标签
-   * @param attr 属性
+   * @param tag - 标签
+   * @param attr - 属性
    */
-  isAttrValueStart(tag: Object | undefined, attr: string) {
-    return !!tag && !!attr;
+  public isAttrValueStart(tag: Record<string, unknown> | undefined, attr: string) {
+    return Boolean(tag) && Boolean(attr);
   }
 
   /**
    * 是否位属性的开始
-   * @param tag 标签
+   * @param tag - 标签
    */
-  isAttrStart(tag: TagObject | undefined) {
+  public isAttrStart(tag: TagObject | undefined) {
     const preText = this.getTextBeforePosition(this._position);
     return tag && / :?[\w-]*$/.test(preText);
   }
 
   /**
    * 是否为方法的开始
-   * @param tag 标签
+   * @param tag - 标签
    */
-  isEventStart(tag: TagObject | undefined) {
+  public isEventStart(tag: TagObject | undefined) {
     const preText = this.getTextBeforePosition(this._position);
     return tag && / @[\w-]*$/.test(preText);
   }
 
   /**
    * 获取属性值
-   *
-   * @param tag 标签
-   * @param attr 属性
+   * @param tag - 标签
+   * @param attr - 属性
    */
-  getAttrValues(tag: string, attr: string): string[] {
+  public getAttrValues(tag: string, attr: string): string[] {
     const config = workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
     const language = config?.language || ExtensionLanguage.cn;
-    const document: Record<string, any> | undefined = localDocument[language];
+    const document: Record<string, unknown> | undefined = localDocument[language];
     const attributes: DocumentAttribute[] = document?.[tag].attributes || [];
     const attribute: DocumentAttribute | undefined = attributes.find((attribute) => attribute.name === attr);
     if (!attribute) {
@@ -157,12 +157,11 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
 
   /**
    * 获取属性值的提示信息
-   *
-   * @param tag 标签
-   * @param attr 属性
+   * @param tag - 标签
+   * @param attr - 属性
    */
-  getAttrValueCompletionItems(tag: string, attr: string): CompletionItem[] {
-    let completionItems: CompletionItem[] = [];
+  public getAttrValueCompletionItems(tag: string, attr: string): CompletionItem[] {
+    const completionItems: CompletionItem[] = [];
     const values = this.getAttrValues(tag, attr);
     values.forEach((value) => {
       if (/\w+/.test(value)) {
@@ -180,11 +179,10 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
 
   /**
    * 获取事件名称提示
-   *
-   * @param tag 标签
+   * @param tag - 标签
    */
-  getEventCompletionItems(tag: string): CompletionItem[] {
-    let completionItems: CompletionItem[] = [];
+  public getEventCompletionItems(tag: string): CompletionItem[] {
+    const completionItems: CompletionItem[] = [];
     const config = workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
     const language = config?.language || ExtensionLanguage.cn;
     const document: Record<string, any> | undefined = localDocument[language];
@@ -213,11 +211,10 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
 
   /**
    * 获取属性的提示信息
-   *
-   * @param tag 标签
+   * @param tag - 标签
    */
-  getAttrCompletionItems(tag: string): CompletionItem[] {
-    let completionItems: CompletionItem[] = [];
+  public getAttrCompletionItems(tag: string): CompletionItem[] {
+    const completionItems: CompletionItem[] = [];
     const config = workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
     const language = config?.language || ExtensionLanguage.cn;
     const document: Record<string, any> | undefined = localDocument[language];
@@ -247,16 +244,16 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
   /**
    * 是否位标签的开始
    */
-  isTagStart(): boolean {
-    let txt = this.getTextBeforePosition(this._position);
+  public isTagStart(): boolean {
+    const txt = this.getTextBeforePosition(this._position);
     return this.tagStartReg.test(txt);
   }
 
   /**
    * 获取标签提示
    */
-  getTagCompletionItems(): CompletionItem[] {
-    let completionItems: CompletionItem[] = [];
+  public getTagCompletionItems(): CompletionItem[] {
+    const completionItems: CompletionItem[] = [];
     const config = workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
     const language = config?.language || ExtensionLanguage.cn;
     const preText = this.getTextBeforePosition(this._position);
@@ -281,16 +278,15 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
 
   /**
    * 提供自动完成提示
-   *
-   * @param document 文档
-   * @param position 位置
+   * @param document - 文档
+   * @param position - 位置
    */
-  provideCompletionItems(document: TextDocument, position: Position): ProviderResult<CompletionItem[] | CompletionList<CompletionItem>> {
+  public provideCompletionItems(document: TextDocument, position: Position): ProviderResult<CompletionItem[] | CompletionList> {
     this._document = document;
     this._position = position;
 
-    let tag: TagObject | undefined = this.getPreTag();
-    let attr = this.getPreAttr();
+    const tag: TagObject | undefined = this.getPreTag();
+    const attr = this.getPreAttr();
 
     if (!tag || !/^[E|e]l/.test(tag.text || '')) {
       // 如果不是element的标签(E|el开头) 则返回 null 表示没有hover

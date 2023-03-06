@@ -1,6 +1,6 @@
-import { ElDocument } from '@/document';
-import { DocumentAttribute } from '@/document';
-import { DocumentScopedSlot } from '@/document';
+import { type ElDocument } from '@/document';
+import { type DocumentAttribute } from '@/document';
+import { type DocumentScopedSlot } from '@/document';
 
 export const attributes: DocumentAttribute[] = [
   {

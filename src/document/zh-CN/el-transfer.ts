@@ -1,9 +1,4 @@
-import { ElDocument } from '@/document';
-import { DocumentAttribute } from '@/document';
-import { DocumentMethod } from '@/document';
-import { DocumentEvent } from '@/document';
-import { DocumentSlot } from '@/document';
-import { DocumentScopedSlot } from '@/document';
+import { type DocumentAttribute, type DocumentEvent, type DocumentMethod, type DocumentScopedSlot, type DocumentSlot, type ElDocument } from '@/document';
 
 export const attributes: DocumentAttribute[] = [
   {
@@ -75,6 +70,7 @@ export const attributes: DocumentAttribute[] = [
     description: '列表顶部勾选状态文案',
     type: 'object{noChecked, hasChecked}',
     value: '—',
+    // eslint-disable-next-line no-template-curly-in-string
     default: "{ noChecked: '${checked}/${total}', hasChecked: '${checked}/${total}' }",
   },
   {

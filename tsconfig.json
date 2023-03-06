@@ -40,5 +40,5 @@
     // "importsNotUsedAsValues": "error", // 强制对类型使用“import type”而不是“import”(ts5.0废弃)
     "skipLibCheck": true
   },
-  "include": ["./src"]
+  "include": ["./src", ".eslintrc.js"]
 }
