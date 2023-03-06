@@ -1,33 +1,29 @@
-import { TagObject } from '@/hover-tips';
+import type { TagObject } from "@/hover-tips/index";
 import {
   CompletionItemProvider,
   TextDocument,
   Position,
-  CancellationToken,
   ProviderResult,
   Range,
   CompletionItem,
-  CompletionContext,
   CompletionList,
   CompletionItemKind,
   workspace,
   SnippetString,
-} from 'vscode';
+} from "vscode";
 
-import { localDocument } from '@/document';
-import { ExtensionConfigutation, ExtensionLanguage } from '..';
-import { DocumentAttribute, DocumentEvent } from '@/document';
+import { localDocument } from "@/document";
+import { ExtensionConfigutation, ExtensionLanguage } from "..";
+import { DocumentAttribute, DocumentEvent } from "@/document";
 
-export class ElementCompletionItemProvider implements CompletionItemProvider<CompletionItem> {
+export class ElementCompletionItemProvider
+  implements CompletionItemProvider<CompletionItem>
+{
   private _document!: TextDocument;
   private _position!: Position;
-  private token!: CancellationToken;
   private tagReg: RegExp = /<([\w-]+)\s*/g;
   private attrReg: RegExp = /(?:\(|\s*)([\w-]+)=['"][^'"]*/;
   private tagStartReg: RegExp = /<([\w-]*)$/;
-  private pugTagStartReg: RegExp = /^\s*[\w-]*$/;
-  private size!: number;
-  private quotes!: string;
 
   /**
    * 获取前置标签
@@ -42,7 +38,7 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
         txt = this._document.lineAt(line).text;
       }
       tag = this.matchTag(this.tagReg, txt, line);
-      if (tag === 'break') {
+      if (tag === "break") {
         return undefined;
       }
       if (tag) {
@@ -57,10 +53,15 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
    * 获取前置属性
    */
   getPreAttr(): string {
-    let txt = this.getTextBeforePosition(this._position).replace(/"[^'"]*(\s*)[^'"]*$/, '');
+    let txt = this.getTextBeforePosition(this._position).replace(
+      /"[^'"]*(\s*)[^'"]*$/,
+      ""
+    );
     let end = this._position.character;
-    let start = txt.lastIndexOf(' ', end) + 1;
-    let parsedTxt = this._document.getText(new Range(this._position.line, start, this._position.line, end));
+    let start = txt.lastIndexOf(" ", end) + 1;
+    let parsedTxt = this._document.getText(
+      new Range(this._position.line, start, this._position.line, end)
+    );
     return this.matchAttr(this.attrReg, parsedTxt);
   }
 
@@ -74,9 +75,9 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
     let match: RegExpExecArray | null;
     match = reg.exec(txt);
     if (!/"[^"]*"/.test(txt) && match) {
-      return match[1];
+      return match[1] || "";
     }
-    return '';
+    return "";
   }
 
   /**
@@ -85,19 +86,25 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
    * @param txt 匹配文本
    * @param line 当前行
    */
-  matchTag(reg: RegExp, txt: string, line: number): TagObject | string | undefined {
+  matchTag(
+    reg: RegExp,
+    txt: string,
+    line: number
+  ): TagObject | string | undefined {
     let match: RegExpExecArray | null;
     let arr: TagObject[] = [];
 
     if (
       /<\/?[-\w]+[^<>]*>[\s\w]*<?\s*[\w-]*$/.test(txt) ||
-      (this._position.line === line && (/^\s*[^<]+\s*>[^</>]*$/.test(txt) || /[^<>]*<$/.test(txt[txt.length - 1])))
+      (this._position.line === line &&
+        (/^\s*[^<]+\s*>[^</>]*$/.test(txt) ||
+          /[^<>]*<$/.test(txt[txt.length - 1] || "")))
     ) {
-      return 'break';
+      return "break";
     }
     while ((match = reg.exec(txt))) {
       arr.push({
-        text: match[1],
+        text: match[1] || "",
         offset: this._document.offsetAt(new Position(line, match.index)),
       });
     }
@@ -149,11 +156,15 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
    * @param attr 属性
    */
   getAttrValues(tag: string, attr: string): string[] {
-    const config = workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
+    const config = workspace
+      .getConfiguration()
+      .get<ExtensionConfigutation>("element-ui-helper");
     const language = config?.language || ExtensionLanguage.cn;
-    const document: Record<string, any> = localDocument[language];
-    const attributes: DocumentAttribute[] = document[tag].attributes || [];
-    const attribute: DocumentAttribute | undefined = attributes.find((attribute) => attribute.name === attr);
+    const document: Record<string, any> | undefined = localDocument[language];
+    const attributes: DocumentAttribute[] = document?.[tag].attributes || [];
+    const attribute: DocumentAttribute | undefined = attributes.find(
+      (attribute) => attribute.name === attr
+    );
     if (!attribute) {
       return [];
     }
@@ -191,15 +202,19 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
    */
   getEventCompletionItems(tag: string): CompletionItem[] {
     let completionItems: CompletionItem[] = [];
-    const config = workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
+    const config = workspace
+      .getConfiguration()
+      .get<ExtensionConfigutation>("element-ui-helper");
     const language = config?.language || ExtensionLanguage.cn;
-    const document: Record<string, any> = localDocument[language];
+    const document: Record<string, any> | undefined = localDocument[language];
     const preText = this.getTextBeforePosition(this._position);
-    const prefix = preText.replace(/.*@([\w-]*)$/, '$1');
-    const events: DocumentEvent[] = document[tag]?.events || [];
-    const likeTag = events.filter((evnet: DocumentEvent) => evnet.name.includes(prefix));
+    const prefix = preText.replace(/.*@([\w-]*)$/, "$1");
+    const events: DocumentEvent[] = document?.[tag]?.events || [];
+    const likeTag = events.filter((evnet: DocumentEvent) =>
+      evnet.name.includes(prefix)
+    );
     likeTag.forEach((event: DocumentEvent) => {
-      const start = preText.lastIndexOf('@') + 1;
+      const start = preText.lastIndexOf("@") + 1;
       const end = start + prefix.length;
       const startPos = new Position(this._position.line, start);
       const endPos = new Position(this._position.line, end);
@@ -224,15 +239,20 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
    */
   getAttrCompletionItems(tag: string): CompletionItem[] {
     let completionItems: CompletionItem[] = [];
-    const config = workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
+    const config = workspace
+      .getConfiguration()
+      .get<ExtensionConfigutation>("element-ui-helper");
     const language = config?.language || ExtensionLanguage.cn;
-    const document: Record<string, any> = localDocument[language];
+    const document: Record<string, any> | undefined = localDocument[language];
     const preText = this.getTextBeforePosition(this._position);
-    const prefix = preText.replace(/.*[\s@:]/g, '');
-    const attributes: DocumentAttribute[] = document[tag].attributes || [];
-    const likeTag = attributes.filter((attribute: DocumentAttribute) => attribute.name.includes(prefix));
+    const prefix = preText.replace(/.*[\s@:]/g, "");
+    const attributes: DocumentAttribute[] = document?.[tag].attributes || [];
+    const likeTag = attributes.filter((attribute: DocumentAttribute) =>
+      attribute.name.includes(prefix)
+    );
     likeTag.forEach((attribute: DocumentAttribute) => {
-      const start = Math.max(preText.lastIndexOf(' '), preText.lastIndexOf(':')) + 1;
+      const start =
+        Math.max(preText.lastIndexOf(" "), preText.lastIndexOf(":")) + 1;
       const end = start + prefix.length;
       const startPos = new Position(this._position.line, start);
       const endPos = new Position(this._position.line, end);
@@ -261,14 +281,16 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
   /**
    * 获取标签提示
    */
-  getTagCompletionItems(tag: string): CompletionItem[] {
+  getTagCompletionItems(): CompletionItem[] {
     let completionItems: CompletionItem[] = [];
-    const config = workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
+    const config = workspace
+      .getConfiguration()
+      .get<ExtensionConfigutation>("element-ui-helper");
     const language = config?.language || ExtensionLanguage.cn;
     const preText = this.getTextBeforePosition(this._position);
-    const document: Record<string, any> = localDocument[language];
+    const document: Record<string, any> = localDocument[language] || {};
     Object.keys(document).forEach((key) => {
-      const start = preText.lastIndexOf('<') + 1;
+      const start = preText.lastIndexOf("<") + 1;
       const end = preText.length - start + 1;
       const startPos = new Position(this._position.line, start);
       const endPos = new Position(this._position.line, end);
@@ -276,9 +298,14 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
       completionItems.push({
         label: `${key}`,
         sortText: `0${key}`,
-        detail: 'ElementUI Tag',
+        detail: "ElementUI Tag",
         kind: CompletionItemKind.Value,
-        insertText: new SnippetString().appendText(`${key}`).appendTabstop().appendText('>').appendTabstop().appendText(`</${key}>`),
+        insertText: new SnippetString()
+          .appendText(`${key}`)
+          .appendTabstop()
+          .appendText(">")
+          .appendTabstop()
+          .appendText(`</${key}>`),
         range,
       });
     });
@@ -290,23 +317,18 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
    *
    * @param document 文档
    * @param position 位置
-   * @param token token
-   * @param context 上下文
    */
   provideCompletionItems(
     document: TextDocument,
-    position: Position,
-    token: CancellationToken,
-    context: CompletionContext
+    position: Position
   ): ProviderResult<CompletionItem[] | CompletionList<CompletionItem>> {
     this._document = document;
     this._position = position;
-    this.token = token;
 
     let tag: TagObject | undefined = this.getPreTag();
     let attr = this.getPreAttr();
 
-    if (!tag || !/^[E|e]l/.test(tag.text || '')) {
+    if (!tag || !/^[E|e]l/.test(tag.text || "")) {
       // 如果不是element的标签(E|el开头) 则返回 null 表示没有hover
       return null;
     } else if (this.isAttrValueStart(tag, attr)) {
@@ -320,7 +342,7 @@ export class ElementCompletionItemProvider implements CompletionItemProvider<Com
       return this.getAttrCompletionItems(tag.text);
     } else if (this.isTagStart()) {
       // 判断标签
-      return this.getTagCompletionItems(tag.text);
+      return this.getTagCompletionItems();
     }
 
     return null;

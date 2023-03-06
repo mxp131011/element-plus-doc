@@ -1,33 +1,31 @@
 {
   "template": {
     "prefix": "template",
-    "body": [
-      "<template>",
-      "  $1",
-      "</template>"
-    ],
+    "body": ["<template>", "  $1", "</template>"],
     "description": "模板"
   },
   "slot": {
     "prefix": "slot",
-    "body": [
-      "<slot name=\"$1\" />"
-    ],
+    "body": ["<slot name=\"$1\" />"],
     "description": "插槽"
   },
   "button": {
-    "prefix": "el-button", 
+    "prefix": "el-button",
     "body": ["<el-button type=\"$1\" @click=\"$2\">$3</el-button>"],
     "description": "按钮组件"
   },
   "confirm": {
     "prefix": "el-confirm",
-    "body": ["<el-button type=\"primary\" @click=\"confirm()\" :loading=\"confirmLoading\">确认</el-button>"],
+    "body": [
+      "<el-button type=\"primary\" @click=\"confirm()\" :loading=\"confirmLoading\">确认</el-button>"
+    ],
     "description": "确认按钮组件"
   },
   "cancel": {
     "prefix": "el-cancel",
-    "body": ["<el-button type=\"default\" @click=\"cancel()\">取消</el-button>"],
+    "body": [
+      "<el-button type=\"default\" @click=\"cancel()\">取消</el-button>"
+    ],
     "description": "取消按钮组件"
   },
   "link": {
@@ -37,20 +35,12 @@
   },
   "scrollbar": {
     "prefix": "el-scrollbar",
-    "body": [
-      "<el-scrollbar height=\"$1\">",
-      "$2",
-      "</el-scrollbar>"
-    ],
+    "body": ["<el-scrollbar height=\"$1\">", "$2", "</el-scrollbar>"],
     "description": "滚动条组件"
   },
   "space": {
     "prefix": "el-space",
-    "body": [
-      "<el-space wrap>",
-      "$1",
-      "</el-space>"
-    ],
+    "body": ["<el-space wrap>", "$1", "</el-space>"],
     "description": "间距组件"
   },
   "autocomplete": {
@@ -75,85 +65,73 @@
   "tabs": {
     "prefix": "el-tabs",
     "body": [
-      "<el-tabs v-model=\"activeKey\">", 
-      "  <el-tab-pane key=\"1\" tab=\"$1\">$2</el-tab-pane>", 
+      "<el-tabs v-model=\"activeKey\">",
+      "  <el-tab-pane key=\"1\" tab=\"$1\">$2</el-tab-pane>",
       "</el-tabs>"
     ],
     "description": "标签页组件"
   },
   "tab-pane": {
     "prefix": "el-tab-pane",
-    "body": [
-      "<el-tab-pane key=\"$1\" tab=\"$2\">$3</el-tab-pane>"
-    ],
+    "body": ["<el-tab-pane key=\"$1\" tab=\"$2\">$3</el-tab-pane>"],
     "description": "面包屑子组件"
   },
   "container": {
     "prefix": "el-container",
     "body": [
-      "<el-container>", 
-      "  <el-aside width=\"200px\">Sider</el-aside>", 
-      "  <el-container>", 
-      "    <el-header>Header</el-header>", 
-      "    <el-main>main</el-main>", 
-      "    <el-footer>footer</el-footer>", 
-      "  </el-container>", 
+      "<el-container>",
+      "  <el-aside width=\"200px\">Sider</el-aside>",
+      "  <el-container>",
+      "    <el-header>Header</el-header>",
+      "    <el-main>main</el-main>",
+      "    <el-footer>footer</el-footer>",
+      "  </el-container>",
       "</el-container>"
     ],
     "description": "布局组件"
   },
   "aside": {
     "prefix": "el-aside",
-    "body": [
-      "<el-aside>aside</el-aside>"
-    ],
+    "body": ["<el-aside>aside</el-aside>"],
     "description": "布局侧边栏组件"
   },
   "header": {
     "prefix": "el-header",
-    "body": [
-      "<el-header>header</el-header>"
-    ],
+    "body": ["<el-header>header</el-header>"],
     "description": "布局顶部组件"
   },
   "main": {
     "prefix": "el-main",
-    "body": [
-      "<el-main>main</el-main>"
-    ],
+    "body": ["<el-main>main</el-main>"],
     "description": "布局内容组件"
   },
   "footer": {
     "prefix": "el-footer",
-    "body": [
-      "<el-footer>footer</el-footer>"
-    ],
+    "body": ["<el-footer>footer</el-footer>"],
     "description": "布局底部组件"
   },
   "breadcrumb": {
     "prefix": "el-breadcrumb",
     "body": [
-      "<el-breadcrumb separator-class=\"el-icon-arrow-right\">", 
-      "  <el-breadcrumb-item :to=\"{ path: '/' }\">$1</el-breadcrumb-item>", 
-      "  <el-breadcrumb-item>$2</el-breadcrumb-item>", 
-      "  <el-breadcrumb-item>$3</el-breadcrumb-item>", 
+      "<el-breadcrumb separator-class=\"el-icon-arrow-right\">",
+      "  <el-breadcrumb-item :to=\"{ path: '/' }\">$1</el-breadcrumb-item>",
+      "  <el-breadcrumb-item>$2</el-breadcrumb-item>",
+      "  <el-breadcrumb-item>$3</el-breadcrumb-item>",
       "</el-breadcrumb>"
     ],
     "description": "面包屑组件"
   },
   "breadcrumb-item": {
     "prefix": "el-breadcrumb-item",
-    "body": [
-      "<el-breadcrumb-item>$1</el-breadcrumb-item>"
-    ],
+    "body": ["<el-breadcrumb-item>$1</el-breadcrumb-item>"],
     "description": "面包屑子组件"
   },
   "menu": {
     "prefix": "el-menu",
     "body": [
-      "<el-menu :default-active=\"current\" mode=\"horizontal\">", 
-      "  <el-menu-item index=\"1\">$1</el-menu-item>", 
-      "  <el-menu-item index=\"2\">$2</el-menu-item>", 
+      "<el-menu :default-active=\"current\" mode=\"horizontal\">",
+      "  <el-menu-item index=\"1\">$1</el-menu-item>",
+      "  <el-menu-item index=\"2\">$2</el-menu-item>",
       "</el-menu>"
     ],
     "description": "菜单组件"
@@ -161,43 +139,39 @@
   "submenu": {
     "prefix": "el-submenu",
     "body": [
-      "<el-submenu>", 
-      "  <span slot=\"title\">$1</span>", 
+      "<el-submenu>",
+      "  <span slot=\"title\">$1</span>",
       "  <el-menu-item index=\"1\">$2</el-menu-item>",
-      "  <el-menu-item index=\"2\">$3</el-menu-item>", 
+      "  <el-menu-item index=\"2\">$3</el-menu-item>",
       "</el-submenu>"
     ],
     "description": "子菜单组件"
   },
   "menu-item": {
     "prefix": "el-menu-item",
-    "body": [
-      "<el-menu-item index=\"1\">$1</el-menu-item>"
-    ],
+    "body": ["<el-menu-item index=\"1\">$1</el-menu-item>"],
     "description": "菜单子组件"
   },
   "timeline": {
     "prefix": "el-timeline",
     "body": [
-      "<el-timeline :reverse=\"false\">", 
-      "  <el-timeline-item>$1</el-timeline-item>", 
-      "  <el-timeline-item>$2</el-timeline-item>", 
+      "<el-timeline :reverse=\"false\">",
+      "  <el-timeline-item>$1</el-timeline-item>",
+      "  <el-timeline-item>$2</el-timeline-item>",
       "</el-timeline>"
     ],
     "description": "时间轴组件"
   },
   "timeline-item": {
     "prefix": "el-timeline-item",
-    "body": [
-      "<el-timeline-item color=\"$1\">$2</el-timeline-item>"
-    ],
+    "body": ["<el-timeline-item color=\"$1\">$2</el-timeline-item>"],
     "description": "时间轴子组件"
   },
   "collapse": {
     "prefix": "el-collapse",
     "body": [
-      "<el-collapse v-model=\"activeKey\">", 
-      "  <el-collapse-item name=\"1\" title=\"$1\">$2</el-collapse-item>", 
+      "<el-collapse v-model=\"activeKey\">",
+      "  <el-collapse-item name=\"1\" title=\"$1\">$2</el-collapse-item>",
       "</el-collapse>"
     ],
     "description": "折叠面板组件"
@@ -212,17 +186,15 @@
   "descriptions": {
     "prefix": "el-descriptions",
     "body": [
-      "<el-descriptions title=\"$1\">", 
-      "  <el-descriptions-item label=\"$2\">$3</el-descriptions-item>", 
+      "<el-descriptions title=\"$1\">",
+      "  <el-descriptions-item label=\"$2\">$3</el-descriptions-item>",
       "</el-descriptions>"
     ],
     "description": "描述列表组件"
   },
   "descriptions-item": {
     "prefix": "el-descriptions-item",
-    "body": [
-      "<el-descriptions-item label=\"$1\">$2</el-descriptions-item>"
-    ],
+    "body": ["<el-descriptions-item label=\"$1\">$2</el-descriptions-item>"],
     "description": "描述列表子组件"
   },
   "result": {
@@ -242,17 +214,15 @@
   },
   "empty": {
     "prefix": "el-empty",
-    "body": [
-      "<el-empty description=\"$1\" />"
-    ],
+    "body": ["<el-empty description=\"$1\" />"],
     "description": "空状态组件"
   },
   "dropdown": {
     "prefix": "el-dropdown",
     "body": [
-      "<el-dropdown>", 
+      "<el-dropdown>",
       "  <span>$1</span>",
-      "  <el-dropdown-menu slot=\"dropdown\">", 
+      "  <el-dropdown-menu slot=\"dropdown\">",
       "    <el-dropdown-item>",
       "      $2",
       "    </el-dropdown-item>",
@@ -267,7 +237,7 @@
   "dropdown-menu": {
     "prefix": "el-dropdown-menu",
     "body": [
-      "<el-dropdown-menu>", 
+      "<el-dropdown-menu>",
       "  <el-dropdown-item>",
       "    $1",
       "  </el-dropdown-item>",
@@ -280,11 +250,7 @@
   },
   "dropdown-item": {
     "prefix": "el-dropdown-item",
-    "body": [
-      "<el-dropdown-item>",
-      "  $1", 
-      "</el-dropdown-item>"
-    ],
+    "body": ["<el-dropdown-item>", "  $1", "</el-dropdown-item>"],
     "description": "下拉菜单子组件"
   },
   "pagination": {
@@ -318,9 +284,7 @@
   },
   "checkbox": {
     "prefix": "el-checkbox",
-    "body": [
-      "<el-checkbox v-model=\"checked\">$1</el-checkbox>"
-    ],
+    "body": ["<el-checkbox v-model=\"checked\">$1</el-checkbox>"],
     "description": "复选框组件"
   },
   "radio-group": {
@@ -339,18 +303,12 @@
   },
   "radio": {
     "prefix": "el-radio",
-    "body": [
-      "<el-radio v-model=\"checked\" :label=\"$1\">$2</el-radio>"
-    ],
+    "body": ["<el-radio v-model=\"checked\" :label=\"$1\">$2</el-radio>"],
     "description": "复选框组件"
   },
   "badge": {
     "prefix": "el-badge",
-    "body": [
-      "<el-badge :value=\"count\">",
-      "  $1",
-      "</el-badge>"
-    ],
+    "body": ["<el-badge :value=\"count\">", "  $1", "</el-badge>"],
     "description": "徽标数组件"
   },
   "calendar": {
@@ -392,9 +350,7 @@
   },
   "carousel-item": {
     "prefix": "el-carousel-item",
-    "body": [
-      "<el-carousel-item>$1</el-carousel-item>"
-    ],
+    "body": ["<el-carousel-item>$1</el-carousel-item>"],
     "description": "走马灯子组件"
   },
   "switch": {
@@ -423,7 +379,9 @@
   },
   "input-number": {
     "prefix": "el-input-number",
-    "body": ["<el-input-number :min=\"$1\" :max=\"$2\" v-model=\"value\" :step=\"1\" />"],
+    "body": [
+      "<el-input-number :min=\"$1\" :max=\"$2\" v-model=\"value\" :step=\"1\" />"
+    ],
     "description": "数字输入框组件"
   },
   "avatar": {
@@ -501,22 +459,30 @@
   },
   "time-select": {
     "prefix": "el-time-select",
-    "body": ["<el-time-select v-model=\"value\" :picker-options=\"{ start: '00:00', step: '00:15', end: '24:00' }\" placeholder=\"$1\" />"],
+    "body": [
+      "<el-time-select v-model=\"value\" :picker-options=\"{ start: '00:00', step: '00:15', end: '24:00' }\" placeholder=\"$1\" />"
+    ],
     "description": "时间选择器"
   },
   "time-picker": {
     "prefix": "el-time-picker",
-    "body": ["<el-time-picker v-model=\"value\" value-format=\"HH:mm:ss\" @change=\"getTime\" />"],
+    "body": [
+      "<el-time-picker v-model=\"value\" value-format=\"HH:mm:ss\" @change=\"getTime\" />"
+    ],
     "description": "时间选择器"
   },
   "date-picker": {
     "prefix": "el-date-picker",
-    "body": ["<el-date-picker v-model=\"value\" type=\"datetime\" value-format=\"YYYY-MM-DD HH:mm:ss\" @change=\"getDate\" />"],
+    "body": [
+      "<el-date-picker v-model=\"value\" type=\"datetime\" value-format=\"YYYY-MM-DD HH:mm:ss\" @change=\"getDate\" />"
+    ],
     "description": "日期选择器"
   },
   "range-picker": {
     "prefix": "el-date-picker",
-    "body": ["<el-date-picker type=\"datetimerange\" v-model=\"value\" format=\"YYYY-MM-DD HH:mm:ss\" @change=\"getDateRange\" />"],
+    "body": [
+      "<el-date-picker type=\"datetimerange\" v-model=\"value\" format=\"YYYY-MM-DD HH:mm:ss\" @change=\"getDateRange\" />"
+    ],
     "description": "日期范围选择器"
   },
   "rate": {
@@ -532,9 +498,9 @@
   "steps": {
     "prefix": "el-steps",
     "body": [
-      "<el-steps :active=\"current\" direction=\"horizontal\" :status=\"status\">", 
-      "  <el-step title=\"标题\" description=\"描述\" />", 
-      "  <el-step>", 
+      "<el-steps :active=\"current\" direction=\"horizontal\" :status=\"status\">",
+      "  <el-step title=\"标题\" description=\"描述\" />",
+      "  <el-step>",
       "    <template slot=\"title\">",
       "      $1",
       "    </template>",
@@ -560,14 +526,14 @@
   },
   "transfer": {
     "prefix": "el-transfer",
-    "body": [
-      "<el-transfer :data=\"data\" v-model=\"value\" />"
-    ],
+    "body": ["<el-transfer :data=\"data\" v-model=\"value\" />"],
     "description": "穿梭框组件"
   },
   "cascader": {
     "prefix": "el-cascader",
-    "body": ["<el-cascader v-model=\"value\" :options=\"options\" placeholder=\"Please select\" @change=\"onChange\" />"],
+    "body": [
+      "<el-cascader v-model=\"value\" :options=\"options\" placeholder=\"Please select\" @change=\"onChange\" />"
+    ],
     "description": "级联选择组件"
   },
   "cascader-panel": {
@@ -631,9 +597,7 @@
   },
   "page-header": {
     "prefix": "el-page-header",
-    "body": [
-      "<el-page-header content=\"$1\" @back=\"\\$router.back()\" />"
-    ],
+    "body": ["<el-page-header content=\"$1\" @back=\"\\$router.back()\" />"],
     "description": "页头组件"
   },
   "table": {
@@ -647,7 +611,7 @@
       "  rowKey=\"id\"",
       "  :pagination=\"{",
       "    showSizeChanger: true,",
-      "    showTotal: (total) => `共${total}条数据`,",  
+      "    showTotal: (total) => `共${total}条数据`,",
       "    pageSize: pageSize,",
       "    page: page,",
       "  }\"",
@@ -685,8 +649,8 @@
   "form-item": {
     "prefix": "el-form-item",
     "body": [
-      "<el-form-item label=\"$1\" prop=\"$2\">", 
-      "  $3", 
+      "<el-form-item label=\"$1\" prop=\"$2\">",
+      "  $3",
       "</el-form-item>"
     ],
     "description": "表单子组件"
@@ -694,9 +658,9 @@
   "row": {
     "prefix": "el-row",
     "body": [
-      "<el-row :gutter=\"0\">", 
-      "  <el-col :span=\"12\">$1</el-col>", 
-      "  <el-col :span=\"12\">$2</el-col>", 
+      "<el-row :gutter=\"0\">",
+      "  <el-col :span=\"12\">$1</el-col>",
+      "  <el-col :span=\"12\">$2</el-col>",
       "</el-row>"
     ],
     "description": "栅格布局组件"

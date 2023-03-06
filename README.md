@@ -1,31 +1,71 @@
-## element-plus-vue（适用于 vue3）
+# element-plus-doc README
 
-element-plus-vue项目开发插件，专注于提高开发效率~
+This is the README for your extension "element-plus-doc". After writing up a brief description, we recommend including the following sections.
 
-<br/>
+## Features
 
-## 功能介绍
+Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-- 所有基本代码片段
+For example if there is an image subfolder under your extension project workspace:
 
-![](https://s3.bmp.ovh/imgs/2022/11/03/0c710c196dc91abb.gif)
+\!\[feature X\]\(images/feature-x.png\)
 
-- 代码片段跳转至官方文档 
+> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
-![](https://res.wx.qq.com/t/fed_upload/c0e76595-61a1-489f-b640-7b21d7a96e6d/1645878308961.gif)
+## Requirements
 
-- 标签悬浮提示
+If you have any requirements or dependencies, add a section describing those and how to install and configure them.
 
-![](https://s3.bmp.ovh/imgs/2022/11/03/d4355e21dbd8c3f1.gif)
+## Extension Settings
 
-- 标签属性代码补全
+Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
-![](https://s3.bmp.ovh/imgs/2022/11/03/f65a1f489bbb1d70.gif)
+For example:
 
-## 常见问题
+This extension contributes the following settings:
 
-1. 为什么我安装了插件，但是代码片段不生效？
+- `myExtension.enable`: Enable/disable this extension.
+- `myExtension.thing`: Set to `blah` to do something.
 
-可以先安装前置插件解决：
+## Known Issues
 
-![](https://s3.bmp.ovh/imgs/2022/11/03/76df67d3835d1c06.png)
+Calling out known issues can help limit users opening duplicate issues against your extension.
+
+## Release Notes
+
+Users appreciate release notes as you update your extension.
+
+### 1.0.0
+
+Initial release of ...
+
+### 1.0.1
+
+Fixed issue #.
+
+### 1.1.0
+
+Added features X, Y, and Z.
+
+---
+
+## Following extension guidelines
+
+Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+
+- [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+
+## Working with Markdown
+
+You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+
+- Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
+- Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
+- Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+
+## For more information
+
+- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
+- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+
+**Enjoy!**

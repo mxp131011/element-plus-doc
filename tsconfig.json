@@ -1,20 +1,44 @@
 {
-	"compilerOptions": {
-		"baseUrl": "./",
-		"module": "commonjs",
-		"target": "ES2020",
-		"lib": [
-			"ES2020"
-		],
-		"paths": {
-			"@/*": ["src/*"]
-		},
-		"sourceMap": true,
-		"rootDir": "src",
-		"strict": true   /* enable all strict type-checking options */
-		/* Additional Checks */
-		// "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
-		// "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
-		// "noUnusedParameters": true,  /* Report errors on unused parameters. */
-	}
+  "compilerOptions": {
+    "baseUrl": "./", // 用于解析非相对模块名称的基目录
+    "target": "ESNext", // 目标语言的版本
+    "module": "CommonJS", // 生成代码的模板标准
+    "moduleResolution": "node", // 选择模块解析策略
+    "esModuleInterop": true,
+    "isolatedModules": true, // 将每个文件做为单独的模块 (vite所需)
+    "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入 (解决 不支持使用引入 使用export=导出的模块问题)
+    "declaration": false, // 生成声明文件，开启后会自动生成声明文件
+    "useDefineForClassFields": true,
+    "lib": ["ESNext"], // TS需要引用的库，即声明文件，es5 默认引用dom、es5、scripthost,如需要使用es的高级版本特性，通常都需要配置，如es8的数组新特性需要引入"ES2019.Array",
+    "strict": true, // 启用所有严格类型检查选项
+    "noImplicitAny": true, // 在表达式和声明上有隐含的 any类型时报错
+    "strictNullChecks": true, // 当类型检查时,要考虑' null '和' undefined '。
+    "noImplicitThis": true, // 当 this 表达式值为 any 类型的时候,生成一个错误
+    "alwaysStrict": true, // 以严格模式检查每个模块,并在每个文件里加入 'use strict'
+    "resolveJsonModule": true, // 启用.json文件导入
+    "allowJs": true, // 允许编译器编译JS，JSX文件
+    "checkJs": true, // 允许在JS文件中报错，通常与allowJS一起使用
+    "noUnusedLocals": true, // 有未使用的变量时,抛出错误
+    "noUnusedParameters": true, // 有未使用的参数时,抛出错误
+    "noImplicitReturns": true, // 并不是所有函数里的代码都有返回值时,抛出错误
+    "noFallthroughCasesInSwitch": true, // 报告 switch 语句的 fallthrough 错误。(即,不允许 switch 的 case 语句贯穿)
+    "useUnknownInCatchVariables": false, // 类型捕获子句变量为'unknown'而不是'any'
+    "removeComments": true, // 移除注释
+    "noEmit": true, // 禁止编译器生成文件
+    "newLine": "lf", // 设置生成文件的换行符
+    "forceConsistentCasingInFileNames": true, // 强制文件名的大小写一致
+    "strictFunctionTypes": true, // 在赋值函数时,请检查以确保参数和返回值是子类型兼容的
+    "strictBindCallApply": true, // 检查' bind '、' call '和' apply '方法的参数是否与原始函数匹配
+    "strictPropertyInitialization": true, // 检查在构造函数中声明但没有设置的类属性
+    "noUncheckedIndexedAccess": true, // 在索引签名结果中包含'undefined'
+    "noImplicitOverride": true, // 确保派生类中的重写成员用重写修饰符标记
+    "paths": {
+      "@/*": ["src/*"]
+    },
+
+    // "preserveValueImports": true, // 引入类型时必须标记为true （ts5.0废弃）
+    // "importsNotUsedAsValues": "error", // 强制对类型使用“import type”而不是“import”(ts5.0废弃)
+    "skipLibCheck": true
+  },
+  "include": ["./src"]
 }

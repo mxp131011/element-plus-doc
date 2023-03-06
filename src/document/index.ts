@@ -1,4 +1,4 @@
-import { ExtensionLanguage } from '../'
+import { ExtensionLanguage } from "../";
 
 /**
  * 文档属性类型
@@ -8,15 +8,15 @@ import { ExtensionLanguage } from '../'
  */
 export interface DocumentAttribute {
   // 参数名称
-  name: string
+  name: string;
   // 说明
-  description: string
+  description: string;
   // 类型
-  type: string
+  type: string;
   // 可选值
-  value: string
+  value: string;
   // 默认值
-  default: any
+  default: any;
 }
 
 /**
@@ -27,11 +27,11 @@ export interface DocumentAttribute {
  */
 export interface DocumentEvent {
   // 事件名称
-  name: string
+  name: string;
   // 说明
-  description: string
+  description: string;
   // 参数
-  parameter: string
+  parameter: string;
 }
 
 /**
@@ -42,11 +42,11 @@ export interface DocumentEvent {
  */
 export interface DocumentMethod {
   // 方法名称
-  name: string
+  name: string;
   // 说明
-  description: string
+  description: string;
   // 参数
-  parameter: string
+  parameter: string;
 }
 
 /**
@@ -57,9 +57,9 @@ export interface DocumentMethod {
  */
 export interface DocumentSlot {
   // 插槽名称
-  name: string
+  name: string;
   // 说明
-  description: string
+  description: string;
 }
 
 /**
@@ -68,7 +68,7 @@ export interface DocumentSlot {
  * @export
  * @interface DocumentScopedSlot
  */
-export type DocumentScopedSlot = DocumentSlot
+export type DocumentScopedSlot = DocumentSlot;
 
 /**
  * 基础文档接口
@@ -77,11 +77,11 @@ export type DocumentScopedSlot = DocumentSlot
  * @interface BaseDocument
  */
 export interface BaseDocument {
-  attributes?: DocumentAttribute[]
-  events?: DocumentEvent[]
-  methods?: DocumentMethod[]
-  scopedSlots?: DocumentScopedSlot[]
-  slots?: DocumentSlot[]
+  attributes?: DocumentAttribute[];
+  events?: DocumentEvent[];
+  methods?: DocumentMethod[];
+  scopedSlots?: DocumentScopedSlot[];
+  slots?: DocumentSlot[];
 }
 
 /**
@@ -93,10 +93,10 @@ export interface BaseDocument {
  * @extends {BaseDocument}
  */
 export interface ElDocument extends BaseDocument {
-  pickerOptions?: DocumentAttribute[]
-  shortcuts?: DocumentAttribute[]
-  selectOptions?: DocumentAttribute[]
-  props?: DocumentAttribute[]
+  pickerOptions?: DocumentAttribute[];
+  shortcuts?: DocumentAttribute[];
+  selectOptions?: DocumentAttribute[];
+  props?: DocumentAttribute[];
 }
 
 /**
@@ -105,13 +105,13 @@ export interface ElDocument extends BaseDocument {
  * @export
  * @type LocalDocument
  */
-export type LocalDocument = Record<string, Record<string, any>>
+export type LocalDocument = Record<string, Record<string, any>>;
 
-import CnDocument from './zh-CN'
-import EnDocument from './en-US'
+import CnDocument from "./zh-CN";
+import EnDocument from "./en-US";
 
 // 统一导出文档
 export const localDocument: LocalDocument = {
   [ExtensionLanguage.en]: EnDocument,
-  [ExtensionLanguage.cn]: CnDocument
-}
+  [ExtensionLanguage.cn]: CnDocument,
+};

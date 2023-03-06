@@ -1,9 +1,7 @@
 {
   "navigateTo": {
     "prefix": "navigateTo",
-    "body": [
-      "navigateTo(path: string) {\n\tthis.\\$router.push(path)\n},"
-    ],
+    "body": ["navigateTo(path: string) {\n\tthis.\\$router.push(path)\n},"],
     "description": "路由跳转"
   },
   "rules": {
@@ -16,30 +14,22 @@
   },
   "success": {
     "prefix": "success",
-    "body": [
-      "this.\\$message.success($1);"
-    ],
+    "body": ["this.\\$message.success($1);"],
     "description": "成功提示"
   },
   "info": {
     "prefix": "info",
-    "body": [
-      "this.\\$message.info($1);"
-    ],
+    "body": ["this.\\$message.info($1);"],
     "description": "温馨提示"
   },
   "error": {
     "prefix": "error",
-    "body": [
-      "this.\\$message.error($1);"
-    ],
+    "body": ["this.\\$message.error($1);"],
     "description": "错误提示"
   },
   "warning": {
     "prefix": "warning",
-    "body": [
-      "this.\\$message.warning($1);"
-    ],
+    "body": ["this.\\$message.warning($1);"],
     "description": "警告提示"
   },
   "alert": {
@@ -143,11 +133,6 @@
   },
   "options": {
     "prefix": "options",
-    "body": [
-      "{",
-      "  value: '$1',",
-      "  label: '$2',",
-      "},"
-    ]
+    "body": ["{", "  value: '$1',", "  label: '$2',", "},"]
   }
 }
