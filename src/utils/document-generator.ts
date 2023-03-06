@@ -1,5 +1,5 @@
 import { MarkdownString } from 'vscode';
-import { type ExtensionLanguage } from '../index';
+import { type ExtensionLanguage } from '@/types/index';
 import { type BaseDocument, type DocumentAttribute, type DocumentMethod, type DocumentScopedSlot, type DocumentSlot } from '@/document';
 
 export class HoverDocumentGenerator {
@@ -238,7 +238,7 @@ export class HoverDocumentGenerator {
   private generateOther<T extends BaseDocument>(document: T, tag: string, attribute: string): MarkdownString {
     let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
-    const attributes = (document as any)[attribute] || [];
+    const attributes = document[attribute] || [];
     if (attributes.length) {
       markdownString.appendMarkdown(`### ${tag} ${attribute} \r`);
       const keys = Object.keys(attributes[0]);

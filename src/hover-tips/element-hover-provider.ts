@@ -1,10 +1,8 @@
 import { Hover, type HoverProvider, type MarkdownString, Position, type ProviderResult, Range, type TextDocument, workspace } from 'vscode';
-
 import { type ElDocument, localDocument } from '@/document';
 import { HoverDocumentGenerator } from '@/utils/document-generator';
 import { toKebabCase } from '../utils';
-import { type ExtensionConfigutation, type ExtensionLanguage } from '../index';
-import { type TagObject } from '.';
+import { type ExtensionConfigutation, type ExtensionLanguage, type TagObject } from '@/types/index';
 
 export class ElementHoverProvier implements HoverProvider {
   private _position!: Position;

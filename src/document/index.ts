@@ -1,4 +1,4 @@
-import { type ExtensionLanguage } from '../index';
+import { type ExtensionLanguage } from '@/types/index';
 
 /**
  * 文档属性类型
