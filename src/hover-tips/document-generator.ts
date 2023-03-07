@@ -16,7 +16,7 @@ export class HoverDocumentGenerator {
    * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
-  private generateAttribute(document: Document.DocumentInstance, tag: string, attribute: string, language: string): MarkdownString {
+  private generateAttribute(document: Document.DocumentInstance, tag: string, attribute: string, language: ExtensionLanguage): MarkdownString {
     let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const attributes = document.attributes || []; // 取得属性列表
@@ -29,19 +29,23 @@ export class HoverDocumentGenerator {
         markdownString.appendMarkdown(`### ${tag} Attributes \r`);
         markdownString.appendMarkdown('| Attributes | Description | Type | Default |\r');
       }
-      markdownString.appendMarkdown('|---|---|:-:|:-:|\r');
+      markdownString.appendMarkdown('|------|------|------|------|\r');
     }
     if (attribute.length === 0) {
       // 属性 和标签一样 显示全部
       attributes.forEach((row: Document.Attribute) => {
-        markdownString.appendMarkdown(`|${row.name}|${row.description}|${row.type}|${row.default}|\r`);
+        markdownString.appendMarkdown(
+          `| \`${row.name}\` | ${language === 'zh-CN' ? row.description.cn : row.description.en} | \`${row.type}\` | \`${row.default}\` |\r`
+        );
         isUndefined = false;
       });
     } else {
       // 属性和标签不一样 显示标签下的某个属性的信息
       const row = attributes.find((_row: Document.Attribute) => _row.name === attribute);
       if (row) {
-        markdownString.appendMarkdown(`|${row.name}|${row.description}|${row.type}|${row.default}|\r`);
+        markdownString.appendMarkdown(
+          `| \`${row.name}\` | ${language === 'zh-CN' ? row.description.cn : row.description.en} | \`${row.type}\` | \`${row.default}\` |\r`
+        );
         isUndefined = false;
       }
     }
@@ -61,7 +65,7 @@ export class HoverDocumentGenerator {
    * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
-  private generateExposes(document: Document.DocumentInstance, tag: string, attribute: string, language: string): MarkdownString {
+  private generateExposes(document: Document.DocumentInstance, tag: string, attribute: string, language: ExtensionLanguage): MarkdownString {
     let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const methods = document.exposes || [];
@@ -73,19 +77,20 @@ export class HoverDocumentGenerator {
         markdownString.appendMarkdown(`### ${tag} Method\r`);
         markdownString.appendMarkdown('| Method | Description | Parameters |\r');
       }
-      markdownString.appendMarkdown('|---|---|:-:|\r');
+      markdownString.appendMarkdown('|------|------|------|\r');
     }
+
     if (attribute.length === 0) {
       // 属性 和标签一样 显示全部
       methods.forEach((row: Document.Expose) => {
-        markdownString.appendMarkdown(`|${row.name}|${row.description}|${row.type}|\r`);
+        markdownString.appendMarkdown(`| ${row.name} | ${language === 'zh-CN' ? row.description.cn : row.description.en} | ${row.type} |\r`);
         isUndefined = false;
       });
     } else {
       // 属性和标签不一样 显示标签下的某个属性的信息
       const row = methods.find((_row: Document.Expose) => _row.name === attribute);
       if (row) {
-        markdownString.appendMarkdown(`|${row.name}|${row.description}|${row.type}|\r`);
+        markdownString.appendMarkdown(`| ${row.name} | ${language === 'zh-CN' ? row.description.cn : row.description.en} | ${row.type}|\r`);
         isUndefined = false;
       }
     }
@@ -105,7 +110,7 @@ export class HoverDocumentGenerator {
    * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
-  private generateEvents(document: Document.DocumentInstance, tag: string, attribute: string, language: string): MarkdownString {
+  private generateEvents(document: Document.DocumentInstance, tag: string, attribute: string, language: ExtensionLanguage): MarkdownString {
     let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const events = document.events || [];
@@ -117,19 +122,19 @@ export class HoverDocumentGenerator {
         markdownString.appendMarkdown(`### ${tag} Event\r`);
         markdownString.appendMarkdown('| Event | Description | Parameters |\r');
       }
-      markdownString.appendMarkdown('|---|---|:-:|\r');
+      markdownString.appendMarkdown('|------|------|------|\r');
     }
     if (attribute.length === 0) {
       // 属性 和标签一样 显示全部
       events.forEach((row: Document.Event) => {
-        markdownString.appendMarkdown(`|${row.name}|${row.description}|${row.type}|\r`);
+        markdownString.appendMarkdown(`| ${row.name} | ${language === 'zh-CN' ? row.description.cn : row.description.en} | ${row.type}|\r`);
         isUndefined = false;
       });
     } else {
       // 属性和标签不一样 显示标签下的某个属性的信息
       const row = events.find((_row: Document.Event) => _row.name === attribute);
       if (row) {
-        markdownString.appendMarkdown(`|${row.name}|${row.description}|${row.type}|\r`);
+        markdownString.appendMarkdown(`|${row.name} | ${language === 'zh-CN' ? row.description.cn : row.description.en} | ${row.type}|\r`);
         isUndefined = false;
       }
     }
@@ -149,7 +154,7 @@ export class HoverDocumentGenerator {
    * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
-  private generateSlots(document: Document.DocumentInstance, tag: string, attribute: string, language: string): MarkdownString {
+  private generateSlots(document: Document.DocumentInstance, tag: string, attribute: string, language: ExtensionLanguage): MarkdownString {
     let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const slots = document.slots || [];
@@ -161,19 +166,19 @@ export class HoverDocumentGenerator {
         markdownString.appendMarkdown(`### ${tag} Slot\r`);
         markdownString.appendMarkdown('| Slot | Description |\r');
       }
-      markdownString.appendMarkdown('|---|---|\r');
+      markdownString.appendMarkdown('|------|------|\r');
     }
     if (attribute.length === 0) {
       // 属性 和标签一样 显示全部
       slots.forEach((row: Document.Slot) => {
-        markdownString.appendMarkdown(`|${row.name}|${row.description}|\r`);
+        markdownString.appendMarkdown(`| \`${row.name}\` | ${language === 'zh-CN' ? row.description.cn : row.description.en} |\r`);
         isUndefined = false;
       });
     } else {
       // 属性和标签不一样 显示标签下的某个属性的信息
       const row = slots.find((_row: Document.Slot) => _row.name === attribute);
       if (row) {
-        markdownString.appendMarkdown(`|${row.name}|${row.description}|\r`);
+        markdownString.appendMarkdown(`| \`${row.name}\` | ${language === 'zh-CN' ? row.description.cn : row.description.en} |\r`);
         isUndefined = false;
       }
     }
@@ -243,9 +248,6 @@ export class HoverDocumentGenerator {
         break;
       case 'slots':
         markdownString = this.generateSlots(document, tag, attr, language);
-        // break;
-        // case 'scopedSlots':
-        //   markdownString = this.generateScopedSlots(document, tag, attr, language);
         break;
       default:
         // 生成其他文档时 属性为key

@@ -11,6 +11,15 @@ const attributes: Document.Attribute[] = [
     default: '—',
   },
   {
+    name: 'v-model',
+    description: {
+      cn: 'binding value',
+      en: 'binding value',
+    },
+    type: 'string',
+    default: '—',
+  },
+  {
     name: 'placeholder',
     description: {
       cn: 'the placeholder of Autocomplete',

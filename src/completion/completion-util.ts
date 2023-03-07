@@ -7,6 +7,9 @@ import type { Document } from '@/types/document';
  *当输入单词或触发字符时补全
  */
 export class CompletionUtil {
+  /** 语言 */
+  private language: ExtensionLanguage;
+
   /** 当前的文档（整个代码文件） */
   private document: vscode.TextDocument;
 
@@ -22,7 +25,8 @@ export class CompletionUtil {
   /** 默认语言 */
   private readonly tagStartReg = /<([\w-]*)$/;
 
-  public constructor(_defLanguage: ExtensionLanguage, document: vscode.TextDocument, position: vscode.Position) {
+  public constructor(language: ExtensionLanguage, document: vscode.TextDocument, position: vscode.Position) {
+    this.language = language;
     this.document = document;
     this.position = position;
   }
@@ -145,9 +149,6 @@ export class CompletionUtil {
    */
   public getEventCompletionItems(tag: string): vscode.CompletionItem[] {
     const completionItems: vscode.CompletionItem[] = [];
-    // const config = vscode.workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
-    // const language = config?.language || this.defLanguage;
-    // const document: Record<string, any> | undefined = AllDocuments[language];
     const preText = this.getTextBeforePosition(this.position);
     const prefix = preText.replace(/.*@([\w-]*)$/, '$1');
     const events: Document.Event[] = AllDocuments?.[tag]?.events || [];
@@ -162,7 +163,7 @@ export class CompletionUtil {
         label: `${event.name}`,
         sortText: `0${event.name}`,
         detail: `${tag} Event`,
-        documentation: event.description,
+        documentation: this.language === 'zh-CN' ? event.description.cn : event.description.en,
         kind: vscode.CompletionItemKind.Value,
         insertText: event.name,
         range,
@@ -177,9 +178,6 @@ export class CompletionUtil {
    */
   public getAttrCompletionItems(tag: string): vscode.CompletionItem[] {
     const completionItems: vscode.CompletionItem[] = [];
-    // const config = vscode.workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
-    // const language = config?.language || this.defLanguage;
-    // const document: Record<string, any> | undefined = AllDocuments;
     const preText = this.getTextBeforePosition(this.position);
     const prefix = preText.replace(/.*[\s@:]/g, '');
     const attributes: Document.Attribute[] = AllDocuments?.[tag]?.attributes || [];
@@ -194,7 +192,7 @@ export class CompletionUtil {
         label: `${attribute.name}`,
         sortText: `0${attribute.name}`,
         detail: `${tag} Attribute`,
-        documentation: attribute.description,
+        documentation: this.language === 'zh-CN' ? attribute.description.cn : attribute.description.en,
         kind: vscode.CompletionItemKind.Value,
         insertText: attribute.name,
         range,
