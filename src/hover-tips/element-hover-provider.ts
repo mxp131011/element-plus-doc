@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { localDocument } from '@/document/index';
-import { HoverDocumentGenerator } from '@/utils/document-generator';
+import { HoverDocumentGenerator } from './document-generator';
 import { toKebabCase } from '../utils';
 import type { ElDocument, ExtensionConfigutation, ExtensionLanguage, TagObject } from '@/types/index';
 

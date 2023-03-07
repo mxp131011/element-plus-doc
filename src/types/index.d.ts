@@ -12,16 +12,16 @@ export interface TagObject {
  * 组件的属性文档
  */
 export interface DocumentAttribute {
-  // 参数名称
+  /** #参数名称 */
   name: string;
-  // 说明
+  /** #说明 */
   description: string;
-  // 类型
+  /** #类型 */
   type: string;
-  // 可选值
-  value: string;
-  // 默认值
-  default: any;
+  /** #默认值 */
+  default: unknown;
+  /** #可选值 */
+  value?: string;
 }
 
 /**
@@ -58,6 +58,16 @@ export interface DocumentSlot {
   description: string;
 }
 
+/** 组件暴露出来的接口文档 */
+export interface DocumentExposes {
+  /** #插槽名称 */
+  name: string;
+  /** #说明 */
+  description: string;
+  /** #类型 */
+  type: string;
+}
+
 /**
  * 文档范围方法
  */
@@ -82,6 +92,7 @@ export interface ElDocument extends BaseDocument {
   shortcuts?: DocumentAttribute[];
   selectOptions?: DocumentAttribute[];
   props?: DocumentAttribute[];
+  exposes?: DocumentExposes[];
 }
 
 /**

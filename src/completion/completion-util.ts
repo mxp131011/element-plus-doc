@@ -156,7 +156,7 @@ export class CompletionUtil {
     if (!attribute) {
       return [];
     }
-    const values = attribute.value.split(/[,/\\]/).map((item) => item.trim());
+    const values = attribute.value!.split(/[,/\\]/).map((item) => item.trim());
     return values;
   }
 
