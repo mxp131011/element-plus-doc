@@ -1,7 +1,4 @@
-import { type ElDocument } from '@/document';
-import { type DocumentMethod } from '@/document';
-import { type DocumentEvent } from '@/document';
-
+import type { DocumentEvent, DocumentMethod, ElDocument } from '@/types/index';
 export const methods: DocumentMethod[] = [
   {
     name: 'open',

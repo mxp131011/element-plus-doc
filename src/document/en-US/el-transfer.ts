@@ -1,9 +1,4 @@
-import { type ElDocument } from '@/document';
-import { type DocumentAttribute } from '@/document';
-import { type DocumentMethod } from '@/document';
-import { type DocumentEvent } from '@/document';
-import { type DocumentSlot } from '@/document';
-import { type DocumentScopedSlot } from '@/document';
+import type { DocumentAttribute, DocumentEvent, DocumentMethod, DocumentScopedSlot, DocumentSlot, ElDocument } from '@/types/index';
 
 export const attributes: DocumentAttribute[] = [
   {
@@ -75,6 +70,7 @@ export const attributes: DocumentAttribute[] = [
     description: 'texts for checking status in list header',
     type: 'object{noChecked, hasChecked}',
     value: '—',
+    // eslint-disable-next-line no-template-curly-in-string
     default: "{ noChecked: '${checked}/${total}', hasChecked: '${checked}/${total}' }",
   },
   {

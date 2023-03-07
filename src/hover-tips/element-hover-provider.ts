@@ -2,7 +2,7 @@ import { Hover, type HoverProvider, type MarkdownString, Position, type Provider
 import { localDocument } from '@/document/index';
 import { HoverDocumentGenerator } from '@/utils/document-generator';
 import { toKebabCase } from '../utils';
-import type { ElDocument, ExtensionConfigutation, ExtensionLanguage, LocalDocumentKey, TagObject } from '@/types/index';
+import type { ElDocument, ExtensionConfigutation, ExtensionLanguage, TagObject } from '@/types/index';
 
 export class ElementHoverProvier implements HoverProvider {
   private _position!: Position;

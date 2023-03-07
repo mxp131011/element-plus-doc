@@ -1,6 +1,4 @@
-import { type DocumentAttribute } from '@/document';
-import { type ElDocument } from '@/document';
-
+import type { DocumentAttribute, ElDocument } from '@/types/index';
 const attributes: DocumentAttribute[] = [
   {
     name: 'index',

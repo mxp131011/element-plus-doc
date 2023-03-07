@@ -1,4 +1,4 @@
-import { type DocumentAttribute, type DocumentEvent, type DocumentMethod, type DocumentScopedSlot, type DocumentSlot, type ElDocument } from '@/document';
+import type { DocumentAttribute, DocumentEvent, DocumentMethod, DocumentScopedSlot, DocumentSlot, ElDocument } from '@/types/index';
 
 export const attributes: DocumentAttribute[] = [
   {
