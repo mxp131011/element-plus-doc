@@ -65,8 +65,8 @@
     "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "18.x",
-    "@typescript-eslint/eslint-plugin": "^5.54.0",
-    "@typescript-eslint/parser": "^5.54.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
     "eslint": "^8.35.0",
     "eslint-plugin-jsdoc": "^40.0.1",
     "glob": "^9.2.1",
@@ -80,6 +80,6 @@
   },
   "dependencies": {
     "vscode-html-languageservice": "^5.0.4",
-    "vscode-json-languageservice": "^5.3.1"
+    "vscode-json-languageservice": "^5.3.2"
   }
 }
