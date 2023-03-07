@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import * as htmlLanguageService from 'vscode-html-languageservice';
 import { addTagLink } from './utils/findTagResult';
 import { type ExtensionLanguage } from '@/types/index';
-import { ElementHoverProvier } from './hover-tips/element-hover-provider';
+import { MyHoverProvier } from './hover-tips/MyHoverProvier';
 import { MyCompletionItemProvider } from './completion/MyCompletionItemProvider';
 
 /**
@@ -48,8 +48,8 @@ export function activate(context: vscode.ExtensionContext) {
     )
   );
 
-  // 注册 hover 提示
-  context.subscriptions.push(vscode.languages.registerHoverProvider([{ language: 'vue', scheme: 'file' }], new ElementHoverProvier()));
+  /** 当光标移动到组件上是添加提示文档 */
+  context.subscriptions.push(vscode.languages.registerHoverProvider([{ language: 'vue', scheme: 'file' }], new MyHoverProvier()));
 }
 
 /**

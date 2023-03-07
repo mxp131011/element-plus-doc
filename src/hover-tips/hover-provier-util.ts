@@ -1,21 +1,26 @@
 import * as vscode from 'vscode';
-import { localDocument } from '@/document/index';
+import { AllDocuments } from '@/documents/index';
 import { HoverDocumentGenerator } from './document-generator';
 import { toKebabCase } from '../utils';
-import type { ElDocument, ExtensionConfigutation, ExtensionLanguage, TagObject } from '@/types/index';
+import type { ExtensionConfigutation, ExtensionLanguage, TagObject } from '@/types/index';
 
-export class ElementHoverProvier implements vscode.HoverProvider {
-  private _position!: vscode.Position;
+export class HoverProvierUtil {
+  private document: vscode.TextDocument;
 
-  private _document!: vscode.TextDocument;
+  private position: vscode.Position;
 
   private tagReg = /<([\w-]+)\s*/g;
 
   private attrReg = /(?:\(|\s*)([\w-]+)=?/;
 
+  public constructor(document: vscode.TextDocument, position: vscode.Position) {
+    this.position = position;
+    this.document = document;
+  }
+
   public provideHover(document: vscode.TextDocument, position: vscode.Position): vscode.ProviderResult<vscode.Hover> {
-    this._document = document;
-    this._position = position;
+    this.document = document;
+    this.position = position;
 
     const tag: TagObject | undefined = this.getTag();
 
@@ -34,14 +39,14 @@ export class ElementHoverProvier implements vscode.HoverProvider {
    * 获取标签
    */
   public getTag(): TagObject | undefined {
-    let line = this._position.line;
+    let line = this.position.line;
     let tag: TagObject | string | undefined = undefined;
-    let txt = this.getTextAfterPosition(this._position);
+    let txt = this.getTextAfterPosition(this.position);
 
     // 向前搜索 最多十行 搜索标签
-    while (this._position.line - line < 10 && line >= 0) {
-      if (line !== this._position.line) {
-        txt = this._document.lineAt(line).text;
+    while (this.position.line - line < 10 && line >= 0) {
+      if (line !== this.position.line) {
+        txt = this.document.lineAt(line).text;
       }
       tag = this.matchTag(this.tagReg, txt, line);
       if (tag === 'break') {
@@ -59,10 +64,10 @@ export class ElementHoverProvier implements vscode.HoverProvider {
    * 获取属性
    */
   public getAttr(): string {
-    const txt = this.getTextAfterPosition(this._position);
+    const txt = this.getTextAfterPosition(this.position);
     const end = txt.length;
-    const start = txt.lastIndexOf(' ', this._position.character) + 1;
-    const parsedTxt = this._document.getText(new vscode.Range(this._position.line, start, this._position.line, end));
+    const start = txt.lastIndexOf(' ', this.position.character) + 1;
+    const parsedTxt = this.document.getText(new vscode.Range(this.position.line, start, this.position.line, end));
     return this.matchAttr(this.attrReg, parsedTxt);
   }
 
@@ -71,10 +76,10 @@ export class ElementHoverProvier implements vscode.HoverProvider {
    * @param attr - 属性名称
    */
   public getHoverRange(attr: string): vscode.Range {
-    const line = this._document.lineAt(this._position.line).text;
+    const line = this.document.lineAt(this.position.line).text;
     const start = line.indexOf(attr);
     const end = start + attr.length;
-    const range = new vscode.Range(this._position.line, start, this._position.line, end);
+    const range = new vscode.Range(this.position.line, start, this.position.line, end);
     return range;
   }
 
@@ -90,14 +95,14 @@ export class ElementHoverProvier implements vscode.HoverProvider {
 
     if (
       /<\/?[-\w]+[^<>]*>[\s\w]*<?\s*[\w-]*$/.test(txt) ||
-      (this._position.line === line && (/^\s*[^<]+\s*>[^</>]*$/.test(txt) || /[^<>]*<$/.test(txt[txt.length - 1] || '')))
+      (this.position.line === line && (/^\s*[^<]+\s*>[^</>]*$/.test(txt) || /[^<>]*<$/.test(txt[txt.length - 1] || '')))
     ) {
       return 'break';
     }
     while ((match = reg.exec(txt))) {
       arr.push({
         text: match[1] || '',
-        offset: this._document.offsetAt(new vscode.Position(line, match.index)),
+        offset: this.document.offsetAt(new vscode.Position(line, match.index)),
       });
     }
     return arr.pop();
@@ -122,11 +127,11 @@ export class ElementHoverProvier implements vscode.HoverProvider {
    * @param position - 位置信息
    */
   public getTextBeforePosition(position: vscode.Position): string {
-    const wordRange = this._document.getWordRangeAtPosition(position);
+    const wordRange = this.document.getWordRangeAtPosition(position);
     const start = new vscode.Position(position.line, 0);
     const end = wordRange?.end || position;
     const range = new vscode.Range(start, end);
-    return this._document.getText(range);
+    return this.document.getText(range);
   }
 
   /**
@@ -134,16 +139,16 @@ export class ElementHoverProvier implements vscode.HoverProvider {
    * @param position - 文档位置
    */
   public getTextAfterPosition(position: vscode.Position): string {
-    const wordRange = this._document.getWordRangeAtPosition(position);
+    const wordRange = this.document.getWordRangeAtPosition(position);
     const start = new vscode.Position(position.line, 0);
     let endIndex = (wordRange?.end || position).character;
-    const text = this._document.lineAt(position).text;
+    const text = this.document.lineAt(position).text;
     while (endIndex < text.length && /[\w-]/.test(text.charAt(endIndex))) {
       endIndex++;
     }
     const end = new vscode.Position(position.line, endIndex);
     const range = new vscode.Range(start, end);
-    return this._document.getText(range);
+    return this.document.getText(range);
   }
 
   /**
@@ -169,15 +174,14 @@ export class ElementHoverProvier implements vscode.HoverProvider {
    * @param attr - 属性
    * @param range - 范围
    */
-  public createHoverInstance<T extends ExtensionLanguage>(language: T, tag: string, attr: string, range: vscode.Range): vscode.Hover | null {
-    const document = localDocument[language];
+  public createHoverInstance(language: ExtensionLanguage, tag: string, attr: string, range: vscode.Range): vscode.Hover | null {
     const newAttr = tag === attr ? '' : attr;
 
-    if (tag in document && document[tag]) {
-      const tagDocument = document[tag]!;
+    if (tag in AllDocuments && AllDocuments[tag]) {
+      const tagDocument = AllDocuments[tag]!;
       const hoverMarkdownStrings: vscode.MarkdownString[] = [];
       Object.keys(tagDocument).forEach((key: string) => {
-        const hoverMarkdownString = HoverDocumentGenerator.getInstance().generate<ElDocument>(tagDocument, key, tag, newAttr, language);
+        const hoverMarkdownString = HoverDocumentGenerator.getInstance().generate(tagDocument, key, tag, newAttr, language);
         if (hoverMarkdownString) {
           hoverMarkdownStrings.push(hoverMarkdownString);
         }

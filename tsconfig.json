@@ -5,11 +5,12 @@
     "module": "CommonJS", // 生成代码的模板标准
     "moduleResolution": "node", // 选择模块解析策略
     "esModuleInterop": true,
+    "types": ["webpack-env"],
     "isolatedModules": true, // 将每个文件做为单独的模块 (vite所需)
     "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入 (解决 不支持使用引入 使用export=导出的模块问题)
     "declaration": false, // 生成声明文件，开启后会自动生成声明文件
     "useDefineForClassFields": true,
-    "lib": ["ESNext"], // TS需要引用的库，即声明文件，es5 默认引用dom、es5、scripthost,如需要使用es的高级版本特性，通常都需要配置，如es8的数组新特性需要引入"ES2019.Array",
+    "lib": ["ESNext", "DOM"], // TS需要引用的库，即声明文件，es5 默认引用dom、es5、scripthost,如需要使用es的高级版本特性，通常都需要配置，如es8的数组新特性需要引入"ES2019.Array",
     "strict": true, // 启用所有严格类型检查选项
     "noImplicitAny": true, // 在表达式和声明上有隐含的 any类型时报错
     "strictNullChecks": true, // 当类型检查时,要考虑' null '和' undefined '。

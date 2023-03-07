@@ -1,14 +1,12 @@
 import * as vscode from 'vscode';
-import { localDocument } from '@/document/index';
-import { type DocumentAttribute, type DocumentEvent, type ExtensionConfigutation, type ExtensionLanguage, type TagObject } from '@/types/index';
+import { AllDocuments } from '@/documents/index';
+import type { ExtensionLanguage, TagObject } from '@/types/index';
+import type { Document } from '@/types/document';
 
 /**
  *当输入单词或触发字符时补全
  */
 export class CompletionUtil {
-  /** 默认语言 */
-  private defLanguage: ExtensionLanguage;
-
   /** 当前的文档（整个代码文件） */
   private document: vscode.TextDocument;
 
@@ -24,8 +22,7 @@ export class CompletionUtil {
   /** 默认语言 */
   private readonly tagStartReg = /<([\w-]*)$/;
 
-  public constructor(defLanguage: ExtensionLanguage, document: vscode.TextDocument, position: vscode.Position) {
-    this.defLanguage = defLanguage || 'zh-CN';
+  public constructor(_defLanguage: ExtensionLanguage, document: vscode.TextDocument, position: vscode.Position) {
     this.document = document;
     this.position = position;
   }
@@ -143,59 +140,19 @@ export class CompletionUtil {
   }
 
   /**
-   * 获取属性值
-   * @param tag - 标签
-   * @param attr - 属性
-   */
-  public getAttrValues(tag: string, attr: string): string[] {
-    const config = vscode.workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
-    const language = config?.language || this.defLanguage;
-    const document: Record<string, any> | undefined = localDocument[language];
-    const attributes: DocumentAttribute[] = document?.[tag].attributes || [];
-    const attribute: DocumentAttribute | undefined = attributes.find((_attribute) => _attribute.name === attr);
-    if (!attribute) {
-      return [];
-    }
-    const values = attribute.value!.split(/[,/\\]/).map((item) => item.trim());
-    return values;
-  }
-
-  /**
-   * 获取属性值的提示信息
-   * @param tag - 标签
-   * @param attr - 属性
-   */
-  public getAttrValueCompletionItems(tag: string, attr: string): vscode.CompletionItem[] {
-    const completionItems: vscode.CompletionItem[] = [];
-    const values = this.getAttrValues(tag, attr);
-    values.forEach((value) => {
-      if (/\w+/.test(value)) {
-        completionItems.push({
-          label: `${value}`,
-          sortText: `0${value}`,
-          detail: `${tag}-${attr}`,
-          kind: vscode.CompletionItemKind.Value,
-          insertText: value,
-        });
-      }
-    });
-    return completionItems;
-  }
-
-  /**
    * 获取事件名称提示
    * @param tag - 标签
    */
   public getEventCompletionItems(tag: string): vscode.CompletionItem[] {
     const completionItems: vscode.CompletionItem[] = [];
-    const config = vscode.workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
-    const language = config?.language || this.defLanguage;
-    const document: Record<string, any> | undefined = localDocument[language];
+    // const config = vscode.workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
+    // const language = config?.language || this.defLanguage;
+    // const document: Record<string, any> | undefined = AllDocuments[language];
     const preText = this.getTextBeforePosition(this.position);
     const prefix = preText.replace(/.*@([\w-]*)$/, '$1');
-    const events: DocumentEvent[] = document?.[tag]?.events || [];
-    const likeTag = events.filter((evnet: DocumentEvent) => evnet.name.includes(prefix));
-    likeTag.forEach((event: DocumentEvent) => {
+    const events: Document.Event[] = AllDocuments?.[tag]?.events || [];
+    const likeTag = events.filter((evnet: Document.Event) => evnet.name.includes(prefix));
+    likeTag.forEach((event: Document.Event) => {
       const start = preText.lastIndexOf('@') + 1;
       const end = start + prefix.length;
       const startPos = new vscode.Position(this.position.line, start);
@@ -220,14 +177,14 @@ export class CompletionUtil {
    */
   public getAttrCompletionItems(tag: string): vscode.CompletionItem[] {
     const completionItems: vscode.CompletionItem[] = [];
-    const config = vscode.workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
-    const language = config?.language || this.defLanguage;
-    const document: Record<string, any> | undefined = localDocument[language];
+    // const config = vscode.workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
+    // const language = config?.language || this.defLanguage;
+    // const document: Record<string, any> | undefined = AllDocuments;
     const preText = this.getTextBeforePosition(this.position);
     const prefix = preText.replace(/.*[\s@:]/g, '');
-    const attributes: DocumentAttribute[] = document?.[tag].attributes || [];
-    const likeTag = attributes.filter((attribute: DocumentAttribute) => attribute.name.includes(prefix));
-    likeTag.forEach((attribute: DocumentAttribute) => {
+    const attributes: Document.Attribute[] = AllDocuments?.[tag]?.attributes || [];
+    const likeTag = attributes.filter((attribute: Document.Attribute) => attribute.name.includes(prefix));
+    likeTag.forEach((attribute: Document.Attribute) => {
       const start = Math.max(preText.lastIndexOf(' '), preText.lastIndexOf(':')) + 1;
       const end = start + prefix.length;
       const startPos = new vscode.Position(this.position.line, start);
@@ -259,11 +216,9 @@ export class CompletionUtil {
    */
   public getTagCompletionItems(): vscode.CompletionItem[] {
     const completionItems: vscode.CompletionItem[] = [];
-    const config = vscode.workspace.getConfiguration().get<ExtensionConfigutation>('element-ui-helper');
-    const language = config?.language || this.defLanguage;
+    //  const language = config?.language || this.defLanguage;
     const preText = this.getTextBeforePosition(this.position);
-    const document: Record<string, any> = localDocument[language] || {};
-    Object.keys(document).forEach((key) => {
+    Object.keys(AllDocuments).forEach((key) => {
       const start = preText.lastIndexOf('<') + 1;
       const end = preText.length - start + 1;
       const startPos = new vscode.Position(this.position.line, start);

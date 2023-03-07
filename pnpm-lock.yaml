@@ -3,8 +3,9 @@ lockfileVersion: 5.4
 specifiers:
   '@types/glob': ^8.1.0
   '@types/mocha': ^10.0.1
-  '@types/node': 18.x
+  '@types/node': ~18.14.6
   '@types/vscode': ^1.76.0
+  '@types/webpack-env': ^1.18.0
   '@typescript-eslint/eslint-plugin': ^5.54.1
   '@typescript-eslint/parser': ^5.54.1
   '@vscode/test-electron': ^2.3.0
@@ -21,6 +22,7 @@ specifiers:
   webpack-cli: ^5.0.1
 
 dependencies:
+  '@types/webpack-env': 1.18.0
   vscode-html-languageservice: 5.0.4
   vscode-json-languageservice: 5.3.2
 
@@ -211,6 +213,10 @@ packages:
   /@types/vscode/1.76.0:
     resolution: {integrity: sha512-CQcY3+Fe5hNewHnOEAVYj4dd1do/QHliXaknAEYSXx2KEHUzFibDZSKptCon+HPgK55xx20pR+PBJjf0MomnBA==}
     dev: true
+
+  /@types/webpack-env/1.18.0:
+    resolution: {integrity: sha512-56/MAlX5WMsPVbOg7tAxnYvNYMMWr/QJiIp6BxVSW3JJXUVzzOn64qW8TzQyMSqSUFM2+PVI4aUHcHOzIz/1tg==}
+    dev: false
 
   /@typescript-eslint/eslint-plugin/5.54.1_mlk7dnz565t663n4razh6a6v6i:
     resolution: {integrity: sha512-a2RQAkosH3d3ZIV08s3DcL/mcGc2M/UC528VkPULFxR9VnVPT8pBu0IyBAJJmVsCmhVfwQX1v6q+QGnmSe1bew==}

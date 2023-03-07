@@ -27,14 +27,14 @@ export class MyCompletionItemProvider implements vscode.CompletionItemProvider {
     const completionUtil = new CompletionUtil(this.defLanguage, document, position);
     const tag = completionUtil.getPreTag();
     console.log('tag :>> ', tag);
-    const attr = completionUtil.getPreAttr();
-
+    //  const attr = completionUtil.getPreAttr();
+    //  if (completionUtil.isAttrValueStart(tag, attr)) {
+    //   // 如果是属性值的开始
+    //   return completionUtil.getAttrValueCompletionItems(tag.text, attr);
+    // } else
     if (!tag || !/^[E|e]l/.test(tag.text || '')) {
       // 如果不是element的标签(E|el开头) 则返回 null 表示没有hover
       return null;
-    } else if (completionUtil.isAttrValueStart(tag, attr)) {
-      // 如果是属性值的开始
-      return completionUtil.getAttrValueCompletionItems(tag.text, attr);
     } else if (completionUtil.isEventStart(tag)) {
       // 优先判定事件
       return completionUtil.getEventCompletionItems(tag.text);
