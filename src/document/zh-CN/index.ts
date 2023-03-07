@@ -165,4 +165,3 @@ export const cnDocument = {
   'el-space': elspace,
   'el-tree-select': eltreeselect,
 };
-export type CnDocument = typeof cnDocument;

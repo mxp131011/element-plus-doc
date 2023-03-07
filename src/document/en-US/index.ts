@@ -145,5 +145,3 @@ export const enDocument = {
   'el-tree': eltree,
   'el-upload': elupload,
 };
-
-export type EnDocument = typeof enDocument;

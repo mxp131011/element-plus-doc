@@ -1,6 +1,3 @@
-import { type CnDocument } from '@/document/zh-CN/index';
-import { type EnDocument } from '@/document/en-US/index';
-
 export type ExtensionLanguage = 'en-US' | 'zh-CN';
 export interface ExtensionConfigutation {
   language: ExtensionLanguage;
@@ -12,8 +9,7 @@ export interface TagObject {
 }
 
 /**
- * 文档属性类型
- * @interface DocumentAttribute
+ * 组件的属性文档
  */
 export interface DocumentAttribute {
   // 参数名称
@@ -29,51 +25,46 @@ export interface DocumentAttribute {
 }
 
 /**
- * 文档事件类型
- * @interface DocumentEvent
+ * 组件的事件文档
  */
 export interface DocumentEvent {
-  // 事件名称
+  /** #事件名称 */
   name: string;
-  // 说明
+  /** #说明 */
   description: string;
-  // 参数
+  /** #参数 */
   parameter: string;
 }
 
 /**
- * 文档方法类型
- * @interface DocumentMethod
+ * 组件的方法文档
  */
 export interface DocumentMethod {
-  // 方法名称
+  /** #方法名称 */
   name: string;
-  // 说明
+  /** #说明 */
   description: string;
-  // 参数
+  /** #参数 */
   parameter: string;
 }
 
 /**
- * 文档插槽类型
- * @interface DocumentSlot
+ * 组件的插槽文档
  */
 export interface DocumentSlot {
-  // 插槽名称
+  /** #插槽名称 */
   name: string;
-  // 说明
+  /** #说明 */
   description: string;
 }
 
 /**
- * 文档范围方法类型
- * @interface DocumentScopedSlot
+ * 文档范围方法
  */
 export type DocumentScopedSlot = DocumentSlot;
 
 /**
  * 基础文档接口
- * @interface BaseDocument
  */
 export interface BaseDocument {
   attributes?: DocumentAttribute[];
@@ -84,10 +75,7 @@ export interface BaseDocument {
 }
 
 /**
- * ElementUI文档类型
  * 用于扩展具有其他字段的文档类型
- * @interface ElDocument
- * @augments {BaseDocument}
  */
 export interface ElDocument extends BaseDocument {
   pickerOptions?: DocumentAttribute[];
@@ -101,7 +89,6 @@ export interface ElDocument extends BaseDocument {
  */
 
 export type LocalDocument = {
-  'zh-CN': CnDocument;
-  'en-US': EnDocument;
+  'zh-CN': Record<string, ElDocument>;
+  'en-US': Record<string, ElDocument>;
 };
-export type LocalDocumentKey<T extends ExtensionLanguage = 'zh-CN'> = keyof LocalDocument[T];

@@ -1,5 +1,5 @@
 import { MarkdownString } from 'vscode';
-import type { BaseDocument, DocumentAttribute, DocumentMethod, DocumentScopedSlot, DocumentSlot, ExtensionLanguage, LocalDocumentKey } from '@/types/index';
+import type { BaseDocument, DocumentAttribute, DocumentMethod, DocumentScopedSlot, DocumentSlot, ExtensionLanguage } from '@/types/index';
 
 export class HoverDocumentGenerator {
   // eslint-disable-next-line no-use-before-define
@@ -15,7 +15,7 @@ export class HoverDocumentGenerator {
    * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
-  private generateAttribute<T extends BaseDocument>(document: T, tag: LocalDocumentKey, attribute: string, language: string): MarkdownString {
+  private generateAttribute<T extends BaseDocument>(document: T, tag: string, attribute: string, language: string): MarkdownString {
     let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
     const attributes = document.attributes || []; // 取得属性列表
@@ -234,13 +234,14 @@ export class HoverDocumentGenerator {
    * @param {string} attribute - 属性 文档对象具体的属性值
    * @memberof HoverDocumentGenerator
    */
-  private generateOther<T extends BaseDocument>(document: T, tag: LocalDocumentKey, attribute: string): MarkdownString {
+  private generateOther<T extends BaseDocument>(document: T, tag: string, attribute: string): MarkdownString {
     let isUndefined = true; // 标记是否具有文档
     let markdownString: MarkdownString = new MarkdownString('', true);
-    const attributes = document[attribute] || [];
+    const _attribute = document[attribute as keyof typeof document] || undefined;
+    const attributes = (_attribute && Array.isArray(_attribute) ? _attribute : []) as DocumentAttribute[];
     if (attributes.length) {
       markdownString.appendMarkdown(`### ${tag} ${attribute} \r`);
-      const keys = Object.keys(attributes[0]);
+      const keys = Object.keys(attributes[0] || {});
       markdownString.appendMarkdown(`| ${keys.join('|')} |\r`);
       markdownString.appendMarkdown(`| ${keys.map(() => '---').join('|')} |\r`);
       // 遍历属性值值生成文档
@@ -271,7 +272,7 @@ export class HoverDocumentGenerator {
    * @returns {*} {MarkdownString}
    * @memberof HoverDocumentGenerator
    */
-  public generate<T extends BaseDocument>(document: T, key: string, tag: LocalDocumentKey, attr: string, language: ExtensionLanguage): MarkdownString {
+  public generate<T extends BaseDocument>(document: T, key: string, tag: string, attr: string, language: ExtensionLanguage): MarkdownString {
     let markdownString: MarkdownString = new MarkdownString('');
     switch (key) {
       case 'attributes':

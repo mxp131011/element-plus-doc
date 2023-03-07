@@ -16,7 +16,6 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser',
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
     ecmaVersion: 'latest', // 启用es2020的语法包含以下版本  2015(同6)、2016(同7)、2017(同8)、2018(同9)、2019(同10)、2020(同11)、2021(同为 12)或 2022(与 13 相同)以使用基于年份的命名。您还可以设置 “latest” 以使用最新支持的版本

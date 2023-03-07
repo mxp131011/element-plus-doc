@@ -32,13 +32,13 @@
     "strictPropertyInitialization": true, // 检查在构造函数中声明但没有设置的类属性
     "noUncheckedIndexedAccess": true, // 在索引签名结果中包含'undefined'
     "noImplicitOverride": true, // 确保派生类中的重写成员用重写修饰符标记
+    "skipLibCheck": false, // 禁止检测 *.d.ts文件
     "paths": {
       "@/*": ["src/*"]
-    },
+    }
 
     // "preserveValueImports": true, // 引入类型时必须标记为true （ts5.0废弃）
     // "importsNotUsedAsValues": "error", // 强制对类型使用“import type”而不是“import”(ts5.0废弃)
-    "skipLibCheck": true
   },
   "include": ["./src"]
 }

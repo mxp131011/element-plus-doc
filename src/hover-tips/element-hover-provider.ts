@@ -1,19 +1,19 @@
-import { Hover, type HoverProvider, type MarkdownString, Position, type ProviderResult, Range, type TextDocument, workspace } from 'vscode';
+import * as vscode from 'vscode';
 import { localDocument } from '@/document/index';
 import { HoverDocumentGenerator } from '@/utils/document-generator';
 import { toKebabCase } from '../utils';
 import type { ElDocument, ExtensionConfigutation, ExtensionLanguage, TagObject } from '@/types/index';
 
-export class ElementHoverProvier implements HoverProvider {
-  private _position!: Position;
+export class ElementHoverProvier implements vscode.HoverProvider {
+  private _position!: vscode.Position;
 
-  private _document!: TextDocument;
+  private _document!: vscode.TextDocument;
 
   private tagReg = /<([\w-]+)\s*/g;
 
   private attrReg = /(?:\(|\s*)([\w-]+)=?/;
 
-  public provideHover(document: TextDocument, position: Position): ProviderResult<Hover> {
+  public provideHover(document: vscode.TextDocument, position: vscode.Position): vscode.ProviderResult<vscode.Hover> {
     this._document = document;
     this._position = position;
 
@@ -62,7 +62,7 @@ export class ElementHoverProvier implements HoverProvider {
     const txt = this.getTextAfterPosition(this._position);
     const end = txt.length;
     const start = txt.lastIndexOf(' ', this._position.character) + 1;
-    const parsedTxt = this._document.getText(new Range(this._position.line, start, this._position.line, end));
+    const parsedTxt = this._document.getText(new vscode.Range(this._position.line, start, this._position.line, end));
     return this.matchAttr(this.attrReg, parsedTxt);
   }
 
@@ -70,11 +70,11 @@ export class ElementHoverProvier implements HoverProvider {
    * 获取高亮范围
    * @param attr - 属性名称
    */
-  public getHoverRange(attr: string): Range {
+  public getHoverRange(attr: string): vscode.Range {
     const line = this._document.lineAt(this._position.line).text;
     const start = line.indexOf(attr);
     const end = start + attr.length;
-    const range = new Range(this._position.line, start, this._position.line, end);
+    const range = new vscode.Range(this._position.line, start, this._position.line, end);
     return range;
   }
 
@@ -97,7 +97,7 @@ export class ElementHoverProvier implements HoverProvider {
     while ((match = reg.exec(txt))) {
       arr.push({
         text: match[1] || '',
-        offset: this._document.offsetAt(new Position(line, match.index)),
+        offset: this._document.offsetAt(new vscode.Position(line, match.index)),
       });
     }
     return arr.pop();
@@ -121,11 +121,11 @@ export class ElementHoverProvier implements HoverProvider {
    * 获取前置内容
    * @param position - 位置信息
    */
-  public getTextBeforePosition(position: Position): string {
+  public getTextBeforePosition(position: vscode.Position): string {
     const wordRange = this._document.getWordRangeAtPosition(position);
-    const start = new Position(position.line, 0);
+    const start = new vscode.Position(position.line, 0);
     const end = wordRange?.end || position;
-    const range = new Range(start, end);
+    const range = new vscode.Range(start, end);
     return this._document.getText(range);
   }
 
@@ -133,16 +133,16 @@ export class ElementHoverProvier implements HoverProvider {
    * 获取当前位置直到单词结束的内容
    * @param position - 文档位置
    */
-  public getTextAfterPosition(position: Position): string {
+  public getTextAfterPosition(position: vscode.Position): string {
     const wordRange = this._document.getWordRangeAtPosition(position);
-    const start = new Position(position.line, 0);
+    const start = new vscode.Position(position.line, 0);
     let endIndex = (wordRange?.end || position).character;
     const text = this._document.lineAt(position).text;
     while (endIndex < text.length && /[\w-]/.test(text.charAt(endIndex))) {
       endIndex++;
     }
-    const end = new Position(position.line, endIndex);
-    const range = new Range(start, end);
+    const end = new vscode.Position(position.line, endIndex);
+    const range = new vscode.Range(start, end);
     return this._document.getText(range);
   }
 
@@ -152,8 +152,8 @@ export class ElementHoverProvier implements HoverProvider {
    * @param attr - 属性
    * @param range - 区域
    */
-  public getHoverInstance(tag: TagObject | undefined, attr: string, range: Range) {
-    const config = workspace.getConfiguration().get<ExtensionConfigutation>('elementv-snippet');
+  public getHoverInstance(tag: TagObject | undefined, attr: string, range: vscode.Range) {
+    const config = vscode.workspace.getConfiguration().get<ExtensionConfigutation>('elementv-snippet');
     const language = config?.language || 'zh-CN';
 
     const kebabCaseTag = toKebabCase(tag?.text);
@@ -165,24 +165,24 @@ export class ElementHoverProvier implements HoverProvider {
   /**
    * 创建Hover实例
    * @param language - 语言
-   * @param tag - 标签
+   * @param tag - 标签 (如: el-input)
    * @param attr - 属性
    * @param range - 范围
    */
-  public createHoverInstance<T extends ExtensionLanguage>(language: T, tag: string, attr: string, range: Range): Hover | null {
+  public createHoverInstance<T extends ExtensionLanguage>(language: T, tag: string, attr: string, range: vscode.Range): vscode.Hover | null {
     const document = localDocument[language];
     const newAttr = tag === attr ? '' : attr;
 
-    if (tag in document) {
-      const tagDocument = document[tag] || {};
-      const hoverMarkdownStrings: MarkdownString[] = [];
+    if (tag in document && document[tag]) {
+      const tagDocument = document[tag]!;
+      const hoverMarkdownStrings: vscode.MarkdownString[] = [];
       Object.keys(tagDocument).forEach((key: string) => {
-        const hoverMarkdownString: MarkdownString = HoverDocumentGenerator.getInstance().generate<ElDocument>(tagDocument, key, tag, newAttr, language);
+        const hoverMarkdownString = HoverDocumentGenerator.getInstance().generate<ElDocument>(tagDocument, key, tag, newAttr, language);
         if (hoverMarkdownString) {
           hoverMarkdownStrings.push(hoverMarkdownString);
         }
       });
-      return new Hover(hoverMarkdownStrings, range);
+      return new vscode.Hover(hoverMarkdownStrings, range);
     } else {
       return null;
     }
