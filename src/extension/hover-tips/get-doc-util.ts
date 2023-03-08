@@ -11,7 +11,30 @@ export class GetDocUtil {
   }
 
   /**
-   *
+   * 得到单个属性的文档
+   */
+  public getSingleDoc(tagDoc: TagDoc.TagDocInstance, tag: string, attr: string) {
+    let key: keyof TagDoc.TagDocInstance | undefined = undefined;
+    const mdList: MarkdownString[] = [];
+    let newKey = '';
+    for (key in tagDoc) {
+      const name = tagDoc[key!]?.find((item) => item.name === attr);
+      newKey = key;
+      // const bodyList = this._getMDSingleTableBody(tagDoc, attr, key!);
+      // if (bodyList.length > 0) {
+      //   const mdStr = new MarkdownString('', true);
+      //   const titleList = this._getMDTableTitle(tag, key!);
+      //   [...titleList, ...bodyList].forEach((item) => {
+      //     mdStr.appendMarkdown(item);
+      //   });
+      //   mdList.push(mdStr);
+      // }
+    }
+    return mdList;
+  }
+
+  /**
+   * 得到所有的文档
    */
   public getAllDoc(tagDoc: TagDoc.TagDocInstance, tag: string) {
     let key: keyof TagDoc.TagDocInstance | undefined = undefined;
@@ -56,27 +79,27 @@ export class GetDocUtil {
     return list;
   }
 
-  // /**
-  //  * 得到单个属性
-  //  */
-  // private _getMDSingleTableBody(tagDoc: TagDoc.TagDocInstance, attr: string, key: keyof TagDoc.TagDocInstance) {
-  //   const list: string[] = [];
-  //   const docLang = this.lang === 'zh-CN' ? 'cn' : 'en';
-  //   if (key === 'attributes') {
-  //     const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
-  //     row && list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` | \`${row.default}\` |\r`);
-  //   } else if (key === 'events') {
-  //     const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
-  //     row && list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
-  //   } else if (key === 'slots') {
-  //     const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
-  //     row && list.push(`| \`${row.name}\` | ${row.description[docLang]} |\r`);
-  //   } else if (key === 'exposes') {
-  //     const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
-  //     row && list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
-  //   }
-  //   return list;
-  // }
+  /**
+   * 得到单个属性
+   */
+  private _getMDSingleTableBody(tagDoc: TagDoc.TagDocInstance, attr: string, key: keyof TagDoc.TagDocInstance) {
+    const list: string[] = [];
+    const docLang = this.lang === 'zh-CN' ? 'cn' : 'en';
+    if (key === 'attributes') {
+      const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
+      row && list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` | \`${row.default}\` |\r`);
+    } else if (key === 'events') {
+      const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
+      row && list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
+    } else if (key === 'slots') {
+      const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
+      row && list.push(`| \`${row.name}\` | ${row.description[docLang]} |\r`);
+    } else if (key === 'exposes') {
+      const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
+      row && list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
+    }
+    return list;
+  }
 
   /**
    * 得到提示文档的表头

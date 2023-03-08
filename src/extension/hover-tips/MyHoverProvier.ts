@@ -33,7 +33,7 @@ export class MyHoverProvier implements vscode.HoverProvider {
           return new vscode.Hover(new GetDocUtil(this.lang).getAllDoc(tagDoc, kebabCaseTag), range);
         } else {
           // 属性和标签不一样 显示标签下的某个属性的信息
-          return new vscode.Hover(new GetDocUtil(this.lang).getAllDoc(tagDoc, kebabCaseTag), range);
+          return new vscode.Hover(new GetDocUtil(this.lang).getSingleDoc(tagDoc, kebabCaseTag, kebabCaseAttr), range);
         }
       } else {
         return null;
