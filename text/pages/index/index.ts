@@ -1,6 +1,6 @@
-import type { Document } from '@/types/document';
+import type { TagDoc } from '@/types/document';
 
-const attributes: Document.Attribute[] = [
+const attributes: TagDoc.Attribute[] = [
   {
     name: 'size',
     description: 'button size',
@@ -99,7 +99,7 @@ const attributes: Document.Attribute[] = [
   },
 ];
 
-const slots: Document.Slot[] = [
+const slots: TagDoc.Slot[] = [
   {
     name: 'default',
     description: 'customize default content',
@@ -114,7 +114,7 @@ const slots: Document.Slot[] = [
   },
 ];
 
-const exposes: Document.Expose[] = [
+const exposes: TagDoc.Expose[] = [
   {
     name: 'ref',
     description: 'button html element',
@@ -142,6 +142,6 @@ const exposes: Document.Expose[] = [
   },
 ];
 
-const documentInstance: Document.DocumentInstance = { attributes, slots, exposes };
+const documentInstance: TagDoc.TagDocInstance = { attributes, slots, exposes };
 
 export default documentInstance;

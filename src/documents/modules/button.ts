@@ -1,6 +1,6 @@
-import type { Document } from '@/types/document';
+import type { TagDoc } from '@/types/tag-doc';
 
-const attributes: Document.Attribute[] = [
+const attributes: TagDoc.Attribute[] = [
   {
     name: 'size',
     description: {
@@ -147,7 +147,7 @@ const attributes: Document.Attribute[] = [
   },
 ];
 
-const slots: Document.Slot[] = [
+const slots: TagDoc.Slot[] = [
   {
     name: 'default',
     description: {
@@ -171,7 +171,7 @@ const slots: Document.Slot[] = [
   },
 ];
 
-const exposes: Document.Expose[] = [
+const exposes: TagDoc.Expose[] = [
   {
     name: 'ref',
     description: {
@@ -213,6 +213,6 @@ const exposes: Document.Expose[] = [
     type: 'ComputedRef<boolean>',
   },
 ];
-const documentInstance: Document.DocumentInstance = { attributes, slots, exposes };
+const documentInstance: TagDoc.TagDocInstance = { attributes, slots, exposes };
 
 export default documentInstance;

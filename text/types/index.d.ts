@@ -1,6 +1,7 @@
-export type ExtensionLanguage = 'en-US' | 'zh-CN';
+export type BaseLanguage = 'en-US' | 'zh-CN';
+
 export interface ExtensionConfigutation {
-  language: ExtensionLanguage;
+  language: BaseLanguage;
 }
 
 export interface TagObject {

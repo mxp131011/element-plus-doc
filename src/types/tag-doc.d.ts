@@ -1,5 +1,5 @@
 /** 文档 */
-export declare namespace Document {
+export declare namespace TagDoc {
   /**
    * #属性文档类型
    */
@@ -7,9 +7,9 @@ export declare namespace Document {
     /** #参数名称 */
     name: string;
     /** #说明 */
-    description: string | { cn: string; en: string };
+    description: { cn: string; en: string };
     /** #类型 */
-    type: string;
+    type: string[] | string;
     /** #默认值 */
     default: unknown;
   }
@@ -21,7 +21,7 @@ export declare namespace Document {
     /** #事件名称 */
     name: string;
     /** #说明 */
-    description: string | { cn: string; en: string };
+    description: { cn: string; en: string };
     /** #类型 */
     type: string;
   }
@@ -33,7 +33,7 @@ export declare namespace Document {
     /** #插槽名称 */
     name: string;
     /** #说明 */
-    description: string | { cn: string; en: string };
+    description: { cn: string; en: string };
   }
 
   /** 暴露出来的接口或方法文档类型 */
@@ -41,12 +41,12 @@ export declare namespace Document {
     /** #插槽名称 */
     name: string;
     /** #说明 */
-    description: string | { cn: string; en: string };
+    description: { cn: string; en: string };
     /** #类型 */
     type: string;
   }
 
-  interface DocumentInstance {
+  interface TagDocInstance {
     attributes?: Attribute[];
     events?: Event[];
     slots?: Slot[];

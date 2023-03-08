@@ -1,14 +1,14 @@
 import * as vscode from 'vscode';
 import { AllDocuments } from '@/documents/index';
-import type { ExtensionLanguage, TagObject } from '@/types/index';
-import type { Document } from '@/types/document';
+import type { BaseLanguage, TagObject } from '@/types/index';
+import type { TagDoc } from '@/types/tag-doc';
 
 /**
  *当输入单词或触发字符时补全
  */
 export class CompletionUtil {
   /** 语言 */
-  private language: ExtensionLanguage;
+  private lang: BaseLanguage;
 
   /** 当前的文档（整个代码文件） */
   private document: vscode.TextDocument;
@@ -16,17 +16,17 @@ export class CompletionUtil {
   /** 当前光标的位置 */
   private position: vscode.Position;
 
-  /** 默认语言 */
-  private readonly tagReg = /<([\w-]+)\s*/g;
+  /** 正则匹配标签 (以尖括号加大小写字母开头，中间可有多个单词或者下划线中横线，然后在跟一个或多个大小写字母，最后跟空格或者反尖括号或者三种换行符) */
+  private tagReg = /<[A-Za-z]([\w-]*)([A-Za-z]+)(\s|>|\r?\n|(?<!\n)\r)/g;
 
-  /** 默认语言 */
+  /**   */
   private readonly attrReg = /(?:\(|\s*)([\w-]+)=['"][^'"]*/;
 
-  /** 默认语言 */
+  /**   */
   private readonly tagStartReg = /<([\w-]*)$/;
 
-  public constructor(language: ExtensionLanguage, document: vscode.TextDocument, position: vscode.Position) {
-    this.language = language;
+  public constructor(lang: BaseLanguage, document: vscode.TextDocument, position: vscode.Position) {
+    this.lang = lang;
     this.document = document;
     this.position = position;
   }
@@ -151,9 +151,9 @@ export class CompletionUtil {
     const completionItems: vscode.CompletionItem[] = [];
     const preText = this.getTextBeforePosition(this.position);
     const prefix = preText.replace(/.*@([\w-]*)$/, '$1');
-    const events: Document.Event[] = AllDocuments?.[tag]?.events || [];
-    const likeTag = events.filter((evnet: Document.Event) => evnet.name.includes(prefix));
-    likeTag.forEach((event: Document.Event) => {
+    const events: TagDoc.Event[] = AllDocuments?.[tag]?.events || [];
+    const likeTag = events.filter((evnet: TagDoc.Event) => evnet.name.includes(prefix));
+    likeTag.forEach((event: TagDoc.Event) => {
       const start = preText.lastIndexOf('@') + 1;
       const end = start + prefix.length;
       const startPos = new vscode.Position(this.position.line, start);
@@ -163,7 +163,7 @@ export class CompletionUtil {
         label: `${event.name}`,
         sortText: `0${event.name}`,
         detail: `${tag} Event`,
-        documentation: this.language === 'zh-CN' ? event.description.cn : event.description.en,
+        documentation: this.lang === 'zh-CN' ? event.description.cn : event.description.en,
         kind: vscode.CompletionItemKind.Value,
         insertText: event.name,
         range,
@@ -180,9 +180,9 @@ export class CompletionUtil {
     const completionItems: vscode.CompletionItem[] = [];
     const preText = this.getTextBeforePosition(this.position);
     const prefix = preText.replace(/.*[\s@:]/g, '');
-    const attributes: Document.Attribute[] = AllDocuments?.[tag]?.attributes || [];
-    const likeTag = attributes.filter((attribute: Document.Attribute) => attribute.name.includes(prefix));
-    likeTag.forEach((attribute: Document.Attribute) => {
+    const attributes: TagDoc.Attribute[] = AllDocuments?.[tag]?.attributes || [];
+    const likeTag = attributes.filter((attribute: TagDoc.Attribute) => attribute.name.includes(prefix));
+    likeTag.forEach((attribute: TagDoc.Attribute) => {
       const start = Math.max(preText.lastIndexOf(' '), preText.lastIndexOf(':')) + 1;
       const end = start + prefix.length;
       const startPos = new vscode.Position(this.position.line, start);
@@ -192,7 +192,7 @@ export class CompletionUtil {
         label: `${attribute.name}`,
         sortText: `0${attribute.name}`,
         detail: `${tag} Attribute`,
-        documentation: this.language === 'zh-CN' ? attribute.description.cn : attribute.description.en,
+        documentation: this.lang === 'zh-CN' ? attribute.description.cn : attribute.description.en,
         kind: vscode.CompletionItemKind.Value,
         insertText: attribute.name,
         range,
@@ -214,7 +214,6 @@ export class CompletionUtil {
    */
   public getTagCompletionItems(): vscode.CompletionItem[] {
     const completionItems: vscode.CompletionItem[] = [];
-    //  const language = config?.language || this.defLanguage;
     const preText = this.getTextBeforePosition(this.position);
     Object.keys(AllDocuments).forEach((key) => {
       const start = preText.lastIndexOf('<') + 1;

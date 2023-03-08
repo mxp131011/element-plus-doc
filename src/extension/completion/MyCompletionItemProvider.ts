@@ -1,6 +1,6 @@
 import { CompletionUtil } from './completion-util';
 import type * as vscode from 'vscode';
-import { type ExtensionLanguage } from '@/types/index';
+import { type BaseLanguage } from '@/types/index';
 
 /**
  * 当输入单词或触发字符时补全
@@ -9,9 +9,9 @@ export class MyCompletionItemProvider implements vscode.CompletionItemProvider {
   /**
    * 默认语言
    */
-  private defLanguage: ExtensionLanguage;
+  private defLanguage: BaseLanguage;
 
-  public constructor(defLanguage: ExtensionLanguage) {
+  public constructor(defLanguage: BaseLanguage) {
     this.defLanguage = defLanguage;
   }
 

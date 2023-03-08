@@ -1,7 +1,7 @@
 import { type Node } from 'vscode-html-languageservice';
 import * as vscode from 'vscode';
 import { type DocumentLink, Range } from 'vscode';
-import { type ExtensionLanguage } from '@/types/index';
+import { type BaseLanguage } from '@/types/index';
 
 /**
  * tag对应的文档链接
@@ -35,7 +35,7 @@ const tagDocObj: Record<string, string> = {
 /**
  * 给element-plus的每个组件添加官方文档链接
  */
-export function addTagLink(list: Node[], result: DocumentLink[], document: vscode.TextDocument, language: ExtensionLanguage) {
+export function useDocLink(list: Node[], result: DocumentLink[], document: vscode.TextDocument, lang: BaseLanguage) {
   /** 文档基础链接 */
   const basUrl = 'https://element-plus.org/';
 
@@ -46,11 +46,11 @@ export function addTagLink(list: Node[], result: DocumentLink[], document: vscod
       // 如果存在就添加链接
       if (item.tag in tagDocObj) {
         const range: Range = new Range(document.positionAt(item.start + 1), document.positionAt(item.start + Number(item.tag?.length) + 1));
-        result.push({ range, target: vscode.Uri.parse(`${basUrl}/${language}/component/${tagDocObj[item.tag]}.html`) });
+        result.push({ range, target: vscode.Uri.parse(`${basUrl}/${lang}/component/${tagDocObj[item.tag]}.html`) });
       }
     }
     // 递归遍历
-    item.children && addTagLink(item.children, result, document, language);
+    item.children && useDocLink(item.children, result, document, lang);
   }
 
   return result;

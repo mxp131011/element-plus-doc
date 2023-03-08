@@ -1,9 +1,9 @@
 import * as vscode from 'vscode';
 import * as htmlLanguageService from 'vscode-html-languageservice';
-import { addTagLink } from './utils/findTagResult';
-import { type ExtensionLanguage } from '@/types/index';
-import { MyHoverProvier } from './hover-tips/MyHoverProvier';
-import { MyCompletionItemProvider } from './completion/MyCompletionItemProvider';
+import { useDocLink } from './extension/use-doc-link/use-doc-link';
+import { type BaseLanguage } from '@/types/index';
+import { MyHoverProvier } from './extension/hover-tips/MyHoverProvier';
+import { MyCompletionItemProvider } from './extension/completion/MyCompletionItemProvider';
 
 /**
  * 激活的入口
@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
   const languageServiceHtml = htmlLanguageService.getLanguageService();
 
   /** 语言 */
-  const language: ExtensionLanguage = vscode.env.language === 'zh-cn' ? 'zh-CN' : 'en-US';
+  const lang: BaseLanguage = vscode.env.language === 'zh-cn' ? 'zh-CN' : 'en-US';
 
   /** 添加链接 */
   context.subscriptions.push(
@@ -26,7 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
         provideDocumentLinks(document: vscode.TextDocument) {
           const newDocument: htmlLanguageService.TextDocument = { ...document, uri: document.uri.toString() };
           const htmlDocument = languageServiceHtml.parseHTMLDocument(newDocument); // 把document解析成类似于虚拟dom树的形式
-          return addTagLink(htmlDocument.roots, [], document, language);
+          return useDocLink(htmlDocument.roots, [], document, lang);
         },
       }
     )
@@ -43,13 +43,13 @@ export function activate(context: vscode.ExtensionContext) {
         { scheme: 'file', pattern: '**/*.jsx' },
         { scheme: 'file', pattern: '**/*.tsx' },
       ],
-      new MyCompletionItemProvider(language),
+      new MyCompletionItemProvider(lang),
       ...triggerCharacters
     )
   );
 
   /** 当光标移动到组件上是添加提示文档 */
-  context.subscriptions.push(vscode.languages.registerHoverProvider([{ language: 'vue', scheme: 'file' }], new MyHoverProvier()));
+  context.subscriptions.push(vscode.languages.registerHoverProvider([{ language: 'vue', scheme: 'file' }], new MyHoverProvier(lang)));
 }
 
 /**

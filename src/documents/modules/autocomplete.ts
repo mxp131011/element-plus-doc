@@ -1,17 +1,8 @@
-import type { Document } from '@/types/document';
+import type { TagDoc } from '@/types/tag-doc';
 
-const attributes: Document.Attribute[] = [
+const attributes: TagDoc.Attribute[] = [
   {
     name: 'model-value',
-    description: {
-      cn: 'binding value',
-      en: 'binding value',
-    },
-    type: 'string',
-    default: '—',
-  },
-  {
-    name: 'v-model',
     description: {
       cn: 'binding value',
       en: 'binding value',
@@ -70,7 +61,7 @@ const attributes: Document.Attribute[] = [
       cn: 'placement of the popup menu',
       en: 'placement of the popup menu',
     },
-    type: "'top' | 'top- start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end'",
+    type: ['top', 'top- start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'],
     default: 'bottom-start',
   },
   {
@@ -164,7 +155,7 @@ const attributes: Document.Attribute[] = [
     default: 'false',
   },
 ];
-const events: Document.Event[] = [
+const events: TagDoc.Event[] = [
   {
     name: 'select',
     description: {
@@ -183,7 +174,7 @@ const events: Document.Event[] = [
   },
 ];
 
-const slots: Document.Slot[] = [
+const slots: TagDoc.Slot[] = [
   {
     name: 'default',
     description: {
@@ -221,7 +212,7 @@ const slots: Document.Slot[] = [
   },
 ];
 
-const exposes: Document.Expose[] = [
+const exposes: TagDoc.Expose[] = [
   {
     name: 'activated',
     description: {
@@ -320,7 +311,7 @@ const exposes: Document.Expose[] = [
   },
 ];
 
-const document: Document.DocumentInstance = {
+const document: TagDoc.TagDocInstance = {
   attributes,
   events,
   slots,
