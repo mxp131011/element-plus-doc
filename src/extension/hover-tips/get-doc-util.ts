@@ -11,24 +11,42 @@ export class GetDocUtil {
   }
 
   /**
+   * 得到对外暴露的属性的文档
+   */
+  public getExposesDoc(tagDoc: TagDoc.TagDocInstance, tag: string) {
+    const mdList: MarkdownString[] = [];
+
+    const bodyList = this._getMDMultipleTableBody(tagDoc, 'exposes');
+    if (bodyList.length > 0) {
+      const mdStr = new MarkdownString('', true);
+      const titleList = this._getMDTableTitle(tag, 'exposes');
+      [...titleList, ...bodyList].forEach((item) => {
+        mdStr.appendMarkdown(item);
+      });
+      mdList.push(mdStr);
+    }
+
+    return mdList;
+  }
+
+  /**
    * 得到单个属性的文档
    */
   public getSingleDoc(tagDoc: TagDoc.TagDocInstance, tag: string, attr: string) {
     let key: keyof TagDoc.TagDocInstance | undefined = undefined;
     const mdList: MarkdownString[] = [];
-    let newKey = '';
     for (key in tagDoc) {
-      const name = tagDoc[key!]?.find((item) => item.name === attr);
-      newKey = key;
-      // const bodyList = this._getMDSingleTableBody(tagDoc, attr, key!);
-      // if (bodyList.length > 0) {
-      //   const mdStr = new MarkdownString('', true);
-      //   const titleList = this._getMDTableTitle(tag, key!);
-      //   [...titleList, ...bodyList].forEach((item) => {
-      //     mdStr.appendMarkdown(item);
-      //   });
-      //   mdList.push(mdStr);
-      // }
+      const tagDocItem = tagDoc[key!]?.find((item) => item.name === attr);
+      if (tagDocItem) {
+        const bodyList = this._getMDSingleTableBody(tagDocItem, key!);
+        const titleList = this._getMDTableTitle(tag, key!);
+        const mdStr = new MarkdownString('', true);
+        [...titleList, ...bodyList].forEach((item) => {
+          mdStr.appendMarkdown(item);
+        });
+        mdList.push(mdStr);
+        return mdList;
+      }
     }
     return mdList;
   }
@@ -82,21 +100,21 @@ export class GetDocUtil {
   /**
    * 得到单个属性
    */
-  private _getMDSingleTableBody(tagDoc: TagDoc.TagDocInstance, attr: string, key: keyof TagDoc.TagDocInstance) {
+  private _getMDSingleTableBody<T extends keyof TagDoc.TagDocInstance>(row: Required<TagDoc.TagDocInstance>[T][number], key: T) {
     const list: string[] = [];
     const docLang = this.lang === 'zh-CN' ? 'cn' : 'en';
     if (key === 'attributes') {
-      const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
-      row && list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` | \`${row.default}\` |\r`);
+      const newRow = row as TagDoc.Attribute;
+      list.push(`| \`${newRow.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(newRow.type)}\` | \`${newRow.default}\` |\r`);
     } else if (key === 'events') {
-      const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
-      row && list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
+      const newRow = row as TagDoc.Event;
+      list.push(`| \`${newRow.name}\` | ${newRow.description[docLang]} | \`${this._getTypeMD(newRow.type)}\` |\r`);
     } else if (key === 'slots') {
-      const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
-      row && list.push(`| \`${row.name}\` | ${row.description[docLang]} |\r`);
+      const newRow = row as TagDoc.Slot;
+      list.push(`| \`${newRow.name}\` | ${newRow.description[docLang]} |\r`);
     } else if (key === 'exposes') {
-      const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
-      row && list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
+      const newRow = row as TagDoc.Expose;
+      list.push(`| \`${newRow.name}\` | ${newRow.description[docLang]} | \`${this._getTypeMD(newRow.type)}\` |\r`);
     }
     return list;
   }

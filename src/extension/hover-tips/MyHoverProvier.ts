@@ -28,13 +28,18 @@ export class MyHoverProvier implements vscode.HoverProvider {
       kebabCaseAttr = attrArr.length > 1 && attrArr[1] ? attrArr[1] : kebabCaseAttr; // 如果是v-model:model-value 形式的属性取冒号后面的
       if (kebabCaseTag in AllDocuments && Boolean(AllDocuments[kebabCaseTag])) {
         const tagDoc = AllDocuments[kebabCaseTag]!;
+        let md: vscode.MarkdownString[] | undefined = [];
         if (kebabCaseTag === kebabCaseAttr) {
           // 属性 和标签一样 显示全部
-          return new vscode.Hover(new GetDocUtil(this.lang).getAllDoc(tagDoc, kebabCaseTag), range);
+          md = new GetDocUtil(this.lang).getAllDoc(tagDoc, kebabCaseTag);
+        } else if (kebabCaseAttr === 'ref') {
+          // 如果是ref就显示整个对外暴露的文档
+          md = new GetDocUtil(this.lang).getExposesDoc(tagDoc, kebabCaseTag);
         } else {
           // 属性和标签不一样 显示标签下的某个属性的信息
-          return new vscode.Hover(new GetDocUtil(this.lang).getSingleDoc(tagDoc, kebabCaseTag, kebabCaseAttr), range);
+          md = new GetDocUtil(this.lang).getSingleDoc(tagDoc, kebabCaseTag, kebabCaseAttr);
         }
+        return md && md.length > 0 ? new vscode.Hover(md, range) : null;
       } else {
         return null;
       }
