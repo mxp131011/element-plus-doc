@@ -26,33 +26,15 @@ export class MyHoverProvier implements vscode.HoverProvider {
       let kebabCaseAttr = toKebabCase(attr === 'v-model' ? 'model-value' : attr);
       const attrArr = kebabCaseAttr.split(':'); // 解决 v-model:model-value 形式的属性
       kebabCaseAttr = attrArr.length > 1 && attrArr[1] ? attrArr[1] : kebabCaseAttr; // 如果是v-model:model-value 形式的属性取冒号后面的
-      kebabCaseAttr = kebabCaseTag === kebabCaseAttr ? '' : kebabCaseAttr; // 如果属性和标签相等就设置为空
       if (kebabCaseTag in AllDocuments && Boolean(AllDocuments[kebabCaseTag])) {
-        const mdStrList: vscode.MarkdownString[] = []; // hover提示的Markdown列表
         const tagDoc = AllDocuments[kebabCaseTag]!;
-        const getDocUtil = new GetDocUtil();
-        // 循环生成对应的Markdown
-        for (const key in tagDoc) {
-          let mdStr: vscode.MarkdownString | undefined = undefined;
-          switch (key) {
-            case 'attributes':
-              mdStr = getDocUtil.getAttributeDoc(tagDoc, kebabCaseTag, kebabCaseAttr, this.lang);
-              break;
-            case 'events':
-              mdStr = getDocUtil.getEventDoc(tagDoc, kebabCaseTag, kebabCaseAttr, this.lang);
-              break;
-            case 'slots':
-              mdStr = getDocUtil.getSlotDoc(tagDoc, kebabCaseTag, kebabCaseAttr, this.lang);
-              break;
-            case 'exposes':
-              mdStr = getDocUtil.getExposeDoc(tagDoc, kebabCaseTag, kebabCaseAttr, this.lang);
-              break;
-            default:
-              mdStr = undefined;
-          }
-          mdStr && mdStrList.push(mdStr);
+        if (kebabCaseTag === kebabCaseAttr) {
+          // 属性 和标签一样 显示全部
+          return new vscode.Hover(new GetDocUtil(this.lang).getAllDoc(tagDoc, kebabCaseTag), range);
+        } else {
+          // 属性和标签不一样 显示标签下的某个属性的信息
+          return new vscode.Hover(new GetDocUtil(this.lang).getAllDoc(tagDoc, kebabCaseTag), range);
         }
-        return new vscode.Hover(mdStrList, range);
       } else {
         return null;
       }

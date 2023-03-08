@@ -46,6 +46,7 @@ export declare namespace TagDoc {
     type: string;
   }
 
+  /** 标签文档实例 */
   interface TagDocInstance {
     attributes?: Attribute[];
     events?: Event[];

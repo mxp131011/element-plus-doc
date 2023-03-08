@@ -3,178 +3,127 @@ import type { BaseLanguage } from '@/types/index';
 import type { TagDoc } from '@/types/tag-doc';
 
 export class GetDocUtil {
-  /**
-   * 生成属性文档
-   * @param tagDoc - 文档 具体标签对应的文档
-   * @param tag - 标签
-   * @param attr - 属性 在标签的属性上悬停时具有
-   * @param lang - 语言
-   */
-  public getAttributeDoc(tagDoc: TagDoc.TagDocInstance, tag: string, attr: string, lang: BaseLanguage): MarkdownString | undefined {
-    let nullDoc = true; // 文档是否为空
-    const mdStr: MarkdownString = new MarkdownString('', true);
-    mdStr.supportHtml = true;
-    const attrList = tagDoc.attributes || []; // 取得属性列表
+  /** 语言 */
+  private lang: BaseLanguage;
 
-    if (attrList.length) {
-      // 生成表头
-      if (lang === 'zh-CN') {
-        mdStr.appendMarkdown(`### ${tag} 属性 \r`);
-        mdStr.appendMarkdown('| <div style="width: 80px;">名称</div> | 说明 | 类型 | <div style="width: 80px;">默认值</div>  |\r');
-      } else {
-        mdStr.appendMarkdown(`### ${tag} Attributes \r`);
-        mdStr.appendMarkdown('| Name | Description | Type | Default |\r');
-      }
-      mdStr.appendMarkdown('|------|------|------|------|\r');
-    }
-    const docLang = lang === 'zh-CN' ? 'cn' : 'en';
-    if (!attr) {
-      // 属性 和标签一样 显示全部
-      attrList.forEach((row: TagDoc.Attribute) => {
-        mdStr.appendMarkdown(`| \`${row.name}\` | ${row.description[docLang]} | ${this._getTypeMD(row.type)} | \`${row.default}\` |\r`);
-        nullDoc = false;
-      });
-    } else {
-      // 属性和标签不一样 显示标签下的某个属性的信息
-      const row = attrList.find((_row: TagDoc.Attribute) => _row.name === attr);
-      if (row) {
-        mdStr.appendMarkdown(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` | \`${row.default}\` |\r`);
-        nullDoc = false;
-      }
-    }
-    if (nullDoc) {
-      return undefined;
-    }
-    return mdStr;
+  public constructor(lang: BaseLanguage) {
+    this.lang = lang;
   }
 
   /**
-   * 生成标签对外暴露出的属性或方法的文档
-   * @param tagDoc - 具体标签对应的文档
-   * @param tag - 标签
-   * @param attr - 属性
-   * @param lang - 语言
+   *
    */
-  public getExposeDoc(tagDoc: TagDoc.TagDocInstance, tag: string, attr: string, lang: BaseLanguage): MarkdownString | undefined {
-    let nullDoc = true; // 文档是否为空
-    const mdStr: MarkdownString = new MarkdownString('', true);
-    const exposeList = tagDoc.exposes || [];
-    if (exposeList.length) {
-      if (lang === 'zh-CN') {
-        mdStr.appendMarkdown(`### ${tag} 对外暴露\r`);
-        mdStr.appendMarkdown('| 名称 | 说明 | 类型 |\r');
-      } else {
-        mdStr.appendMarkdown(`### ${tag} Method\r`);
-        mdStr.appendMarkdown('| Name | Description | Type |\r');
-      }
-      mdStr.appendMarkdown('|------|------|------|\r');
-    }
-    const docLang = lang === 'zh-CN' ? 'cn' : 'en';
-    if (!attr) {
-      // 属性 和标签一样 显示全部
-      exposeList.forEach((row: TagDoc.Expose) => {
-        mdStr.appendMarkdown(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
-        nullDoc = false;
-      });
-    } else {
-      // 属性和标签不一样 显示标签下的某个属性的信息
-      const row = exposeList.find((_row: TagDoc.Expose) => _row.name === attr);
-      if (row) {
-        mdStr.appendMarkdown(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
-        nullDoc = false;
+  public getAllDoc(tagDoc: TagDoc.TagDocInstance, tag: string) {
+    let key: keyof TagDoc.TagDocInstance | undefined = undefined;
+    const mdList: MarkdownString[] = [];
+    for (key in tagDoc) {
+      const bodyList = this._getMDMultipleTableBody(tagDoc, key!);
+      if (bodyList.length > 0) {
+        const mdStr = new MarkdownString('', true);
+        const titleList = this._getMDTableTitle(tag, key!);
+        [...titleList, ...bodyList].forEach((item) => {
+          mdStr.appendMarkdown(item);
+        });
+        mdList.push(mdStr);
       }
     }
-    if (nullDoc) {
-      return undefined;
-    }
-    return mdStr;
+    return mdList;
   }
 
   /**
-   * 生成标签对应的事件文档
-   * @param tagDoc - 具体标签对应的文档
-   * @param tag - 标签
-   * @param attr - 属性
-   * @param lang - 语言
+   * 得到多个属性
    */
-  public getEventDoc(tagDoc: TagDoc.TagDocInstance, tag: string, attr: string, lang: BaseLanguage): MarkdownString {
-    let nullDoc = true; // 文档是否为空
-    let mdStr: MarkdownString = new MarkdownString('', true);
-    const events = tagDoc.events || [];
-    if (events.length) {
-      if (lang === 'zh-CN') {
-        mdStr.appendMarkdown(`### ${tag} 事件\r`);
-        mdStr.appendMarkdown('| 名称 | 说明 | 类型 |\r');
-      } else {
-        mdStr.appendMarkdown(`### ${tag} Event\r`);
-        mdStr.appendMarkdown('| Name | Description | Type |\r');
-      }
-      mdStr.appendMarkdown('|------|------|------|\r');
-    }
-    const docLang = lang === 'zh-CN' ? 'cn' : 'en';
-    if (!attr) {
-      // 属性 和标签一样 显示全部
-      events.forEach((row: TagDoc.Event) => {
-        mdStr.appendMarkdown(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
-        nullDoc = false;
+  private _getMDMultipleTableBody(tagDoc: TagDoc.TagDocInstance, key: keyof TagDoc.TagDocInstance) {
+    const list: string[] = [];
+    const docLang = this.lang === 'zh-CN' ? 'cn' : 'en';
+    if (key === 'attributes') {
+      (tagDoc[key] || []).forEach((row) => {
+        list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` | \`${row.default}\` |\r`);
       });
-    } else {
-      // 属性和标签不一样 显示标签下的某个属性的信息
-      const row = events.find((_row: TagDoc.Event) => _row.name === attr);
-      if (row) {
-        mdStr.appendMarkdown(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
-        nullDoc = false;
-      }
+    } else if (key === 'events') {
+      (tagDoc[key] || []).forEach((row) => {
+        list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
+      });
+    } else if (key === 'slots') {
+      (tagDoc[key] || []).forEach((row) => {
+        list.push(`| \`${row.name}\` | ${row.description[docLang]} |\r`);
+      });
+    } else if (key === 'exposes') {
+      (tagDoc[key] || []).forEach((row) => {
+        list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
+      });
     }
-    if (nullDoc) {
-      mdStr = new MarkdownString('', true);
+    return list;
+  }
+
+  // /**
+  //  * 得到单个属性
+  //  */
+  // private _getMDSingleTableBody(tagDoc: TagDoc.TagDocInstance, attr: string, key: keyof TagDoc.TagDocInstance) {
+  //   const list: string[] = [];
+  //   const docLang = this.lang === 'zh-CN' ? 'cn' : 'en';
+  //   if (key === 'attributes') {
+  //     const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
+  //     row && list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` | \`${row.default}\` |\r`);
+  //   } else if (key === 'events') {
+  //     const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
+  //     row && list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
+  //   } else if (key === 'slots') {
+  //     const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
+  //     row && list.push(`| \`${row.name}\` | ${row.description[docLang]} |\r`);
+  //   } else if (key === 'exposes') {
+  //     const row = (tagDoc[key] || []).find((_row) => _row.name === attr);
+  //     row && list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
+  //   }
+  //   return list;
+  // }
+
+  /**
+   * 得到提示文档的表头
+   */
+  private _getMDTableTitle(tag: string, key: keyof TagDoc.TagDocInstance) {
+    const docTitles = {
+      cn: { attributes: '属性', events: '事件', slots: '插槽', exposes: '对外暴露' },
+      en: { attributes: 'Attributes', events: 'Events', slots: 'Slots', exposes: 'Exposes' },
+    };
+    const tableTitles = {
+      cn: { name: '名称', description: '说明', type: '类型', default: '默认值' },
+      en: { name: 'Name', description: 'Description', type: 'Type', default: 'Default' },
+    };
+    const docTitle = this.lang === 'zh-CN' ? docTitles.cn : docTitles.en;
+    const tableTitle = this.lang === 'zh-CN' ? tableTitles.cn : tableTitles.en;
+    const list: string[] = [];
+    switch (key) {
+      case 'attributes':
+        list.push(`### ${tag} ${docTitle.attributes}\r`);
+        list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} | ${tableTitle.default} |\r`);
+        list.push('|------|------|------|------|\r');
+        break;
+      case 'events':
+        list.push(`### ${tag} ${docTitle.events}\r`);
+        list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} |\r`);
+        list.push('|------|------|------|\r');
+        break;
+      case 'slots':
+        list.push(`### ${tag} ${docTitle.slots} \r`);
+        list.push(`| ${tableTitle.name} | ${tableTitle.description} |\r`);
+        list.push('|------|------|\r');
+        break;
+      case 'exposes':
+        list.push(`### ${tag} ${docTitle.exposes}\r`);
+        list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} |\r`);
+        list.push('|------|------|------|\r');
+        break;
+      default:
+        break;
     }
-    return mdStr;
+    return list;
   }
 
   /**
-   * 生成插槽文档
-   * @param tagDoc - 具体标签对应的文档
-   * @param tag - 标签
-   * @param attr - 属性
-   * @param lang - 语言
+   * 把属性的类型字段转为Markdown字符串
+   * @param type - 类型
    */
-  public getSlotDoc(tagDoc: TagDoc.TagDocInstance, tag: string, attr: string, lang: BaseLanguage): MarkdownString {
-    let nullDoc = true; // 文档是否为空
-    let mdStr: MarkdownString = new MarkdownString('', true);
-    mdStr.supportHtml = true;
-    const slots = tagDoc.slots || [];
-    if (slots.length) {
-      if (lang === 'zh-CN') {
-        mdStr.appendMarkdown(`### ${tag} 插槽\r`);
-        mdStr.appendMarkdown('| 插槽 | 说明 |\r');
-      } else {
-        mdStr.appendMarkdown(`### ${tag} Slot\r`);
-        mdStr.appendMarkdown('| Slot | Description |\r');
-      }
-      mdStr.appendMarkdown('|------|------|\r');
-    }
-    const docLang = lang === 'zh-CN' ? 'cn' : 'en';
-    if (attr.length === 0) {
-      // 属性 和标签一样 显示全部
-      slots.forEach((row: TagDoc.Slot) => {
-        mdStr.appendMarkdown(`| \`${row.name}\` | ${row.description[docLang]} |\r`);
-        nullDoc = false;
-      });
-    } else {
-      // 属性和标签不一样 显示标签下的某个属性的信息
-      const row = slots.find((_row: TagDoc.Slot) => _row.name === attr);
-      if (row) {
-        mdStr.appendMarkdown(`| \`${row.name}\` | ${row.description[docLang]} |\r`);
-        nullDoc = false;
-      }
-    }
-    if (nullDoc) {
-      mdStr = new MarkdownString('', true);
-    }
-    return mdStr;
-  }
-
   private _getTypeMD(type: string[] | string) {
     let newType = '';
     if (Array.isArray(type)) {

@@ -1,4 +1,4 @@
-import { CompletionUtil } from './completion-util';
+import { CompletionUtil } from './intellisense-util';
 import type * as vscode from 'vscode';
 import { type BaseLanguage } from '@/types/index';
 

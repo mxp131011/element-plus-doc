@@ -3,7 +3,7 @@ import * as htmlLanguageService from 'vscode-html-languageservice';
 import { useDocLink } from './extension/use-doc-link/use-doc-link';
 import { type BaseLanguage } from '@/types/index';
 import { MyHoverProvier } from './extension/hover-tips/MyHoverProvier';
-import { MyCompletionItemProvider } from './extension/completion/MyCompletionItemProvider';
+import { MyCompletionItemProvider } from './extension/intellisense/MyCompletionItemProvider';
 
 /**
  * 激活的入口

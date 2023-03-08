@@ -19,10 +19,10 @@ export class CompletionUtil {
   /** 正则匹配标签 (以尖括号加大小写字母开头，中间可有多个单词或者下划线中横线，然后在跟一个或多个大小写字母，最后跟空格或者反尖括号或者三种换行符) */
   private tagReg = /<[A-Za-z]([\w-]*)([A-Za-z]+)(\s|>|\r?\n|(?<!\n)\r)/g;
 
-  /**   */
+  /** 匹配标签正则  */
   private readonly attrReg = /(?:\(|\s*)([\w-]+)=['"][^'"]*/;
 
-  /**   */
+  /** 匹配属性正则  */
   private readonly tagStartReg = /<([\w-]*)$/;
 
   public constructor(lang: BaseLanguage, document: vscode.TextDocument, position: vscode.Position) {
