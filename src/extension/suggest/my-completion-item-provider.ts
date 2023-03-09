@@ -32,9 +32,9 @@ export class MyCompletionItemProvider implements vscode.CompletionItemProvider {
         return completionUtil.getEventSuggest(tag); // 事件的建议
       } else if (completionUtil.isAttrStart(tag)) {
         return completionUtil.getAttrSuggest(tag); // 属性的建议
-      } else if (completionUtil.isTagStart()) {
-        return completionUtil.getTagSuggest(); // 标签的建议
       }
+    } else if (!tag && completionUtil.isTagStart()) {
+      return completionUtil.getTagSuggest(); // 标签的建议
     }
     return null;
   }

@@ -17,9 +17,6 @@ export class CompletionUtil {
   /** 当前光标的位置 */
   private position: vscode.Position;
 
-  /** 匹配属性正则  */
-  private readonly tagStartReg = /<([\w-]*)$/;
-
   public constructor(lang: BaseLanguage, document: vscode.TextDocument, position: vscode.Position) {
     this.lang = lang;
     this.document = document;
@@ -50,8 +47,8 @@ export class CompletionUtil {
     if (!attribute) {
       return [];
     }
-
-    const valueList = Array.isArray(attribute.type) ? attribute.type : attribute.type.toLowerCase() === 'boolean' ? ['true', 'false'] : [];
+    const newVale = 'value' in attribute && attribute.value ? attribute.value : attribute.type; // 如果有value就使用value否则就使用type
+    const valueList = Array.isArray(newVale) ? newVale : newVale.toLowerCase() === 'boolean' ? ['true', 'false'] : [];
     const values = valueList.map((item) => item.trim());
     return values;
   }
@@ -97,7 +94,7 @@ export class CompletionUtil {
    */
   public isTagStart(): boolean {
     const txt = this.getTextBeforePosition(this.position);
-    return this.tagStartReg.test(txt);
+    return /<([\w-]*)$/.test(txt);
   }
 
   /**
@@ -170,7 +167,7 @@ export class CompletionUtil {
     const completionItems: vscode.CompletionItem[] = [];
     Object.keys(AllDocuments).forEach((key) => {
       completionItems.push({
-        kind: vscode.CompletionItemKind.Snippet,
+        kind: vscode.CompletionItemKind.Class,
         label: `${key}`,
         sortText: `0${key}`,
         detail: `ElementPlusDoc`,

@@ -26,9 +26,7 @@ export class MyHoverProvier implements vscode.HoverProvider {
       let kebabCaseAttr = toKebabCase(attr === 'v-model' ? 'model-value' : attr);
       const attrArr = kebabCaseAttr.split(':'); // 解决 v-model:model-value 形式的属性
       kebabCaseAttr = attrArr.length > 1 && attrArr[1] ? attrArr[1] : kebabCaseAttr; // 如果是v-model:model-value 形式的属性取冒号后面的
-      console.log('kebabCaseAttr====', kebabCaseAttr);
       if (kebabCaseTag in AllDocuments && Boolean(AllDocuments[kebabCaseTag])) {
-        console.log('AllDocuments[kebabCaseTag]====', AllDocuments[kebabCaseTag]);
         const tagDoc = AllDocuments[kebabCaseTag]!;
         let md: vscode.MarkdownString[] | undefined = [];
         if (kebabCaseTag === kebabCaseAttr) {

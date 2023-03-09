@@ -175,7 +175,6 @@ export class GetDocUtil {
     } else {
       newType = `\`${type || '—'}\``;
     }
-    console.log('aaa====', newType);
     return newType;
   }
 }

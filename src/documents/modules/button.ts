@@ -88,8 +88,9 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'customize loading icon component',
       en: 'customize loading icon component',
     },
-    type: 'string / Component',
+    type: ['string', 'Component'],
     default: 'Loading',
+    value: [],
   },
   {
     name: 'disabled',
@@ -106,8 +107,9 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'icon class name',
       en: 'icon class name',
     },
-    type: 'string / Component',
+    type: ['string', 'Component'],
     default: '—',
+    value: [],
   },
   {
     name: 'autofocus',
