@@ -7,7 +7,7 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'button size',
       en: 'button size',
     },
-    type: "'large' | 'default' | 'small'",
+    type: 'string',
     default: '—',
   },
   {
@@ -16,7 +16,7 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'button type',
       en: 'button type',
     },
-    type: "'primary' | 'success' | 'warning' | 'danger' | 'info'",
+    type: 'string',
     default: '—',
   },
   {

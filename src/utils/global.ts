@@ -47,11 +47,12 @@ export function matchTag(txt: string, position: Position, line: number): string 
 
 /**
  * 匹配属性
- * @param reg - 匹配模式
  * @param txt - 匹配文本
  */
-export function matchAttr(reg: RegExp, txt: string): string {
+export function matchAttr(txt: string): string {
   let match: RegExpMatchArray | null = null;
+  // 标签属性匹配的正则表达式
+  const reg = /(?:\(|\s*)[A-Za-z]([\w-:]+)[A-Za-z0-9]/;
   match = txt.match(reg);
   if (!/"[^"]*"/.test(txt) && match) {
     return match[0] || '';

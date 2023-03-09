@@ -3,12 +3,13 @@ import * as htmlLanguageService from 'vscode-html-languageservice';
 import { useDocLink } from './extension/doc-link/use-doc-link';
 import { type BaseLanguage } from '@/types/index';
 import { MyHoverProvier } from './extension/hover-provier/my-hover-provier';
-import { MyCompletionItemProvider } from './extension/intellisense/my-completion-item-provider';
+import { MyCompletionItemProvider } from './extension/suggest/my-completion-item-provider';
 
 /**
  * 激活的入口
  */
 export function activate(context: vscode.ExtensionContext) {
+  console.log('插件已启用');
   const languageServiceHtml = htmlLanguageService.getLanguageService();
 
   /** 语言 */
@@ -33,7 +34,7 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   /** 当用户输入那些字符时触发补全 */
-  const triggerCharacters = ['', ' ', ':', '<', '""', '=', "'", '/', '@', '(', '-'];
+  const triggerCharacters = ['', ' ', ':', '<', '=', "'", '/', '@', '(', '-', '"'];
 
   /** 用户输入时添加智能补全 */
   context.subscriptions.push(
@@ -56,5 +57,5 @@ export function activate(context: vscode.ExtensionContext) {
  * 销毁函数
  */
 export function deactivate() {
-  console.log('elementv-snippet is now deactivate~');
+  console.log('插件已经销毁');
 }

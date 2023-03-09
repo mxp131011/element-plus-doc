@@ -12,7 +12,6 @@ export declare namespace TagDoc {
     type: string[] | string;
     /** #默认值 */
     default: string;
-    value?: string[] | string;
   }
 
   /**

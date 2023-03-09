@@ -6,17 +6,14 @@
     model-value="something"
     fetchSuggestions="querySearch"
     debounce="false"
-    debounce1="false"
-    debounce2="false"
-    debounce3="false"
     highlightFirstItem
-    :clearable="true"
+    placement="bottom"
     @select="() => 'd'"
     @change="() => false"
   ></el-autocomplete>
 
   <el-input ref="elAutocompleteRef"></el-input>
-  <el-autocomplete v-model:model-value="ew" highlightFirstItem :clearable="true" clearable></el-autocomplete>
+  <el-autocomplete v-model:model-value="ew" highlightFirstItem="" :clearable="true" clearable></el-autocomplete>
 </template>
 
 <script>

@@ -8,9 +8,6 @@ export class HoverProvierUtil {
   /** 当前光标所在位置 */
   private position: vscode.Position;
 
-  /** 标签属性匹配的正则表达式 (注意要去掉空格或者反尖括号或者等于符号) */
-  private attrReg = /(?:\(|\s*)[A-Za-z]([\w-:]+)[A-Za-z0-9]/;
-
   public constructor(document: vscode.TextDocument, position: vscode.Position) {
     this.position = position;
     this.document = document;
@@ -24,7 +21,7 @@ export class HoverProvierUtil {
     const end = txt.length;
     const start = txt.lastIndexOf(' ', this.position.character) + 1;
     const parsedTxt = this.document.getText(new vscode.Range(this.position.line, start, this.position.line, end));
-    return matchAttr(this.attrReg, parsedTxt).trim();
+    return matchAttr(parsedTxt).trim();
   }
 
   /**
