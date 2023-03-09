@@ -2,8 +2,8 @@ import * as vscode from 'vscode';
 import * as htmlLanguageService from 'vscode-html-languageservice';
 import { useDocLink } from './extension/use-doc-link/use-doc-link';
 import { type BaseLanguage } from '@/types/index';
-import { MyHoverProvier } from './extension/hover-tips/MyHoverProvier';
-import { MyCompletionItemProvider } from './extension/intellisense/MyCompletionItemProvider';
+import { MyHoverProvier } from './extension/hover-tips/my-hover-provier';
+import { MyCompletionItemProvider } from './extension/intellisense/my-completion-item-provider';
 
 /**
  * 激活的入口
