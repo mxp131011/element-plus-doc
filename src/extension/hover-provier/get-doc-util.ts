@@ -79,11 +79,11 @@ export class GetDocUtil {
     const docLang = this.lang === 'zh-CN' ? 'cn' : 'en';
     if (key === 'attributes') {
       (tagDoc[key] || []).forEach((row) => {
-        list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` | \`${row.default}\` |\r`);
+        list.push(`| \`${row.name}\` | ${row.description[docLang]} | ${this._getTypeMD(row.type)} | \`${row.default}\` |\r`);
       });
     } else if (key === 'events') {
       (tagDoc[key] || []).forEach((row) => {
-        list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
+        list.push(`| \`${row.name}\` | ${row.description[docLang]} | ${this._getTypeMD(row.type)} |\r`);
       });
     } else if (key === 'slots') {
       (tagDoc[key] || []).forEach((row) => {
@@ -91,7 +91,7 @@ export class GetDocUtil {
       });
     } else if (key === 'exposes') {
       (tagDoc[key] || []).forEach((row) => {
-        list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(row.type)}\` |\r`);
+        list.push(`| \`${row.name}\` | ${row.description[docLang]} | ${this._getTypeMD(row.type)} |\r`);
       });
     }
     return list;
@@ -105,16 +105,16 @@ export class GetDocUtil {
     const docLang = this.lang === 'zh-CN' ? 'cn' : 'en';
     if (key === 'attributes') {
       const newRow = row as TagDoc.Attribute;
-      list.push(`| \`${newRow.name}\` | ${row.description[docLang]} | \`${this._getTypeMD(newRow.type)}\` | \`${newRow.default}\` |\r`);
+      list.push(`| \`${newRow.name}\` | ${row.description[docLang]} | ${this._getTypeMD(newRow.type)} | \`${newRow.default}\` |\r`);
     } else if (key === 'events') {
       const newRow = row as TagDoc.Event;
-      list.push(`| \`${newRow.name}\` | ${newRow.description[docLang]} | \`${this._getTypeMD(newRow.type)}\` |\r`);
+      list.push(`| \`${newRow.name}\` | ${newRow.description[docLang]} | ${this._getTypeMD(newRow.type)} |\r`);
     } else if (key === 'slots') {
       const newRow = row as TagDoc.Slot;
       list.push(`| \`${newRow.name}\` | ${newRow.description[docLang]} |\r`);
     } else if (key === 'exposes') {
       const newRow = row as TagDoc.Expose;
-      list.push(`| \`${newRow.name}\` | ${newRow.description[docLang]} | \`${this._getTypeMD(newRow.type)}\` |\r`);
+      list.push(`| \`${newRow.name}\` | ${newRow.description[docLang]} | ${this._getTypeMD(newRow.type)} |\r`);
     }
     return list;
   }
@@ -171,10 +171,11 @@ export class GetDocUtil {
       type.forEach((item) => {
         newType += `\`${item || '—'}\` / `;
       });
-      newType.trim().substring(0, newType.lastIndexOf('/'));
+      newType = newType.trim().substring(0, newType.lastIndexOf('/'));
     } else {
       newType = `\`${type || '—'}\``;
     }
+    console.log('aaa====', newType);
     return newType;
   }
 }

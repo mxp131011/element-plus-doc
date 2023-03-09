@@ -12,7 +12,9 @@
     @change="() => false"
   ></el-autocomplete>
 
-  <el-input ref="elAutocompleteRef"></el-input>
+  <el-button-group size="small"></el-button-group>
+
+  <el-button ref="elAutocompleteRef"></el-button>
   <el-autocomplete v-model:model-value="ew" highlightFirstItem="" :clearable="true" clearable></el-autocomplete>
 </template>
 

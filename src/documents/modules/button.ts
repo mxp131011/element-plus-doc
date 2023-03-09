@@ -7,7 +7,7 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'button size',
       en: 'button size',
     },
-    type: 'string',
+    type: ['large', 'default', 'small'],
     default: '—',
   },
   {
@@ -16,7 +16,7 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'button type',
       en: 'button type',
     },
-    type: 'string',
+    type: ['primary', 'success', 'warning', 'danger', 'info'],
     default: '—',
   },
   {
@@ -88,7 +88,7 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'customize loading icon component',
       en: 'customize loading icon component',
     },
-    type: 'string | Component',
+    type: 'string / Component',
     default: 'Loading',
   },
   {
@@ -106,7 +106,7 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'icon class name',
       en: 'icon class name',
     },
-    type: 'string | Component',
+    type: 'string / Component',
     default: '—',
   },
   {
@@ -124,7 +124,7 @@ const attributes: TagDoc.Attribute[] = [
       cn: "same as native button's `type`",
       en: "same as native button's `type`",
     },
-    type: "'button' | 'submit' | 'reset'",
+    type: ['button', 'submit', 'reset'],
     default: '—',
   },
   {
@@ -178,7 +178,7 @@ const exposes: TagDoc.Expose[] = [
       cn: 'button html element',
       en: 'button html element',
     },
-    type: 'Ref<HTMLButtonElement>',
+    type: 'object',
   },
   {
     name: 'size',
@@ -186,7 +186,7 @@ const exposes: TagDoc.Expose[] = [
       cn: 'button size',
       en: 'button size',
     },
-    type: "ComputedRef<'' | 'small' | 'default' | 'large'>",
+    type: 'object',
   },
   {
     name: 'type',
@@ -194,7 +194,7 @@ const exposes: TagDoc.Expose[] = [
       cn: 'button type',
       en: 'button type',
     },
-    type: "ComputedRef<'' | 'default' | 'primary' | 'success' | 'warning' | 'info' | 'danger' | 'text'>",
+    type: `object`,
   },
   {
     name: 'disabled',
@@ -202,7 +202,7 @@ const exposes: TagDoc.Expose[] = [
       cn: 'button disabled',
       en: 'button disabled',
     },
-    type: 'ComputedRef<boolean>',
+    type: 'object',
   },
   {
     name: 'shouldAddSpace',
@@ -210,7 +210,7 @@ const exposes: TagDoc.Expose[] = [
       cn: 'whether adding space',
       en: 'whether adding space',
     },
-    type: 'ComputedRef<boolean>',
+    type: 'object',
   },
 ];
 const documentInstance: TagDoc.TagDocInstance = { attributes, slots, exposes };
