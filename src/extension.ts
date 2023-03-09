@@ -1,8 +1,8 @@
 import * as vscode from 'vscode';
 import * as htmlLanguageService from 'vscode-html-languageservice';
-import { useDocLink } from './extension/use-doc-link/use-doc-link';
+import { useDocLink } from './extension/doc-link/use-doc-link';
 import { type BaseLanguage } from '@/types/index';
-import { MyHoverProvier } from './extension/hover-tips/my-hover-provier';
+import { MyHoverProvier } from './extension/hover-provier/my-hover-provier';
 import { MyCompletionItemProvider } from './extension/intellisense/my-completion-item-provider';
 
 /**
