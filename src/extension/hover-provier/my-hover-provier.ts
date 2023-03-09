@@ -3,7 +3,7 @@ import type { BaseLanguage } from '@/types/index';
 import { HoverProvierUtil } from './hover-provier-util';
 import { AllDocuments } from '@/documents/index';
 import { GetDocUtil } from './get-doc-util';
-import { toKebabCase } from '@/utils/global';
+import { getTag, toKebabCase } from '@/utils/global';
 
 export class MyHoverProvier implements vscode.HoverProvider {
   /** 语言 */
@@ -15,7 +15,7 @@ export class MyHoverProvier implements vscode.HoverProvider {
 
   public provideHover(document: vscode.TextDocument, position: vscode.Position): vscode.ProviderResult<vscode.Hover> {
     const hoverProvierUtil = new HoverProvierUtil(document, position);
-    const tag: string | undefined = hoverProvierUtil.getTag();
+    const tag: string | undefined = getTag(document, hoverProvierUtil.getTextBeforePosition(position), position);
     if (!/^[E|e]l/.test(tag || '')) {
       // 如果不是element的标签(E|el开头) 则返回 null 表示没有hover
       return null;

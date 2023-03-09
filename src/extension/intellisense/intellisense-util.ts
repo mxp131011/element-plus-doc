@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { AllDocuments } from '@/documents/index';
-import type { BaseLanguage, TagObject } from '@/types/index';
+import type { BaseLanguage } from '@/types/index';
 import type { TagDoc } from '@/types/tag-doc';
 
 /**
@@ -16,9 +16,6 @@ export class CompletionUtil {
   /** 当前光标的位置 */
   private position: vscode.Position;
 
-  /** 正则匹配标签 (以尖括号加大小写字母开头，中间可有多个单词或者下划线中横线，然后在跟一个或多个大小写字母，最后跟空格或者反尖括号或者三种换行符) */
-  private tagReg = /<[A-Za-z]([\w-]*)([A-Za-z]+)(\s|>|\r?\n|(?<!\n)\r)/g;
-
   /** 匹配标签正则  */
   private readonly attrReg = /(?:\(|\s*)([\w-]+)=['"][^'"]*/;
 
@@ -32,31 +29,6 @@ export class CompletionUtil {
   }
 
   /**
-   * 获取前置标签
-   */
-  public getPreTag(): TagObject | undefined {
-    let line = this.position.line;
-    console.log('line====', line);
-    let tag: TagObject | string | undefined = undefined;
-    let txt = this.getTextBeforePosition(this.position);
-
-    while (this.position.line - line < 10 && line >= 0) {
-      if (line !== this.position.line) {
-        txt = this.document.lineAt(line).text;
-      }
-      tag = this.matchTag(this.tagReg, txt, line);
-      if (tag === 'break') {
-        return undefined;
-      }
-      if (tag) {
-        return tag as TagObject;
-      }
-      line--;
-    }
-    return undefined;
-  }
-
-  /**
    * 获取前置属性
    */
   public getPreAttr(): string {
@@ -65,6 +37,22 @@ export class CompletionUtil {
     const start = txt.lastIndexOf(' ', end) + 1;
     const parsedTxt = this.document.getText(new vscode.Range(this.position.line, start, this.position.line, end));
     return this.matchAttr(this.attrReg, parsedTxt);
+  }
+
+  /**
+   * 获取属性值
+   * @param tag - 标签
+   * @param attr - 属性
+   */
+  public getAttrValues(tag: string, attr: string): string[] {
+    const attributes = AllDocuments[tag]!.attributes || [];
+    const attribute: TagDoc.Attribute | undefined = attributes.find((_attribute) => _attribute.name === attr);
+    if (!attribute) {
+      return [];
+    }
+    const valueList = Array.isArray(attribute?.value) ? attribute.value : attribute?.value ? [attribute.value] : [];
+    const values = valueList.map((item) => item.trim());
+    return values;
   }
 
   /**
@@ -82,32 +70,7 @@ export class CompletionUtil {
   }
 
   /**
-   * 匹配标签
-   * @param reg - 匹配模式
-   * @param txt - 匹配文本
-   * @param line - 当前行
-   */
-  public matchTag(reg: RegExp, txt: string, line: number): TagObject | string | undefined {
-    let match: RegExpExecArray | null = null;
-    const arr: TagObject[] = [];
-
-    if (
-      /<\/?[-\w]+[^<>]*>[\s\w]*<?\s*[\w-]*$/.test(txt) ||
-      (this.position.line === line && (/^\s*[^<]+\s*>[^</>]*$/.test(txt) || /[^<>]*<$/.test(txt[txt.length - 1] || '')))
-    ) {
-      return 'break';
-    }
-    while ((match = reg.exec(txt))) {
-      arr.push({
-        text: match[1] || '',
-        offset: this.document.offsetAt(new vscode.Position(line, match.index)),
-      });
-    }
-    return arr.pop();
-  }
-
-  /**
-   * 获取当前位置之前的字符串
+   * 获取当前光标所在单词之前的内容 (包含该单词，且只取当前行)
    * @param position - 位置
    */
   public getTextBeforePosition(position: vscode.Position): string {
@@ -121,7 +84,7 @@ export class CompletionUtil {
    * @param tag - 标签
    * @param attr - 属性
    */
-  public isAttrValueStart(tag: Record<string, any> | undefined, attr: string) {
+  public isAttrValueStart(tag: string | undefined, attr: string) {
     return Boolean(tag) && Boolean(attr);
   }
 
@@ -129,7 +92,7 @@ export class CompletionUtil {
    * 是否位属性的开始
    * @param tag - 标签
    */
-  public isAttrStart(tag: TagObject | undefined) {
+  public isAttrStart(tag: string | undefined) {
     const preText = this.getTextBeforePosition(this.position);
     return tag && / :?[\w-]*$/.test(preText);
   }
@@ -138,9 +101,33 @@ export class CompletionUtil {
    * 是否为方法的开始
    * @param tag - 标签
    */
-  public isEventStart(tag: TagObject | undefined) {
+  public isEventStart(tag: string | undefined) {
     const preText = this.getTextBeforePosition(this.position);
     return tag && / @[\w-]*$/.test(preText);
+  }
+
+  /**
+   * 获取属性值的提示信息
+   * @param tag - 标签
+   * @param attr - 属性
+   */
+  public getAttrValueCompletionItems(tag: string, attr: string): vscode.CompletionItem[] {
+    const completionItems: vscode.CompletionItem[] = [];
+
+    const values = this.getAttrValues(tag, attr);
+
+    values.forEach((value) => {
+      if (/\w+/.test(value)) {
+        completionItems.push({
+          label: `${value}`,
+          sortText: `0${value}`,
+          detail: `${tag}-${attr}`,
+          kind: vscode.CompletionItemKind.Value,
+          insertText: value,
+        });
+      }
+    });
+    return completionItems;
   }
 
   /**

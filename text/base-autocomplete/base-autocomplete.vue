@@ -11,7 +11,7 @@
     debounce3="false"
     highlightFirstItem
     :clearable="true"
-    @select="() => 'highlightFirstItem'"
+    @select="() => 'd'"
     @change="() => false"
   ></el-autocomplete>
 

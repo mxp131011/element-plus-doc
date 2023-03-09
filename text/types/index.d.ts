@@ -4,11 +4,6 @@ export interface ExtensionConfigutation {
   language: BaseLanguage;
 }
 
-export interface TagObject {
-  text: string;
-  offset: number;
-}
-
 /**
  * 组件的属性文档
  */

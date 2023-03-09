@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { matchAttr, matchTag } from '@/utils/global';
+import { matchAttr } from '@/utils/global';
 
 export class HoverProvierUtil {
   /** 当前的代码文档 */
@@ -14,32 +14,6 @@ export class HoverProvierUtil {
   public constructor(document: vscode.TextDocument, position: vscode.Position) {
     this.position = position;
     this.document = document;
-  }
-
-  /**
-   * 获取光标所在位置的标签（如:el-input）
-   */
-  public getTag(): string | undefined {
-    let line = this.position.line; // 得到当前光标所在行 （从零开始）
-    let tag: string | undefined = undefined;
-    let txt = this.getTextBeforePosition(this.position);
-
-    /** 得到光标所在位置所属的的element-plus标签 （向前搜索，最多五十行） */
-    while (this.position.line - line < 50 && line >= 0) {
-      if (line !== this.position.line) {
-        txt = this.document.lineAt(line).text;
-      }
-      tag = matchTag(txt, this.position, line);
-      if (tag === 'return___tag___external') {
-        // 如果不是在标签中就不用循环了直接返回undefined
-        return undefined;
-      }
-      if (tag) {
-        return tag.trim();
-      }
-      line--;
-    }
-    return undefined;
   }
 
   /**
@@ -66,7 +40,7 @@ export class HoverProvierUtil {
   }
 
   /**
-   * 获取前置内容
+   * 获取当前鼠标悬停所在单词之前的内容 (包含该单词，且只取当前行)
    * @param position - 位置信息
    */
   public getTextBeforePosition(position: vscode.Position): string {
