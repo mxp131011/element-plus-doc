@@ -138,22 +138,22 @@ export class GetDocUtil {
       case 'attributes':
         list.push(`### ${tag} ${docTitle.attributes}\r`);
         list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} | ${tableTitle.default} |\r`);
-        list.push('|------|------|------|------|\r');
+        list.push('|:------|:------|------|------:|\r');
         break;
       case 'events':
         list.push(`### ${tag} ${docTitle.events}\r`);
         list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} |\r`);
-        list.push('|------|------|------|\r');
+        list.push('|:------|------|------:|\r');
         break;
       case 'slots':
         list.push(`### ${tag} ${docTitle.slots} \r`);
         list.push(`| ${tableTitle.name} | ${tableTitle.description} |\r`);
-        list.push('|------|------|\r');
+        list.push('|:------|------|\r');
         break;
       case 'exposes':
         list.push(`### ${tag} ${docTitle.exposes}\r`);
         list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} |\r`);
-        list.push('|------|------|------|\r');
+        list.push('|:------|------|------:|\r');
         break;
       default:
         break;
