@@ -64,40 +64,6 @@ export class CompletionUtil {
   }
 
   /**
-   * 是否显示属性值建议
-   * @param tag - 标签
-   */
-  public isAttrValSuggest(tag: string, attr: string) {
-    return tag && attr && attr !== 'v-bind' && attr !== 'v-model' && attr !== 'v-on';
-  }
-
-  /**
-   * 是否为属性的开始
-   * @param tag - 标签
-   */
-  public isAttrStart(tag: string) {
-    const preText = this.getTextBeforePosition(this.position);
-    return tag && /((v-bind)?:)?[\w-]*$/.test(preText);
-  }
-
-  /**
-   * 是否为事件的开始
-   * @param tag - 标签
-   */
-  public isEventStart(tag: string) {
-    const preText = this.getTextBeforePosition(this.position);
-    return tag && /(@|(v-on:))[\w-]*$/.test(preText);
-  }
-
-  /**
-   * 是否为标签的开始
-   */
-  public isTagStart(): boolean {
-    const txt = this.getTextBeforePosition(this.position);
-    return /<([\w-]*)$/.test(txt);
-  }
-
-  /**
    * 获取属性值的提示
    * @param tag - 标签
    * @param attr - 属性
