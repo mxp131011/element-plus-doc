@@ -36,6 +36,16 @@
   },
   "main": "./dist/extension.js",
   "contributes": {
+    "configuration": {
+      "title": "element-plus-doc",
+      "properties": {
+        "custom.prefix": {
+          "type": "string",
+          "default": "",
+          "description": "%contributes.properties.customPrefix.description%"
+        }
+      }
+    },
     "snippets": [
       {
         "language": "html",

@@ -1,0 +1,3 @@
+{
+  "contributes.properties.customPrefix.description": "设置自定义前缀，以此前缀开头或以el开头的都当作element-plus的组件,如要设置多个前缀请用英文逗号隔开,最多支持3个前缀"
+}

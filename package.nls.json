@@ -1,0 +1,3 @@
+{
+  "contributes.properties.customPrefix.description": "Set a custom prefix，Anything starting with this prefix or el defaults to element-plus components. If you want to set multiple prefixes, separate them with commas (,). Up to three prefixes are supported."
+}

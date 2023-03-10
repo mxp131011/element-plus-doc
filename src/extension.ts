@@ -10,7 +10,15 @@ import { MyCompletionItemProvider } from './extension/suggest/my-completion-item
  */
 export function activate(context: vscode.ExtensionContext) {
   console.log('插件已启用');
-  const languageServiceHtml = htmlLanguageService.getLanguageService();
+  const customPrefixSet = vscode.workspace.getConfiguration().get('custom.prefix');
+  // 得到自定义前缀
+  let customPrefix = typeof customPrefixSet === 'string' && customPrefixSet ? customPrefixSet : '';
+  customPrefix = customPrefix.replace(/[^a-zA-Z0-9，,]/g, '').replace('，', ',');
+  // 所有的前缀数组
+  let prefixList: string[] = customPrefix ? customPrefix.split(',') : [];
+  prefixList = prefixList.splice(0, 3);
+  prefixList.push('el');
+  prefixList = [...new Set(prefixList)]; // 去重
 
   /** 语言 */
   const lang: BaseLanguage = vscode.env.language === 'zh-cn' ? 'zh-CN' : 'en-US';
@@ -26,8 +34,8 @@ export function activate(context: vscode.ExtensionContext) {
       {
         provideDocumentLinks(document: vscode.TextDocument) {
           const newDocument: htmlLanguageService.TextDocument = { ...document, uri: document.uri.toString() };
-          const htmlDocument = languageServiceHtml.parseHTMLDocument(newDocument); // 把document解析成类似于虚拟dom树的形式
-          return useDocLink(htmlDocument.roots, [], document, lang);
+          const htmlDocument = htmlLanguageService.getLanguageService().parseHTMLDocument(newDocument); // 把document解析成类似于虚拟dom树的形式
+          return useDocLink(htmlDocument.roots, prefixList, [], document, lang);
         },
       }
     )
