@@ -4,7 +4,7 @@
   "description": "element-plus 的一个工具插件,用于智能提示，悬停显示文档等",
   "publisher": "mxp131011",
   "license": "SEE LICENSE IN LICENSE",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.76.0"
   },
@@ -60,10 +60,9 @@
     "compile": "webpack",
     "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
-    "version": "npm run changelog && git add -A .",
-    "postversion": "vsce package && git push",
-    "更新": "ncu -u && ncu -g",
-    "更新[含测试版]": "ncu --target newest",
+    "发布": "vsce package && git push",
+    "更新依赖": "ncu -u && ncu -g",
+    "更新依赖[含测试版]": "ncu --target newest",
     "安装": "npm install",
     "删除": "rimraf node_modules && rimraf pnpm-lock.yaml && rimraf package-lock.json",
     "tsc": "tsc --noEmit --skipLibCheck",
