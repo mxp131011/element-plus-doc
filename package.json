@@ -5,7 +5,7 @@
   "publisher": "mxp131011",
   "license": "SEE LICENSE IN LICENSE",
   "baseImagesUrl": "./",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.76.0"
   },
