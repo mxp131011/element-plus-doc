@@ -215,6 +215,10 @@ const exposes: TagDoc.Expose[] = [
     type: 'object',
   },
 ];
-const documentInstance: TagDoc.TagDocInstance = { attributes, slots, exposes };
+const documentInstance: TagDoc.TagDocInstance = {
+  attributes,
+  slots,
+  exposes,
+};
 
 export default documentInstance;
