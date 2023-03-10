@@ -12,17 +12,8 @@
     "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": true,
     "resolveJsonModule": true,
-    "lib": [
-      "esnext",
-      "dom"
-    ],
-    "types": [
-      "@dcloudio/types"
-    ]
+    "lib": ["esnext", "dom"],
+    "types": ["@dcloudio/types"]
   },
-  "exclude": [
-    "node_modules",
-    "unpackage",
-    "src/**/*.nvue"
-  ]
+  "exclude": ["node_modules", "unpackage", "src/**/*.nvue"]
 }

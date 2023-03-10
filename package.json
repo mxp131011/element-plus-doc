@@ -52,7 +52,7 @@
     "更新[含测试版]": "ncu --target newest",
     "安装": "pnpm install",
     "删除": "rimraf node_modules && rimraf pnpm-lock.yaml && rimraf package-lock.json",
-    "tsc": "vue-tsc --noEmit --skipLibCheck",
+    "tsc": "tsc --noEmit --skipLibCheck",
     "prettier": "prettier --write ./**/*.{js,json,vue,ts,jsx,cjs,mjs,tsx,cts,mts,wxss,wxml,wxs}",
     "eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
