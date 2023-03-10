@@ -9,6 +9,11 @@
     "body": ["<slot name=\"$1\" />"],
     "description": "插槽"
   },
+  "elbutton": {
+    "prefix": "elbutt",
+    "body": ["<el-button type=\"$1\" @click=\"$2\">$3</el-button>"],
+    "description": "按钮组件"
+  },
   "button": {
     "prefix": "el-button",
     "body": ["<el-button type=\"$1\" @click=\"$2\">$3</el-button>"],
@@ -595,10 +600,5 @@
     "prefix": "el-col",
     "body": ["<el-col :span=\"$1\">$2<el-col>"],
     "description": "栅格布局子组件"
-  },
-  "official": {
-    "prefix": "el-official",
-    "body": ["https://www.antdv.com/docs/vue/introduce-cn/"],
-    "description": "官网地址"
   }
 }

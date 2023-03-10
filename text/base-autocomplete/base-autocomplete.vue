@@ -11,8 +11,9 @@
     @select="() => 'd'"
     @change="() => false"
   ></el-autocomplete>
-
-  <el-button-group size="small"></el-button-group>
+  <el-button-group size="small">
+    <slot></slot>
+  </el-button-group>
 
   <el-button ref="elAutocompleteRef"></el-button>
   <el-autocomplete v-model:model-value="ew" highlightFirstItem="" :clearable="true" clearable></el-autocomplete>
@@ -20,4 +21,14 @@
 
 <script>
   const a = 'highlightFirstItem';
+  ElMessageBox.prompt('内容', '标题', {
+    {
+       confirmButtonText: '确定'
+       cancelButtonText: '取消'
+    }
+  }).then(() => {
+
+  }).catch(() => {
+
+  })
 </script>

@@ -1,18 +1,35 @@
 {
   "name": "element-plus-doc",
   "displayName": "element-plus-doc",
-  "description": "element-plus-doc",
+  "description": "Efficient element-plus vue development tool",
+  "publisher": "mxp131011@qq.com",
+  "license": "SEE LICENSE IN <LICENSE>",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.76.0"
+    "vscode": "^1.70.0"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Snippets"
+  ],
+  "keywords": [
+    "Snippets",
+    "intellisense",
+    "element",
+    "element-plus",
+    "elementPlus",
+    "Documents"
   ],
   "activationEvents": [
-    "onStartupFinished"
+    "onLanguage:vue",
+    "onLanguage:vue-html",
+    "onLanguage:html",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact"
   ],
-  "icon": "assets/images/logo.png",
+  "icon": "./public/images/logo.svg",
   "repository": {
     "type": "git",
     "url": "https://gitee.com/mxp131011/element-plus-doc"
@@ -21,22 +38,20 @@
   "contributes": {
     "snippets": [
       {
+        "language": "html",
+        "path": "./public/snippets/html.json"
+      },
+      {
         "language": "vue",
-        "path": "./snippets/vue.json"
+        "path": "./public/snippets/vue.json"
       },
       {
         "language": "javascript",
-        "path": "./snippets/javascript.json"
+        "path": "./public/snippets/javascript.json"
       },
       {
         "language": "typescript",
-        "path": "./snippets/typescript.json"
-      }
-    ],
-    "commands": [
-      {
-        "command": "element-plus-doc.helloWorld",
-        "title": "Hello World"
+        "path": "./public/snippets/typescript.json"
       }
     ]
   },
@@ -45,7 +60,6 @@
     "compile": "webpack",
     "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "version": "npm run changelog && git add -A .",
     "postversion": "vsce package && git push",
     "更新": "ncu -u && ncu -g",
@@ -64,6 +78,7 @@
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
     "@vscode/test-electron": "^2.3.0",
+    "copy-webpack-plugin": "^11.0.0",
     "eslint": "^8.35.0",
     "eslint-plugin-jsdoc": "^40.0.1",
     "glob": "^9.2.1",
