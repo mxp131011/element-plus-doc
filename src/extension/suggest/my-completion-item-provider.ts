@@ -1,20 +1,22 @@
 import { CompletionUtil } from './suggest-util';
 import type * as vscode from 'vscode';
 import { type BaseLanguage } from '@/types/index';
-import { getTag } from '@/utils/global';
+import { getTag, toKebabCase } from '@/utils/global';
 import { isAttrSuggest, isAttrValSuggest, isEventSuggest, isTagSuggest } from '@/utils/verify';
 
 /**
  * 当输入单词或触发字符时补全
  */
 export class MyCompletionItemProvider implements vscode.CompletionItemProvider {
-  /**
-   * 默认语言
-   */
-  private defLanguage: BaseLanguage;
+  /** 默认语言 */
+  private lang: BaseLanguage;
 
-  public constructor(defLanguage: BaseLanguage) {
-    this.defLanguage = defLanguage;
+  /** 自定义前缀数组 */
+  private prefixList: string[];
+
+  public constructor(lang: BaseLanguage, prefixList: string[]) {
+    this.lang = lang;
+    this.prefixList = prefixList;
   }
 
   /**
@@ -23,11 +25,16 @@ export class MyCompletionItemProvider implements vscode.CompletionItemProvider {
    * @param position - 位置
    */
   public provideCompletionItems(document: vscode.TextDocument, position: vscode.Position): vscode.CompletionItem[] | null {
-    const completionUtil = new CompletionUtil(this.defLanguage, document, position);
+    const completionUtil = new CompletionUtil(this.lang, document, position);
     const beforeText = completionUtil.getTextBeforePosition(position);
     const tag: string = getTag(document, beforeText, position) || '';
+    const kebabCaseTag = toKebabCase(tag);
     const attr = completionUtil.getAttr();
-    if (tag && /^[E|e]l/.test(tag || '')) {
+    const prefix = this.prefixList.find((pre) => kebabCaseTag.startsWith(`${pre}-`));
+    console.log('prefix1====', prefix);
+
+    // 如果只有以此前缀开头的标签才视作element-plus的标签
+    if (tag && prefix) {
       if (isAttrValSuggest(tag, attr)) {
         return completionUtil.getAttrValSuggest(tag, attr); // 属性值的建议
       } else if (isEventSuggest(tag, beforeText)) {

@@ -52,13 +52,13 @@ export function activate(context: vscode.ExtensionContext) {
         { scheme: 'file', pattern: '**/*.jsx' },
         { scheme: 'file', pattern: '**/*.tsx' },
       ],
-      new MyCompletionItemProvider(lang),
+      new MyCompletionItemProvider(lang, prefixList),
       ...triggerCharacters
     )
   );
 
   /** 当光标移动到组件上是添加提示文档 */
-  context.subscriptions.push(vscode.languages.registerHoverProvider([{ language: 'vue', scheme: 'file' }], new MyHoverProvier(lang)));
+  context.subscriptions.push(vscode.languages.registerHoverProvider([{ language: 'vue', scheme: 'file' }], new MyHoverProvier(lang, prefixList)));
 }
 
 /**
