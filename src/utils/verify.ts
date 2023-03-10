@@ -1,25 +1,23 @@
 /**
  * 是否显示属性值建议
- * @param tag - 标签
  */
-export function isAttrValSuggest(tag: string, attr: string): boolean {
-  return Boolean(tag && attr && attr !== 'v-bind' && attr !== 'v-model' && attr !== 'v-on');
+export function isAttrValSuggest(attr: string): boolean {
+  return Boolean(attr && attr !== 'v-bind' && attr !== 'v-model' && attr !== 'v-on');
 }
 
 /**
  * 是否显示属性建议
  * @param tag - 标签
  */
-export function isAttrSuggest(tag: string, text: string): boolean {
-  return Boolean(tag && /((v-bind)?:)?[\w-]*$/.test(text));
+export function isAttrSuggest(text: string): boolean {
+  return Boolean(/((v-bind)?:)?[\w-]*$/.test(text));
 }
 
 /**
  * 是否显示事件建议
- * @param tag - 标签
  */
-export function isEventSuggest(tag: string, text: string): boolean {
-  return Boolean(tag && /(@|(v-on:))[\w-]*$/.test(text));
+export function isEventSuggest(text: string): boolean {
+  return Boolean(/(@|(v-on:))[\w-]*$/.test(text));
 }
 
 /**

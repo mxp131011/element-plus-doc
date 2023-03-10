@@ -20,7 +20,6 @@ export class MyHoverProvier implements vscode.HoverProvider {
   public provideHover(document: vscode.TextDocument, position: vscode.Position): vscode.ProviderResult<vscode.Hover> {
     const hoverProvierUtil = new HoverProvierUtil(document, position);
     const tag: string | undefined = getTag(document, hoverProvierUtil.getTextBeforePosition(position), position);
-
     const attr = hoverProvierUtil.getAttr();
     const range = hoverProvierUtil.getHoverRange(attr);
     const kebabCaseTag = toKebabCase(tag);

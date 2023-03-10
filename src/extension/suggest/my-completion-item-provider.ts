@@ -31,19 +31,18 @@ export class MyCompletionItemProvider implements vscode.CompletionItemProvider {
     const kebabCaseTag = toKebabCase(tag);
     const attr = completionUtil.getAttr();
     const prefix = this.prefixList.find((pre) => kebabCaseTag.startsWith(`${pre}-`));
-    console.log('prefix1====', prefix);
-
     // 如果只有以此前缀开头的标签才视作element-plus的标签
     if (tag && prefix) {
-      if (isAttrValSuggest(tag, attr)) {
-        return completionUtil.getAttrValSuggest(tag, attr); // 属性值的建议
-      } else if (isEventSuggest(tag, beforeText)) {
-        return completionUtil.getEventSuggest(tag); // 事件的建议
-      } else if (isAttrSuggest(tag, beforeText)) {
-        return completionUtil.getAttrSuggest(tag); // 属性的建议
+      const componentName = kebabCaseTag.replace(`${prefix}-`, '');
+      if (isAttrValSuggest(attr)) {
+        return completionUtil.getAttrValSuggest(componentName, attr); // 属性值的建议
+      } else if (isEventSuggest(beforeText)) {
+        return completionUtil.getEventSuggest(componentName); // 事件的建议
+      } else if (isAttrSuggest(beforeText)) {
+        return completionUtil.getAttrSuggest(componentName); // 属性的建议
       }
     } else if (isTagSuggest(tag, beforeText)) {
-      return completionUtil.getTagSuggest(); // 标签的建议
+      return completionUtil.getTagSuggest(this.prefixList); // 标签的建议
     }
     return null;
   }

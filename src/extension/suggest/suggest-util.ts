@@ -129,15 +129,18 @@ export class CompletionUtil {
   /**
    * 获取标签提示
    */
-  public getTagSuggest(): vscode.CompletionItem[] {
+  public getTagSuggest(prefixList: string[]): vscode.CompletionItem[] {
     const completionItems: vscode.CompletionItem[] = [];
     Object.keys(AllDocuments).forEach((key) => {
-      completionItems.push({
-        kind: vscode.CompletionItemKind.Class,
-        label: `${key}`,
-        sortText: `0${key}`,
-        detail: `ElementPlusDoc`,
-        insertText: new vscode.SnippetString().appendText(`${key}`).appendTabstop().appendText('>').appendTabstop().appendText(`</${key}>`),
+      prefixList.forEach((prefix) => {
+        const tag = `${prefix}-${key}`;
+        completionItems.push({
+          kind: vscode.CompletionItemKind.Class,
+          label: tag,
+          sortText: `0${tag}`,
+          detail: `ElementPlusDoc`,
+          insertText: new vscode.SnippetString().appendText(tag).appendTabstop().appendText('>').appendTabstop().appendText(`</${tag}>`),
+        });
       });
     });
     return completionItems;
