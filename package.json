@@ -1,7 +1,7 @@
 {
   "name": "element-plus-doc",
   "displayName": "element-plus-doc",
-  "description": "Efficient element-plus vue development tool",
+  "description": "element-plus 的一个工具插件,用于智能提示，悬停显示文档等",
   "publisher": "mxp131011",
   "license": "SEE LICENSE IN LICENSE",
   "version": "0.0.1",
