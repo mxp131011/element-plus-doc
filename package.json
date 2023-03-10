@@ -2,8 +2,8 @@
   "name": "element-plus-doc",
   "displayName": "element-plus-doc",
   "description": "Efficient element-plus vue development tool",
-  "publisher": "mxp131011@qq.com",
-  "license": "SEE LICENSE IN <LICENSE>",
+  "publisher": "mxp131011",
+  "license": "SEE LICENSE IN LICENSE",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.76.0"
@@ -29,7 +29,7 @@
     "onLanguage:javascript",
     "onLanguage:javascriptreact"
   ],
-  "icon": "./public/images/logo.png",
+  "icon": "public/images/logo.png",
   "repository": {
     "type": "git",
     "url": "https://gitee.com/mxp131011/element-plus-doc"
