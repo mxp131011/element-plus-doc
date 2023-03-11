@@ -7,8 +7,9 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'control the size of buttons in this button-group',
       en: 'control the size of buttons in this button-group',
     },
-    type: ['large', 'default', 'small'],
+    type: 'enum',
     default: '—',
+    value: ['large', 'default', 'small'],
   },
   {
     name: 'type',
@@ -16,8 +17,9 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'control the type of buttons in this button-group',
       en: 'control the type of buttons in this button-group',
     },
-    type: ['primary', 'success', 'warning', 'danger', 'info'],
+    type: 'enum',
     default: '—',
+    value: ['primary', 'success', 'warning', 'danger', 'info'],
   },
 ];
 

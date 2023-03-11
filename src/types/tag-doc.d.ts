@@ -1,3 +1,5 @@
+type baseType = 'array' | 'boolean' | 'Component' | 'enum' | 'function' | 'number' | 'object' | 'string';
+
 /** 文档 */
 export declare namespace TagDoc {
   /**
@@ -9,11 +11,11 @@ export declare namespace TagDoc {
     /** #说明 */
     description: { cn: string; en: string };
     /** #类型 */
-    type: string[] | string;
+    type: baseType | baseType[];
     /** #默认值 */
     default: string;
     /** #可选值 */
-    value?: string[];
+    value: string[];
   }
 
   /**
@@ -25,7 +27,9 @@ export declare namespace TagDoc {
     /** #说明 */
     description: { cn: string; en: string };
     /** #类型 */
-    type: string;
+    type: baseType | baseType[];
+    /** #TypeScript 类型 */
+    tsType: string;
   }
 
   /**
@@ -45,7 +49,9 @@ export declare namespace TagDoc {
     /** #说明 */
     description: { cn: string; en: string };
     /** #类型 */
-    type: string;
+    type: baseType | baseType[];
+    /** #TypeScript 类型 */
+    tsType: string;
   }
 
   /** 标签文档实例 */

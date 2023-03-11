@@ -9,6 +9,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'string',
     default: '—',
+    value: [],
   },
   {
     name: 'placeholder',
@@ -18,6 +19,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'string',
     default: '—',
+    value: [],
   },
   {
     name: 'clearable',
@@ -27,6 +29,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'disabled',
@@ -36,6 +39,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'value-key',
@@ -45,6 +49,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'string',
     default: 'value',
+    value: [],
   },
   {
     name: 'debounce',
@@ -54,6 +59,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'number',
     default: '300',
+    value: [],
   },
   {
     name: 'placement',
@@ -61,8 +67,9 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'placement of the popup menu',
       en: 'placement of the popup menu',
     },
-    type: ['top', 'top- start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'],
+    type: 'enum',
     default: 'bottom-start',
+    value: ['top', 'top- start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'],
   },
   {
     name: 'fetch-suggestions',
@@ -72,6 +79,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'function',
     default: 'false',
+    value: [],
   },
   {
     name: 'trigger-on-focus',
@@ -81,6 +89,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'true',
+    value: [],
   },
   {
     name: 'select-when-unmatched',
@@ -90,6 +99,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'name',
@@ -99,6 +109,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'string',
     default: '—',
+    value: [],
   },
   {
     name: 'label',
@@ -108,6 +119,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'string',
     default: '—',
+    value: [],
   },
   {
     name: 'hide-loading',
@@ -117,6 +129,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'popper-class',
@@ -126,6 +139,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'teleported',
@@ -135,6 +149,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'true',
+    value: [],
   },
   {
     name: 'highlight-first-item',
@@ -144,6 +159,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'fit-input-width',
@@ -153,6 +169,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
 ];
 const events: TagDoc.Event[] = [
@@ -163,6 +180,7 @@ const events: TagDoc.Event[] = [
       en: 'triggers when a suggestion is clicked',
     },
     type: 'function',
+    tsType: '(item: typeof modelValue | any) => void',
   },
   {
     name: 'change',
@@ -171,6 +189,7 @@ const events: TagDoc.Event[] = [
       en: 'triggers when the icon inside Input value change',
     },
     type: 'function',
+    tsType: '(value: string | number) => void',
   },
 ];
 
@@ -220,6 +239,7 @@ const exposes: TagDoc.Expose[] = [
       en: 'if autocomplete activated',
     },
     type: 'object',
+    tsType: 'Ref<boolean>',
   },
   {
     name: 'blur',
@@ -227,7 +247,8 @@ const exposes: TagDoc.Expose[] = [
       cn: 'blur the input element',
       en: 'blur the input element',
     },
-    type: 'Function',
+    type: 'function',
+    tsType: '() => void',
   },
   {
     name: 'close',
@@ -235,7 +256,8 @@ const exposes: TagDoc.Expose[] = [
       cn: 'collapse suggestion list',
       en: 'collapse suggestion list',
     },
-    type: 'Function',
+    type: 'function',
+    tsType: '() => void',
   },
   {
     name: 'focus',
@@ -243,7 +265,8 @@ const exposes: TagDoc.Expose[] = [
       cn: 'focus the input element',
       en: 'focus the input element',
     },
-    type: 'Function',
+    type: 'function',
+    tsType: '() => void',
   },
   {
     name: 'handleSelect',
@@ -251,7 +274,8 @@ const exposes: TagDoc.Expose[] = [
       cn: 'triggers when a suggestion is clicked',
       en: 'triggers when a suggestion is clicked',
     },
-    type: 'Function',
+    type: 'function',
+    tsType: '(item: any) => promise<void>',
   },
   {
     name: 'handleKeyEnter',
@@ -259,7 +283,8 @@ const exposes: TagDoc.Expose[] = [
       cn: 'handle keyboard enter event',
       en: 'handle keyboard enter event',
     },
-    type: 'Function',
+    type: 'function',
+    tsType: '() => promise<void>',
   },
   {
     name: 'highlightedIndex',
@@ -268,6 +293,7 @@ const exposes: TagDoc.Expose[] = [
       en: 'the index of the currently highlighted item',
     },
     type: 'object',
+    tsType: 'Ref<number>',
   },
   {
     name: 'highlight',
@@ -275,7 +301,8 @@ const exposes: TagDoc.Expose[] = [
       cn: 'highlight an item in a suggestion',
       en: 'highlight an item in a suggestion',
     },
-    type: 'Function',
+    type: 'function',
+    tsType: '(itemIndex: number) => void',
   },
   {
     name: 'inputRef',
@@ -284,6 +311,7 @@ const exposes: TagDoc.Expose[] = [
       en: 'el-input component instance',
     },
     type: 'object',
+    tsType: 'Ref<ElInputInstance>',
   },
   {
     name: 'loading',
@@ -292,6 +320,7 @@ const exposes: TagDoc.Expose[] = [
       en: 'remote search loading indicator',
     },
     type: 'object',
+    tsType: 'Ref<boolean>',
   },
   {
     name: 'popperRef',
@@ -300,6 +329,7 @@ const exposes: TagDoc.Expose[] = [
       en: 'el-tooltip component instance',
     },
     type: 'object',
+    tsType: 'Ref<ElTooltipInstance>',
   },
   {
     name: 'suggestions',
@@ -307,7 +337,8 @@ const exposes: TagDoc.Expose[] = [
       cn: 'fetch suggestions result',
       en: 'fetch suggestions result',
     },
-    type: '',
+    type: 'object',
+    tsType: 'Ref<record<string, any>>',
   },
 ];
 

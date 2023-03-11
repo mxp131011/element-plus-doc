@@ -7,8 +7,9 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'button size',
       en: 'button size',
     },
-    type: ['large', 'default', 'small'],
+    type: 'enum',
     default: '—',
+    value: ['large', 'default', 'small'],
   },
   {
     name: 'type',
@@ -16,8 +17,9 @@ const attributes: TagDoc.Attribute[] = [
       cn: 'button type',
       en: 'button type',
     },
-    type: ['primary', 'success', 'warning', 'danger', 'info'],
+    type: 'enum',
     default: '—',
+    value: ['primary', 'success', 'warning', 'danger', 'info'],
   },
   {
     name: 'plain',
@@ -27,6 +29,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'text',
@@ -36,6 +39,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'bg',
@@ -45,6 +49,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'link',
@@ -54,6 +59,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'round',
@@ -63,6 +69,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'circle',
@@ -72,6 +79,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'loading',
@@ -81,6 +89,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'loading-icon',
@@ -100,6 +109,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'icon',
@@ -119,6 +129,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
   {
     name: 'native-type',
@@ -126,8 +137,9 @@ const attributes: TagDoc.Attribute[] = [
       cn: "same as native button's `type`",
       en: "same as native button's `type`",
     },
-    type: ['button', 'submit', 'reset'],
+    type: 'enum',
     default: '—',
+    value: ['button', 'submit', 'reset'],
   },
   {
     name: 'color',
@@ -137,6 +149,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'string',
     default: '—',
+    value: [],
   },
   {
     name: 'dark',
@@ -146,6 +159,7 @@ const attributes: TagDoc.Attribute[] = [
     },
     type: 'boolean',
     default: 'false',
+    value: [],
   },
 ];
 
@@ -181,6 +195,7 @@ const exposes: TagDoc.Expose[] = [
       en: 'button html element',
     },
     type: 'object',
+    tsType: 'Ref<HTMLButtonElement>',
   },
   {
     name: 'size',
@@ -189,6 +204,7 @@ const exposes: TagDoc.Expose[] = [
       en: 'button size',
     },
     type: 'object',
+    tsType: `ComputedRef<'' | 'small' | 'default' | 'large'>`,
   },
   {
     name: 'type',
@@ -197,6 +213,7 @@ const exposes: TagDoc.Expose[] = [
       en: 'button type',
     },
     type: `object`,
+    tsType: `ComputedRef<'' | 'default' | 'primary' | 'success' | 'warning' | 'info' | 'danger' | 'text'>`,
   },
   {
     name: 'disabled',
@@ -205,6 +222,7 @@ const exposes: TagDoc.Expose[] = [
       en: 'button disabled',
     },
     type: 'object',
+    tsType: 'ComputedRef<boolean>',
   },
   {
     name: 'shouldAddSpace',
@@ -213,6 +231,7 @@ const exposes: TagDoc.Expose[] = [
       en: 'whether adding space',
     },
     type: 'object',
+    tsType: 'ComputedRef<boolean>',
   },
 ];
 const documentInstance: TagDoc.TagDocInstance = {
