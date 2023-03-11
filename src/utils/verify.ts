@@ -1,3 +1,5 @@
+import type { BaseUrl } from '@/types/index';
+
 /**
  * 是否显示属性值建议
  */
@@ -7,7 +9,7 @@ export function isAttrValSuggest(attr: string): boolean {
 
 /**
  * 是否显示属性建议
- * @param tag - 标签
+ * @param text - 标签
  */
 export function isAttrSuggest(text: string): boolean {
   return Boolean(/((v-bind)?:)?[\w-]*$/.test(text));
@@ -25,4 +27,12 @@ export function isEventSuggest(text: string): boolean {
  */
 export function isTagSuggest(tag: string, text: string): boolean {
   return !tag && /<([\w-]*)$/.test(text);
+}
+
+/**
+ * 验证网址合法性
+ * @param {string} str - 网址
+ */
+export function verifyUrl(str: string | undefined): str is BaseUrl {
+  return Boolean(str && /^https:\/\/([\w-]+\.)+[\w-]+(\/[\w-./]*)?\/$/.test(str));
 }

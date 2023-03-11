@@ -8,7 +8,7 @@ const attributes: TagDoc.Attribute[] = [
       en: 'binding value',
     },
     type: 'string',
-    default: '—',
+    default: '',
     value: [],
   },
   {
@@ -18,7 +18,7 @@ const attributes: TagDoc.Attribute[] = [
       en: 'the placeholder of Autocomplete',
     },
     type: 'string',
-    default: '—',
+    default: '',
     value: [],
   },
   {
@@ -108,7 +108,7 @@ const attributes: TagDoc.Attribute[] = [
       en: 'same as `name` in native input',
     },
     type: 'string',
-    default: '—',
+    default: '',
     value: [],
   },
   {
@@ -118,7 +118,7 @@ const attributes: TagDoc.Attribute[] = [
       en: 'whether to hide the loading icon in remote search',
     },
     type: 'string',
-    default: '—',
+    default: '',
     value: [],
   },
   {
@@ -343,6 +343,7 @@ const exposes: TagDoc.Expose[] = [
 ];
 
 const document: TagDoc.TagDocInstance = {
+  url: 'component/button.html',
   attributes,
   events,
   slots,

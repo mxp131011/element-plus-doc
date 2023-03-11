@@ -8,7 +8,7 @@ const attributes: TagDoc.Attribute[] = [
       en: 'button size',
     },
     type: 'enum',
-    default: '—',
+    default: '',
     value: ['large', 'default', 'small'],
   },
   {
@@ -18,7 +18,7 @@ const attributes: TagDoc.Attribute[] = [
       en: 'button type',
     },
     type: 'enum',
-    default: '—',
+    default: '',
     value: ['primary', 'success', 'warning', 'danger', 'info'],
   },
   {
@@ -118,7 +118,7 @@ const attributes: TagDoc.Attribute[] = [
       en: 'icon class name',
     },
     type: ['string', 'Component'],
-    default: '—',
+    default: '',
     value: [],
   },
   {
@@ -138,7 +138,7 @@ const attributes: TagDoc.Attribute[] = [
       en: "same as native button's `type`",
     },
     type: 'enum',
-    default: '—',
+    default: '',
     value: ['button', 'submit', 'reset'],
   },
   {
@@ -148,7 +148,7 @@ const attributes: TagDoc.Attribute[] = [
       en: 'custom button color, automatically calculate `hover` and active `color`',
     },
     type: 'string',
-    default: '—',
+    default: '',
     value: [],
   },
   {
@@ -235,6 +235,7 @@ const exposes: TagDoc.Expose[] = [
   },
 ];
 const documentInstance: TagDoc.TagDocInstance = {
+  url: 'component/button.html',
   attributes,
   slots,
   exposes,

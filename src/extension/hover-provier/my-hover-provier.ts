@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import type { BaseLanguage } from '@/types/index';
+import type { BaseLanguage, BaseUrl } from '@/types/index';
 import { HoverProvierUtil } from './hover-provier-util';
 import { AllDocuments } from '@/documents/index';
 import { GetDocUtil } from './get-doc-util';
@@ -12,9 +12,13 @@ export class MyHoverProvier implements vscode.HoverProvider {
   /** 自定义前缀数组 */
   private prefixList: string[];
 
-  public constructor(lang: BaseLanguage, prefixList: string[]) {
+  /** 官网基础链接 （必须以斜杠结尾） */
+  private officialWebsite: BaseUrl;
+
+  public constructor(lang: BaseLanguage, prefixList: string[], officialWebsite: BaseUrl) {
     this.lang = lang;
     this.prefixList = prefixList;
+    this.officialWebsite = officialWebsite;
   }
 
   public provideHover(document: vscode.TextDocument, position: vscode.Position): vscode.ProviderResult<vscode.Hover> {
@@ -32,18 +36,18 @@ export class MyHoverProvier implements vscode.HoverProvider {
       kebabCaseAttr = attrArr.length > 1 && attrArr[1] ? attrArr[1] : kebabCaseAttr; // 如果是v-model:model-value 形式的属性取冒号后面的
       if (componentName in AllDocuments && Boolean(AllDocuments[componentName])) {
         const tagDoc = AllDocuments[componentName]!;
-        let md: vscode.MarkdownString[] | undefined = [];
+        let md: vscode.MarkdownString | undefined = undefined;
         if (kebabCaseTag === kebabCaseAttr) {
           // 属性 和标签一样 显示全部
-          md = new GetDocUtil(this.lang).getAllDoc(tagDoc, componentName);
+          md = new GetDocUtil(this.lang, this.officialWebsite).getAllDoc(tagDoc, componentName);
         } else if (kebabCaseAttr === 'ref') {
           // 如果是ref就显示整个对外暴露的文档
-          md = new GetDocUtil(this.lang).getExposesDoc(tagDoc, componentName);
+          md = new GetDocUtil(this.lang, this.officialWebsite).getExposesDoc(tagDoc, componentName);
         } else {
           // 属性和标签不一样 显示标签下的某个属性的信息
-          md = new GetDocUtil(this.lang).getSingleDoc(tagDoc, componentName, kebabCaseAttr);
+          md = new GetDocUtil(this.lang, this.officialWebsite).getSingleDoc(tagDoc, componentName, kebabCaseAttr);
         }
-        return md && md.length > 0 ? new vscode.Hover(md, range) : null;
+        return md && md.value !== '' ? new vscode.Hover(md, range) : null;
       }
     }
     return null;

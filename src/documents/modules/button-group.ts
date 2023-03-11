@@ -8,7 +8,7 @@ const attributes: TagDoc.Attribute[] = [
       en: 'control the size of buttons in this button-group',
     },
     type: 'enum',
-    default: '—',
+    default: '',
     value: ['large', 'default', 'small'],
   },
   {
@@ -18,7 +18,7 @@ const attributes: TagDoc.Attribute[] = [
       en: 'control the type of buttons in this button-group',
     },
     type: 'enum',
-    default: '—',
+    default: '',
     value: ['primary', 'success', 'warning', 'danger', 'info'],
   },
 ];
@@ -33,6 +33,6 @@ const slots: TagDoc.Slot[] = [
   },
 ];
 
-const documentInstance: TagDoc.TagDocInstance = { attributes, slots };
+const documentInstance: TagDoc.TagDocInstance = { url: `component/button.html#buttongroup-api`, attributes, slots };
 
 export default documentInstance;

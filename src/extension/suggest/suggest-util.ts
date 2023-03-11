@@ -42,15 +42,15 @@ export class CompletionUtil {
   public getAttrOptionValues(tag: string, attr: string): string[] {
     const attrList = attr.split(':'); // 解决 v-model:model-value 形式的属性
     const newAttr = attrList.length > 1 && attrList[1] ? attrList[1] : attr; // 如果是v-model:model-value 形式的属性取冒号后面的
-    const attributes = AllDocuments[tag]!.attributes || [];
-    const attribute = attributes.find((_attribute) => _attribute.name === newAttr);
+    const docAttrs = AllDocuments[tag]!.attributes || [];
+    const attribute = docAttrs.find((item) => item.name === newAttr);
     if (!attribute) {
       return [];
     }
-    const newVale = 'value' in attribute && attribute.value ? attribute.value : attribute.type; // 如果有value就使用value否则就使用type
-    const valueList = Array.isArray(newVale) ? newVale : newVale.toLowerCase() === 'boolean' ? ['true', 'false'] : [];
-    const values = valueList.map((item) => item.trim());
-    return values;
+    // 如果有可选值就用可选值如果没有就判断类型是否为布尔类型如果是布尔l就设置为 ['true', 'false'] ，最后在判断是否有默认值如果有默认值就设置为默认值
+    const newVale =
+      attribute.value.length > 0 ? attribute.value : attribute.type === 'boolean' ? ['true', 'false'] : attribute.default ? [attribute.default] : [];
+    return newVale;
   }
 
   /**

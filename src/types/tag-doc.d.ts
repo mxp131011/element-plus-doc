@@ -11,7 +11,7 @@ export declare namespace TagDoc {
     /** #说明 */
     description: { cn: string; en: string };
     /** #类型 */
-    type: baseType | baseType[];
+    type: baseType | ['string', 'Component'];
     /** #默认值 */
     default: string;
     /** #可选值 */
@@ -27,7 +27,7 @@ export declare namespace TagDoc {
     /** #说明 */
     description: { cn: string; en: string };
     /** #类型 */
-    type: baseType | ['string', 'Component'];
+    type: 'function';
     /** #TypeScript 类型 */
     tsType: string;
   }
@@ -49,13 +49,14 @@ export declare namespace TagDoc {
     /** #说明 */
     description: { cn: string; en: string };
     /** #类型 */
-    type: baseType | baseType[];
+    type: 'function' | 'object';
     /** #TypeScript 类型 */
     tsType: string;
   }
 
   /** 标签文档实例 */
   interface TagDocInstance {
+    url: `component/${string}-api` | `component/${string}.html`;
     attributes?: Attribute[];
     events?: Event[];
     slots?: Slot[];
