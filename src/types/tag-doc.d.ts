@@ -1,4 +1,4 @@
-type baseType = 'array' | 'boolean' | 'Component' | 'enum' | 'function' | 'number' | 'object' | 'string';
+type baseType = 'array' | 'boolean' | 'enum' | 'function' | 'number' | 'object' | 'string';
 
 /** 文档 */
 export declare namespace TagDoc {
@@ -27,7 +27,7 @@ export declare namespace TagDoc {
     /** #说明 */
     description: { cn: string; en: string };
     /** #类型 */
-    type: baseType | baseType[];
+    type: baseType | ['string', 'Component'];
     /** #TypeScript 类型 */
     tsType: string;
   }
