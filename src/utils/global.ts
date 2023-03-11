@@ -1,4 +1,6 @@
-import type { Position, TextDocument } from 'vscode';
+import { type Position, type TextDocument, workspace } from 'vscode';
+import { verifyUrl } from '@/utils/verify';
+import type { BaseLanguage, BaseUrl } from '@/types/index';
 
 /**
  * 获取光标鼠标悬停时所在位置的标签（如:el-input）
@@ -76,4 +78,20 @@ export function toKebabCase(str: string | undefined) {
     temp = temp.slice(1);
   }
   return temp;
+}
+
+/**
+ * 得到官网
+ */
+export function getOfficialWebsite(lang: BaseLanguage): BaseUrl {
+  /** 中文官网 */
+  const cnUrl = workspace.getConfiguration().get<string>('website.chinese') || '';
+  const cnUrlNew: BaseUrl = verifyUrl(cnUrl) ? cnUrl : 'https://element-plus.org/zh-CN/';
+
+  /** 英文官网 */
+  const enUrl = workspace.getConfiguration().get<string>('website.english') || '';
+  const enUrlNew: BaseUrl = verifyUrl(enUrl) ? enUrl : 'https://element-plus.org/en-US/';
+
+  /** 最终的官网 */
+  return lang === 'zh-CN' ? cnUrlNew : enUrlNew;
 }
