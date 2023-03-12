@@ -1,76 +1,4 @@
----
-title: Progress
-lang: en-US
----
-
-# Progress
-
-Progress is used to show the progress of current operation, and inform the user the current status.
-
-## Linear progress bar
-
-:::demo Use \`percentage\` attribute to set the percentage. It's **required** and must be between \`0-100\`. You can custom text format by setting \`format\`.
-
-progress/linear-progress-bar
-
-:::
-
-## Internal percentage
-
-In this case the percentage takes no additional space.
-
-:::demo \`stroke-width\` attribute decides the \`width\` of progress bar, and use \`text-inside\` attribute to put description inside the progress bar.
-
-progress/internal-percentage
-
-:::
-
-## Custom color
-
-You can use \`color\` attr to set the progress bar color. it accepts color string, function, or array.
-
-:::demo
-
-progress/custom-color
-
-:::
-
-## Circular progress bar
-
-:::demo You can specify \`type\` attribute to \`circle\` to use circular progress bar, and use \`width\` attribute to change the size of circle.
-
-progress/circular-progress-bar
-
-:::
-
-## Dashboard progress bar
-
-You also can specify \`type\` attribute to \`dashboard\` to use dashboard progress bar.
-
-:::demo
-
-progress/dashboard-progress-bar
-
-:::
-
-## Customized content
-
-:::demo Use default slot to add customized content.
-
-progress/customized-content
-
-:::
-
-## Indeterminate progress
-
-:::demo Use \`indeterminate\` attribute to set indeterminate progress, with \`duration\` to control the animation duration.
-
-progress/indeterminate-progress
-
-:::
-
-## Attributes
-
+const Attributes = `
 | Name           | Description                                                                           | Type                  | Accepted Values           | Default |
 | -------------- | ------------------------------------------------------------------------------------- | --------------------- | ------------------------- | ------- |
 | percentage     | percentage, **required**                                                              | number                | (0-100)                   | 0       |
@@ -85,16 +13,13 @@ progress/indeterminate-progress
 | show-text      | whether to show percentage                                                            | boolean               | —                         | true    |
 | stroke-linecap | circle/dashboard type shape at the end path                                           | string                | butt/round/square         | round   |
 | format         | custom text format                                                                    | function(percentage)  | —                         | —       |
-
-## Slots
-
+`;
+const Slots = `
 | Name    | Description                                       |
 | ------- | ------------------------------------------------- |
 | default | Customized content, parameter is \`{ percentage }\` |
-
+`;
 export default {
   attributes: Attributes,
-  events: Events,
-  exposes: Exposes,
   slots: Slots,
 };

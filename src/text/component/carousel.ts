@@ -32,5 +32,4 @@ export default {
   attributes: Attributes,
   events: Events,
   exposes: Exposes,
-  slots: Slots,
 };

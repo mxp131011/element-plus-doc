@@ -1,75 +1,4 @@
----
-title: Popover
-lang: en-US
----
-
-# Popover
-
-:::tip
-
-This component requires the \`<client-only></client-only>\` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
-
-:::
-
-## Basic usage
-
-Similar to Tooltip, Popover is also built with \`ElPopper\`. So for some duplicated attributes, please refer to the documentation of Tooltip.
-
-:::demo The \`trigger\` attribute is used to define how popover is triggered: \`hover\`, \`click\`, \`focus\` or \`contextmenu\` . If you want to manually control it, you can set \`:visible\`.
-
-popover/basic-usage
-
-:::
-
-## Virtual triggering
-
-Like Tooltip, Popover can be triggered by virtual elements, if your use case includes separate the triggering element and the content element, you should definitely use the mechanism, normally we use \`#reference\` to place our triggering element, with \`triggering-element\` API you can set your triggering element anywhere you like, but notice that the triggering element should be an element that accepts \`mouse\` and \`keyboard\` event.
-
-:::warning
-
-\`v-popover\` is about to be deprecated, please use \`virtual-ref\` as alternative.
-
-:::
-
-:::demo
-
-popover/virtual-triggering
-
-:::
-
-## Rich content
-
-Other components/elements can be nested in popover. Following is an example of nested table.
-
-:::demo replace the \`content\` attribute with a default \`slot\`.
-
-popover/nested-information
-
-:::
-
-## Nested operation
-
-Of course, you can nest other operations. It's more light-weight than using a dialog.
-
-:::demo
-
-popover/nested-operation
-
-:::
-
-## Directive
-
-You can still using popover in directive way but this is **not recommended** anymore since this makes your application
-complicated, you may refer to the virtual triggering for more information.
-
-:::demo
-
-popover/directive-usage
-
-:::
-
-## Attributes
-
+const Attributes = `
 | Name                      | Description                                                                                                                                                              | Type            | Accepted Values                                                                                           | Default                                                                    |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | trigger                   | how the popover is triggered                                                                                                                                             | string          | click/focus/hover/contextmenu                                                                             | click                                                                      |
@@ -93,15 +22,15 @@ popover/directive-usage
 | teleported                | whether popover dropdown is teleported to the body                                                                                                                       | boolean         | true / false                                                                                              | true                                                                       |
 | persistent                | when popover inactive and \`persistent\` is \`false\` , popover will be destroyed                                                                                            | boolean         | —                                                                                                         | true                                                                       |
 
-## Slots
-
+`;
+const Slots = `
 | Name      | Description                        |
 | --------- | ---------------------------------- |
 | —         | text content of popover            |
 | reference | HTML element that triggers popover |
 
-## Events
-
+`;
+const Events = `
 | Name         | Description                                  | Parameters |
 | ------------ | -------------------------------------------- | ---------- |
 | show         | triggers when popover shows                  | —          |
@@ -110,10 +39,9 @@ popover/directive-usage
 | hide         | triggers when popover hides                  | —          |
 | before-leave | triggers when the leaving transition before  | —          |
 | after-leave  | triggers when the leaving transition ends    | —          |
-
+`;
 export default {
   attributes: Attributes,
   events: Events,
-  exposes: Exposes,
   slots: Slots,
 };

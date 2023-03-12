@@ -1,74 +1,4 @@
----
-title: Virtualized Tree
-lang: en-US
----
-
-# <ElBadge value="beta">Tree V2 virtualized tree</ElBadge>
-
-Tree view with blazing fast scrolling performance for any amount of data
-
-## Basic usage
-
-Basic tree structure.
-
-:::demo
-
-tree-v2/basic
-
-:::
-
-## Selectable
-
-Used for node selection.
-
-:::demo
-
-tree-v2/selectable
-
-:::
-
-## Disabled checkbox
-
-The checkbox of a node can be set as disabled.
-
-:::demo In the example, \`disabled\` property is declared in defaultProps, and some nodes are set as \`disabled: true\`. The corresponding checkboxes are disabled and can't be clicked.
-
-tree-v2/disabled
-
-:::
-
-## Default expanded and default checked
-
-Tree nodes can be initially expanded or checked
-
-:::demo Use \`default-expanded-keys\` and \`default-checked-keys\` to set initially expanded and initially checked nodes respectively.
-
-tree-v2/default-state
-
-:::
-
-## Custom node content
-
-The content of tree nodes can be customized, so you can add icons or buttons as you will
-
-:::demo
-
-tree-v2/custom-node
-
-:::
-
-## Tree node filtering
-
-Tree nodes can be filtered
-
-:::demo Invoke the \`filter\` method of the Tree instance to filter tree nodes. Its parameter is the filtering keyword. Note that for it to work, \`filter-node-method\` is required, and its value is the filtering method.
-
-tree-v2/filter
-
-:::
-
-## TreeV2 Attributes
-
+const Attributes = `
 | Name                  | Description                                                                                                                                  | Type                  | Default |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ------- |
 | data                  | tree data                                                                                                                                    | array                 | —       |
@@ -86,20 +16,10 @@ tree-v2/filter
 | indent                | horizontal indentation of nodes in adjacent levels in pixels                                                                                 | number                | 16      |
 | icon                  | custom tree node icon                                                                                                                        | \`string | Component\` | -       |
 | item-size             | custom tree node height                                                                                                                      | number                | 26      |
+`;
 
-## props
-
-| Attribute | Description                                                                          | Type           | Default  |
-| --------- | ------------------------------------------------------------------------------------ | -------------- | -------- |
-| value     | unique identity key name for nodes, its value should be unique across the whole tree | string, number | id       |
-| label     | specify which key of node object is used as the node's label                         | string         | label    |
-| children  | specify which node object is used as the node's subtree                              | string         | children |
-| disabled  | specify which key of node object represents if node's checkbox is disabled           | string         | disabled |
-
-## TreeV2 Method
-
-\`Tree\` has the following method, which returns the currently selected array of nodes.
-| Method | Description | Parameters |
+const Exposes = `
+| name | Description | Parameters |
 | --------------- | ---------------------------------------- | ---------------------------------------- |
 | filter | filter all tree nodes, filtered nodes will be hidden | \`(query: string)\` |
 | getCheckedNodes | If the node can be selected (\`show-checkbox\` is \`true\`), it returns the currently selected array of nodes | \`(leafOnly: boolean)\` |
@@ -116,25 +36,23 @@ tree-v2/filter
 | expandNode | expand specified node | \`(node: TreeNode)\` |
 | collapseNode | collapse specified node | \`(node: TreeNode)\` |
 | setData | When the data is very large, using reactive data will cause the poor performance, so we provide a way to avoid this situation | \`(data: TreeData)\` |
-
-## TreeV2 Events
-
-| Name             | Description                                          | Parameters                                                                                                                              |
-| ---------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| node-click       | triggers when a node is clicked                      | \`(data: TreeNodeData, node: TreeNode, e: MouseEvent)\`                                                                                   |
-| node-contextmenu | triggers when a node is clicked by right button      | \`(e: Event, data: TreeNodeData, node: TreeNode)\`                                                                                        |
-| check-change     | triggers when the selected state of the node changes | \`(data: TreeNodeData, checked: boolean)\`                                                                                                |
-| check            | triggers after clicking the checkbox of a node       | \`(data: TreeNodeData, info: { checkedKeys: TreeKey[],checkedNodes: TreeData, halfCheckedKeys: TreeKey[], halfCheckedNodes: TreeData,})\` |
-| current-change   | triggers when current node changes                   | \`(data: TreeNodeData, node: TreeNode)\`                                                                                                  |
-| node-expand      | triggers when current node open                      | \`(data: TreeNodeData, node: TreeNode)\`                                                                                                  |
-| node-collapse    | triggers when current node close                     | \`(data: TreeNodeData, node: TreeNode)\`                                                                                                  |
-
-## TreeV2 Slots
-
+`;
+const Events = `
+| Name             | Description                                          | Parameters                                                                                                                            |
+| ---------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| node-click       | triggers when a node is clicked                      | (data: TreeNodeData, node: TreeNode, e: MouseEvent)                                                                                   |
+| node-contextmenu | triggers when a node is clicked by right button      | (e: Event, data: TreeNodeData, node: TreeNode)                                                                                        |
+| check-change     | triggers when the selected state of the node changes | (data: TreeNodeData, checked: boolean)                                                                                                |
+| check            | triggers after clicking the checkbox of a node       | (data: TreeNodeData, info: { checkedKeys: TreeKey[],checkedNodes: TreeData, halfCheckedKeys: TreeKey[], halfCheckedNodes: TreeData,}) |
+| current-change   | triggers when current node changes                   | (data: TreeNodeData, node: TreeNode)                                                                                                  |
+| node-expand      | triggers when current node open                      | (data: TreeNodeData, node: TreeNode)                                                                                                  |
+| node-collapse    | triggers when current node close                     | (data: TreeNodeData, node: TreeNode)                                                                                                  |
+`;
+const Slots = `
 | Name | Description                                                                                    |
 | ---- | ---------------------------------------------------------------------------------------------- |
 | -    | Custom content for tree nodes. The scope parameter is \`{ node: TreeNode, data: TreeNodeData }\` |
-
+`;
 export default {
   attributes: Attributes,
   events: Events,

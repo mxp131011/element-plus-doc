@@ -1,50 +1,4 @@
----
-title: TimePicker
-lang: en-US
----
-
-# TimePicker
-
-Use Time Picker for time input.
-
-:::tip
-
-This component requires the \`<client-only></client-only>\` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
-
-:::
-
-## Arbitrary time picker
-
-Can pick an arbitrary time.
-
-:::demo By default, you can scroll the mouse wheel to pick time, alternatively you can use the control arrows when the \`arrow-control\` attribute is set.
-
-time-picker/basic
-
-:::
-
-## Limit the time range
-
-You can also limit the time range.
-
-:::demo Limit the time range by specifying \`disabledHours\` \`disabledMinutes\` and \`disabledSeconds\`.
-
-time-picker/basic-range
-
-:::
-
-## Arbitrary time range
-
-Can pick an arbitrary time range.
-
-:::demo We can pick a time range by adding an \`is-range\` attribute. Also, \`arrow-control\` is supported in range mode.
-
-time-picker/range
-
-:::
-
-## Attributes
-
+const Attributes = `
 | Name                  | Description                                              | Type                                   | Accepted Values                                               | Default     |
 | --------------------- | -------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------- | ----------- |
 | model-value / v-model | binding value, if it is an array, the length should be 2 | Date / number / string / Array         | —                                                             | —           |
@@ -70,28 +24,25 @@ time-picker/range
 | disabled-minutes      | To specify the array of minutes that cannot be selected  | Function(selectedHour)                 | —                                                             | —           |
 | disabled-seconds      | To specify the array of seconds that cannot be selected  | Function(selectedHour, selectedMinute) | —                                                             | —           |
 | teleported            | whether time-picker dropdown is teleported to the body   | boolean                                | true / false                                                  | true        |
-
-## Events
-
+`;
+const Events = `
 | Name           | Description                                                | Parameters              |
 | -------------- | ---------------------------------------------------------- | ----------------------- |
 | change         | triggers when user confirms the value                      | \`(val: typeof v-model)\` |
 | blur           | triggers when Input blurs                                  | \`(e: FocusEvent)\`       |
 | focus          | triggers when Input focuses                                | \`(e: FocusEvent)\`       |
 | visible-change | triggers when the TimePicker's dropdown appears/disappears | \`(visibility: boolean)\` |
-
-## Methods
-
-| Method      | Description                 | Parameters |
+`;
+const Exposes = `
+| Name      | Description                 | Parameters |
 | ----------- | --------------------------- | ---------- |
 | focus       | focus the Input component   | —          |
 | blur        | blur the Input component    | —          |
 | handleOpen  | open the TimePicker popper  | —          |
 | handleClose | close the TimePicker popper | —          |
-
+`;
 export default {
   attributes: Attributes,
   events: Events,
   exposes: Exposes,
-  slots: Slots,
 };

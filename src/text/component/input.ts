@@ -1,124 +1,4 @@
-﻿---
-title: Input
-lang: en-US
----
-
-# Input
-
-Input data using mouse or keyboard.
-
-:::warning
-
-Input is a controlled component, it **always shows Vue binding value**.
-
-Under normal circumstances, \`input\` event should be handled. Its handler should update component's binding value (or use \`v-model\`). Otherwise, input box's value will not change.
-
-Do not support \`v-model\` modifiers.
-
-:::
-
-## Basic usage
-
-:::demo
-
-input/basic
-
-:::
-
-## Disabled
-
-:::demo Disable the Input with the \`disabled\` attribute.
-
-input/disabled
-
-:::
-
-## Clearable
-
-:::demo Make the Input clearable with the \`clearable\` attribute.
-
-input/clearable
-
-:::
-
-## Formatter
-
-Display value within it's situation with \`formatter\`, and we usually use \`parser\` at the same time.
-
-:::demo
-
-input/formatter
-
-:::
-
-## Password box
-
-:::demo Make a toggle-able password Input with the \`show-password\` attribute.
-
-input/password
-
-:::
-
-## Input with icon
-
-Add an icon to indicate input type.
-
-:::demo To add icons in Input, you can simply use \`prefix-icon\` and \`suffix-icon\` attributes. Also, the \`prefix\` and \`suffix\` named slots works as well.
-
-input/with-icon
-
-:::
-
-## Textarea
-
-Resizable for entering multiple lines of text information. Add attribute \`type="textarea"\` to change \`input\` into native \`textarea\`.
-
-:::demo Control the height by setting the \`rows\` prop.
-
-input/textarea
-
-:::
-
-## Autosize Textarea
-
-Setting the \`autosize\` prop for a textarea type of Input makes the height to automatically adjust based on the content. An options object can be provided to \`autosize\` to specify the minimum and maximum number of lines the textarea can automatically adjust.
-
-:::demo
-
-input/auto-sizing-textarea
-
-:::
-
-## Mixed input
-
-Prepend or append an element, generally a label or a button.
-
-:::demo Use \`slot\` to distribute elements that prepend or append to Input.
-
-input/mixed-input
-
-:::
-
-## Sizes
-
-:::demo Add \`size\` attribute to change the size of Input. In addition to the default size, there are two other options: \`large\`, \`small\`.
-
-input/various-size
-
-:::
-
-## Limit length
-
-:::demo \`maxlength\` and \`minlength\` attributes of input, they declare a limit on the number of characters a user can input. The "number of characters" is measured using JavaScript string length.Setting the \`maxlength\` prop for a text or textarea type of Input can limit the length of input value, allows you to show word count by setting \`show-word-limit\` to \`true\` at the same time.
-
-input/length-limiting
-
-:::
-
-## API
-
-const Attributes = `
-
+﻿const Attributes = `
 | Name                  | Description                                                                                                                            | Type                                                                                                                                                | Default |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | type                  | type of input                                                                                                                          | ^[string]\`'text' | 'textarea' | ...\` [native input types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) | text    |
@@ -150,9 +30,9 @@ const Attributes = `
 | tabindex              | input tabindex                                                                                                                         | ^[string] / ^[number]                                                                                                                               | —       |
 | validate-event        | whether to trigger form validation                                                                                                     | ^[boolean]                                                                                                                                          | true    |
 | input-style           | the style of the input element or textarea element                                                                                     | ^[string] / ^[object]\`CSSProperties | CSSProperties[] | string[]\`                                                                                 | {}      |
+`;
 
-### Events
-
+const Events = `
 | Name   | Description                                                                                           | Type                                           |
 | ------ | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | blur   | triggers when Input blurs                                                                             | ^[Function]\`(event: FocusEvent) => void\`       |
@@ -162,16 +42,14 @@ const Attributes = `
 | clear  | triggers when the Input is cleared by clicking the clear button                                       | ^[Function]\`() => void\`                        |
 `;
 const Slots = `
-
 | Name    | Description                                                               |
 | ------- | ------------------------------------------------------------------------- |
 | prefix  | content as Input prefix, only works when \`type\` is not 'textarea'         |
 | suffix  | content as Input suffix, only works when \`type\` is not 'textarea'         |
 | prepend | content to prepend before Input, only works when \`type\` is not 'textarea' |
 | append  | content to append after Input, only works when \`type\` is not 'textarea'   |
-
-### Exposes
-
+`;
+const Exposes = `
 | Name           | Description                      | Type                                                    |
 | -------------- | -------------------------------- | ------------------------------------------------------- |
 | blur           | blur the input element           | ^[Function]\`() => void\`                                 |
@@ -183,7 +61,7 @@ const Slots = `
 | select         | select the text in input element | ^[Function]\`() => void\`                                 |
 | textarea       | HTML textarea element            | ^[object]\`Ref<HTMLTextAreaElement>\`                     |
 | textareaStyle  | style of textarea                | ^[object]\`Ref<StyleValue>\`                              |
-
+`;
 export default {
   attributes: Attributes,
   events: Events,

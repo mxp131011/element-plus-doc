@@ -1,146 +1,4 @@
----
-title: Virtualized Select
-lang: en-US
----
-
-# <ElBadge value="beta">Select V2 virtualized selector</ElBadge>
-
-:::tip
-
-This component is still under testing, if you found any bug or issue please report it at [GitHub](https://github.com/element-plus/element-plus/issues) for us to fix.
-
-:::
-
-:::tip
-
-This component requires the \`<client-only></client-only>\` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
-
-:::
-
-## Background
-
-In some use-cases, a single selector may end up loading tens of thousands of rows of data.
-Rendering that much data into the DOM could be a burden to the browser, which can result in performance issues.
-For a better user and developer experience, we decided to add this component.
-
-## Basic usage
-
-The simplest selector
-
-:::demo
-
-select-v2/basic-usage
-
-:::
-
-## Multi select
-
-The basic multi-select selector with tags
-
-:::demo
-
-select-v2/multiple
-
-:::
-
-## Hide extra tags when the selected items are too many.
-
-You can collapse tags to a text by using \`collapse-tags\` attribute. You can check them when mouse hover collapse text by using \`collapse-tags-tooltip\` attribute.
-
-:::demo
-
-select-v2/hide-extra-tags
-
-:::
-
-## Filterable multi-select
-
-When the options are overwhelmingly too many, you can use \`filterable\` option to enable filter feature for finding out the desired option
-
-:::demo
-
-select-v2/filterable
-
-:::
-
-## Disabled selector and select options
-
-You can choose to disable selector itself or the option.
-
-:::demo
-
-select-v2/disabled
-
-:::
-
-## Option Grouping
-
-We can group option as we wanted, as long as the data satisfies the pattern.
-
-:::demo
-
-select-v2/grouping
-
-:::
-
-## Customized option renderer
-
-We can define our own template for rendering the option in the popup.
-
-:::demo
-
-select-v2/customized-option
-
-:::
-
-## Clearable selector
-
-We can clear all the selected options at once, also applicable for single select.
-
-:::demo
-
-select-v2/clearable
-
-:::
-
-## Create Option
-
-Create and select new items that are not included in select options
-
-By using the \`allow-create\` attribute, users can create new items by typing in the input box. Note that for \`allow-create\` to work, \`filterable\` must be \`true\`.
-
-:::tip
-
-It will be better to set \`:reserve-keyword="false"\` when use \`allow-create\`
-
-:::
-
-:::demo
-
-select-v2/allow-create
-
-:::
-
-## Remote search
-
-Enter keywords and search data from server.
-
-:::demo Set the value of \`filterable\` and \`remote\` with \`true\` to enable remote search, and you should pass the \`remote-method\`. \`remote-method\` is a \`Function\` that gets called when the input value changes, and its parameter is the current input value.
-
-select-v2/remote-search
-
-:::
-
-## use value-key
-
-:::demo when \`options.value\` is an object, you should set a unique identity key name for value
-
-select-v2/use-valueKey
-
-:::
-
-## SelectV2 Attributes
-
+const Attributes = `
 | Name                                | Description                                                                                                                              | Type                               | Accepted Values                                                                                           | Default       |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------- |
 | model-value / v-model               | biding value                                                                                                                             | string / number / boolean / object | —                                                                                                         | —             |
@@ -173,16 +31,9 @@ select-v2/use-valueKey
 | validate-event                      | whether to trigger form validation                                                                                                       | boolean                            | -                                                                                                         | true          |
 | placement                           | position of dropdown                                                                                                                     | string                             | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | bottom-start  |
 | collapse-tags-tooltip ^(2.3.0)      | whether show all selected tags when mouse hover text of collapse-tags. To use this, \`collapse-tags\` must be true                         | boolean                            | true / false                                                                                              | false         |
+ `;
 
-<span style="display: none;">
-<!-- | default-first-option | 在输入框按下回车，选择第一个匹配项。需配合 \`filterable\` 或 \`remote\` 使用 | boolean | - | false |
-| filter-method | 自定义搜索方法 | function | — | — |
-| loading | 是否正在从远程获取数据 | boolean | — | false |
-| loading-text | 远程加载时显示的文字 | string | — | 加载中 | -->
-</span>
-
-## SelectV2 Events
-
+const Events = `
 | Name           | Description                                                   | Params                                    |
 | -------------- | ------------------------------------------------------------- | ----------------------------------------- |
 | change         | triggers when the selected value changes                      | current selected value                    |
@@ -191,18 +42,17 @@ select-v2/use-valueKey
 | clear          | triggers when the clear icon is clicked in a clearable Select | —                                         |
 | blur           | triggers when Input blurs                                     | (event: FocusEvent)                       |
 | focus          | triggers when Input focuses                                   | (event: FocusEvent)                       |
+`;
 
-## SelectV2 Slots
-
+const Slots = `
 | Name    | Description                   |
 | ------- | ----------------------------- |
 | default | Option renderer               |
 | empty   | content when options is empty |
 | prefix  | prefix content of input       |
-
+`;
 export default {
   attributes: Attributes,
   events: Events,
-  exposes: Exposes,
   slots: Slots,
 };

@@ -1,70 +1,4 @@
----
-title: DateTimePicker
-lang: en-US
----
-
-# DateTimePicker
-
-Select date and time in one picker.
-
-:::tip
-
-DateTimePicker is derived from DatePicker and TimePicker. For a more detailed explanation on attributes, you can refer to DatePicker and TimePicker.
-
-:::
-
-:::tip
-
-This component requires the \`<client-only></client-only>\` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
-
-:::
-
-## Date and time
-
-:::demo You can select date and time in one picker at the same time by setting \`type\` to \`datetime\`. The way to use shortcuts is the same as Date Picker.
-
-datetime-picker/date-and-time
-
-:::
-
-## DateTime Formats
-
-Use \`format\` to control displayed text's format in the input box. Use \`value-format\` to control binding value's format.
-
-By default, the component accepts and emits a \`Date\` object.
-
-Check the list [here](https://day.js.org/docs/en/display/format#list-of-all-available-formats) of all available formats of Day.js.
-
-:::warning
-
-Pay attention to capitalization
-
-:::
-
-:::demo
-
-datetime-picker/date-and-time-formats
-
-:::
-
-## Date and time range
-
-:::demo You can select date and time range by setting \`type\` to \`datetimerange\`.
-
-datetime-picker/date-and-time-range
-
-:::
-
-## Default time value for start date and end date
-
-:::demo When picking date range on the date panel with type \`datetimerange\`, \`00:00:00\` will be used as the default time value for start and end date. We can control it with the \`default-time\` attribute. \`default-time\` accepts an array of up to two Date objects. The first item controls time value of the start date and the second item controls time value of the end date.
-
-datetime-picker/default-time
-
-:::
-
-## Attributes
-
+const Attributes = `
 | Name                  | Description                                                                                           | Type                                             | Accepted Values                                               | Default             |
 | --------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------- | ------------------- |
 | model-value / v-model | binding value, if it is an array, the length should be 2                                              | Date / number / string / Array                   | —                                                             | —                   |
@@ -93,9 +27,8 @@ datetime-picker/default-time
 | disabled-date         | a function determining if a date is disabled with that date as its parameter. Should return a Boolean | function(Date)                                   | —                                                             | —                   |
 | cell-class-name       | set custom className                                                                                  | Function(Date)                                   | —                                                             | —                   |
 | teleported            | whether datetime-picker dropdown is teleported to the body                                            | boolean                                          | true / false                                                  | true                |
-
-## Events
-
+`;
+const Events = `
 | Name            | Description                                                                   | Parameters                                |
 | --------------- | ----------------------------------------------------------------------------- | ----------------------------------------- |
 | change          | triggers when user confirms the value                                         | component's binding value                 |
@@ -103,20 +36,18 @@ datetime-picker/default-time
 | focus           | triggers when Input focuses                                                   | \`(e: FocusEvent)\`                         |
 | calendar-change | triggers when the calendar selected date is changed. Only for \`datetimerange\` | [Date, Date]                              |
 | visible-change  | triggers when the DateTimePicker's dropdown appears/disappears                | true when it appears, and false otherwise |
-
-## Methods
-
-| Method | Description               | Parameters |
+`;
+const Exposes = `
+| Exposes | Description               | Parameters |
 | ------ | ------------------------- | ---------- |
 | focus  | focus the Input component | —          |
-
-## Slots
-
+`;
+const Slots = `
 | Name            | Description                    |
 | --------------- | ------------------------------ |
 | default         | custom cell content            |
 | range-separator | custom range separator content |
-
+`;
 
 export default {
   attributes: Attributes,
@@ -124,4 +55,3 @@ export default {
   exposes: Exposes,
   slots: Slots,
 };
-

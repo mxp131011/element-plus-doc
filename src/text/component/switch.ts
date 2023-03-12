@@ -1,86 +1,4 @@
----
-title: Switch
-lang: en-US
----
-
-# Switch
-
-Switch is used for switching between two opposing states.
-
-## Basic usage
-
-:::demo Bind \`v-model\` to a \`Boolean\` typed variable. The \`--el-switch-on-color\` and \`--el-switch-off-color\` CSS variables decides the background color in two states.
-
-switch/basic
-
-:::
-
-## Sizes
-
-:::demo
-
-switch/sizes
-
-:::
-
-## Text description
-
-You can add \`active-text\` and \`inactive-text\` attribute to show texts. use \`inline-prompt\` attribute to control text is displayed inside dot.
-
-:::demo You can add \`active-text\` and \`inactive-text\` attribute to show texts.
-
-switch/text-description
-
-:::
-
-## Display custom icons
-
-:::tip
-
-Use the \`active-icon\` and \`inactive-icon\` attribute to add icon. You can pass either string for the component name (registered in advance) or the component itself which is a SVG Vue component. Element Plus has provided a set of icon that you can find at [icon](/en-US/component/icon)
-
-:::
-
-:::demo You can add \`active-icon\` and \`inactive-icon\` attribute to show icons. use \`inline-prompt\` attribute to control icon is displayed inside dot.
-
-switch/custom-icons
-
-:::
-
-## Extended value types
-
-:::demo You can set \`active-value\` and \`inactive-value\` attributes. They both receive a \`Boolean\`, \`String\` or \`Number\` typed value.
-
-switch/extended-value-types
-
-:::
-
-## Disabled
-
-:::demo Adding the \`disabled\` attribute disables Switch.
-
-switch/disabled
-
-:::
-
-## Loading
-
-:::demo Setting the \`loading\` attribute to \`true\` indicates a loading state on the Switch.
-
-switch/loading
-
-:::
-
-## prevent switching
-
-:::demo set the \`before-change\` property, If \`false\` is returned or a \`Promise\` is returned and then is rejected, will stop switching.
-
-switch/prevent-switching
-
-:::
-
-## Attributes
-
+const Attributes = `
 | Name                  | Description                                                                                                                                     | Type                                | Accepted Values         | Default |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ----------------------- | ------- |
 | model-value / v-model | binding value, it should be equivalent to either \`active-value\` or \`inactive-value\`, by default it's \`boolean\` type                             | boolean / string / number           | —                       | —       |
@@ -101,22 +19,19 @@ switch/prevent-switching
 | name                  | input name of Switch                                                                                                                            | string                              | —                       | —       |
 | validate-event        | whether to trigger form validation                                                                                                              | boolean                             | —                       | true    |
 | before-change         | before-change hook before the switch state changes. If \`false\` is returned or a \`Promise\` is returned and then is rejected, will stop switching | \`() => Promise<boolean> | boolean\` | —                       | —       |
-
-## Events
-
+`;
+const Events = `
 | Name   | Description                 | Parameters           |
 | ------ | --------------------------- | -------------------- |
 | change | triggers when value changes | value after changing |
-
-## Methods
-
-| Method | Description                | Parameters |
+`;
+const Exposes = `
+| Name   | Description                | Parameters |
 | ------ | -------------------------- | ---------- |
 | focus  | focus the Switch component | —          |
-
+`;
 export default {
   attributes: Attributes,
   events: Events,
   exposes: Exposes,
-  slots: Slots,
 };

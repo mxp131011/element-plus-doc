@@ -1,120 +1,4 @@
----
-title: Tree
-lang: en-US
----
-
-# Tree
-
-Display a set of data with hierarchies.
-
-## Basic usage
-
-Basic tree structure.
-
-:::demo
-
-tree/basic
-
-:::
-
-## Selectable
-
-Used for node selection.
-
-:::demo This example also shows how to load node data asynchronously.
-
-tree/selectable
-
-:::
-
-## Custom leaf node in lazy mode
-
-:::demo A node's data is not fetched until it is clicked, so the Tree cannot predict whether a node is a leaf node. That's why a drop-down button is added to each node, and if it is a leaf node, the drop-down button will disappear when clicked. That being said, you can also tell the Tree in advance whether the node is a leaf node, avoiding the render of the drop-down button before a leaf node.
-
-tree/custom-leaf
-
-:::
-
-## Disabled checkbox
-
-The checkbox of a node can be set as disabled.
-
-:::demo In the example, 'disabled' property is declared in defaultProps, and some nodes are set as 'disabled:true'. The corresponding checkboxes are disabled and can't be clicked.
-
-tree/disabled
-
-:::
-
-## Default expanded and default checked
-
-Tree nodes can be initially expanded or checked
-
-:::demo Use \`default-expanded-keys\` and \`default-checked-keys\` to set initially expanded and initially checked nodes respectively. Note that for them to work, \`node-key\` is required. Its value is the name of a key in the data object, and the value of that key should be unique across the whole tree.
-
-tree/default-state
-
-:::
-
-## Checking tree nodes
-
-:::demo This example shows how to get and set checked nodes. They both can be done in two approaches: node and key. If you are taking the key approach, \`node-key\` is required.
-
-tree/checking-tree
-
-:::
-
-## Custom node content
-
-The content of tree nodes can be customized, so you can add icons or buttons as you will
-
-:::demo There are two ways to customize template for tree nodes: \`render-content\` and scoped slot. Use \`render-content\` to assign a render function that returns the content of tree nodes. See Vue's documentation for a detailed introduction of render functions. If you prefer scoped slot, you'll have access to \`node\` and \`data\` in the scope, standing for the TreeNode object and node data of the current node respectively. Note that the \`render-content\` demo can't run in JSFiddle because it doesn't support JSX syntax. In a real project, \`render-content\` will work if relevant dependencies are correctly configured.
-
-tree/customized-node
-
-:::
-
-## Custom node class
-
-The class of tree nodes can be customized
-
-:::demo. Use \`props.class\` to build class name of nodes.
-
-tree/custom-node-class
-
-:::
-
-## Tree node filtering
-
-Tree nodes can be filtered
-
-:::demo Invoke the \`filter\` method of the Tree instance to filter tree nodes. Its parameter is the filtering keyword. Note that for it to work, \`filter-node-method\` is required, and its value is the filtering method.
-
-tree/filtering
-
-:::
-
-## Accordion
-
-Only one node among the same level can be expanded at one time.
-
-:::demo
-
-tree/accordion
-
-:::
-
-## Draggable
-
-You can drag and drop Tree nodes by adding a \`draggable\` attribute.
-
-:::demo
-
-tree/draggable
-
-:::
-
-## Attributes
-
+const Attributes = `
 | Name                  | Description                                                                                                                                                                                                                                                                                                                                                                 | Type                                   | Accepted Values | Default |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | --------------- | ------- |
 | data                  | tree data                                                                                                                                                                                                                                                                                                                                                                   | array                                  | —               | —       |
@@ -142,21 +26,9 @@ tree/draggable
 | draggable             | whether enable tree nodes drag and drop                                                                                                                                                                                                                                                                                                                                     | boolean                                | —               | false   |
 | allow-drag            | this function will be executed before dragging a node. If \`false\` is returned, the node can not be dragged                                                                                                                                                                                                                                                                  | Function(node)                         | —               | —       |
 | allow-drop            | this function will be executed before the dragging node is dropped. If \`false\` is returned, the dragging node can not be dropped at the target node. \`type\` has three possible values: 'prev' (inserting the dragging node before the target node), 'inner' (inserting the dragging node to the target node) and 'next' (inserting the dragging node after the target node) | Function(draggingNode, dropNode, type) | —               | —       |
-
-## props
-
-| Attribute | Description                                                                   | Type                         | Accepted Values | Default |
-| --------- | ----------------------------------------------------------------------------- | ---------------------------- | --------------- | ------- |
-| label     | specify which key of node object is used as the node's label                  | string, function(data, node) | —               | —       |
-| children  | specify which node object is used as the node's subtree                       | string                       | —               | —       |
-| disabled  | specify which key of node object represents if node's checkbox is disabled    | string, function(data, node) | —               | —       |
-| isLeaf    | specify whether the node is a leaf node, only works when lazy load is enabled | string, function(data, node) | —               | —       |
-| class     | custom node class name                                                        | string, function(data, node) | —               | —       |
-
-## Method
-
-\`Tree\` has the following method, which returns the currently selected array of nodes.
-| Method | Description | Parameters |
+`;
+const Exposes = `
+| Name | Description | Parameters |
 | --------------- | ---------------------------------------- | ---------------------------------------- |
 | filter | filter all tree nodes, filtered nodes will be hidden | Accept a parameter which will be used as first parameter for filter-node-method |
 | updateKeyChildren | set new data to node, only works when \`node-key\` is assigned | (key, data) Accept two parameters: 1. key of node 2. new data |
@@ -176,9 +48,8 @@ tree/draggable
 | append | append a child node to a given node in the tree | (data, parentNode) 1. child node's data to be appended 2. parent node's data, key or node |
 | insertBefore | insert a node before a given node in the tree | (data, refNode) 1. node's data to be inserted 2. reference node's data, key or node |
 | insertAfter | insert a node after a given node in the tree | (data, refNode) 1. node's data to be inserted 2. reference node's data, key or node |
-
-## Events
-
+`;
+const Events = `
 | Name             | Description                                               | Parameters                                                                                                                                                                                       |
 | ---------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | node-click       | triggers when a node is clicked                           | four parameters: node object corresponding to the node clicked, \`node\` property of TreeNode, TreeNode itself, event object                                                                       |
@@ -194,13 +65,12 @@ tree/draggable
 | node-drag-over   | triggers when dragging over a node (like mouseover event) | three parameters: node object corresponding to the dragging node, node object corresponding to the dragging over node, event.                                                                    |
 | node-drag-end    | triggers when dragging ends                               | four parameters: node object corresponding to the dragging node, node object corresponding to the dragging end node (may be \`undefined\`), node drop type (before / after / inner), event.        |
 | node-drop        | triggers after the dragging node is dropped               | four parameters: node object corresponding to the dragging node, node object corresponding to the dropped node, node drop type (before / after / inner), event.                                  |
-
-## Slots
-
+`;
+const Slots = `
 | Name | Description                                                            |
 | ---- | ---------------------------------------------------------------------- |
 | —    | Custom content for tree nodes. The scope parameter is \`{ node, data }\` |
-
+`;
 export default {
   attributes: Attributes,
   events: Events,

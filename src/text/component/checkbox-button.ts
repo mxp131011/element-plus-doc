@@ -18,5 +18,4 @@ const Events = `
 export default {
   attributes: Attributes,
   events: Events,
-  slots: Slots,
 };

@@ -1,92 +1,4 @@
----
-title: Rate
-lang: en-US
----
-
-# Rate
-
-Used for rating
-
-## Basic usage
-
-:::demo Rate divides rating scores into several levels and these levels can be distinguished by using different background colors. By default background colors are the same, but you can assign them an array with three element to reflect three levels using the \`colors\` attribute, and their two thresholds can be defined by \`low-threshold\` and \`high-threshold\`, or you can assign them with a object which key is the threshold between two levels and value is the corresponding color.
-
-rate/basic-usage
-
-:::
-
-## Sizes
-
-:::demo
-
-rate/sizes
-
-:::
-
-## With allow-half
-
-:::demo Add attribute \`allow-half\` Half star allowed
-
-rate/allow-half
-
-:::
-
-## With text
-
-Using text to indicate rating score
-
-:::demo Add attribute \`show-text\` to display text at the right of Rate. You can assign texts for different scores using \`texts\`. \`texts\` is an array whose length should be equal to the max score \`max\`.
-
-rate/text
-
-:::
-
-## Clearable
-
-:::demo You can reset the value to \`0\` when you click at the same value again.
-
-rate/clearable
-
-:::
-
-## More icons
-
-You can use different icons to distinguish different rate components.
-
-:::demo You can customize icons by passing \`icons\` an array with three elements or a object which key is the threshold between two levels and value is the corresponding icon. In this example, we also use \`void-icon\` to set the icon if it is unselected.
-
-rate/more-icons
-
-:::
-
-## Read-only
-
-Read-only Rate is for displaying rating score. Half star is supported.
-
-:::demo Use attribute \`disabled\` to make the component read-only. Add \`show-score\` to display the rating score at the right side. Additionally, you can use attribute \`score-template\` to provide a score template. It must contain \`{value}\`, and \`{value}\` will be replaced with the rating score.
-
-rate/readonly
-
-:::
-
-## Custom styles
-
-Now you can set custom style for rate component.
-Use \`css/scss\` language to change the global or local color. We set some global color variables: \`--el-rate-void-color\`, \`--el-rate-fill-color\`, \`--el-rate-disabled-void-color\`, \`--el-rate-text-color\`. You can use like: \`:root { --el-rate-void-color: red; --el-rate-fill-color: blue; }\`.
-
-### Default Variables
-
-| Variable                      | Default Color                 |
-| ----------------------------- | ----------------------------- |
-| --el-rate-void-color          | var(--el-border-color-darker) |
-| --el-rate-fill-color          | #f7ba2a                       |
-| --el-rate-disabled-void-color | var(--el-fill-color)          |
-| --el-rate-text-color          | var(--el-text-color-primary)  |
-
-## API
-
 const Attributes = `
-
 | Name                  | Description                                                                                                                                                                                                                    | Type                                                                      | Default                                                            |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- | ------------------------------------------------------------------ |
 | model-value / v-model | binding value                                                                                                                                                                                                                  | ^[number]                                                                 | 0                                                                  |
@@ -110,23 +22,20 @@ const Attributes = `
 | clearable             | whether value can be reset to \`0\`                                                                                                                                                                                              | ^[boolean]                                                                | false                                                              |
 | id                    | native \`id\` attribute                                                                                                                                                                                                          | ^[string]                                                                 | —                                                                  |
 | label<A11yTag />      | same as \`aria-label\` in Rate                                                                                                                                                                                                   | ^[string]                                                                 | —                                                                  |
-
-### Events
-
+`;
+const Events = `
 | Name   | Description                         | Type                                 |
 | ------ | ----------------------------------- | ------------------------------------ |
 | change | Triggers when rate value is changed | ^[Function]\`(value: number) => void\` |
-
-### Exposes
-
+`;
+const Exposes = `
 | Name              | Description         | Type                                 |
 | ----------------- | ------------------- | ------------------------------------ |
 | setCurrentValue   | set current value   | ^[Function]\`(value: number) => void\` |
 | resetCurrentValue | reset current value | ^[Function]\`() => void\`              |
-
+`;
 export default {
   attributes: Attributes,
   events: Events,
   exposes: Exposes,
-  slots: Slots,
 };

@@ -1,88 +1,4 @@
----
-title: Input
-lang: en-US
----
-
-# Input Number
-
-Input numerical values with a customizable range.
-
-## Basic usage
-
-:::demo Bind a variable to \`v-model\` in \`<el-input-number>\` element and you are set.
-
-input-number/basic
-
-:::
-
-:::tip
-
-When inputting invalid string to the input box, input value will emit \`NaN\` to the upper layer as result of error
-
-:::
-
-## Disabled
-
-:::demo The \`disabled\` attribute accepts a \`boolean\`, and if the value is \`true\`, the component is disabled. If you just need to control the value within a range, you can add \`min\` attribute to set the minimum value and \`max\` to set the maximum value. By default, the minimum value is \`0\`.
-
-input-number/disabled
-
-:::
-
-## Steps
-
-Allows you to define incremental steps.
-
-:::demo Add \`step\` attribute to set the step.
-
-input-number/steps
-
-:::
-
-## Step strictly
-
-:::demo The \`step-strictly\` attribute accepts a \`boolean\`. if this attribute is \`true\`, input value can only be multiple of step.
-
-input-number/step-strictly
-
-:::
-
-## Precision
-
-:::demo Add \`precision\` attribute to set the precision of input value.
-
-input-number/precision
-
-:::
-
-:::tip
-
-The value of \`precision\` must be a non negative integer and should not be less than the decimal places of \`step\`.
-
-:::
-
-## Size
-
-Use attribute \`size\` to set additional sizes with \`large\` or \`small\`.
-
-:::demo
-
-input-number/size
-
-:::
-
-## Controls Position
-
-:::demo Set \`controls-position\` to decide the position of control buttons.
-
-input-number/controlled
-
-:::
-
-## API
-
 const Attributes = `
-
 | Name                                         | Description                                      | Type                                          | Default   |
 | -------------------------------------------- | ------------------------------------------------ | --------------------------------------------- | --------- |
 | model-value / v-model                        | binding value                                    | ^[number]                                     | —         |
@@ -102,27 +18,24 @@ const Attributes = `
 | id                                           | same as \`id\` in native input                     | ^[string]                                     | —         |
 | value-on-clear<VersionTag version="2.2.0" /> | value should be set when input box is cleared    | ^[number] / ^[null] / ^[enum]\`'min' | 'max'\` | —         |
 | validate-event                               | whether to trigger form validation               | ^[boolean]                                    | true      |
+`;
 
-### Events
-
+const Events = `
 | Name   | Description                     | Type                                                                                    |
 | ------ | ------------------------------- | --------------------------------------------------------------------------------------- |
 | change | triggers when the value changes | ^[Function]\`(currentValue: number | undefined, oldValue: number | undefined) => void\` |
 | blur   | triggers when Input blurs       | ^[Function]\`(event: FocusEvent) => void\`                                                |
 | focus  | triggers when Input focuses     | ^[Function]\`(event: FocusEvent) => void\`                                                |
-
-### Exposes
-
+`;
+const Exposes = `
 | Name  | Description                      | Type                    |
 | ----- | -------------------------------- | ----------------------- |
 | focus | get focus the input component    | ^[Function]\`() => void\` |
 | blur  | remove focus the input component | ^[Function]\`() => void\` |
-
+`;
 
 export default {
   attributes: Attributes,
   events: Events,
   exposes: Exposes,
-  slots: Slots,
 };
-

@@ -1,48 +1,4 @@
----
-title: Scrollbar
-lang: en-US
----
-
-# Scrollbar
-
-Used to replace the browser's native scrollbar.
-
-## Basic usage
-
-:::demo Use \`height\` property to set the height of the scrollbar, or if not set, it adapts according to the parent container height.
-
-scrollbar/basic-usage
-
-:::
-
-## Horizontal scroll
-
-:::demo When the element width is greater than the scrollbar width, the horizontal scrollbar is displayed.
-
-scrollbar/horizontal-scroll
-
-:::
-
-## Max height
-
-:::demo The scrollbar is displayed only when the element height exceeds the max height.
-
-scrollbar/max-height
-
-:::
-
-## Manual scroll
-
-:::demo Use \`setScrollTop\` and \`setScrollLeft\` methods can control scrollbar manually.
-
-scrollbar/manual-scroll
-
-:::
-
-## API
-
 const Attributes = `
-
 | Name       | Description                                                                                                                     | Type                                                                | Default |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ------- |
 | height     | height of scrollbar                                                                                                             | ^[string] / ^[number]                                               | —       |
@@ -56,21 +12,19 @@ const Attributes = `
 | tag        | element tag of the view                                                                                                         | ^[string]                                                           | div     |
 | always     | always show scrollbar                                                                                                           | ^[boolean]                                                          | false   |
 | min-size   | minimum size of scrollbar                                                                                                       | ^[number]                                                           | 20      |
+`;
 
-### Events
-
+const Events = `
 | Name   | Description                                           | Type                                                             |
 | ------ | ----------------------------------------------------- | ---------------------------------------------------------------- |
 | scroll | triggers when scrolling, return distance of scrolling | ^[Function]\`({ scrollLeft: number, scrollTop: number }) => void\` |
 `;
 const Slots = `
-
 | Name    | Description               |
 | ------- | ------------------------- |
 | default | customize default content |
-
-### Exposes
-
+`;
+const Exposes = `
 | Name          | Description                                | Type                                                                       |
 | ------------- | ------------------------------------------ | -------------------------------------------------------------------------- |
 | handleScroll  | handle scroll event                        | ^[Function]\`() => void\`                                                    |
@@ -79,7 +33,7 @@ const Slots = `
 | setScrollLeft | Set distance to scroll left                | ^[Function]\`(scrollLeft: number) => void\`                                  |
 | update        | update scrollbar state manually            | ^[Function]\`() => void\`                                                    |
 | wrapRef       | scrollbar wrap ref                         | ^[object]\`Ref<HTMLDivElement>\`                                             |
-
+`;
 export default {
   attributes: Attributes,
   events: Events,

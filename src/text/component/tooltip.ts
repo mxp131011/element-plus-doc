@@ -1,155 +1,4 @@
----
-title: Tooltip
-lang: en-US
----
-
-# Tooltip
-
-Display prompt information for mouse hover.
-
-:::tip
-
-This component requires the \`<client-only></client-only>\` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
-
-:::
-
-## Basic usage
-
-Tooltip has 9 placements.
-
-:::demo Use attribute \`content\` to set the display content when hover. The attribute \`placement\` determines the position of the tooltip. Its value is \`[orientation]-[alignment]\` with four orientations \`top\`, \`left\`, \`right\`, \`bottom\` and three alignments \`start\`, \`end\`, \`null\`, and the default alignment is null. Take \`placement="left-end"\` for example, Tooltip will display on the left of the element which you are hovering and the bottom of the tooltip aligns with the bottom of the element.
-
-tooltip/basic
-
-:::
-
-## Theme
-
-Tooltip has two built-in themes: \`dark\` and \`light\`.
-
-:::tip
-
-To use customized theme, you will have to known where your tooltip is rendered into, if your tooltip is rendered into the root element, you will need to set the css rule globally.
-
-It is recommended that not using linear gradient background color when you using customized theme and showing the arrow at the same time, because the popup arrow and the content are two different elements,
-the popup arrow's style needs to be set individually, and when it comes to the gradient background color, it might seem a little bit weird.
-
-:::
-
-:::demo Set \`effect\` to modify theme, and the default value is \`dark\`.
-
-tooltip/theme
-
-:::
-
-## More Content
-
-Display multiple lines of text and set their format.
-
-:::demo Override attribute \`content\` of \`el-tooltip\` by adding a slot named \`content\`.
-
-tooltip/rich-content
-
-:::
-
-## Advanced usage
-
-In addition to basic usages, there are some attributes that allow you to customize your own:
-
-\`transition\` attribute allows you to customize the animation in which the tooltip shows or hides, and the default value is el-fade-in-linear.
-
-\`disabled\` attribute allows you to disable \`tooltip\`. You just need set it to \`true\`.
-
-In fact, Tooltip is an extension based on [ElPopper](https://github.com/element-plus/element-plus/tree/dev/packages/components/popper), you can use any attribute that are allowed in ElPopper.
-
-:::demo
-
-tooltip/advanced-usage
-
-:::
-
-:::tip
-
-The \`router-link\` component is not supported in tooltip, please use \`vm.$router.push\`.
-
-Disabled form elements are not supported for Tooltip, more information can be found at [MDN](https://developer.mozilla.org/en-US/docs/Web/Events/mouseenter). You need to wrap the disabled form element with a container element for Tooltip to work.
-
-:::
-
-## HTML as content
-
-The content attribute can be set to HTML string.
-
-:::warning
-
-Although \`content\` property supports HTML strings, dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). So when \`raw-content\` is on, please make sure \`content\` is trusted, and **never** assign user-provided \`content\`.
-
-:::
-
-:::demo
-
-tooltip/html-content
-
-:::
-
-## Virtual triggering
-
-Sometimes we want to render the tooltip on some other trigger element,
-we can separate the trigger and the content.
-
-:::tip
-
-Virtual triggering tooltip is controlled component, so that you will have to control the visibility of the tooltip your own
-when this happens, **YOU WILL NOT** be able to close the tooltip by clicking somewhere else.
-
-:::
-
-:::demo
-
-tooltip/virtual-trigger
-
-:::
-
-## Singleton
-
-Tooltip can also be singleton, which means you can have multiple trigger with only one tooltip instance, this function is implemented based on \`Virtual triggering\`
-
-:::tip
-
-Known issue: when using singleton, the popup will be bouncing out from unexpected places
-
-:::
-
-:::demo
-
-tooltip/singleton
-
-:::
-
-## Controlled
-
-Tooltip can be controlled by the parent component, by using \`:visible\` you can implement two way binding.
-
-:::demo
-
-tooltip/controlled
-
-:::
-
-## Animations
-
-Tooltip can be customized animated, you can set the desired animation function as you desired.
-
-:::demo
-
-tooltip/animations
-
-:::
-
-## API
-
 const Attributes = `
-
 | Name                      | Description                                                                                                                                             | Type                                                                                                                                                                        | Default           |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
 | append-to                 | which element the tooltip CONTENT appends to                                                                                                            | ^[CSSSelector] / ^[HTMLElement]                                                                                                                                             | —                 |
@@ -177,14 +26,12 @@ const Attributes = `
 | aria-label^[a11y]         | same as \`aria-label\`                                                                                                                                    | ^[string]                                                                                                                                                                   | —                 |
 `;
 const Slots = `
-
 | Name    | Description                            |
 | ------- | -------------------------------------- |
 | default | Tooltip triggering & reference element |
 | content | customize content                      |
-
-### Exposes
-
+`;
+const Exposes = `
 | Name                 | Description                                                       | Type                                              |
 | -------------------- | ----------------------------------------------------------------- | ------------------------------------------------- |
 | popperRef            | el-popper component instance                                      | ^[objcet]\`Ref<PopperInstance | null>\`            |
@@ -194,10 +41,9 @@ const Slots = `
 | onOpen               | expose onOpen function to mange el-tooltip open state             | ^[Function]\`(event?: Event | undefined) => void\` |
 | onClose              | expose onOpen function to mange el-tooltip open state             | ^[Function]\`(event?: Event | undefined) => void\` |
 | hide                 | expose hide function                                              | ^[Function]\`(event?: Event | undefined) => void\` |
-
+`;
 export default {
   attributes: Attributes,
-  events: Events,
   exposes: Exposes,
   slots: Slots,
 };

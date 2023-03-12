@@ -1,60 +1,4 @@
----
-title: TimeSelect
-lang: en-US
----
-
-# TimeSelect
-
-Use Time Select for time input.
-
-The available time range is 00:00 to 23:59
-
-:::tip
-
-This component requires the \`<client-only></client-only>\` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
-
-:::
-
-## Fixed time picker
-
-Provide a list of fixed time for users to choose.
-
-:::demo Use \`el-time-select\` label, then assign start time, end time and time step with \`start\`, \`end\` and \`step\`.
-
-time-select/basic
-
-:::
-
-## Time Formats
-
-Use \`format\` to control format of time(hours and minutes).
-
-Check the list [here](https://day.js.org/docs/en/display/format#list-of-all-available-formats) of all available formats of Day.js.
-
-:::warning
-
-Pay attention to capitalization
-
-:::
-
-:::demo
-
-time-select/time-formats
-
-:::
-
-## Fixed time range
-
-If start( end ) time is picked at first, then the status of end( start ) time's options will change accordingly.
-
-:::demo
-
-time-select/time-range
-
-:::
-
-## Attributes
-
+const Attributes = `
 | Name                  | Description                                              | Type                  | Accepted Values                                                                        | Default     |
 | --------------------- | -------------------------------------------------------- | --------------------- | -------------------------------------------------------------------------------------- | ----------- |
 | model-value / v-model | binding value                                            | string                | —                                                                                      | —           |
@@ -73,25 +17,22 @@ time-select/time-range
 | min-time              | minimum time, any time before this time will be disabled | string                | —                                                                                      | 00:00       |
 | max-time              | maximum time, any time after this time will be disabled  | string                | —                                                                                      | —           |
 | format                | set format of time                                       | string                | see [formats](https://day.js.org/docs/en/display/format#list-of-all-available-formats) | HH:mm       |
-
-## Events
-
+`;
+const Events = `
 | Name   | Description                           | Parameters                |
 | ------ | ------------------------------------- | ------------------------- |
 | change | triggers when user confirms the value | component's binding value |
 | blur   | triggers when Input blurs             | (event: FocusEvent)       |
 | focus  | triggers when Input focuses           | (event: FocusEvent)       |
-
-## Methods
-
-| Method | Description               | Parameters |
+`;
+const Exposes = `
+| Name | Description               | Parameters |
 | ------ | ------------------------- | ---------- |
 | focus  | focus the Input component | —          |
 | blur   | blur the Input component  | —          |
-
+`;
 export default {
   attributes: Attributes,
   events: Events,
   exposes: Exposes,
-  slots: Slots,
 };
