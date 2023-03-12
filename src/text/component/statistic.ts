@@ -43,13 +43,13 @@ statistic/card
 | ----------------- | ------------------------------ | ------------------------------------------------------------------- | ------- |
 | value             | Numerical content              | ^[number]                                                           | 0       |
 | decimal-separator | Setting the decimal point      | ^[string]                                                           | .       |
-| formatter         | Custom numerical presentation  | ^[Function]`(value: number) => string \| number`                    | —       |
+| formatter         | Custom numerical presentation  | ^[Function]\`(value: number) => string | number\`                    | —       |
 | group-separator   | Sets the thousandth identifier | ^[string]                                                           | ,       |
 | precision         | numerical precision            | ^[number]                                                           | 0       |
 | prefix            | Sets the prefix of a number    | ^[string]                                                           | —       |
 | suffix            | Sets the suffix of a number    | ^[string]                                                           | —       |
 | title             | Numeric titles                 | ^[string]                                                           | —       |
-| value-style       | Styles numeric values          | ^[string] / ^[object]`CSSProperties \| CSSProperties[] \| string[]` | —       |
+| value-style       | Styles numeric values          | ^[string] / ^[object]\`CSSProperties | CSSProperties[] | string[]\` | —       |
 
 ### Statistic Slots
 
@@ -63,7 +63,7 @@ statistic/card
 
 | Name         | Description           | Type                             |
 | ------------ | --------------------- | -------------------------------- |
-| displayValue | current display value | ^[object]`Ref<string \| number>` |
+| displayValue | current display value | ^[object]\`Ref<string | number>\` |
 
 ## Countdown API
 
@@ -76,14 +76,14 @@ statistic/card
 | prefix      | Sets the prefix of a countdown   | ^[string]                                                           | —        |
 | suffix      | Sets the suffix of a countdown   | ^[string]                                                           | —        |
 | title       | countdown titles                 | ^[string]                                                           | —        |
-| value-style | Styles countdown values          | ^[string] / ^[object]`CSSProperties \| CSSProperties[] \| string[]` | —        |
+| value-style | Styles countdown values          | ^[string] / ^[object]\`CSSProperties | CSSProperties[] | string[]\` | —        |
 
 ### Countdown Events
 
 | Method | Description                  | Type                                 |
 | ------ | ---------------------------- | ------------------------------------ |
-| change | Time difference change event | ^[Function]`(value: number) => void` |
-| finish | countdown end event          | ^[Function]`() => void`              |
+| change | Time difference change event | ^[Function]\`(value: number) => void\` |
+| finish | countdown end event          | ^[Function]\`() => void\`              |
 
 ### Countdown Slots
 
@@ -97,4 +97,11 @@ statistic/card
 
 | Name         | Description           | Type                   |
 | ------------ | --------------------- | ---------------------- |
-| displayValue | current display value | ^[object]`Ref<string>` |
+| displayValue | current display value | ^[object]\`Ref<string>\` |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

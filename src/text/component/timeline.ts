@@ -64,7 +64,7 @@ timeline/center
 | type           | node type                   | string                | primary / success / warning / danger / info | —       |
 | color          | background color of node    | string                | hsl / hsv / hex / rgb                       | —       |
 | size           | node size                   | string                | normal / large                              | normal  |
-| icon           | icon component              | `string \| Component` | —                                           | —       |
+| icon           | icon component              | \`string | Component\` | —                                           | —       |
 | hollow         | icon is hollow              | boolean               | —                                           | false   |
 
 ## Timeline-Item Slots
@@ -73,3 +73,10 @@ timeline/center
 | ---- | -------------------------------- |
 | —    | Custom content for timeline item |
 | dot  | Custom defined node              |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

@@ -9,7 +9,7 @@ Use Time Picker for time input.
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+This component requires the \`<client-only></client-only>\` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
@@ -17,7 +17,7 @@ This component requires the `<client-only></client-only>` wrap when used in SSR 
 
 Can pick an arbitrary time.
 
-:::demo By default, you can scroll the mouse wheel to pick time, alternatively you can use the control arrows when the `arrow-control` attribute is set.
+:::demo By default, you can scroll the mouse wheel to pick time, alternatively you can use the control arrows when the \`arrow-control\` attribute is set.
 
 time-picker/basic
 
@@ -27,7 +27,7 @@ time-picker/basic
 
 You can also limit the time range.
 
-:::demo Limit the time range by specifying `disabledHours` `disabledMinutes` and `disabledSeconds`.
+:::demo Limit the time range by specifying \`disabledHours\` \`disabledMinutes\` and \`disabledSeconds\`.
 
 time-picker/basic-range
 
@@ -37,7 +37,7 @@ time-picker/basic-range
 
 Can pick an arbitrary time range.
 
-:::demo We can pick a time range by adding an `is-range` attribute. Also, `arrow-control` is supported in range mode.
+:::demo We can pick a time range by adding an \`is-range\` attribute. Also, \`arrow-control\` is supported in range mode.
 
 time-picker/range
 
@@ -62,10 +62,10 @@ time-picker/range
 | range-separator       | range separator                                          | string                                 | —                                                             | '-'         |
 | format                | format of the displayed value in the input box           | string                                 | see [date formats](/en-US/component/date-picker#date-formats) | HH:mm:ss    |
 | default-value         | optional, default date of the calendar                   | Date / [Date, Date]                    | —                                                             | —           |
-| id                    | same as `id` in native input                             | string / [string, string]              | —                                                             | -           |
-| name                  | same as `name` in native input                           | string                                 | —                                                             | —           |
-| prefix-icon           | Custom prefix icon component                             | `string \| Component`                  | —                                                             | Clock       |
-| clear-icon            | Custom clear icon component                              | `string \| Component`                  | —                                                             | CircleClose |
+| id                    | same as \`id\` in native input                             | string / [string, string]              | —                                                             | -           |
+| name                  | same as \`name\` in native input                           | string                                 | —                                                             | —           |
+| prefix-icon           | Custom prefix icon component                             | \`string | Component\`                  | —                                                             | Clock       |
+| clear-icon            | Custom clear icon component                              | \`string | Component\`                  | —                                                             | CircleClose |
 | disabled-hours        | To specify the array of hours that cannot be selected    | function                               | —                                                             | —           |
 | disabled-minutes      | To specify the array of minutes that cannot be selected  | Function(selectedHour)                 | —                                                             | —           |
 | disabled-seconds      | To specify the array of seconds that cannot be selected  | Function(selectedHour, selectedMinute) | —                                                             | —           |
@@ -75,10 +75,10 @@ time-picker/range
 
 | Name           | Description                                                | Parameters              |
 | -------------- | ---------------------------------------------------------- | ----------------------- |
-| change         | triggers when user confirms the value                      | `(val: typeof v-model)` |
-| blur           | triggers when Input blurs                                  | `(e: FocusEvent)`       |
-| focus          | triggers when Input focuses                                | `(e: FocusEvent)`       |
-| visible-change | triggers when the TimePicker's dropdown appears/disappears | `(visibility: boolean)` |
+| change         | triggers when user confirms the value                      | \`(val: typeof v-model)\` |
+| blur           | triggers when Input blurs                                  | \`(e: FocusEvent)\`       |
+| focus          | triggers when Input focuses                                | \`(e: FocusEvent)\`       |
+| visible-change | triggers when the TimePicker's dropdown appears/disappears | \`(visibility: boolean)\` |
 
 ## Methods
 
@@ -88,3 +88,10 @@ time-picker/range
 | blur        | blur the Input component    | —          |
 | handleOpen  | open the TimePicker popper  | —          |
 | handleClose | close the TimePicker popper | —          |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

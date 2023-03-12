@@ -11,7 +11,7 @@ Guide the user to complete tasks in accordance with the process. Its steps can b
 
 Simple step bar.
 
-:::demo Set `active` attribute with `Number` type, which indicates the index of steps and starts from 0. You can set `space` attribute when the width of the step needs to be fixed which accepts `Number` type. The unit of the `space` attribute is `px`. If not set, it is responsive. Setting the `finish-status` attribute can change the state of the steps that have been completed.
+:::demo Set \`active\` attribute with \`Number\` type, which indicates the index of steps and starts from 0. You can set \`space\` attribute when the width of the step needs to be fixed which accepts \`Number\` type. The unit of the \`space\` attribute is \`px\`. If not set, it is responsive. Setting the \`finish-status\` attribute can change the state of the steps that have been completed.
 
 steps/basic
 
@@ -21,7 +21,7 @@ steps/basic
 
 Shows the status of the step for each step.
 
-:::demo Use `title` attribute to set the name of the step, or override the attribute by using a named `slot`. We have listed all the slot names for you at the end of this page.
+:::demo Use \`title\` attribute to set the name of the step, or override the attribute by using a named \`slot\`. We have listed all the slot names for you at the end of this page.
 
 steps/with-status
 
@@ -51,7 +51,7 @@ steps/with-description
 
 A variety of custom icons can be used in the step bar.
 
-:::demo The icon is set by the `icon` property. The types of icons can be found in the document for the Icon component. In addition, you can customize the icon through a named `slot`.
+:::demo The icon is set by the \`icon\` property. The types of icons can be found in the document for the Icon component. In addition, you can customize the icon through a named \`slot\`.
 
 steps/with-icon
 
@@ -61,7 +61,7 @@ steps/with-icon
 
 Vertical step bars.
 
-:::demo You only need to set the `direction` attribute to `vertical` in the `el-steps` element.
+:::demo You only need to set the \`direction\` attribute to \`vertical\` in the \`el-steps\` element.
 
 steps/vertical
 
@@ -69,7 +69,7 @@ steps/vertical
 
 ## Simple step bar
 
-Simple step bars, where `align-center`, `description`, `direction` and `space` will be ignored.
+Simple step bars, where \`align-center\`, \`description\`, \`direction\` and \`space\` will be ignored.
 
 :::demo
 
@@ -101,7 +101,7 @@ steps/simple
 | ----------- | ------------------------------------------------------------------------ | --------------------- | ----------------------------------------- | ------- |
 | title       | step title                                                               | string                | —                                         | —       |
 | description | step description                                                         | string                | —                                         | —       |
-| icon        | step custom icon. Icons can be passed via named slot as well             | `string \| Component` | —                                         | —       |
+| icon        | step custom icon. Icons can be passed via named slot as well             | \`string | Component\` | —                                         | —       |
 | status      | current status. It will be automatically set by Steps if not configured. | string                | wait / process / finish / error / success | —       |
 
 ## Step Slots
@@ -111,3 +111,10 @@ steps/simple
 | icon        | custom icon      |
 | title       | step title       |
 | description | step description |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

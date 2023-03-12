@@ -17,7 +17,7 @@ empty/basic-usage
 
 ## Custom image
 
-Use `image` prop to set image URL.
+Use \`image\` prop to set image URL.
 
 :::demo
 
@@ -27,7 +27,7 @@ empty/custom-image
 
 ## Image size
 
-Use `image-size` prop to control image size.
+Use \`image-size\` prop to control image size.
 
 :::demo
 
@@ -48,7 +48,7 @@ empty/bottom-content
 ## Custom styles
 
 Now you can set custom style for empty component.
-Use `css/scss` language to change the global or local color. We set some global color variables: `--el-empty-fill-color-0`, `--el-empty-fill-color-1`, `--el-empty-fill-color-2`, ......, `--el-empty-fill-color-9`. You can use like: `:root { --el-empty-fill-color-0: red; --el-empty-fill-color-1: blue; }`.
+Use \`css/scss\` language to change the global or local color. We set some global color variables: \`--el-empty-fill-color-0\`, \`--el-empty-fill-color-1\`, \`--el-empty-fill-color-2\`, ......, \`--el-empty-fill-color-9\`. You can use like: \`:root { --el-empty-fill-color-0: red; --el-empty-fill-color-1: blue; }\`.
 But usually, if you want to change style, you need to change all color, because these colors are a combination.
 
 ### Default Variables
@@ -81,3 +81,12 @@ But usually, if you want to change style, you need to change all color, because 
 | default     | Custom bottom content |
 | image       | Custom image          |
 | description | Custom description    |
+
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};
+

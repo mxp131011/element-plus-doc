@@ -9,7 +9,7 @@ Displays a global notification message at a corner of the page.
 
 ## Basic usage
 
-:::demo Element Plus has registered the `$notify` method and it receives an object as its parameter. In the simplest case, you can set the `title` field and the` message` field for the title and body of the notification. By default, the notification automatically closes after 4500ms, but by setting `duration` you can control its duration. Specifically, if set to `0`, it will not close automatically. Note that `duration` receives a `Number` in milliseconds.
+:::demo Element Plus has registered the \`$notify\` method and it receives an object as its parameter. In the simplest case, you can set the \`title\` field and the\` message\` field for the title and body of the notification. By default, the notification automatically closes after 4500ms, but by setting \`duration\` you can control its duration. Specifically, if set to \`0\`, it will not close automatically. Note that \`duration\` receives a \`Number\` in milliseconds.
 
 notification/basic
 
@@ -19,7 +19,7 @@ notification/basic
 
 We provide four types: success, warning, info and error.
 
-:::demo Element Plus provides four notification types: `success`, `warning`, `info` and `error`. They are set by the `type` field, and other values will be ignored. We also registered methods for these types that can be invoked directly like `open3` and `open4` without passing a `type` field.
+:::demo Element Plus provides four notification types: \`success\`, \`warning\`, \`info\` and \`error\`. They are set by the \`type\` field, and other values will be ignored. We also registered methods for these types that can be invoked directly like \`open3\` and \`open4\` without passing a \`type\` field.
 
 notification/different-types
 
@@ -29,7 +29,7 @@ notification/different-types
 
 Notification can emerge from any corner you like.
 
-:::demo The `position` attribute defines which corner Notification slides in. It can be `top-right`, `top-left`, `bottom-right` or `bottom-left`. Defaults to `top-right`.
+:::demo The \`position\` attribute defines which corner Notification slides in. It can be \`top-right\`, \`top-left\`, \`bottom-right\` or \`bottom-left\`. Defaults to \`top-right\`.
 
 notification/positioning
 
@@ -39,7 +39,7 @@ notification/positioning
 
 Customize Notification's offset from the edge of the screen.
 
-:::demo Set the `offset` attribute to customize Notification's offset from the edge of the screen. Note that every Notification instance of the same moment should have the same offset.
+:::demo Set the \`offset\` attribute to customize Notification's offset from the edge of the screen. Note that every Notification instance of the same moment should have the same offset.
 
 notification/offsetting
 
@@ -47,9 +47,9 @@ notification/offsetting
 
 ## Use HTML string
 
-`message` supports HTML string.
+\`message\` supports HTML string.
 
-:::demo Set `dangerouslyUseHTMLString` to true and `message` will be treated as an HTML string.
+:::demo Set \`dangerouslyUseHTMLString\` to true and \`message\` will be treated as an HTML string.
 
 notification/raw-html
 
@@ -57,7 +57,7 @@ notification/raw-html
 
 :::warning
 
-Although `message` property supports HTML strings, dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). So when `dangerouslyUseHTMLString` is on, please make sure the content of `message` is trusted, and **never** assign `message` to user-provided content.
+Although \`message\` property supports HTML strings, dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). So when \`dangerouslyUseHTMLString\` is on, please make sure the content of \`message\` is trusted, and **never** assign \`message\` to user-provided content.
 
 :::
 
@@ -65,7 +65,7 @@ Although `message` property supports HTML strings, dynamically rendering arbitra
 
 It is possible to hide the close button
 
-:::demo Set the `showClose` attribute to `false` so the notification cannot be closed by the user.
+:::demo Set the \`showClose\` attribute to \`false\` so the notification cannot be closed by the user.
 
 notification/no-close
 
@@ -73,19 +73,19 @@ notification/no-close
 
 ## Global method
 
-Element Plus has added a global method `$notify` for `app.config.globalProperties`. So in a vue instance you can call `Notification` like what we did in this page.
+Element Plus has added a global method \`$notify\` for \`app.config.globalProperties\`. So in a vue instance you can call \`Notification\` like what we did in this page.
 
 ## Local import
 
-```javascript
+\`\`\`javascript
 import { ElNotification } from 'element-plus'
-```
+\`\`\`
 
-In this case you should call `ElNotification(options)`. We have also registered methods for different types, e.g. `ElNotification.success(options)`. You can call `ElNotification.closeAll()` to manually close all the instances.
+In this case you should call \`ElNotification(options)\`. We have also registered methods for different types, e.g. \`ElNotification.success(options)\`. You can call \`ElNotification.closeAll()\` to manually close all the instances.
 
 ## App context inheritance <el-tag>> 2.0.4</el-tag>
 
-Now notification accepts a `context` as second parameter of the message constructor which allows you to inject current app's context to notification which allows you to inherit all the properties of the app.
+Now notification accepts a \`context\` as second parameter of the message constructor which allows you to inject current app's context to notification which allows you to inherit all the properties of the app.
 
 You can use it like this:
 
@@ -95,14 +95,14 @@ If you globally registered ElNotification component, it will automatically inher
 
 :::
 
-```ts
+\`\`\`ts
 import { getCurrentInstance } from 'vue'
 import { ElNotification } from 'element-plus'
 
 // in your setup method
 const { appContext } = getCurrentInstance()!
 ElNotification({}, appContext)
-```
+\`\`\`
 
 ## Options
 
@@ -110,9 +110,9 @@ ElNotification({}, appContext)
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------ | --------------------- | ------------------------------------------- | ------------- |
 | title                    | title                                                                                                              | string                | —                                           | —             |
 | message                  | description text                                                                                                   | string/Vue.VNode      | —                                           | —             |
-| dangerouslyUseHTMLString | whether `message` is treated as HTML string                                                                        | boolean               | —                                           | false         |
+| dangerouslyUseHTMLString | whether \`message\` is treated as HTML string                                                                        | boolean               | —                                           | false         |
 | type                     | notification type                                                                                                  | string                | success/warning/info/error                  | —             |
-| icon                     | custom icon component. It will be overridden by `type`                                                             | `string \| Component` | —                                           | —             |
+| icon                     | custom icon component. It will be overridden by \`type\`                                                             | \`string | Component\` | —                                           | —             |
 | customClass              | custom class name for Notification                                                                                 | string                | —                                           | —             |
 | duration                 | duration before close. It will not automatically close if set 0                                                    | number                | —                                           | 4500          |
 | position                 | custom position                                                                                                    | string                | top-right/top-left/bottom-right/bottom-left | top-right     |
@@ -125,7 +125,14 @@ ElNotification({}, appContext)
 
 ## Methods
 
-`Notification` and `this.$notify` returns the current Notification instance. To manually close the instance, you can call `close` on it.
+\`Notification\` and \`this.$notify\` returns the current Notification instance. To manually close the instance, you can call \`close\` on it.
 | Method | Description |
 | ---- | ---- |
 | close | close the Notification |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

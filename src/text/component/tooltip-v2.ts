@@ -9,7 +9,7 @@ For the existing tooltip, it has too many APIs which is not very intuitive and a
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+This component requires the \`<client-only></client-only>\` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
@@ -33,11 +33,11 @@ tooltip-v2/a11y
 
 ## Transition / Animation
 
-You may set transition/animation via `CSS` animation/transition or [Transition](https://vuejs.org/guide/built-ins/transition.html#transition) component for your tooltip content when opening.
+You may set transition/animation via \`CSS\` animation/transition or [Transition](https://vuejs.org/guide/built-ins/transition.html#transition) component for your tooltip content when opening.
 
 :::tip
 
-By default, tooltip v2 ONLY allows a half-way transition/animation which only occurs when the tooltip is shown. This is because the implementation uses `v-if` to show/hide the tooltip. When closing, the content element is removed from DOM, so that the transition / animation will be interrupted.
+By default, tooltip v2 ONLY allows a half-way transition/animation which only occurs when the tooltip is shown. This is because the implementation uses \`v-if\` to show/hide the tooltip. When closing, the content element is removed from DOM, so that the transition / animation will be interrupted.
 
 :::
 
@@ -59,7 +59,7 @@ tooltip-v2/full-transition
 
 ## Render to the root element
 
-By default, unlike [tooltip v1](./tooltip.md), the tooltip will be rendered to the body element. **tooltip v2** will render to where the trigger/reference element is. But you can still render to to the root element by using `Teleport` component.
+By default, unlike [tooltip v1](./tooltip.md), the tooltip will be rendered to the body element. **tooltip v2** will render to where the trigger/reference element is. But you can still render to to the root element by using \`Teleport\` component.
 
 :::demo
 
@@ -88,3 +88,10 @@ tooltip-v2/arrow
 ### Tooltip Arrow
 
 ### Tooltip Reference -->
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

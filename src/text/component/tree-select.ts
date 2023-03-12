@@ -6,11 +6,11 @@ lang: en-US
 # TreeSelect
 
 The tree selector of the dropdown menu,
-it combines the functions of components `el-tree` and `el-select`.
+it combines the functions of components \`el-tree\` and \`el-select\`.
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+This component requires the \`<client-only></client-only>\` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
@@ -26,7 +26,7 @@ tree-select/basic
 
 ## Select any level
 
-When using the `check-strictly=true` attribute, any node can be checked,
+When using the \`check-strictly=true\` attribute, any node can be checked,
 otherwise only leaf nodes are supported.
 
 :::demo
@@ -37,7 +37,7 @@ tree-select/check-strictly
 
 :::tip
 
-When using `show-checkbox`, since `check-on-click-node` is false by default,
+When using \`show-checkbox\`, since \`check-on-click-node\` is false by default,
 it can only be selected by checking, you can set it to true,
 and then click the node to select.
 
@@ -66,8 +66,8 @@ tree-select/disabled
 ## Filterable
 
 Use keyword filtering or custom filtering methods.
-`filterMethod` can custom filter method for data,
-`filterNodeMethod` can custom filter method for data node.
+\`filterMethod\` can custom filter method for data,
+\`filterNodeMethod\` can custom filter method for data node.
 
 :::demo
 
@@ -97,7 +97,7 @@ tree-select/lazy
 
 ## Attributes
 
-Since this component combines the functions of components `el-tree` and `el-select`,
+Since this component combines the functions of components \`el-tree\` and \`el-select\`,
 the original properties have not been changed, so no repetition here,
 and please go to the original component to view the documentation.
 
@@ -111,3 +111,10 @@ and please go to the original component to view the documentation.
 | Name                      | Description                                                                                                         | Type  | Accepted Values | Default |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----- | --------------- | ------- |
 | cacheData **(\> 2.2.26)** | The cached data of the lazy node, the structure is the same as the data, used to get the label of the unloaded data | array | —               | —       |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

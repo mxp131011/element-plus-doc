@@ -21,7 +21,7 @@ collapse/basic
 
 In accordion mode, only one panel can be expanded at once
 
-:::demo Activate accordion mode using the `accordion` attribute.
+:::demo Activate accordion mode using the \`accordion\` attribute.
 
 collapse/accordion
 
@@ -29,7 +29,7 @@ collapse/accordion
 
 ## Custom title
 
-Besides using the `title` attribute, you can customize panel title with named slots, which makes adding custom content, e.g. icons, possible.
+Besides using the \`title\` attribute, you can customize panel title with named slots, which makes adding custom content, e.g. icons, possible.
 
 :::demo
 
@@ -70,3 +70,13 @@ collapse/customization
 | ----- | ------------------------------ |
 | —     | content of Collapse Item       |
 | title | content of Collapse Item title |
+
+
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};
+

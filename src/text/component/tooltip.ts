@@ -9,7 +9,7 @@ Display prompt information for mouse hover.
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+This component requires the \`<client-only></client-only>\` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
@@ -17,7 +17,7 @@ This component requires the `<client-only></client-only>` wrap when used in SSR 
 
 Tooltip has 9 placements.
 
-:::demo Use attribute `content` to set the display content when hover. The attribute `placement` determines the position of the tooltip. Its value is `[orientation]-[alignment]` with four orientations `top`, `left`, `right`, `bottom` and three alignments `start`, `end`, `null`, and the default alignment is null. Take `placement="left-end"` for example, Tooltip will display on the left of the element which you are hovering and the bottom of the tooltip aligns with the bottom of the element.
+:::demo Use attribute \`content\` to set the display content when hover. The attribute \`placement\` determines the position of the tooltip. Its value is \`[orientation]-[alignment]\` with four orientations \`top\`, \`left\`, \`right\`, \`bottom\` and three alignments \`start\`, \`end\`, \`null\`, and the default alignment is null. Take \`placement="left-end"\` for example, Tooltip will display on the left of the element which you are hovering and the bottom of the tooltip aligns with the bottom of the element.
 
 tooltip/basic
 
@@ -25,7 +25,7 @@ tooltip/basic
 
 ## Theme
 
-Tooltip has two built-in themes: `dark` and `light`.
+Tooltip has two built-in themes: \`dark\` and \`light\`.
 
 :::tip
 
@@ -36,7 +36,7 @@ the popup arrow's style needs to be set individually, and when it comes to the g
 
 :::
 
-:::demo Set `effect` to modify theme, and the default value is `dark`.
+:::demo Set \`effect\` to modify theme, and the default value is \`dark\`.
 
 tooltip/theme
 
@@ -46,7 +46,7 @@ tooltip/theme
 
 Display multiple lines of text and set their format.
 
-:::demo Override attribute `content` of `el-tooltip` by adding a slot named `content`.
+:::demo Override attribute \`content\` of \`el-tooltip\` by adding a slot named \`content\`.
 
 tooltip/rich-content
 
@@ -56,9 +56,9 @@ tooltip/rich-content
 
 In addition to basic usages, there are some attributes that allow you to customize your own:
 
-`transition` attribute allows you to customize the animation in which the tooltip shows or hides, and the default value is el-fade-in-linear.
+\`transition\` attribute allows you to customize the animation in which the tooltip shows or hides, and the default value is el-fade-in-linear.
 
-`disabled` attribute allows you to disable `tooltip`. You just need set it to `true`.
+\`disabled\` attribute allows you to disable \`tooltip\`. You just need set it to \`true\`.
 
 In fact, Tooltip is an extension based on [ElPopper](https://github.com/element-plus/element-plus/tree/dev/packages/components/popper), you can use any attribute that are allowed in ElPopper.
 
@@ -70,7 +70,7 @@ tooltip/advanced-usage
 
 :::tip
 
-The `router-link` component is not supported in tooltip, please use `vm.$router.push`.
+The \`router-link\` component is not supported in tooltip, please use \`vm.$router.push\`.
 
 Disabled form elements are not supported for Tooltip, more information can be found at [MDN](https://developer.mozilla.org/en-US/docs/Web/Events/mouseenter). You need to wrap the disabled form element with a container element for Tooltip to work.
 
@@ -82,7 +82,7 @@ The content attribute can be set to HTML string.
 
 :::warning
 
-Although `content` property supports HTML strings, dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). So when `raw-content` is on, please make sure `content` is trusted, and **never** assign user-provided `content`.
+Although \`content\` property supports HTML strings, dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). So when \`raw-content\` is on, please make sure \`content\` is trusted, and **never** assign user-provided \`content\`.
 
 :::
 
@@ -112,7 +112,7 @@ tooltip/virtual-trigger
 
 ## Singleton
 
-Tooltip can also be singleton, which means you can have multiple trigger with only one tooltip instance, this function is implemented based on `Virtual triggering`
+Tooltip can also be singleton, which means you can have multiple trigger with only one tooltip instance, this function is implemented based on \`Virtual triggering\`
 
 :::tip
 
@@ -128,7 +128,7 @@ tooltip/singleton
 
 ## Controlled
 
-Tooltip can be controlled by the parent component, by using `:visible` you can implement two way binding.
+Tooltip can be controlled by the parent component, by using \`:visible\` you can implement two way binding.
 
 :::demo
 
@@ -148,15 +148,15 @@ tooltip/animations
 
 ## API
 
-### Attributes
+const Attributes = `
 
 | Name                      | Description                                                                                                                                             | Type                                                                                                                                                                        | Default           |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
 | append-to                 | which element the tooltip CONTENT appends to                                                                                                            | ^[CSSSelector] / ^[HTMLElement]                                                                                                                                             | —                 |
-| effect                    | Tooltip theme, built-in theme: `dark` / `light`                                                                                                         | ^[enum]`'dark' \| 'light'`                                                                                                                                                  | dark              |
-| content                   | display content, can be overridden by `slot#content`                                                                                                    | ^[string]                                                                                                                                                                   | ''                |
-| raw-content               | whether `content` is treated as HTML string                                                                                                             | ^[boolean]                                                                                                                                                                  | false             |
-| placement                 | position of Tooltip                                                                                                                                     | ^[enum]`'top' \| 'top-start' \| 'top-end' \| 'bottom' \| 'bottom-start' \| 'bottom-end' \| 'left' \| 'left-start' \| 'left-end' \| 'right' \| 'right-start' \| 'right-end'` | bottom            |
+| effect                    | Tooltip theme, built-in theme: \`dark\` / \`light\`                                                                                                         | ^[enum]\`'dark' | 'light'\`                                                                                                                                                  | dark              |
+| content                   | display content, can be overridden by \`slot#content\`                                                                                                    | ^[string]                                                                                                                                                                   | ''                |
+| raw-content               | whether \`content\` is treated as HTML string                                                                                                             | ^[boolean]                                                                                                                                                                  | false             |
+| placement                 | position of Tooltip                                                                                                                                     | ^[enum]\`'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end'\` | bottom            |
 | visible / v-model:visible | visibility of Tooltip                                                                                                                                   | ^[boolean]                                                                                                                                                                  | —                 |
 | disabled                  | whether Tooltip is disabled                                                                                                                             | ^[boolean]                                                                                                                                                                  | —                 |
 | offset                    | offset of the Tooltip                                                                                                                                   | ^[number]                                                                                                                                                                   | 12                |
@@ -168,15 +168,15 @@ tooltip/animations
 | auto-close                | timeout in milliseconds to hide tooltip                                                                                                                 | ^[number]                                                                                                                                                                   | 0                 |
 | popper-class              | custom class name for Tooltip's popper                                                                                                                  | ^[string]                                                                                                                                                                   | —                 |
 | enterable                 | whether the mouse can enter the tooltip                                                                                                                 | ^[boolean]                                                                                                                                                                  | true              |
-| teleported                | whether tooltip content is teleported, if `true` it will be teleported to where `append-to` sets                                                        | ^[boolean]                                                                                                                                                                  | true              |
-| trigger                   | How should the tooltip be triggered (to show)                                                                                                           | ^[enum]`'hover' \| 'click' \| 'focus' \| 'contextmenu'`                                                                                                                     | hover             |
+| teleported                | whether tooltip content is teleported, if \`true\` it will be teleported to where \`append-to\` sets                                                        | ^[boolean]                                                                                                                                                                  | true              |
+| trigger                   | How should the tooltip be triggered (to show)                                                                                                           | ^[enum]\`'hover' | 'click' | 'focus' | 'contextmenu'\`                                                                                                                     | hover             |
 | virtual-triggering        | Indicates whether virtual triggering is enabled                                                                                                         | ^[boolean]                                                                                                                                                                  | —                 |
 | virtual-ref               | Indicates the reference element to which the tooltip is attached                                                                                        | ^[HTMLElement]                                                                                                                                                              | —                 |
 | trigger-keys              | When you click the mouse to focus on the trigger element, you can define a set of keyboard codes to control the display of tooltip through the keyboard | ^[Array]                                                                                                                                                                    | ['Enter','Space'] |
-| persistent                | when tooltip inactive and `persistent` is `false` , popconfirm will be destroyed                                                                        | ^[boolean]                                                                                                                                                                  | —                 |
-| aria-label^[a11y]         | same as `aria-label`                                                                                                                                    | ^[string]                                                                                                                                                                   | —                 |
-
-### Slots
+| persistent                | when tooltip inactive and \`persistent\` is \`false\` , popconfirm will be destroyed                                                                        | ^[boolean]                                                                                                                                                                  | —                 |
+| aria-label^[a11y]         | same as \`aria-label\`                                                                                                                                    | ^[string]                                                                                                                                                                   | —                 |
+`;
+const Slots = `
 
 | Name    | Description                            |
 | ------- | -------------------------------------- |
@@ -187,10 +187,17 @@ tooltip/animations
 
 | Name                 | Description                                                       | Type                                              |
 | -------------------- | ----------------------------------------------------------------- | ------------------------------------------------- |
-| popperRef            | el-popper component instance                                      | ^[objcet]`Ref<PopperInstance \| null>`            |
-| contentRef           | el-tooltip-content component instance                             | ^[objcet]`Ref<TooltipContentInstance \| null>`    |
-| isFocusInsideContent | validate current focus event is trigger inside el-tooltip-content | ^[Function]`() => boolean \| undefined`           |
-| updatePopper         | update el-popper component instance                               | ^[Function]`() => void`                           |
-| onOpen               | expose onOpen function to mange el-tooltip open state             | ^[Function]`(event?: Event \| undefined) => void` |
-| onClose              | expose onOpen function to mange el-tooltip open state             | ^[Function]`(event?: Event \| undefined) => void` |
-| hide                 | expose hide function                                              | ^[Function]`(event?: Event \| undefined) => void` |
+| popperRef            | el-popper component instance                                      | ^[objcet]\`Ref<PopperInstance | null>\`            |
+| contentRef           | el-tooltip-content component instance                             | ^[objcet]\`Ref<TooltipContentInstance | null>\`    |
+| isFocusInsideContent | validate current focus event is trigger inside el-tooltip-content | ^[Function]\`() => boolean | undefined\`           |
+| updatePopper         | update el-popper component instance                               | ^[Function]\`() => void\`                           |
+| onOpen               | expose onOpen function to mange el-tooltip open state             | ^[Function]\`(event?: Event | undefined) => void\` |
+| onClose              | expose onOpen function to mange el-tooltip open state             | ^[Function]\`(event?: Event | undefined) => void\` |
+| hide                 | expose hide function                                              | ^[Function]\`(event?: Event | undefined) => void\` |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

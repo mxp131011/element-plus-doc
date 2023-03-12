@@ -39,3 +39,10 @@ result/customized-content
 | title     | custom title      |
 | sub-title | custom sub title  |
 | extra     | custom extra area |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

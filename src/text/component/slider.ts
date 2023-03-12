@@ -9,7 +9,7 @@ Drag the slider within a fixed range.
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+This component requires the \`<client-only></client-only>\` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
@@ -27,7 +27,7 @@ slider/basic-usage
 
 The options can be discrete.
 
-:::demo Set step size with the `step` attribute. You can display breakpoints by setting the `show-stops` attribute.
+:::demo Set step size with the \`step\` attribute. You can display breakpoints by setting the \`show-stops\` attribute.
 
 slider/discrete-values
 
@@ -37,7 +37,7 @@ slider/discrete-values
 
 Set value via a input box.
 
-:::demo Set the `show-input` attribute to display an input box on the right.
+:::demo Set the \`show-input\` attribute to display an input box on the right.
 
 slider/slider-with-input-box
 
@@ -65,7 +65,7 @@ slider/placement
 
 Selecting a range of values is supported.
 
-:::demo Setting the `range` attribute activates range mode, where the binding value is an array made up of two boundary values.
+:::demo Setting the \`range\` attribute activates range mode, where the binding value is an array made up of two boundary values.
 
 slider/range-selection
 
@@ -73,7 +73,7 @@ slider/range-selection
 
 ## Vertical mode
 
-:::demo Setting the `vertical` attribute to `true` enables vertical mode. In vertical mode, the `height` attribute is required.
+:::demo Setting the \`vertical\` attribute to \`true\` enables vertical mode. In vertical mode, the \`height\` attribute is required.
 
 slider/vertical-mode
 
@@ -81,7 +81,7 @@ slider/vertical-mode
 
 ## Show marks
 
-:::demo Setting this `marks` attribute can show mark on slider.
+:::demo Setting this \`marks\` attribute can show mark on slider.
 
 slider/show-marks
 
@@ -96,10 +96,10 @@ slider/show-marks
 | max                   | maximum value                                                                                            | number          | —                                                                                                         | 100     |
 | disabled              | whether Slider is disabled                                                                               | boolean         | —                                                                                                         | false   |
 | step                  | step size                                                                                                | number          | —                                                                                                         | 1       |
-| show-input            | whether to display an input box, works when `range` is false                                             | boolean         | —                                                                                                         | false   |
-| show-input-controls   | whether to display control buttons when `show-input` is true                                             | boolean         | —                                                                                                         | true    |
+| show-input            | whether to display an input box, works when \`range\` is false                                             | boolean         | —                                                                                                         | false   |
+| show-input-controls   | whether to display control buttons when \`show-input\` is true                                             | boolean         | —                                                                                                         | true    |
 | size                  | size of the slider wrapper, will not work in vertical mode                                               | string          | large / default / small                                                                                   | default |
-| input-size            | size of the input box, when set `size`, the default is the value of `size`                               | string          | large / default / small                                                                                   | default |
+| input-size            | size of the input box, when set \`size\`, the default is the value of \`size\`                               | string          | large / default / small                                                                                   | default |
 | show-stops            | whether to display breakpoints                                                                           | boolean         | —                                                                                                         | false   |
 | show-tooltip          | whether to display tooltip value                                                                         | boolean         | —                                                                                                         | true    |
 | format-tooltip        | format to display tooltip value                                                                          | function(value) | —                                                                                                         | —       |
@@ -107,13 +107,13 @@ slider/show-marks
 | vertical              | vertical mode                                                                                            | boolean         | —                                                                                                         | false   |
 | height                | Slider height, required in vertical mode                                                                 | string          | —                                                                                                         | —       |
 | label                 | label for screen reader                                                                                  | string          | —                                                                                                         | —       |
-| range-start-label     | when `range` is true, screen reader label for the start of the range                                     | string          | —                                                                                                         | —       |
-| range-end-label       | when `range` is true, screen reader label for the end of the range                                       | string          | —                                                                                                         | —       |
-| format-value-text     | format to display the `aria-valuenow` attribute for screen readers                                       | function(value) | —                                                                                                         | —       |
-| debounce              | debounce delay when typing, in milliseconds, works when `show-input` is true                             | number          | —                                                                                                         | 300     |
+| range-start-label     | when \`range\` is true, screen reader label for the start of the range                                     | string          | —                                                                                                         | —       |
+| range-end-label       | when \`range\` is true, screen reader label for the end of the range                                       | string          | —                                                                                                         | —       |
+| format-value-text     | format to display the \`aria-valuenow\` attribute for screen readers                                       | function(value) | —                                                                                                         | —       |
+| debounce              | debounce delay when typing, in milliseconds, works when \`show-input\` is true                             | number          | —                                                                                                         | 300     |
 | tooltip-class         | custom class name for the tooltip                                                                        | string          | —                                                                                                         | —       |
 | placement             | position of Tooltip                                                                                      | string          | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | top     |
-| marks                 | marks, type of key must be `number` and must in closed interval `[min, max]`, each mark can custom style | object          | —                                                                                                         | —       |
+| marks                 | marks, type of key must be \`number\` and must in closed interval \`[min, max]\`, each mark can custom style | object          | —                                                                                                         | —       |
 | validate-event        | whether to trigger form validation                                                                       | boolean         | -                                                                                                         | true    |
 
 ## Events
@@ -122,3 +122,10 @@ slider/show-marks
 | ------ | ----------------------------------------------------------------------------------------------------------------- | -------------------- |
 | change | triggers when the value changes (if the mouse is being dragged, this event only fires when the mouse is released) | value after changing |
 | input  | triggers when the data changes (It'll be emitted in real time during sliding)                                     | value after changing |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

@@ -9,7 +9,7 @@ Used for marking and selection.
 
 ## Basic usage
 
-:::demo Use the `type` attribute to define Tag's type. In addition, the `color` attribute can be used to set the background color of the Tag.
+:::demo Use the \`type\` attribute to define Tag's type. In addition, the \`color\` attribute can be used to set the background color of the Tag.
 
 tag/basic
 
@@ -17,7 +17,7 @@ tag/basic
 
 ## Removable Tag
 
-:::demo `closable` attribute can be used to define a removable tag. It accepts a `Boolean`. By default the removal of Tag has a fading animation. If you don't want to use it, you can set the `disable-transitions` attribute, which accepts a `Boolean`, to `true`. `close` event triggers when Tag is removed.
+:::demo \`closable\` attribute can be used to define a removable tag. It accepts a \`Boolean\`. By default the removal of Tag has a fading animation. If you don't want to use it, you can set the \`disable-transitions\` attribute, which accepts a \`Boolean\`, to \`true\`. \`close\` event triggers when Tag is removed.
 
 tag/removable
 
@@ -25,7 +25,7 @@ tag/removable
 
 ## Edit Dynamically
 
-You can use the `close` event to add and remove tag dynamically.
+You can use the \`close\` event to add and remove tag dynamically.
 
 :::demo
 
@@ -37,7 +37,7 @@ tag/editable
 
 Besides default size, Tag component provides three additional sizes for you to choose among different scenarios.
 
-:::demo Use attribute `size` to set additional sizes with `large`, `default` or `small`.
+:::demo Use attribute \`size\` to set additional sizes with \`large\`, \`default\` or \`small\`.
 
 tag/sizes
 
@@ -45,9 +45,9 @@ tag/sizes
 
 ## Theme
 
-Tag provide three different themes: `dark`、`light` and `plain`
+Tag provide three different themes: \`dark\`、\`light\` and \`plain\`
 
-:::demo Using `effect` to change, default is `light`
+:::demo Using \`effect\` to change, default is \`light\`
 
 tag/theme
 
@@ -65,7 +65,7 @@ tag/rounded
 
 ## Checkable tag
 
-Sometimes because of the business needs, we might need checkbox like tag, but **button like checkbox** cannot meet our needs, here comes `check-tag`
+Sometimes because of the business needs, we might need checkbox like tag, but **button like checkbox** cannot meet our needs, here comes \`check-tag\`
 
 :::demo basic check-tag usage, the API is rather simple.
 
@@ -116,3 +116,10 @@ tag/checkable
 | Name | Description               |
 | ---- | ------------------------- |
 | —    | customize default content |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

@@ -44,7 +44,7 @@ descriptions/customized-style
 | Name      | Description                                | Type    | Accepted Values         | Default    |
 | --------- | ------------------------------------------ | ------- | ----------------------- | ---------- |
 | border    | with or without border                     | boolean | —                       | false      |
-| column    | numbers of `Descriptions Item` in one line | number  | —                       | 3          |
+| column    | numbers of \`Descriptions Item\` in one line | number  | —                       | 3          |
 | direction | direction of list                          | string  | vertical / horizontal   | horizontal |
 | size      | size of list                               | string  | large / default / small | default    |
 | title     | title text, display on the top left        | string  | —                       | —          |
@@ -64,10 +64,10 @@ descriptions/customized-style
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | --------------------- | ------- |
 | label            | label text                                                                                                                                                                                   | string          | —                     | —       |
 | span             | colspan of column                                                                                                                                                                            | number          | —                     | 1       |
-| width            | column width, the width of the same column in different rows is set by the max value (If no `border`, width contains label and content)                                                      | string / number | —                     | —       |
-| min-width        | column minimum width, columns with `width` has a fixed width, while columns with `min-width` has a width that is distributed in proportion (If no`border`, width contains label and content) | string / number | —                     | —       |
-| align            | column content alignment (If no `border`, effective for both label and content)                                                                                                              | string          | left / center / right | left    |
-| label-align      | column label alignment, if omitted, the value of the above `align` attribute will be applied (If no `border`, please use `align` attribute)                                                  | string          | left / center / right | —       |
+| width            | column width, the width of the same column in different rows is set by the max value (If no \`border\`, width contains label and content)                                                      | string / number | —                     | —       |
+| min-width        | column minimum width, columns with \`width\` has a fixed width, while columns with \`min-width\` has a width that is distributed in proportion (If no\`border\`, width contains label and content) | string / number | —                     | —       |
+| align            | column content alignment (If no \`border\`, effective for both label and content)                                                                                                              | string          | left / center / right | left    |
+| label-align      | column label alignment, if omitted, the value of the above \`align\` attribute will be applied (If no \`border\`, please use \`align\` attribute)                                                  | string          | left / center / right | —       |
 | class-name       | column content custom class name                                                                                                                                                             | string          | —                     | —       |
 | label-class-name | column label custom class name                                                                                                                                                               | string          | —                     | —       |
 
@@ -77,3 +77,12 @@ descriptions/customized-style
 | ----- | ------------------------- |
 | —     | customize default content |
 | label | custom label              |
+
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};
+

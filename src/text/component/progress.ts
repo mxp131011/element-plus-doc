@@ -9,7 +9,7 @@ Progress is used to show the progress of current operation, and inform the user 
 
 ## Linear progress bar
 
-:::demo Use `percentage` attribute to set the percentage. It's **required** and must be between `0-100`. You can custom text format by setting `format`.
+:::demo Use \`percentage\` attribute to set the percentage. It's **required** and must be between \`0-100\`. You can custom text format by setting \`format\`.
 
 progress/linear-progress-bar
 
@@ -19,7 +19,7 @@ progress/linear-progress-bar
 
 In this case the percentage takes no additional space.
 
-:::demo `stroke-width` attribute decides the `width` of progress bar, and use `text-inside` attribute to put description inside the progress bar.
+:::demo \`stroke-width\` attribute decides the \`width\` of progress bar, and use \`text-inside\` attribute to put description inside the progress bar.
 
 progress/internal-percentage
 
@@ -27,7 +27,7 @@ progress/internal-percentage
 
 ## Custom color
 
-You can use `color` attr to set the progress bar color. it accepts color string, function, or array.
+You can use \`color\` attr to set the progress bar color. it accepts color string, function, or array.
 
 :::demo
 
@@ -37,7 +37,7 @@ progress/custom-color
 
 ## Circular progress bar
 
-:::demo You can specify `type` attribute to `circle` to use circular progress bar, and use `width` attribute to change the size of circle.
+:::demo You can specify \`type\` attribute to \`circle\` to use circular progress bar, and use \`width\` attribute to change the size of circle.
 
 progress/circular-progress-bar
 
@@ -45,7 +45,7 @@ progress/circular-progress-bar
 
 ## Dashboard progress bar
 
-You also can specify `type` attribute to `dashboard` to use dashboard progress bar.
+You also can specify \`type\` attribute to \`dashboard\` to use dashboard progress bar.
 
 :::demo
 
@@ -63,7 +63,7 @@ progress/customized-content
 
 ## Indeterminate progress
 
-:::demo Use `indeterminate` attribute to set indeterminate progress, with `duration` to control the animation duration.
+:::demo Use \`indeterminate\` attribute to set indeterminate progress, with \`duration\` to control the animation duration.
 
 progress/indeterminate-progress
 
@@ -76,11 +76,11 @@ progress/indeterminate-progress
 | percentage     | percentage, **required**                                                              | number                | (0-100)                   | 0       |
 | type           | the type of progress bar                                                              | string                | line/circle/dashboard     | line    |
 | stroke-width   | the width of progress bar                                                             | number                | —                         | 6       |
-| text-inside    | whether to place the percentage inside progress bar, only works when `type` is 'line' | boolean               | —                         | false   |
+| text-inside    | whether to place the percentage inside progress bar, only works when \`type\` is 'line' | boolean               | —                         | false   |
 | status         | the current status of progress bar                                                    | string                | success/exception/warning | —       |
 | indeterminate  | set indeterminate progress                                                            | boolean               | -                         | false   |
 | duration       | control the animation duration of indeterminate progress                              | number                | -                         | 3       |
-| color          | background color of progress bar. Overrides `status` prop                             | string/function/array | —                         | ''      |
+| color          | background color of progress bar. Overrides \`status\` prop                             | string/function/array | —                         | ''      |
 | width          | the canvas width of circle progress bar                                               | number                | —                         | 126     |
 | show-text      | whether to show percentage                                                            | boolean               | —                         | true    |
 | stroke-linecap | circle/dashboard type shape at the end path                                           | string                | butt/round/square         | round   |
@@ -90,4 +90,11 @@ progress/indeterminate-progress
 
 | Name    | Description                                       |
 | ------- | ------------------------------------------------- |
-| default | Customized content, parameter is `{ percentage }` |
+| default | Customized content, parameter is \`{ percentage }\` |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

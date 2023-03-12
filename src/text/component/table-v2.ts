@@ -20,7 +20,7 @@ fully developed yet, so that we are not mentioning them here.
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+This component requires the \`<client-only></client-only>\` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
@@ -36,15 +36,15 @@ table-v2/basic
 
 ## Auto resizer
 
-When you do not feel like you want to pass the `width` and `height` property to the table, you can use the `AutoResizer`
+When you do not feel like you want to pass the \`width\` and \`height\` property to the table, you can use the \`AutoResizer\`
 component to wrap the table component and it will update the width and height for you automatically.
 
 Resize your browser to see how it works.
 
 :::tip
 
-Make sure the parent node of `AutoResizer` **HAS A FIXED HEIGHT**, because the height value was set to `100%` by default.
-You may also set it via passing through `style` attribute to `AutoResizer`.
+Make sure the parent node of \`AutoResizer\` **HAS A FIXED HEIGHT**, because the height value was set to \`100%\` by default.
+You may also set it via passing through \`style\` attribute to \`AutoResizer\`.
 
 :::
 
@@ -88,7 +88,7 @@ table-v2/inline-editing
 
 You can highlight your table content to distinguish between "success, information, warning, danger" and other states.
 
-Use `row-class-name` to customize how the row looks. In this case, every 10th row will be highlighted with `bg-blue-200` class, every 5th row will be highlighted with `bg-red-100` class.
+Use \`row-class-name\` to customize how the row looks. In this case, every 10th row will be highlighted with \`bg-blue-200\` class, every 5th row will be highlighted with \`bg-red-100\` class.
 
 :::demo
 
@@ -98,7 +98,7 @@ table-v2/row-class
 
 ## Table with sticky rows
 
-You can make some rows stick to the top of the table, and that can be very easily achieved by using `fixed-data` attribute.
+You can make some rows stick to the top of the table, and that can be very easily achieved by using \`fixed-data\` attribute.
 
 You can add dynamically set the sticky row with scroll events like this example did.
 
@@ -112,7 +112,7 @@ table-v2/sticky-rows
 
 For some reason, you want to make the columns stick on the left and right, you can do that by adding special attributes for table.
 
-You can set the column's attribute `fixed` to `true` (representing `FixedDir.LEFT`) or `FixedDir.LEFT` or `FixedDir.RIGHT`
+You can set the column's attribute \`fixed\` to \`true\` (representing \`FixedDir.LEFT\`) or \`FixedDir.LEFT\` or \`FixedDir.RIGHT\`
 
 :::demo
 
@@ -126,7 +126,7 @@ By customizing your header renderer you can group your header like this example 
 
 :::tip
 
-In this case we used `JSX` feature which is not supported in the playground, you may try them out in your local environment or online IDEs such as `codesandbox`.
+In this case we used \`JSX\` feature which is not supported in the playground, you may try them out in your local environment or online IDEs such as \`codesandbox\`.
 
 It is recommended that you write your table component in JSX, since it contains VNode manipulations.
 
@@ -182,7 +182,7 @@ table-v2/cross-hovering
 
 ## Colspan
 
-Virtualized table did not use built-in `table` element, so that `colspan` and `rowspan` is a little bit different than [TableV1](./table.md). With customized row renderer, we can still do that. In this case, you'll learn how to do that.
+Virtualized table did not use built-in \`table\` element, so that \`colspan\` and \`rowspan\` is a little bit different than [TableV1](./table.md). With customized row renderer, we can still do that. In this case, you'll learn how to do that.
 
 :::demo
 
@@ -224,7 +224,7 @@ table-v2/tree-data
 ## Dynamic height rows
 
 Virtual Table can also render rows with dynamic height, when you have data without knowing how big the content it would be, you
-might want to use this feature for rendering a dynamic height row. You must pass down `estimated-row-height` to enable this
+might want to use this feature for rendering a dynamic height row. You must pass down \`estimated-row-height\` to enable this
 feature, and the closer the estimated height is, the smoother the rendering will be.
 
 :::tip
@@ -286,11 +286,11 @@ Use the methods exposed by Table V2 to scroll manually/programmatically with des
 
 :::tip
 
-The second parameter for `scrollToRow` is the scrolling strategy which by default is `auto`, it calculates the position
+The second parameter for \`scrollToRow\` is the scrolling strategy which by default is \`auto\`, it calculates the position
 to scroll by itself. You can pass the strategy yourselves if you want to scroll to a specific position.
-The available options are `"auto" | "center" | "end" | "start" | "smart"`
+The available options are \`"auto" | "center" | "end" | "start" | "smart"\`
 
-The difference between `smart` and `auto` is that `auto` is a subset of `smart` scroll strategy.
+The difference between \`smart\` and \`auto\` is that \`auto\` is a subset of \`smart\` scroll strategy.
 
 :::
 
@@ -321,7 +321,7 @@ table-v2/manual-scroll
 | data-getter               | An method which helps customizing the how to fetch the data from the data source.                                          | Function                                             | -         |
 | fixed-data                | Data for rendering rows above the main content and below the header                                                        | Array\<[Data](#typings)\>                            | -         |
 | expand-column-key         | The column key indicates which row is expandable                                                                           | String                                               | -         |
-| expanded-row-keys         | An array of keys for expanded rows, can be used with `v-model`                                                             | Array\<[KeyType](#typings)\>                         | -         |
+| expanded-row-keys         | An array of keys for expanded rows, can be used with \`v-model\`                                                             | Array\<[KeyType](#typings)\>                         | -         |
 | default-expanded-row-keys | An array of keys for default expanded rows, **NON REACTIVE**                                                               | Array\<[KeyType](#typings)\>                         | -         |
 | class                     | Class name for the the virtual table, will be applied to all three tables (left, right, main)                              | String/Array/Object                                  | -         |
 | fixed                     | Flag indicates the table column's width is a fixed or flexible.                                                            | Boolean                                              | false     |
@@ -351,7 +351,7 @@ table-v2/manual-scroll
 | Name                 | Description                                                           | Parameters                               |
 | -------------------- | --------------------------------------------------------------------- | ---------------------------------------- |
 | column-sort          | Invoked when column sorted                                            | Object\<ColumnSortParam\>                |
-| expanded-rows-change | Invoked when expanded rows changed                                    | `Array<KeyType>`                         |
+| expanded-rows-change | Invoked when expanded rows changed                                    | \`Array<KeyType>\`                         |
 | end-reached          | Invoked when the end of the table is reached                          | -                                        |
 | scroll               | Invoked after scrolled                                                | Object\<[ScrollParams](#typings)\>       |
 | rows-rendered        | Invoked when rows are rendered                                        | Object\<[RowsRenderedParams](#typings)\> |
@@ -362,14 +362,14 @@ table-v2/manual-scroll
 
 | Event Name   | Description                                          | Parameters                                                                 |
 | ------------ | ---------------------------------------------------- | -------------------------------------------------------------------------- |
-| scrollTo     | Scroll to a given position                           | `{ scrollLeft?: number, scrollTop?: number}`                               |
-| scrollToLeft | Scroll to a given horizontal position                | `scrollLeft: number`                                                       |
-| scrollToTop  | Scroll to a given vertical position                  | `scrollTop: number`                                                        |
-| scrollToRow  | scroll to a given row with specified scroll strategy | `row: number, strategy?: "auto" \|"center" \| "end" \| "start" \| "smart"` |
+| scrollTo     | Scroll to a given position                           | \`{ scrollLeft?: number, scrollTop?: number}\`                               |
+| scrollToLeft | Scroll to a given horizontal position                | \`scrollLeft: number\`                                                       |
+| scrollToTop  | Scroll to a given vertical position                  | \`scrollTop: number\`                                                        |
+| scrollToRow  | scroll to a given row with specified scroll strategy | \`row: number, strategy?: "auto" |"center" | "end" | "start" | "smart"\` |
 
 :::tip
 
-Note that these are `JavaScript` Objects, so that you **CANNOT USE** kebab-case for these attributes
+Note that these are \`JavaScript\` Objects, so that you **CANNOT USE** kebab-case for these attributes
 
 :::
 
@@ -398,7 +398,7 @@ Note that these are `JavaScript` Objects, so that you **CANNOT USE** kebab-case 
 <details>
 <summary>Show Type Declarations</summary>
 
-```ts
+\`\`\`ts
 type HeaderClassGetter = (param: {
   columns: Column<any>[]
   headerIndex: number
@@ -525,7 +525,7 @@ enum SortOrder {
 
 type SortBy = { key: KeyType; Order: SortOrder }
 type SortState = Record<KeyType, SortOrder>
-```
+\`\`\`
 
 </details>
 
@@ -534,7 +534,7 @@ type SortState = Record<KeyType, SortOrder>
 #### How do I render a list with checkbox in the first column?
 
 Since you are allowed to define your own cell renderer, you can do what the example
-[Customize Cell Renderer](#customize-cell-renderer) did to render `checkbox` yourselves, and maintaining the
+[Customize Cell Renderer](#customize-cell-renderer) did to render \`checkbox\` yourselves, and maintaining the
 state by yourselves.
 
 #### Why virtualized table provides less features than [TableV1](./table.md)
@@ -542,3 +542,10 @@ state by yourselves.
 For virtualized table, we intend to provide less feature and let our users to implement their own features per demand.
 Integrating too many features makes the code hard to maintain and for most users the basic features are enough. Some key
 features were not developed yet. We would love to hear from you. Join [Discord](https://discord.com/invite/gXK9XNzW3X) to stay tuned.
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

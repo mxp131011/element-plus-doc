@@ -27,7 +27,7 @@ page-header/basic
 
 ## Custom icon
 
-The default icon might not meet your satisfaction, you can customize the icon by setting `icon` attribute
+The default icon might not meet your satisfaction, you can customize the icon by setting \`icon\` attribute
 like the example.
 
 :::demo
@@ -39,7 +39,7 @@ page-header/custom-icon
 ## No icon
 
 Sometimes the page is just full of elements, and you might not want the icon to show up on the page,
-you can set the `icon` attribute to `null` to get rid of it.
+you can set the \`icon\` attribute to \`null\` to get rid of it.
 
 :::demo
 
@@ -49,7 +49,7 @@ page-header/no-icon
 
 ## Breadcrumbs
 
-Page header allows you to add breadcrumbs for giving route information to the users by `breadcrumb` slot.
+Page header allows you to add breadcrumbs for giving route information to the users by \`breadcrumb\` slot.
 
 :::demo
 
@@ -70,7 +70,7 @@ page-header/additional-sections
 
 ## Main content
 
-Sometimes we want the head to show with some co-responding content, we can utilize the `default` slot for doing so.
+Sometimes we want the head to show with some co-responding content, we can utilize the \`default\` slot for doing so.
 
 :::demo
 
@@ -82,7 +82,7 @@ page-header/main-content
 
 The component is consisted of these parts
 
-```vue
+\`\`\`vue
 <template>
   <el-page-header>
     <!-- Line 1 -->
@@ -96,13 +96,13 @@ The component is consisted of these parts
     <template #default />
   </el-page-header>
 </template>
-```
+\`\`\`
 
 ## Attributes
 
 | Name    | Description    | Type                  | Accepted Values | Default |
 | ------- | -------------- | --------------------- | --------------- | ------- |
-| icon    | icon component | `string \| Component` | —               | Back    |
+| icon    | icon component | \`string | Component\` | —               | Back    |
 | title   | main title     | string                | —               | Back    |
 | content | content        | string                | —               | —       |
 
@@ -122,3 +122,10 @@ The component is consisted of these parts
 | extra      | extra              |
 | breadcrumb | breadcrumb content |
 | default    | main content       |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

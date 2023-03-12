@@ -9,7 +9,7 @@ Used for text.
 
 ## Basic
 
-:::demo Use the `type` attribute to define Text's type.
+:::demo Use the \`type\` attribute to define Text's type.
 
 text/basic
 
@@ -17,7 +17,7 @@ text/basic
 
 ## Sizes
 
-:::demo Use attribute `size` to set additional sizes with `large`, `default` or `small`.
+:::demo Use attribute \`size\` to set additional sizes with \`large\`, \`default\` or \`small\`.
 
 text/sizes
 
@@ -25,7 +25,7 @@ text/sizes
 
 ## Ellipsis
 
-:::demo Pass the `truncated` prop to render an ellipsis when the text exceeds the width of the viewport or max-width set.
+:::demo Pass the \`truncated\` prop to render an ellipsis when the text exceeds the width of the viewport or max-width set.
 
 text/truncated
 
@@ -33,7 +33,7 @@ text/truncated
 
 ## Override
 
-:::demo Use attribute `tag` to override element
+:::demo Use attribute \`tag\` to override element
 
 text/override
 
@@ -49,17 +49,24 @@ text/mixed
 
 ## API
 
-### Attributes
+const Attributes = `
 
 | Name      | Description        | Type                                                               | Default |
 | --------- | ------------------ | ------------------------------------------------------------------ | ------- |
-| type      | text type          | ^[enum]`'primary' \| 'success' \| 'warning' \| 'danger' \| 'info'` | —       |
-| size      | text size          | ^[enum]`'large' \| 'default' \| 'small'`                           | default |
+| type      | text type          | ^[enum]\`'primary' | 'success' | 'warning' | 'danger' | 'info'\` | —       |
+| size      | text size          | ^[enum]\`'large' | 'default' | 'small'\`                           | default |
 | truncated | render ellipsis    | ^[boolean]                                                         | false   |
 | tag       | custom element tag | ^[string]                                                          | span    |
-
-### Slots
+`;
+const Slots = `
 
 | Name    | Description     |
 | ------- | --------------- |
 | default | default content |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

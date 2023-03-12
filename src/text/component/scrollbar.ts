@@ -9,7 +9,7 @@ Used to replace the browser's native scrollbar.
 
 ## Basic usage
 
-:::demo Use `height` property to set the height of the scrollbar, or if not set, it adapts according to the parent container height.
+:::demo Use \`height\` property to set the height of the scrollbar, or if not set, it adapts according to the parent container height.
 
 scrollbar/basic-usage
 
@@ -33,7 +33,7 @@ scrollbar/max-height
 
 ## Manual scroll
 
-:::demo Use `setScrollTop` and `setScrollLeft` methods can control scrollbar manually.
+:::demo Use \`setScrollTop\` and \`setScrollLeft\` methods can control scrollbar manually.
 
 scrollbar/manual-scroll
 
@@ -41,16 +41,16 @@ scrollbar/manual-scroll
 
 ## API
 
-### Attributes
+const Attributes = `
 
 | Name       | Description                                                                                                                     | Type                                                                | Default |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ------- |
 | height     | height of scrollbar                                                                                                             | ^[string] / ^[number]                                               | —       |
 | max-height | max height of scrollbar                                                                                                         | ^[string] / ^[number]                                               | —       |
 | native     | whether to use the native scrollbar style                                                                                       | ^[boolean]                                                          | false   |
-| wrap-style | style of wrap container                                                                                                         | ^[string] / ^[object]`CSSProperties \| CSSProperties[] \| string[]` | —       |
+| wrap-style | style of wrap container                                                                                                         | ^[string] / ^[object]\`CSSProperties | CSSProperties[] | string[]\` | —       |
 | wrap-class | class of wrap container                                                                                                         | ^[string]                                                           | —       |
-| view-style | style of view                                                                                                                   | ^[string] / ^[object]`CSSProperties \| CSSProperties[] \| string[]` | —       |
+| view-style | style of view                                                                                                                   | ^[string] / ^[object]\`CSSProperties | CSSProperties[] | string[]\` | —       |
 | view-class | class of view                                                                                                                   | ^[string]                                                           | —       |
 | noresize   | do not respond to container size changes, if the container size does not change, it is better to set it to optimize performance | ^[boolean]                                                          | false   |
 | tag        | element tag of the view                                                                                                         | ^[string]                                                           | div     |
@@ -61,9 +61,9 @@ scrollbar/manual-scroll
 
 | Name   | Description                                           | Type                                                             |
 | ------ | ----------------------------------------------------- | ---------------------------------------------------------------- |
-| scroll | triggers when scrolling, return distance of scrolling | ^[Function]`({ scrollLeft: number, scrollTop: number }) => void` |
-
-### Slots
+| scroll | triggers when scrolling, return distance of scrolling | ^[Function]\`({ scrollLeft: number, scrollTop: number }) => void\` |
+`;
+const Slots = `
 
 | Name    | Description               |
 | ------- | ------------------------- |
@@ -73,9 +73,16 @@ scrollbar/manual-scroll
 
 | Name          | Description                                | Type                                                                       |
 | ------------- | ------------------------------------------ | -------------------------------------------------------------------------- |
-| handleScroll  | handle scroll event                        | ^[Function]`() => void`                                                    |
-| scrollTo      | scrolls to a particular set of coordinates | ^[Function]`(options: ScrollToOptions \| number, yCoord?: number) => void` |
-| setScrollTop  | Set distance to scroll top                 | ^[Function]`(scrollTop: number) => void`                                   |
-| setScrollLeft | Set distance to scroll left                | ^[Function]`(scrollLeft: number) => void`                                  |
-| update        | update scrollbar state manually            | ^[Function]`() => void`                                                    |
-| wrapRef       | scrollbar wrap ref                         | ^[object]`Ref<HTMLDivElement>`                                             |
+| handleScroll  | handle scroll event                        | ^[Function]\`() => void\`                                                    |
+| scrollTo      | scrolls to a particular set of coordinates | ^[Function]\`(options: ScrollToOptions | number, yCoord?: number) => void\` |
+| setScrollTop  | Set distance to scroll top                 | ^[Function]\`(scrollTop: number) => void\`                                   |
+| setScrollLeft | Set distance to scroll left                | ^[Function]\`(scrollLeft: number) => void\`                                  |
+| update        | update scrollbar state manually            | ^[Function]\`() => void\`                                                    |
+| wrapRef       | scrollbar wrap ref                         | ^[object]\`Ref<HTMLDivElement>\`                                             |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

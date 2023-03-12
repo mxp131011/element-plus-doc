@@ -11,7 +11,7 @@ Divide data collections which are related yet belong to different types.
 
 Basic and concise tabs.
 
-:::demo Tabs provide a selective card functionality. By default the first tab is selected as active, and you can activate any tab by setting the `value` attribute.
+:::demo Tabs provide a selective card functionality. By default the first tab is selected as active, and you can activate any tab by setting the \`value\` attribute.
 
 tabs/basic
 
@@ -21,7 +21,7 @@ tabs/basic
 
 Tabs styled as cards.
 
-:::demo Set `type` to `card` can get a card-styled tab.
+:::demo Set \`type\` to \`card\` can get a card-styled tab.
 
 tabs/card-style
 
@@ -31,7 +31,7 @@ tabs/card-style
 
 Border card tabs.
 
-:::demo Set `type` to `border-card`.
+:::demo Set \`type\` to \`border-card\`.
 
 tabs/border-card
 
@@ -39,9 +39,9 @@ tabs/border-card
 
 ## Tab position
 
-You can use `tab-position` attribute to set the tab's position.
+You can use \`tab-position\` attribute to set the tab's position.
 
-:::demo You can choose from four directions: `tabPosition="left|right|top|bottom"`
+:::demo You can choose from four directions: \`tabPosition="left|right|top|bottom"\`
 
 tabs/tab-position
 
@@ -86,17 +86,17 @@ tabs/customized-trigger
 | editable              | whether Tab is addable and closable                                                                                                     | boolean                             | —                     | false             |
 | tab-position          | position of tabs                                                                                                                        | string                              | top/right/bottom/left | top               |
 | stretch               | whether width of tab automatically fits its container                                                                                   | boolean                             | -                     | false             |
-| before-leave          | hook function before switching tab. If `false` is returned or a `Promise` is returned and then is rejected, switching will be prevented | Function(activeName, oldActiveName) | —                     | —                 |
+| before-leave          | hook function before switching tab. If \`false\` is returned or a \`Promise\` is returned and then is rejected, switching will be prevented | Function(activeName, oldActiveName) | —                     | —                 |
 
 ## Tabs Events
 
 | Name       | Description                                           | Parameters                                                          |
 | ---------- | ----------------------------------------------------- | ------------------------------------------------------------------- |
-| tab-click  | triggers when a tab is clicked                        | (pane: `TabsPaneContext`, ev: `Event`)                              |
-| tab-change | triggers when `activeName` is changed                 | (name: `TabPaneName`)                                               |
-| tab-remove | triggers when tab-remove button is clicked            | (name: `TabPaneName`)                                               |
+| tab-click  | triggers when a tab is clicked                        | (pane: \`TabsPaneContext\`, ev: \`Event\`)                              |
+| tab-change | triggers when \`activeName\` is changed                 | (name: \`TabPaneName\`)                                               |
+| tab-remove | triggers when tab-remove button is clicked            | (name: \`TabPaneName\`)                                               |
 | tab-add    | triggers when tab-add button is clicked               | —                                                                   |
-| edit       | triggers when tab-add button or tab-remove is clicked | (paneName: `TabPaneName \| undefined`, action: `'remove' \| 'add'`) |
+| edit       | triggers when tab-add button or tab-remove is clicked | (paneName: \`TabPaneName | undefined\`, action: \`'remove' | 'add'\`) |
 
 ## Tabs Slots
 
@@ -120,3 +120,10 @@ tabs/customized-trigger
 | ----- | ------------------ |
 | -     | Tab-pane's content |
 | label | Tab-pane's label   |
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};

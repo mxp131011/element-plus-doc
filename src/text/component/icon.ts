@@ -17,7 +17,7 @@ Element Plus provides a set of common icons.
 
 ### Using packaging manager
 
-```shell
+\`\`\`shell
 # Choose a package manager you like.
 
 # NPM
@@ -26,13 +26,13 @@ $ npm install @element-plus/icons-vue
 $ yarn add @element-plus/icons-vue
 # pnpm
 $ pnpm install @element-plus/icons-vue
-```
+\`\`\`
 
 ### Register All Icons
 
-You need import all icons from `@element-plus/icons-vue` and register them globally.
+You need import all icons from \`@element-plus/icons-vue\` and register them globally.
 
-```ts
+\`\`\`ts
 // main.ts
 
 // if you're using CDN, please remove this line.
@@ -42,13 +42,13 @@ const app = createApp(App)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
-```
+\`\`\`
 
 You can also refer to [this template](https://codepen.io/sxzz/pen/xxpvdrg).
 
 ### Import in Browser
 
-Import Element Plus Icons through browser HTML tags directly, and use global variable `ElementPlusIconsVue`.
+Import Element Plus Icons through browser HTML tags directly, and use global variable \`ElementPlusIconsVue\`.
 
 According to different CDN providers, there are different introduction methods.
 Here we use [unpkg](https://unpkg.com) and [jsDelivr](https://jsdelivr.com) as example.
@@ -56,15 +56,15 @@ You can also use other CDN providers.
 
 #### unpkg
 
-```html
+\`\`\`html
 <script src="//unpkg.com/@element-plus/icons-vue"></script>
-```
+\`\`\`
 
 #### jsDelivr
 
-```html
+\`\`\`html
 <script src="//cdn.jsdelivr.net/npm/@element-plus/icons-vue"></script>
-```
+\`\`\`
 
 :::tip
 
@@ -86,11 +86,11 @@ You can refer to [this template](https://github.com/sxzz/element-plus-best-pract
 :::warning
 
 Because HTML standard has already defined a tag named [menu](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu),
-so you need to use an alias in order to render the icon, if you register `Menu` directly it will not work.
+so you need to use an alias in order to render the icon, if you register \`Menu\` directly it will not work.
 
 :::
 
-```vue
+\`\`\`vue
 <!-- Use el-icon to provide attributes to SVG icon -->
 <template>
   <div>
@@ -101,7 +101,7 @@ so you need to use an alias in order to render the icon, if you register `Menu` 
     <Edit />
   </div>
 </template>
-```
+\`\`\`
 
 <vp-script setup>
 import { Edit, Share, Delete, Search, Loading } from '@element-plus/icons-vue'
@@ -118,9 +118,9 @@ import { Edit, Share, Delete, Search, Loading } from '@element-plus/icons-vue'
 
 ## Combined with el-icon
 
-`el-icon` provides extra attributes for raw SVG icon, for more detail, please read to the end.
+\`el-icon\` provides extra attributes for raw SVG icon, for more detail, please read to the end.
 
-```vue
+\`\`\`vue
 <template>
   <p>
     with extra class <b>is-loading</b>, your icon is able to rotate 360 deg in 2
@@ -145,7 +145,7 @@ import { Edit, Share, Delete, Search, Loading } from '@element-plus/icons-vue'
     <span style="vertical-align: middle"> Search </span>
   </el-button>
 </template>
-```
+\`\`\`
 
 <ElRow>
   <p>
@@ -176,7 +176,7 @@ import { Edit, Share, Delete, Search, Loading } from '@element-plus/icons-vue'
 
 ## Using SVG icon directly
 
-```vue
+\`\`\`vue
 <template>
   <div style="font-size: 20px">
     <!-- Since svg icons do not carry any attributes by default -->
@@ -187,7 +187,7 @@ import { Edit, Share, Delete, Search, Loading } from '@element-plus/icons-vue'
     <Search style="width: 1em; height: 1em; margin-right: 8px" />
   </div>
 </template>
-```
+\`\`\`
 
 <ElRow>
   <div style="font-size: 20px;">
@@ -214,15 +214,24 @@ import { Edit, Share, Delete, Search, Loading } from '@element-plus/icons-vue'
 
 ## API
 
-### Attributes
+const Attributes = `
 
 | Name  | Description                | Type                  | Default                |
 | ----- | -------------------------- | --------------------- | ---------------------- |
 | color | SVG tag's fill attribute   | ^[string]             | inherit from color     |
 | size  | SVG icon size, size x size | ^[number] / ^[string] | inherit from font size |
-
-### Slots
+`;
+const Slots = `
 
 | Name    | Description               |
 | ------- | ------------------------- |
 | default | customize default content |
+
+
+export default {
+  attributes: Attributes,
+  events: Events,
+  exposes: Exposes,
+  slots: Slots,
+};
+
