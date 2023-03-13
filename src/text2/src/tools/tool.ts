@@ -1,17 +1,17 @@
-import { TagDoc, baseType } from '../types/tag-doc';
-import { TagDocOld } from '../types/tag-doc-old';
+import { type TagDoc, type baseType } from '../types/tag-doc';
+import { type TagDocOld } from '../types/tag-doc-old';
 
 export function tableToJson(table: any) {
-  var data = [];
-  var headers = [];
-  for (var i = 0; i < table.rows[0].cells.length; i++) {
-    headers[i] = table.rows[0].cells[i].innerHTML.toLowerCase().replace(/ /gi, '');
+  const data: unknown[] = [];
+  const headers = [];
+  for (let i = 0; i < table.rows[0].cells.length; i++) {
+    headers[i] = (table.rows[0].cells[i].innerHTML as string).toLowerCase().replace(/ /gi, '');
   }
-  for (var i = 1; i < table.rows.length; i++) {
-    var tableRow = table.rows[i];
-    var rowData: any = {};
-    for (var j = 0; j < tableRow.cells.length; j++) {
-      rowData[headers[j]] = tableRow.cells[j].innerHTML;
+  for (let i = 1; i < table.rows.length; i++) {
+    const tableRow = table.rows[i];
+    const rowData: any = {};
+    for (let j = 0; j < tableRow.cells.length; j++) {
+      rowData[headers[j]!] = tableRow.cells[j].innerHTML;
     }
     data.push(rowData);
   }
@@ -20,9 +20,11 @@ export function tableToJson(table: any) {
 
 export function getNewDocAll(docAll: TagDocOld.TagDocInstance) {
   const newData: TagDoc.TagDocInstance = { url: '' };
+
   for (const key in docAll) {
     const element = docAll[key as keyof TagDocOld.TagDocInstance]!;
     if (key === 'attributes') {
+      console.log('attributes====', element);
       newData.attributes = getAttributes(element as TagDocOld.Attribute[]);
     }
     if (key === 'events') {
@@ -40,14 +42,13 @@ export function getNewDocAll(docAll: TagDocOld.TagDocInstance) {
 
 function getAttributes(attributes: TagDocOld.Attribute[]): TagDoc.Attribute[] {
   const newList: TagDoc.Attribute[] = [];
-
   attributes.forEach((item) => {
-    const data = getType(item.Type);
+    const data = getType(item.Type || item.type || '');
     newList.push({
-      name: item.Name,
-      description: getDescription(item.Description),
+      name: item.Name || item.name || '',
+      description: getDescription(item.Description || item.description || ''),
       type: data.type,
-      default: item.Default,
+      default: item.Default || item.default || '',
       value: data.value,
     });
   });
@@ -58,10 +59,10 @@ function getAttributes(attributes: TagDocOld.Attribute[]): TagDoc.Attribute[] {
 function getEvents(attributes: TagDocOld.Event[]): TagDoc.Event[] {
   const newList: TagDoc.Event[] = [];
   attributes.forEach((item) => {
-    const data = getType(item.Type);
+    const data = getType(item.Type || item.type || '');
     newList.push({
-      name: item.Name,
-      description: getDescription(item.Description),
+      name: item.Name || item.name || '',
+      description: getDescription(item.description || item.Description || ''),
       type: data.type as 'function',
       tsType: '',
     });
@@ -73,8 +74,8 @@ function getSlots(attributes: TagDocOld.Slot[]): TagDoc.Slot[] {
   const newList: TagDoc.Slot[] = [];
   attributes.forEach((item) => {
     newList.push({
-      name: item.Name,
-      description: getDescription(item.Description),
+      name: item.Name || item.name || '',
+      description: getDescription(item.description || item.Description || ''),
     });
   });
 
@@ -83,11 +84,11 @@ function getSlots(attributes: TagDocOld.Slot[]): TagDoc.Slot[] {
 function getExposes(attributes: TagDocOld.Expose[]): TagDoc.Expose[] {
   const newList: TagDoc.Expose[] = [];
   attributes.forEach((item) => {
-    const data = getType(item.Type);
+    const data = getType(item.Type || item.type || '');
     newList.push({
-      name: item.Name,
-      description: getDescription(item.Description),
-      type: data.type as 'object' | 'function',
+      name: item.Name || item.name || '',
+      description: getDescription(item.description || item.Description || ''),
+      type: data.type as 'function' | 'object',
       tsType: '',
     });
   });

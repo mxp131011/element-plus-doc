@@ -1,6 +1,6 @@
 import type { TagDoc } from '@/types/tag-doc';
 
-const document: TagDoc.TagDocInstance = {
+const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
     {
@@ -188,4 +188,4 @@ const document: TagDoc.TagDocInstance = {
   exposes: [],
 };
 
-export default document;
+export default doc;

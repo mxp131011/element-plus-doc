@@ -1,29 +1,43 @@
-import { tableToJson } from '../tools/tool';
+import { getNewDocAll, tableToJson } from '../tools/tool';
 import { marked } from 'marked';
-import doc from '../tools/index';
-import { TagDoc } from '../types/tag-doc';
+import { type TagDoc } from '../types/tag-doc';
+import { type TagDocOld } from '../types/tag-doc-old';
+import jsdom from 'jsdom';
+import path from 'path';
 import fs from 'fs';
+const { JSDOM } = jsdom;
+import { autoLoadFile } from '../tools/autoLoadFile';
+const fileList = autoLoadFile(path.join(__dirname, '../component'));
 
 export function trimAllDoc() {
-  const newDoc: TagDoc.TagDocInstance = { url: '' };
-  for (const key in doc) {
-    const element = doc[key as keyof typeof doc]!;
-    let table = marked(element);
-    console.log('aaa====', table);
-    let tableDOM = document.createRange().createContextualFragment(table).firstChild;
-    const json = tableToJson(tableDOM!);
-    newDoc[key as keyof typeof doc] = json;
-  }
-
-  fs.writeFile('./docs/hello.ts', 'hello', (error) => {
-    // 创建失败
-    if (error) {
-      console.log(`创建失败：${error}`);
-    }
-    // 创建成功
-    console.log(`创建成功！`);
+  fileList.forEach((item: any) => {
+    (item.data as Promise<any>).then((ra) => {
+      console.log('aaa====11111111');
+      sTrimAllDoc(ra.default as Record<string, string>, item.base as string);
+    });
   });
-  console.log('newDoc====', newDoc);
+}
+
+function sTrimAllDoc(doc: Record<string, string>, _path: string) {
+  try {
+    const newDoc: any = { url: '' };
+    for (const key in doc) {
+      const element = doc[key]!;
+      const table = marked(element);
+
+      const document = new JSDOM(table).window.document;
+      const tableDOM = document.createRange().createContextualFragment(table).firstChild;
+      const json = tableToJson(tableDOM);
+      newDoc[key as keyof TagDoc.TagDocInstance] = json;
+    }
+
+    const text = `import type { TagDoc } from '@/types/tag-doc'
+    const doc: TagDoc.TagDocInstance = ${JSON.stringify(getNewDocAll(newDoc as TagDocOld.TagDocInstance))};
+    export default doc;
+    `;
+    fs.writeFileSync(`./src/docs/${_path}`, text);
+  } catch (error) {}
+
   // const docAll = getNewDocAll(element);
   // console.log('需要的====', docAll);
 }

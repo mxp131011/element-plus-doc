@@ -53,16 +53,10 @@ export declare namespace TagDoc {
     /** #TypeScript 类型 */
     tsType: string;
   }
-  /** 标签文档实例 */
-  interface TagDocInstanceOld {
-    attributes?: Attribute[];
-    events?: Event[];
-    slots?: Slot[];
-    exposes?: Expose[];
-  }
+
   /** 标签文档实例 */
   interface TagDocInstance {
-    url: `component/${string}-api` | `component/${string}.html` | '';
+    url: '' | `component/${string}-api` | `component/${string}.html`;
     attributes?: Attribute[];
     events?: Event[];
     slots?: Slot[];
