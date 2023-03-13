@@ -7,30 +7,30 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'whether to use small pagination', en: 'whether to use small pagination' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'background',
       description: { cn: 'whether the buttons have a background color', en: 'whether the buttons have a background color' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'page-size / v-model:page-size',
       description: { cn: 'item count of each page', en: 'item count of each page' },
       type: 'number',
       default: '10',
-      value: [''],
+      value: [],
     },
     {
       name: 'default-page-size',
       description: { cn: 'default initial value of page size', en: 'default initial value of page size' },
       type: 'number',
       default: '-',
-      value: [''],
+      value: [],
     },
-    { name: 'total', description: { cn: 'total item count', en: 'total item count' }, type: 'number', default: '—', value: [''] },
+    { name: 'total', description: { cn: 'total item count', en: 'total item count' }, type: 'number', default: '—', value: [] },
     {
       name: 'page-count',
       description: {
@@ -39,7 +39,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'number',
       default: '—',
-      value: [''],
+      value: [],
     },
     {
       name: 'pager-count',
@@ -56,14 +56,14 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'current page number', en: 'current page number' },
       type: 'number',
       default: '1',
-      value: [''],
+      value: [],
     },
     {
       name: 'default-current-page',
       description: { cn: 'default initial value of current-page', en: 'default initial value of current-page' },
       type: 'number',
       default: '-',
-      value: [''],
+      value: [],
     },
     {
       name: 'layout',
@@ -84,9 +84,9 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: "custom class name for the page size Select's dropdown", en: "custom class name for the page size Select's dropdown" },
       type: 'string',
       default: '—',
-      value: [''],
+      value: [],
     },
-    { name: 'prev-text', description: { cn: 'text for the prev button', en: 'text for the prev button' }, type: 'string', default: '—', value: [''] },
+    { name: 'prev-text', description: { cn: 'text for the prev button', en: 'text for the prev button' }, type: 'string', default: '—', value: [] },
     {
       name: 'prev-icon',
       description: {
@@ -97,7 +97,7 @@ const doc: TagDoc.TagDocInstance = {
       default: 'ArrowLeft',
       value: ['Component'],
     },
-    { name: 'next-text', description: { cn: 'text for the next button', en: 'text for the next button' }, type: 'string', default: '—', value: [''] },
+    { name: 'next-text', description: { cn: 'text for the next button', en: 'text for the next button' }, type: 'string', default: '—', value: [] },
     {
       name: 'next-icon',
       description: {
@@ -113,14 +113,14 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'whether Pagination is disabled', en: 'whether Pagination is disabled' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'hide-on-single-page',
       description: { cn: "whether to hide when there's only one page", en: "whether to hide when there's only one page" },
       type: 'boolean',
       default: '-',
-      value: [''],
+      value: [],
     },
   ],
   events: [

@@ -40,6 +40,8 @@ export declare namespace TagDoc {
     name: string;
     /** #说明 */
     description: { cn: string; en: string };
+    /** #子标签 */
+    subtags?: string[];
   }
 
   /** 暴露出来的接口或方法文档类型 */

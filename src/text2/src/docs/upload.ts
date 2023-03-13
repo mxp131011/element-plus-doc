@@ -128,7 +128,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'default uploaded files.', en: 'default uploaded files.' },
       type: 'uploaduserfile[',
       default: '[]',
-      value: [''],
+      value: [],
     },
     { name: 'list-type', description: { cn: 'type of file list.', en: 'type of file list.' }, type: "`'text'", default: "'picture'", value: [] },
     {

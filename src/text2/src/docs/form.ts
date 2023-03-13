@@ -16,7 +16,7 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: ['codeFormRulescode'],
     },
-    { name: 'inline', description: { cn: 'Whether the form is inline.', en: 'Whether the form is inline.' }, type: 'boolean', default: 'false', value: [''] },
+    { name: 'inline', description: { cn: 'Whether the form is inline.', en: 'Whether the form is inline.' }, type: 'boolean', default: 'false', value: [] },
     {
       name: 'label-position',
       description: {
@@ -37,7 +37,7 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: ['number'],
     },
-    { name: 'label-suffix', description: { cn: 'Suffix of the label.', en: 'Suffix of the label.' }, type: 'string', default: '—', value: [''] },
+    { name: 'label-suffix', description: { cn: 'Suffix of the label.', en: 'Suffix of the label.' }, type: 'string', default: '—', value: [] },
     {
       name: 'hide-required-asterisk',
       description: {
@@ -46,7 +46,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'require-asterisk-position',
@@ -60,7 +60,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'Whether to show the error message.', en: 'Whether to show the error message.' },
       type: 'boolean',
       default: 'true',
-      value: [''],
+      value: [],
     },
     {
       name: 'inline-message',
@@ -70,14 +70,14 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'status-icon',
       description: { cn: 'Whether to display an icon indicating the validation result.', en: 'Whether to display an icon indicating the validation result.' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'validate-on-rule-change',
@@ -87,7 +87,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'boolean',
       default: 'true',
-      value: [''],
+      value: [],
     },
     {
       name: 'size',
@@ -104,14 +104,14 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'scroll-to-error',
       description: { cn: 'When validation fails, scroll to the first error form entry.', en: 'When validation fails, scroll to the first error form entry.' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
   ],
   events: [

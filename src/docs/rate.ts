@@ -2,16 +2,16 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'model-value / v-model', description: { cn: 'binding value', en: 'binding value' }, type: 'number', default: '0', value: [''] },
-    { name: 'max', description: { cn: 'max rating score', en: 'max rating score' }, type: 'number', default: '5', value: [''] },
+    { name: 'model-value / v-model', description: { cn: 'binding value', en: 'binding value' }, type: 'number', default: '0', value: [] },
+    { name: 'max', description: { cn: 'max rating score', en: 'max rating score' }, type: 'number', default: '5', value: [] },
     { name: 'size', description: { cn: 'size of Rate', en: 'size of Rate' }, type: 'enum', default: "'default'", value: ['large'] },
-    { name: 'disabled', description: { cn: 'whether Rate is read-only', en: 'whether Rate is read-only' }, type: 'boolean', default: 'false', value: [''] },
+    { name: 'disabled', description: { cn: 'whether Rate is read-only', en: 'whether Rate is read-only' }, type: 'boolean', default: 'false', value: [] },
     {
       name: 'allow-half',
       description: { cn: 'whether picking half start is allowed', en: 'whether picking half start is allowed' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'low-threshold',
@@ -21,7 +21,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'number',
       default: '2',
-      value: [''],
+      value: [],
     },
     {
       name: 'high-threshold',
@@ -31,7 +31,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'number',
       default: '4',
-      value: [''],
+      value: [],
     },
     {
       name: 'colors',
@@ -43,13 +43,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'Record&lt;number, string>`',
       value: ['string'],
     },
-    { name: 'void-color', description: { cn: 'color of unselected icons', en: 'color of unselected icons' }, type: 'string', default: '#C6D1DE', value: [''] },
+    { name: 'void-color', description: { cn: 'color of unselected icons', en: 'color of unselected icons' }, type: 'string', default: '#C6D1DE', value: [] },
     {
       name: 'disabled-void-color',
       description: { cn: 'color of unselected read-only icons', en: 'color of unselected read-only icons' },
       type: 'string',
       default: '#EFF2F7',
-      value: [''],
+      value: [],
     },
     {
       name: 'icons',
@@ -75,7 +75,7 @@ const doc: TagDoc.TagDocInstance = {
       default: 'StarFilled',
       value: ['Component'],
     },
-    { name: 'show-text', description: { cn: 'whether to display texts', en: 'whether to display texts' }, type: 'boolean', default: 'false', value: [''] },
+    { name: 'show-text', description: { cn: 'whether to display texts', en: 'whether to display texts' }, type: 'boolean', default: 'false', value: [] },
     {
       name: 'show-score',
       description: {
@@ -84,9 +84,9 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
-    { name: 'text-color', description: { cn: 'color of texts', en: 'color of texts' }, type: 'string', default: '#1F2D3D', value: [''] },
+    { name: 'text-color', description: { cn: 'color of texts', en: 'color of texts' }, type: 'string', default: '#1F2D3D', value: [] },
     {
       name: 'texts',
       description: { cn: 'text array', en: 'text array' },
@@ -94,21 +94,21 @@ const doc: TagDoc.TagDocInstance = {
       default: "['Extremely bad', 'Disappointed', 'Fair', 'Satisfied', 'Surprise']",
       value: ['codestring'],
     },
-    { name: 'score-template', description: { cn: 'score template', en: 'score template' }, type: 'string', default: '{value}', value: [''] },
+    { name: 'score-template', description: { cn: 'score template', en: 'score template' }, type: 'string', default: '{value}', value: [] },
     {
       name: 'clearable',
       description: { cn: 'whether value can be reset to <code>0</code>', en: 'whether value can be reset to <code>0</code>' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
-    { name: 'id', description: { cn: 'native <code>id</code> attribute', en: 'native <code>id</code> attribute' }, type: 'string', default: '—', value: [''] },
+    { name: 'id', description: { cn: 'native <code>id</code> attribute', en: 'native <code>id</code> attribute' }, type: 'string', default: '—', value: [] },
     {
       name: 'label<a11ytag></a11ytag>',
       description: { cn: 'same as <code>aria-label</code> in Rate', en: 'same as <code>aria-label</code> in Rate' },
       type: 'string',
       default: '—',
-      value: [''],
+      value: [],
     },
   ],
   events: [

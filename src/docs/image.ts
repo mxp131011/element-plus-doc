@@ -55,7 +55,7 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'preview-src-list', description: { cn: 'allow big image preview.', en: 'allow big image preview.' }, type: 'string[', default: '—', value: [''] },
+    { name: 'preview-src-list', description: { cn: 'allow big image preview.', en: 'allow big image preview.' }, type: 'string[', default: '—', value: [] },
     { name: 'z-index', description: { cn: 'set image preview z-index.', en: 'set image preview z-index.' }, type: 'number', default: '—', value: [] },
     {
       name: 'initial-index',

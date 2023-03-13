@@ -10,7 +10,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'same as <code>minlength</code> in native input', en: 'same as <code>minlength</code> in native input' },
       type: 'number',
       default: '—',
-      value: [''],
+      value: [],
     },
     {
       name: 'show-word-limit',
@@ -20,9 +20,9 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
-    { name: 'placeholder', description: { cn: 'placeholder of Input', en: 'placeholder of Input' }, type: 'string', default: '—', value: [''] },
+    { name: 'placeholder', description: { cn: 'placeholder of Input', en: 'placeholder of Input' }, type: 'string', default: '—', value: [] },
     {
       name: 'clearable',
       description: {
@@ -31,7 +31,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'formatter',
@@ -58,9 +58,9 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'whether to show toggleable password input', en: 'whether to show toggleable password input' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
-    { name: 'disabled', description: { cn: 'whether Input is disabled', en: 'whether Input is disabled' }, type: 'boolean', default: 'false', value: [''] },
+    { name: 'disabled', description: { cn: 'whether Input is disabled', en: 'whether Input is disabled' }, type: 'boolean', default: 'false', value: [] },
     {
       name: 'size',
       description: { cn: "size of Input, works when <code>type</code> is not 'textarea'", en: "size of Input, works when <code>type</code> is not 'textarea'" },
@@ -78,7 +78,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'number',
       default: '2',
-      value: [''],
+      value: [],
     },
     {
       name: 'autosize',
@@ -95,21 +95,21 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'same as <code>autocomplete</code> in native input', en: 'same as <code>autocomplete</code> in native input' },
       type: 'string',
       default: 'off',
-      value: [''],
+      value: [],
     },
     {
       name: 'name',
       description: { cn: 'same as <code>name</code> in native input', en: 'same as <code>name</code> in native input' },
       type: 'string',
       default: '—',
-      value: [''],
+      value: [],
     },
     {
       name: 'readonly',
       description: { cn: 'same as <code>readonly</code> in native input', en: 'same as <code>readonly</code> in native input' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'max',
@@ -138,7 +138,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'same as <code>autofocus</code> in native input', en: 'same as <code>autofocus</code> in native input' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'form',
@@ -152,7 +152,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'same as <code>aria-label</code> in native input', en: 'same as <code>aria-label</code> in native input' },
       type: 'string',
       default: '—',
-      value: [''],
+      value: [],
     },
     { name: 'tabindex', description: { cn: 'input tabindex', en: 'input tabindex' }, type: 'string', default: '—', value: ['number'] },
     {
@@ -160,7 +160,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'whether to trigger form validation', en: 'whether to trigger form validation' },
       type: 'boolean',
       default: 'true',
-      value: [''],
+      value: [],
     },
     {
       name: 'input-style',
