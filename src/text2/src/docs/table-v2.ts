@@ -1,4 +1,281 @@
-import type { TagDoc } from '@/types/tag-doc'
-    const doc: TagDoc.TagDocInstance = {"url":"","attributes":[{"name":"cache","description":{"cn":"Number of rows rendered in advance for boosting the performance","en":"Number of rows rendered in advance for boosting the performance"},"type":"number","default":"2","value":[]},{"name":"estimated-row-height","description":{"cn":"The estimated row height for rendering dynamic height rows","en":"The estimated row height for rendering dynamic height rows"},"type":"number","default":"-","value":[]},{"name":"header-class","description":{"cn":"Customized class name passed to header wrapper","en":"Customized class name passed to header wrapper"},"type":"string/function&lt;<a href=\"#typings\">headerclassgetter</a>&gt;","default":"-","value":[]},{"name":"header-props","description":{"cn":"Customized props name passed to header component","en":"Customized props name passed to header component"},"type":"object/function&lt;<a href=\"#typings\">headerpropsgetter</a>&gt;","default":"-","value":[]},{"name":"header-cell-props","description":{"cn":"Customized props name passed to header cell component","en":"Customized props name passed to header cell component"},"type":"object/function&lt;<a href=\"#typings\">headercellpropsgetter</a>&gt;","default":"-","value":[]},{"name":"header-height","description":{"cn":"The height of entire header, when it's array, it will render as many header rows as the given array's length","en":"The height of entire header, when it's array, it will render as many header rows as the given array's length"},"type":"number/array<number></number>","default":"50","value":[]},{"name":"footer-height","description":{"cn":"The height of the footer element, when presented, it will be part of the calculation of the table's height.","en":"The height of the footer element, when presented, it will be part of the calculation of the table's height."},"type":"number","default":"0","value":[]},{"name":"row-class","description":{"cn":"Customized class name passed to row wrapper","en":"Customized class name passed to row wrapper"},"type":"string/function&lt;<a href=\"#typings\">rowclassgetter</a>&gt;","default":"-","value":[]},{"name":"row-key","description":{"cn":"The key of each row, if not provided, it will be the index of the row","en":"The key of each row, if not provided, it will be the index of the row"},"type":"string/symbol/number","default":"id","value":[]},{"name":"row-props","description":{"cn":"Customized props name passed to row component","en":"Customized props name passed to row component"},"type":"object/function&lt;<a href=\"#typings\">rowpropsgetter</a>&gt;","default":"-","value":[]},{"name":"row-height","description":{"cn":"The height of each row, used for calculating the total height of the table","en":"The height of each row, used for calculating the total height of the table"},"type":"number","default":"50","value":[]},{"name":"cell-props","description":{"cn":"extra props passed to each cell (except header cells)","en":"extra props passed to each cell (except header cells)"},"type":"object/function&lt;<a href=\"#typings\">cellpropsgetter</a>&gt;","default":"-","value":[]},{"name":"columns","description":{"cn":"An array of column definitions.","en":"An array of column definitions."},"type":"array&lt;<a href=\"#column-attribute\">column</a>&gt;","default":"-","value":[]},{"name":"data","description":{"cn":"An array of data to be rendered in the table.","en":"An array of data to be rendered in the table."},"type":"array&lt;<a href=\"#typings\">data</a>&gt;","default":"[]","value":[]},{"name":"data-getter","description":{"cn":"An method which helps customizing the how to fetch the data from the data source.","en":"An method which helps customizing the how to fetch the data from the data source."},"type":"function","default":"-","value":[]},{"name":"fixed-data","description":{"cn":"Data for rendering rows above the main content and below the header","en":"Data for rendering rows above the main content and below the header"},"type":"array&lt;<a href=\"#typings\">data</a>&gt;","default":"-","value":[]},{"name":"expand-column-key","description":{"cn":"The column key indicates which row is expandable","en":"The column key indicates which row is expandable"},"type":"string","default":"-","value":[]},{"name":"expanded-row-keys","description":{"cn":"An array of keys for expanded rows, can be used with <code>v-model</code>","en":"An array of keys for expanded rows, can be used with <code>v-model</code>"},"type":"array&lt;<a href=\"#typings\">keytype</a>&gt;","default":"-","value":[]},{"name":"default-expanded-row-keys","description":{"cn":"An array of keys for default expanded rows, <strong>NON REACTIVE</strong>","en":"An array of keys for default expanded rows, <strong>NON REACTIVE</strong>"},"type":"array&lt;<a href=\"#typings\">keytype</a>&gt;","default":"-","value":[]},{"name":"class","description":{"cn":"Class name for the the virtual table, will be applied to all three tables (left, right, main)","en":"Class name for the the virtual table, will be applied to all three tables (left, right, main)"},"type":"string/array/object","default":"-","value":[]},{"name":"fixed","description":{"cn":"Flag indicates the table column's width is a fixed or flexible.","en":"Flag indicates the table column's width is a fixed or flexible."},"type":"boolean","default":"false","value":[]},{"name":"width","description":{"cn":"Width for the table, required","en":"Width for the table, required"},"type":"number","default":"-","value":[]},{"name":"height","description":{"cn":"Height for the table, required","en":"Height for the table, required"},"type":"number","default":"-","value":[]},{"name":"max-height","description":{"cn":"Maximum height for the table","en":"Maximum height for the table"},"type":"number","default":"-","value":[]},{"name":"h-scrollbar-size","description":{"cn":"Indicates the horizontal scrollbar's size for the table, used to prevent the horizontal and vertical scrollbar to collapse","en":"Indicates the horizontal scrollbar's size for the table, used to prevent the horizontal and vertical scrollbar to collapse"},"type":"number","default":"6","value":[]},{"name":"v-scrollbar-size","description":{"cn":"Indicates the vertical scrollbar's size for the table, used to prevent the horizontal and vertical scrollbar to collapse","en":"Indicates the vertical scrollbar's size for the table, used to prevent the horizontal and vertical scrollbar to collapse"},"type":"number","default":"6","value":[]},{"name":"scrollbar-always-on","description":{"cn":"If true, the scrollbar will always be shown instead of when mouse is placed above the table","en":"If true, the scrollbar will always be shown instead of when mouse is placed above the table"},"type":"boolean","default":"false","value":[]},{"name":"sort-by","description":{"cn":"Sort indicator","en":"Sort indicator"},"type":"object&lt;<a href=\"#typings\">sortby</a>&gt;","default":"{}","value":[]},{"name":"sort-state","description":{"cn":"Multiple sort indicator","en":"Multiple sort indicator"},"type":"object&lt;<a href=\"#typings\">sortstate</a>&gt;","default":"undefined","value":[]}],"events":[{"name":"column-sort","description":{"cn":"Invoked when column sorted","en":"Invoked when column sorted"},"type":"","tsType":""},{"name":"expanded-rows-change","description":{"cn":"Invoked when expanded rows changed","en":"Invoked when expanded rows changed"},"type":"","tsType":""},{"name":"end-reached","description":{"cn":"Invoked when the end of the table is reached","en":"Invoked when the end of the table is reached"},"type":"","tsType":""},{"name":"scroll","description":{"cn":"Invoked after scrolled","en":"Invoked after scrolled"},"type":"","tsType":""},{"name":"rows-rendered","description":{"cn":"Invoked when rows are rendered","en":"Invoked when rows are rendered"},"type":"","tsType":""},{"name":"row-expand","description":{"cn":"Invoked when expand/collapse the tree node by clicking the arrow icon","en":"Invoked when expand/collapse the tree node by clicking the arrow icon"},"type":"","tsType":""},{"name":"row-event-handlers","description":{"cn":"A collection of handlers attached to each row","en":"A collection of handlers attached to each row"},"type":"","tsType":""}],"exposes":[{"name":"","description":{"cn":"Scroll to a given position","en":"Scroll to a given position"},"type":"","tsType":""},{"name":"","description":{"cn":"Scroll to a given horizontal position","en":"Scroll to a given horizontal position"},"type":"","tsType":""},{"name":"","description":{"cn":"Scroll to a given vertical position","en":"Scroll to a given vertical position"},"type":"","tsType":""},{"name":"","description":{"cn":"scroll to a given row with specified scroll strategy","en":"scroll to a given row with specified scroll strategy"},"type":"","tsType":""}],"slots":[{"name":"cell","description":{"cn":"","en":""}},{"name":"header","description":{"cn":"","en":""}},{"name":"header-cell","description":{"cn":"","en":""}},{"name":"row","description":{"cn":"","en":""}},{"name":"footer","description":{"cn":"","en":""}},{"name":"empty","description":{"cn":"","en":""}},{"name":"overlay","description":{"cn":"","en":""}}]};
-    export default doc;
-    
+import type { TagDoc } from '@/types/tag-doc';
+const doc: TagDoc.TagDocInstance = {
+  url: '',
+  attributes: [
+    {
+      name: 'cache',
+      description: {
+        cn: 'Number of rows rendered in advance for boosting the performance',
+        en: 'Number of rows rendered in advance for boosting the performance',
+      },
+      type: 'number',
+      default: '2',
+      value: [],
+    },
+    {
+      name: 'estimated-row-height',
+      description: { cn: 'The estimated row height for rendering dynamic height rows', en: 'The estimated row height for rendering dynamic height rows' },
+      type: 'number',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'header-class',
+      description: { cn: 'Customized class name passed to header wrapper', en: 'Customized class name passed to header wrapper' },
+      type: 'string/function&lt;<a href="#typings">headerclassgetter</a>>',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'header-props',
+      description: { cn: 'Customized props name passed to header component', en: 'Customized props name passed to header component' },
+      type: 'object/function&lt;<a href="#typings">headerpropsgetter</a>>',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'header-cell-props',
+      description: { cn: 'Customized props name passed to header cell component', en: 'Customized props name passed to header cell component' },
+      type: 'object/function&lt;<a href="#typings">headercellpropsgetter</a>>',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'header-height',
+      description: {
+        cn: "The height of entire header, when it's array, it will render as many header rows as the given array's length",
+        en: "The height of entire header, when it's array, it will render as many header rows as the given array's length",
+      },
+      type: 'number/array<number></number>',
+      default: '50',
+      value: [],
+    },
+    {
+      name: 'footer-height',
+      description: {
+        cn: "The height of the footer element, when presented, it will be part of the calculation of the table's height.",
+        en: "The height of the footer element, when presented, it will be part of the calculation of the table's height.",
+      },
+      type: 'number',
+      default: '0',
+      value: [],
+    },
+    {
+      name: 'row-class',
+      description: { cn: 'Customized class name passed to row wrapper', en: 'Customized class name passed to row wrapper' },
+      type: 'string/function&lt;<a href="#typings">rowclassgetter</a>>',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'row-key',
+      description: {
+        cn: 'The key of each row, if not provided, it will be the index of the row',
+        en: 'The key of each row, if not provided, it will be the index of the row',
+      },
+      type: 'string/symbol/number',
+      default: 'id',
+      value: [],
+    },
+    {
+      name: 'row-props',
+      description: { cn: 'Customized props name passed to row component', en: 'Customized props name passed to row component' },
+      type: 'object/function&lt;<a href="#typings">rowpropsgetter</a>>',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'row-height',
+      description: {
+        cn: 'The height of each row, used for calculating the total height of the table',
+        en: 'The height of each row, used for calculating the total height of the table',
+      },
+      type: 'number',
+      default: '50',
+      value: [],
+    },
+    {
+      name: 'cell-props',
+      description: { cn: 'extra props passed to each cell (except header cells)', en: 'extra props passed to each cell (except header cells)' },
+      type: 'object/function&lt;<a href="#typings">cellpropsgetter</a>>',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'columns',
+      description: { cn: 'An array of column definitions.', en: 'An array of column definitions.' },
+      type: 'array&lt;<a href="#column-attribute">column</a>>',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'data',
+      description: { cn: 'An array of data to be rendered in the table.', en: 'An array of data to be rendered in the table.' },
+      type: 'array&lt;<a href="#typings">data</a>>',
+      default: '[]',
+      value: [],
+    },
+    {
+      name: 'data-getter',
+      description: {
+        cn: 'An method which helps customizing the how to fetch the data from the data source.',
+        en: 'An method which helps customizing the how to fetch the data from the data source.',
+      },
+      type: 'function',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'fixed-data',
+      description: {
+        cn: 'Data for rendering rows above the main content and below the header',
+        en: 'Data for rendering rows above the main content and below the header',
+      },
+      type: 'array&lt;<a href="#typings">data</a>>',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'expand-column-key',
+      description: { cn: 'The column key indicates which row is expandable', en: 'The column key indicates which row is expandable' },
+      type: 'string',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'expanded-row-keys',
+      description: {
+        cn: 'An array of keys for expanded rows, can be used with <code>v-model</code>',
+        en: 'An array of keys for expanded rows, can be used with <code>v-model</code>',
+      },
+      type: 'array&lt;<a href="#typings">keytype</a>>',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'default-expanded-row-keys',
+      description: {
+        cn: 'An array of keys for default expanded rows, <strong>NON REACTIVE</strong>',
+        en: 'An array of keys for default expanded rows, <strong>NON REACTIVE</strong>',
+      },
+      type: 'array&lt;<a href="#typings">keytype</a>>',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'class',
+      description: {
+        cn: 'Class name for the the virtual table, will be applied to all three tables (left, right, main)',
+        en: 'Class name for the the virtual table, will be applied to all three tables (left, right, main)',
+      },
+      type: 'string/array/object',
+      default: '-',
+      value: [],
+    },
+    {
+      name: 'fixed',
+      description: {
+        cn: "Flag indicates the table column's width is a fixed or flexible.",
+        en: "Flag indicates the table column's width is a fixed or flexible.",
+      },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+    { name: 'width', description: { cn: 'Width for the table, required', en: 'Width for the table, required' }, type: 'number', default: '-', value: [] },
+    { name: 'height', description: { cn: 'Height for the table, required', en: 'Height for the table, required' }, type: 'number', default: '-', value: [] },
+    { name: 'max-height', description: { cn: 'Maximum height for the table', en: 'Maximum height for the table' }, type: 'number', default: '-', value: [] },
+    {
+      name: 'h-scrollbar-size',
+      description: {
+        cn: "Indicates the horizontal scrollbar's size for the table, used to prevent the horizontal and vertical scrollbar to collapse",
+        en: "Indicates the horizontal scrollbar's size for the table, used to prevent the horizontal and vertical scrollbar to collapse",
+      },
+      type: 'number',
+      default: '6',
+      value: [],
+    },
+    {
+      name: 'v-scrollbar-size',
+      description: {
+        cn: "Indicates the vertical scrollbar's size for the table, used to prevent the horizontal and vertical scrollbar to collapse",
+        en: "Indicates the vertical scrollbar's size for the table, used to prevent the horizontal and vertical scrollbar to collapse",
+      },
+      type: 'number',
+      default: '6',
+      value: [],
+    },
+    {
+      name: 'scrollbar-always-on',
+      description: {
+        cn: 'If true, the scrollbar will always be shown instead of when mouse is placed above the table',
+        en: 'If true, the scrollbar will always be shown instead of when mouse is placed above the table',
+      },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+    {
+      name: 'sort-by',
+      description: { cn: 'Sort indicator', en: 'Sort indicator' },
+      type: 'object&lt;<a href="#typings">sortby</a>>',
+      default: '{}',
+      value: [],
+    },
+    {
+      name: 'sort-state',
+      description: { cn: 'Multiple sort indicator', en: 'Multiple sort indicator' },
+      type: 'object&lt;<a href="#typings">sortstate</a>>',
+      default: 'undefined',
+      value: [],
+    },
+  ],
+  events: [
+    { name: 'column-sort', description: { cn: 'Invoked when column sorted', en: 'Invoked when column sorted' }, type: '', tsType: '' },
+    { name: 'expanded-rows-change', description: { cn: 'Invoked when expanded rows changed', en: 'Invoked when expanded rows changed' }, type: '', tsType: '' },
+    {
+      name: 'end-reached',
+      description: { cn: 'Invoked when the end of the table is reached', en: 'Invoked when the end of the table is reached' },
+      type: '',
+      tsType: '',
+    },
+    { name: 'scroll', description: { cn: 'Invoked after scrolled', en: 'Invoked after scrolled' }, type: '', tsType: '' },
+    { name: 'rows-rendered', description: { cn: 'Invoked when rows are rendered', en: 'Invoked when rows are rendered' }, type: '', tsType: '' },
+    {
+      name: 'row-expand',
+      description: {
+        cn: 'Invoked when expand/collapse the tree node by clicking the arrow icon',
+        en: 'Invoked when expand/collapse the tree node by clicking the arrow icon',
+      },
+      type: '',
+      tsType: '',
+    },
+    {
+      name: 'row-event-handlers',
+      description: { cn: 'A collection of handlers attached to each row', en: 'A collection of handlers attached to each row' },
+      type: '',
+      tsType: '',
+    },
+  ],
+  exposes: [
+    { name: '', description: { cn: 'Scroll to a given position', en: 'Scroll to a given position' }, type: '', tsType: '' },
+    { name: '', description: { cn: 'Scroll to a given horizontal position', en: 'Scroll to a given horizontal position' }, type: '', tsType: '' },
+    { name: '', description: { cn: 'Scroll to a given vertical position', en: 'Scroll to a given vertical position' }, type: '', tsType: '' },
+    {
+      name: '',
+      description: { cn: 'scroll to a given row with specified scroll strategy', en: 'scroll to a given row with specified scroll strategy' },
+      type: '',
+      tsType: '',
+    },
+  ],
+  slots: [
+    { name: 'cell', description: { cn: '', en: '' } },
+    { name: 'header', description: { cn: '', en: '' } },
+    { name: 'header-cell', description: { cn: '', en: '' } },
+    { name: 'row', description: { cn: '', en: '' } },
+    { name: 'footer', description: { cn: '', en: '' } },
+    { name: 'empty', description: { cn: '', en: '' } },
+    { name: 'overlay', description: { cn: '', en: '' } },
+  ],
+};
+export default doc;
