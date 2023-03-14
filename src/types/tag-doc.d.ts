@@ -21,27 +21,16 @@ export declare namespace TagDoc {
   /**
    * 事件文档类型
    */
-  type Event =
-    | {
-        /** #事件名称 */
-        name: string;
-        /** #说明 */
-        description: { cn: string; en: string };
-        /** #类型 */
-        type: 'function';
-        /** # 回调参数 */
-        param: string | { cn: string; en: string };
-      }
-    | {
-        /** #事件名称 */
-        name: string;
-        /** #说明 */
-        description: { cn: string; en: string };
-        /** #类型 */
-        type: 'function';
-        /** #TypeScript 类型 */
-        tsType: string;
-      };
+  type Event = {
+    /** #事件名称 */
+    name: string;
+    /** #说明 */
+    description: { cn: string; en: string };
+    /** #类型 */
+    type: 'function';
+    /** # 回调参数 */
+    param: string | { cn: string; en: string };
+  };
 
   /**
    * 组件的插槽文档
@@ -56,25 +45,16 @@ export declare namespace TagDoc {
   }
 
   /** 暴露出来的接口或方法文档类型 */
-  type Expose =
-    | {
-        /** #插槽名称 */
-        name: string;
-        /** #说明 */
-        description: { cn: string; en: string };
-        /** #参数 */
-        param: string | { cn: string; en: string };
-      }
-    | {
-        /** #插槽名称 */
-        name: string;
-        /** #说明 */
-        description: { cn: string; en: string };
-        /** #类型 */
-        type: 'function' | 'object';
-        /** #TypeScript 类型 */
-        tsType: string;
-      };
+  type Expose = {
+    /** #插槽名称 */
+    name: string;
+    /** #说明 */
+    description: { cn: string; en: string };
+    /** #参数 */
+    param: string | { cn: string; en: string };
+    /** #类型 */
+    type: 'function' | 'object';
+  };
 
   /** 标签文档实例 */
   interface TagDocInstance {

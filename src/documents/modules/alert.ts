@@ -64,7 +64,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'close',
       description: { cn: '关闭 Alert 时触发的事件', en: 'trigger when alert is closed.' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
   ],
   slots: [

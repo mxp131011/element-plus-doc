@@ -65,15 +65,18 @@ export class GetDocUtil {
     mdStr.appendMarkdown(`<img src="${logo}" width="40px" height="40px" />`);
     mdStr.appendMarkdown(`&emsp;[官网链接](${this.officialWebsite}${tagDoc.url})</br>\r`);
     for (key in tagDoc) {
-      if (key !== 'url') {
-        const tagDocItem = tagDoc[key!]?.find((item) => item.name === attr);
-        if (tagDocItem) {
-          const bodyList = this._getMDSingleTableBody(tagDocItem, key!);
-          const titleList = this._getMDTableTitle(tag, key!);
+      if (key !== 'url' && key !== 'childAttributes') {
+        const item = tagDoc[key!];
+        if (item) {
+          const tagDocItem: TagDoc.Attribute | TagDoc.Event | TagDoc.Expose | TagDoc.Slot = (item as any[]).find((_item) => _item.name === attr);
+          if (tagDocItem) {
+            const bodyList = this._getMDSingleTableBody(tagDocItem, key!);
+            const titleList = this._getMDTableTitle(tag, key!);
 
-          [...titleList, ...bodyList].forEach((item) => {
-            mdStr.appendMarkdown(item);
-          });
+            [...titleList, ...bodyList].forEach((_item) => {
+              mdStr.appendMarkdown(_item);
+            });
+          }
         }
       }
     }
@@ -92,15 +95,15 @@ export class GetDocUtil {
       });
     } else if (key === 'events') {
       (tagDoc[key] || []).forEach((row) => {
-        list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${row.type}\` | ${row.tsType || '—'} |\r`);
+        list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${row.type}\` | ${this._getParamMD(row.param, docLang)} |\r`);
       });
     } else if (key === 'slots') {
       (tagDoc[key] || []).forEach((row) => {
-        list.push(`| \`${row.name}\` | ${row.description[docLang]} |\r`);
+        list.push(`| \`${row.name}\` | ${row.description[docLang]} | ${row.subtags || '—'} |\r`);
       });
     } else if (key === 'exposes') {
       (tagDoc[key] || []).forEach((row) => {
-        list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${row.type}\` | ${row.tsType || '—'} |\r`);
+        list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${row.type}\` | ${this._getParamMD(row.param, docLang)} |\r`);
       });
     }
     return list;
@@ -117,13 +120,13 @@ export class GetDocUtil {
       list.push(`| \`${row.name}\` | ${row.description[docLang]} | ${this._getTypeMD(row)} | \`${row.default || '—'}\` |\r`);
     } else if (key === 'events') {
       const row = _row as TagDoc.Event;
-      list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${row.type}\` | ${row.tsType || '—'} |\r`);
+      list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${row.type}\` | ${this._getParamMD(row.param, docLang)} |\r`);
     } else if (key === 'slots') {
       const row = _row as TagDoc.Slot;
-      list.push(`| \`${row.name}\` | ${row.description[docLang]} |\r`);
+      list.push(`| \`${row.name}\` | ${row.description[docLang]} | ${row.subtags || '—'} |\r`);
     } else if (key === 'exposes') {
       const row = _row as TagDoc.Expose;
-      list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${row.type}\` |  ${row.tsType || '—'} |\r`);
+      list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${row.type}\` |  ${this._getParamMD(row.param, docLang)} |\r`);
     }
     return list;
   }
@@ -137,8 +140,8 @@ export class GetDocUtil {
       en: { attributes: 'Attributes', events: 'Events', slots: 'Slots', exposes: 'Exposes' },
     };
     const tableTitles = {
-      cn: { name: '名称', description: '说明', type: '类型', default: '默认值', tsType: 'TS 类型' },
-      en: { name: 'Name', description: 'Description', type: 'Type', default: 'Default', tsType: 'TS Type' },
+      cn: { name: '名称', description: '说明', type: '类型', default: '默认值', parame: '参数', subtags: '子标签' },
+      en: { name: 'Name', description: 'Description', type: 'Type', default: 'Default', parame: 'Parameter', subtags: 'Subtags' },
     };
     const docTitle = this.lang === 'zh-CN' ? docTitles.cn : docTitles.en;
     const tableTitle = this.lang === 'zh-CN' ? tableTitles.cn : tableTitles.en;
@@ -151,17 +154,17 @@ export class GetDocUtil {
         break;
       case 'events':
         list.push(`### el-${tag} ${docTitle.events}\r`);
-        list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} | ${tableTitle.tsType} |\r`);
+        list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} | ${tableTitle.parame} |\r`);
         list.push('|:------|:------|:------:|:------|\r');
         break;
       case 'slots':
         list.push(`### el-${tag} ${docTitle.slots} \r`);
-        list.push(`| ${tableTitle.name} | ${tableTitle.description} |\r`);
-        list.push('|:------|:------|\r');
+        list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.subtags}|\r`);
+        list.push('|:------|:------|:------|\r');
         break;
       case 'exposes':
         list.push(`### el-${tag} ${docTitle.exposes}\r`);
-        list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} | ${tableTitle.tsType} |\r`);
+        list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} | ${tableTitle.parame} |\r`);
         list.push('|:------|:------|:------:|:------|\r');
         break;
       default:
@@ -179,6 +182,18 @@ export class GetDocUtil {
       return `\`${row.value.join('` / `')}\``;
     } else {
       return Array.isArray(row.type) ? `\`${row.value.join('` / `') || '—'}\`` : `\`${row.type || '—'}\``;
+    }
+  }
+
+  /**
+   * 把属性的参数字段转为Markdown字符串
+   * @param param - 参数
+   */
+  private _getParamMD(param: string | { cn: string; en: string }, docLang: 'cn' | 'en') {
+    if (typeof param === 'string') {
+      return param || '—';
+    } else {
+      return param[docLang] || '—';
     }
   }
 }

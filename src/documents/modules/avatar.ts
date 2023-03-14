@@ -57,7 +57,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'error',
       description: { cn: '图片加载失败时触发', en: 'trigger when image load error.' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
   ],
   slots: [

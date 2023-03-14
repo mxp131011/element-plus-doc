@@ -9,16 +9,3 @@ export const AllDocuments = files.keys().reduce<Record<string, TagDoc.TagDocInst
   module[name] = files(path).default;
   return module;
 }, {});
-
-/** 把所有竖线替换为ASCII字符集 解决表格不能渲染的问题 */
-for (const tag in AllDocuments) {
-  const tagDoc = AllDocuments[tag]!;
-  for (const key in tagDoc) {
-    if (key === 'events' || key === 'exposes') {
-      const element = tagDoc[key]!;
-      element.forEach((item) => {
-        item.tsType = item.tsType.replace('|', '&#124;');
-      });
-    }
-  }
-}

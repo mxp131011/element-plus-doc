@@ -46,8 +46,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'load',
       description: {
-        cn: '加载子树数据的方法，仅当  <code>lazy</code> 属性为 <code>true</code> 时生效, 绑定方法说明： function(node, resolve)，node为当前点击的节点，resolve为数据加载完成的回调(必须调用)',
-        en: 'method for loading subtree data, only works when <code>lazy</code> is <code>true</code>，binding function：function(node, resolve) ,node is the current clicked node, resolve is the callback when data loading is complete (must be called)',
+        cn: '加载子树数据的方法，仅当  &#60;code&#62;lazy&#60;/code&#62; 属性为 &#60;code&#62;true&#60;/code&#62; 时生效, 绑定方法说明： function(node, resolve)，node为当前点击的节点，resolve为数据加载完成的回调(必须调用)',
+        en: 'method for loading subtree data, only works when &#60;code&#62;lazy&#60;/code&#62; is &#60;code&#62;true&#60;/code&#62;，binding function：function(node, resolve) ,node is the current clicked node, resolve is the callback when data loading is complete (must be called)',
       },
       type: 'function',
       default: '—',
@@ -122,7 +122,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'check-strictly',
       description: {
         cn: '在显示复选框的情况下，是否严格的遵循父子不互相关联的做法，默认为 false',
-        en: 'whether checked state of a node not affects its father and child nodes when <code>show-checkbox</code> is <code>true</code>',
+        en: 'whether checked state of a node not affects its father and child nodes when &#60;code&#62;show-checkbox&#60;/code&#62; is &#60;code&#62;true&#60;/code&#62;',
       },
       type: 'boolean',
       default: 'false',
@@ -145,8 +145,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'filter-node-method',
       description: {
-        cn: '对树节点进行筛选时执行的方法， 返回 <code>false</code> 则表示这个节点会被隐藏',
-        en: 'this function will be executed on each node when use filter method. if return <code>false</code>, tree node will be hidden.',
+        cn: '对树节点进行筛选时执行的方法， 返回 &#60;code&#62;false&#60;/code&#62; 则表示这个节点会被隐藏',
+        en: 'this function will be executed on each node when use filter method. if return &#60;code&#62;false&#60;/code&#62;, tree node will be hidden.',
       },
       type: 'function(value, data, node)',
       default: '—',
@@ -179,8 +179,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'lazy',
       description: {
-        cn: '是否懒加载子节点，需与 <code>load</code> 方法结合使用',
-        en: 'whether to lazy load leaf node, used with <code>load</code> attribute',
+        cn: '是否懒加载子节点，需与 &#60;code&#62;load&#60;/code&#62; 方法结合使用',
+        en: 'whether to lazy load leaf node, used with &#60;code&#62;load&#60;/code&#62; attribute',
       },
       type: 'boolean',
       default: 'false',
@@ -196,8 +196,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'allow-drag',
       description: {
-        cn: '判断节点能否被拖拽 如果返回 <code>false</code> ，节点不能被拖动',
-        en: 'this function will be executed before dragging a node. If <code>false</code> is returned, the node can not be dragged',
+        cn: '判断节点能否被拖拽 如果返回 &#60;code&#62;false&#60;/code&#62; ，节点不能被拖动',
+        en: 'this function will be executed before dragging a node. If &#60;code&#62;false&#60;/code&#62; is returned, the node can not be dragged',
       },
       type: 'function(node)',
       default: '—',
@@ -206,8 +206,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'allow-drop',
       description: {
-        cn: "拖拽时判定目标节点能否成为拖动目标位置。 如果返回 <code>false</code> ，拖动节点不能被拖放到目标节点。 <code>type</code> 参数有三种情况：'prev'、'inner' 和 'next'，分别表示放置在目标节点前、插入至目标节点和放置在目标节点后",
-        en: "this function will be executed before the dragging node is dropped. If <code>false</code> is returned, the dragging node can not be dropped at the target node. <code>type</code> has three possible values: 'prev' (inserting the dragging node before the target node), 'inner' (inserting the dragging node to the target node) and 'next' (inserting the dragging node after the target node)",
+        cn: "拖拽时判定目标节点能否成为拖动目标位置。 如果返回 &#60;code&#62;false&#60;/code&#62; ，拖动节点不能被拖放到目标节点。 &#60;code&#62;type&#60;/code&#62; 参数有三种情况：'prev'、'inner' 和 'next'，分别表示放置在目标节点前、插入至目标节点和放置在目标节点后",
+        en: "this function will be executed before the dragging node is dropped. If &#60;code&#62;false&#60;/code&#62; is returned, the dragging node can not be dropped at the target node. &#60;code&#62;type&#60;/code&#62; has three possible values: 'prev' (inserting the dragging node before the target node), 'inner' (inserting the dragging node to the target node) and 'next' (inserting the dragging node after the target node)",
       },
       type: 'function(draggingNode, dropNode, type)',
       default: '—',
@@ -337,6 +337,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'filter',
       description: { cn: '过滤所有树节点，过滤后的节点将被隐藏', en: 'filter all tree nodes, filtered nodes will be hidden' },
+      type: 'function',
       param: {
         cn: '接收一个参数并指定为 `filter-node-method` 属性的第一个参数',
         en: 'Accept a parameter which will be used as first parameter for `filter-node-method`',
@@ -344,9 +345,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'updateKeyChildren',
+      type: 'function',
       description: {
-        cn: '为节点设置新数据，只有当设置 <code>node-key</code> 属性的时候才可用',
-        en: 'set new data to node, only works when <code>node-key</code> is assigned',
+        cn: '为节点设置新数据，只有当设置 &#60;code&#62;node-key&#60;/code&#62; 属性的时候才可用',
+        en: 'set new data to node, only works when &#60;code&#62;node-key&#60;/code&#62; is assigned',
       },
       param: {
         cn: '(key, data) 接收两个参数: 1. 节点的 key 2. 新数据',
@@ -355,9 +357,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'getCheckedNodes',
+      type: 'function',
       description: {
-        cn: '如果节点可以被选中，(<code>show-checkbox</code> 为 <code>true</code>), 本方法将返回当前选中节点的数组',
-        en: 'If the node can be selected (<code>show-checkbox</code> is <code>true</code>), it returns the currently selected array of nodes',
+        cn: '如果节点可以被选中，(&#60;code&#62;show-checkbox&#60;/code&#62; 为 &#60;code&#62;true&#60;/code&#62;), 本方法将返回当前选中节点的数组',
+        en: 'If the node can be selected (&#60;code&#62;show-checkbox&#60;/code&#62; is &#60;code&#62;true&#60;/code&#62;), it returns the currently selected array of nodes',
       },
       param: {
         cn: '(leafOnly, includeHalfChecked) 接收两个布尔类型参数: 1. 默认值为 `false`. 若参数为 `true`, 它将返回当前选中节点的子节点 2. 默认值为 `false`. 如果参数为 `true`, 返回值包含半选中节点数据',
@@ -366,9 +369,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'setCheckedNodes',
+      type: 'function',
       description: {
-        cn: '设置目前勾选的节点，使用此方法必须提前设置 <code>node-key</code> 属性',
-        en: 'set certain nodes to be checked, only works when <code>node-key</code> is assigned',
+        cn: '设置目前勾选的节点，使用此方法必须提前设置 &#60;code&#62;node-key&#60;/code&#62; 属性',
+        en: 'set certain nodes to be checked, only works when &#60;code&#62;node-key&#60;/code&#62; is assigned',
       },
       param: {
         cn: '要选中的节点构成的数组',
@@ -377,9 +381,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'getCheckedKeys',
+      type: 'function',
       description: {
-        cn: '若节点可用被选中 (<code>show-checkbox</code> 为 <code>true</code>), 它将返回当前选中节点 key 的数组',
-        en: "If the node can be selected (<code>show-checkbox</code> is <code>true</code>), it returns the currently selected array of node's keys",
+        cn: '若节点可用被选中 (&#60;code&#62;show-checkbox&#60;/code&#62; 为 &#60;code&#62;true&#60;/code&#62;), 它将返回当前选中节点 key 的数组',
+        en: "If the node can be selected (&#60;code&#62;show-checkbox&#60;/code&#62; is &#60;code&#62;true&#60;/code&#62;), it returns the currently selected array of node's keys",
       },
       param: {
         cn: '(leafOnly) 接收一个布尔类型参数，默认为 `false`. 如果参数是 `true`, 它只返回当前选择的子节点数组。',
@@ -388,9 +393,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'setCheckedKeys',
+      type: 'function',
       description: {
-        cn: '设置目前选中的节点，使用此方法必须设置 <code>node-key</code> 属性',
-        en: 'set certain nodes to be checked, only works when <code>node-key</code> is assigned',
+        cn: '设置目前选中的节点，使用此方法必须设置 &#60;code&#62;node-key&#60;/code&#62; 属性',
+        en: 'set certain nodes to be checked, only works when &#60;code&#62;node-key&#60;/code&#62; is assigned',
       },
       param: {
         cn: '(keys, leafOnly) 接收两个参数: 1. 一个需要被选中的多节点 key 的数组 2. 一个布尔类型参数，默认为 `false`. 如果参数是 `true`, 它只返回当前选择的子节点数组。',
@@ -399,9 +405,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'setChecked',
+      type: 'function',
       description: {
-        cn: '设置节点是否被选中, 使用此方法必须设置 <code>node-key</code> 属性',
-        en: 'set node to be checked or not, only works when <code>node-key</code> is assigned',
+        cn: '设置节点是否被选中, 使用此方法必须设置 &#60;code&#62;node-key&#60;/code&#62; 属性',
+        en: 'set node to be checked or not, only works when &#60;code&#62;node-key&#60;/code&#62; is assigned',
       },
       param: {
         cn: '(key/data, checked, deep) 接收三个参数: 1. 要选中的节点的 key 或者数据 2. 一个布尔类型参数表明是否选中. 3. 一个布尔类型参数表明是否递归选中子节点',
@@ -410,9 +417,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'getHalfCheckedNodes',
+      type: 'function',
       description: {
-        cn: '如果节点可用被选中 (<code>show-checkbox</code> 为 <code>true</code>), 它将返回当前半选中的节点组成的数组',
-        en: 'If the node can be selected (<code>show-checkbox</code> is <code>true</code>), it returns the currently half selected array of nodes',
+        cn: '如果节点可用被选中 (&#60;code&#62;show-checkbox&#60;/code&#62; 为 &#60;code&#62;true&#60;/code&#62;), 它将返回当前半选中的节点组成的数组',
+        en: 'If the node can be selected (&#60;code&#62;show-checkbox&#60;/code&#62; is &#60;code&#62;true&#60;/code&#62;), it returns the currently half selected array of nodes',
       },
       param: {
         cn: '',
@@ -421,9 +429,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'getHalfCheckedKeys',
+      type: 'function',
       description: {
-        cn: '若节点可被选中(<code>show-checkbox</code> 为 <code>true</code>)，则返回目前半选中的节点的 key 所组成的数组',
-        en: "If the node can be selected (<code>show-checkbox</code> is <code>true</code>), it returns the currently half selected array of node's keys",
+        cn: '若节点可被选中(&#60;code&#62;show-checkbox&#60;/code&#62; 为 &#60;code&#62;true&#60;/code&#62;)，则返回目前半选中的节点的 key 所组成的数组',
+        en: "If the node can be selected (&#60;code&#62;show-checkbox&#60;/code&#62; is &#60;code&#62;true&#60;/code&#62;), it returns the currently half selected array of node's keys",
       },
       param: {
         cn: '',
@@ -432,6 +441,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'getCurrentKey',
+      type: 'function',
       description: {
         cn: '返回当前被选中节点的数据 (如果没有则返回 `null`)',
         en: "return the highlight node's key (`null` if no node is highlighted)",
@@ -443,6 +453,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'getCurrentNode',
+      type: 'function',
       description: {
         cn: '返回当前被选中节点的数据 (如果没有则返回 `null`)',
         en: "return the highlight node's data (`null` if no node is highlighted)",
@@ -454,9 +465,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'setCurrentKey',
+      type: 'function',
       description: {
-        cn: '通过 key 设置某个节点的当前选中状态，使用此方法必须设置 <code>node-key</code> 属性',
-        en: 'set highlighted node by key, only works when <code>node-key</code> is assigned',
+        cn: '通过 key 设置某个节点的当前选中状态，使用此方法必须设置 &#60;code&#62;node-key&#60;/code&#62; 属性',
+        en: 'set highlighted node by key, only works when &#60;code&#62;node-key&#60;/code&#62; is assigned',
       },
       param: {
         cn: '(key, shouldAutoExpandParent=true) 1. 待被选节点的 key， 如果为 `null`, 取消当前选中的节点 2. 是否自动展开父节点',
@@ -465,9 +477,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'setCurrentNode',
+      type: 'function',
       description: {
-        cn: '设置节点为选中状态，使用此方法必须设置 <code>node-key</code> 属性',
-        en: 'set highlighted node, only works when <code>node-key</code> is assigned',
+        cn: '设置节点为选中状态，使用此方法必须设置 &#60;code&#62;node-key&#60;/code&#62; 属性',
+        en: 'set highlighted node, only works when &#60;code&#62;node-key&#60;/code&#62; is assigned',
       },
       param: {
         cn: '(node, shouldAutoExpandParent=true) 1. 待被选中的节点 2. 是否展开父节点',
@@ -476,6 +489,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'getNode',
+      type: 'function',
       description: { cn: '根据 data 或者 key 拿到 Tree 组件中的 node', en: 'get node by data or key' },
       param: {
         cn: '(data) 节点的 data 或 key',
@@ -484,6 +498,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'remove',
+      type: 'function',
       description: { cn: '删除 Tree 中的一个节点，使用此方法必须设置 node-key 属性', en: 'remove a node, only works when node-key is assigned' },
       param: {
         cn: '(data) 要删除的节点的 data 或者 node 对象',
@@ -492,6 +507,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'append',
+      type: 'function',
       description: { cn: '为 Tree 中的一个节点追加一个子节点', en: 'append a child node to a given node in the tree' },
       param: {
         cn: '(data, parentNode) 1. 要追加的子节点的 data 2. 父节点的 data, key 或 node',
@@ -500,6 +516,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'insertBefore',
+      type: 'function',
       description: { cn: '在 Tree 中给定节点前插入一个节点', en: 'insert a node before a given node in the tree' },
       param: {
         cn: '(data, refNode) 1. 要增加的节点的 data 2. 参考节点的 data, key 或 node',
@@ -508,6 +525,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'insertAfter',
+      type: 'function',
       description: { cn: '在 Tree 中给定节点后插入一个节点', en: 'insert a node after a given node in the tree' },
       param: {
         cn: '(data, refNode) 1. 要增加的节点的 data 2. 参考节点的 data, key 或 node',
@@ -520,7 +538,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'default',
       description: {
         cn: '自定义树节点的内容， 自定义树节点的内容， 参数为  { node, data }',
-        en: 'Custom content for tree nodes. The scope parameter is <code>{ node, data }</code>',
+        en: 'Custom content for tree nodes. The scope parameter is &#60;code&#62;{ node, data }&#60;/code&#62;',
       },
     },
   ],

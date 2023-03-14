@@ -36,13 +36,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'change',
       description: { cn: 'fixed 状态改变时触发的事件', en: 'triggers when fixed state changed.' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
     {
       name: 'scroll',
       description: { cn: '滚动时触发的事件', en: 'triggers when scrolling.' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
   ],
   exposes: [
@@ -50,13 +50,13 @@ const doc: TagDoc.TagDocInstance = {
       name: '',
       description: { cn: '手动更新固钉状态', en: 'update affix state manually' },
       type: 'function',
-      tsType: '() => void',
+      param: '() =&#62; void',
     },
     {
       name: '',
       description: { cn: '手动更新根元素的盒模型信息', en: 'update rootRect info' },
       type: 'function',
-      tsType: '() => void',
+      param: '() =&#62; void',
     },
   ],
   slots: [

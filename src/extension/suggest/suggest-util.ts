@@ -50,7 +50,7 @@ export class CompletionUtil {
     // 如果有可选值就用可选值如果没有就判断类型是否为布尔类型如果是布尔l就设置为 ['true', 'false'] ，最后在判断是否有默认值如果有默认值就设置为默认值
     const newVale =
       attribute.value.length > 0 ? attribute.value : attribute.type === 'boolean' ? ['true', 'false'] : attribute.default ? [attribute.default] : [];
-    return newVale;
+    return newVale.map((item) => (item === null ? 'null' : item));
   }
 
   /**
