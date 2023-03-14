@@ -1,4 +1,99 @@
-import type { TagDoc } from '@/types/tag-doc'
-    const doc: TagDoc.TagDocInstance = {"url":"","attributes":[{"name":"model-value / v-model","description":{"cn":"binding value","en":"binding value"},"type":"number","default":"—","value":[""]},{"name":"min","description":{"cn":"the minimum allowed value","en":"the minimum allowed value"},"type":"number","default":"-Infinity","value":[""]},{"name":"max","description":{"cn":"the maximum allowed value","en":"the maximum allowed value"},"type":"number","default":"Infinity","value":[""]},{"name":"step","description":{"cn":"incremental step","en":"incremental step"},"type":"number","default":"1","value":[""]},{"name":"step-strictly","description":{"cn":"whether input value can only be multiple of step","en":"whether input value can only be multiple of step"},"type":"boolean","default":"false","value":[""]},{"name":"precision","description":{"cn":"precision of input value","en":"precision of input value"},"type":"number","default":"—","value":[""]},{"name":"size","description":{"cn":"size of the component","en":"size of the component"},"type":"enum","default":"'default'","value":["large"]},{"name":"readonly","description":{"cn":"same as <code>readonly</code> in native input","en":"same as <code>readonly</code> in native input"},"type":"boolean","default":"false","value":[""]},{"name":"disabled","description":{"cn":"whether the component is disabled","en":"whether the component is disabled"},"type":"boolean","default":"false","value":[""]},{"name":"controls","description":{"cn":"whether to enable the control buttons","en":"whether to enable the control buttons"},"type":"boolean","default":"true","value":[""]},{"name":"controls-position","description":{"cn":"position of the control buttons","en":"position of the control buttons"},"type":"enum","default":"'right'`","value":[""]},{"name":"name","description":{"cn":"same as <code>name</code> in native input","en":"same as <code>name</code> in native input"},"type":"string","default":"—","value":[""]},{"name":"label","description":{"cn":"same as <code>label</code> in native input","en":"same as <code>label</code> in native input"},"type":"string","default":"—","value":[""]},{"name":"placeholder","description":{"cn":"same as <code>placeholder</code> in native input","en":"same as <code>placeholder</code> in native input"},"type":"string","default":"—","value":[""]},{"name":"id","description":{"cn":"same as <code>id</code> in native input","en":"same as <code>id</code> in native input"},"type":"string","default":"—","value":[""]},{"name":"value-on-clear<versiontag version=\"2.2.0\"></versiontag>","description":{"cn":"value should be set when input box is cleared","en":"value should be set when input box is cleared"},"type":"number","default":"'max'`","value":["null"]},{"name":"validate-event","description":{"cn":"whether to trigger form validation","en":"whether to trigger form validation"},"type":"boolean","default":"true","value":[""]}],"events":[{"name":"change","description":{"cn":"triggers when the value changes","en":"triggers when the value changes"},"type":"function","tsType":""},{"name":"blur","description":{"cn":"triggers when Input blurs","en":"triggers when Input blurs"},"type":"function","tsType":""},{"name":"focus","description":{"cn":"triggers when Input focuses","en":"triggers when Input focuses"},"type":"function","tsType":""}],"exposes":[{"name":"focus","description":{"cn":"get focus the input component","en":"get focus the input component"},"type":"function","tsType":""},{"name":"blur","description":{"cn":"remove focus the input component","en":"remove focus the input component"},"type":"function","tsType":""}]};
-    export default doc;
-    
+import type { TagDoc } from '@/types/tag-doc';
+const doc: TagDoc.TagDocInstance = {
+  url: '',
+  attributes: [
+    { name: 'model-value / v-model', description: { cn: 'binding value', en: 'binding value' }, type: 'number', default: '—', value: [''] },
+    { name: 'min', description: { cn: 'the minimum allowed value', en: 'the minimum allowed value' }, type: 'number', default: '-Infinity', value: [''] },
+    { name: 'max', description: { cn: 'the maximum allowed value', en: 'the maximum allowed value' }, type: 'number', default: 'Infinity', value: [''] },
+    { name: 'step', description: { cn: 'incremental step', en: 'incremental step' }, type: 'number', default: '1', value: [''] },
+    {
+      name: 'step-strictly',
+      description: { cn: 'whether input value can only be multiple of step', en: 'whether input value can only be multiple of step' },
+      type: 'boolean',
+      default: 'false',
+      value: [''],
+    },
+    { name: 'precision', description: { cn: 'precision of input value', en: 'precision of input value' }, type: 'number', default: '—', value: [''] },
+    { name: 'size', description: { cn: 'size of the component', en: 'size of the component' }, type: 'enum', default: "'default'", value: ['large'] },
+    {
+      name: 'readonly',
+      description: { cn: 'same as <code>readonly</code> in native input', en: 'same as <code>readonly</code> in native input' },
+      type: 'boolean',
+      default: 'false',
+      value: [''],
+    },
+    {
+      name: 'disabled',
+      description: { cn: 'whether the component is disabled', en: 'whether the component is disabled' },
+      type: 'boolean',
+      default: 'false',
+      value: [''],
+    },
+    {
+      name: 'controls',
+      description: { cn: 'whether to enable the control buttons', en: 'whether to enable the control buttons' },
+      type: 'boolean',
+      default: 'true',
+      value: [''],
+    },
+    {
+      name: 'controls-position',
+      description: { cn: 'position of the control buttons', en: 'position of the control buttons' },
+      type: 'enum',
+      default: "'right'`",
+      value: [''],
+    },
+    {
+      name: 'name',
+      description: { cn: 'same as <code>name</code> in native input', en: 'same as <code>name</code> in native input' },
+      type: 'string',
+      default: '—',
+      value: [''],
+    },
+    {
+      name: 'label',
+      description: { cn: 'same as <code>label</code> in native input', en: 'same as <code>label</code> in native input' },
+      type: 'string',
+      default: '—',
+      value: [''],
+    },
+    {
+      name: 'placeholder',
+      description: { cn: 'same as <code>placeholder</code> in native input', en: 'same as <code>placeholder</code> in native input' },
+      type: 'string',
+      default: '—',
+      value: [''],
+    },
+    {
+      name: 'id',
+      description: { cn: 'same as <code>id</code> in native input', en: 'same as <code>id</code> in native input' },
+      type: 'string',
+      default: '—',
+      value: [''],
+    },
+    {
+      name: 'value-on-clear<versiontag version="2.2.0"></versiontag>',
+      description: { cn: 'value should be set when input box is cleared', en: 'value should be set when input box is cleared' },
+      type: 'number',
+      default: "'max'`",
+      value: ['null'],
+    },
+    {
+      name: 'validate-event',
+      description: { cn: 'whether to trigger form validation', en: 'whether to trigger form validation' },
+      type: 'boolean',
+      default: 'true',
+      value: [''],
+    },
+  ],
+  events: [
+    { name: 'change', description: { cn: 'triggers when the value changes', en: 'triggers when the value changes' }, type: 'function', tsType: '' },
+    { name: 'blur', description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' }, type: 'function', tsType: '' },
+    { name: 'focus', description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' }, type: 'function', tsType: '' },
+  ],
+  exposes: [
+    { name: 'focus', description: { cn: 'get focus the input component', en: 'get focus the input component' }, type: 'function', tsType: '' },
+    { name: 'blur', description: { cn: 'remove focus the input component', en: 'remove focus the input component' }, type: 'function', tsType: '' },
+  ],
+};
+export default doc;
