@@ -366,7 +366,13 @@ function getBaseRules() {
      * 禁止在导出中指定名称 restrictedNamedExports中就是限制导出的名称
      * 禁用特定的全局变量
      */
-    'no-restricted-globals': ['error', { name: 'event', message: 'event请在方法的参数中定义event' }],
+    'no-restricted-globals': [
+      'error',
+      {
+        name: 'event',
+        message: 'event请在方法的参数中定义event',
+      },
+    ],
 
     // 禁止加载指定的模块 paths中就是需要禁止加载的模块
     // "no-restricted-imports": ["error", { "paths": ["import1", "import2"] }],

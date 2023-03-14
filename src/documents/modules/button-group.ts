@@ -6,7 +6,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'size',
       description: {
-        cn: 'control the size of buttons in this button-group',
+        cn: '用于控制该按钮组内按钮的大小',
         en: 'control the size of buttons in this button-group',
       },
       type: 'enum',
@@ -16,7 +16,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'type',
       description: {
-        cn: 'control the type of buttons in this button-group',
+        cn: '用于控制该按钮组内按钮的类型',
         en: 'control the type of buttons in this button-group',
       },
       type: 'enum',
@@ -28,7 +28,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'default',
       description: {
-        cn: 'customize button group content',
+        cn: '自定义按钮组内容',
         en: 'customize button group content',
       },
     },

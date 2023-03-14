@@ -6,7 +6,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'model-value',
       description: {
-        cn: 'binding value',
+        cn: '选中项绑定值',
         en: 'binding value',
       },
       type: 'string',
@@ -16,7 +16,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'placeholder',
       description: {
-        cn: 'the placeholder of Autocomplete',
+        cn: '占位文本',
         en: 'the placeholder of Autocomplete',
       },
       type: 'string',
@@ -26,7 +26,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'clearable',
       description: {
-        cn: 'whether to show clear button',
+        cn: '是否可清空',
         en: 'whether to show clear button',
       },
       type: 'boolean',
@@ -36,7 +36,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'disabled',
       description: {
-        cn: 'whether Autocomplete is disabled',
+        cn: '自动补全组件是否被禁用',
         en: 'whether Autocomplete is disabled',
       },
       type: 'boolean',
@@ -46,7 +46,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'value-key',
       description: {
-        cn: 'key name of the input suggestion object for display',
+        cn: '输入建议对象中用于显示的键名',
         en: 'key name of the input suggestion object for display',
       },
       type: 'string',
@@ -56,7 +56,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'debounce',
       description: {
-        cn: 'debounce delay when typing, in milliseconds',
+        cn: '获取输入建议的防抖延时，单位为毫秒',
         en: 'debounce delay when typing, in milliseconds',
       },
       type: 'number',
@@ -66,18 +66,18 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'placement',
       description: {
-        cn: 'placement of the popup menu',
+        cn: '菜单弹出位置',
         en: 'placement of the popup menu',
       },
       type: 'enum',
       default: 'bottom-start',
-      value: ['top', 'top- start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'],
+      value: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'],
     },
     {
       name: 'fetch-suggestions',
       description: {
-        cn: 'a method to fetch input suggestions. When suggestions are ready, invoke callback(data:[]) to return them to Autocomplete',
-        en: 'a method to fetch input suggestions. When suggestions are ready, invoke callback(data:[]) to return them to Autocomplete',
+        cn: '获取输入建议的方法， 仅当你的输入建议数据 resolve 时，通过调用 callback(data:[])  来返回它. TS类型：(queryString: string, callback: callbackfn) => void',
+        en: 'a method to fetch input suggestions. When suggestions are ready, invoke callback(data:[]) to return them to Autocomplete. TS Type：(queryString: string, callback: callbackfn) => void',
       },
       type: 'function',
       default: 'false',
@@ -86,7 +86,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'trigger-on-focus',
       description: {
-        cn: 'whether show suggestions when input focus',
+        cn: '输入焦点时是否显示建议',
         en: 'whether show suggestions when input focus',
       },
       type: 'boolean',
@@ -96,7 +96,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'select-when-unmatched',
       description: {
-        cn: 'whether to emit a `select` event on enter when there is no autocomplete match',
+        cn: '在输入没有任何匹配建议的情况下，按下回车是否触发 `select` 事件',
         en: 'whether to emit a `select` event on enter when there is no autocomplete match',
       },
       type: 'boolean',
@@ -106,7 +106,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'name',
       description: {
-        cn: 'same as `name` in native input',
+        cn: '等价于原生 input `name` 属性',
         en: 'same as `name` in native input',
       },
       type: 'string',
@@ -116,7 +116,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'label',
       description: {
-        cn: 'whether to hide the loading icon in remote search',
+        cn: '输入框关联的 label 文字',
         en: 'whether to hide the loading icon in remote search',
       },
       type: 'string',
@@ -126,7 +126,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'hide-loading',
       description: {
-        cn: 'whether to hide the loading icon in remote search',
+        cn: '是否隐藏远程加载时的加载图标',
         en: 'whether to hide the loading icon in remote search',
       },
       type: 'boolean',
@@ -136,7 +136,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'popper-class',
       description: {
-        cn: 'whether to append the dropdown to body. If the positioning of the dropdown is wrong, you can try to set this prop to false',
+        cn: '下拉列表的类名',
         en: 'whether to append the dropdown to body. If the positioning of the dropdown is wrong, you can try to set this prop to false',
       },
       type: 'boolean',
@@ -146,7 +146,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'teleported',
       description: {
-        cn: 'whether select dropdown is teleported to the body',
+        cn: '是否将下拉列表元素插入 append-to 指向的元素下',
         en: 'whether select dropdown is teleported to the body',
       },
       type: 'boolean',
@@ -156,7 +156,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'highlight-first-item',
       description: {
-        cn: 'whether to highlight first item in remote search suggestions by default',
+        cn: '是否默认高亮远程搜索结果的第一项',
         en: 'whether to highlight first item in remote search suggestions by default',
       },
       type: 'boolean',
@@ -166,7 +166,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'fit-input-width',
       description: {
-        cn: 'whether the width of the dropdown is the same as the input',
+        cn: '下拉框的宽度是否与输入框相同',
         en: 'whether the width of the dropdown is the same as the input',
       },
       type: 'boolean',
@@ -178,7 +178,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'select',
       description: {
-        cn: 'triggers when a suggestion is clicked',
+        cn: '点击选中建议项时触发',
         en: 'triggers when a suggestion is clicked',
       },
       type: 'function',
@@ -187,7 +187,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'change',
       description: {
-        cn: 'triggers when the icon inside Input value change',
+        cn: '在 Input 值改变时触发',
         en: 'triggers when the icon inside Input value change',
       },
       type: 'function',
@@ -198,35 +198,35 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'default',
       description: {
-        cn: 'custom content for input suggestions. The scope parameter is',
-        en: 'custom content for input suggestions. The scope parameter is',
+        cn: '自定义输入建议的内容。 自定义标签',
+        en: 'custom content for input suggestions.',
       },
     },
     {
       name: 'prefix',
       description: {
-        cn: 'content as Input prefix',
+        cn: '输入框头部内容',
         en: 'content as Input prefix',
       },
     },
     {
       name: 'suffix',
       description: {
-        cn: 'content as Input suffix',
+        cn: '输入框尾部内容',
         en: 'content as Input suffix',
       },
     },
     {
       name: 'prepend',
       description: {
-        cn: 'content to prepend before Input',
+        cn: '输入框前置内容，在 prefix 之前',
         en: 'content to prepend before Input',
       },
     },
     {
       name: 'append',
       description: {
-        cn: 'content to append after Input',
+        cn: '输入框后置内容，在 suffix 之后',
         en: 'content to append after Input',
       },
     },
@@ -235,7 +235,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'activated',
       description: {
-        cn: 'if autocomplete activated',
+        cn: '自动补全输入框是否被激活',
         en: 'if autocomplete activated',
       },
       type: 'object',
@@ -244,7 +244,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'blur',
       description: {
-        cn: 'blur the input element',
+        cn: '使 input 失去焦点',
         en: 'blur the input element',
       },
       type: 'function',
@@ -253,7 +253,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'close',
       description: {
-        cn: 'collapse suggestion list',
+        cn: '折叠建议列表',
         en: 'collapse suggestion list',
       },
       type: 'function',
@@ -262,7 +262,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'focus',
       description: {
-        cn: 'focus the input element',
+        cn: '使 input 获取焦点',
         en: 'focus the input element',
       },
       type: 'function',
@@ -271,7 +271,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'handleSelect',
       description: {
-        cn: 'triggers when a suggestion is clicked',
+        cn: '手动触发选中建议事件',
         en: 'triggers when a suggestion is clicked',
       },
       type: 'function',
@@ -280,7 +280,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'handleKeyEnter',
       description: {
-        cn: 'handle keyboard enter event',
+        cn: '手动触发键盘回车事件',
         en: 'handle keyboard enter event',
       },
       type: 'function',
@@ -289,7 +289,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'highlightedIndex',
       description: {
-        cn: 'the index of the currently highlighted item',
+        cn: '当前高亮显示选项的索引',
         en: 'the index of the currently highlighted item',
       },
       type: 'object',
@@ -298,7 +298,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'highlight',
       description: {
-        cn: 'highlight an item in a suggestion',
+        cn: '在建议中高亮显示一个项目',
         en: 'highlight an item in a suggestion',
       },
       type: 'function',
@@ -307,7 +307,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'inputRef',
       description: {
-        cn: 'el-input component instance',
+        cn: 'el-input 组件实例',
         en: 'el-input component instance',
       },
       type: 'object',
@@ -316,7 +316,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'loading',
       description: {
-        cn: 'remote search loading indicator',
+        cn: '远程获取提示内容的加载状态指示器',
         en: 'remote search loading indicator',
       },
       type: 'object',
@@ -325,7 +325,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'popperRef',
       description: {
-        cn: 'el-tooltip component instance',
+        cn: 'el-tooltip 组件实例',
         en: 'el-tooltip component instance',
       },
       type: 'object',
@@ -334,7 +334,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'suggestions',
       description: {
-        cn: 'fetch suggestions result',
+        cn: '获取自动补全结果',
         en: 'fetch suggestions result',
       },
       type: 'object',

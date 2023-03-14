@@ -6,7 +6,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'size',
       description: {
-        cn: 'button size',
+        cn: '尺寸',
         en: 'button size',
       },
       type: 'enum',
@@ -16,7 +16,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'type',
       description: {
-        cn: 'button type',
+        cn: '类型',
         en: 'button type',
       },
       type: 'enum',
@@ -26,7 +26,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'plain',
       description: {
-        cn: "determine whether it's a plain button",
+        cn: '是否为朴素按钮',
         en: "determine whether it's a plain button",
       },
       type: 'boolean',
@@ -36,7 +36,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'text',
       description: {
-        cn: "determine whether it's a text button",
+        cn: '是否为文字按钮',
         en: "determine whether it's a text button",
       },
       type: 'boolean',
@@ -46,7 +46,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'bg',
       description: {
-        cn: 'determine whether the text button background color is always on',
+        cn: '是否显示文字按钮背景颜色',
         en: 'determine whether the text button background color is always on',
       },
       type: 'boolean',
@@ -56,7 +56,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'link',
       description: {
-        cn: "determine whether it's a link button",
+        cn: '是否为链接按钮',
         en: "determine whether it's a link button",
       },
       type: 'boolean',
@@ -66,7 +66,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'round',
       description: {
-        cn: "determine whether it's a round button",
+        cn: '是否为圆角按钮',
         en: "determine whether it's a round button",
       },
       type: 'boolean',
@@ -76,7 +76,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'circle',
       description: {
-        cn: "determine whether it's a circle button",
+        cn: '是否为圆形按钮',
         en: "determine whether it's a circle button",
       },
       type: 'boolean',
@@ -86,7 +86,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'loading',
       description: {
-        cn: 'customize loading icon component',
+        cn: '是否为加载中状态',
         en: 'customize loading icon component',
       },
       type: 'boolean',
@@ -96,7 +96,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'loading-icon',
       description: {
-        cn: 'customize loading icon component',
+        cn: '自定义加载中状态图标组件',
         en: 'customize loading icon component',
       },
       type: ['string', 'Component'],
@@ -106,7 +106,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'disabled',
       description: {
-        cn: 'disable the button',
+        cn: '按钮是否为禁用状态',
         en: 'disable the button',
       },
       type: 'boolean',
@@ -116,7 +116,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'icon',
       description: {
-        cn: 'icon class name',
+        cn: '图标组件',
         en: 'icon class name',
       },
       type: ['string', 'Component'],
@@ -126,7 +126,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'autofocus',
       description: {
-        cn: "same as native button's `autofocus`",
+        cn: '原生 `autofocus` 属性',
         en: "same as native button's `autofocus`",
       },
       type: 'boolean',
@@ -136,7 +136,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'native-type',
       description: {
-        cn: "same as native button's `type`",
+        cn: '原生 `type` 属性',
         en: "same as native button's `type`",
       },
       type: 'enum',
@@ -144,9 +144,19 @@ const doc: TagDoc.TagDocInstance = {
       value: ['button', 'submit', 'reset'],
     },
     {
+      name: 'auto-insert-space',
+      description: {
+        cn: '自动在两个中文字符之间插入空格',
+        en: 'automatically insert a space between two chinese characters',
+      },
+      type: 'boolean',
+      default: '',
+      value: [],
+    },
+    {
       name: 'color',
       description: {
-        cn: 'custom button color, automatically calculate `hover` and active `color`',
+        cn: '自定义按钮颜色, 并自动计算 `hover` 和 `active` 触发后的颜色',
         en: 'custom button color, automatically calculate `hover` and active `color`',
       },
       type: 'string',
@@ -156,7 +166,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'dark',
       description: {
-        cn: 'dark mode, which automatically converts `color` to dark mode colors',
+        cn: 'dark 模式, 意味着自动设置 `color` 为 dark 模式的颜色',
         en: 'dark mode, which automatically converts `color` to dark mode colors',
       },
       type: 'boolean',
@@ -168,21 +178,21 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'default',
       description: {
-        cn: 'customize default content',
+        cn: '自定义默认内容',
         en: 'customize default content',
       },
     },
     {
       name: 'loading',
       description: {
-        cn: 'customize loading component',
+        cn: '自定义加载中组件',
         en: 'customize loading component',
       },
     },
     {
       name: 'icon',
       description: {
-        cn: 'customize icon component',
+        cn: '自定义图标组件',
         en: 'customize icon component',
       },
     },
@@ -191,7 +201,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'ref',
       description: {
-        cn: 'button html element',
+        cn: '按钮 html 元素',
         en: 'button html element',
       },
       type: 'object',
@@ -200,7 +210,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'size',
       description: {
-        cn: 'button size',
+        cn: '按钮尺寸',
         en: 'button size',
       },
       type: 'object',
@@ -209,7 +219,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'type',
       description: {
-        cn: 'button type',
+        cn: '按钮类型',
         en: 'button type',
       },
       type: `object`,
@@ -218,7 +228,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'disabled',
       description: {
-        cn: 'button disabled',
+        cn: '按钮禁用状态',
         en: 'button disabled',
       },
       type: 'object',
@@ -227,7 +237,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'shouldAddSpace',
       description: {
-        cn: 'whether adding space',
+        cn: '是否在两个字符之间插入空格',
         en: 'whether adding space',
       },
       type: 'object',
