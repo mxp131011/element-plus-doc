@@ -1,9 +1,7 @@
-# Change Log
+# 更新日志
 
-All notable changes to the "element-plus-doc" extension will be documented in this file.
+## V0.0.5
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+1. 支持在设置中自定义前缀如 base、my 等，以此前缀和 el 开头的都将被视作 element-plus 组件，鼠标移动到该组件上会显示相应提示， 2.支持在设置中配置中文和英文的官网路径
+2. 美化提示
+3. 新增十多个组件的文档
