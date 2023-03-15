@@ -20,7 +20,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
   ],
   slots: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' } }],

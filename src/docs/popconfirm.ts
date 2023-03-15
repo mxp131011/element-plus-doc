@@ -2,9 +2,9 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'title', description: { cn: 'Title', en: 'Title' }, type: 'string', default: '—', value: [''] },
-    { name: 'confirm-button-text', description: { cn: 'Confirm button text', en: 'Confirm button text' }, type: 'string', default: '—', value: [''] },
-    { name: 'cancel-button-text', description: { cn: 'Cancel button text', en: 'Cancel button text' }, type: 'string', default: '—', value: [''] },
+    { name: 'title', description: { cn: 'Title', en: 'Title' }, type: 'string', default: '—', value: [] },
+    { name: 'confirm-button-text', description: { cn: 'Confirm button text', en: 'Confirm button text' }, type: 'string', default: '—', value: [] },
+    { name: 'cancel-button-text', description: { cn: 'Cancel button text', en: 'Cancel button text' }, type: 'string', default: '—', value: [] },
     {
       name: 'confirm-button-type',
       description: { cn: 'Confirm button type', en: 'Confirm button type' },
@@ -14,21 +14,21 @@ const doc: TagDoc.TagDocInstance = {
     },
     { name: 'cancel-button-type', description: { cn: 'Cancel button type', en: 'Cancel button type' }, type: 'enum', default: "'success'", value: ['primary'] },
     { name: 'icon', description: { cn: 'Icon Component', en: 'Icon Component' }, type: 'string', default: 'QuestionFilled', value: ['Component'] },
-    { name: 'icon-color', description: { cn: 'Icon color', en: 'Icon color' }, type: 'string', default: '#f90', value: [''] },
-    { name: 'hide-icon', description: { cn: 'is hide Icon', en: 'is hide Icon' }, type: 'boolean', default: 'false', value: [''] },
+    { name: 'icon-color', description: { cn: 'Icon color', en: 'Icon color' }, type: 'string', default: '#f90', value: [] },
+    { name: 'hide-icon', description: { cn: 'is hide Icon', en: 'is hide Icon' }, type: 'boolean', default: 'false', value: [] },
     {
       name: 'hide-after',
       description: { cn: 'delay of disappear, in millisecond', en: 'delay of disappear, in millisecond' },
       type: 'number',
       default: '200',
-      value: [''],
+      value: [],
     },
     {
       name: 'teleported',
       description: { cn: 'whether popconfirm is teleported to the body', en: 'whether popconfirm is teleported to the body' },
       type: 'boolean',
       default: 'true',
-      value: [''],
+      value: [],
     },
     {
       name: 'persistent',
@@ -38,7 +38,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'width',

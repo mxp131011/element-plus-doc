@@ -1,4 +1,19 @@
-type baseType = 'array' | 'boolean' | 'Component' | 'enum' | 'number' | 'object' | 'string' | 'symbol' | `function(${string}` | `function`;
+type baseType =
+  | '[Date, Date]'
+  | '[string, string]'
+  | 'array'
+  | 'boolean'
+  | 'Component'
+  | 'CSSSelector'
+  | 'Date'
+  | 'enum'
+  | 'HTMLElement'
+  | 'number'
+  | 'object'
+  | 'string'
+  | 'symbol'
+  | `function(${string}`
+  | `function`;
 
 /** 文档 */
 export declare namespace TagDoc {
@@ -58,7 +73,7 @@ export declare namespace TagDoc {
 
   /** 标签文档实例 */
   interface TagDocInstance {
-    url: `component/${string}-api` | `component/${string}-attributes` | `component/${string}.html`;
+    url: `component/${string}-api` | `component/${string}-attributes` | `component/${string}-属性` | `component/${string}.html`;
     attributes?: Attribute[];
     events?: Event[];
     slots?: Slot[];

@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'border', description: { cn: 'with or without border', en: 'with or without border' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'border',
+      description: { cn: 'with or without border', en: 'with or without border' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'column',
       description: { cn: 'numbers of <code>Descriptions Item</code> in one line', en: 'numbers of <code>Descriptions Item</code> in one line' },
@@ -10,8 +16,20 @@ const doc: TagDoc.TagDocInstance = {
       default: '3',
       value: [],
     },
-    { name: 'direction', description: { cn: 'direction of list', en: 'direction of list' }, type: 'string', default: 'horizontal', value: [] },
-    { name: 'size', description: { cn: 'size of list', en: 'size of list' }, type: 'string', default: 'default', value: [] },
+    {
+      name: 'direction',
+      description: { cn: 'direction of list', en: 'direction of list' },
+      type: 'string',
+      default: 'horizontal',
+      value: [],
+    },
+    {
+      name: 'size',
+      description: { cn: 'size of list', en: 'size of list' },
+      type: 'enum',
+      default: "'default'",
+      value: ['large', 'default', 'small'],
+    },
     {
       name: 'title',
       description: { cn: 'title text, display on the top left', en: 'title text, display on the top left' },

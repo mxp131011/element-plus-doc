@@ -11,8 +11,20 @@ const doc: TagDoc.TagDocInstance = {
         'codenamestringelTranslatePaircodeahrefhttpsgithubcomelement-pluselement-plusbloba98ff9b40c0c3d2b9959f99919bd8363e3e3c25apackageslocaleindextsL5aahrefhttpsgithubcomelement-pluselement-plustreedevpackageslocalelanglanguagesa',
       ],
     },
-    { name: 'size', description: { cn: 'global component size', en: 'global component size' }, type: 'enum', default: "'default'", value: ['large'] },
-    { name: 'zIndex', description: { cn: 'global Initial zIndex', en: 'global Initial zIndex' }, type: 'number', default: '—', value: [''] },
+    {
+      name: 'size',
+      description: { cn: 'global component size', en: 'global component size' },
+      type: 'enum',
+      default: "'default'",
+      value: ['large', 'default', 'small'],
+    },
+    {
+      name: 'zIndex',
+      description: { cn: 'global Initial zIndex', en: 'global Initial zIndex' },
+      type: 'number',
+      default: '—',
+      value: [],
+    },
     {
       name: 'namespace',
       description: {
@@ -21,7 +33,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'string',
       default: 'el',
-      value: [''],
+      value: [],
     },
     {
       name: 'button',
@@ -51,7 +63,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'object',
       default: '—',
-      value: [''],
+      value: [],
     },
   ],
   slots: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' } }],

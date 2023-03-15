@@ -78,8 +78,20 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'modal', description: { cn: 'Should show shadowing layer', en: 'Should show shadowing layer' }, type: 'boolean', default: 'true', value: [] },
-    { name: 'direction', description: { cn: "Drawer's opening direction", en: "Drawer's opening direction" }, type: 'direction', default: 'rtl', value: [] },
+    {
+      name: 'modal',
+      description: { cn: 'Should show shadowing layer', en: 'Should show shadowing layer' },
+      type: 'boolean',
+      default: 'true',
+      value: [],
+    },
+    {
+      name: 'direction',
+      description: { cn: "Drawer's opening direction", en: "Drawer's opening direction" },
+      type: 'direction',
+      default: 'rtl',
+      value: [],
+    },
     {
       name: 'show-close',
       description: { cn: 'Should show close button at the top right of Drawer', en: 'Should show close button at the top right of Drawer' },

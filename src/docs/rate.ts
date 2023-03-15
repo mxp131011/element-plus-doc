@@ -2,10 +2,34 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'model-value / v-model', description: { cn: 'binding value', en: 'binding value' }, type: 'number', default: '0', value: [] },
-    { name: 'max', description: { cn: 'max rating score', en: 'max rating score' }, type: 'number', default: '5', value: [] },
-    { name: 'size', description: { cn: 'size of Rate', en: 'size of Rate' }, type: 'enum', default: "'default'", value: ['large'] },
-    { name: 'disabled', description: { cn: 'whether Rate is read-only', en: 'whether Rate is read-only' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'model-value / v-model',
+      description: { cn: 'binding value', en: 'binding value' },
+      type: 'number',
+      default: '0',
+      value: [],
+    },
+    {
+      name: 'max',
+      description: { cn: 'max rating score', en: 'max rating score' },
+      type: 'number',
+      default: '5',
+      value: [],
+    },
+    {
+      name: 'size',
+      description: { cn: 'size of Rate', en: 'size of Rate' },
+      type: 'enum',
+      default: "'default'",
+      value: ['large', 'default', 'small'],
+    },
+    {
+      name: 'disabled',
+      description: { cn: 'whether Rate is read-only', en: 'whether Rate is read-only' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'allow-half',
       description: { cn: 'whether picking half start is allowed', en: 'whether picking half start is allowed' },

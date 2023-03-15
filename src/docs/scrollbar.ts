@@ -9,7 +9,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'whether to use the native scrollbar style', en: 'whether to use the native scrollbar style' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'wrap-style',
@@ -18,9 +18,9 @@ const doc: TagDoc.TagDocInstance = {
       default: 'CSSProperties[]',
       value: ['object'],
     },
-    { name: 'wrap-class', description: { cn: 'class of wrap container', en: 'class of wrap container' }, type: 'string', default: '—', value: [''] },
+    { name: 'wrap-class', description: { cn: 'class of wrap container', en: 'class of wrap container' }, type: 'string', default: '—', value: [] },
     { name: 'view-style', description: { cn: 'style of view', en: 'style of view' }, type: 'string', default: 'CSSProperties[]', value: ['object'] },
-    { name: 'view-class', description: { cn: 'class of view', en: 'class of view' }, type: 'string', default: '—', value: [''] },
+    { name: 'view-class', description: { cn: 'class of view', en: 'class of view' }, type: 'string', default: '—', value: [] },
     {
       name: 'noresize',
       description: {
@@ -29,11 +29,11 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
-    { name: 'tag', description: { cn: 'element tag of the view', en: 'element tag of the view' }, type: 'string', default: 'div', value: [''] },
-    { name: 'always', description: { cn: 'always show scrollbar', en: 'always show scrollbar' }, type: 'boolean', default: 'false', value: [''] },
-    { name: 'min-size', description: { cn: 'minimum size of scrollbar', en: 'minimum size of scrollbar' }, type: 'number', default: '20', value: [''] },
+    { name: 'tag', description: { cn: 'element tag of the view', en: 'element tag of the view' }, type: 'string', default: 'div', value: [] },
+    { name: 'always', description: { cn: 'always show scrollbar', en: 'always show scrollbar' }, type: 'boolean', default: 'false', value: [] },
+    { name: 'min-size', description: { cn: 'minimum size of scrollbar', en: 'minimum size of scrollbar' }, type: 'number', default: '20', value: [] },
   ],
   events: [
     {

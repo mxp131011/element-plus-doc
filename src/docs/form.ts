@@ -94,7 +94,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'Control the size of components in this form.', en: 'Control the size of components in this form.' },
       type: 'enum',
       default: "'default'",
-      value: ['large'],
+      value: ['large', 'default', 'small'],
     },
     {
       name: 'disabled',

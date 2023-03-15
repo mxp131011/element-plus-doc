@@ -12,7 +12,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'disabled', description: { cn: 'whether Switch is disabled', en: 'whether Switch is disabled' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'disabled',
+      description: { cn: 'whether Switch is disabled', en: 'whether Switch is disabled' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'loading',
       description: { cn: 'whether Switch is in loading state', en: 'whether Switch is in loading state' },
@@ -20,8 +26,20 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'size', description: { cn: 'size of Switch', en: 'size of Switch' }, type: 'string', default: 'default', value: [] },
-    { name: 'width', description: { cn: 'width of Switch', en: 'width of Switch' }, type: 'number / string', default: '—', value: [] },
+    {
+      name: 'size',
+      description: { cn: 'size of Switch', en: 'size of Switch' },
+      type: 'enum',
+      default: "'default'",
+      value: ['large', 'default', 'small'],
+    },
+    {
+      name: 'width',
+      description: { cn: 'width of Switch', en: 'width of Switch' },
+      type: 'number / string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'inline-prompt',
       description: {

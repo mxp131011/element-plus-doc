@@ -10,7 +10,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'string',
       default: '—',
-      value: [''],
+      value: [],
     },
     {
       name: 'body-style',

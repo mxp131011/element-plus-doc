@@ -66,7 +66,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: "size of Input, works when <code>type</code> is not 'textarea'", en: "size of Input, works when <code>type</code> is not 'textarea'" },
       type: 'enum',
       default: "'default'",
-      value: ['large'],
+      value: ['large', 'default', 'small'],
     },
     { name: 'prefix-icon', description: { cn: 'prefix icon component', en: 'prefix icon component' }, type: 'string', default: '—', value: ['Component'] },
     { name: 'suffix-icon', description: { cn: 'suffix icon component', en: 'suffix icon component' }, type: 'string', default: '—', value: ['Component'] },

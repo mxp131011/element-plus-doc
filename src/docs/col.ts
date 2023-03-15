@@ -2,27 +2,27 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'span', description: { cn: 'number of column the grid spans', en: 'number of column the grid spans' }, type: 'number', default: '24', value: [''] },
+    { name: 'span', description: { cn: 'number of column the grid spans', en: 'number of column the grid spans' }, type: 'number', default: '24', value: [] },
     {
       name: 'offset',
       description: { cn: 'number of spacing on the left side of the grid', en: 'number of spacing on the left side of the grid' },
       type: 'number',
       default: '0',
-      value: [''],
+      value: [],
     },
     {
       name: 'push',
       description: { cn: 'number of columns that grid moves to the right', en: 'number of columns that grid moves to the right' },
       type: 'number',
       default: '0',
-      value: [''],
+      value: [],
     },
     {
       name: 'pull',
       description: { cn: 'number of columns that grid moves to the left', en: 'number of columns that grid moves to the left' },
       type: 'number',
       default: '0',
-      value: [''],
+      value: [],
     },
     {
       name: 'xs',
@@ -68,7 +68,7 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: ['object'],
     },
-    { name: 'tag', description: { cn: 'custom element tag', en: 'custom element tag' }, type: 'string', default: 'div', value: [''] },
+    { name: 'tag', description: { cn: 'custom element tag', en: 'custom element tag' }, type: 'string', default: 'div', value: [] },
   ],
   slots: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' } }],
 };

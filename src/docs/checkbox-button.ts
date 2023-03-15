@@ -31,10 +31,10 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'whether the checkbox is disabled', en: 'whether the checkbox is disabled' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
-    { name: 'name', description: { cn: "native 'name' attribute", en: "native 'name' attribute" }, type: 'string', default: '—', value: [''] },
-    { name: 'checked', description: { cn: 'if the checkbox is checked', en: 'if the checkbox is checked' }, type: 'boolean', default: 'false', value: [''] },
+    { name: 'name', description: { cn: "native 'name' attribute", en: "native 'name' attribute" }, type: 'string', default: '—', value: [] },
+    { name: 'checked', description: { cn: 'if the checkbox is checked', en: 'if the checkbox is checked' }, type: 'boolean', default: 'false', value: [] },
   ],
   events: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' }, type: 'function', param: '' }],
 };

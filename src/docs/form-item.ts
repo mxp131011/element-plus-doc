@@ -12,7 +12,7 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: ['string'],
     },
-    { name: 'label', description: { cn: 'Label text.', en: 'Label text.' }, type: 'string', default: '—', value: [''] },
+    { name: 'label', description: { cn: 'Label text.', en: 'Label text.' }, type: 'string', default: '—', value: [] },
     {
       name: 'label-width',
       description: {
@@ -31,7 +31,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'rules',
@@ -51,43 +51,69 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'string',
       default: '—',
-      value: [''],
+      value: [],
     },
     {
       name: 'show-message',
       description: { cn: 'Whether to show the error message.', en: 'Whether to show the error message.' },
       type: 'boolean',
       default: 'true',
-      value: [''],
+      value: [],
     },
     {
       name: 'inline-message',
       description: { cn: 'Inline style validate message.', en: 'Inline style validate message.' },
       type: 'boolean',
       default: 'false',
-      value: [''],
+      value: [],
     },
     {
       name: 'size',
       description: { cn: 'Control the size of components in this form-item.', en: 'Control the size of components in this form-item.' },
       type: 'enum',
       default: "'default'",
-      value: ['large'],
+      value: ['large', 'default', 'small'],
     },
-    { name: 'for', description: { cn: 'Same as for in native label.', en: 'Same as for in native label.' }, type: 'string', default: '—', value: [''] },
+    {
+      name: 'for',
+      description: { cn: 'Same as for in native label.', en: 'Same as for in native label.' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'validate-status',
       description: { cn: 'Validation state of formItem.', en: 'Validation state of formItem.' },
       type: 'enum',
       default: "'error'",
-      value: [''],
+      value: [],
     },
   ],
   exposes: [
-    { name: 'size', description: { cn: 'Form item size.', en: 'Form item size.' }, type: 'object', param: '' },
-    { name: 'validateMessage', description: { cn: 'Validation message.', en: 'Validation message.' }, type: 'object', param: '' },
-    { name: 'validateState', description: { cn: 'Validation state.', en: 'Validation state.' }, type: 'object', param: '' },
-    { name: 'validate', description: { cn: 'Validate form item.', en: 'Validate form item.' }, type: 'function', param: '' },
+    {
+      name: 'size',
+      description: { cn: 'Form item size.', en: 'Form item size.' },
+      type: 'object',
+      param: '',
+    },
+    {
+      name: 'validateMessage',
+      description: { cn: 'Validation message.', en: 'Validation message.' },
+      type: 'object',
+      param: '',
+    },
+    {
+      name: 'validateState',
+      description: { cn: 'Validation state.', en: 'Validation state.' },
+      type: 'object',
+      param: '',
+    },
+    {
+      name: 'validate',
+      description: { cn: 'Validate form item.', en: 'Validate form item.' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'resetField',
       description: { cn: 'Reset current field and remove validation result.', en: 'Reset current field and remove validation result.' },
@@ -102,9 +128,18 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   slots: [
-    { name: 'default', description: { cn: 'Content of Form Item.', en: 'Content of Form Item.' } },
-    { name: 'label', description: { cn: 'Custom content to display on label.', en: 'Custom content to display on label.' } },
-    { name: 'error', description: { cn: 'Custom content to display validation message.', en: 'Custom content to display validation message.' } },
+    {
+      name: 'default',
+      description: { cn: 'Content of Form Item.', en: 'Content of Form Item.' },
+    },
+    {
+      name: 'label',
+      description: { cn: 'Custom content to display on label.', en: 'Custom content to display on label.' },
+    },
+    {
+      name: 'error',
+      description: { cn: 'Custom content to display validation message.', en: 'Custom content to display validation message.' },
+    },
   ],
 };
 export default doc;

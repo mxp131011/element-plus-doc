@@ -15,9 +15,9 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'size',
       description: { cn: 'menu size, also works on the split button', en: 'menu size, also works on the split button' },
-      type: 'string',
-      default: 'default',
-      value: [],
+      type: 'enum',
+      default: "'default'",
+      value: ['large', 'default', 'small'],
     },
     { name: 'max-height', description: { cn: 'the max height of menu', en: 'the max height of menu' }, type: 'string / number', default: '—', value: [] },
     {

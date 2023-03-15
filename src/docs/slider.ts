@@ -30,9 +30,9 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'size',
       description: { cn: 'size of the slider wrapper, will not work in vertical mode', en: 'size of the slider wrapper, will not work in vertical mode' },
-      type: 'string',
-      default: 'default',
-      value: [],
+      type: 'enum',
+      default: "'default'",
+      value: ['large', 'default', 'small'],
     },
     {
       name: 'input-size',

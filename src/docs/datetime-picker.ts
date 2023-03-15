@@ -3,7 +3,7 @@ const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
     {
-      name: 'model-value / v-model',
+      name: 'model-value',
       description: { cn: 'binding value, if it is an array, the length should be 2', en: 'binding value, if it is an array, the length should be 2' },
       type: 'date / number / string / array',
       default: '—',
@@ -30,9 +30,27 @@ const doc: TagDoc.TagDocInstance = {
       default: 'true',
       value: [],
     },
-    { name: 'clearable', description: { cn: 'whether to show clear button', en: 'whether to show clear button' }, type: 'boolean', default: 'true', value: [] },
-    { name: 'size', description: { cn: 'size of Input', en: 'size of Input' }, type: 'string', default: 'default', value: [] },
-    { name: 'placeholder', description: { cn: 'placeholder in non-range mode', en: 'placeholder in non-range mode' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'clearable',
+      description: { cn: 'whether to show clear button', en: 'whether to show clear button' },
+      type: 'boolean',
+      default: 'true',
+      value: [],
+    },
+    {
+      name: 'size',
+      description: { cn: 'size of Input', en: 'size of Input' },
+      type: 'enum',
+      default: "'default'",
+      value: ['large', 'default', 'small'],
+    },
+    {
+      name: 'placeholder',
+      description: { cn: 'placeholder in non-range mode', en: 'placeholder in non-range mode' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'start-placeholder',
       description: { cn: 'placeholder for the start date in range mode', en: 'placeholder for the start date in range mode' },
@@ -75,7 +93,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'optional, default date of the calendar', en: 'optional, default date of the calendar' },
       type: 'date / [date, date',
       default: '—',
-      value: [''],
+      value: [],
     },
     {
       name: 'default-time',
@@ -85,7 +103,7 @@ const doc: TagDoc.TagDocInstance = {
       },
       type: 'date / [date, date',
       default: '—',
-      value: [''],
+      value: [],
     },
     {
       name: 'value-format',
@@ -102,7 +120,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'same as <code>id</code> in native input', en: 'same as <code>id</code> in native input' },
       type: 'string / [string, string',
       default: '—',
-      value: [''],
+      value: [],
     },
     {
       name: 'name',
@@ -125,7 +143,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: 'an object array to set shortcut options', en: 'an object array to set shortcut options' },
       type: 'object[{ text: string, value: date / function }',
       default: '—',
-      value: [''],
+      value: [],
     },
     {
       name: 'disabled-date',

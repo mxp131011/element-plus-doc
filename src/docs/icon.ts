@@ -7,7 +7,7 @@ const doc: TagDoc.TagDocInstance = {
       description: { cn: "SVG tag's fill attribute", en: "SVG tag's fill attribute" },
       type: 'string',
       default: 'inherit from color',
-      value: [''],
+      value: [],
     },
     {
       name: 'size',
