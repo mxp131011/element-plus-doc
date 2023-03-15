@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'span', description: { cn: 'number of column the grid spans', en: 'number of column the grid spans' }, type: 'number', default: '24', value: [] },
+    {
+      name: 'span',
+      description: { cn: 'number of column the grid spans', en: 'number of column the grid spans' },
+      type: 'number',
+      default: '24',
+      value: [],
+    },
     {
       name: 'offset',
       description: { cn: 'number of spacing on the left side of the grid', en: 'number of spacing on the left side of the grid' },
@@ -68,8 +74,19 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: ['object'],
     },
-    { name: 'tag', description: { cn: 'custom element tag', en: 'custom element tag' }, type: 'string', default: 'div', value: [] },
+    {
+      name: 'tag',
+      description: { cn: 'custom element tag', en: 'custom element tag' },
+      type: 'string',
+      default: 'div',
+      value: [],
+    },
   ],
-  slots: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' } }],
+  slots: [
+    {
+      name: 'default',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+  ],
 };
 export default doc;

@@ -9,7 +9,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '<code>[]</code>',
       value: ['code'],
     },
-    { name: 'z-index', description: { cn: 'preview backdrop z-index.', en: 'preview backdrop z-index.' }, type: '`number', default: 'string`', value: [] },
+    {
+      name: 'z-index',
+      description: { cn: 'preview backdrop z-index.', en: 'preview backdrop z-index.' },
+      type: '`number',
+      default: 'string`',
+      value: [],
+    },
     {
       name: 'initial-index',
       description: {
@@ -69,6 +75,13 @@ const doc: TagDoc.TagDocInstance = {
       param: '',
     },
   ],
-  exposes: [{ name: '', description: { cn: 'manually switch image', en: 'manually switch image' }, type: 'function', param: '' }],
+  exposes: [
+    {
+      name: '',
+      description: { cn: 'manually switch image', en: 'manually switch image' },
+      type: 'function',
+      param: '',
+    },
+  ],
 };
 export default doc;

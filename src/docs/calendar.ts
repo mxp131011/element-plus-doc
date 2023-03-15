@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'model-value', description: { cn: 'binding value', en: 'binding value' }, type: 'date', default: '—', value: [] },
+    {
+      name: 'model-value',
+      description: { cn: 'binding value', en: 'binding value' },
+      type: 'date',
+      default: '—',
+      value: [],
+    },
     {
       name: 'range',
       description: {

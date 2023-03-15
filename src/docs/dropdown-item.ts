@@ -12,7 +12,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'disabled', description: { cn: 'whether the item is disabled', en: 'whether the item is disabled' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'disabled',
+      description: { cn: 'whether the item is disabled', en: 'whether the item is disabled' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'divided',
       description: { cn: 'whether a divider is displayed', en: 'whether a divider is displayed' },
@@ -20,8 +26,19 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'icon', description: { cn: 'custom icon', en: 'custom icon' }, type: '`string', default: '—', value: [] },
+    {
+      name: 'icon',
+      description: { cn: 'custom icon', en: 'custom icon' },
+      type: '`string',
+      default: '—',
+      value: [],
+    },
   ],
-  slots: [{ name: '—', description: { cn: 'customize of Dropdown Item', en: 'customize of Dropdown Item' } }],
+  slots: [
+    {
+      name: '—',
+      description: { cn: 'customize of Dropdown Item', en: 'customize of Dropdown Item' },
+    },
+  ],
 };
 export default doc;

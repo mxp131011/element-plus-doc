@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'model-value / v-model', description: { cn: 'binding value', en: 'binding value' }, type: 'string', default: '—', value: ['number'] },
+    {
+      name: 'model-value / v-model',
+      description: { cn: 'binding value', en: 'binding value' },
+      type: 'string',
+      default: '—',
+      value: ['number'],
+    },
     {
       name: 'size',
       description: { cn: 'the size of radio buttons or bordered radios', en: 'the size of radio buttons or bordered radios' },
@@ -52,11 +58,27 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'id', description: { cn: 'native <code>id</code> attribute', en: 'native <code>id</code> attribute' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'id',
+      description: { cn: 'native <code>id</code> attribute', en: 'native <code>id</code> attribute' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
   ],
   events: [
-    { name: 'change', description: { cn: 'triggers when the bound value changes', en: 'triggers when the bound value changes' }, type: 'function', param: '' },
+    {
+      name: 'change',
+      description: { cn: 'triggers when the bound value changes', en: 'triggers when the bound value changes' },
+      type: 'function',
+      param: '',
+    },
   ],
-  slots: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' } }],
+  slots: [
+    {
+      name: 'default',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+  ],
 };
 export default doc;

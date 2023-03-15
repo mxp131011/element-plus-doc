@@ -37,7 +37,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'label', description: { cn: 'label for screen reader', en: 'label for screen reader' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'label',
+      description: { cn: 'label for screen reader', en: 'label for screen reader' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'text-color',
       description: { cn: 'font color when button is active', en: 'font color when button is active' },
@@ -75,6 +81,11 @@ const doc: TagDoc.TagDocInstance = {
       param: '',
     },
   ],
-  slots: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' } }],
+  slots: [
+    {
+      name: 'default',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+  ],
 };
 export default doc;

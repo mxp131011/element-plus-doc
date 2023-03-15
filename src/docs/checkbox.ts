@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'model-value / v-model', description: { cn: 'binding value', en: 'binding value' }, type: 'string', default: '—', value: ['number'] },
+    {
+      name: 'model-value / v-model',
+      description: { cn: 'binding value', en: 'binding value' },
+      type: 'string',
+      default: '—',
+      value: ['number'],
+    },
     {
       name: 'label',
       description: {
@@ -76,8 +82,20 @@ const doc: TagDoc.TagDocInstance = {
       default: 'true',
       value: [],
     },
-    { name: 'tabindex', description: { cn: 'input tabindex', en: 'input tabindex' }, type: 'string', default: '—', value: ['number'] },
-    { name: 'id', description: { cn: 'input id', en: 'input id' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'tabindex',
+      description: { cn: 'input tabindex', en: 'input tabindex' },
+      type: 'string',
+      default: '—',
+      value: ['number'],
+    },
+    {
+      name: 'id',
+      description: { cn: 'input id', en: 'input id' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'controls <a11ytag></a11ytag>',
       description: {
@@ -97,6 +115,11 @@ const doc: TagDoc.TagDocInstance = {
       param: '',
     },
   ],
-  slots: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' } }],
+  slots: [
+    {
+      name: 'default',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+  ],
 };
 export default doc;

@@ -128,7 +128,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'name', description: { cn: 'input name of Switch', en: 'input name of Switch' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'name',
+      description: { cn: 'input name of Switch', en: 'input name of Switch' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'validate-event',
       description: { cn: 'whether to trigger form validation', en: 'whether to trigger form validation' },
@@ -147,7 +153,21 @@ const doc: TagDoc.TagDocInstance = {
       value: [],
     },
   ],
-  events: [{ name: 'change', description: { cn: 'triggers when value changes', en: 'triggers when value changes' }, type: 'function', param: '' }],
-  exposes: [{ name: 'focus', description: { cn: 'focus the Switch component', en: 'focus the Switch component' }, type: 'function', param: '' }],
+  events: [
+    {
+      name: 'change',
+      description: { cn: 'triggers when value changes', en: 'triggers when value changes' },
+      type: 'function',
+      param: '',
+    },
+  ],
+  exposes: [
+    {
+      name: 'focus',
+      description: { cn: 'focus the Switch component', en: 'focus the Switch component' },
+      type: 'function',
+      param: '',
+    },
+  ],
 };
 export default doc;

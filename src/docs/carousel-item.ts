@@ -17,6 +17,11 @@ const doc: TagDoc.TagDocInstance = {
       value: [],
     },
   ],
-  slots: [{ name: '—', description: { cn: 'customize default content', en: 'customize default content' } }],
+  slots: [
+    {
+      name: '—',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+  ],
 };
 export default doc;

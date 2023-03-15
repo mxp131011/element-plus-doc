@@ -2,11 +2,41 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'model-value / v-model', description: { cn: 'binding value', en: 'binding value' }, type: 'number', default: '0', value: [] },
-    { name: 'min', description: { cn: 'minimum value', en: 'minimum value' }, type: 'number', default: '0', value: [] },
-    { name: 'max', description: { cn: 'maximum value', en: 'maximum value' }, type: 'number', default: '100', value: [] },
-    { name: 'disabled', description: { cn: 'whether Slider is disabled', en: 'whether Slider is disabled' }, type: 'boolean', default: 'false', value: [] },
-    { name: 'step', description: { cn: 'step size', en: 'step size' }, type: 'number', default: '1', value: [] },
+    {
+      name: 'model-value / v-model',
+      description: { cn: 'binding value', en: 'binding value' },
+      type: 'number',
+      default: '0',
+      value: [],
+    },
+    {
+      name: 'min',
+      description: { cn: 'minimum value', en: 'minimum value' },
+      type: 'number',
+      default: '0',
+      value: [],
+    },
+    {
+      name: 'max',
+      description: { cn: 'maximum value', en: 'maximum value' },
+      type: 'number',
+      default: '100',
+      value: [],
+    },
+    {
+      name: 'disabled',
+      description: { cn: 'whether Slider is disabled', en: 'whether Slider is disabled' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+    {
+      name: 'step',
+      description: { cn: 'step size', en: 'step size' },
+      type: 'number',
+      default: '1',
+      value: [],
+    },
     {
       name: 'show-input',
       description: {
@@ -65,8 +95,20 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'range', description: { cn: 'whether to select a range', en: 'whether to select a range' }, type: 'boolean', default: 'false', value: [] },
-    { name: 'vertical', description: { cn: 'vertical mode', en: 'vertical mode' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'range',
+      description: { cn: 'whether to select a range', en: 'whether to select a range' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+    {
+      name: 'vertical',
+      description: { cn: 'vertical mode', en: 'vertical mode' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'height',
       description: { cn: 'Slider height, required in vertical mode', en: 'Slider height, required in vertical mode' },
@@ -74,7 +116,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'label', description: { cn: 'label for screen reader', en: 'label for screen reader' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'label',
+      description: { cn: 'label for screen reader', en: 'label for screen reader' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'range-start-label',
       description: {
@@ -122,7 +170,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'placement', description: { cn: 'position of Tooltip', en: 'position of Tooltip' }, type: 'string', default: 'top', value: [] },
+    {
+      name: 'placement',
+      description: { cn: 'position of Tooltip', en: 'position of Tooltip' },
+      type: 'string',
+      default: 'top',
+      value: [],
+    },
     {
       name: 'marks',
       description: {

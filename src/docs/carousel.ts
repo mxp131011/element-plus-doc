@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'height', description: { cn: 'height of the carousel', en: 'height of the carousel' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'height',
+      description: { cn: 'height of the carousel', en: 'height of the carousel' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'initial-index',
       description: { cn: 'index of the initially active slide (starting from 0)', en: 'index of the initially active slide (starting from 0)' },
@@ -10,7 +16,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '0',
       value: [],
     },
-    { name: 'trigger', description: { cn: 'how indicators are triggered', en: 'how indicators are triggered' }, type: 'string', default: 'hover', value: [] },
+    {
+      name: 'trigger',
+      description: { cn: 'how indicators are triggered', en: 'how indicators are triggered' },
+      type: 'string',
+      default: 'hover',
+      value: [],
+    },
     {
       name: 'autoplay',
       description: { cn: 'whether automatically loop the slides', en: 'whether automatically loop the slides' },
@@ -32,11 +44,41 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'arrow', description: { cn: 'when arrows are shown', en: 'when arrows are shown' }, type: 'string', default: 'hover', value: [] },
-    { name: 'type', description: { cn: 'type of the Carousel', en: 'type of the Carousel' }, type: 'string', default: '—', value: [] },
-    { name: 'loop', description: { cn: 'display the items in loop', en: 'display the items in loop' }, type: 'boolean', default: 'true', value: [] },
-    { name: 'direction', description: { cn: 'display direction', en: 'display direction' }, type: 'string', default: 'horizontal', value: [] },
-    { name: 'pause-on-hover', description: { cn: 'pause autoplay when hover', en: 'pause autoplay when hover' }, type: 'boolean', default: 'true', value: [] },
+    {
+      name: 'arrow',
+      description: { cn: 'when arrows are shown', en: 'when arrows are shown' },
+      type: 'string',
+      default: 'hover',
+      value: [],
+    },
+    {
+      name: 'type',
+      description: { cn: 'type of the Carousel', en: 'type of the Carousel' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'loop',
+      description: { cn: 'display the items in loop', en: 'display the items in loop' },
+      type: 'boolean',
+      default: 'true',
+      value: [],
+    },
+    {
+      name: 'direction',
+      description: { cn: 'display direction', en: 'display direction' },
+      type: 'string',
+      default: 'horizontal',
+      value: [],
+    },
+    {
+      name: 'pause-on-hover',
+      description: { cn: 'pause autoplay when hover', en: 'pause autoplay when hover' },
+      type: 'boolean',
+      default: 'true',
+      value: [],
+    },
   ],
   events: [
     {
@@ -47,9 +89,24 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   exposes: [
-    { name: '', description: { cn: 'manually switch slide', en: 'manually switch slide' }, type: 'function', param: '' },
-    { name: '', description: { cn: 'switch to the previous slide', en: 'switch to the previous slide' }, type: 'function', param: '' },
-    { name: '', description: { cn: 'switch to the next slide', en: 'switch to the next slide' }, type: 'function', param: '' },
+    {
+      name: '',
+      description: { cn: 'manually switch slide', en: 'manually switch slide' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: '',
+      description: { cn: 'switch to the previous slide', en: 'switch to the previous slide' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: '',
+      description: { cn: 'switch to the next slide', en: 'switch to the next slide' },
+      type: 'function',
+      param: '',
+    },
   ],
 };
 export default doc;

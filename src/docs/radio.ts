@@ -46,8 +46,18 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'change', description: { cn: 'triggers when the bound value changes', en: 'triggers when the bound value changes' }, type: 'function', param: '' },
+    {
+      name: 'change',
+      description: { cn: 'triggers when the bound value changes', en: 'triggers when the bound value changes' },
+      type: 'function',
+      param: '',
+    },
   ],
-  slots: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' } }],
+  slots: [
+    {
+      name: 'default',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+  ],
 };
 export default doc;

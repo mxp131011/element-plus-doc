@@ -16,7 +16,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: ['codeFormRulescode'],
     },
-    { name: 'inline', description: { cn: 'Whether the form is inline.', en: 'Whether the form is inline.' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'inline',
+      description: { cn: 'Whether the form is inline.', en: 'Whether the form is inline.' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'label-position',
       description: {
@@ -37,7 +43,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: ['number'],
     },
-    { name: 'label-suffix', description: { cn: 'Suffix of the label.', en: 'Suffix of the label.' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'label-suffix',
+      description: { cn: 'Suffix of the label.', en: 'Suffix of the label.' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'hide-required-asterisk',
       description: {
@@ -132,14 +144,24 @@ const doc: TagDoc.TagDocInstance = {
       type: 'function',
       param: '',
     },
-    { name: 'validateField', description: { cn: 'Validate specified fields.', en: 'Validate specified fields.' }, type: 'function', param: '' },
+    {
+      name: 'validateField',
+      description: { cn: 'Validate specified fields.', en: 'Validate specified fields.' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'resetFields',
       description: { cn: 'Reset specified fields and remove validation result.', en: 'Reset specified fields and remove validation result.' },
       type: 'function',
       param: '',
     },
-    { name: 'scrollToField', description: { cn: 'Scroll to the specified fields.', en: 'Scroll to the specified fields.' }, type: 'function', param: '' },
+    {
+      name: 'scrollToField',
+      description: { cn: 'Scroll to the specified fields.', en: 'Scroll to the specified fields.' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'clearValidate',
       description: { cn: 'Clear validation message for specified fields.', en: 'Clear validation message for specified fields.' },
@@ -180,6 +202,11 @@ const doc: TagDoc.TagDocInstance = {
       param: '',
     },
   ],
-  slots: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' } }],
+  slots: [
+    {
+      name: 'default',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+  ],
 };
 export default doc;

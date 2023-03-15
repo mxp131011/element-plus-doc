@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'model-value / v-model', description: { cn: 'binding value', en: 'binding value' }, type: 'string', default: 'number[]', value: ['number'] },
+    {
+      name: 'model-value / v-model',
+      description: { cn: 'binding value', en: 'binding value' },
+      type: 'string',
+      default: 'number[]',
+      value: ['number'],
+    },
     {
       name: 'options',
       description: {
@@ -57,7 +63,12 @@ const doc: TagDoc.TagDocInstance = {
       type: 'function',
       param: '',
     },
-    { name: 'clearCheckedNodes', description: { cn: 'clear checked nodes', en: 'clear checked nodes' }, type: 'function', param: '' },
+    {
+      name: 'clearCheckedNodes',
+      description: { cn: 'clear checked nodes', en: 'clear checked nodes' },
+      type: 'function',
+      param: '',
+    },
   ],
   slots: [
     {

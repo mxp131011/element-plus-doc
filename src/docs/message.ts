@@ -2,8 +2,20 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: '', description: { cn: 'message text', en: 'message text' }, type: 'string', default: 'VNode', value: [] },
-    { name: '', description: { cn: 'message type', en: 'message type' }, type: "'success'", default: "'warning'", value: [] },
+    {
+      name: '',
+      description: { cn: 'message text', en: 'message text' },
+      type: 'string',
+      default: 'VNode',
+      value: [],
+    },
+    {
+      name: '',
+      description: { cn: 'message type', en: 'message type' },
+      type: "'success'",
+      default: "'warning'",
+      value: [],
+    },
     {
       name: '',
       description: { cn: 'custom icon component, overrides <code>type</code>', en: 'custom icon component, overrides <code>type</code>' },
@@ -28,8 +40,20 @@ const doc: TagDoc.TagDocInstance = {
       default: '3000',
       value: [],
     },
-    { name: '', description: { cn: 'whether to show a close button', en: 'whether to show a close button' }, type: 'boolean', default: 'false', value: [] },
-    { name: '', description: { cn: 'whether to center the text', en: 'whether to center the text' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: '',
+      description: { cn: 'whether to show a close button', en: 'whether to show a close button' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+    {
+      name: '',
+      description: { cn: 'whether to center the text', en: 'whether to center the text' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: '',
       description: {
@@ -65,6 +89,13 @@ const doc: TagDoc.TagDocInstance = {
       value: [],
     },
   ],
-  exposes: [{ name: '', description: { cn: 'close the Message', en: 'close the Message' }, type: 'function', param: '' }],
+  exposes: [
+    {
+      name: '',
+      description: { cn: 'close the Message', en: 'close the Message' },
+      type: 'function',
+      param: '',
+    },
+  ],
 };
 export default doc;

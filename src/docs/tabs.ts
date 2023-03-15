@@ -9,9 +9,27 @@ const doc: TagDoc.TagDocInstance = {
       default: 'name of first tab',
       value: [],
     },
-    { name: 'type', description: { cn: 'type of Tab', en: 'type of Tab' }, type: 'string', default: '—', value: [] },
-    { name: 'closable', description: { cn: 'whether Tab is closable', en: 'whether Tab is closable' }, type: 'boolean', default: 'false', value: [] },
-    { name: 'addable', description: { cn: 'whether Tab is addable', en: 'whether Tab is addable' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'type',
+      description: { cn: 'type of Tab', en: 'type of Tab' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'closable',
+      description: { cn: 'whether Tab is closable', en: 'whether Tab is closable' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+    {
+      name: 'addable',
+      description: { cn: 'whether Tab is addable', en: 'whether Tab is addable' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'editable',
       description: { cn: 'whether Tab is addable and closable', en: 'whether Tab is addable and closable' },
@@ -19,7 +37,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'tab-position', description: { cn: 'position of tabs', en: 'position of tabs' }, type: 'string', default: 'top', value: [] },
+    {
+      name: 'tab-position',
+      description: { cn: 'position of tabs', en: 'position of tabs' },
+      type: 'string',
+      default: 'top',
+      value: [],
+    },
     {
       name: 'stretch',
       description: { cn: 'whether width of tab automatically fits its container', en: 'whether width of tab automatically fits its container' },
@@ -39,7 +63,12 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'tab-click', description: { cn: 'triggers when a tab is clicked', en: 'triggers when a tab is clicked' }, type: 'function', param: '' },
+    {
+      name: 'tab-click',
+      description: { cn: 'triggers when a tab is clicked', en: 'triggers when a tab is clicked' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'tab-change',
       description: { cn: 'triggers when <code>activeName</code> is changed', en: 'triggers when <code>activeName</code> is changed' },
@@ -65,6 +94,11 @@ const doc: TagDoc.TagDocInstance = {
       param: '',
     },
   ],
-  slots: [{ name: '-', description: { cn: 'customize default content', en: 'customize default content' } }],
+  slots: [
+    {
+      name: '-',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+  ],
 };
 export default doc;

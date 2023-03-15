@@ -24,6 +24,11 @@ const doc: TagDoc.TagDocInstance = {
       value: ['left'],
     },
   ],
-  slots: [{ name: 'default', description: { cn: 'customized content on the divider line', en: 'customized content on the divider line' } }],
+  slots: [
+    {
+      name: 'default',
+      description: { cn: 'customized content on the divider line', en: 'customized content on the divider line' },
+    },
+  ],
 };
 export default doc;

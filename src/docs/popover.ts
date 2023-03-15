@@ -2,8 +2,20 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'trigger', description: { cn: 'how the popover is triggered', en: 'how the popover is triggered' }, type: 'string', default: 'click', value: [] },
-    { name: 'title', description: { cn: 'popover title', en: 'popover title' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'trigger',
+      description: { cn: 'how the popover is triggered', en: 'how the popover is triggered' },
+      type: 'string',
+      default: 'click',
+      value: [],
+    },
+    {
+      name: 'title',
+      description: { cn: 'popover title', en: 'popover title' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'effect',
       description: {
@@ -24,9 +36,27 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'width', description: { cn: 'popover width', en: 'popover width' }, type: 'string / number', default: 'Min width 150px', value: [] },
-    { name: 'placement', description: { cn: 'popover placement', en: 'popover placement' }, type: 'string', default: 'bottom', value: [] },
-    { name: 'disabled', description: { cn: 'whether Popover is disabled', en: 'whether Popover is disabled' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'width',
+      description: { cn: 'popover width', en: 'popover width' },
+      type: 'string / number',
+      default: 'Min width 150px',
+      value: [],
+    },
+    {
+      name: 'placement',
+      description: { cn: 'popover placement', en: 'popover placement' },
+      type: 'string',
+      default: 'bottom',
+      value: [],
+    },
+    {
+      name: 'disabled',
+      description: { cn: 'whether Popover is disabled', en: 'whether Popover is disabled' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'visible / v-model:visible',
       description: { cn: 'whether popover is visible', en: 'whether popover is visible' },
@@ -34,7 +64,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'offset', description: { cn: 'popover offset', en: 'popover offset' }, type: 'number', default: '0', value: [] },
+    {
+      name: 'offset',
+      description: { cn: 'popover offset', en: 'popover offset' },
+      type: 'number',
+      default: '0',
+      value: [],
+    },
     {
       name: 'transition',
       description: { cn: 'popover transition animation', en: 'popover transition animation' },
@@ -69,7 +105,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'popper-style', description: { cn: 'custom style for popover', en: 'custom style for popover' }, type: 'string / object', default: '—', value: [] },
+    {
+      name: 'popper-style',
+      description: { cn: 'custom style for popover', en: 'custom style for popover' },
+      type: 'string / object',
+      default: '—',
+      value: [],
+    },
     {
       name: 'show-after',
       description: { cn: 'delay of appearance, in millisecond', en: 'delay of appearance, in millisecond' },
@@ -120,7 +162,12 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'show', description: { cn: 'triggers when popover shows', en: 'triggers when popover shows' }, type: 'function', param: '' },
+    {
+      name: 'show',
+      description: { cn: 'triggers when popover shows', en: 'triggers when popover shows' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'before-enter',
       description: { cn: 'triggers when the entering transition before', en: 'triggers when the entering transition before' },
@@ -133,7 +180,12 @@ const doc: TagDoc.TagDocInstance = {
       type: 'function',
       param: '',
     },
-    { name: 'hide', description: { cn: 'triggers when popover hides', en: 'triggers when popover hides' }, type: 'function', param: '' },
+    {
+      name: 'hide',
+      description: { cn: 'triggers when popover hides', en: 'triggers when popover hides' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'before-leave',
       description: { cn: 'triggers when the leaving transition before', en: 'triggers when the leaving transition before' },
@@ -148,8 +200,14 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   slots: [
-    { name: '—', description: { cn: 'text content of popover', en: 'text content of popover' } },
-    { name: 'reference', description: { cn: 'HTML element that triggers popover', en: 'HTML element that triggers popover' } },
+    {
+      name: '—',
+      description: { cn: 'text content of popover', en: 'text content of popover' },
+    },
+    {
+      name: 'reference',
+      description: { cn: 'HTML element that triggers popover', en: 'HTML element that triggers popover' },
+    },
   ],
 };
 export default doc;

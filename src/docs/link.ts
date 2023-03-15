@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'type', description: { cn: 'type', en: 'type' }, type: 'enum', default: "'success'", value: ['primary'] },
+    {
+      name: 'type',
+      description: { cn: 'type', en: 'type' },
+      type: 'enum',
+      default: "'success'",
+      value: ['primary', 'success', 'warning', 'danger', 'info'],
+    },
     {
       name: 'underline',
       description: { cn: 'whether the component has underline', en: 'whether the component has underline' },
@@ -24,11 +30,23 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'icon', description: { cn: 'icon component', en: 'icon component' }, type: 'string', default: '—', value: ['Component'] },
+    {
+      name: 'icon',
+      description: { cn: 'icon component', en: 'icon component' },
+      type: 'string',
+      default: '—',
+      value: ['Component'],
+    },
   ],
   slots: [
-    { name: 'default', description: { cn: 'customize default content', en: 'customize default content' } },
-    { name: 'icon', description: { cn: 'customize icon component', en: 'customize icon component' } },
+    {
+      name: 'default',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+    {
+      name: 'icon',
+      description: { cn: 'customize icon component', en: 'customize icon component' },
+    },
   ],
 };
 export default doc;

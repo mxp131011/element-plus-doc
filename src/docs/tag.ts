@@ -2,8 +2,20 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'type', description: { cn: 'component type', en: 'component type' }, type: 'string', default: '—', value: [] },
-    { name: 'closable', description: { cn: 'whether Tag can be removed', en: 'whether Tag can be removed' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'type',
+      description: { cn: 'component type', en: 'component type' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'closable',
+      description: { cn: 'whether Tag can be removed', en: 'whether Tag can be removed' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'disable-transitions',
       description: { cn: 'whether to disable animations', en: 'whether to disable animations' },
@@ -61,6 +73,11 @@ const doc: TagDoc.TagDocInstance = {
       param: '',
     },
   ],
-  slots: [{ name: '—', description: { cn: 'customize default content', en: 'customize default content' } }],
+  slots: [
+    {
+      name: '—',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+  ],
 };
 export default doc;

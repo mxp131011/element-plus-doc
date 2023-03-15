@@ -72,7 +72,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'type', description: { cn: 'type of the picker', en: 'type of the picker' }, type: 'string', default: 'date', value: [] },
+    {
+      name: 'type',
+      description: { cn: 'type of the picker', en: 'type of the picker' },
+      type: 'string',
+      default: 'date',
+      value: [],
+    },
     {
       name: 'format',
       description: { cn: 'format of the displayed value in the input box', en: 'format of the displayed value in the input box' },
@@ -87,7 +93,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'range-separator', description: { cn: 'range separator', en: 'range separator' }, type: 'string', default: "'-'", value: [] },
+    {
+      name: 'range-separator',
+      description: { cn: 'range separator', en: 'range separator' },
+      type: 'string',
+      default: "'-'",
+      value: [],
+    },
     {
       name: 'default-value',
       description: { cn: 'optional, default date of the calendar', en: 'optional, default date of the calendar' },
@@ -136,8 +148,20 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'prefix-icon', description: { cn: 'Custom prefix icon component', en: 'Custom prefix icon component' }, type: '`string', default: '—', value: [] },
-    { name: 'clear-icon', description: { cn: 'Custom clear icon component', en: 'Custom clear icon component' }, type: '`string', default: '—', value: [] },
+    {
+      name: 'prefix-icon',
+      description: { cn: 'Custom prefix icon component', en: 'Custom prefix icon component' },
+      type: '`string',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'clear-icon',
+      description: { cn: 'Custom clear icon component', en: 'Custom clear icon component' },
+      type: '`string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'shortcuts',
       description: { cn: 'an object array to set shortcut options', en: 'an object array to set shortcut options' },
@@ -155,7 +179,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'cell-class-name', description: { cn: 'set custom className', en: 'set custom className' }, type: 'function(date)', default: '—', value: [] },
+    {
+      name: 'cell-class-name',
+      description: { cn: 'set custom className', en: 'set custom className' },
+      type: 'function(date)',
+      default: '—',
+      value: [],
+    },
     {
       name: 'teleported',
       description: { cn: 'whether datetime-picker dropdown is teleported to the body', en: 'whether datetime-picker dropdown is teleported to the body' },
@@ -165,9 +195,24 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'change', description: { cn: 'triggers when user confirms the value', en: 'triggers when user confirms the value' }, type: 'function', param: '' },
-    { name: 'blur', description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' }, type: 'function', param: '' },
-    { name: 'focus', description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' }, type: 'function', param: '' },
+    {
+      name: 'change',
+      description: { cn: 'triggers when user confirms the value', en: 'triggers when user confirms the value' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'blur',
+      description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'focus',
+      description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'calendar-change',
       description: {
@@ -187,10 +232,23 @@ const doc: TagDoc.TagDocInstance = {
       param: '',
     },
   ],
-  exposes: [{ name: '', description: { cn: 'focus the Input component', en: 'focus the Input component' }, type: 'function', param: '' }],
+  exposes: [
+    {
+      name: '',
+      description: { cn: 'focus the Input component', en: 'focus the Input component' },
+      type: 'function',
+      param: '',
+    },
+  ],
   slots: [
-    { name: 'default', description: { cn: 'custom cell content', en: 'custom cell content' } },
-    { name: 'range-separator', description: { cn: 'custom range separator content', en: 'custom range separator content' } },
+    {
+      name: 'default',
+      description: { cn: 'custom cell content', en: 'custom cell content' },
+    },
+    {
+      name: 'range-separator',
+      description: { cn: 'custom range separator content', en: 'custom range separator content' },
+    },
   ],
 };
 export default doc;

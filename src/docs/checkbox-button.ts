@@ -33,9 +33,28 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'name', description: { cn: "native 'name' attribute", en: "native 'name' attribute" }, type: 'string', default: '—', value: [] },
-    { name: 'checked', description: { cn: 'if the checkbox is checked', en: 'if the checkbox is checked' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'name',
+      description: { cn: "native 'name' attribute", en: "native 'name' attribute" },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'checked',
+      description: { cn: 'if the checkbox is checked', en: 'if the checkbox is checked' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
   ],
-  events: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' }, type: 'function', param: '' }],
+  events: [
+    {
+      name: 'default',
+      description: { cn: 'customize default content', en: 'customize default content' },
+      type: 'function',
+      param: '',
+    },
+  ],
 };
 export default doc;

@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'src', description: { cn: 'image source, same as native.', en: 'image source, same as native.' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'src',
+      description: { cn: 'image source, same as native.', en: 'image source, same as native.' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'fit',
       description: {
@@ -33,7 +39,13 @@ const doc: TagDoc.TagDocInstance = {
       default: "'lazy'",
       value: [],
     },
-    { name: 'lazy', description: { cn: 'whether to use lazy load.', en: 'whether to use lazy load.' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'lazy',
+      description: { cn: 'whether to use lazy load.', en: 'whether to use lazy load.' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'scroll-container',
       description: { cn: 'the container to add scroll listener when using lazy load.', en: 'the container to add scroll listener when using lazy load.' },
@@ -55,8 +67,20 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'preview-src-list', description: { cn: 'allow big image preview.', en: 'allow big image preview.' }, type: 'string[', default: '—', value: [] },
-    { name: 'z-index', description: { cn: 'set image preview z-index.', en: 'set image preview z-index.' }, type: 'number', default: '—', value: [] },
+    {
+      name: 'preview-src-list',
+      description: { cn: 'allow big image preview.', en: 'allow big image preview.' },
+      type: 'string[',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'z-index',
+      description: { cn: 'set image preview z-index.', en: 'set image preview z-index.' },
+      type: 'number',
+      default: '—',
+      value: [],
+    },
     {
       name: 'initial-index',
       description: {
@@ -86,8 +110,18 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'load', description: { cn: 'same as native load.', en: 'same as native load.' }, type: '(e: event) => void', param: '' },
-    { name: 'error', description: { cn: 'same as native error.', en: 'same as native error.' }, type: '(e: error) => void', param: '' },
+    {
+      name: 'load',
+      description: { cn: 'same as native load.', en: 'same as native load.' },
+      type: '(e: event) => void',
+      param: '',
+    },
+    {
+      name: 'error',
+      description: { cn: 'same as native error.', en: 'same as native error.' },
+      type: '(e: error) => void',
+      param: '',
+    },
     {
       name: 'switch',
       description: { cn: 'trigger when switching images.', en: 'trigger when switching images.' },
@@ -109,8 +143,14 @@ const doc: TagDoc.TagDocInstance = {
       name: 'placeholder',
       description: { cn: "custom placeholder content when image hasn't loaded yet.", en: "custom placeholder content when image hasn't loaded yet." },
     },
-    { name: 'error', description: { cn: 'custom image load failed content.', en: 'custom image load failed content.' } },
-    { name: 'viewer', description: { cn: 'description of the image.', en: 'description of the image.' } },
+    {
+      name: 'error',
+      description: { cn: 'custom image load failed content.', en: 'custom image load failed content.' },
+    },
+    {
+      name: 'viewer',
+      description: { cn: 'description of the image.', en: 'description of the image.' },
+    },
   ],
 };
 export default doc;

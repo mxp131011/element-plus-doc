@@ -2,9 +2,27 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'title', description: { cn: 'Title', en: 'Title' }, type: 'string', default: '—', value: [] },
-    { name: 'confirm-button-text', description: { cn: 'Confirm button text', en: 'Confirm button text' }, type: 'string', default: '—', value: [] },
-    { name: 'cancel-button-text', description: { cn: 'Cancel button text', en: 'Cancel button text' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'title',
+      description: { cn: 'Title', en: 'Title' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'confirm-button-text',
+      description: { cn: 'Confirm button text', en: 'Confirm button text' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'cancel-button-text',
+      description: { cn: 'Cancel button text', en: 'Cancel button text' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'confirm-button-type',
       description: { cn: 'Confirm button type', en: 'Confirm button type' },
@@ -12,10 +30,34 @@ const doc: TagDoc.TagDocInstance = {
       default: "'success'",
       value: ['primary'],
     },
-    { name: 'cancel-button-type', description: { cn: 'Cancel button type', en: 'Cancel button type' }, type: 'enum', default: "'success'", value: ['primary'] },
-    { name: 'icon', description: { cn: 'Icon Component', en: 'Icon Component' }, type: 'string', default: 'QuestionFilled', value: ['Component'] },
-    { name: 'icon-color', description: { cn: 'Icon color', en: 'Icon color' }, type: 'string', default: '#f90', value: [] },
-    { name: 'hide-icon', description: { cn: 'is hide Icon', en: 'is hide Icon' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'cancel-button-type',
+      description: { cn: 'Cancel button type', en: 'Cancel button type' },
+      type: 'enum',
+      default: "'success'",
+      value: ['primary'],
+    },
+    {
+      name: 'icon',
+      description: { cn: 'Icon Component', en: 'Icon Component' },
+      type: 'string',
+      default: 'QuestionFilled',
+      value: ['Component'],
+    },
+    {
+      name: 'icon-color',
+      description: { cn: 'Icon color', en: 'Icon color' },
+      type: 'string',
+      default: '#f90',
+      value: [],
+    },
+    {
+      name: 'hide-icon',
+      description: { cn: 'is hide Icon', en: 'is hide Icon' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'hide-after',
       description: { cn: 'delay of disappear, in millisecond', en: 'delay of disappear, in millisecond' },
@@ -49,9 +91,24 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'confirm', description: { cn: 'triggers when click confirm button', en: 'triggers when click confirm button' }, type: 'function', param: '' },
-    { name: 'cancel', description: { cn: 'triggers when click cancel button', en: 'triggers when click cancel button' }, type: 'function', param: '' },
+    {
+      name: 'confirm',
+      description: { cn: 'triggers when click confirm button', en: 'triggers when click confirm button' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'cancel',
+      description: { cn: 'triggers when click cancel button', en: 'triggers when click cancel button' },
+      type: 'function',
+      param: '',
+    },
   ],
-  slots: [{ name: 'reference', description: { cn: 'HTML element that triggers Popconfirm', en: 'HTML element that triggers Popconfirm' } }],
+  slots: [
+    {
+      name: 'reference',
+      description: { cn: 'HTML element that triggers Popconfirm', en: 'HTML element that triggers Popconfirm' },
+    },
+  ],
 };
 export default doc;

@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'model-value / v-model', description: { cn: 'binding value', en: 'binding value' }, type: 'string', default: 'number[]', value: ['number'] },
+    {
+      name: 'model-value / v-model',
+      description: { cn: 'binding value', en: 'binding value' },
+      type: 'string',
+      default: 'number[]',
+      value: ['number'],
+    },
     {
       name: 'options',
       description: {
@@ -78,7 +84,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'separator', description: { cn: 'option label separator', en: 'option label separator' }, type: 'string', default: "' / '", value: [] },
+    {
+      name: 'separator',
+      description: { cn: 'option label separator', en: 'option label separator' },
+      type: 'string',
+      default: "' / '",
+      value: [],
+    },
     {
       name: 'filterable',
       description: { cn: 'whether the options can be searched', en: 'whether the options can be searched' },
@@ -137,7 +149,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'true',
       value: [],
     },
-    { name: 'tag-type', description: { cn: 'tag type', en: 'tag type' }, type: 'enum', default: "'info'", value: ['success'] },
+    {
+      name: 'tag-type',
+      description: { cn: 'tag type', en: 'tag type' },
+      type: 'enum',
+      default: "'info'",
+      value: ['success'],
+    },
     {
       name: 'validate-event',
       description: { cn: 'whether to trigger form validation', en: 'whether to trigger form validation' },
@@ -159,8 +177,18 @@ const doc: TagDoc.TagDocInstance = {
       type: 'function',
       param: '',
     },
-    { name: 'blur', description: { cn: 'triggers when Cascader blurs', en: 'triggers when Cascader blurs' }, type: 'function', param: '' },
-    { name: 'focus', description: { cn: 'triggers when Cascader focuses', en: 'triggers when Cascader focuses' }, type: 'function', param: '' },
+    {
+      name: 'blur',
+      description: { cn: 'triggers when Cascader blurs', en: 'triggers when Cascader blurs' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'focus',
+      description: { cn: 'triggers when Cascader focuses', en: 'triggers when Cascader focuses' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'visible-change',
       description: { cn: 'triggers when the dropdown appears/disappears', en: 'triggers when the dropdown appears/disappears' },
@@ -184,7 +212,12 @@ const doc: TagDoc.TagDocInstance = {
       type: 'function',
       param: '',
     },
-    { name: 'cascaderPanelRef', description: { cn: 'cascader panel ref', en: 'cascader panel ref' }, type: 'object', param: '' },
+    {
+      name: 'cascaderPanelRef',
+      description: { cn: 'cascader panel ref', en: 'cascader panel ref' },
+      type: 'object',
+      param: '',
+    },
     {
       name: 'togglePopperVisible',
       description: { cn: 'toggle the visible type of popper', en: 'toggle the visible type of popper' },
@@ -200,7 +233,10 @@ const doc: TagDoc.TagDocInstance = {
         en: 'the custom content of cascader node, which are current Node object and node data respectively.',
       },
     },
-    { name: 'empty', description: { cn: 'content when there is no matched options.', en: 'content when there is no matched options.' } },
+    {
+      name: 'empty',
+      description: { cn: 'content when there is no matched options.', en: 'content when there is no matched options.' },
+    },
   ],
 };
 export default doc;

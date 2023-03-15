@@ -2,10 +2,34 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'model-value / v-model', description: { cn: 'binding value', en: 'binding value' }, type: 'number', default: '—', value: [] },
-    { name: 'min', description: { cn: 'the minimum allowed value', en: 'the minimum allowed value' }, type: 'number', default: '-Infinity', value: [] },
-    { name: 'max', description: { cn: 'the maximum allowed value', en: 'the maximum allowed value' }, type: 'number', default: 'Infinity', value: [] },
-    { name: 'step', description: { cn: 'incremental step', en: 'incremental step' }, type: 'number', default: '1', value: [] },
+    {
+      name: 'model-value / v-model',
+      description: { cn: 'binding value', en: 'binding value' },
+      type: 'number',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'min',
+      description: { cn: 'the minimum allowed value', en: 'the minimum allowed value' },
+      type: 'number',
+      default: '-Infinity',
+      value: [],
+    },
+    {
+      name: 'max',
+      description: { cn: 'the maximum allowed value', en: 'the maximum allowed value' },
+      type: 'number',
+      default: 'Infinity',
+      value: [],
+    },
+    {
+      name: 'step',
+      description: { cn: 'incremental step', en: 'incremental step' },
+      type: 'number',
+      default: '1',
+      value: [],
+    },
     {
       name: 'step-strictly',
       description: { cn: 'whether input value can only be multiple of step', en: 'whether input value can only be multiple of step' },
@@ -13,8 +37,20 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'precision', description: { cn: 'precision of input value', en: 'precision of input value' }, type: 'number', default: '—', value: [] },
-    { name: 'size', description: { cn: 'size of the component', en: 'size of the component' }, type: 'enum', default: "'default'", value: ['large'] },
+    {
+      name: 'precision',
+      description: { cn: 'precision of input value', en: 'precision of input value' },
+      type: 'number',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'size',
+      description: { cn: 'size of the component', en: 'size of the component' },
+      type: 'enum',
+      default: "'default'",
+      value: ['large'],
+    },
     {
       name: 'readonly',
       description: { cn: 'same as <code>readonly</code> in native input', en: 'same as <code>readonly</code> in native input' },
@@ -87,13 +123,38 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'change', description: { cn: 'triggers when the value changes', en: 'triggers when the value changes' }, type: 'function', param: '' },
-    { name: 'blur', description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' }, type: 'function', param: '' },
-    { name: 'focus', description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' }, type: 'function', param: '' },
+    {
+      name: 'change',
+      description: { cn: 'triggers when the value changes', en: 'triggers when the value changes' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'blur',
+      description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'focus',
+      description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' },
+      type: 'function',
+      param: '',
+    },
   ],
   exposes: [
-    { name: 'focus', description: { cn: 'get focus the input component', en: 'get focus the input component' }, type: 'function', param: '' },
-    { name: 'blur', description: { cn: 'remove focus the input component', en: 'remove focus the input component' }, type: 'function', param: '' },
+    {
+      name: 'focus',
+      description: { cn: 'get focus the input component', en: 'get focus the input component' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'blur',
+      description: { cn: 'remove focus the input component', en: 'remove focus the input component' },
+      type: 'function',
+      param: '',
+    },
   ],
 };
 export default doc;

@@ -42,8 +42,14 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   slots: [
-    { name: '<code>default</code>', description: { cn: 'Real rendering DOM', en: 'Real rendering DOM' } },
-    { name: '<code>template</code>', description: { cn: 'Custom rendering skeleton template', en: 'Custom rendering skeleton template' } },
+    {
+      name: '<code>default</code>',
+      description: { cn: 'Real rendering DOM', en: 'Real rendering DOM' },
+    },
+    {
+      name: '<code>template</code>',
+      description: { cn: 'Custom rendering skeleton template', en: 'Custom rendering skeleton template' },
+    },
   ],
 };
 export default doc;

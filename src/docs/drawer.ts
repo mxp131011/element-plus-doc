@@ -136,7 +136,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '-',
       value: [],
     },
-    { name: 'z-index', description: { cn: 'set z-index', en: 'set z-index' }, type: 'number', default: '-', value: [] },
+    {
+      name: 'z-index',
+      description: { cn: 'set z-index', en: 'set z-index' },
+      type: 'number',
+      default: '-',
+      value: [],
+    },
   ],
   events: [
     {
@@ -176,7 +182,10 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   slots: [
-    { name: '—', description: { cn: "Drawer's Content", en: "Drawer's Content" } },
+    {
+      name: '—',
+      description: { cn: "Drawer's Content", en: "Drawer's Content" },
+    },
     {
       name: 'header',
       description: {
@@ -188,7 +197,10 @@ const doc: TagDoc.TagDocInstance = {
       name: 'title<deprecatedtag></deprecatedtag>',
       description: { cn: 'Works the same as the header slot. Use that instead.', en: 'Works the same as the header slot. Use that instead.' },
     },
-    { name: 'footer', description: { cn: 'Drawer footer Section', en: 'Drawer footer Section' } },
+    {
+      name: 'footer',
+      description: { cn: 'Drawer footer Section', en: 'Drawer footer Section' },
+    },
   ],
 };
 export default doc;

@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'mode', description: { cn: 'menu display mode', en: 'menu display mode' }, type: 'string', default: 'vertical', value: [] },
+    {
+      name: 'mode',
+      description: { cn: 'menu display mode', en: 'menu display mode' },
+      type: 'string',
+      default: 'vertical',
+      value: [],
+    },
     {
       name: 'collapse',
       description: {
@@ -133,9 +139,24 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   exposes: [
-    { name: 'open', description: { cn: 'open a specific sub-menu', en: 'open a specific sub-menu' }, type: 'function', param: '' },
-    { name: 'close', description: { cn: 'close a specific sub-menu', en: 'close a specific sub-menu' }, type: 'function', param: '' },
+    {
+      name: 'open',
+      description: { cn: 'open a specific sub-menu', en: 'open a specific sub-menu' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'close',
+      description: { cn: 'close a specific sub-menu', en: 'close a specific sub-menu' },
+      type: 'function',
+      param: '',
+    },
   ],
-  slots: [{ name: '—', description: { cn: 'customize default content', en: 'customize default content' } }],
+  slots: [
+    {
+      name: '—',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+  ],
 };
 export default doc;

@@ -19,7 +19,13 @@ const doc: TagDoc.TagDocInstance = {
       default: "'default'",
       value: ['large', 'default', 'small'],
     },
-    { name: 'max-height', description: { cn: 'the max height of menu', en: 'the max height of menu' }, type: 'string / number', default: '—', value: [] },
+    {
+      name: 'max-height',
+      description: { cn: 'the max height of menu', en: 'the max height of menu' },
+      type: 'string / number',
+      default: '—',
+      value: [],
+    },
     {
       name: 'split-button',
       description: { cn: 'whether a button group is displayed', en: 'whether a button group is displayed' },
@@ -27,9 +33,27 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'disabled', description: { cn: 'Whether to disable', en: 'Whether to disable' }, type: 'boolean', default: 'false', value: [] },
-    { name: 'placement', description: { cn: 'placement of pop menu', en: 'placement of pop menu' }, type: 'string', default: 'bottom', value: [] },
-    { name: 'trigger', description: { cn: 'how to trigger', en: 'how to trigger' }, type: 'string', default: 'hover', value: [] },
+    {
+      name: 'disabled',
+      description: { cn: 'Whether to disable', en: 'Whether to disable' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+    {
+      name: 'placement',
+      description: { cn: 'placement of pop menu', en: 'placement of pop menu' },
+      type: 'string',
+      default: 'bottom',
+      value: [],
+    },
+    {
+      name: 'trigger',
+      description: { cn: 'how to trigger', en: 'how to trigger' },
+      type: 'string',
+      default: 'hover',
+      value: [],
+    },
     {
       name: 'hide-on-click',
       description: { cn: 'whether to hide menu after clicking menu-item', en: 'whether to hide menu after clicking menu-item' },
@@ -126,8 +150,18 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   exposes: [
-    { name: '', description: { cn: 'open the dropdown menu', en: 'open the dropdown menu' }, type: 'function', param: '' },
-    { name: '', description: { cn: 'close the dropdown menu', en: 'close the dropdown menu' }, type: 'function', param: '' },
+    {
+      name: '',
+      description: { cn: 'open the dropdown menu', en: 'open the dropdown menu' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: '',
+      description: { cn: 'close the dropdown menu', en: 'close the dropdown menu' },
+      type: 'function',
+      param: '',
+    },
   ],
   slots: [
     {

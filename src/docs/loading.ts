@@ -30,10 +30,22 @@ const doc: TagDoc.TagDocInstance = {
         en: 'same as the <code>lock</code> modifier of <code>v-loading</code>',
       },
     },
-    { name: '', description: { cn: 'loading text that displays under the spinner', en: 'loading text that displays under the spinner' } },
-    { name: '', description: { cn: 'class name of the custom spinner', en: 'class name of the custom spinner' } },
-    { name: '', description: { cn: 'background color of the mask', en: 'background color of the mask' } },
-    { name: '', description: { cn: 'custom class name for Loading', en: 'custom class name for Loading' } },
+    {
+      name: '',
+      description: { cn: 'loading text that displays under the spinner', en: 'loading text that displays under the spinner' },
+    },
+    {
+      name: '',
+      description: { cn: 'class name of the custom spinner', en: 'class name of the custom spinner' },
+    },
+    {
+      name: '',
+      description: { cn: 'background color of the mask', en: 'background color of the mask' },
+    },
+    {
+      name: '',
+      description: { cn: 'custom class name for Loading', en: 'custom class name for Loading' },
+    },
   ],
 };
 export default doc;

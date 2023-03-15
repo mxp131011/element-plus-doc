@@ -19,11 +19,23 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: ['codeCSSPropertiescode'],
     },
-    { name: 'shadow', description: { cn: 'when to show card shadows', en: 'when to show card shadows' }, type: 'enum', default: 'never', value: ['always'] },
+    {
+      name: 'shadow',
+      description: { cn: 'when to show card shadows', en: 'when to show card shadows' },
+      type: 'enum',
+      default: 'never',
+      value: ['always'],
+    },
   ],
   slots: [
-    { name: 'default', description: { cn: 'customize default content', en: 'customize default content' } },
-    { name: 'header', description: { cn: 'content of the Card header', en: 'content of the Card header' } },
+    {
+      name: 'default',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+    {
+      name: 'header',
+      description: { cn: 'content of the Card header', en: 'content of the Card header' },
+    },
   ],
 };
 export default doc;

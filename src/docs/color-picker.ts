@@ -30,7 +30,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'color-format', description: { cn: 'color format of v-model', en: 'color format of v-model' }, type: 'enum', default: "'hsv'", value: ['hsl'] },
+    {
+      name: 'color-format',
+      description: { cn: 'color format of v-model', en: 'color format of v-model' },
+      type: 'enum',
+      default: "'hsv'",
+      value: ['hsl'],
+    },
     {
       name: 'popper-class',
       description: { cn: "custom class name for ColorPicker's dropdown", en: "custom class name for ColorPicker's dropdown" },
@@ -38,7 +44,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'predefine', description: { cn: 'predefined color options', en: 'predefined color options' }, type: 'object', default: '—', value: ['codestring'] },
+    {
+      name: 'predefine',
+      description: { cn: 'predefined color options', en: 'predefined color options' },
+      type: 'object',
+      default: '—',
+      value: ['codestring'],
+    },
     {
       name: 'validate-event',
       description: { cn: 'whether to trigger form validation', en: 'whether to trigger form validation' },
@@ -46,7 +58,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'true',
       value: [],
     },
-    { name: 'tabindex', description: { cn: 'ColorPicker tabindex', en: 'ColorPicker tabindex' }, type: 'string', default: '0', value: ['number'] },
+    {
+      name: 'tabindex',
+      description: { cn: 'ColorPicker tabindex', en: 'ColorPicker tabindex' },
+      type: 'string',
+      default: '0',
+      value: ['number'],
+    },
     {
       name: 'label<a11ytag></a11ytag>',
       description: { cn: 'ColorPicker aria-label', en: 'ColorPicker aria-label' },
@@ -54,10 +72,21 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'id', description: { cn: 'ColorPicker id', en: 'ColorPicker id' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'id',
+      description: { cn: 'ColorPicker id', en: 'ColorPicker id' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
   ],
   events: [
-    { name: 'change', description: { cn: 'triggers when input value changes', en: 'triggers when input value changes' }, type: 'function', param: '' },
+    {
+      name: 'change',
+      description: { cn: 'triggers when input value changes', en: 'triggers when input value changes' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'active-change',
       description: { cn: 'triggers when the current active color changes', en: 'triggers when the current active color changes' },
@@ -65,6 +94,13 @@ const doc: TagDoc.TagDocInstance = {
       param: '',
     },
   ],
-  exposes: [{ name: 'color', description: { cn: 'current color object', en: 'current color object' }, type: 'object', param: '' }],
+  exposes: [
+    {
+      name: 'color',
+      description: { cn: 'current color object', en: 'current color object' },
+      type: 'object',
+      param: '',
+    },
+  ],
 };
 export default doc;

@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'model-value / v-model', description: { cn: 'visibility of Dialog', en: 'visibility of Dialog' }, type: 'boolean', default: '—', value: [] },
+    {
+      name: 'model-value / v-model',
+      description: { cn: 'visibility of Dialog', en: 'visibility of Dialog' },
+      type: 'boolean',
+      default: '—',
+      value: [],
+    },
     {
       name: 'title',
       description: {
@@ -13,7 +19,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'width', description: { cn: 'width of Dialog', en: 'width of Dialog' }, type: 'string / number', default: '50%', value: [] },
+    {
+      name: 'width',
+      description: { cn: 'width of Dialog', en: 'width of Dialog' },
+      type: 'string / number',
+      default: '50%',
+      value: [],
+    },
     {
       name: 'fullscreen',
       description: { cn: 'whether the Dialog takes up full screen', en: 'whether the Dialog takes up full screen' },
@@ -28,7 +40,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '15vh',
       value: [],
     },
-    { name: 'modal', description: { cn: 'whether a mask is displayed', en: 'whether a mask is displayed' }, type: 'boolean', default: 'true', value: [] },
+    {
+      name: 'modal',
+      description: { cn: 'whether a mask is displayed', en: 'whether a mask is displayed' },
+      type: 'boolean',
+      default: 'true',
+      value: [],
+    },
     {
       name: 'append-to-body',
       description: {
@@ -128,14 +146,24 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'open', description: { cn: 'triggers when the Dialog opens', en: 'triggers when the Dialog opens' }, type: 'function', param: '' },
+    {
+      name: 'open',
+      description: { cn: 'triggers when the Dialog opens', en: 'triggers when the Dialog opens' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'opened',
       description: { cn: 'triggers when the Dialog opening animation ends', en: 'triggers when the Dialog opening animation ends' },
       type: 'function',
       param: '',
     },
-    { name: 'close', description: { cn: 'triggers when the Dialog closes', en: 'triggers when the Dialog closes' }, type: 'function', param: '' },
+    {
+      name: 'close',
+      description: { cn: 'triggers when the Dialog closes', en: 'triggers when the Dialog closes' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'closed',
       description: { cn: 'triggers when the Dialog closing animation ends', en: 'triggers when the Dialog closing animation ends' },
@@ -156,7 +184,10 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   slots: [
-    { name: '—', description: { cn: 'content of Dialog', en: 'content of Dialog' } },
+    {
+      name: '—',
+      description: { cn: 'content of Dialog', en: 'content of Dialog' },
+    },
     {
       name: 'header',
       description: {
@@ -168,7 +199,10 @@ const doc: TagDoc.TagDocInstance = {
       name: 'title<deprecatedtag></deprecatedtag>',
       description: { cn: 'Works the same as the header slot. Use that instead.', en: 'Works the same as the header slot. Use that instead.' },
     },
-    { name: 'footer', description: { cn: 'content of the Dialog footer', en: 'content of the Dialog footer' } },
+    {
+      name: 'footer',
+      description: { cn: 'content of the Dialog footer', en: 'content of the Dialog footer' },
+    },
   ],
 };
 export default doc;

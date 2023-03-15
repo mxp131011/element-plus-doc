@@ -12,7 +12,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: ['string'],
     },
-    { name: 'label', description: { cn: 'Label text.', en: 'Label text.' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'label',
+      description: { cn: 'Label text.', en: 'Label text.' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'label-width',
       description: {

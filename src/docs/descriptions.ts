@@ -46,9 +46,18 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   slots: [
-    { name: '—', description: { cn: 'customize default content', en: 'customize default content' } },
-    { name: 'title', description: { cn: 'custom title, display on the top left', en: 'custom title, display on the top left' } },
-    { name: 'extra', description: { cn: 'custom extra area, display on the top right', en: 'custom extra area, display on the top right' } },
+    {
+      name: '—',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+    {
+      name: 'title',
+      description: { cn: 'custom title, display on the top left', en: 'custom title, display on the top left' },
+    },
+    {
+      name: 'extra',
+      description: { cn: 'custom extra area, display on the top right', en: 'custom extra area, display on the top right' },
+    },
   ],
 };
 export default doc;

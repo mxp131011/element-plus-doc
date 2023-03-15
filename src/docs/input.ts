@@ -2,9 +2,27 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'type', description: { cn: 'type of input', en: 'type of input' }, type: 'string', default: "'textarea'", value: ['text'] },
-    { name: 'model-value / v-model', description: { cn: 'binding value', en: 'binding value' }, type: 'string', default: '—', value: ['number'] },
-    { name: 'maxlength', description: { cn: 'the max length', en: 'the max length' }, type: 'string', default: '—', value: ['number'] },
+    {
+      name: 'type',
+      description: { cn: 'type of input', en: 'type of input' },
+      type: 'string',
+      default: "'textarea'",
+      value: ['text'],
+    },
+    {
+      name: 'model-value / v-model',
+      description: { cn: 'binding value', en: 'binding value' },
+      type: 'string',
+      default: '—',
+      value: ['number'],
+    },
+    {
+      name: 'maxlength',
+      description: { cn: 'the max length', en: 'the max length' },
+      type: 'string',
+      default: '—',
+      value: ['number'],
+    },
     {
       name: 'minlength',
       description: { cn: 'same as <code>minlength</code> in native input', en: 'same as <code>minlength</code> in native input' },
@@ -22,7 +40,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'placeholder', description: { cn: 'placeholder of Input', en: 'placeholder of Input' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'placeholder',
+      description: { cn: 'placeholder of Input', en: 'placeholder of Input' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'clearable',
       description: {
@@ -60,7 +84,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'disabled', description: { cn: 'whether Input is disabled', en: 'whether Input is disabled' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'disabled',
+      description: { cn: 'whether Input is disabled', en: 'whether Input is disabled' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'size',
       description: { cn: "size of Input, works when <code>type</code> is not 'textarea'", en: "size of Input, works when <code>type</code> is not 'textarea'" },
@@ -68,8 +98,20 @@ const doc: TagDoc.TagDocInstance = {
       default: "'default'",
       value: ['large', 'default', 'small'],
     },
-    { name: 'prefix-icon', description: { cn: 'prefix icon component', en: 'prefix icon component' }, type: 'string', default: '—', value: ['Component'] },
-    { name: 'suffix-icon', description: { cn: 'suffix icon component', en: 'suffix icon component' }, type: 'string', default: '—', value: ['Component'] },
+    {
+      name: 'prefix-icon',
+      description: { cn: 'prefix icon component', en: 'prefix icon component' },
+      type: 'string',
+      default: '—',
+      value: ['Component'],
+    },
+    {
+      name: 'suffix-icon',
+      description: { cn: 'suffix icon component', en: 'suffix icon component' },
+      type: 'string',
+      default: '—',
+      value: ['Component'],
+    },
     {
       name: 'rows',
       description: {
@@ -132,7 +174,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'resize', description: { cn: 'control the resizability', en: 'control the resizability' }, type: 'enum', default: "'both'", value: ['none'] },
+    {
+      name: 'resize',
+      description: { cn: 'control the resizability', en: 'control the resizability' },
+      type: 'enum',
+      default: "'both'",
+      value: ['none'],
+    },
     {
       name: 'autofocus',
       description: { cn: 'same as <code>autofocus</code> in native input', en: 'same as <code>autofocus</code> in native input' },
@@ -154,7 +202,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'tabindex', description: { cn: 'input tabindex', en: 'input tabindex' }, type: 'string', default: '—', value: ['number'] },
+    {
+      name: 'tabindex',
+      description: { cn: 'input tabindex', en: 'input tabindex' },
+      type: 'string',
+      default: '—',
+      value: ['number'],
+    },
     {
       name: 'validate-event',
       description: { cn: 'whether to trigger form validation', en: 'whether to trigger form validation' },
@@ -171,8 +225,18 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'blur', description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' }, type: 'function', param: '' },
-    { name: 'focus', description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' }, type: 'function', param: '' },
+    {
+      name: 'blur',
+      description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'focus',
+      description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'change',
       description: {
@@ -182,7 +246,12 @@ const doc: TagDoc.TagDocInstance = {
       type: 'function',
       param: '',
     },
-    { name: 'input', description: { cn: 'triggers when the Input value change', en: 'triggers when the Input value change' }, type: 'function', param: '' },
+    {
+      name: 'input',
+      description: { cn: 'triggers when the Input value change', en: 'triggers when the Input value change' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'clear',
       description: {
@@ -194,15 +263,60 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   exposes: [
-    { name: 'blur', description: { cn: 'blur the input element', en: 'blur the input element' }, type: 'function', param: '' },
-    { name: 'clear', description: { cn: 'clear input value', en: 'clear input value' }, type: 'function', param: '' },
-    { name: 'focus', description: { cn: 'focus the input element', en: 'focus the input element' }, type: 'function', param: '' },
-    { name: 'input', description: { cn: 'HTML input element', en: 'HTML input element' }, type: 'object', param: '' },
-    { name: 'ref', description: { cn: 'HTML element, input or textarea', en: 'HTML element, input or textarea' }, type: 'object', param: '' },
-    { name: 'resizeTextarea', description: { cn: 'resize textarea', en: 'resize textarea' }, type: 'function', param: '' },
-    { name: 'select', description: { cn: 'select the text in input element', en: 'select the text in input element' }, type: 'function', param: '' },
-    { name: 'textarea', description: { cn: 'HTML textarea element', en: 'HTML textarea element' }, type: 'object', param: '' },
-    { name: 'textareaStyle', description: { cn: 'style of textarea', en: 'style of textarea' }, type: 'object', param: '' },
+    {
+      name: 'blur',
+      description: { cn: 'blur the input element', en: 'blur the input element' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'clear',
+      description: { cn: 'clear input value', en: 'clear input value' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'focus',
+      description: { cn: 'focus the input element', en: 'focus the input element' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'input',
+      description: { cn: 'HTML input element', en: 'HTML input element' },
+      type: 'object',
+      param: '',
+    },
+    {
+      name: 'ref',
+      description: { cn: 'HTML element, input or textarea', en: 'HTML element, input or textarea' },
+      type: 'object',
+      param: '',
+    },
+    {
+      name: 'resizeTextarea',
+      description: { cn: 'resize textarea', en: 'resize textarea' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'select',
+      description: { cn: 'select the text in input element', en: 'select the text in input element' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'textarea',
+      description: { cn: 'HTML textarea element', en: 'HTML textarea element' },
+      type: 'object',
+      param: '',
+    },
+    {
+      name: 'textareaStyle',
+      description: { cn: 'style of textarea', en: 'style of textarea' },
+      type: 'object',
+      param: '',
+    },
   ],
   slots: [
     {

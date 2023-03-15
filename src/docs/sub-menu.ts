@@ -2,7 +2,13 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'index', description: { cn: 'unique identification', en: 'unique identification' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'index',
+      description: { cn: 'unique identification', en: 'unique identification' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'popper-class',
       description: { cn: 'custom class name for the popup menu', en: 'custom class name for the popup menu' },
@@ -48,7 +54,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'level one SubMenu: true / other SubMenus: false',
       value: [],
     },
-    { name: 'popper-offset', description: { cn: 'offset of the popper', en: 'offset of the popper' }, type: 'number', default: '6', value: [] },
+    {
+      name: 'popper-offset',
+      description: { cn: 'offset of the popper', en: 'offset of the popper' },
+      type: 'number',
+      default: '6',
+      value: [],
+    },
     {
       name: 'expand-close-icon',
       description: {
@@ -91,8 +103,14 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   slots: [
-    { name: '—', description: { cn: 'customize default content', en: 'customize default content' } },
-    { name: 'title', description: { cn: 'customize title content', en: 'customize title content' } },
+    {
+      name: 'default',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+    {
+      name: 'title',
+      description: { cn: 'customize title content', en: 'customize title content' },
+    },
   ],
 };
 export default doc;

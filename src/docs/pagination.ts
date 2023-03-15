@@ -30,7 +30,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '-',
       value: [],
     },
-    { name: 'total', description: { cn: 'total item count', en: 'total item count' }, type: 'number', default: '—', value: [] },
+    {
+      name: 'total',
+      description: { cn: 'total item count', en: 'total item count' },
+      type: 'number',
+      default: '—',
+      value: [],
+    },
     {
       name: 'page-count',
       description: {
@@ -86,7 +92,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'prev-text', description: { cn: 'text for the prev button', en: 'text for the prev button' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'prev-text',
+      description: { cn: 'text for the prev button', en: 'text for the prev button' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'prev-icon',
       description: {
@@ -97,7 +109,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'ArrowLeft',
       value: ['Component'],
     },
-    { name: 'next-text', description: { cn: 'text for the next button', en: 'text for the next button' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'next-text',
+      description: { cn: 'text for the next button', en: 'text for the next button' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'next-icon',
       description: {

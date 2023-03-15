@@ -2,8 +2,20 @@ import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
   url: '',
   attributes: [
-    { name: 'label', description: { cn: 'label text', en: 'label text' }, type: 'string', default: '—', value: [] },
-    { name: 'span', description: { cn: 'colspan of column', en: 'colspan of column' }, type: 'number', default: '1', value: [] },
+    {
+      name: 'label',
+      description: { cn: 'label text', en: 'label text' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'span',
+      description: { cn: 'colspan of column', en: 'colspan of column' },
+      type: 'number',
+      default: '1',
+      value: [],
+    },
     {
       name: 'width',
       description: {
@@ -60,8 +72,14 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   slots: [
-    { name: '—', description: { cn: 'customize default content', en: 'customize default content' } },
-    { name: 'label', description: { cn: 'custom label', en: 'custom label' } },
+    {
+      name: '—',
+      description: { cn: 'customize default content', en: 'customize default content' },
+    },
+    {
+      name: 'label',
+      description: { cn: 'custom label', en: 'custom label' },
+    },
   ],
 };
 export default doc;

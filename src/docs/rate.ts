@@ -67,7 +67,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'Record&lt;number, string>`',
       value: ['string'],
     },
-    { name: 'void-color', description: { cn: 'color of unselected icons', en: 'color of unselected icons' }, type: 'string', default: '#C6D1DE', value: [] },
+    {
+      name: 'void-color',
+      description: { cn: 'color of unselected icons', en: 'color of unselected icons' },
+      type: 'string',
+      default: '#C6D1DE',
+      value: [],
+    },
     {
       name: 'disabled-void-color',
       description: { cn: 'color of unselected read-only icons', en: 'color of unselected read-only icons' },
@@ -99,7 +105,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'StarFilled',
       value: ['Component'],
     },
-    { name: 'show-text', description: { cn: 'whether to display texts', en: 'whether to display texts' }, type: 'boolean', default: 'false', value: [] },
+    {
+      name: 'show-text',
+      description: { cn: 'whether to display texts', en: 'whether to display texts' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
     {
       name: 'show-score',
       description: {
@@ -110,7 +122,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'text-color', description: { cn: 'color of texts', en: 'color of texts' }, type: 'string', default: '#1F2D3D', value: [] },
+    {
+      name: 'text-color',
+      description: { cn: 'color of texts', en: 'color of texts' },
+      type: 'string',
+      default: '#1F2D3D',
+      value: [],
+    },
     {
       name: 'texts',
       description: { cn: 'text array', en: 'text array' },
@@ -118,7 +136,13 @@ const doc: TagDoc.TagDocInstance = {
       default: "['Extremely bad', 'Disappointed', 'Fair', 'Satisfied', 'Surprise']",
       value: ['codestring'],
     },
-    { name: 'score-template', description: { cn: 'score template', en: 'score template' }, type: 'string', default: '{value}', value: [] },
+    {
+      name: 'score-template',
+      description: { cn: 'score template', en: 'score template' },
+      type: 'string',
+      default: '{value}',
+      value: [],
+    },
     {
       name: 'clearable',
       description: { cn: 'whether value can be reset to <code>0</code>', en: 'whether value can be reset to <code>0</code>' },
@@ -126,7 +150,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'false',
       value: [],
     },
-    { name: 'id', description: { cn: 'native <code>id</code> attribute', en: 'native <code>id</code> attribute' }, type: 'string', default: '—', value: [] },
+    {
+      name: 'id',
+      description: { cn: 'native <code>id</code> attribute', en: 'native <code>id</code> attribute' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
     {
       name: 'label<a11ytag></a11ytag>',
       description: { cn: 'same as <code>aria-label</code> in Rate', en: 'same as <code>aria-label</code> in Rate' },
@@ -136,11 +166,26 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'change', description: { cn: 'Triggers when rate value is changed', en: 'Triggers when rate value is changed' }, type: 'function', param: '' },
+    {
+      name: 'change',
+      description: { cn: 'Triggers when rate value is changed', en: 'Triggers when rate value is changed' },
+      type: 'function',
+      param: '',
+    },
   ],
   exposes: [
-    { name: 'setCurrentValue', description: { cn: 'set current value', en: 'set current value' }, type: 'function', param: '' },
-    { name: 'resetCurrentValue', description: { cn: 'reset current value', en: 'reset current value' }, type: 'function', param: '' },
+    {
+      name: 'setCurrentValue',
+      description: { cn: 'set current value', en: 'set current value' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'resetCurrentValue',
+      description: { cn: 'reset current value', en: 'reset current value' },
+      type: 'function',
+      param: '',
+    },
   ],
 };
 export default doc;

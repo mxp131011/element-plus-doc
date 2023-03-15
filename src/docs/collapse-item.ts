@@ -9,12 +9,30 @@ const doc: TagDoc.TagDocInstance = {
       default: '—',
       value: [],
     },
-    { name: 'title', description: { cn: 'title of the panel', en: 'title of the panel' }, type: 'string', default: '—', value: [] },
-    { name: 'disabled', description: { cn: 'disable the collapse item', en: 'disable the collapse item' }, type: 'boolean', default: '—', value: [] },
+    {
+      name: 'title',
+      description: { cn: 'title of the panel', en: 'title of the panel' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'disabled',
+      description: { cn: 'disable the collapse item', en: 'disable the collapse item' },
+      type: 'boolean',
+      default: '—',
+      value: [],
+    },
   ],
   slots: [
-    { name: '—', description: { cn: 'content of Collapse Item', en: 'content of Collapse Item' } },
-    { name: 'title', description: { cn: 'content of Collapse Item title', en: 'content of Collapse Item title' } },
+    {
+      name: '—',
+      description: { cn: 'content of Collapse Item', en: 'content of Collapse Item' },
+    },
+    {
+      name: 'title',
+      description: { cn: 'content of Collapse Item title', en: 'content of Collapse Item title' },
+    },
   ],
 };
 export default doc;

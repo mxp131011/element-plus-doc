@@ -9,8 +9,20 @@ const doc: TagDoc.TagDocInstance = {
       default: '0',
       value: [],
     },
-    { name: 'type', description: { cn: 'the type of progress bar', en: 'the type of progress bar' }, type: 'string', default: 'line', value: [] },
-    { name: 'stroke-width', description: { cn: 'the width of progress bar', en: 'the width of progress bar' }, type: 'number', default: '6', value: [] },
+    {
+      name: 'type',
+      description: { cn: 'the type of progress bar', en: 'the type of progress bar' },
+      type: 'string',
+      default: 'line',
+      value: [],
+    },
+    {
+      name: 'stroke-width',
+      description: { cn: 'the width of progress bar', en: 'the width of progress bar' },
+      type: 'number',
+      default: '6',
+      value: [],
+    },
     {
       name: 'text-inside',
       description: {
@@ -59,7 +71,13 @@ const doc: TagDoc.TagDocInstance = {
       default: '126',
       value: [],
     },
-    { name: 'show-text', description: { cn: 'whether to show percentage', en: 'whether to show percentage' }, type: 'boolean', default: 'true', value: [] },
+    {
+      name: 'show-text',
+      description: { cn: 'whether to show percentage', en: 'whether to show percentage' },
+      type: 'boolean',
+      default: 'true',
+      value: [],
+    },
     {
       name: 'stroke-linecap',
       description: { cn: 'circle/dashboard type shape at the end path', en: 'circle/dashboard type shape at the end path' },
@@ -67,7 +85,13 @@ const doc: TagDoc.TagDocInstance = {
       default: 'round',
       value: [],
     },
-    { name: 'format', description: { cn: 'custom text format', en: 'custom text format' }, type: 'function(percentage)', default: '—', value: [] },
+    {
+      name: 'format',
+      description: { cn: 'custom text format', en: 'custom text format' },
+      type: 'function(percentage)',
+      default: '—',
+      value: [],
+    },
   ],
   slots: [
     {
