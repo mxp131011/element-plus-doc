@@ -1,5 +1,6 @@
 type baseType =
   | '[Date, Date]'
+  | '[number, number]'
   | '[string, string]'
   | 'array'
   | 'boolean'
@@ -12,6 +13,7 @@ type baseType =
   | 'object'
   | 'string'
   | 'symbol'
+  | 'VNode'
   | `function(${string}`
   | `function`;
 
@@ -73,7 +75,7 @@ export declare namespace TagDoc {
 
   /** 标签文档实例 */
   interface TagDocInstance {
-    url: `component/${string}-api` | `component/${string}-attributes` | `component/${string}-属性` | `component/${string}.html`;
+    url: `component/${string}-api` | `component/${string}-attributes` | `component/${string}-slots` | `component/${string}-属性` | `component/${string}.html`;
     attributes?: Attribute[];
     events?: Event[];
     slots?: Slot[];

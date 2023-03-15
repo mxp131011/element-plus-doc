@@ -1,62 +1,62 @@
 import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
-  url: '',
+  url: 'component/dropdown.html#dropdown-attributes',
   attributes: [
     {
       name: 'type',
       description: {
-        cn: 'menu button type, refer to <code>Button</code> Component, only works when <code>split-button</code> is true',
+        cn: '菜单按钮类型，同 `Button` 组件一样，仅在 `split-button` 为 true 的情况下有效。',
         en: 'menu button type, refer to <code>Button</code> Component, only works when <code>split-button</code> is true',
       },
       type: 'string',
       default: '—',
-      value: [],
+      value: ['primary', 'success', 'warning', 'danger', 'info'],
     },
     {
       name: 'size',
-      description: { cn: 'menu size, also works on the split button', en: 'menu size, also works on the split button' },
+      description: { cn: '菜单尺寸，在 split-button 为 true 的情况下也对触发按钮生效。', en: 'menu size, also works on the split button' },
       type: 'enum',
       default: "'default'",
       value: ['large', 'default', 'small'],
     },
     {
       name: 'max-height',
-      description: { cn: 'the max height of menu', en: 'the max height of menu' },
-      type: 'string / number',
+      description: { cn: '菜单最大高度', en: 'the max height of menu' },
+      type: ['string', 'number'],
       default: '—',
       value: [],
     },
     {
       name: 'split-button',
-      description: { cn: 'whether a button group is displayed', en: 'whether a button group is displayed' },
+      description: { cn: '下拉触发元素呈现为按钮组', en: 'whether a button group is displayed' },
       type: 'boolean',
       default: 'false',
       value: [],
     },
     {
       name: 'disabled',
-      description: { cn: 'Whether to disable', en: 'Whether to disable' },
+      description: { cn: '是否禁用', en: 'Whether to disable' },
       type: 'boolean',
       default: 'false',
       value: [],
     },
     {
       name: 'placement',
-      description: { cn: 'placement of pop menu', en: 'placement of pop menu' },
+      description: { cn: '菜单弹出位置', en: 'placement of pop menu' },
       type: 'string',
       default: 'bottom',
-      value: [],
+      value: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end'],
     },
     {
       name: 'trigger',
-      description: { cn: 'how to trigger', en: 'how to trigger' },
+      description: { cn: '触发下拉的行为', en: 'how to trigger' },
       type: 'string',
       default: 'hover',
       value: [],
     },
     {
       name: 'hide-on-click',
-      description: { cn: 'whether to hide menu after clicking menu-item', en: 'whether to hide menu after clicking menu-item' },
+      description: { cn: '是否在点击菜单项后隐藏菜单', en: 'whether to hide menu after clicking menu-item' },
       type: 'boolean',
       default: 'true',
       value: [],
@@ -64,7 +64,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'show-timeout',
       description: {
-        cn: 'Delay time before show a dropdown (only works when trigger is <code>hover</code>)',
+        cn: '展开下拉菜单的延时，仅在 trigger 为 hover 时有效',
         en: 'Delay time before show a dropdown (only works when trigger is <code>hover</code>)',
       },
       type: 'number',
@@ -74,7 +74,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'hide-timeout',
       description: {
-        cn: 'Delay time before hide a dropdown (only works when trigger is <code>hover</code>)',
+        cn: '收起下拉菜单的延时（仅在 trigger 为 hover 时有效）',
         en: 'Delay time before hide a dropdown (only works when trigger is <code>hover</code>)',
       },
       type: 'number',
@@ -84,7 +84,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'role',
       description: {
-        cn: "The ARIA role attribute for the dropdown menu. Depending on the use case, you may want to change this to 'navigation'",
+        cn: '下拉菜单的 ARIA 属性。 根据具体场景，您可能想要将此更改为“navigation”',
         en: "The ARIA role attribute for the dropdown menu. Depending on the use case, you may want to change this to 'navigation'",
       },
       type: 'string',
@@ -94,7 +94,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'tabindex',
       description: {
-        cn: '<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">tabindex</a> of Dropdown',
+        cn: 'Dropdown 组件的 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">tabindex</a>',
         en: '<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">tabindex</a> of Dropdown',
       },
       type: 'number',
@@ -103,7 +103,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'popper-class',
-      description: { cn: "custom class name for Dropdown's dropdown", en: "custom class name for Dropdown's dropdown" },
+      description: { cn: '自定义浮层类名', en: "custom class name for Dropdown's dropdown" },
       type: 'string',
       default: '—',
       value: [],
@@ -111,16 +111,16 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'popper-options',
       description: {
-        cn: '<a href="https://popper.js.org/docs/v2/">popper.js</a> parameters',
+        cn: '<a href="https://popper.js.org/docs/v2/">popper.js</a>参数',
         en: '<a href="https://popper.js.org/docs/v2/">popper.js</a> parameters',
       },
       type: 'object',
-      default: "<code>{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}</code>",
+      default: "{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}",
       value: [],
     },
     {
       name: 'teleported',
-      description: { cn: 'whether the dropdown popup is teleported to the body', en: 'whether the dropdown popup is teleported to the body' },
+      description: { cn: '是否将下拉列表插入至 `body` 元素', en: 'whether the dropdown popup is teleported to the body' },
       type: 'boolean',
       default: 'true',
       value: [],
@@ -130,7 +130,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'click',
       description: {
-        cn: 'if <code>split-button</code> is <code>true</code>, triggers when left button is clicked',
+        cn: '`split-button` 为 true 时，点击左侧按钮的回调',
         en: 'if <code>split-button</code> is <code>true</code>, triggers when left button is clicked',
       },
       type: 'function',
@@ -138,45 +138,52 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'command',
-      description: { cn: 'triggers when a dropdown item is clicked', en: 'triggers when a dropdown item is clicked' },
+      description: { cn: '点击菜单项触发的事件回调', en: 'triggers when a dropdown item is clicked,' },
       type: 'function',
-      param: '',
+      param: {
+        cn: 'dropdown-item 的指令',
+        en: 'the command dispatched from the dropdown item',
+      },
     },
     {
       name: 'visible-change',
-      description: { cn: 'triggers when the dropdown appears/disappears', en: 'triggers when the dropdown appears/disappears' },
+      description: { cn: '下拉框出现/隐藏时触发', en: 'triggers when the dropdown appears/disappears' },
       type: 'function',
-      param: '',
+      param: {
+        cn: '出现则为 true，隐藏则为 false',
+        en: 'true when it appears, and false otherwise',
+      },
     },
   ],
   exposes: [
     {
-      name: '',
-      description: { cn: 'open the dropdown menu', en: 'open the dropdown menu' },
+      name: 'handleOpen',
+      description: { cn: '打开下拉菜单', en: 'open the dropdown menu' },
       type: 'function',
       param: '',
     },
     {
-      name: '',
-      description: { cn: 'close the dropdown menu', en: 'close the dropdown menu' },
+      name: 'handleClose',
+      description: { cn: '关闭下拉菜单', en: 'close the dropdown menu' },
       type: 'function',
       param: '',
     },
   ],
   slots: [
     {
-      name: '—',
+      name: 'default',
       description: {
-        cn: 'content of Dropdown. Notice: Must be a valid html dom element (ex. <code>&lt;span>, &lt;button> etc.</code>) or <code>el-component</code>, to attach the trigger listener',
+        cn: '下拉菜单的内容。 注意：必须是有效的 html DOM 元素 (例如 <code>&lt;span>, &lt;button> etc.</code>) 或 el-component，以附加监听触发器',
         en: 'content of Dropdown. Notice: Must be a valid html dom element (ex. <code>&lt;span>, &lt;button> etc.</code>) or <code>el-component</code>, to attach the trigger listener',
       },
     },
     {
       name: 'dropdown',
       description: {
-        cn: 'content of the Dropdown Menu, usually a <code>&lt;el-dropdown-menu></code> element',
+        cn: '下拉列表，通常是 <code>&lt;el-dropdown-menu></code> 组件',
         en: 'content of the Dropdown Menu, usually a <code>&lt;el-dropdown-menu></code> element',
       },
+      subtags: ['Dropdown-Menu'],
     },
   ],
 };

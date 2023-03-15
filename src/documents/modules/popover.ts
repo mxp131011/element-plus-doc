@@ -1,17 +1,17 @@
 import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
-  url: '',
+  url: 'component/popover.html',
   attributes: [
     {
       name: 'trigger',
-      description: { cn: 'how the popover is triggered', en: 'how the popover is triggered' },
-      type: 'string',
+      description: { cn: '触发方式', en: 'how the popover is triggered' },
+      type: 'enum',
       default: 'click',
-      value: [],
+      value: ['click', 'focus', 'hover', 'contextmenu'],
     },
     {
       name: 'title',
-      description: { cn: 'popover title', en: 'popover title' },
+      description: { cn: '标题', en: 'popover title' },
       type: 'string',
       default: '—',
       value: [],
@@ -19,7 +19,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'effect',
       description: {
-        cn: 'Tooltip theme, built-in theme: <code>dark</code> / <code>light</code>',
+        cn: 'Tooltip 主题，Element Plus 内置了 `dark` / `light` 两种主题',
         en: 'Tooltip theme, built-in theme: <code>dark</code> / <code>light</code>',
       },
       type: 'enum',
@@ -29,7 +29,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'content',
       description: {
-        cn: 'popover content, can be replaced with a default <code>slot</code>',
+        cn: '显示的内容，也可以通过写入默认 `slot` 修改显示内容',
         en: 'popover content, can be replaced with a default <code>slot</code>',
       },
       type: 'string',
@@ -39,41 +39,41 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'width',
       description: { cn: 'popover width', en: 'popover width' },
-      type: 'string / number',
+      type: ['string', 'number'],
       default: 'Min width 150px',
       value: [],
     },
     {
       name: 'placement',
-      description: { cn: 'popover placement', en: 'popover placement' },
-      type: 'string',
+      description: { cn: '出现位置', en: 'popover placement' },
+      type: 'enum',
       default: 'bottom',
-      value: [],
+      value: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end'],
     },
     {
       name: 'disabled',
-      description: { cn: 'whether Popover is disabled', en: 'whether Popover is disabled' },
+      description: { cn: 'Popover 是否可用', en: 'whether Popover is disabled' },
       type: 'boolean',
       default: 'false',
       value: [],
     },
     {
-      name: 'visible / v-model:visible',
-      description: { cn: 'whether popover is visible', en: 'whether popover is visible' },
+      name: 'visible',
+      description: { cn: 'Popover 是否显示,支持双向绑定(v-model:visible)', en: 'whether popover is visible,support(v-model:visible)' },
       type: 'boolean',
       default: 'false',
       value: [],
     },
     {
       name: 'offset',
-      description: { cn: 'popover offset', en: 'popover offset' },
+      description: { cn: '出现位置的偏移量', en: 'popover offset' },
       type: 'number',
       default: '0',
       value: [],
     },
     {
       name: 'transition',
-      description: { cn: 'popover transition animation', en: 'popover transition animation' },
+      description: { cn: '定义渐变动画', en: 'popover transition animation' },
       type: 'string',
       default: 'el-fade-in-linear',
       value: [],
@@ -81,7 +81,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'show-arrow',
       description: {
-        cn: 'whether a tooltip arrow is displayed or not. For more info, please refer to <a href="https://github.com/element-plus/element-plus/tree/dev/packages/components/popper">ElPopper</a>',
+        cn: '是否显示 Tooltip 箭头， 欲了解更多信息，请参考 <a href="https://github.com/element-plus/element-plus/tree/dev/packages/components/popper">ElPopper</a>',
         en: 'whether a tooltip arrow is displayed or not. For more info, please refer to <a href="https://github.com/element-plus/element-plus/tree/dev/packages/components/popper">ElPopper</a>',
       },
       type: 'boolean',
@@ -91,44 +91,44 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'popper-options',
       description: {
-        cn: 'parameters for <a href="https://popper.js.org/docs/v2/">popper.js</a>',
+        cn: '<a href="https://popper.js.org/docs/v2/">popper.js</a>的参数',
         en: 'parameters for <a href="https://popper.js.org/docs/v2/">popper.js</a>',
       },
       type: 'object',
-      default: "<code>{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}</code>",
+      default: "{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}",
       value: [],
     },
     {
       name: 'popper-class',
-      description: { cn: 'custom class name for popover', en: 'custom class name for popover' },
+      description: { cn: '为 popper 添加类名', en: 'custom class name for popover' },
       type: 'string',
       default: '—',
       value: [],
     },
     {
       name: 'popper-style',
-      description: { cn: 'custom style for popover', en: 'custom style for popover' },
-      type: 'string / object',
+      description: { cn: '为 popper 自定义样式', en: 'custom style for popover' },
+      type: ['string', 'object'],
       default: '—',
       value: [],
     },
     {
       name: 'show-after',
-      description: { cn: 'delay of appearance, in millisecond', en: 'delay of appearance, in millisecond' },
+      description: { cn: '在触发后多久显示内容，单位毫秒', en: 'delay of appearance, in millisecond' },
       type: 'number',
       default: '0',
       value: [],
     },
     {
       name: 'hide-after',
-      description: { cn: 'delay of disappear, in millisecond', en: 'delay of disappear, in millisecond' },
+      description: { cn: '延迟关闭，单位毫秒', en: 'delay of disappear, in millisecond' },
       type: 'number',
       default: '200',
       value: [],
     },
     {
       name: 'auto-close',
-      description: { cn: 'timeout in milliseconds to hide tooltip', en: 'timeout in milliseconds to hide tooltip' },
+      description: { cn: 'tooltip 出现后自动隐藏延时，单位毫秒', en: 'timeout in milliseconds to hide tooltip' },
       type: 'number',
       default: '0',
       value: [],
@@ -136,7 +136,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'tabindex',
       description: {
-        cn: '<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">tabindex</a> of Popover',
+        cn: 'Popover 组件的<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">tabindex</a>',
         en: '<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">tabindex</a> of Popover',
       },
       type: 'number',
@@ -145,7 +145,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'teleported',
-      description: { cn: 'whether popover dropdown is teleported to the body', en: 'whether popover dropdown is teleported to the body' },
+      description: { cn: '是否将 popover 的下拉列表插入至 body 元素', en: 'whether popover dropdown is teleported to the body' },
       type: 'boolean',
       default: 'true',
       value: [],
@@ -153,7 +153,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'persistent',
       description: {
-        cn: 'when popover inactive and <code>persistent</code> is <code>false</code> , popover will be destroyed',
+        cn: '当 popover 组件长时间不触发且 `persistent` 属性设置为 false 时, `popover` 将会被删除',
         en: 'when popover inactive and <code>persistent</code> is <code>false</code> , popover will be destroyed',
       },
       type: 'boolean',
@@ -164,49 +164,49 @@ const doc: TagDoc.TagDocInstance = {
   events: [
     {
       name: 'show',
-      description: { cn: 'triggers when popover shows', en: 'triggers when popover shows' },
+      description: { cn: '显示时触发', en: 'triggers when popover shows' },
       type: 'function',
       param: '',
     },
     {
       name: 'before-enter',
-      description: { cn: 'triggers when the entering transition before', en: 'triggers when the entering transition before' },
+      description: { cn: '显示动画播放前触发', en: 'triggers when the entering transition before' },
       type: 'function',
       param: '',
     },
     {
       name: 'after-enter',
-      description: { cn: 'triggers when the entering transition ends', en: 'triggers when the entering transition ends' },
+      description: { cn: '显示动画播放完毕后触发', en: 'triggers when the entering transition ends' },
       type: 'function',
       param: '',
     },
     {
       name: 'hide',
-      description: { cn: 'triggers when popover hides', en: 'triggers when popover hides' },
+      description: { cn: '隐藏时触发', en: 'triggers when popover hides' },
       type: 'function',
       param: '',
     },
     {
       name: 'before-leave',
-      description: { cn: 'triggers when the leaving transition before', en: 'triggers when the leaving transition before' },
+      description: { cn: '隐藏动画播放前触发', en: 'triggers when the leaving transition before' },
       type: 'function',
       param: '',
     },
     {
       name: 'after-leave',
-      description: { cn: 'triggers when the leaving transition ends', en: 'triggers when the leaving transition ends' },
+      description: { cn: '隐藏动画播放完毕后触发', en: 'triggers when the leaving transition ends' },
       type: 'function',
       param: '',
     },
   ],
   slots: [
     {
-      name: '—',
-      description: { cn: 'text content of popover', en: 'text content of popover' },
+      name: 'default',
+      description: { cn: 'Popover 内嵌 HTML 文本', en: 'text content of popover' },
     },
     {
       name: 'reference',
-      description: { cn: 'HTML element that triggers popover', en: 'HTML element that triggers popover' },
+      description: { cn: '触发 Popover 显示的 HTML 元素', en: 'HTML element that triggers popover' },
     },
   ],
 };

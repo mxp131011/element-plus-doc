@@ -1,38 +1,38 @@
 import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
-  url: '',
+  url: 'component/slider.html',
   attributes: [
     {
-      name: 'model-value / v-model',
-      description: { cn: 'binding value', en: 'binding value' },
+      name: 'model-value',
+      description: { cn: '选中项绑定值', en: 'binding value' },
       type: 'number',
       default: '0',
       value: [],
     },
     {
       name: 'min',
-      description: { cn: 'minimum value', en: 'minimum value' },
+      description: { cn: '最小值', en: 'minimum value' },
       type: 'number',
       default: '0',
       value: [],
     },
     {
       name: 'max',
-      description: { cn: 'maximum value', en: 'maximum value' },
+      description: { cn: '最大值', en: 'maximum value' },
       type: 'number',
       default: '100',
       value: [],
     },
     {
       name: 'disabled',
-      description: { cn: 'whether Slider is disabled', en: 'whether Slider is disabled' },
+      description: { cn: '是否禁用', en: 'whether Slider is disabled' },
       type: 'boolean',
       default: 'false',
       value: [],
     },
     {
       name: 'step',
-      description: { cn: 'step size', en: 'step size' },
+      description: { cn: '步长', en: 'step size' },
       type: 'number',
       default: '1',
       value: [],
@@ -40,7 +40,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'show-input',
       description: {
-        cn: 'whether to display an input box, works when <code>range</code> is false',
+        cn: '是否显示输入框，仅在非范围选择时有效',
         en: 'whether to display an input box, works when <code>range</code> is false',
       },
       type: 'boolean',
@@ -50,7 +50,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'show-input-controls',
       description: {
-        cn: 'whether to display control buttons when <code>show-input</code> is true',
+        cn: '在显示输入框的情况下，是否显示输入框的控制按钮',
         en: 'whether to display control buttons when <code>show-input</code> is true',
       },
       type: 'boolean',
@@ -59,7 +59,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'size',
-      description: { cn: 'size of the slider wrapper, will not work in vertical mode', en: 'size of the slider wrapper, will not work in vertical mode' },
+      description: { cn: 'slider 包装器的大小，垂直模式下该属性不可用', en: 'size of the slider wrapper, will not work in vertical mode' },
       type: 'enum',
       default: "'default'",
       value: ['large', 'default', 'small'],
@@ -67,58 +67,58 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'input-size',
       description: {
-        cn: 'size of the input box, when set <code>size</code>, the default is the value of <code>size</code>',
+        cn: '输入框的大小，如果设置了 `size` 属性，默认值自动取 `size`',
         en: 'size of the input box, when set <code>size</code>, the default is the value of <code>size</code>',
       },
-      type: 'string',
+      type: 'enum',
       default: 'default',
-      value: [],
+      value: ['large', 'default', 'small'],
     },
     {
       name: 'show-stops',
-      description: { cn: 'whether to display breakpoints', en: 'whether to display breakpoints' },
+      description: { cn: '是否显示间断点', en: 'whether to display breakpoints' },
       type: 'boolean',
       default: 'false',
       value: [],
     },
     {
       name: 'show-tooltip',
-      description: { cn: 'whether to display tooltip value', en: 'whether to display tooltip value' },
+      description: { cn: '是否显示提示信息', en: 'whether to display tooltip value' },
       type: 'boolean',
       default: 'true',
       value: [],
     },
     {
       name: 'format-tooltip',
-      description: { cn: 'format to display tooltip value', en: 'format to display tooltip value' },
+      description: { cn: '格式化提示信息', en: 'format to display tooltip value' },
       type: 'function(value)',
       default: '—',
       value: [],
     },
     {
       name: 'range',
-      description: { cn: 'whether to select a range', en: 'whether to select a range' },
+      description: { cn: '是否开启选择范围', en: 'whether to select a range' },
       type: 'boolean',
       default: 'false',
       value: [],
     },
     {
       name: 'vertical',
-      description: { cn: 'vertical mode', en: 'vertical mode' },
+      description: { cn: '垂直模式', en: 'vertical mode' },
       type: 'boolean',
       default: 'false',
       value: [],
     },
     {
       name: 'height',
-      description: { cn: 'Slider height, required in vertical mode', en: 'Slider height, required in vertical mode' },
+      description: { cn: '滑块高度，垂直模式必填', en: 'Slider height, required in vertical mode' },
       type: 'string',
       default: '—',
       value: [],
     },
     {
       name: 'label',
-      description: { cn: 'label for screen reader', en: 'label for screen reader' },
+      description: { cn: '屏幕阅读器标签', en: 'label for screen reader' },
       type: 'string',
       default: '—',
       value: [],
@@ -126,7 +126,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'range-start-label',
       description: {
-        cn: 'when <code>range</code> is true, screen reader label for the start of the range',
+        cn: '当 `range` 为true时，屏幕阅读器标签开始的标记',
         en: 'when <code>range</code> is true, screen reader label for the start of the range',
       },
       type: 'string',
@@ -136,7 +136,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'range-end-label',
       description: {
-        cn: 'when <code>range</code> is true, screen reader label for the end of the range',
+        cn: '当 `range` 为true时，屏幕阅读器标签结尾的标记',
         en: 'when <code>range</code> is true, screen reader label for the end of the range',
       },
       type: 'string',
@@ -146,7 +146,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'format-value-text',
       description: {
-        cn: 'format to display the <code>aria-valuenow</code> attribute for screen readers',
+        cn: '显示屏幕阅读器的 `aria-valuenow` 属性的格式',
         en: 'format to display the <code>aria-valuenow</code> attribute for screen readers',
       },
       type: 'function(value)',
@@ -156,7 +156,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'debounce',
       description: {
-        cn: 'debounce delay when typing, in milliseconds, works when <code>show-input</code> is true',
+        cn: '输入时的去抖延迟，毫秒，仅在 `show-input` 等于 true 时有效',
         en: 'debounce delay when typing, in milliseconds, works when <code>show-input</code> is true',
       },
       type: 'number',
@@ -165,22 +165,22 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'tooltip-class',
-      description: { cn: 'custom class name for the tooltip', en: 'custom class name for the tooltip' },
+      description: { cn: 'tooltip 的自定义类名', en: 'custom class name for the tooltip' },
       type: 'string',
       default: '—',
       value: [],
     },
     {
       name: 'placement',
-      description: { cn: 'position of Tooltip', en: 'position of Tooltip' },
+      description: { cn: 'Tooltip 出现的位置', en: 'position of Tooltip' },
       type: 'string',
       default: 'top',
-      value: [],
+      value: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end'],
     },
     {
       name: 'marks',
       description: {
-        cn: 'marks, type of key must be <code>number</code> and must in closed interval <code>[min, max]</code>, each mark can custom style',
+        cn: '标记， key 的类型必须为 `number` 且取值在闭区间 `[min, max]` 内，每个标记可以单独设置样式',
         en: 'marks, type of key must be <code>number</code> and must in closed interval <code>[min, max]</code>, each mark can custom style',
       },
       type: 'object',
@@ -189,7 +189,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'validate-event',
-      description: { cn: 'whether to trigger form validation', en: 'whether to trigger form validation' },
+      description: { cn: '输入时是否触发表单的校验', en: 'whether to trigger form validation' },
       type: 'boolean',
       default: 'true',
       value: [],
@@ -199,20 +199,20 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'change',
       description: {
-        cn: 'triggers when the value changes (if the mouse is being dragged, this event only fires when the mouse is released)',
+        cn: '值改变时触发（使用鼠标拖曳时，只在松开鼠标后触发）',
         en: 'triggers when the value changes (if the mouse is being dragged, this event only fires when the mouse is released)',
       },
       type: 'function',
-      param: '',
+      param: 'val，新状态的值',
     },
     {
       name: 'input',
       description: {
-        cn: "triggers when the data changes (It'll be emitted in real time during sliding)",
+        cn: '数据改变时触发（使用鼠标拖曳时，活动过程实时触发）',
         en: "triggers when the data changes (It'll be emitted in real time during sliding)",
       },
       type: 'function',
-      param: '',
+      param: 'val，改变后的值',
     },
   ],
 };
