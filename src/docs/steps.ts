@@ -8,7 +8,7 @@ const doc: TagDoc.TagDocInstance = {
         cn: 'the spacing of each step, will be responsive if omitted. Supports percentage.',
         en: 'the spacing of each step, will be responsive if omitted. Supports percentage.',
       },
-      type: 'number / string',
+      type: ['string', 'number'],
       default: '—',
       value: [],
     },

@@ -22,9 +22,9 @@ const doc: TagDoc.TagDocInstance = {
         cn: 'Tooltip theme, built-in theme: <code>dark</code> / <code>light</code>',
         en: 'Tooltip theme, built-in theme: <code>dark</code> / <code>light</code>',
       },
-      type: 'string',
-      default: 'light',
-      value: [],
+      type: 'enum',
+      default: "'light'",
+      value: ['dark', 'light'],
     },
     {
       name: 'content',

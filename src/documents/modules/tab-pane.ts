@@ -1,17 +1,17 @@
 import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
-  url: '',
+  url: 'component/tabs.html#tab-pane-属性',
   attributes: [
     {
       name: 'label',
-      description: { cn: 'title of the tab', en: 'title of the tab' },
+      description: { cn: '选项卡标题', en: 'title of the tab' },
       type: 'string',
       default: '—',
       value: [],
     },
     {
       name: 'disabled',
-      description: { cn: 'whether Tab is disabled', en: 'whether Tab is disabled' },
+      description: { cn: '是否禁用', en: 'whether Tab is disabled' },
       type: 'boolean',
       default: 'false',
       value: [],
@@ -19,23 +19,23 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'name',
       description: {
-        cn: 'identifier corresponding to the name of Tabs, representing the alias of the tab-pane',
+        cn: '与选项卡绑定值 value 对应的标识符，表示选项卡别名',
         en: 'identifier corresponding to the name of Tabs, representing the alias of the tab-pane',
       },
-      type: 'string / number',
-      default: "ordinal number of the tab-pane in the sequence, e.g. the first tab-pane is '0'",
+      type: ['string', 'number'],
+      default: '—',
       value: [],
     },
     {
       name: 'closable',
-      description: { cn: 'whether Tab is closable', en: 'whether Tab is closable' },
+      description: { cn: '标签是否可关闭', en: 'whether Tab is closable' },
       type: 'boolean',
       default: 'false',
       value: [],
     },
     {
       name: 'lazy',
-      description: { cn: 'whether Tab is lazily rendered', en: 'whether Tab is lazily rendered' },
+      description: { cn: '标签是否延迟渲染', en: 'whether Tab is lazily rendered' },
       type: 'boolean',
       default: 'false',
       value: [],
@@ -43,12 +43,12 @@ const doc: TagDoc.TagDocInstance = {
   ],
   slots: [
     {
-      name: '-',
-      description: { cn: "Tab-pane's content", en: "Tab-pane's content" },
+      name: 'default',
+      description: { cn: 'Tab-pane 的内容', en: "Tab-pane's content" },
     },
     {
       name: 'label',
-      description: { cn: "Tab-pane's label", en: "Tab-pane's label" },
+      description: { cn: 'Tab-pane 的标题内容', en: "Tab-pane's label" },
     },
   ],
 };

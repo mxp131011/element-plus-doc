@@ -105,7 +105,7 @@ const doc: TagDoc.TagDocInstance = {
         cn: "Drawer's size, if Drawer is horizontal mode, it effects the width property, otherwise it effects the height property, when size is <code>number</code> type, it describes the size by unit of pixels; when size is <code>string</code> type, it should be used with <code>x%</code> notation, other wise it will be interpreted to pixel unit",
         en: "Drawer's size, if Drawer is horizontal mode, it effects the width property, otherwise it effects the height property, when size is <code>number</code> type, it describes the size by unit of pixels; when size is <code>string</code> type, it should be used with <code>x%</code> notation, other wise it will be interpreted to pixel unit",
       },
-      type: 'number / string',
+      type: ['string', 'number'],
       default: "'30%'",
       value: [],
     },
