@@ -91,19 +91,30 @@ export class GetDocUtil {
     const docLang = this.lang === 'zh-CN' ? 'cn' : 'en';
     if (key === 'attributes') {
       (tagDoc[key] || []).forEach((row) => {
-        list.push(`| \`${row.name}\` | ${row.description[docLang]} | ${this._getTypeMD(row)} | \`${row.default || '—'}\` |\r`);
+        const desc = row.description[docLang] || '—';
+        const type = this._getTypeMD(row);
+        list.push(`| \`${row.name}\` |&emsp;&emsp;| ${desc} |&emsp;&emsp;| ${type} |&emsp;&emsp;| \`${row.default || '—'}\` | \r`);
+        list.push(`|                 |&emsp;&emsp;|         |&emsp;&emsp;|         |&emsp;&emsp;|                           | \r`);
       });
     } else if (key === 'events') {
       (tagDoc[key] || []).forEach((row) => {
-        list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${row.type}\` | ${this._getParamMD(row.param, docLang)} |\r`);
+        const desc = row.description[docLang] || '—';
+        const param = this._getParamMD(row.param, docLang);
+        list.push(`| \`${row.name}\` |&emsp;&emsp;| ${desc} |&emsp;&emsp;| \`${row.type}\` |&emsp;&emsp;| ${param} | \r`);
+        list.push(`|                 |&emsp;&emsp;|         |&emsp;&emsp;|                 |&emsp;&emsp;|          | \r`);
       });
     } else if (key === 'slots') {
       (tagDoc[key] || []).forEach((row) => {
-        list.push(`| \`${row.name}\` | ${row.description[docLang]} | ${row.subtags || '—'} |\r`);
+        const desc = row.description[docLang] || '—';
+        list.push(`| \`${row.name}\` |&emsp;&emsp;| ${desc} |&emsp;&emsp;| ${row.subtags || '—'} | \r`);
+        list.push(`|                 |&emsp;&emsp;|         |&emsp;&emsp;|                       | \r`);
       });
     } else if (key === 'exposes') {
       (tagDoc[key] || []).forEach((row) => {
-        list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${row.type}\` | ${this._getParamMD(row.param, docLang)} |\r`);
+        const desc = row.description[docLang] || '—';
+        const param = this._getParamMD(row.param, docLang);
+        list.push(`| \`${row.name}\` |&emsp;&emsp;| ${desc} |&emsp;&emsp;| \`${row.type}\` |&emsp;&emsp;| ${param} | \r`);
+        list.push(`|                 |&emsp;&emsp;|         |&emsp;&emsp;|                 |&emsp;&emsp;|          | \r`);
       });
     }
     return list;
@@ -117,16 +128,26 @@ export class GetDocUtil {
     const docLang = this.lang === 'zh-CN' ? 'cn' : 'en';
     if (key === 'attributes') {
       const row = _row as TagDoc.Attribute;
-      list.push(`| \`${row.name}\` | ${row.description[docLang]} | ${this._getTypeMD(row)} | \`${row.default || '—'}\` |\r`);
+      const desc = row.description[docLang] || '—';
+      const type = this._getTypeMD(row);
+      list.push(`| \`${row.name}\` |&emsp;&emsp;| ${desc} |&emsp;&emsp;| ${type} |&emsp;&emsp;| \`${row.default || '—'}\` | \r`);
+      list.push(`|                 |&emsp;&emsp;|         |&emsp;&emsp;|         |&emsp;&emsp;|                           | \r`);
     } else if (key === 'events') {
       const row = _row as TagDoc.Event;
-      list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${row.type}\` | ${this._getParamMD(row.param, docLang)} |\r`);
+      const desc = row.description[docLang] || '—';
+      const param = this._getParamMD(row.param, docLang);
+      list.push(`| \`${row.name}\` |&emsp;&emsp;| ${desc} |&emsp;&emsp;| \`${row.type}\` |&emsp;&emsp;| ${param} | \r`);
+      list.push(`|                 |&emsp;&emsp;|         |&emsp;&emsp;|                 |&emsp;&emsp;|          | \r`);
     } else if (key === 'slots') {
       const row = _row as TagDoc.Slot;
-      list.push(`| \`${row.name}\` | ${row.description[docLang]} | ${row.subtags || '—'} |\r`);
+      list.push(`| \`${row.name}\` |&emsp;&emsp;| ${row.description[docLang]} |&emsp;&emsp;| ${row.subtags || '—'} | \r`);
+      list.push(`|                 |&emsp;&emsp;|                             |&emsp;&emsp;|                       | \r`);
     } else if (key === 'exposes') {
       const row = _row as TagDoc.Expose;
-      list.push(`| \`${row.name}\` | ${row.description[docLang]} | \`${row.type}\` |  ${this._getParamMD(row.param, docLang)} |\r`);
+      const desc = row.description[docLang] || '—';
+      const param = this._getParamMD(row.param, docLang);
+      list.push(`| \`${row.name}\` |&emsp;&emsp;| ${desc} |&emsp;&emsp;| \`${row.type}\` |&emsp;&emsp;| ${param} | \r`);
+      list.push(`|                 |&emsp;&emsp;|         |&emsp;&emsp;|                 |&emsp;&emsp;|          | \r`);
     }
     return list;
   }
@@ -148,24 +169,24 @@ export class GetDocUtil {
     const list: string[] = [];
     switch (key) {
       case 'attributes':
-        list.push(`### el-${tag} ${docTitle.attributes}\r`);
-        list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} | ${tableTitle.default} |\r`);
-        list.push('|:------|:------|:------:|:------\r');
+        list.push(`### el-${tag} ${docTitle.attributes} </br></br>\r`);
+        list.push(`| ${tableTitle.name} |&emsp;&emsp;| ${tableTitle.description} |&emsp;&emsp;| ${tableTitle.type} |&emsp;&emsp;| ${tableTitle.default} | \r`);
+        list.push('|:-------------------|------------|:--------------------------|------------|:-------------------|------------|:----------------------| \r');
         break;
       case 'events':
-        list.push(`### el-${tag} ${docTitle.events}\r`);
-        list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} | ${tableTitle.parame} |\r`);
-        list.push('|:------|:------|:------:|:------|\r');
+        list.push(`### el-${tag} ${docTitle.events} </br></br>\r`);
+        list.push(`| ${tableTitle.name} |&emsp;&emsp;| ${tableTitle.description} |&emsp;&emsp;| ${tableTitle.type} |&emsp;&emsp;| ${tableTitle.parame} | \r`);
+        list.push('|:-------------------|------------|:--------------------------|------------|:-------------------|------------|:---------------------| \r');
         break;
       case 'slots':
-        list.push(`### el-${tag} ${docTitle.slots} \r`);
-        list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.subtags}|\r`);
-        list.push('|:------|:------|:------|\r');
+        list.push(`### el-${tag} ${docTitle.slots} </br></br>\r`);
+        list.push(`| ${tableTitle.name} |&emsp;&emsp;| ${tableTitle.description} |&emsp;&emsp;| ${tableTitle.subtags} | \r`);
+        list.push('|:-------------------|------------|:--------------------------|------------|:----------------------| \r');
         break;
       case 'exposes':
-        list.push(`### el-${tag} ${docTitle.exposes}\r`);
-        list.push(`| ${tableTitle.name} | ${tableTitle.description} | ${tableTitle.type} | ${tableTitle.parame} |\r`);
-        list.push('|:------|:------|:------:|:------|\r');
+        list.push(`### el-${tag} ${docTitle.exposes} </br></br>\r`);
+        list.push(`| ${tableTitle.name} |&emsp;&emsp;| ${tableTitle.description} |&emsp;&emsp;| ${tableTitle.type} |&emsp;&emsp;| ${tableTitle.parame} | \r`);
+        list.push('|:-------------------|------------|:--------------------------|------------|:------------------:|------------|:---------------------| \r');
         break;
       default:
         break;
