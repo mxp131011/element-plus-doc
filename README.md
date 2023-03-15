@@ -9,7 +9,7 @@
 1. 鼠标悬停到标签上，显示所有文档
 2. 鼠标悬停到标签标签下的某个属性，显示单个属性的文档
 
-![所有文档](/public/images/markdown/show_doc_all.jpg)
+![所有文档](https://res.mxpkf.com/element-plus-doc/markdown/show_doc_all.jpg)
 
 ### 智能感知
 
@@ -19,9 +19,9 @@
 
 3. 输入特定字符会触发代码片段
 
-![智能感知1](/public/images/markdown/show_intellisense_01.jpg)
-![智能感知2](/public/images/markdown/show_intellisense_02.jpg)
-![智能感知3](/public/images/markdown/show_intellisense_03.jpg)
+![智能感知1](https://res.mxpkf.com/element-plus-doc/markdown/show_intellisense_01.jpg)
+![智能感知2](https://res.mxpkf.com/element-plus-doc/markdown/show_intellisense_02.jpg)
+![智能感知3](https://res.mxpkf.com/element-plus-doc/markdown/show_intellisense_03.jpg)
 
 ### 添加官网链接
 
