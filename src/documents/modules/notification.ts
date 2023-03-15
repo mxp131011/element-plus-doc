@@ -97,7 +97,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'appendTo',
-      description: { cn: '设置通知栏在 DOM 中的插入元素', en: 'set the root element for the notification' },
+      description: { cn: '设置组件的根元素', en: 'set the root element for the message' },
       type: ['string', 'HTMLElement'],
       default: 'document.body',
       value: [],
