@@ -109,20 +109,25 @@ const doc: TagDoc.TagDocInstance = {
         cn: 'if <code>split-button</code> is <code>true</code>, triggers when left button is clicked',
         en: 'if <code>split-button</code> is <code>true</code>, triggers when left button is clicked',
       },
-      type: '',
-      tsType: '',
+      type: 'function',
+      param: '',
     },
-    { name: 'command', description: { cn: 'triggers when a dropdown item is clicked', en: 'triggers when a dropdown item is clicked' }, type: '', tsType: '' },
+    {
+      name: 'command',
+      description: { cn: 'triggers when a dropdown item is clicked', en: 'triggers when a dropdown item is clicked' },
+      type: 'function',
+      param: '',
+    },
     {
       name: 'visible-change',
       description: { cn: 'triggers when the dropdown appears/disappears', en: 'triggers when the dropdown appears/disappears' },
-      type: '',
-      tsType: '',
+      type: 'function',
+      param: '',
     },
   ],
   exposes: [
-    { name: '', description: { cn: 'open the dropdown menu', en: 'open the dropdown menu' }, type: '', tsType: '' },
-    { name: '', description: { cn: 'close the dropdown menu', en: 'close the dropdown menu' }, type: '', tsType: '' },
+    { name: '', description: { cn: 'open the dropdown menu', en: 'open the dropdown menu' }, type: 'function', param: '' },
+    { name: '', description: { cn: 'close the dropdown menu', en: 'close the dropdown menu' }, type: 'function', param: '' },
   ],
   slots: [
     {

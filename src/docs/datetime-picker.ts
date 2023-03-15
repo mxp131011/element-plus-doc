@@ -147,17 +147,17 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'change', description: { cn: 'triggers when user confirms the value', en: 'triggers when user confirms the value' }, type: '', tsType: '' },
-    { name: 'blur', description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' }, type: '', tsType: '' },
-    { name: 'focus', description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' }, type: '', tsType: '' },
+    { name: 'change', description: { cn: 'triggers when user confirms the value', en: 'triggers when user confirms the value' }, type: 'function', param: '' },
+    { name: 'blur', description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' }, type: 'function', param: '' },
+    { name: 'focus', description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' }, type: 'function', param: '' },
     {
       name: 'calendar-change',
       description: {
         cn: 'triggers when the calendar selected date is changed. Only for <code>datetimerange</code>',
         en: 'triggers when the calendar selected date is changed. Only for <code>datetimerange</code>',
       },
-      type: '',
-      tsType: '',
+      type: 'function',
+      param: '',
     },
     {
       name: 'visible-change',
@@ -165,11 +165,11 @@ const doc: TagDoc.TagDocInstance = {
         cn: "triggers when the DateTimePicker's dropdown appears/disappears",
         en: "triggers when the DateTimePicker's dropdown appears/disappears",
       },
-      type: '',
-      tsType: '',
+      type: 'function',
+      param: '',
     },
   ],
-  exposes: [{ name: '', description: { cn: 'focus the Input component', en: 'focus the Input component' }, type: '', tsType: '' }],
+  exposes: [{ name: '', description: { cn: 'focus the Input component', en: 'focus the Input component' }, type: 'function', param: '' }],
   slots: [
     { name: 'default', description: { cn: 'custom cell content', en: 'custom cell content' } },
     { name: 'range-separator', description: { cn: 'custom range separator content', en: 'custom range separator content' } },

@@ -129,7 +129,7 @@ const doc: TagDoc.TagDocInstance = {
       value: [],
     },
   ],
-  events: [{ name: 'change', description: { cn: 'triggers when value changes', en: 'triggers when value changes' }, type: '', tsType: '' }],
-  exposes: [{ name: 'focus', description: { cn: 'focus the Switch component', en: 'focus the Switch component' }, type: '', tsType: '' }],
+  events: [{ name: 'change', description: { cn: 'triggers when value changes', en: 'triggers when value changes' }, type: 'function', param: '' }],
+  exposes: [{ name: 'focus', description: { cn: 'focus the Switch component', en: 'focus the Switch component' }, type: 'function', param: '' }],
 };
 export default doc;

@@ -112,11 +112,11 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'change', description: { cn: 'Triggers when rate value is changed', en: 'Triggers when rate value is changed' }, type: 'function', tsType: '' },
+    { name: 'change', description: { cn: 'Triggers when rate value is changed', en: 'Triggers when rate value is changed' }, type: 'function', param: '' },
   ],
   exposes: [
-    { name: 'setCurrentValue', description: { cn: 'set current value', en: 'set current value' }, type: 'function', tsType: '' },
-    { name: 'resetCurrentValue', description: { cn: 'reset current value', en: 'reset current value' }, type: 'function', tsType: '' },
+    { name: 'setCurrentValue', description: { cn: 'set current value', en: 'set current value' }, type: 'function', param: '' },
+    { name: 'resetCurrentValue', description: { cn: 'reset current value', en: 'reset current value' }, type: 'function', param: '' },
   ],
 };
 export default doc;

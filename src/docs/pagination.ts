@@ -128,13 +128,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'size-change',
       description: { cn: 'triggers when <code>page-size</code> changes', en: 'triggers when <code>page-size</code> changes' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
     {
       name: 'current-change',
       description: { cn: 'triggers when <code>current-page</code> changes', en: 'triggers when <code>current-page</code> changes' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
     {
       name: 'prev-click',
@@ -143,7 +143,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'triggers when the prev button is clicked and current page changes',
       },
       type: 'function',
-      tsType: '',
+      param: '',
     },
     {
       name: 'next-click',
@@ -152,7 +152,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'triggers when the next button is clicked and current page changes',
       },
       type: 'function',
-      tsType: '',
+      param: '',
     },
   ],
   slots: [

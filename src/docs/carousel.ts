@@ -39,12 +39,17 @@ const doc: TagDoc.TagDocInstance = {
     { name: 'pause-on-hover', description: { cn: 'pause autoplay when hover', en: 'pause autoplay when hover' }, type: 'boolean', default: 'true', value: [] },
   ],
   events: [
-    { name: 'change', description: { cn: 'triggers when the active slide switches', en: 'triggers when the active slide switches' }, type: '', tsType: '' },
+    {
+      name: 'change',
+      description: { cn: 'triggers when the active slide switches', en: 'triggers when the active slide switches' },
+      type: 'function',
+      param: '',
+    },
   ],
   exposes: [
-    { name: '', description: { cn: 'manually switch slide', en: 'manually switch slide' }, type: '', tsType: '' },
-    { name: '', description: { cn: 'switch to the previous slide', en: 'switch to the previous slide' }, type: '', tsType: '' },
-    { name: '', description: { cn: 'switch to the next slide', en: 'switch to the next slide' }, type: '', tsType: '' },
+    { name: '', description: { cn: 'manually switch slide', en: 'manually switch slide' }, type: 'function', param: '' },
+    { name: '', description: { cn: 'switch to the previous slide', en: 'switch to the previous slide' }, type: 'function', param: '' },
+    { name: '', description: { cn: 'switch to the next slide', en: 'switch to the next slide' }, type: 'function', param: '' },
   ],
 };
 export default doc;

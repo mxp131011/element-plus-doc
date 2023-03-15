@@ -60,7 +60,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'change',
       description: { cn: 'triggers when the binding value changes', en: 'triggers when the binding value changes' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
   ],
   slots: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' } }],

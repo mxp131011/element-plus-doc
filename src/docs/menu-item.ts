@@ -10,8 +10,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'click',
       description: { cn: 'callback function when menu-item is clicked', en: 'callback function when menu-item is clicked' },
-      type: '',
-      tsType: '',
+      type: 'function',
+      param: '',
     },
   ],
   slots: [

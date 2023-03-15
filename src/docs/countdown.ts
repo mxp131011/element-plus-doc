@@ -16,10 +16,10 @@ const doc: TagDoc.TagDocInstance = {
     { name: '', description: { cn: 'Styles countdown values', en: 'Styles countdown values' }, type: 'string', default: 'CSSProperties[]', value: ['object'] },
   ],
   events: [
-    { name: '', description: { cn: 'Time difference change event', en: 'Time difference change event' }, type: 'function', tsType: '' },
-    { name: '', description: { cn: 'countdown end event', en: 'countdown end event' }, type: 'function', tsType: '' },
+    { name: '', description: { cn: 'Time difference change event', en: 'Time difference change event' }, type: 'function', param: '' },
+    { name: '', description: { cn: 'countdown end event', en: 'countdown end event' }, type: 'function', param: '' },
   ],
-  exposes: [{ name: 'displayValue', description: { cn: 'current display value', en: 'current display value' }, type: 'object', tsType: '' }],
+  exposes: [{ name: 'displayValue', description: { cn: 'current display value', en: 'current display value' }, type: 'object', param: '' }],
   slots: [
     { name: 'prefix', description: { cn: 'countdown value prefix', en: 'countdown value prefix' } },
     { name: 'suffix', description: { cn: 'countdown value suffix', en: 'countdown value suffix' } },

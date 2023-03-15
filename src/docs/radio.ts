@@ -22,7 +22,7 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'change', description: { cn: 'triggers when the bound value changes', en: 'triggers when the bound value changes' }, type: 'function', tsType: '' },
+    { name: 'change', description: { cn: 'triggers when the bound value changes', en: 'triggers when the bound value changes' }, type: 'function', param: '' },
   ],
   slots: [{ name: 'default', description: { cn: 'customize default content', en: 'customize default content' } }],
 };

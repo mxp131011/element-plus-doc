@@ -87,13 +87,13 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'change', description: { cn: 'triggers when the value changes', en: 'triggers when the value changes' }, type: 'function', tsType: '' },
-    { name: 'blur', description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' }, type: 'function', tsType: '' },
-    { name: 'focus', description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' }, type: 'function', tsType: '' },
+    { name: 'change', description: { cn: 'triggers when the value changes', en: 'triggers when the value changes' }, type: 'function', param: '' },
+    { name: 'blur', description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' }, type: 'function', param: '' },
+    { name: 'focus', description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' }, type: 'function', param: '' },
   ],
   exposes: [
-    { name: 'focus', description: { cn: 'get focus the input component', en: 'get focus the input component' }, type: 'function', tsType: '' },
-    { name: 'blur', description: { cn: 'remove focus the input component', en: 'remove focus the input component' }, type: 'function', tsType: '' },
+    { name: 'focus', description: { cn: 'get focus the input component', en: 'get focus the input component' }, type: 'function', param: '' },
+    { name: 'blur', description: { cn: 'remove focus the input component', en: 'remove focus the input component' }, type: 'function', param: '' },
   ],
 };
 export default doc;

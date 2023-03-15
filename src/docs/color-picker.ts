@@ -45,14 +45,14 @@ const doc: TagDoc.TagDocInstance = {
     { name: 'id', description: { cn: 'ColorPicker id', en: 'ColorPicker id' }, type: 'string', default: '—', value: [''] },
   ],
   events: [
-    { name: 'change', description: { cn: 'triggers when input value changes', en: 'triggers when input value changes' }, type: 'function', tsType: '' },
+    { name: 'change', description: { cn: 'triggers when input value changes', en: 'triggers when input value changes' }, type: 'function', param: '' },
     {
       name: 'active-change',
       description: { cn: 'triggers when the current active color changes', en: 'triggers when the current active color changes' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
   ],
-  exposes: [{ name: 'color', description: { cn: 'current color object', en: 'current color object' }, type: 'object', tsType: '' }],
+  exposes: [{ name: 'color', description: { cn: 'current color object', en: 'current color object' }, type: 'object', param: '' }],
 };
 export default doc;

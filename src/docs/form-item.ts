@@ -84,21 +84,21 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   exposes: [
-    { name: 'size', description: { cn: 'Form item size.', en: 'Form item size.' }, type: 'object', tsType: '' },
-    { name: 'validateMessage', description: { cn: 'Validation message.', en: 'Validation message.' }, type: 'object', tsType: '' },
-    { name: 'validateState', description: { cn: 'Validation state.', en: 'Validation state.' }, type: 'object', tsType: '' },
-    { name: 'validate', description: { cn: 'Validate form item.', en: 'Validate form item.' }, type: 'function', tsType: '' },
+    { name: 'size', description: { cn: 'Form item size.', en: 'Form item size.' }, type: 'object', param: '' },
+    { name: 'validateMessage', description: { cn: 'Validation message.', en: 'Validation message.' }, type: 'object', param: '' },
+    { name: 'validateState', description: { cn: 'Validation state.', en: 'Validation state.' }, type: 'object', param: '' },
+    { name: 'validate', description: { cn: 'Validate form item.', en: 'Validate form item.' }, type: 'function', param: '' },
     {
       name: 'resetField',
       description: { cn: 'Reset current field and remove validation result.', en: 'Reset current field and remove validation result.' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
     {
       name: 'clearValidate',
       description: { cn: 'Remove validation status of the field.', en: 'Remove validation status of the field.' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
   ],
   slots: [

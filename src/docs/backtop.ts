@@ -16,7 +16,7 @@ const doc: TagDoc.TagDocInstance = {
     { name: 'right', description: { cn: 'right distance.', en: 'right distance.' }, type: 'number', default: '40', value: [] },
     { name: 'bottom', description: { cn: 'bottom distance.', en: 'bottom distance.' }, type: 'number', default: '40', value: [] },
   ],
-  events: [{ name: 'click', description: { cn: 'triggers when click.', en: 'triggers when click.' }, type: '', tsType: '' }],
+  events: [{ name: 'click', description: { cn: 'triggers when click.', en: 'triggers when click.' }, type: 'function', param: '' }],
   slots: [{ name: 'default', description: { cn: 'customize default content.', en: 'customize default content.' } }],
 };
 export default doc;

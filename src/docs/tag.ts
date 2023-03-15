@@ -24,8 +24,8 @@ const doc: TagDoc.TagDocInstance = {
     { name: 'round', description: { cn: 'whether Tag is rounded', en: 'whether Tag is rounded' }, type: 'boolean', default: 'false', value: [] },
   ],
   events: [
-    { name: 'click', description: { cn: 'triggers when Tag is clicked', en: 'triggers when Tag is clicked' }, type: '', tsType: '' },
-    { name: 'close', description: { cn: 'triggers when Tag is removed', en: 'triggers when Tag is removed' }, type: '', tsType: '' },
+    { name: 'click', description: { cn: 'triggers when Tag is clicked', en: 'triggers when Tag is clicked' }, type: 'function', param: '' },
+    { name: 'close', description: { cn: 'triggers when Tag is removed', en: 'triggers when Tag is removed' }, type: 'function', param: '' },
   ],
   slots: [{ name: '—', description: { cn: 'customize default content', en: 'customize default content' } }],
 };

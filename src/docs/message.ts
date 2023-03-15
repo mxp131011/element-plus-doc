@@ -65,6 +65,6 @@ const doc: TagDoc.TagDocInstance = {
       value: [],
     },
   ],
-  exposes: [{ name: '', description: { cn: 'close the Message', en: 'close the Message' }, type: '', tsType: '' }],
+  exposes: [{ name: '', description: { cn: 'close the Message', en: 'close the Message' }, type: 'function', param: '' }],
 };
 export default doc;

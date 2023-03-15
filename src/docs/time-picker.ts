@@ -123,21 +123,21 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'change', description: { cn: 'triggers when user confirms the value', en: 'triggers when user confirms the value' }, type: '', tsType: '' },
-    { name: 'blur', description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' }, type: '', tsType: '' },
-    { name: 'focus', description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' }, type: '', tsType: '' },
+    { name: 'change', description: { cn: 'triggers when user confirms the value', en: 'triggers when user confirms the value' }, type: 'function', param: '' },
+    { name: 'blur', description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' }, type: 'function', param: '' },
+    { name: 'focus', description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' }, type: 'function', param: '' },
     {
       name: 'visible-change',
       description: { cn: "triggers when the TimePicker's dropdown appears/disappears", en: "triggers when the TimePicker's dropdown appears/disappears" },
-      type: '',
-      tsType: '',
+      type: 'function',
+      param: '',
     },
   ],
   exposes: [
-    { name: 'focus', description: { cn: 'focus the Input component', en: 'focus the Input component' }, type: '', tsType: '' },
-    { name: 'blur', description: { cn: 'blur the Input component', en: 'blur the Input component' }, type: '', tsType: '' },
-    { name: 'handleOpen', description: { cn: 'open the TimePicker popper', en: 'open the TimePicker popper' }, type: '', tsType: '' },
-    { name: 'handleClose', description: { cn: 'close the TimePicker popper', en: 'close the TimePicker popper' }, type: '', tsType: '' },
+    { name: 'focus', description: { cn: 'focus the Input component', en: 'focus the Input component' }, type: 'function', param: '' },
+    { name: 'blur', description: { cn: 'blur the Input component', en: 'blur the Input component' }, type: 'function', param: '' },
+    { name: 'handleOpen', description: { cn: 'open the TimePicker popper', en: 'open the TimePicker popper' }, type: 'function', param: '' },
+    { name: 'handleClose', description: { cn: 'close the TimePicker popper', en: 'close the TimePicker popper' }, type: 'function', param: '' },
   ],
 };
 export default doc;

@@ -6,7 +6,9 @@ const doc: TagDoc.TagDocInstance = {
     { name: 'title', description: { cn: 'main title', en: 'main title' }, type: 'string', default: 'Back', value: [] },
     { name: 'content', description: { cn: 'content', en: 'content' }, type: 'string', default: '—', value: [] },
   ],
-  events: [{ name: 'back', description: { cn: 'triggers when right side is clicked', en: 'triggers when right side is clicked' }, type: '', tsType: '' }],
+  events: [
+    { name: 'back', description: { cn: 'triggers when right side is clicked', en: 'triggers when right side is clicked' }, type: 'function', param: '' },
+  ],
   slots: [
     { name: 'icon', description: { cn: 'custom icon', en: 'custom icon' } },
     { name: 'title', description: { cn: 'title content', en: 'title content' } },

@@ -49,8 +49,8 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'confirm', description: { cn: 'triggers when click confirm button', en: 'triggers when click confirm button' }, type: 'function', tsType: '' },
-    { name: 'cancel', description: { cn: 'triggers when click cancel button', en: 'triggers when click cancel button' }, type: 'function', tsType: '' },
+    { name: 'confirm', description: { cn: 'triggers when click confirm button', en: 'triggers when click confirm button' }, type: 'function', param: '' },
+    { name: 'cancel', description: { cn: 'triggers when click cancel button', en: 'triggers when click cancel button' }, type: 'function', param: '' },
   ],
   slots: [{ name: 'reference', description: { cn: 'HTML element that triggers Popconfirm', en: 'HTML element that triggers Popconfirm' } }],
 };

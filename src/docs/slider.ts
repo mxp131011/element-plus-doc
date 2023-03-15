@@ -148,8 +148,8 @@ const doc: TagDoc.TagDocInstance = {
         cn: 'triggers when the value changes (if the mouse is being dragged, this event only fires when the mouse is released)',
         en: 'triggers when the value changes (if the mouse is being dragged, this event only fires when the mouse is released)',
       },
-      type: '',
-      tsType: '',
+      type: 'function',
+      param: '',
     },
     {
       name: 'input',
@@ -157,8 +157,8 @@ const doc: TagDoc.TagDocInstance = {
         cn: "triggers when the data changes (It'll be emitted in real time during sliding)",
         en: "triggers when the data changes (It'll be emitted in real time during sliding)",
       },
-      type: '',
-      tsType: '',
+      type: 'function',
+      param: '',
     },
   ],
 };

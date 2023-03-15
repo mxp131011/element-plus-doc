@@ -86,13 +86,13 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'load', description: { cn: 'same as native load.', en: 'same as native load.' }, type: '(e: event) => void', tsType: '' },
-    { name: 'error', description: { cn: 'same as native error.', en: 'same as native error.' }, type: '(e: error) => void', tsType: '' },
+    { name: 'load', description: { cn: 'same as native load.', en: 'same as native load.' }, type: '(e: event) => void', param: '' },
+    { name: 'error', description: { cn: 'same as native error.', en: 'same as native error.' }, type: '(e: error) => void', param: '' },
     {
       name: 'switch',
       description: { cn: 'trigger when switching images.', en: 'trigger when switching images.' },
       type: '(index: number) => void',
-      tsType: '',
+      param: '',
     },
     {
       name: 'close',
@@ -101,7 +101,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'trigger when clicking on close button or when <code>hide-on-click-modal</code> enabled clicking on backdrop.',
       },
       type: '() => void',
-      tsType: '',
+      param: '',
     },
   ],
   slots: [

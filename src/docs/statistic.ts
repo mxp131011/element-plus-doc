@@ -18,7 +18,7 @@ const doc: TagDoc.TagDocInstance = {
     { name: '', description: { cn: 'Numeric titles', en: 'Numeric titles' }, type: 'string', default: '—', value: [''] },
     { name: '', description: { cn: 'Styles numeric values', en: 'Styles numeric values' }, type: 'string', default: 'CSSProperties[]', value: ['object'] },
   ],
-  exposes: [{ name: 'displayValue', description: { cn: 'current display value', en: 'current display value' }, type: 'object', tsType: '' }],
+  exposes: [{ name: 'displayValue', description: { cn: 'current display value', en: 'current display value' }, type: 'object', param: '' }],
   slots: [
     { name: 'prefix', description: { cn: 'Numeric prefix', en: 'Numeric prefix' } },
     { name: 'suffix', description: { cn: 'Suffixes for numeric values', en: 'Suffixes for numeric values' } },

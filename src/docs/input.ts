@@ -171,8 +171,8 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'blur', description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' }, type: 'function', tsType: '' },
-    { name: 'focus', description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' }, type: 'function', tsType: '' },
+    { name: 'blur', description: { cn: 'triggers when Input blurs', en: 'triggers when Input blurs' }, type: 'function', param: '' },
+    { name: 'focus', description: { cn: 'triggers when Input focuses', en: 'triggers when Input focuses' }, type: 'function', param: '' },
     {
       name: 'change',
       description: {
@@ -180,9 +180,9 @@ const doc: TagDoc.TagDocInstance = {
         en: 'triggers when the input box loses focus or the user presses Enter, only if the modelValue has changed',
       },
       type: 'function',
-      tsType: '',
+      param: '',
     },
-    { name: 'input', description: { cn: 'triggers when the Input value change', en: 'triggers when the Input value change' }, type: 'function', tsType: '' },
+    { name: 'input', description: { cn: 'triggers when the Input value change', en: 'triggers when the Input value change' }, type: 'function', param: '' },
     {
       name: 'clear',
       description: {
@@ -190,19 +190,19 @@ const doc: TagDoc.TagDocInstance = {
         en: 'triggers when the Input is cleared by clicking the clear button',
       },
       type: 'function',
-      tsType: '',
+      param: '',
     },
   ],
   exposes: [
-    { name: 'blur', description: { cn: 'blur the input element', en: 'blur the input element' }, type: 'function', tsType: '' },
-    { name: 'clear', description: { cn: 'clear input value', en: 'clear input value' }, type: 'function', tsType: '' },
-    { name: 'focus', description: { cn: 'focus the input element', en: 'focus the input element' }, type: 'function', tsType: '' },
-    { name: 'input', description: { cn: 'HTML input element', en: 'HTML input element' }, type: 'object', tsType: '' },
-    { name: 'ref', description: { cn: 'HTML element, input or textarea', en: 'HTML element, input or textarea' }, type: 'object', tsType: '' },
-    { name: 'resizeTextarea', description: { cn: 'resize textarea', en: 'resize textarea' }, type: 'function', tsType: '' },
-    { name: 'select', description: { cn: 'select the text in input element', en: 'select the text in input element' }, type: 'function', tsType: '' },
-    { name: 'textarea', description: { cn: 'HTML textarea element', en: 'HTML textarea element' }, type: 'object', tsType: '' },
-    { name: 'textareaStyle', description: { cn: 'style of textarea', en: 'style of textarea' }, type: 'object', tsType: '' },
+    { name: 'blur', description: { cn: 'blur the input element', en: 'blur the input element' }, type: 'function', param: '' },
+    { name: 'clear', description: { cn: 'clear input value', en: 'clear input value' }, type: 'function', param: '' },
+    { name: 'focus', description: { cn: 'focus the input element', en: 'focus the input element' }, type: 'function', param: '' },
+    { name: 'input', description: { cn: 'HTML input element', en: 'HTML input element' }, type: 'object', param: '' },
+    { name: 'ref', description: { cn: 'HTML element, input or textarea', en: 'HTML element, input or textarea' }, type: 'object', param: '' },
+    { name: 'resizeTextarea', description: { cn: 'resize textarea', en: 'resize textarea' }, type: 'function', param: '' },
+    { name: 'select', description: { cn: 'select the text in input element', en: 'select the text in input element' }, type: 'function', param: '' },
+    { name: 'textarea', description: { cn: 'HTML textarea element', en: 'HTML textarea element' }, type: 'object', param: '' },
+    { name: 'textareaStyle', description: { cn: 'style of textarea', en: 'style of textarea' }, type: 'object', param: '' },
   ],
   slots: [
     {

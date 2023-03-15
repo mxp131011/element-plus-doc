@@ -168,12 +168,12 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   exposes: [
-    { name: 'popperRef', description: { cn: 'el-popper component instance', en: 'el-popper component instance' }, type: 'objcet', tsType: '' },
+    { name: 'popperRef', description: { cn: 'el-popper component instance', en: 'el-popper component instance' }, type: 'objcet', param: '' },
     {
       name: 'contentRef',
       description: { cn: 'el-tooltip-content component instance', en: 'el-tooltip-content component instance' },
       type: 'objcet',
-      tsType: '',
+      param: '',
     },
     {
       name: 'isFocusInsideContent',
@@ -182,27 +182,27 @@ const doc: TagDoc.TagDocInstance = {
         en: 'validate current focus event is trigger inside el-tooltip-content',
       },
       type: 'function',
-      tsType: '',
+      param: '',
     },
     {
       name: 'updatePopper',
       description: { cn: 'update el-popper component instance', en: 'update el-popper component instance' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
     {
       name: 'onOpen',
       description: { cn: 'expose onOpen function to mange el-tooltip open state', en: 'expose onOpen function to mange el-tooltip open state' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
     {
       name: 'onClose',
       description: { cn: 'expose onOpen function to mange el-tooltip open state', en: 'expose onOpen function to mange el-tooltip open state' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
-    { name: 'hide', description: { cn: 'expose hide function', en: 'expose hide function' }, type: 'function', tsType: '' },
+    { name: 'hide', description: { cn: 'expose hide function', en: 'expose hide function' }, type: 'function', param: '' },
   ],
   slots: [
     { name: 'default', description: { cn: 'Tooltip triggering &amp; reference element', en: 'Tooltip triggering &amp; reference element' } },

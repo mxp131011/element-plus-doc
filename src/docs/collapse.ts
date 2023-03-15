@@ -17,7 +17,9 @@ const doc: TagDoc.TagDocInstance = {
       value: [],
     },
   ],
-  events: [{ name: 'change', description: { cn: 'triggers when active panels change', en: 'triggers when active panels change' }, type: '', tsType: '' }],
+  events: [
+    { name: 'change', description: { cn: 'triggers when active panels change', en: 'triggers when active panels change' }, type: 'function', param: '' },
+  ],
   slots: [{ name: '-', description: { cn: 'customize default content', en: 'customize default content' } }],
 };
 export default doc;

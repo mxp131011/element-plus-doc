@@ -113,13 +113,28 @@ const doc: TagDoc.TagDocInstance = {
     },
   ],
   events: [
-    { name: 'select', description: { cn: 'callback function when menu is activated', en: 'callback function when menu is activated' }, type: '', tsType: '' },
-    { name: 'open', description: { cn: 'callback function when sub-menu expands', en: 'callback function when sub-menu expands' }, type: '', tsType: '' },
-    { name: 'close', description: { cn: 'callback function when sub-menu collapses', en: 'callback function when sub-menu collapses' }, type: '', tsType: '' },
+    {
+      name: 'select',
+      description: { cn: 'callback function when menu is activated', en: 'callback function when menu is activated' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'open',
+      description: { cn: 'callback function when sub-menu expands', en: 'callback function when sub-menu expands' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'close',
+      description: { cn: 'callback function when sub-menu collapses', en: 'callback function when sub-menu collapses' },
+      type: 'function',
+      param: '',
+    },
   ],
   exposes: [
-    { name: 'open', description: { cn: 'open a specific sub-menu', en: 'open a specific sub-menu' }, type: '', tsType: '' },
-    { name: 'close', description: { cn: 'close a specific sub-menu', en: 'close a specific sub-menu' }, type: '', tsType: '' },
+    { name: 'open', description: { cn: 'open a specific sub-menu', en: 'open a specific sub-menu' }, type: 'function', param: '' },
+    { name: 'close', description: { cn: 'close a specific sub-menu', en: 'close a specific sub-menu' }, type: 'function', param: '' },
   ],
   slots: [{ name: '—', description: { cn: 'customize default content', en: 'customize default content' } }],
 };

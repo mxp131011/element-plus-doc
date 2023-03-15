@@ -62,6 +62,6 @@ const doc: TagDoc.TagDocInstance = {
     },
     { name: '', description: { cn: 'initial zIndex', en: 'initial zIndex' }, type: 'number', default: '0', value: [] },
   ],
-  exposes: [{ name: '', description: { cn: 'close the Notification', en: 'close the Notification' }, type: '', tsType: '' }],
+  exposes: [{ name: '', description: { cn: 'close the Notification', en: 'close the Notification' }, type: 'function', param: '' }],
 };
 export default doc;

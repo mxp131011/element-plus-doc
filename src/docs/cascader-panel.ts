@@ -29,13 +29,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'change',
       description: { cn: 'triggers when the binding value changes', en: 'triggers when the binding value changes' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
     {
       name: 'expand-change',
       description: { cn: 'triggers when expand option changes', en: 'triggers when expand option changes' },
       type: 'function',
-      tsType: '',
+      param: '',
     },
     {
       name: 'close',
@@ -44,7 +44,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'close panel event, provided to Cascader to put away the panel judgment.',
       },
       type: 'function',
-      tsType: '',
+      param: '',
     },
   ],
   exposes: [
@@ -55,9 +55,9 @@ const doc: TagDoc.TagDocInstance = {
         en: 'get an array of currently selected node,(leafOnly) whether only return the leaf checked nodes, default is <code>false</code>',
       },
       type: 'function',
-      tsType: '',
+      param: '',
     },
-    { name: 'clearCheckedNodes', description: { cn: 'clear checked nodes', en: 'clear checked nodes' }, type: 'function', tsType: '' },
+    { name: 'clearCheckedNodes', description: { cn: 'clear checked nodes', en: 'clear checked nodes' }, type: 'function', param: '' },
   ],
   slots: [
     {
