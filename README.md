@@ -1,6 +1,6 @@
 # element-plus-doc README
 
-`element-plus` 的一个工具插件,用于智能提示，悬停显示文档
+`element-plus` 的一个工具插件,用于智能提示，悬停显示属性文档等等，整理至`element-plus` 2.3.0 的文档，后续`element-plus`更新，也会跟着更新，如未及时更新，请大家到[github](https://github.com/mxp131011/element-plus-doc)提交[issues](https://github.com/mxp131011/element-plus-doc/issues) 催促作者更新，有什么问题也请大家及时反馈，[github](https://github.com/mxp131011/element-plus-doc)访问不了也可到[gitee](https://gitee.com/mxp131011/element-plus-doc)提交[issues](https://gitee.com/mxp131011/element-plus-doc/issues)，或者加作者微信:mxp131011 或者反馈。
 
 ## 功能
 
@@ -25,8 +25,8 @@
 
 ### 添加官网链接
 
-1. 鼠标悬停到标签上，不但会提示文档，还会在最后添加官网链接 （仅在标签上生效，标签内的属性不会添加官网链接）
+1. 悬停添加官网链接
 
 ## 特别说明
 
-由于本人还在上班，回家又要照顾孩子所以，本插件暂时实现三个组件(`<el-autocomplete>`, `<el-button>`, `<el-button-group>`)的提示，预计在 2023 年 4 月前添加完成所有组件的提示
+大部分文档已经完成（70 个已完成个左右，还剩二十几个，预计明天完成）
