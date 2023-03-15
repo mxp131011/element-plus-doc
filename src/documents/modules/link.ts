@@ -1,51 +1,51 @@
 import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
-  url: '',
+  url: 'component/link.html',
   attributes: [
     {
       name: 'type',
-      description: { cn: 'type', en: 'type' },
+      description: { cn: '类型', en: 'type' },
       type: 'enum',
       default: "'success'",
       value: ['primary', 'success', 'warning', 'danger', 'info'],
     },
     {
       name: 'underline',
-      description: { cn: 'whether the component has underline', en: 'whether the component has underline' },
+      description: { cn: '是否下划线', en: 'whether the component has underline' },
       type: 'boolean',
       default: 'true',
       value: [],
     },
     {
       name: 'disabled',
-      description: { cn: 'whether the component is disabled', en: 'whether the component is disabled' },
+      description: { cn: '是否禁用状态', en: 'whether the component is disabled' },
       type: 'boolean',
       default: 'false',
       value: [],
     },
     {
       name: 'href',
-      description: { cn: "same as native hyperlink's <code>href</code>", en: "same as native hyperlink's <code>href</code>" },
+      description: { cn: '原生 `href` 属性', en: "same as native hyperlink's <code>href</code>" },
       type: 'string',
       default: '—',
       value: [],
     },
     {
       name: 'icon',
-      description: { cn: 'icon component', en: 'icon component' },
-      type: 'string',
+      description: { cn: '图标组件', en: 'icon component' },
+      type: ['Component', 'string'],
       default: '—',
-      value: ['Component'],
+      value: [],
     },
   ],
   slots: [
     {
       name: 'default',
-      description: { cn: 'customize default content', en: 'customize default content' },
+      description: { cn: '自定义默认内容', en: 'customize default content' },
     },
     {
       name: 'icon',
-      description: { cn: 'customize icon component', en: 'customize icon component' },
+      description: { cn: '自定义图标组件', en: 'customize icon component' },
     },
   ],
 };
