@@ -103,7 +103,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'columns',
-      description: { cn: '列 column 的配置数组', en: 'An array of column definitions.' },
+      description: {
+        cn: '列 column 的配置数组，详见下面 `column` 表',
+        en: 'An array of column definitions., see the following <code>column</code> table.',
+      },
       type: 'array',
       default: '-',
       value: [],
@@ -353,7 +356,7 @@ const doc: TagDoc.TagDocInstance = {
   ],
   childAttributes: [
     {
-      name: 'Column',
+      name: 'column',
       list: [
         {
           name: 'overlay',

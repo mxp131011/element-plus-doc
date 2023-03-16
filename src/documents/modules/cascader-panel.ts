@@ -22,8 +22,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'props',
       description: {
-        cn: '配置选项, 请参阅下面 CascaderProps 表。',
-        en: 'configuration options, see the following <code>CascaderProps</code> table.',
+        cn: '配置选项, 请参阅下面 `props` 表。',
+        en: 'configuration options, see the following <code>props</code> table.',
       },
       type: 'object',
       default: '—',
@@ -81,7 +81,7 @@ const doc: TagDoc.TagDocInstance = {
   ],
   childAttributes: [
     {
-      name: 'CascaderProps',
+      name: 'props',
       list: [
         {
           name: 'expandTrigger',

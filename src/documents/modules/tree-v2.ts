@@ -18,7 +18,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'props',
-      description: { cn: '配置选项，具体看下表', en: 'configuration options, see the following table' },
+      description: {
+        cn: '配置选项，详见下面 `props` 表',
+        en: 'configuration options, see the following table, see the following <code>props</code> table.',
+      },
       type: 'object',
       default: '—',
       value: [],
@@ -288,7 +291,7 @@ const doc: TagDoc.TagDocInstance = {
   ],
   childAttributes: [
     {
-      name: 'Props',
+      name: 'props',
       list: [
         {
           name: 'value',

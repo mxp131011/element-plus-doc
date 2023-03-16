@@ -27,7 +27,7 @@ export class GetDocUtil {
     for (key in tagDoc) {
       const bodyList = this._getMDMultipleTableBody(tagDoc, key!);
       if (bodyList.length > 0) {
-        const titleList = this._getMDTableTitle(tag, key!);
+        const titleList = key !== 'childAttributes' ? this._getMDTableTitle(tag, key!) : [];
         [...titleList, ...bodyList].forEach((item) => {
           mdStr.appendMarkdown(item);
         });
@@ -87,7 +87,7 @@ export class GetDocUtil {
    * 得到多个属性
    */
   private _getMDMultipleTableBody(tagDoc: TagDoc.TagDocInstance, key: keyof TagDoc.TagDocInstance) {
-    const list: string[] = [];
+    let list: string[] = [];
     const docLang = this.lang === 'zh-CN' ? 'cn' : 'en';
     if (key === 'attributes') {
       (tagDoc[key] || []).forEach((row) => {
@@ -115,6 +115,18 @@ export class GetDocUtil {
         const param = this._getParamMD(row.param, docLang);
         list.push(`| \`${row.name}\` |&emsp;&emsp;| ${desc} |&emsp;&emsp;| \`${row.type}\` |&emsp;&emsp;| ${param} | \r`);
         list.push(`|                 |&emsp;&emsp;|         |&emsp;&emsp;|                 |&emsp;&emsp;|          | \r`);
+      });
+    } else if (key === 'childAttributes' && tagDoc.childAttributes) {
+      tagDoc.childAttributes.forEach((child) => {
+        if (child.list.length > 0) {
+          list = list.concat(this._getMDTableTitle(child.name, key));
+          (child.list || []).forEach((row) => {
+            const desc = row.description[docLang] || '—';
+            const type = this._getTypeMD(row);
+            list.push(`| \`${row.name}\` |&emsp;&emsp;| ${desc} |&emsp;&emsp;| ${type} |&emsp;&emsp;| \`${row.default || '—'}\` | \r`);
+            list.push(`|                 |&emsp;&emsp;|         |&emsp;&emsp;|         |&emsp;&emsp;|                           | \r`);
+          });
+        }
       });
     }
     return list;
@@ -187,6 +199,11 @@ export class GetDocUtil {
         list.push(`### el-${tag} ${docTitle.exposes} </br></br>\r`);
         list.push(`| ${tableTitle.name} |&emsp;&emsp;| ${tableTitle.description} |&emsp;&emsp;| ${tableTitle.type} |&emsp;&emsp;| ${tableTitle.parame} | \r`);
         list.push('|:-------------------|------------|:--------------------------|------------|:------------------:|------------|:---------------------| \r');
+        break;
+      case 'childAttributes':
+        list.push(`### ${tag} </br></br>\r`);
+        list.push(`| ${tableTitle.name} |&emsp;&emsp;| ${tableTitle.description} |&emsp;&emsp;| ${tableTitle.type} |&emsp;&emsp;| ${tableTitle.default} | \r`);
+        list.push('|:-------------------|------------|:--------------------------|------------|:-------------------|------------|:----------------------| \r');
         break;
       default:
         break;

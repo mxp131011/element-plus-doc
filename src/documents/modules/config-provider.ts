@@ -4,12 +4,13 @@ const doc: TagDoc.TagDocInstance = {
   attributes: [
     {
       name: 'locale',
-      description: { cn: '翻译文本对象', en: 'Locale Object' },
+      description: {
+        cn: '翻译文本对象,(<a href="https://github.com/element-plus/element-plus/tree/dev/packages/locale/lang">languages</a>)',
+        en: 'Locale Object',
+      },
       type: 'object',
-      default: '<a href="https://github.com/element-plus/element-plus/blob/dev/packages/locale/lang/en.ts">en</a>',
-      value: [
-        'codenamestringelTranslatePaircodeahrefhttpsgithubcomelement-pluselement-plusbloba98ff9b40c0c3d2b9959f99919bd8363e3e3c25apackageslocaleindextsL5aahrefhttpsgithubcomelement-pluselement-plustreedevpackageslocalelanglanguagesa',
-      ],
+      default: 'en',
+      value: [],
     },
     {
       name: 'size',
@@ -38,21 +39,21 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'button',
       description: {
-        cn: '按钮相关的配置详细配置见下表',
-        en: 'button related configuration, <a href="#button-attributes">see the following table</a>',
+        cn: '按钮相关的配置详，详见下面 `button` 表',
+        en: 'button related configuration, see the following <code>button</code> table.',
       },
       type: 'object',
-      default: 'see the following table',
+      default: '—',
       value: [],
     },
     {
       name: 'message',
       description: {
-        cn: '消息相关配置， 详见下表',
-        en: 'message related configuration, <a href="#message-attributes">see the following table</a>',
+        cn: '消息相关配置，详见下面 `message` 表',
+        en: 'message related configuration, see the following <code>message</code> table.',
       },
       type: 'object',
-      default: 'see the following table',
+      default: '—',
       value: [],
     },
     {
@@ -74,7 +75,7 @@ const doc: TagDoc.TagDocInstance = {
   ],
   childAttributes: [
     {
-      name: 'CascaderProps',
+      name: 'button',
       list: [
         {
           name: 'autoInsertSpace',
@@ -86,7 +87,7 @@ const doc: TagDoc.TagDocInstance = {
       ],
     },
     {
-      name: 'CascaderProps',
+      name: 'message',
       list: [
         {
           name: 'max',
