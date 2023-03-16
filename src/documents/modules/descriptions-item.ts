@@ -20,7 +20,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'width',
       description: {
         cn: '列的宽度，不同行相同列的宽度按最大值设定（如无 `border` ，宽度包含标签与内容）',
-        en: 'column width, the width of the same column in different rows is set by the max value (If no <code>border</code>, width contains label and content)',
+        en: 'column width, the width of the same column in different rows is set by the max value (If no `border`, width contains label and content)',
       },
       type: ['string', 'number'],
       default: '—',
@@ -30,7 +30,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'min-width',
       description: {
         cn: '列的最小宽度，与 `width` 的区别是 `width` 是固定的，`min-width` 会把剩余宽度按比例分配给设置了 `min-width` 的列（如无 `border` ，宽度包含标签与内容）',
-        en: 'column minimum width, columns with <code>width</code> has a fixed width, while columns with <code>min-width</code> has a width that is distributed in proportion (If no<code>border</code>, width contains label and content)',
+        en: 'column minimum width, columns with `width` has a fixed width, while columns with `min-width` has a width that is distributed in proportion (If no`border`, width contains label and content)',
       },
       type: ['string', 'number'],
       default: '—',
@@ -40,7 +40,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'align',
       description: {
         cn: '列的内容对齐方式（如无 `border` ，对标签和内容均生效）',
-        en: 'column content alignment (If no <code>border</code>, effective for both label and content)',
+        en: 'column content alignment (If no `border`, effective for both label and content)',
       },
       type: 'enum',
       default: "'left'",
@@ -50,7 +50,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'label-align',
       description: {
         cn: '列的标签对齐方式，若不设置该项，则使用内容的对齐方式（如无 `border` ，请使用 `align` 参数）',
-        en: 'column label alignment, if omitted, the value of the above <code>align</code> attribute will be applied (If no <code>border</code>, please use <code>align</code> attribute)',
+        en: 'column label alignment, if omitted, the value of the above `align` attribute will be applied (If no `border`, please use `align` attribute)',
       },
       type: 'enum',
       default: '—',

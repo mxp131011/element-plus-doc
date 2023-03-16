@@ -20,7 +20,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'effect',
       description: {
         cn: 'Tooltip 主题，Element Plus 内置了 `dark` / `light` 两种主题',
-        en: 'Tooltip theme, built-in theme: <code>dark</code> / <code>light</code>',
+        en: 'Tooltip theme, built-in theme: `dark` / `light`',
       },
       type: 'enum',
       default: "'light'",
@@ -30,7 +30,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'content',
       description: {
         cn: '显示的内容，也可以通过写入默认 `slot` 修改显示内容',
-        en: 'popover content, can be replaced with a default <code>slot</code>',
+        en: 'popover content, can be replaced with a default `slot`',
       },
       type: 'string',
       default: '—',
@@ -154,7 +154,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'persistent',
       description: {
         cn: '当 popover 组件长时间不触发且 `persistent` 属性设置为 false 时, `popover` 将会被删除',
-        en: 'when popover inactive and <code>persistent</code> is <code>false</code> , popover will be destroyed',
+        en: 'when popover inactive and `persistent` is `false` , popover will be destroyed',
       },
       type: 'boolean',
       default: 'true',

@@ -30,7 +30,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'props',
       description: {
         cn: '配置选项，详见下面 `props` 表',
-        en: 'configuration options, see the following table, see the following <code>props</code> table.',
+        en: 'configuration options, see the following table, see the following `props` table.',
       },
       type: 'object',
       default: '—',

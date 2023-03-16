@@ -6,7 +6,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'type',
       description: {
         cn: '菜单按钮类型，同 `Button` 组件一样，仅在 `split-button` 为 true 的情况下有效。',
-        en: 'menu button type, refer to <code>Button</code> Component, only works when <code>split-button</code> is true',
+        en: 'menu button type, refer to `Button` Component, only works when `split-button` is true',
       },
       type: 'string',
       default: '—',
@@ -65,7 +65,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'show-timeout',
       description: {
         cn: '展开下拉菜单的延时，仅在 trigger 为 hover 时有效',
-        en: 'Delay time before show a dropdown (only works when trigger is <code>hover</code>)',
+        en: 'Delay time before show a dropdown (only works when trigger is `hover`)',
       },
       type: 'number',
       default: '250',
@@ -75,7 +75,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'hide-timeout',
       description: {
         cn: '收起下拉菜单的延时（仅在 trigger 为 hover 时有效）',
-        en: 'Delay time before hide a dropdown (only works when trigger is <code>hover</code>)',
+        en: 'Delay time before hide a dropdown (only works when trigger is `hover`)',
       },
       type: 'number',
       default: '150',
@@ -131,7 +131,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'click',
       description: {
         cn: '`split-button` 为 true 时，点击左侧按钮的回调',
-        en: 'if <code>split-button</code> is <code>true</code>, triggers when left button is clicked',
+        en: 'if `split-button` is `true`, triggers when left button is clicked',
       },
       type: 'function',
       param: '',
@@ -173,15 +173,15 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'default',
       description: {
-        cn: '下拉菜单的内容。 注意：必须是有效的 html DOM 元素 (例如 <code>&lt;span>, &lt;button> etc.</code>) 或 el-component，以附加监听触发器',
-        en: 'content of Dropdown. Notice: Must be a valid html dom element (ex. <code>&lt;span>, &lt;button> etc.</code>) or <code>el-component</code>, to attach the trigger listener',
+        cn: '下拉菜单的内容。 注意：必须是有效的 html DOM 元素 (例如 `&lt;span>, &lt;button> etc.`) 或 el-component，以附加监听触发器',
+        en: 'content of Dropdown. Notice: Must be a valid html dom element (ex. `&lt;span>, &lt;button> etc.`) or `el-component`, to attach the trigger listener',
       },
     },
     {
       name: 'dropdown',
       description: {
-        cn: '下拉列表，通常是 <code>&lt;el-dropdown-menu></code> 组件',
-        en: 'content of the Dropdown Menu, usually a <code>&lt;el-dropdown-menu></code> element',
+        cn: '下拉列表，通常是 `&lt;el-dropdown-menu>` 组件',
+        en: 'content of the Dropdown Menu, usually a `&lt;el-dropdown-menu>` element',
       },
       subtags: ['Dropdown-Menu'],
     },

@@ -18,14 +18,14 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'icon',
-      description: { cn: '自定义图标，该属性会覆盖 `type` 的图标。', en: 'custom icon component, overrides <code>type</code>' },
+      description: { cn: '自定义图标，该属性会覆盖 `type` 的图标。', en: 'custom icon component, overrides `type`' },
       type: ['string', 'Component'],
       default: '—',
       value: [],
     },
     {
       name: 'dangerouslyUseHTMLString',
-      description: { cn: '是否将 message 属性作为 HTML 片段处理', en: 'whether <code>message</code> is treated as HTML string' },
+      description: { cn: '是否将 message 属性作为 HTML 片段处理', en: 'whether `message` is treated as HTML string' },
       type: 'boolean',
       default: 'false',
       value: [],

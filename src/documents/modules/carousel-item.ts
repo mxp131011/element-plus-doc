@@ -4,7 +4,7 @@ const doc: TagDoc.TagDocInstance = {
   attributes: [
     {
       name: 'name',
-      description: { cn: '幻灯片的名字，可用作 `setActiveItem` 的参数', en: 'name of the item, can be used in <code>setActiveItem</code>' },
+      description: { cn: '幻灯片的名字，可用作 `setActiveItem` 的参数', en: 'name of the item, can be used in `setActiveItem`' },
       type: 'string',
       default: '—',
       value: [],

@@ -15,8 +15,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'effect',
       description: {
-        cn: 'Tooltip 主题，内置了<code>dark</code> / <code>light</code> 两种',
-        en: 'Tooltip theme, built-in theme: <code>dark</code> / <code>light</code>',
+        cn: 'Tooltip 主题，内置了`dark` / `light` 两种',
+        en: 'Tooltip theme, built-in theme: `dark` / `light`',
       },
       type: 'enum',
       default: "'light'",
@@ -26,7 +26,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'content',
       description: {
         cn: '显示的内容，也可被`content`插槽覆盖覆盖',
-        en: 'display content, can be overridden by <code>slot#content</code>',
+        en: 'display content, can be overridden by `slot#content`',
       },
       type: 'string',
       default: "''",
@@ -34,7 +34,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'raw-content',
-      description: { cn: '`content` 中的内容是否作为 HTML 字符串处理', en: 'whether <code>content</code> is treated as HTML string' },
+      description: { cn: '`content` 中的内容是否作为 HTML 字符串处理', en: 'whether `content` is treated as HTML string' },
       type: 'boolean',
       default: 'false',
       value: [],
@@ -130,7 +130,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'teleported',
       description: {
         cn: '是否使用 teleport。设置成 `true` 则会被追加到 `append-to` 的位置',
-        en: 'whether tooltip content is teleported, if <code>true</code> it will be teleported to where <code>append-to</code> sets',
+        en: 'whether tooltip content is teleported, if `true` it will be teleported to where `append-to` sets',
       },
       type: 'boolean',
       default: 'true',
@@ -174,7 +174,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'persistent',
       description: {
         cn: '当 tooltip 组件长时间不触发且 `persistent` 属性设置为 `false` 时, popconfirm 将会被删除',
-        en: 'when tooltip inactive and <code>persistent</code> is <code>false</code> , popconfirm will be destroyed',
+        en: 'when tooltip inactive and `persistent` is `false` , popconfirm will be destroyed',
       },
       type: 'boolean',
       default: '—',
@@ -182,7 +182,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'aria-label',
-      description: { cn: '和 原生 `aria-label` 属性保持一致，用于无障碍访问', en: 'same as <code>aria-label</code>' },
+      description: { cn: '和 原生 `aria-label` 属性保持一致，用于无障碍访问', en: 'same as `aria-label`' },
       type: 'string',
       default: '—',
       value: [],

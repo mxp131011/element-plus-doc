@@ -40,7 +40,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'button',
       description: {
         cn: '按钮相关的配置详，详见下面 `button` 表',
-        en: 'button related configuration, see the following <code>button</code> table.',
+        en: 'button related configuration, see the following `button` table.',
       },
       type: 'object',
       default: '—',
@@ -50,7 +50,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'message',
       description: {
         cn: '消息相关配置，详见下面 `message` 表',
-        en: 'message related configuration, see the following <code>message</code> table.',
+        en: 'message related configuration, see the following `message` table.',
       },
       type: 'object',
       default: '—',

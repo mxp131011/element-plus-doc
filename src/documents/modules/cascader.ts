@@ -13,7 +13,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'options',
       description: {
         cn: '选项的数据源， value 和 label 可以通过 CascaderProps 自定义. (Record<string, unknown>[])',
-        en: 'data of the options, the key of <code>value</code> and <code>label</code> can be customize by <code>CascaderProps</code>. (Record<string, unknown>[])',
+        en: 'data of the options, the key of `value` and `label` can be customize by `CascaderProps`. (Record<string, unknown>[])',
       },
       type: 'object',
       default: '—',
@@ -23,7 +23,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'props',
       description: {
         cn: '配置选项, 请参阅下面 `props` 表。',
-        en: 'configuration options, see the following <code>props</code> table.',
+        en: 'configuration options, see the following `props` table.',
       },
       type: 'object',
       default: '—',
@@ -78,7 +78,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'collapse-tags-tooltip',
       description: {
         cn: '当鼠标悬停于折叠标签的文本时，是否显示所有选中的标签。 要使用此属性，`collapse-tags`属性必须设定为 true',
-        en: 'whether show all selected tags when mouse hover text of collapse-tags. To use this, <code>collapse-tags</code> must be true',
+        en: 'whether show all selected tags when mouse hover text of collapse-tags. To use this, `collapse-tags` must be true',
       },
       type: 'boolean',
       default: 'false',
@@ -102,7 +102,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'filter-method',
       description: {
         cn: '自定义搜索逻辑，第一个参数是`node`，第二个参数是`keyword`，返回的布尔值表示是否保留该选项',
-        en: 'customize search logic, the first parameter is <code>node</code>, the second is <code>keyword</code>, and need return a boolean value indicating whether it hits.',
+        en: 'customize search logic, the first parameter is `node`, the second is `keyword`, and need return a boolean value indicating whether it hits.',
       },
       type: 'function(node: CascaderNode, keyword: string) => boolean',
       default: '—',
@@ -119,7 +119,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'before-filter',
       description: {
         cn: '过滤函数调用前，所要调用的钩子函数，该函数接收要过滤的值作为参数。 如果该函数的返回值是 `false` 或者是一个被拒绝的 `Promise` ，那么接下来的过滤逻辑便不会执行。',
-        en: 'hook function before filtering with the value to be filtered as its parameter. If <code>false</code> is returned or a <code>Promise</code> is returned and then is rejected, filtering will be aborted',
+        en: 'hook function before filtering with the value to be filtered as its parameter. If `false` is returned or a `Promise` is returned and then is rejected, filtering will be aborted',
       },
       type: 'function(value: string) => boolean',
       default: '—',
@@ -207,7 +207,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'getCheckedNodes',
       description: {
         cn: '获取一个当前选中节点的数组。(仅仅是传单) 是否只返回叶选中的节点，默认是 `false`',
-        en: 'get an array of currently selected node,(leafOnly) whether only return the leaf checked nodes, default is <code>false</code>',
+        en: 'get an array of currently selected node,(leafOnly) whether only return the leaf checked nodes, default is `false`',
       },
       type: 'function',
       param: '(leafOnly: boolean) => CascaderNode[] &#124; undefined',

@@ -6,7 +6,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'command',
       description: {
         cn: '派发到 `command` 回调函数的指令参数',
-        en: "a command to be dispatched to Dropdown's <code>command</code> callback",
+        en: "a command to be dispatched to Dropdown's `command` callback",
       },
       type: ['string', 'number', 'object'],
       default: '—',

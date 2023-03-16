@@ -40,8 +40,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'target-order',
       description: {
-        cn: '右侧列表元素的排序策略： 若为 <code>original</code>，则保持与数据源相同的顺序； 若为 <code>push</code> ，则新加入的元素排在最后； 若为 <code>unshift</code> ，则新加入的元素排在最前',
-        en: 'order strategy for elements in the target list. If set to <code>original</code>, the elements will keep the same order as the data source. If set to <code>push</code>, the newly added elements will be pushed to the bottom. If set to <code>unshift</code>, the newly added elements will be inserted on the top',
+        cn: '右侧列表元素的排序策略： 若为 `original`，则保持与数据源相同的顺序； 若为 `push` ，则新加入的元素排在最后； 若为 `unshift` ，则新加入的元素排在最前',
+        en: 'order strategy for elements in the target list. If set to `original`, the elements will keep the same order as the data source. If set to `push`, the newly added elements will be pushed to the bottom. If set to `unshift`, the newly added elements will be inserted on the top',
       },
       type: 'enum',
       default: 'original',

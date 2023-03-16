@@ -35,7 +35,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'top',
-      description: { cn: 'Dialog CSS 中的 `margin-top` 值', en: 'value for <code>margin-top</code> of Dialog CSS' },
+      description: { cn: 'Dialog CSS 中的 `margin-top` 值', en: 'value for `margin-top` of Dialog CSS' },
       type: 'string',
       default: '15vh',
       value: [],
@@ -51,7 +51,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'append-to-body',
       description: {
         cn: 'Dialog 自身是否插入至 body 元素上。 嵌套的 Dialog 必须指定该属性并赋值为 true',
-        en: 'whether to append Dialog itself to body. A nested Dialog should have this attribute set to <code>true</code>',
+        en: 'whether to append Dialog itself to body. A nested Dialog should have this attribute set to `true`',
       },
       type: 'boolean',
       default: 'false',

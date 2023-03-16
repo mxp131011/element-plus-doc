@@ -33,8 +33,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'xs',
       description: {
-        cn: '<code>&lt;768px</code> 响应式栅格数或者栅格属性对象({span?: number, offset?: number, pull?: number, push?: number})',
-        en: '<code>&lt;768px</code> Responsive columns or column props object({span?: number, offset?: number, pull?: number, push?: number})',
+        cn: '`&lt;768px` 响应式栅格数或者栅格属性对象({span?: number, offset?: number, pull?: number, push?: number})',
+        en: '`&lt;768px` Responsive columns or column props object({span?: number, offset?: number, pull?: number, push?: number})',
       },
       type: 'number',
       default: '—',
@@ -43,8 +43,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'sm',
       description: {
-        cn: '<code>≥768px</code> 响应式栅格数或者栅格属性对象({span?: number, offset?: number, pull?: number, push?: number})',
-        en: '<code>≥768px</code> Responsive columns or column props object({span?: number, offset?: number, pull?: number, push?: number})',
+        cn: '`≥768px` 响应式栅格数或者栅格属性对象({span?: number, offset?: number, pull?: number, push?: number})',
+        en: '`≥768px` Responsive columns or column props object({span?: number, offset?: number, pull?: number, push?: number})',
       },
       type: 'number',
       default: '—',
@@ -53,8 +53,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'md',
       description: {
-        cn: '<code>≥992px</code> 响应式栅格数或者栅格属性对象({span?: number, offset?: number, pull?: number, push?: number})',
-        en: '<code>≥992px</code> Responsive columns or column props object({span?: number, offset?: number, pull?: number, push?: number})',
+        cn: '`≥992px` 响应式栅格数或者栅格属性对象({span?: number, offset?: number, pull?: number, push?: number})',
+        en: '`≥992px` Responsive columns or column props object({span?: number, offset?: number, pull?: number, push?: number})',
       },
       type: 'number',
       default: '—',
@@ -63,8 +63,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'lg',
       description: {
-        cn: '<code>≥1200px</code> 响应式栅格数或者栅格属性对象({span?: number, offset?: number, pull?: number, push?: number})',
-        en: '<code>≥1200px</code> Responsive columns or column props object({span?: number, offset?: number, pull?: number, push?: number})',
+        cn: '`≥1200px` 响应式栅格数或者栅格属性对象({span?: number, offset?: number, pull?: number, push?: number})',
+        en: '`≥1200px` Responsive columns or column props object({span?: number, offset?: number, pull?: number, push?: number})',
       },
       type: 'number',
       default: '—',
@@ -73,8 +73,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'xl',
       description: {
-        cn: '<code>≥1920px</code> 响应式栅格数或者栅格属性对象{span?: number, offset?: number, pull?: number, push?: number}',
-        en: '<code>≥1920px</code> Responsive columns or column props object({span?: number, offset?: number, pull?: number, push?: number})',
+        cn: '`≥1920px` 响应式栅格数或者栅格属性对象{span?: number, offset?: number, pull?: number, push?: number}',
+        en: '`≥1920px` Responsive columns or column props object({span?: number, offset?: number, pull?: number, push?: number})',
       },
       type: 'number',
       default: '—',

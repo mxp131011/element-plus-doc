@@ -55,7 +55,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'before-leave',
       description: {
         cn: '切换标签之前的钩子函数， 若返回 `false`  或者返回被 reject 的 `Promise`，则阻止切换。',
-        en: 'hook function before switching tab. If <code>false</code> is returned or a <code>Promise</code> is returned and then is rejected, switching will be prevented',
+        en: 'hook function before switching tab. If `false` is returned or a `Promise` is returned and then is rejected, switching will be prevented',
       },
       type: 'function(activename, oldactivename)',
       default: '—',
@@ -71,7 +71,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'tab-change',
-      description: { cn: '`activeName` 改变时触发', en: 'triggers when <code>activeName</code> is changed' },
+      description: { cn: '`activeName` 改变时触发', en: 'triggers when `activeName` is changed' },
       type: 'function',
       param: '(name: TabPaneName)',
     },

@@ -13,7 +13,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'label',
       description: {
         cn: '选中状态的值（只有在checkbox-group或者绑定对象类型为array时有效）',
-        en: 'value of the Checkbox when used inside a <code>checkbox-group</code>',
+        en: 'value of the Checkbox when used inside a `checkbox-group`',
       },
       type: ['string', 'number', 'boolean', 'object'],
       default: '—',
@@ -100,7 +100,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'controls',
       description: {
         cn: '与 [aria-controls](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls)一致, 当 `indeterminate` 为 `true` 时生效',
-        en: 'same as [aria-controls](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls), takes effect when <code>indeterminate</code> is <code>true</code>',
+        en: 'same as [aria-controls](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls), takes effect when `indeterminate` is `true`',
       },
       type: 'boolean',
       default: '—',

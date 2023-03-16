@@ -39,7 +39,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'name',
-      description: { cn: '原始 `name` 属性', en: 'native <code>name</code> attribute' },
+      description: { cn: '原始 `name` 属性', en: 'native `name` attribute' },
       type: 'string',
       default: '—',
       value: [],

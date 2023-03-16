@@ -106,7 +106,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'size',
       description: {
         cn: "Drawer 窗体的大小, 当使用 `number` 类型时, 以像素为单位, 当使用 `string` 类型时, 请传入 'x%', 否则便会以 number 类型解释 ",
-        en: "Drawer's size, if Drawer is horizontal mode, it effects the width property, otherwise it effects the height property, when size is <code>number</code> type, it describes the size by unit of pixels; when size is <code>string</code> type, it should be used with <code>x%</code> notation, other wise it will be interpreted to pixel unit",
+        en: "Drawer's size, if Drawer is horizontal mode, it effects the width property, otherwise it effects the height property, when size is `number` type, it describes the size by unit of pixels; when size is `string` type, it should be used with `x%` notation, other wise it will be interpreted to pixel unit",
       },
       type: ['string', 'number'],
       default: "'30%'",
@@ -126,7 +126,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'withHeader',
       description: {
         cn: '控制是否显示 header 栏, 默认为 true, 当此项为 false 时, title attribute 和 title slot 均不生效',
-        en: "Flag that controls the header section's existance, default to true, when withHeader set to false, both <code>title attribute</code> and <code>title slot</code> won't work",
+        en: "Flag that controls the header section's existance, default to true, when withHeader set to false, both `title attribute` and `title slot` won't work",
       },
       type: 'boolean',
       default: 'true',
@@ -178,7 +178,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'handleClose',
       description: {
         cn: '用于关闭 Drawer, 该方法会调用传入的 `before-close` 方法.',
-        en: 'In order to close Drawer, this method will call <code>before-close</code>.',
+        en: 'In order to close Drawer, this method will call `before-close`.',
       },
       type: 'function',
       param: '',

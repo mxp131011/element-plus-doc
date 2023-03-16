@@ -18,7 +18,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'dangerouslyUseHTMLString',
-      description: { cn: '是否将 `message` 属性作为 HTML 片段处理', en: 'whether <code>message</code> is treated as HTML string' },
+      description: { cn: '是否将 `message` 属性作为 HTML 片段处理', en: 'whether `message` is treated as HTML string' },
       type: 'boolean',
       default: 'false',
       value: [],
@@ -34,7 +34,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'icon',
       description: {
         cn: '自定义图标。 若设置了 `type` ，则 `icon` 会被覆盖',
-        en: 'custom icon component. It will be overridden by <code>type</code>',
+        en: 'custom icon component. It will be overridden by `type`',
       },
       type: ['string', 'Component'],
       default: '—',

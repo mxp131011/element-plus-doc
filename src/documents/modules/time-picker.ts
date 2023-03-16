@@ -112,14 +112,14 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'id',
-      description: { cn: '等价于原生 input `id` 属性', en: 'same as <code>id</code> in native input' },
+      description: { cn: '等价于原生 input `id` 属性', en: 'same as `id` in native input' },
       type: ['string', '[string, string]'],
       default: '-',
       value: [],
     },
     {
       name: 'name',
-      description: { cn: '等价于原生 input `name` 属性', en: 'same as <code>name</code> in native input' },
+      description: { cn: '等价于原生 input `name` 属性', en: 'same as `name` in native input' },
       type: 'string',
       default: '—',
       value: [],

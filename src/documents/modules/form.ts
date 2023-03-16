@@ -27,7 +27,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'label-position',
       description: {
         cn: '表单域标签的位置， 当设置为 `left` 或 `right` 时，则也需要设置 `label-width` 属性',
-        en: "Position of label. If set to <code>'left'</code> or <code>'right'</code>, <code>label-width</code> prop is also required.",
+        en: "Position of label. If set to `'left'` or `'right'`, `label-width` prop is also required.",
       },
       type: 'enum',
       default: "'right'",
@@ -37,7 +37,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'label-width',
       description: {
         cn: "标签的长度，例如 '50px'。 作为 Form 直接子元素的 form-item 会继承该值。 可以使用 `auto`。",
-        en: "Width of label, e.g. <code>'50px'</code>. All its direct child form items will inherit this value. <code>auto</code> is supported.",
+        en: "Width of label, e.g. `'50px'`. All its direct child form items will inherit this value. `auto` is supported.",
       },
       type: ['string', 'number'],
       default: '—',
@@ -95,7 +95,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'validate-on-rule-change',
       description: {
         cn: '是否在 `rules` 属性改变后立即触发一次验证',
-        en: 'Whether to trigger validation when the <code>rules</code> prop is changed.',
+        en: 'Whether to trigger validation when the `rules` prop is changed.',
       },
       type: 'boolean',
       default: 'true',
@@ -112,7 +112,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'disabled',
       description: {
         cn: '是否禁用该表单内的所有组件。 如果设置为 `true`, 它将覆盖内部组件的 `disabled` 属性',
-        en: 'Whether to disable all components in this form. If set to <code>true</code>, it will override the <code>disabled</code> prop of the inner component.',
+        en: 'Whether to disable all components in this form. If set to `true`, it will override the `disabled` prop of the inner component.',
       },
       type: 'boolean',
       default: 'false',
@@ -139,7 +139,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'validate',
       description: {
         cn: '对整个表单的内容进行验证。 接收一个回调函数，或返回 `Promise` 。',
-        en: 'Validate the whole form. Receives a callback or returns <code>Promise</code>.',
+        en: 'Validate the whole form. Receives a callback or returns `Promise`.',
       },
       type: 'function',
       param: '(props?: Arrayable<FormItemProp>, callback?: (isValid: boolean, invalidFields?: ValidateFieldsError) => void) => Promise<void>',

@@ -6,7 +6,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'model-value',
       description: {
         cn: '绑定值，必须等于 `active-value` 或 `inactive-value`，默认为 Boolean 类型',
-        en: "binding value, it should be equivalent to either <code>active-value</code> or <code>inactive-value</code>, by default it's <code>boolean</code> type",
+        en: "binding value, it should be equivalent to either `active-value` or `inactive-value`, by default it's `boolean` type",
       },
       type: ['boolean', 'string', 'number'],
       default: '—',
@@ -54,7 +54,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'active-icon',
       description: {
         cn: 'switch 状态为 `on` 时所显示图标，设置此项会忽略 `active-text`',
-        en: 'component of the icon displayed when in <code>on</code> state, overrides <code>active-text</code>',
+        en: 'component of the icon displayed when in `on` state, overrides `active-text`',
       },
       type: ['string', 'Component'],
       default: '—',
@@ -64,7 +64,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'inactive-icon',
       description: {
         cn: 'switch 状态为 `off` 时所显示图标，设置此项会忽略 `inactive-text`',
-        en: 'component of the icon displayed when in <code>off</code> state, overrides <code>inactive-text</code>',
+        en: 'component of the icon displayed when in `off` state, overrides `inactive-text`',
       },
       type: ['string', 'Component'],
       default: '—',
@@ -72,28 +72,28 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'active-text',
-      description: { cn: 'switch 的状态为 `on` 时的文字描述', en: 'text displayed when in <code>on</code> state' },
+      description: { cn: 'switch 的状态为 `on` 时的文字描述', en: 'text displayed when in `on` state' },
       type: 'string',
       default: '—',
       value: [],
     },
     {
       name: 'inactive-text',
-      description: { cn: 'switch 的状态为 `off` 时的文字描述', en: 'text displayed when in <code>off</code> state' },
+      description: { cn: 'switch 的状态为 `off` 时的文字描述', en: 'text displayed when in `off` state' },
       type: 'string',
       default: '—',
       value: [],
     },
     {
       name: 'active-value',
-      description: { cn: 'switch 状态为 `on` 时的值', en: 'switch value when in <code>on</code> state' },
+      description: { cn: 'switch 状态为 `on` 时的值', en: 'switch value when in `on` state' },
       type: ['boolean', 'string', 'number'],
       default: 'true',
       value: [],
     },
     {
       name: 'inactive-value',
-      description: { cn: 'switch的状态为 `off` 时的值', en: 'switch value when in <code>off</code> state' },
+      description: { cn: 'switch的状态为 `off` 时的值', en: 'switch value when in `off` state' },
       type: ['boolean', 'string', 'number'],
       default: 'false',
       value: [],
@@ -102,7 +102,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'active-color',
       description: {
         cn: '当在 on 状态时的背景颜色( 已废弃，请使用 CSS var(--el-switch-on-color) )',
-        en: 'background color when in <code>on</code> state ( deprecated, use CSS var <code>--el-switch-on-color</code> instead )',
+        en: 'background color when in `on` state ( deprecated, use CSS var `--el-switch-on-color` instead )',
       },
       type: 'string',
       default: '—',
@@ -112,7 +112,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'inactive-color',
       description: {
         cn: '当在 `off` 状态时的背景颜色( 已废弃，使用 CSS var(--el-switch-of-color) )',
-        en: 'background color when in <code>off</code> state ( deprecated, use CSS var <code>--el-switch-off-color</code> instead )',
+        en: 'background color when in `off` state ( deprecated, use CSS var `--el-switch-off-color` instead )',
       },
       type: 'string',
       default: '—',
@@ -122,7 +122,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'border-color',
       description: {
         cn: '开关的边框颜色 ( 已废弃，使用 CSS var(--el-switch-border-color) )',
-        en: 'border color of the switch ( deprecated, use CSS var <code>--el-switch-border-color</code> instead )',
+        en: 'border color of the switch ( deprecated, use CSS var `--el-switch-border-color` instead )',
       },
       type: 'string',
       default: '—',
@@ -146,7 +146,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'before-change',
       description: {
         cn: 'switch 状态改变前的钩子， 返回 `false` 或者返回 `Promise` 且被 reject 则停止切换,TS类型：() => Promise<boolean> &#124; boolean',
-        en: 'before-change hook before the switch state changes. If <code>false</code> is returned or a <code>Promise</code> is returned and then is rejected, will stop switching,TS Type：() => Promise<boolean> &#124; boolean',
+        en: 'before-change hook before the switch state changes. If `false` is returned or a `Promise` is returned and then is rejected, will stop switching,TS Type：() => Promise<boolean> &#124; boolean',
       },
       type: 'function',
       default: '—',

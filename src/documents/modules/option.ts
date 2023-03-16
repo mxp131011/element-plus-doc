@@ -11,7 +11,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'label',
-      description: { cn: '选项的标签，若不设置则默认与 <code>value</code> 相同', en: 'label of option, same as <code>value</code> if omitted' },
+      description: { cn: '选项的标签，若不设置则默认与 `value` 相同', en: 'label of option, same as `value` if omitted' },
       type: ['string', 'number'],
       default: '—',
       value: [],

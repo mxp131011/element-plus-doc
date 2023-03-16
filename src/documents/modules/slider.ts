@@ -41,7 +41,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'show-input',
       description: {
         cn: '是否显示输入框，仅在非范围选择时有效',
-        en: 'whether to display an input box, works when <code>range</code> is false',
+        en: 'whether to display an input box, works when `range` is false',
       },
       type: 'boolean',
       default: 'false',
@@ -51,7 +51,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'show-input-controls',
       description: {
         cn: '在显示输入框的情况下，是否显示输入框的控制按钮',
-        en: 'whether to display control buttons when <code>show-input</code> is true',
+        en: 'whether to display control buttons when `show-input` is true',
       },
       type: 'boolean',
       default: 'true',
@@ -68,7 +68,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'input-size',
       description: {
         cn: '输入框的大小，如果设置了 `size` 属性，默认值自动取 `size`',
-        en: 'size of the input box, when set <code>size</code>, the default is the value of <code>size</code>',
+        en: 'size of the input box, when set `size`, the default is the value of `size`',
       },
       type: 'enum',
       default: 'default',
@@ -127,7 +127,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'range-start-label',
       description: {
         cn: '当 `range` 为true时，屏幕阅读器标签开始的标记',
-        en: 'when <code>range</code> is true, screen reader label for the start of the range',
+        en: 'when `range` is true, screen reader label for the start of the range',
       },
       type: 'string',
       default: '—',
@@ -137,7 +137,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'range-end-label',
       description: {
         cn: '当 `range` 为true时，屏幕阅读器标签结尾的标记',
-        en: 'when <code>range</code> is true, screen reader label for the end of the range',
+        en: 'when `range` is true, screen reader label for the end of the range',
       },
       type: 'string',
       default: '—',
@@ -147,7 +147,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'format-value-text',
       description: {
         cn: '显示屏幕阅读器的 `aria-valuenow` 属性的格式',
-        en: 'format to display the <code>aria-valuenow</code> attribute for screen readers',
+        en: 'format to display the `aria-valuenow` attribute for screen readers',
       },
       type: 'function(value)',
       default: '—',
@@ -157,7 +157,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'debounce',
       description: {
         cn: '输入时的去抖延迟，毫秒，仅在 `show-input` 等于 true 时有效',
-        en: 'debounce delay when typing, in milliseconds, works when <code>show-input</code> is true',
+        en: 'debounce delay when typing, in milliseconds, works when `show-input` is true',
       },
       type: 'number',
       default: '300',
@@ -181,7 +181,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'marks',
       description: {
         cn: '标记， key 的类型必须为 `number` 且取值在闭区间 `[min, max]` 内，每个标记可以单独设置样式',
-        en: 'marks, type of key must be <code>number</code> and must in closed interval <code>[min, max]</code>, each mark can custom style',
+        en: 'marks, type of key must be `number` and must in closed interval `[min, max]`, each mark can custom style',
       },
       type: 'object',
       default: '—',

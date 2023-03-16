@@ -13,7 +13,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'options',
       description: {
         cn: '选项的数据源， value 和 label 可以通过 CascaderProps 自定义. (Record<string, unknown>[])',
-        en: 'data of the options, the key of <code>value</code> and <code>label</code> can be customize by <code>CascaderProps</code>. (Record<string, unknown>[])',
+        en: 'data of the options, the key of `value` and `label` can be customize by `CascaderProps`. (Record<string, unknown>[])',
       },
       type: 'object',
       default: '—',
@@ -23,7 +23,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'props',
       description: {
         cn: '配置选项, 请参阅下面 `props` 表。',
-        en: 'configuration options, see the following <code>props</code> table.',
+        en: 'configuration options, see the following `props` table.',
       },
       type: 'object',
       default: '—',
@@ -58,7 +58,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'getCheckedNodes',
       description: {
         cn: '获取一个当前选中节点的数组。(仅仅是传单) 是否只返回叶选中的节点，默认是 `false`',
-        en: 'get an array of currently selected node,(leafOnly) whether only return the leaf checked nodes, default is <code>false</code>',
+        en: 'get an array of currently selected node,(leafOnly) whether only return the leaf checked nodes, default is `false`',
       },
       type: 'function',
       param: '(leafOnly: boolean) => CascaderNode[] &#124; undefined',

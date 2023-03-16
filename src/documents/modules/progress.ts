@@ -27,7 +27,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'text-inside',
       description: {
         cn: "进度条显示文字内置在进度条内（仅 `type` 为 'line' 时可用）",
-        en: "whether to place the percentage inside progress bar, only works when <code>type</code> is 'line'",
+        en: "whether to place the percentage inside progress bar, only works when `type` is 'line'",
       },
       type: 'boolean',
       default: 'false',
@@ -58,7 +58,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'color',
       description: {
         cn: '进度条背景色 进度条背景色 （会覆盖 status 状态颜色）',
-        en: 'background color of progress bar. Overrides <code>status</code> prop',
+        en: 'background color of progress bar. Overrides `status` prop',
       },
       type: ['string', 'function', 'array'],
       default: '—',
@@ -96,7 +96,7 @@ const doc: TagDoc.TagDocInstance = {
   slots: [
     {
       name: 'default',
-      description: { cn: '自定义内容，参数为 { percentage }', en: 'Customized content, parameter is <code>{ percentage }</code>' },
+      description: { cn: '自定义内容，参数为 { percentage }', en: 'Customized content, parameter is `{ percentage }`' },
     },
   ],
 };

@@ -20,7 +20,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'initial-index',
       description: {
         cn: '初始预览图像索引，小于 url-list 的长度',
-        en: 'the initial preview image index, less than or equal to the length of <code>url-list</code>.',
+        en: 'the initial preview image index, less than or equal to the length of `url-list`.',
       },
       type: 'number',
       default: '0',
@@ -44,7 +44,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'teleported',
       description: {
         cn: 'image 自身是否插入至 body 元素上。 嵌套的父元素属性会发生修改时应该将此属性设置为 `true`',
-        en: 'whether to append image itself to body. A nested parent element attribute transform should have this attribute set to <code>true</code>.',
+        en: 'whether to append image itself to body. A nested parent element attribute transform should have this attribute set to `true`.',
       },
       type: 'boolean',
       default: 'false',
@@ -63,7 +63,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'close',
       description: {
         cn: '当点击 X 按钮或者在 `hide-on-click-modal` 为 true 时点击遮罩层时触发',
-        en: 'trigger when clicking on close button or when <code>hide-on-click-modal</code> enabled clicking on backdrop.',
+        en: 'trigger when clicking on close button or when `hide-on-click-modal` enabled clicking on backdrop.',
       },
       type: 'function',
       param: '() => void',

@@ -6,7 +6,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'prop',
       description: {
         cn: "`model` 的键名。 它可以是一个路径数组(例如 ['a', 'b', 0])。 在定义了 `validate`、`resetFields` 的方法时，该属性是必填的",
-        en: "A key of <code>model</code>. It could be an array of property paths (e.g <code>['a', 'b', 0]</code>). In the use of <code>validate</code> and <code>resetFields</code> method, the attribute is required.",
+        en: "A key of `model`. It could be an array of property paths (e.g `['a', 'b', 0]`). In the use of `validate` and `resetFields` method, the attribute is required.",
       },
       type: ['string', 'array'],
       default: '—',
@@ -23,7 +23,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'label-width',
       description: {
         cn: "标签宽度，例如 '50px'。 可以使用 `auto` 。",
-        en: "Width of label, e.g. <code>'50px'</code>. <code>'auto'</code> is supported.",
+        en: "Width of label, e.g. `'50px'`. `'auto'` is supported.",
       },
       type: ['string', 'number'],
       default: '—',

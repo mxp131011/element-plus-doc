@@ -129,14 +129,14 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'id',
-      description: { cn: '等价于原生 input `id` 属性', en: 'same as <code>id</code> in native input' },
+      description: { cn: '等价于原生 input `id` 属性', en: 'same as `id` in native input' },
       type: ['string', '[string, string]'],
       default: '—',
       value: [],
     },
     {
       name: 'name',
-      description: { cn: '等价于原生 input `name` 属性', en: 'same as <code>name</code> in native input' },
+      description: { cn: '等价于原生 input `name` 属性', en: 'same as `name` in native input' },
       type: 'string',
       default: '—',
       value: [],
@@ -227,7 +227,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'calendar-change',
       description: {
         cn: '如果用户没有选择日期，那默认展示当前日的月份。 你可以使用 `default-value` 来设置成其他的日期。',
-        en: 'triggers when the calendar selected date is changed. Only for <code>daterange</code>',
+        en: 'triggers when the calendar selected date is changed. Only for `daterange`',
       },
       type: 'function',
       param: '(val: [Date, Date])',

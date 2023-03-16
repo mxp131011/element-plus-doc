@@ -107,7 +107,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'default-time',
       description: {
         cn: '选择日期后的默认时间值。 如未指定则默认时间值为 `00:00:00`',
-        en: 'the default time value after picking a date. Time <code>00:00:00</code> will be used if not specified',
+        en: 'the default time value after picking a date. Time `00:00:00` will be used if not specified',
       },
       type: ['Date', '[Date, Date]'],
       default: '—',
@@ -125,14 +125,14 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'id',
-      description: { cn: '等价于原生 input `id` 属性', en: 'same as <code>id</code> in native input' },
+      description: { cn: '等价于原生 input `id` 属性', en: 'same as `id` in native input' },
       type: ['string', '[string, string]'],
       default: '—',
       value: [],
     },
     {
       name: 'name',
-      description: { cn: '等价于原生 input `name` 属性', en: 'same as <code>name</code> in native input' },
+      description: { cn: '等价于原生 input `name` 属性', en: 'same as `name` in native input' },
       type: 'string',
       default: '—',
       value: [],
@@ -216,7 +216,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'calendar-change',
       description: {
         cn: '如果用户没有选择日期，那默认展示当前日的月份。 你可以使用 default-value 来设置成其他的日期。',
-        en: 'triggers when the calendar selected date is changed. Only for <code>datetimerange</code>',
+        en: 'triggers when the calendar selected date is changed. Only for `datetimerange`',
       },
       type: 'function',
       param: '(val: [Date, Date])',

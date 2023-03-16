@@ -68,7 +68,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'expand-close-icon',
       description: {
         cn: '父菜单展开且子菜单关闭时的图标， `expand-close-icon` 和 `expand-open-icon` 需要一起配置才能生效',
-        en: 'Icon when menu are expanded and submenu are closed, <code>expand-close-icon</code> and <code>expand-open-icon</code> need to be passed together to take effect',
+        en: 'Icon when menu are expanded and submenu are closed, `expand-close-icon` and `expand-open-icon` need to be passed together to take effect',
       },
       type: ['string', 'Component'],
       default: '—',
@@ -78,7 +78,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'expand-open-icon',
       description: {
         cn: '父菜单展开且子菜单打开时的图标， `expand-open-icon` 和 `expand-close-icon` 需要一起配置才能生效',
-        en: 'Icon when menu are expanded and submenu are opened, <code>expand-open-icon</code> and <code>expand-close-icon</code> need to be passed together to take effect',
+        en: 'Icon when menu are expanded and submenu are opened, `expand-open-icon` and `expand-close-icon` need to be passed together to take effect',
       },
       type: ['string', 'Component'],
       default: '—',
@@ -88,7 +88,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'collapse-close-icon',
       description: {
         cn: '父菜单收起且子菜单关闭时的图标， `expand-close-icon` 和 `expand-open-icon` 需要一起配置才能生效',
-        en: 'Icon when menu are collapsed and submenu are closed, <code>collapse-close-icon</code> and <code>collapse-open-icon</code> need to be passed together to take effect',
+        en: 'Icon when menu are collapsed and submenu are closed, `collapse-close-icon` and `collapse-open-icon` need to be passed together to take effect',
       },
       type: ['string', 'Component'],
       default: '—',
@@ -98,7 +98,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'collapse-open-icon',
       description: {
         cn: '父菜单收起且子菜单打开时的图标， `expand-open-icon` 和 `expand-close-icon` 需要一起配置才能生效',
-        en: 'Icon when menu are collapsed and submenu are opened, <code>collapse-open-icon</code> and <code>collapse-close-icon</code> need to be passed together to take effect',
+        en: 'Icon when menu are collapsed and submenu are opened, `collapse-open-icon` and `collapse-close-icon` need to be passed together to take effect',
       },
       type: ['string', 'Component'],
       default: '—',

@@ -11,7 +11,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'column',
-      description: { cn: '一行 `Descriptions Item` 的数量', en: 'numbers of <code>Descriptions Item</code> in one line' },
+      description: { cn: '一行 `Descriptions Item` 的数量', en: 'numbers of `Descriptions Item` in one line' },
       type: 'number',
       default: '3',
       value: [],

@@ -81,8 +81,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'effect',
       description: {
-        cn: 'Tooltip 主题，内置了 <code>dark</code> / <code>light</code> 两种',
-        en: 'Tooltip theme, built-in theme: <code>dark</code> / <code>light</code>',
+        cn: 'Tooltip 主题，内置了 `dark` / `light` 两种',
+        en: 'Tooltip theme, built-in theme: `dark` / `light`',
       },
       type: 'enum',
       default: 'light',
@@ -112,8 +112,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'allow-create',
       description: {
-        cn: '是否允许用户创建新条目， 只有当 <code>filterable</code> 设置为 true 时才会生效',
-        en: 'whether creating new items is allowed. To use this, <code>filterable</code> must be true',
+        cn: '是否允许用户创建新条目， 只有当 `filterable` 设置为 true 时才会生效',
+        en: 'whether creating new items is allowed. To use this, `filterable` must be true',
       },
       type: 'boolean',
       default: 'false',
@@ -153,8 +153,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'persistent',
       description: {
-        cn: '当下拉选择器未被激活并且 <code>persistent</code> 设置为 <code>false</code> ，选择器会被删除。',
-        en: 'when select dropdown is inactive and <code>persistent</code> is <code>false</code>, select dropdown will be destroyed',
+        cn: '当下拉选择器未被激活并且 `persistent` 设置为 `false` ，选择器会被删除。',
+        en: 'when select dropdown is inactive and `persistent` is `false`, select dropdown will be destroyed',
       },
       type: 'boolean',
       default: 'true',
@@ -204,8 +204,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'remote-method',
       description: {
-        cn: '当输入值发生变化时被调用的函数。 其参数是当前输入值。 只有当 <code>filterable</code> 设置为 true 时才会生效',
-        en: 'function that gets called when the input value changes. Its parameter is the current input value. To use this, <code>filterable</code> must be true',
+        cn: '当输入值发生变化时被调用的函数。 其参数是当前输入值。 只有当 `filterable` 设置为 true 时才会生效',
+        en: 'function that gets called when the input value changes. Its parameter is the current input value. To use this, `filterable` must be true',
       },
       type: 'function(keyword: string)',
       default: '—',
@@ -228,8 +228,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'collapse-tags-tooltip',
       description: {
-        cn: '当鼠标悬停于折叠标签的文本时，是否显示所有选中的标签。 只有当 <code>collapse-tags</code> 设置为 true 时才会生效。(versions >= ^2.3.0)',
-        en: 'Twhether show all selected tags when mouse hover text of collapse-tags. To use this, <code>collapse-tags</code> must be true (versions >= ^2.3.0)',
+        cn: '当鼠标悬停于折叠标签的文本时，是否显示所有选中的标签。 只有当 `collapse-tags` 设置为 true 时才会生效。(versions >= ^2.3.0)',
+        en: 'Twhether show all selected tags when mouse hover text of collapse-tags. To use this, `collapse-tags` must be true (versions >= ^2.3.0)',
       },
       type: 'boolean',
       default: 'false',

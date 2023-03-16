@@ -76,7 +76,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'persistent',
       description: {
         cn: '当 popover 组件长时间不触发且 `persistent` 属性设置为 `false` 时, popover 将会被删除',
-        en: 'when popconfirm inactive and <code>persistent</code> is <code>false</code> , popconfirm will be destroyed',
+        en: 'when popconfirm inactive and `persistent` is `false` , popconfirm will be destroyed',
       },
       type: 'boolean',
       default: 'false',

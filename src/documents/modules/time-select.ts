@@ -46,7 +46,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'name',
-      description: { cn: '原生属性', en: 'same as <code>name</code> in native input' },
+      description: { cn: '原生属性', en: 'same as `name` in native input' },
       type: 'string',
       default: '—',
       value: [],
@@ -54,8 +54,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'effect',
       description: {
-        cn: 'Tooltip 主题，内置了 <code>dark</code> / <code>light</code> 两种主题',
-        en: 'Tooltip theme, built-in theme: <code>dark</code> / <code>light</code>',
+        cn: 'Tooltip 主题，内置了 `dark` / `light` 两种主题',
+        en: 'Tooltip theme, built-in theme: `dark` / `light`',
       },
       type: 'string',
       default: 'light',

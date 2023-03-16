@@ -57,8 +57,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'collapse-tags-tooltip',
       description: {
-        cn: '当鼠标悬停于折叠标签的文本时，是否显示所有选中的标签。 要使用此属性， <code>collapse-tags</code> 属性必须设定为 true',
-        en: 'whether show all selected tags when mouse hover text of collapse-tags. To use this, <code>collapse-tags</code> must be true',
+        cn: '当鼠标悬停于折叠标签的文本时，是否显示所有选中的标签。 要使用此属性， `collapse-tags` 属性必须设定为 true',
+        en: 'whether show all selected tags when mouse hover text of collapse-tags. To use this, `collapse-tags` must be true',
       },
       type: 'boolean',
       default: 'false',
@@ -67,8 +67,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'multiple-limit',
       description: {
-        cn: '<code>multiple</code> 属性设置为 <code>true</code> 时，代表多选场景下用户最多可以选择的项目数，为 0 则不限制',
-        en: 'maximum number of options user can select when <code>multiple</code> is <code>true</code>. No limit when set to 0',
+        cn: '`multiple` 属性设置为 `true` 时，代表多选场景下用户最多可以选择的项目数，为 0 则不限制',
+        en: 'maximum number of options user can select when `multiple` is `true`. No limit when set to 0',
       },
       type: 'number',
       default: '0',
@@ -84,8 +84,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'effect',
       description: {
-        cn: 'Tooltip 主题，内置了 <code>dark</code> / <code>light</code> 两种',
-        en: 'Tooltip theme, built-in theme: <code>dark</code> / <code>light</code>',
+        cn: 'Tooltip 主题，内置了 `dark` / `light` 两种',
+        en: 'Tooltip theme, built-in theme: `dark` / `light`',
       },
       type: 'enum',
       default: 'light',
@@ -115,8 +115,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'allow-create',
       description: {
-        cn: '是否允许用户创建新条目， 只有当 <code>filterable</code> 设置为 true 时才会生效。',
-        en: 'whether creating new items is allowed. To use this, <code>filterable</code> must be true',
+        cn: '是否允许用户创建新条目， 只有当 `filterable` 设置为 true 时才会生效。',
+        en: 'whether creating new items is allowed. To use this, `filterable` must be true',
       },
       type: 'boolean',
       default: 'false',
@@ -167,8 +167,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'no-match-text',
       description: {
-        cn: '搜索条件无匹配时显示的文字，也可以使用 <code>empty</code> 插槽设置',
-        en: 'displayed text when no data matches the filtering query, you can also use slot <code>empty</code>',
+        cn: '搜索条件无匹配时显示的文字，也可以使用 `empty` 插槽设置',
+        en: 'displayed text when no data matches the filtering query, you can also use slot `empty`',
       },
       type: 'string',
       default: '无匹配数据',
@@ -177,8 +177,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'no-data-text',
       description: {
-        cn: '无选项时显示的文字，也可以使用 <code>empty</code> 插槽设置自定义内容',
-        en: 'displayed text when there is no options, you can also use slot <code>empty</code>',
+        cn: '无选项时显示的文字，也可以使用 `empty` 插槽设置自定义内容',
+        en: 'displayed text when there is no options, you can also use slot `empty`',
       },
       type: 'string',
       default: '无数据',
@@ -204,8 +204,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'reserve-keyword',
       description: {
-        cn: '当 <code>multiple</code> 和 <code>filter</code> 被设置为 true 时，是否在选中一个选项后保留当前的搜索关键词',
-        en: 'when <code>multiple</code> and <code>filter</code> is true, whether to reserve current keyword after selecting an option',
+        cn: '当 `multiple` 和 `filter` 被设置为 true 时，是否在选中一个选项后保留当前的搜索关键词',
+        en: 'when `multiple` and `filter` is true, whether to reserve current keyword after selecting an option',
       },
       type: 'boolean',
       default: 'true',
@@ -214,8 +214,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'default-first-option',
       description: {
-        cn: '是否在输入框按下回车时，选择第一个匹配项。 需配合 <code>filterable</code> 或 <code>remote</code> 使用',
-        en: 'select first matching option on enter key. Use with <code>filterable</code> or <code>remote</code>',
+        cn: '是否在输入框按下回车时，选择第一个匹配项。 需配合 `filterable` 或 `remote` 使用',
+        en: 'select first matching option on enter key. Use with `filterable` or `remote`',
       },
       type: 'boolean',
       default: 'false',
@@ -231,8 +231,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'persistent',
       description: {
-        cn: '当下拉选择器未被激活并且 <code>persistent</code> 设置为 <code>false</code> ，选择器会被删除。',
-        en: 'when select dropdown is inactive and <code>persistent</code> is <code>false</code>, select dropdown will be destroyed',
+        cn: '当下拉选择器未被激活并且 `persistent` 设置为 `false` ，选择器会被删除。',
+        en: 'when select dropdown is inactive and `persistent` is `false`, select dropdown will be destroyed',
       },
       type: 'boolean',
       default: 'true',
@@ -293,8 +293,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'max-collapse-tags',
       description: {
-        cn: '需要显示的 Tag 的最大数量 只有当 <code>collapse-tags</code> 设置为 true 时才会生效。(versions >= ^2.3.0)',
-        en: 'The max tags number to be shown. To use this, <code>collapse-tags</code> must be true (versions >= ^2.3.0)',
+        cn: '需要显示的 Tag 的最大数量 只有当 `collapse-tags` 设置为 true 时才会生效。(versions >= ^2.3.0)',
+        en: 'The max tags number to be shown. To use this, `collapse-tags` must be true (versions >= ^2.3.0)',
       },
       type: 'number',
       default: '1',

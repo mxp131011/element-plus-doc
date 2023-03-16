@@ -6,7 +6,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'label',
       description: {
         cn: '选中状态的值，只有在绑定对象类型为 `array` 时有效。',
-        en: 'value of the checkbox when used inside a <code>checkbox-group</code>',
+        en: 'value of the checkbox when used inside a `checkbox-group`',
       },
       type: ['string', 'number', 'boolean', 'object'],
       default: '—',

@@ -25,7 +25,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'href',
-      description: { cn: '原生 `href` 属性', en: "same as native hyperlink's <code>href</code>" },
+      description: { cn: '原生 `href` 属性', en: "same as native hyperlink's `href`" },
       type: 'string',
       default: '—',
       value: [],

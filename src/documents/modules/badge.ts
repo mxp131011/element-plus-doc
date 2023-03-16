@@ -13,7 +13,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'max',
       description: {
         cn: '最大值，超过最大值会显示 `{max}+`。 只有当 value 是数字类型时起作用。',
-        en: 'maximum value, shows <code>{max}+</code> when exceeded. Only works if value is a number.',
+        en: 'maximum value, shows `{max}+` when exceeded. Only works if value is a number.',
       },
       type: 'number',
       default: '99',

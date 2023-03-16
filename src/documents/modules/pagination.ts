@@ -41,7 +41,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'page-count',
       description: {
         cn: '总页数， `total` 和 `page-count` 设置任意一个就可以达到显示页码的功能；如果要支持 `page-sizes` 的更改，则需要使用 `total` 属性',
-        en: 'total page count. Set either <code>total</code> or <code>page-count</code> and pages will be displayed; if you need <code>page-sizes</code>, <code>total</code> is required',
+        en: 'total page count. Set either `total` or `page-count` and pages will be displayed; if you need `page-sizes`, `total` is required',
       },
       type: 'number',
       default: '—',
@@ -106,7 +106,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'prev-icon',
       description: {
         cn: '上一页的图标， 比 `prev-text` 优先级更高',
-        en: 'icon for the prev button, higher priority of <code>prev-text</code>',
+        en: 'icon for the prev button, higher priority of `prev-text`',
       },
       type: ['string', 'Component'],
       default: 'ArrowLeft',
@@ -123,7 +123,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'next-icon',
       description: {
         cn: '下一页的图标， 比 `next-text` 优先级更高',
-        en: 'icon for the next button, higher priority of <code>next-text</code>',
+        en: 'icon for the next button, higher priority of `next-text`',
       },
       type: ['string', 'Component'],
       default: 'ArrowRight',
@@ -147,13 +147,13 @@ const doc: TagDoc.TagDocInstance = {
   events: [
     {
       name: 'size-change',
-      description: { cn: '`page-size` 改变时触发', en: 'triggers when <code>page-size</code> changes' },
+      description: { cn: '`page-size` 改变时触发', en: 'triggers when `page-size` changes' },
       type: 'function',
       param: '(value: number) => void',
     },
     {
       name: 'current-change',
-      description: { cn: '`current-page` 改变时触发', en: 'triggers when <code>current-page</code> changes' },
+      description: { cn: '`current-page` 改变时触发', en: 'triggers when `current-page` changes' },
       type: 'function',
       param: '(value: number) => void',
     },
@@ -181,7 +181,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'default',
       description: {
         cn: '自定义内容 设置文案，需要在 `layout` 中列出 `slot`',
-        en: 'custom content. To use this, you need to declare <code>slot</code> in <code>layout</code>',
+        en: 'custom content. To use this, you need to declare `slot` in `layout`',
       },
     },
   ],

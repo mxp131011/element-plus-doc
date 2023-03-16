@@ -33,7 +33,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'background-color',
       description: {
         cn: '菜单的背景颜色（十六进制格式）（已被废弃，使用--bg-color）',
-        en: 'background color of Menu (hex format) (deprecated, use <code>--bg-color</code> instead)',
+        en: 'background color of Menu (hex format) (deprecated, use `--bg-color` instead)',
       },
       type: 'string',
       default: '#ffffff',
@@ -43,7 +43,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'text-color',
       description: {
         cn: '文字颜色（十六进制格式）（已被废弃，使用--text-color）',
-        en: 'text color of Menu (hex format) (deprecated, use <code>--text-color</code> instead)',
+        en: 'text color of Menu (hex format) (deprecated, use `--text-color` instead)',
       },
       type: 'string',
       default: '#303133',
@@ -53,7 +53,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'active-text-color',
       description: {
         cn: '活动菜单项的文本颜色（十六进制格式）（已被废弃，使用--active-color）',
-        en: 'text color of currently active menu item (hex format) (deprecated, use <code>--active-color</code> instead)',
+        en: 'text color of currently active menu item (hex format) (deprecated, use `--active-color` instead)',
       },
       type: 'string',
       default: '#409EFF',
@@ -84,7 +84,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'menu-trigger',
       description: {
         cn: '子菜单打开的触发方式，只在 mode 为 horizontal 时有效。',
-        en: "how sub-menus are triggered, only works when <code>mode</code> is 'horizontal'",
+        en: "how sub-menus are triggered, only works when `mode` is 'horizontal'",
       },
       type: 'enum',
       default: "'hover'",
@@ -94,7 +94,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'router',
       description: {
         cn: '是否启用 vue-router 模式。 启用该模式会在激活导航时以 index 作为 path 进行路由跳转 使用 default-active 来设置加载时的激活项。',
-        en: "whether <code>vue-router</code> mode is activated. If true, index will be used as 'path' to activate the route action. Use with <code>default-active</code> to set the active item on load.",
+        en: "whether `vue-router` mode is activated. If true, index will be used as 'path' to activate the route action. Use with `default-active` to set the active item on load.",
       },
       type: 'boolean',
       default: 'false',
@@ -111,7 +111,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'popper-effect',
       description: {
         cn: 'Tooltip 主题，内置了 `dark` / `light` 两种主题',
-        en: 'Tooltip theme, built-in theme: <code>dark</code> / <code>light</code> when menu is collapsed',
+        en: 'Tooltip theme, built-in theme: `dark` / `light` when menu is collapsed',
       },
       type: 'enum',
       default: "'dark'",

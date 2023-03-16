@@ -6,7 +6,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'header',
       description: {
         cn: '卡片的标题 你既可以通过设置 header 来修改标题，也可以通过 `slot#header` 传入 DOM 节点',
-        en: 'title of the card. Also accepts a DOM passed by <code>slot#header</code>',
+        en: 'title of the card. Also accepts a DOM passed by `slot#header`',
       },
       type: 'string',
       default: '—',

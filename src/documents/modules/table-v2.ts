@@ -105,7 +105,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'columns',
       description: {
         cn: '列 column 的配置数组，详见下面 `column` 表',
-        en: 'An array of column definitions., see the following <code>column</code> table.',
+        en: 'An array of column definitions., see the following `column` table.',
       },
       type: 'array',
       default: '-',

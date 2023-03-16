@@ -6,7 +6,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'to',
       description: {
         cn: '路由跳转目标，同 vue-router 的 `to` 属性',
-        en: 'target route of the link, same as <code>to</code> of <code>vue-router</code>',
+        en: 'target route of the link, same as `to` of `vue-router`',
       },
       type: ['string', 'object'],
       default: '—',
@@ -16,7 +16,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'replace',
       description: {
         cn: '如果设置该属性为 `true`, 导航将不会留下历史记录',
-        en: 'if <code>true</code>, the navigation will not leave a history record',
+        en: 'if `true`, the navigation will not leave a history record',
       },
       type: 'boolean',
       default: 'false',

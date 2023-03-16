@@ -47,7 +47,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'minlength',
-      description: { cn: '原生属性，最小输入长度', en: 'same as <code>minlength</code> in native input' },
+      description: { cn: '原生属性，最小输入长度', en: 'same as `minlength` in native input' },
       type: 'number',
       default: '—',
       value: [],
@@ -56,7 +56,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'show-word-limit',
       description: {
         cn: "是否显示统计字数, 只在 type 为 'text' 或 'textarea' 的时候生效",
-        en: "whether show word count, only works when <code>type</code> is 'text' or 'textarea'",
+        en: "whether show word count, only works when `type` is 'text' or 'textarea'",
       },
       type: 'boolean',
       default: 'false',
@@ -73,7 +73,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'clearable',
       description: {
         cn: '是否显示清除按钮，只有当 `type` 不是 textarea时生效',
-        en: "whether to show clear button, only works when <code>type</code> is not 'textarea'",
+        en: "whether to show clear button, only works when `type` is not 'textarea'",
       },
       type: 'boolean',
       default: 'false',
@@ -83,7 +83,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'formatter',
       description: {
         cn: "指定输入值的格式。(只有当 type 是'text'时才能工作)",
-        en: "specifies the format of the value presented input.(only works when <code>type</code> is 'text')",
+        en: "specifies the format of the value presented input.(only works when `type` is 'text')",
       },
       type: 'function(value)',
       default: '',
@@ -93,7 +93,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'parser',
       description: {
         cn: "指定从格式化器输入中提取的值。(仅当 type 是'text'时才起作用)",
-        en: "specifies the value extracted from formatter input.(only works when <code>type</code> is 'text')",
+        en: "specifies the value extracted from formatter input.(only works when `type` is 'text')",
       },
       type: 'function(value)',
       default: '—',
@@ -115,7 +115,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'size',
-      description: { cn: "输入框尺寸，只在 type 不为 'textarea' 时有效", en: "size of Input, works when <code>type</code> is not 'textarea'" },
+      description: { cn: "输入框尺寸，只在 type 不为 'textarea' 时有效", en: "size of Input, works when `type` is not 'textarea'" },
       type: 'enum',
       default: "'default'",
       value: ['large', 'default', 'small'],
@@ -138,7 +138,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'rows',
       description: {
         cn: "输入框行数，仅 type 为 'textarea' 时有效",
-        en: "number of rows of textarea, only works when <code>type</code> is 'textarea'",
+        en: "number of rows of textarea, only works when `type` is 'textarea'",
       },
       type: 'number',
       default: '2',
@@ -148,7 +148,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'autosize',
       description: {
         cn: "textarea 高度是否自适应，仅 type 为 'textarea' 时生效。 可以接受一个对象，比如: { minRows: 2, maxRows: 6 }",
-        en: "whether textarea has an adaptive height, only works when <code>type</code> is 'textarea'. Can accept an object, e.g. <code>{ minRows: 2, maxRows: 6 }</code>",
+        en: "whether textarea has an adaptive height, only works when `type` is 'textarea'. Can accept an object, e.g. `{ minRows: 2, maxRows: 6 }`",
       },
       type: ['boolean', 'object'],
       default: 'false',
@@ -156,42 +156,42 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'autocomplete',
-      description: { cn: '原生 `autocomplete` 属性', en: 'same as <code>autocomplete</code> in native input' },
+      description: { cn: '原生 `autocomplete` 属性', en: 'same as `autocomplete` in native input' },
       type: 'string',
       default: 'off',
       value: [],
     },
     {
       name: 'name',
-      description: { cn: '等价于原生 input `name` 属性', en: 'same as <code>name</code> in native input' },
+      description: { cn: '等价于原生 input `name` 属性', en: 'same as `name` in native input' },
       type: 'string',
       default: '—',
       value: [],
     },
     {
       name: 'readonly',
-      description: { cn: '原生 `readonly` 属性，是否只读', en: 'same as <code>readonly</code> in native input' },
+      description: { cn: '原生 `readonly` 属性，是否只读', en: 'same as `readonly` in native input' },
       type: 'boolean',
       default: 'false',
       value: [],
     },
     {
       name: 'max',
-      description: { cn: '原生属性，设置最大值', en: 'same as <code>max</code> in native input' },
+      description: { cn: '原生属性，设置最大值', en: 'same as `max` in native input' },
       type: ['string', 'number'],
       default: '—',
       value: [],
     },
     {
       name: 'min',
-      description: { cn: '原生属性，设置最小值', en: 'same as <code>min</code> in native input' },
+      description: { cn: '原生属性，设置最小值', en: 'same as `min` in native input' },
       type: ['string', 'number'],
       default: '—',
       value: [],
     },
     {
       name: 'step',
-      description: { cn: '原生属性，设置输入字段的合法数字间隔', en: 'same as <code>step</code> in native input' },
+      description: { cn: '原生属性，设置输入字段的合法数字间隔', en: 'same as `step` in native input' },
       type: ['string', 'number'],
       default: '—',
       value: [],
@@ -205,21 +205,21 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'autofocus',
-      description: { cn: '原生属性，自动获取焦点', en: 'same as <code>autofocus</code> in native input' },
+      description: { cn: '原生属性，自动获取焦点', en: 'same as `autofocus` in native input' },
       type: 'boolean',
       default: 'false',
       value: [],
     },
     {
       name: 'form',
-      description: { cn: '原生属性', en: 'same as <code>form</code> in native input' },
+      description: { cn: '原生属性', en: 'same as `form` in native input' },
       type: 'string',
       default: '—',
       value: [],
     },
     {
       name: 'label',
-      description: { cn: '等价于原生 input aria-label 属性', en: 'same as <code>aria-label</code> in native input' },
+      description: { cn: '等价于原生 input aria-label 属性', en: 'same as `aria-label` in native input' },
       type: 'string',
       default: '—',
       value: [],
@@ -348,28 +348,28 @@ const doc: TagDoc.TagDocInstance = {
       name: 'prefix',
       description: {
         cn: "输入框头部内容，只对非 type='textarea' 有效",
-        en: "content as Input prefix, only works when <code>type</code> is not 'textarea'",
+        en: "content as Input prefix, only works when `type` is not 'textarea'",
       },
     },
     {
       name: 'suffix',
       description: {
         cn: "输入框头部内容，只对非 type='textarea' 有效",
-        en: "content as Input suffix, only works when <code>type</code> is not 'textarea'",
+        en: "content as Input suffix, only works when `type` is not 'textarea'",
       },
     },
     {
       name: 'prepend',
       description: {
         cn: "输入框头部内容，只对非 type='textarea' 有效",
-        en: "content to prepend before Input, only works when <code>type</code> is not 'textarea'",
+        en: "content to prepend before Input, only works when `type` is not 'textarea'",
       },
     },
     {
       name: 'append',
       description: {
         cn: "输入框头部内容，只对非 type='textarea' 有效",
-        en: "content to append after Input, only works when <code>type</code> is not 'textarea'",
+        en: "content to append after Input, only works when `type` is not 'textarea'",
       },
     },
   ],

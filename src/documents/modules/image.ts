@@ -58,14 +58,14 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'alt',
-      description: { cn: '原生属性 `alt`', en: 'native attribute <code>alt</code>.' },
+      description: { cn: '原生属性 `alt`', en: 'native attribute `alt`.' },
       type: 'string',
       default: '—',
       value: [],
     },
     {
       name: 'referrer-policy',
-      description: { cn: '原生属性 `referrerPolicy`', en: 'native attribute <code>referrerPolicy</code>.' },
+      description: { cn: '原生属性 `referrerPolicy`', en: 'native attribute `referrerPolicy`.' },
       type: 'string',
       default: '—',
       value: [],
@@ -88,7 +88,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'initial-index',
       description: {
         cn: '初始预览图像索引，小于 `url-list` 的长度',
-        en: 'initial preview image index, less than the length of <code>url-list</code>.',
+        en: 'initial preview image index, less than the length of `url-list`.',
       },
       type: 'number',
       default: '0',
@@ -105,7 +105,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'preview-teleported',
       description: {
         cn: 'image-viewer 是否插入至 body 元素上。 嵌套的父元素属性会发生修改时应该将此属性设置为 `true`',
-        en: 'whether to append image-viewer to body. A nested parent element attribute transform should have this attribute set to <code>true</code>.',
+        en: 'whether to append image-viewer to body. A nested parent element attribute transform should have this attribute set to `true`.',
       },
       type: 'boolean',
       default: 'false',
@@ -135,7 +135,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'close',
       description: {
         cn: '当点击 X 按钮或者在hide-on-click-modal为 true 时点击遮罩层时触发',
-        en: 'trigger when clicking on close button or when <code>hide-on-click-modal</code> enabled clicking on backdrop.',
+        en: 'trigger when clicking on close button or when `hide-on-click-modal` enabled clicking on backdrop.',
       },
       type: 'function',
       param: '() => void',
