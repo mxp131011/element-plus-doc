@@ -1,7 +1,8 @@
 import * as vscode from 'vscode';
 import type { BaseLanguage, BaseUrl } from '@/types/index';
 import { HoverProvierUtil } from './hover-provier-util';
-import { AllDocuments } from '@/documents/index';
+import { allDocuments } from '@/documents/index';
+import { directives } from '@/documents/directives/directive';
 import { GetDocUtil } from './get-doc-util';
 import { getTag, toKebabCase } from '@/utils/global';
 
@@ -28,14 +29,30 @@ export class MyHoverProvier implements vscode.HoverProvider {
     const range = hoverProvierUtil.getHoverRange(attr);
     const kebabCaseTag = toKebabCase(tag);
     const prefix = this.prefixList.find((pre) => kebabCaseTag.startsWith(`${pre}-`));
+
+    // 指令
+    if (tag && attr) {
+      for (const iterator of directives) {
+        const directive = iterator.list.find((item) => item.name === 'attr');
+        if (directive) {
+          const md: vscode.MarkdownString | undefined = undefined;
+          if (directive.name === iterator.name) {
+          } else {
+            md = new GetDocUtil(this.lang, this.officialWebsite).getSingleDoc(tagDoc, componentName, kebabCaseAttr);
+          }
+          return md;
+        }
+      }
+    }
+
     if (prefix) {
       // 如果只有以此前缀开头的标签才视作element-plus的标签
       let kebabCaseAttr = toKebabCase(attr === 'v-model' ? 'model-value' : attr);
       const attrArr = kebabCaseAttr.split(':'); // 解决 v-model:model-value 形式的属性
       const componentName = kebabCaseTag.replace(`${prefix}-`, '');
       kebabCaseAttr = attrArr.length > 1 && attrArr[1] ? attrArr[1] : kebabCaseAttr; // 如果是v-model:model-value 形式的属性取冒号后面的
-      if (componentName in AllDocuments && Boolean(AllDocuments[componentName])) {
-        const tagDoc = AllDocuments[componentName]!;
+      if (componentName in allDocuments && Boolean(allDocuments[componentName])) {
+        const tagDoc = allDocuments[componentName]!;
         let md: vscode.MarkdownString | undefined = undefined;
         if (kebabCaseTag === kebabCaseAttr) {
           // 属性 和标签一样 显示全部

@@ -1,6 +1,6 @@
 import { type Node } from 'vscode-html-languageservice';
 import * as vscode from 'vscode';
-import { AllDocuments } from '@/documents/index';
+import { allDocuments } from '@/documents/index';
 import { toKebabCase } from '@/utils/global';
 import { type BaseUrl } from '@/types/index';
 
@@ -19,11 +19,11 @@ export function useDocLink(
     const prefix = prefixList.find((pre) => tag.startsWith(`${pre}-`));
 
     if (prefix) {
-      // AllDocuments包含了tag,则使用组件名称作为链接
+      // allDocuments包含了tag,则使用组件名称作为链接
       const componentName = tag.replace(`${prefix}-`, '');
-      if (componentName in AllDocuments) {
+      if (componentName in allDocuments) {
         const range = new vscode.Range(document.positionAt(item.start + 1), document.positionAt(item.start + Number(tag.length) + 1));
-        result.push({ range, target: vscode.Uri.parse(`${officialWebsite}${AllDocuments[componentName]?.url}`), tooltip: '官方文档链接' });
+        result.push({ range, target: vscode.Uri.parse(`${officialWebsite}${allDocuments[componentName]?.url}`), tooltip: '官方文档链接' });
       }
     }
     // 递归遍历

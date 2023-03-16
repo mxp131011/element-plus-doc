@@ -4,7 +4,7 @@ const files = require.context('./modules', true, /\.ts$/);
 /**
  * 所有文档
  */
-export const AllDocuments = files.keys().reduce<Record<string, TagDoc.TagDocInstance>>((module, path) => {
+export const allDocuments = files.keys().reduce<Record<string, TagDoc.TagDocInstance>>((module, path) => {
   const name = `${path.replace(/^\.\/|.ts$/g, '')}`;
   module[name] = files(path).default;
   return module;

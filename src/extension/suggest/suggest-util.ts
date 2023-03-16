@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { AllDocuments } from '@/documents/index';
+import { allDocuments } from '@/documents/index';
 import type { BaseLanguage } from '@/types/index';
 import type { TagDoc } from '@/types/tag-doc';
 import { matchAttr } from '@/utils/global';
@@ -42,7 +42,7 @@ export class CompletionUtil {
   public getAttrOptionValues(tag: string, attr: string): string[] {
     const attrList = attr.split(':'); // 解决 v-model:model-value 形式的属性
     const newAttr = attrList.length > 1 && attrList[1] ? attrList[1] : attr; // 如果是v-model:model-value 形式的属性取冒号后面的
-    const docAttrs = AllDocuments[tag]!.attributes || [];
+    const docAttrs = allDocuments[tag]!.attributes || [];
     const attribute = docAttrs.find((item) => item.name === newAttr);
     if (!attribute) {
       return [];
@@ -91,7 +91,7 @@ export class CompletionUtil {
    */
   public getEventSuggest(tag: string): vscode.CompletionItem[] {
     const completionItems: vscode.CompletionItem[] = [];
-    const events: TagDoc.Event[] = AllDocuments?.[tag]?.events || [];
+    const events: TagDoc.Event[] = allDocuments?.[tag]?.events || [];
     const lang = this.lang === 'zh-CN' ? 'cn' : 'en';
     events.forEach((event: TagDoc.Event) => {
       completionItems.push({
@@ -112,7 +112,7 @@ export class CompletionUtil {
    */
   public getAttrSuggest(tag: string): vscode.CompletionItem[] {
     const completionItems: vscode.CompletionItem[] = [];
-    const attributes: TagDoc.Attribute[] = AllDocuments?.[tag]?.attributes || [];
+    const attributes: TagDoc.Attribute[] = allDocuments?.[tag]?.attributes || [];
     attributes.forEach((attribute: TagDoc.Attribute) => {
       completionItems.push({
         kind: vscode.CompletionItemKind.Property,
@@ -131,7 +131,7 @@ export class CompletionUtil {
    */
   public getTagSuggest(prefixList: string[]): vscode.CompletionItem[] {
     const completionItems: vscode.CompletionItem[] = [];
-    Object.keys(AllDocuments).forEach((key) => {
+    Object.keys(allDocuments).forEach((key) => {
       prefixList.forEach((prefix) => {
         const tag = `${prefix}-${key}`;
         completionItems.push({

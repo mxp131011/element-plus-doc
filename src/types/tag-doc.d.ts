@@ -75,6 +75,9 @@ export declare namespace TagDoc {
     type: 'function' | 'object';
   };
 
+  /** 指令 */
+  type Directives = { name: string; list: Attribute[] }[];
+
   /** 标签文档实例 */
   interface TagDocInstance {
     url: `component/${string}-api` | `component/${string}-attributes` | `component/${string}-slots` | `component/${string}-属性` | `component/${string}.html`;
