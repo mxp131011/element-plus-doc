@@ -17,3 +17,8 @@
 ## V0.0.8
 
 1. 修改`README.md`中的图片路径
+
+## V1.0.0
+
+1. 所有组件文档以全部整理完毕，本组件现在已正式可用了
+2. 添加无限滚动[infinite-scroll](https://element-plus.org/zh-CN/component/infinite-scroll.html) 和 加载[loading](https://element-plus.org/zh-CN/component/loading.html) 指令的相关文档
