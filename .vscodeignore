@@ -3,7 +3,6 @@
 out/**
 node_modules/**
 src/**
-text/**
 component/**
 .gitignore
 .yarnrc
