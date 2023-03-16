@@ -149,7 +149,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'expanded-row-keys',
       description: {
         cn: '存放行展开状态的 key 的数组，可以和 `v-model` 搭配使用',
-        en: 'An array of keys for expanded rows, can be used with &#60;code&#62;v-model&#60;/code&#62;',
+        en: 'An array of keys for expanded rows, can be used with `v-model`',
       },
       type: 'array',
       default: '-',
@@ -159,7 +159,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'default-expanded-row-keys',
       description: {
         cn: '默认展开的行的 key 的数组, 这个数据不是响应式的',
-        en: 'An array of keys for default expanded rows, &#60;strong&#62;NON REACTIVE&#60;/strong&#62;',
+        en: 'An array of keys for default expanded rows, &#60;strong>NON REACTIVE&#60;/strong>',
       },
       type: 'array',
       default: '-',
@@ -256,7 +256,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'column-sort',
       description: { cn: '列排序时调用', en: 'Invoked when column sorted' },
       type: 'function',
-      param: 'Object&#60;ColumnSortParam&#62;',
+      param: 'Object&#60;ColumnSortParam>',
     },
     {
       name: 'expanded-rows-change',
@@ -268,19 +268,19 @@ const doc: TagDoc.TagDocInstance = {
       name: 'end-reached',
       description: { cn: '到达表格末尾时触发', en: 'Invoked when the end of the table is reached' },
       type: 'function',
-      param: 'Array&#60;KeyType&#62;',
+      param: 'Array&#60;KeyType>',
     },
     {
       name: 'scroll',
       description: { cn: '表格被用户滚动后触发', en: 'Invoked after scrolled' },
       type: 'function',
-      param: 'Object&#60;ScrollParams&#62;',
+      param: 'Object&#60;ScrollParams>',
     },
     {
       name: 'rows-rendered',
       description: { cn: '当行被渲染后触发', en: 'Invoked when rows are rendered' },
       type: 'function',
-      param: 'Object&#60;RowsRenderedParams&#62;',
+      param: 'Object&#60;RowsRenderedParams>',
     },
     {
       name: 'row-expand',
@@ -289,13 +289,13 @@ const doc: TagDoc.TagDocInstance = {
         en: 'Invoked when expand/collapse the tree node by clicking the arrow icon',
       },
       type: 'function',
-      param: 'Object&#60;RowExpandParams&#62;',
+      param: 'Object&#60;RowExpandParams>',
     },
     {
       name: 'row-event-handlers',
       description: { cn: '当每行添加了一系列事件处理器时触发', en: 'A collection of handlers attached to each row' },
       type: 'function',
-      param: 'Object&#60;RowEventHandlers&#62;',
+      param: 'Object&#60;RowEventHandlers>',
     },
   ],
   exposes: [
@@ -321,7 +321,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'scrollToRow',
       description: { cn: '使用给定的滚动策略滚动至指定行', en: 'scroll to a given row with specified scroll strategy' },
       type: 'function',
-      param: 'row: number, strategy?: "auto" | "center" | "end" | "start" | "smart"',
+      param: 'row: number, strategy?: "auto" &#124; "center" &#124; "end" &#124; "start" &#124; "smart"',
     },
   ],
   slots: [

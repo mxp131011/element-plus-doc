@@ -42,8 +42,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'rules',
       description: {
-        cn: '表单验证规则, 具体配置见下表, 更多内容可以参考<a href="https://github.com/yiminghe/async-validator">async-validator</a>',
-        en: 'Validation rules of form, see the <a href="#formitemrule">following table</a>, more advanced usage at <a href="https://github.com/yiminghe/async-validator">async-validator</a>.',
+        cn: '表单验证规则, 具体配置见下表, 更多内容可以参考 [async-validator](https://github.com/yiminghe/async-validator) ',
+        en: 'Validation rules of form, more advanced usage at [async-validator](https://github.com/yiminghe/async-validator).',
       },
       type: 'object',
       default: '—',
@@ -100,7 +100,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'size',
       description: { cn: '表单项大小', en: 'Form item size.' },
       type: 'object',
-      param: "ComputedRef<'' | 'large' | 'default' | 'small'>",
+      param: "ComputedRef<'' &#124; 'large' &#124; 'default' &#124; 'small'>",
     },
     {
       name: 'validateMessage',
@@ -112,13 +112,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'validateState',
       description: { cn: '校验状态', en: 'Validation state.' },
       type: 'object',
-      param: "Ref<'' | 'error' | 'validating' | 'success'>",
+      param: "Ref<'' &#124; 'error' &#124; 'validating' &#124; 'success'>",
     },
     {
       name: 'validate',
       description: { cn: '验证表单项', en: 'Validate form item.' },
       type: 'function',
-      param: '(trigger: string, callback?: FormValidateCallback | undefined) => FormValidationResult',
+      param: '(trigger: string, callback?: FormValidateCallback &#124; undefined) => FormValidationResult',
     },
     {
       name: 'resetField',

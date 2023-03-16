@@ -33,8 +33,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'style',
       description: {
-        cn: '额外样式. TS类型：CSSProperties | CSSProperties[] | string[] | string',
-        en: 'Extra style rules. TS Type：CSSProperties | CSSProperties[] | string[] | string',
+        cn: '额外样式. TS类型：CSSProperties &#124; CSSProperties[] &#124; string[] &#124; string',
+        en: 'Extra style rules. TS Type：CSSProperties &#124; CSSProperties[] &#124; string[] &#124; string',
       },
       type: ['string', 'object'],
       default: 'CSSProperties[]',

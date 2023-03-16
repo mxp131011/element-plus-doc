@@ -145,8 +145,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'before-change',
       description: {
-        cn: 'switch 状态改变前的钩子， 返回 `false` 或者返回 `Promise` 且被 reject 则停止切换,TS类型：() => Promise<boolean> | boolean',
-        en: 'before-change hook before the switch state changes. If <code>false</code> is returned or a <code>Promise</code> is returned and then is rejected, will stop switching,TS Type：() => Promise<boolean> | boolean',
+        cn: 'switch 状态改变前的钩子， 返回 `false` 或者返回 `Promise` 且被 reject 则停止切换,TS类型：() => Promise<boolean> &#124; boolean',
+        en: 'before-change hook before the switch state changes. If <code>false</code> is returned or a <code>Promise</code> is returned and then is rejected, will stop switching,TS Type：() => Promise<boolean> &#124; boolean',
       },
       type: 'function',
       default: '—',

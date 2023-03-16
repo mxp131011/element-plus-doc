@@ -60,8 +60,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'colors',
       description: {
-        cn: 'icon 的颜色。 若传入数组，共有 3 个元素，为 3 个分段所对应的颜色；若传入对象，可自定义分段，键名为分段的界限值，键值为对应的颜色。 TS类型： string[] | Record<number, string>',
-        en: 'colors for icons. If array, it should have 3 elements, each of which corresponds with a score level, else if object, the key should be threshold value between two levels, and the value should be corresponding color. TS Type： string[] | Record<number, string>',
+        cn: 'icon 的颜色。 若传入数组，共有 3 个元素，为 3 个分段所对应的颜色；若传入对象，可自定义分段，键名为分段的界限值，键值为对应的颜色。 TS类型： string[] &#124; Record<number, string>',
+        en: 'colors for icons. If array, it should have 3 elements, each of which corresponds with a score level, else if object, the key should be threshold value between two levels, and the value should be corresponding color. TS Type： string[] &#124; Record<number, string>',
       },
       type: 'object',
       default: "['#F7BA2A', '#F7BA2A', '#F7BA2A']",
@@ -84,8 +84,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'icons',
       description: {
-        cn: '图标组件 若传入数组，则需要传入 3 个元素，分别为 3 个部分所对应的类名；若传入对象，则可自定义分段，键名为分段的界限值，键值为对应的类名。 TS类型：string[] | Component[] | Record<number, string | Component>',
-        en: 'icon components. If array, it should have 3 elements, each of which corresponds with a score level, else if object, the key should be threshold value between two levels, and the value should be corresponding icon component. TS Type: string[] | Component[] | Record<number, string | Component>',
+        cn: '图标组件 若传入数组，则需要传入 3 个元素，分别为 3 个部分所对应的类名；若传入对象，则可自定义分段，键名为分段的界限值，键值为对应的类名。 TS类型：string[] &#124; Component[] &#124; Record<number, string &#124; Component>',
+        en: 'icon components. If array, it should have 3 elements, each of which corresponds with a score level, else if object, the key should be threshold value between two levels, and the value should be corresponding icon component. TS Type: string[] &#124; Component[] &#124; Record<number, string &#124; Component>',
       },
       type: 'object',
       default: '[StarFilled, StarFilled, StarFilled]',

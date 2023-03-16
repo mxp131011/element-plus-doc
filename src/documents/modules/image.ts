@@ -12,8 +12,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'fit',
       description: {
-        cn: '确定图片如何适应容器框，同原生 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit">object-fit</a>.',
-        en: 'indicate how the image should be resized to fit its container, same as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit">object-fit</a>.',
+        cn: '确定图片如何适应容器框，同原生 [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).',
+        en: 'indicate how the image should be resized to fit its container, same as [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).',
       },
       type: 'enum',
       default: '—',
@@ -32,8 +32,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'loading',
       description: {
-        cn: '浏览器加载图像的策略，和 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading">浏览器原生</a>能力一致',
-        en: 'Indicates how the browser should load the image, same as <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading">native</a>',
+        cn: '浏览器加载图像的策略，和 [浏览器原生](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading) 能力一致',
+        en: 'Indicates how the browser should load the image, same as [native](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading)',
       },
       type: 'enum',
       default: '—',

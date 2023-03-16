@@ -99,8 +99,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'controls',
       description: {
-        cn: '与 <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls">aria-controls</a>一致, 当 `indeterminate` 为 `true` 时生效',
-        en: 'same as <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls">aria-controls</a>, takes effect when <code>indeterminate</code> is <code>true</code>',
+        cn: '与 [aria-controls](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls)一致, 当 `indeterminate` 为 `true` 时生效',
+        en: 'same as [aria-controls](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls), takes effect when <code>indeterminate</code> is <code>true</code>',
       },
       type: 'boolean',
       default: '—',
@@ -112,7 +112,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'change',
       description: { cn: '当绑定值变化时触发的事件', en: 'triggers when the binding value changes' },
       type: 'function',
-      param: '(value: string | number | boolean) => void',
+      param: '(value: string &#124; number &#124; boolean) => void',
     },
   ],
   slots: [

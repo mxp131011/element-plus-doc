@@ -19,8 +19,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'formatter',
       description: {
-        cn: '自定义数字格式化,TS 类型：(value: number) => string | number',
-        en: 'Custom numerical presentation. TS Type: (value: number) => string | number',
+        cn: '自定义数字格式化,TS 类型：(value: number) => string &#124; number',
+        en: 'Custom numerical presentation. TS Type: (value: number) => string &#124; number',
       },
       type: 'function',
       default: 'number`',
@@ -67,8 +67,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'value-style',
       description: {
-        cn: '数字样式。 TS类型: CSSProperties | CSSProperties[] | string[] | string',
-        en: 'Styles numeric values. TS Type: CSSProperties | CSSProperties[] | string[] | string',
+        cn: '数字样式。 TS类型: CSSProperties &#124; CSSProperties[] &#124; string[] &#124; string',
+        en: 'Styles numeric values. TS Type: CSSProperties &#124; CSSProperties[] &#124; string[] &#124; string',
       },
       type: ['string', 'object'],
       default: '—',

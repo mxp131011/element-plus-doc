@@ -13,7 +13,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'height',
       description: {
         cn: 'Table 的高度， 默认为自动高度。 如果 height 为 number 类型，单位 px；如果 height 为 string 类型，则这个高度会设置为 Table 的 style.height 的值，Table 的高度会受控于外部样式。',
-        en: "Table's height. By default it has an &#60;code&#62;auto&#60;/code&#62; height. If its value is a number, the height is measured in pixels; if its value is a string, the value will be assigned to element's style.height, the height is affected by external styles",
+        en: "Table's height. By default it has an `auto` height. If its value is a number, the height is measured in pixels; if its value is a string, the value will be assigned to element's style.height, the height is affected by external styles",
       },
       type: ['string', 'number'],
       default: '—',
@@ -162,7 +162,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'row-key',
       description: {
         cn: '行数据的 Key，用来优化 Table 的渲染； 在使用`reserve-selection`功能与显示树形数据时，该属性是必填的。 类型为 String 时，支持多层访问：`user.info.id` ，但不支持 `user.info[0].id` ，此种情况请使用 `function` 。',
-        en: 'key of row data, used for optimizing rendering. Required if &#60;code&#62;reserve-selection&#60;/code&#62; is on or display tree data. When its type is String, multi-level access is supported, e.g. &#60;code&#62;user.info.id&#60;/code&#62;, but &#60;code&#62;user.info[0].id&#60;/code&#62; is not supported, in which case &#60;code&#62;Function&#60;/code&#62; should be used.',
+        en: 'key of row data, used for optimizing rendering. Required if `reserve-selection` is on or display tree data. When its type is String, multi-level access is supported, e.g. `user.info.id`, but `user.info[0].id` is not supported, in which case `Function` should be used.',
       },
       type: ['string', 'function(row)'],
       default: '—',
@@ -171,8 +171,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'empty-text',
       description: {
-        cn: '空数据时显示的文本内容， 也可以通过 &#60;code&#62;#empty&#60;/code&#62; 设置',
-        en: 'Displayed text when data is empty. You can customize this area with &#60;code&#62;#empty&#60;/code&#62;',
+        cn: '空数据时显示的文本内容， 也可以通过 `#empty` 设置',
+        en: 'Displayed text when data is empty. You can customize this area with `#empty`',
       },
       type: 'string',
       default: 'No Data',
@@ -210,7 +210,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'tooltip-effect',
-      description: { cn: '溢出的 tooltip 的 &#60;code&#62;effect&#60;/code&#62;', en: 'the &#60;code&#62;effect&#60;/code&#62; of the overflow tooltip' },
+      description: { cn: '溢出的 tooltip 的 `effect`', en: 'the `effect` of the overflow tooltip' },
       type: 'enum',
       default: 'light',
       value: ['dark', 'light'],
@@ -280,8 +280,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'load',
       description: {
-        cn: '加载子节点数据的函数，&#60;code&#62;lazy&#60;/code&#62; 为 true 时生效',
-        en: 'method for loading child row data, only works when &#60;code&#62;lazy&#60;/code&#62; is true',
+        cn: '加载子节点数据的函数，`lazy` 为 true 时生效',
+        en: 'method for loading child row data, only works when `lazy` is true',
       },
       type: 'function(row, treenode, resolve)',
       default: '—',
@@ -496,8 +496,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'clearFilter',
       description: {
-        cn: '传入由 &#60;code&#62;columnKey&#60;/code&#62; 组成的数组以清除指定列的过滤条件。 如果没有参数，清除所有过滤器',
-        en: 'clear filters of the columns whose &#60;code&#62;columnKey&#60;/code&#62; are passed in. If no params, clear all filters',
+        cn: '传入由 `columnKey` 组成的数组以清除指定列的过滤条件。 如果没有参数，清除所有过滤器',
+        en: 'clear filters of the columns whose `columnKey` are passed in. If no params, clear all filters',
       },
       type: 'function',
       param: 'columnKeys',
@@ -514,8 +514,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'sort',
       description: {
-        cn: '手动排序表格。 参数 &#60;code&#62;prop&#60;/code&#62; 属性指定排序列， &#60;code&#62;order&#60;/code&#62; 指定排序顺序。',
-        en: 'sort Table manually. Property &#60;code&#62;prop&#60;/code&#62; is used to set sort column, property &#60;code&#62;order&#60;/code&#62; is used to set sort order',
+        cn: '手动排序表格。 参数 `prop` 属性指定排序列， `order` 指定排序顺序。',
+        en: 'sort Table manually. Property `prop` is used to set sort column, property `order` is used to set sort order',
       },
       type: 'function',
       param: 'prop: string, order: string',

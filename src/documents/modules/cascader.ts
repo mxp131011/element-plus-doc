@@ -210,7 +210,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'get an array of currently selected node,(leafOnly) whether only return the leaf checked nodes, default is <code>false</code>',
       },
       type: 'function',
-      param: '(leafOnly: boolean) => CascaderNode[] | undefined',
+      param: '(leafOnly: boolean) => CascaderNode[] &#124; undefined',
     },
     {
       name: 'cascaderPanelRef',

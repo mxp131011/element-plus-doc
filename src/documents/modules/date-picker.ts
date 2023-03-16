@@ -89,8 +89,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'popper-options',
       description: {
-        cn: '自定义 popper 选项，更多请参考 <a href="https://popper.js.org/docs/v2/">popper.js</a>',
-        en: 'Customized popper option see more at <a href="https://popper.js.org/docs/v2/">popper.js</a>',
+        cn: '自定义 popper 选项，更多请参考[popper.js](https://popper.js.org/docs/v2/)',
+        en: 'Customized popper option，更多请参考[popper.js](https://popper.js.org/docs/v2/)',
       },
       type: 'object',
       default: '—',
@@ -182,8 +182,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'shortcuts',
       description: {
-        cn: '设置快捷选项，需要传入数组对象 (Array<{ text: string, value: Date | Function }>)',
-        en: 'an object array to set shortcut options (Array<{ text: string, value: Date | Function }>)',
+        cn: '设置快捷选项，需要传入数组对象 (Array<{ text: string, value: Date &#124; Function }>)',
+        en: 'an object array to set shortcut options (Array<{ text: string, value: Date &#124; Function }>)',
       },
       type: 'array',
       default: '—',

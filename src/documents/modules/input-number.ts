@@ -127,7 +127,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'change',
       description: { cn: '绑定值被改变时触发', en: 'triggers when the value changes' },
       type: 'function',
-      param: '(currentValue: number | undefined, oldValue: number | undefined) => void',
+      param: '(currentValue: number &#124; undefined, oldValue: number &#124; undefined) => void',
     },
     {
       name: 'blur',

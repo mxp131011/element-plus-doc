@@ -4,7 +4,7 @@ const doc: TagDoc.TagDocInstance = {
   attributes: [
     {
       name: 'model-value',
-      description: { cn: '绑定值. (string[] | number[])', en: 'binding value. (string[] | number[])' },
+      description: { cn: '绑定值. (string[] &#124; number[])', en: 'binding value. (string[] &#124; number[])' },
       type: 'array',
       default: '',
       value: [],
@@ -78,7 +78,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'change',
       description: { cn: '当绑定值变化时触发的事件', en: 'triggers when the binding value changes' },
       type: 'function',
-      param: '(value: string[] | number[]) => void',
+      param: '(value: string[] &#124; number[]) => void',
     },
   ],
   slots: [

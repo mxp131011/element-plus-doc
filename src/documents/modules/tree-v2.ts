@@ -71,7 +71,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'check-strictly',
       description: {
         cn: '在显示复选框的情况下，是否严格的遵循父子不互相关联的做法，默认为 `false`',
-        en: 'whether checked state of a node not affects its father and child nodes when &#60;code&#62;show-checkbox&#60;/code&#62; is &#60;code&#62;true&#60;/code&#62;',
+        en: 'whether checked state of a node not affects its father and child nodes when `show-checkbox` is `true`',
       },
       type: 'boolean',
       default: 'false',
@@ -94,8 +94,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'filter-method',
       description: {
-        cn: '对树节点进行筛选时执行的方法，返回 true 表示这个节点可以显示， 返回 &#60;code&#62;false&#60;/code&#62; 则表示这个节点会被隐藏',
-        en: 'this function will be executed on each node when use filter method. if return &#60;code&#62;false&#60;/code&#62;, tree node will be hidden.',
+        cn: '对树节点进行筛选时执行的方法，返回 true 表示这个节点可以显示， 返回 `false` 则表示这个节点会被隐藏',
+        en: 'this function will be executed on each node when use filter method. if return `false`, tree node will be hidden.',
       },
       type: 'function(value, data)',
       default: '—',
@@ -177,8 +177,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'getCheckedNodes',
       description: {
-        cn: '若节点可被选择（即 &#60;code&#62;show-checkbox&#60;/code&#62; 为 &#60;code&#62;true&#60;/code&#62;），则返回目前被选中的节点所组成的数组',
-        en: 'If the node can be selected (&#60;code&#62;show-checkbox&#60;/code&#62; is &#60;code&#62;true&#60;/code&#62;), it returns the currently selected array of nodes',
+        cn: '若节点可被选择（即 `show-checkbox` 为 `true`），则返回目前被选中的节点所组成的数组',
+        en: 'If the node can be selected (`show-checkbox` is `true`), it returns the currently selected array of nodes',
       },
       type: 'function',
       param: '(leafOnly: boolean)',
@@ -186,8 +186,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'getCheckedKeys',
       description: {
-        cn: '若节点可被选择（即 &#60;code&#62;show-checkbox&#60;/code&#62; 为 &#60;code&#62;true&#60;/code&#62;），则返回目前被选中的节点的 key 所组成的数组',
-        en: "If the node can be selected (&#60;code&#62;show-checkbox&#60;/code&#62; is &#60;code&#62;true&#60;/code&#62;), it returns the currently selected array of node's keys",
+        cn: '若节点可被选择（即 `show-checkbox` 为 `true`），则返回目前被选中的节点的 key 所组成的数组',
+        en: "If the node can be selected (`show-checkbox` is `true`), it returns the currently selected array of node's keys",
       },
       type: 'function',
       param: '(leafOnly: boolean)',
@@ -213,8 +213,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'getHalfCheckedNodes',
       description: {
-        cn: '如果节点可用被选中 (即 &#60;code&#62;show-checkbox&#60;/code&#62; 为 &#60;code&#62;true&#60;/code&#62;), 它将返回当前半选中的节点组成的数组',
-        en: 'If the node can be selected (&#60;code&#62;show-checkbox&#60;/code&#62; is &#60;code&#62;true&#60;/code&#62;), it returns the currently half selected array of nodes',
+        cn: '如果节点可用被选中 (即 `show-checkbox` 为 `true`), 它将返回当前半选中的节点组成的数组',
+        en: 'If the node can be selected (`show-checkbox` is `true`), it returns the currently half selected array of nodes',
       },
       type: 'function',
       param: '',
@@ -222,8 +222,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'getHalfCheckedKeys',
       description: {
-        cn: '若节点可被选中(即 &#60;code&#62;show-checkbox&#60;/code&#62; 为 &#60;code&#62;true&#60;/code&#62;)，则返回目前半选中的节点的 key 所组成的数组',
-        en: "If the node can be selected (&#60;code&#62;show-checkbox&#60;/code&#62; is &#60;code&#62;true&#60;/code&#62;), it returns the currently half selected array of node's keys",
+        cn: '若节点可被选中(即 `show-checkbox` 为 `true`)，则返回目前半选中的节点的 key 所组成的数组',
+        en: "If the node can be selected (`show-checkbox` is `true`), it returns the currently half selected array of node's keys",
       },
       type: 'function',
       param: '',
@@ -284,8 +284,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'default',
       description: {
-        cn: 'Custom content for tree nodes. The scope parameter is &#60;code&#62;{ node: TreeNode, data: TreeNodeData }&#60;/code&#62;',
-        en: 'Custom content for tree nodes. The scope parameter is &#60;code&#62;{ node: TreeNode, data: TreeNodeData }&#60;/code&#62;',
+        cn: 'Custom content for tree nodes. The scope parameter is `{ node: TreeNode, data: TreeNodeData }`',
+        en: 'Custom content for tree nodes. The scope parameter is `{ node: TreeNode, data: TreeNodeData }`',
       },
     },
   ],

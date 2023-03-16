@@ -4,7 +4,7 @@ const doc: TagDoc.TagDocInstance = {
   attributes: [
     {
       name: 'value',
-      description: { cn: '目标时间。TS类型：number | Dayjs', en: 'target time. TS Type：number | Dayjs' },
+      description: { cn: '目标时间。TS类型：number &#124; Dayjs', en: 'target time. TS Type：number &#124; Dayjs' },
       type: ['number', 'object'],
       default: '—',
       value: [''],
@@ -40,8 +40,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'value-style',
       description: {
-        cn: '倒计时值的样式,TS类型: CSSProperties | CSSProperties[] | string[] | string',
-        en: 'Styles countdown values. TSType: CSSProperties | CSSProperties[] | string[] | string',
+        cn: '倒计时值的样式,TS类型: CSSProperties &#124; CSSProperties[] &#124; string[] &#124; string',
+        en: 'Styles countdown values. TSType: CSSProperties &#124; CSSProperties[] &#124; string[] &#124; string',
       },
       type: ['string', 'object'],
       default: '—',

@@ -5,8 +5,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'locale',
       description: {
-        cn: '翻译文本对象,(<a href="https://github.com/element-plus/element-plus/tree/dev/packages/locale/lang">languages</a>)',
-        en: 'Locale Object',
+        cn: '翻译文本对象. ([languages](https://github.com/element-plus/element-plus/tree/dev/packages/locale/lang))',
+        en: 'Locale Object. ([languages](https://github.com/element-plus/element-plus/tree/dev/packages/locale/lang))',
       },
       type: 'object',
       default: 'en',
@@ -29,8 +29,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'namespace',
       description: {
-        cn: '全局组件类名称前缀 (需要配合 <a href="https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/mixins/config.scss#L1">$namespace</a> 使用)',
-        en: 'global component className prefix (cooperated with <a href="https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/mixins/config.scss#L1">$namespace</a>)',
+        cn: '全局组件类名称前缀 (需要配合 [$namespace](https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/mixins/config.scss#L1) 使用)',
+        en: 'global component className prefix (cooperated with [$namespace](https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/mixins/config.scss#L1))',
       },
       type: 'string',
       default: 'el',

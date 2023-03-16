@@ -76,8 +76,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'fetch-suggestions',
       description: {
-        cn: '获取输入建议的方法， 仅当你的输入建议数据 resolve 时，通过调用 callback(data:[])  来返回它. TS类型：(queryString: string, callback: callbackfn) =&#62; void',
-        en: 'a method to fetch input suggestions. When suggestions are ready, invoke callback(data:[]) to return them to Autocomplete. TS Type：(queryString: string, callback: callbackfn) =&#62; void',
+        cn: '获取输入建议的方法， 仅当你的输入建议数据 resolve 时，通过调用 callback(data:[])  来返回它. TS类型：(queryString: string, callback: callbackfn) => void',
+        en: 'a method to fetch input suggestions. When suggestions are ready, invoke callback(data:[]) to return them to Autocomplete. TS Type：(queryString: string, callback: callbackfn) => void',
       },
       type: 'function',
       default: 'false',
@@ -182,7 +182,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'triggers when a suggestion is clicked',
       },
       type: 'function',
-      param: '(item: typeof modelValue &#124; any) =&#62; void',
+      param: '(item: typeof modelValue &#124; any) => void',
     },
     {
       name: 'change',
@@ -191,7 +191,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'triggers when the icon inside Input value change',
       },
       type: 'function',
-      param: '(value: string &#124; number) =&#62; void',
+      param: '(value: string &#124; number) => void',
     },
   ],
   slots: [
@@ -239,7 +239,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'if autocomplete activated',
       },
       type: 'object',
-      param: 'Ref&#60;boolean&#62;',
+      param: 'Ref&#60;boolean>',
     },
     {
       name: 'blur',
@@ -248,7 +248,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'blur the input element',
       },
       type: 'function',
-      param: '() =&#62; void',
+      param: '() => void',
     },
     {
       name: 'close',
@@ -257,7 +257,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'collapse suggestion list',
       },
       type: 'function',
-      param: '() =&#62; void',
+      param: '() => void',
     },
     {
       name: 'focus',
@@ -266,7 +266,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'focus the input element',
       },
       type: 'function',
-      param: '() =&#62; void',
+      param: '() => void',
     },
     {
       name: 'handleSelect',
@@ -275,7 +275,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'triggers when a suggestion is clicked',
       },
       type: 'function',
-      param: '(item: any) =&#62; promise&#60;void&#62;',
+      param: '(item: any) => promise&#60;void>',
     },
     {
       name: 'handleKeyEnter',
@@ -284,7 +284,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'handle keyboard enter event',
       },
       type: 'function',
-      param: '() =&#62; promise&#60;void&#62;',
+      param: '() => promise&#60;void>',
     },
     {
       name: 'highlightedIndex',
@@ -293,7 +293,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'the index of the currently highlighted item',
       },
       type: 'object',
-      param: 'Ref&#60;number&#62;',
+      param: 'Ref&#60;number>',
     },
     {
       name: 'highlight',
@@ -302,7 +302,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'highlight an item in a suggestion',
       },
       type: 'function',
-      param: '(itemIndex: number) =&#62; void',
+      param: '(itemIndex: number) => void',
     },
     {
       name: 'inputRef',
@@ -311,7 +311,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'el-input component instance',
       },
       type: 'object',
-      param: 'Ref&#60;ElInputInstance&#62;',
+      param: 'Ref&#60;ElInputInstance>',
     },
     {
       name: 'loading',
@@ -320,7 +320,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'remote search loading indicator',
       },
       type: 'object',
-      param: 'Ref&#60;boolean&#62;',
+      param: 'Ref&#60;boolean>',
     },
     {
       name: 'popperRef',
@@ -329,7 +329,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'el-tooltip component instance',
       },
       type: 'object',
-      param: 'Ref&#60;ElTooltipInstance&#62;',
+      param: 'Ref&#60;ElTooltipInstance>',
     },
     {
       name: 'suggestions',
@@ -338,7 +338,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'fetch suggestions result',
       },
       type: 'object',
-      param: 'Ref&#60;record&#60;string, any&#62;&#62;',
+      param: 'Ref&#60;record&#60;string, any>>',
     },
   ],
 };

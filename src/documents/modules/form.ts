@@ -148,7 +148,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'validateField',
       description: { cn: '验证具体的某个字段。', en: 'Validate specified fields.' },
       type: 'function',
-      param: '(props?: FormItemProp | FormItemProp[], callback?: (isValid: boolean, invalidFields?: ValidateFieldsError) => void) => Promise<void>',
+      param: '(props?: FormItemProp &#124; FormItemProp[], callback?: (isValid: boolean, invalidFields?: ValidateFieldsError) => void) => Promise<void>',
     },
     {
       name: 'resetFields',
@@ -158,7 +158,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'scrollToField',
-      description: { cn: '(props?: FormItemProp | FormItemProp[]) => void', en: 'Scroll to the specified fields.' },
+      description: { cn: '(props?: FormItemProp &#124; FormItemProp[]) => void', en: 'Scroll to the specified fields.' },
       type: 'function',
       param: '',
     },
@@ -166,7 +166,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'clearValidate',
       description: { cn: '清理某个字段的表单验证信息', en: 'Clear validation message for specified fields.' },
       type: 'function',
-      param: '(props?: FormItemProp | FormItemProp[]) => void',
+      param: '(props?: FormItemProp &#124; FormItemProp[]) => void',
     },
   ],
   slots: [

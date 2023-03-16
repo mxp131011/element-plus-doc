@@ -26,8 +26,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'wrap-style',
       description: {
-        cn: 'style of wrap container。 TS类型: CSSSProperties | CSSSProperties[] | string[] | string',
-        en: 'style of wrap container.  TS Type: CSSSProperties | CSSSProperties[] | string[] | string',
+        cn: 'style of wrap container。 TS类型: CSSSProperties &#124; CSSSProperties[] &#124; string[] &#124; string',
+        en: 'style of wrap container.  TS Type: CSSSProperties &#124; CSSSProperties[] &#124; string[] &#124; string',
       },
       type: ['string', 'object'],
       default: '—',
@@ -43,8 +43,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'view-style',
       description: {
-        cn: '视图的自定义样式。 TS类型: CSSSProperties | CSSSProperties[] | string[] | string',
-        en: 'style of view.  TS Type: CSSSProperties | CSSSProperties[] | string[] | string',
+        cn: '视图的自定义样式。 TS类型: CSSSProperties &#124; CSSSProperties[] &#124; string[] &#124; string',
+        en: 'style of view.  TS Type: CSSSProperties &#124; CSSSProperties[] &#124; string[] &#124; string',
       },
       type: ['string', 'object'],
       default: '—',
@@ -108,7 +108,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'scrollTo',
       description: { cn: '滚动到一组特定坐标', en: 'scrolls to a particular set of coordinates' },
       type: 'function',
-      param: '(options: ScrollToOptions | number, yCoord?: number) => void',
+      param: '(options: ScrollToOptions &#124; number, yCoord?: number) => void',
     },
     {
       name: 'setScrollTop',

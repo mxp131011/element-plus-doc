@@ -241,8 +241,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'input-style',
       description: {
-        cn: 'input 元素或 textarea 元素的 style. TS类型: CSSProperties | CSSProperties[] | string[] | string',
-        en: 'the style of the input element or textarea element. TS Type: CSSProperties | CSSProperties[] | string[] | string',
+        cn: 'input 元素或 textarea 元素的 style. TS类型: CSSProperties &#124; CSSProperties[] &#124; string[] &#124; string',
+        en: 'the style of the input element or textarea element. TS Type: CSSProperties &#124; CSSProperties[] &#124; string[] &#124; string',
       },
       type: ['string', 'object'],
       default: '—',
@@ -269,13 +269,13 @@ const doc: TagDoc.TagDocInstance = {
         en: 'triggers when the input box loses focus or the user presses Enter, only if the modelValue has changed',
       },
       type: 'function',
-      param: '(value: string | number) => void',
+      param: '(value: string &#124; number) => void',
     },
     {
       name: 'input',
       description: { cn: '在 Input 值改变时触发', en: 'triggers when the Input value change' },
       type: 'function',
-      param: '(value: string | number) => void',
+      param: '(value: string &#124; number) => void',
     },
     {
       name: 'clear',
@@ -316,7 +316,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'ref',
       description: { cn: 'HTML元素 input 或 textarea', en: 'HTML element, input or textarea' },
       type: 'object',
-      param: 'Ref<HTMLInputElement | HTMLTextAreaElement>',
+      param: 'Ref<HTMLInputElement &#124; HTMLTextAreaElement>',
     },
     {
       name: 'resizeTextarea',

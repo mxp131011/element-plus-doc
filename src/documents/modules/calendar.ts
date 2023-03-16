@@ -24,8 +24,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'date-cell',
       description: {
-        cn: "`type` 表示该日期的所属月份，可选值有 prev-month、current-month 和 next-month； `isSelected` 标明该日期是否被选中； `day` 是格式化的日期，格式为 `yyyy-MM-dd` ； `date` 是单元格的日期. (参数为：{ data: { type: 'prev-month' | 'current-month' | 'next-month', isSelected: boolean, day: string, date: Date } })",
-        en: "<code>type</code> indicates which month the date belongs, optional values are prev-month, current-month, next-month; <code>isSelected</code> indicates whether the date is selected; <code>day</code> is the formatted date in the format <code>YYYY-MM-DD</code>; <code>date</code> is date the cell represents. (parameter：{ data: { type: 'prev-month' | 'current-month' | 'next-month', isSelected: boolean, day: string, date: Date } })",
+        cn: "`type` 表示该日期的所属月份，可选值有 prev-month、current-month 和 next-month； `isSelected` 标明该日期是否被选中； `day` 是格式化的日期，格式为 `yyyy-MM-dd` ； `date` 是单元格的日期. (参数为：{ data: { type: 'prev-month' &#124; 'current-month' &#124; 'next-month', isSelected: boolean, day: string, date: Date } })",
+        en: "<code>type</code> indicates which month the date belongs, optional values are prev-month, current-month, next-month; <code>isSelected</code> indicates whether the date is selected; <code>day</code> is the formatted date in the format <code>YYYY-MM-DD</code>; <code>date</code> is date the cell represents. (parameter：{ data: { type: 'prev-month' &#124; 'current-month' &#124; 'next-month', isSelected: boolean, day: string, date: Date } })",
       },
     },
     {

@@ -77,8 +77,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'popper-options',
       description: {
-        cn: '自定义 popper 选项，更多请参考 <a href="https://popper.js.org/docs/v2/">popper.js</a>',
-        en: 'Customized popper option see more at <a href="https://popper.js.org/docs/v2/">popper.js</a>',
+        cn: '自定义 popper 选项，更多请参考[popper.js](https://popper.js.org/docs/v2/)',
+        en: 'Customized popper option，更多请参考[popper.js](https://popper.js.org/docs/v2/)',
       },
       type: 'object',
       default: '{}',
@@ -193,13 +193,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'popperRef',
       description: { cn: 'el-popper 组件实例', en: 'el-popper component instance' },
       type: 'object',
-      param: 'Ref<PopperInstance | null>',
+      param: 'Ref<PopperInstance &#124; null>',
     },
     {
       name: 'contentRef',
       description: { cn: 'el-tooltip0-content 组件实例', en: 'el-tooltip-content component instance' },
       type: 'object',
-      param: 'Ref<TooltipContentInstance | null>',
+      param: 'Ref<TooltipContentInstance &#124; null>',
     },
     {
       name: 'isFocusInsideContent',
@@ -208,7 +208,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'validate current focus event is trigger inside el-tooltip-content',
       },
       type: 'function',
-      param: '() => boolean | undefined',
+      param: '() => boolean &#124; undefined',
     },
     {
       name: 'updatePopper',
@@ -220,7 +220,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'onOpen',
       description: { cn: '用于手动显示tooltip', en: 'expose onOpen function to mange el-tooltip open state' },
       type: 'function',
-      param: '(event?: Event | undefined) => void',
+      param: '(event?: Event &#124; undefined) => void',
     },
     {
       name: 'onClose',
@@ -232,7 +232,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'hide',
       description: { cn: '提供 hide 方法', en: 'expose hide function' },
       type: 'function',
-      param: '(event?: Event | undefined) => void',
+      param: '(event?: Event &#124; undefined) => void',
     },
   ],
   slots: [

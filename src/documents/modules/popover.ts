@@ -81,8 +81,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'show-arrow',
       description: {
-        cn: '是否显示 Tooltip 箭头， 欲了解更多信息，请参考 <a href="https://github.com/element-plus/element-plus/tree/dev/packages/components/popper">ElPopper</a>',
-        en: 'whether a tooltip arrow is displayed or not. For more info, please refer to <a href="https://github.com/element-plus/element-plus/tree/dev/packages/components/popper">ElPopper</a>',
+        cn: '是否显示 Tooltip 箭头， 欲了解更多信息，请参考[ElPopper](https://github.com/element-plus/element-plus/tree/dev/packages/components/popper) ',
+        en: 'whether a tooltip arrow is displayed or not. For more info, please refer to [ElPopper](https://github.com/element-plus/element-plus/tree/dev/packages/components/popper)',
       },
       type: 'boolean',
       default: 'true',
@@ -91,8 +91,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'popper-options',
       description: {
-        cn: '自定义 popper 选项，更多请参考 <a href="https://popper.js.org/docs/v2/">popper.js</a>',
-        en: 'Customized popper option see more at <a href="https://popper.js.org/docs/v2/">popper.js</a>',
+        cn: '自定义 popper 选项，更多请参考[popper.js](https://popper.js.org/docs/v2/)',
+        en: 'Customized popper option，更多请参考[popper.js](https://popper.js.org/docs/v2/)',
       },
       type: 'object',
       default: "{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}",
@@ -136,8 +136,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'tabindex',
       description: {
-        cn: 'Popover 组件的<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">tabindex</a>',
-        en: '<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">tabindex</a> of Popover',
+        cn: 'Popover 组件的[tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)',
+        en: '[tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) of Popover',
       },
       type: 'number',
       default: '—',

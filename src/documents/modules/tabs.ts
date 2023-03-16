@@ -91,7 +91,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'edit',
       description: { cn: '点击 tab 的新增或移除按钮后触发', en: 'triggers when tab-add button or tab-remove is clicked' },
       type: 'function',
-      param: "(paneName: TabPaneName | undefined, action: 'remove' | 'add')",
+      param: "(paneName: TabPaneName &#124; undefined, action: 'remove' &#124; 'add')",
     },
   ],
   slots: [
