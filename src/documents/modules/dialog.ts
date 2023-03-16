@@ -1,0 +1,208 @@
+import type { TagDoc } from '@/types/tag-doc';
+const doc: TagDoc.TagDocInstance = {
+  url: 'component/dialog.html',
+  attributes: [
+    {
+      name: 'model-value',
+      description: { cn: '是否显示 Dialog', en: 'visibility of Dialog' },
+      type: 'boolean',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'title',
+      description: {
+        cn: 'Dialog 对话框 Dialog 的标题， 也可通过具名 slot （见下表）传入',
+        en: 'title of Dialog. Can also be passed with a named slot (see the following table)',
+      },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'width',
+      description: { cn: 'Dialog 的宽度', en: 'width of Dialog' },
+      type: ['string', 'number'],
+      default: '50%',
+      value: [],
+    },
+    {
+      name: 'fullscreen',
+      description: { cn: '是否为全屏 Dialog', en: 'whether the Dialog takes up full screen' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+    {
+      name: 'top',
+      description: { cn: 'Dialog CSS 中的 `margin-top` 值', en: 'value for <code>margin-top</code> of Dialog CSS' },
+      type: 'string',
+      default: '15vh',
+      value: [],
+    },
+    {
+      name: 'modal',
+      description: { cn: '是否需要遮罩层', en: 'whether a mask is displayed' },
+      type: 'boolean',
+      default: 'true',
+      value: [],
+    },
+    {
+      name: 'append-to-body',
+      description: {
+        cn: 'Dialog 自身是否插入至 body 元素上。 嵌套的 Dialog 必须指定该属性并赋值为 true',
+        en: 'whether to append Dialog itself to body. A nested Dialog should have this attribute set to <code>true</code>',
+      },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+    {
+      name: 'lock-scroll',
+      description: { cn: '是否在 Dialog 出现时将 body 滚动锁定', en: 'whether scroll of body is disabled while Dialog is displayed' },
+      type: 'boolean',
+      default: 'true',
+      value: [],
+    },
+    {
+      name: 'custom-class',
+      description: { cn: 'Dialog 的自定义类名(已废弃)', en: 'custom class names for Dialog (deprecatedtag)' },
+      type: 'string',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'open-delay',
+      description: { cn: 'Dialog 打开的延时时间，单位毫秒', en: 'Time(milliseconds) before open' },
+      type: 'number',
+      default: '0',
+      value: [],
+    },
+    {
+      name: 'close-delay',
+      description: { cn: 'Dialog 关闭的延时时间，单位毫秒', en: 'Time(milliseconds) before close' },
+      type: 'number',
+      default: '0',
+      value: [],
+    },
+    {
+      name: 'close-on-click-modal',
+      description: { cn: '是否可以通过点击 modal 关闭 Dialog', en: 'whether the Dialog can be closed by clicking the mask' },
+      type: 'boolean',
+      default: 'true',
+      value: [],
+    },
+    {
+      name: 'close-on-press-escape',
+      description: { cn: '是否可以通过按下 ESC 关闭 Dialog', en: 'whether the Dialog can be closed by pressing ESC' },
+      type: 'boolean',
+      default: 'true',
+      value: [],
+    },
+    {
+      name: 'show-close',
+      description: { cn: '是否显示关闭按钮', en: 'whether to show a close button' },
+      type: 'boolean',
+      default: 'true',
+      value: [],
+    },
+    {
+      name: 'before-close',
+      description: {
+        cn: '关闭前的回调，会暂停 Dialog 的关闭. 回调函数内执行 done 参数方法的时候才是真正关闭对话框的时候.(接收一个方法：function(done) (done 用来关闭 Dialog))',
+        en: 'callback before Dialog closes, and it will prevent Dialog from closing。(function(done) (done is used to close the dialog))',
+      },
+      type: 'function(done)',
+      default: '—',
+      value: [],
+    },
+    {
+      name: 'draggable',
+      description: { cn: '为 Dialog 启用可拖拽功能', en: 'enable dragging feature for Dialog' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+    {
+      name: 'center',
+      description: { cn: '是否让 Dialog 的 header 和 footer 部分居中排列', en: 'whether to align the header and footer in center' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+    {
+      name: 'align-center',
+      description: { cn: '是否水平垂直对齐对话框', en: 'whether to align the dialog both horizontally and vertically' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+    {
+      name: 'destroy-on-close',
+      description: { cn: '当关闭 Dialog 时，销毁其中的元素', en: 'Destroy elements in Dialog when closed' },
+      type: 'boolean',
+      default: 'false',
+      value: [],
+    },
+  ],
+  events: [
+    {
+      name: 'open',
+      description: { cn: 'Dialog 打开的回调', en: 'triggers when the Dialog opens' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'opened',
+      description: { cn: 'Dialog 打开动画结束时的回调', en: 'triggers when the Dialog opening animation ends' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'close',
+      description: { cn: 'Dialog 关闭的回调', en: 'triggers when the Dialog closes' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'closed',
+      description: { cn: 'Dialog 关闭动画结束时的回调', en: 'triggers when the Dialog closing animation ends' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'open-auto-focus',
+      description: { cn: '输入焦点聚焦在 Dialog 内容时的回调', en: 'triggers after Dialog opens and content focused' },
+      type: 'function',
+      param: '',
+    },
+    {
+      name: 'close-auto-focus',
+      description: { cn: '输入焦点从 Dialog 内容失焦时的回调', en: 'triggers after Dialog closed and content focused' },
+      type: 'function',
+      param: '',
+    },
+  ],
+  slots: [
+    {
+      name: 'default',
+      description: { cn: 'Dialog 的内容', en: 'content of Dialog' },
+    },
+    {
+      name: 'header',
+      description: {
+        cn: '对话框标题的内容；会替换标题部分，但不会移除关闭按钮',
+        en: 'content of the Dialog header; Replacing this removes the title, but does not remove the close button.',
+      },
+    },
+    {
+      name: 'title',
+      description: { cn: '与 header 作用相同 请使用 header (已废弃)', en: 'Works the same as the header slot. Use that instead.(deprecatedtag)' },
+    },
+    {
+      name: 'footer',
+      description: { cn: 'Dialog 按钮操作区的内容', en: 'content of the Dialog footer' },
+    },
+  ],
+};
+export default doc;

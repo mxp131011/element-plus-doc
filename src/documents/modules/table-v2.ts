@@ -315,10 +315,10 @@ const doc: TagDoc.TagDocInstance = {
       param: 'scrollLeft: number',
     },
     {
-      name: '',
+      name: 'scrollToRow',
       description: { cn: '使用给定的滚动策略滚动至指定行', en: 'scroll to a given row with specified scroll strategy' },
       type: 'function',
-      param: 'row: number, strategy?: "auto" / "center" / "end" / "start" / "smart"',
+      param: 'row: number, strategy?: "auto" | "center" | "end" | "start" | "smart"',
     },
   ],
   slots: [

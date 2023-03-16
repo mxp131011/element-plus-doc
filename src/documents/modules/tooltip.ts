@@ -77,8 +77,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'popper-options',
       description: {
-        cn: '请参考：<a href="https://popper.js.org/docs/v2/">popper.js</a>的参数',
-        en: '<a href="https://popper.js.org/docs/v2/">popper.js</a> parameters',
+        cn: '自定义 popper 选项，更多请参考 <a href="https://popper.js.org/docs/v2/">popper.js</a>',
+        en: 'Customized popper option see more at <a href="https://popper.js.org/docs/v2/">popper.js</a>',
       },
       type: 'object',
       default: '{}',

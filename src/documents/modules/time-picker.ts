@@ -96,7 +96,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'format',
       description: {
-        cn: '显示在输入框中的格式，,详见[格式表示](https://day.js.org/docs/en/display/format#list-of-all-available-formats)',
+        cn: '显示在输入框中的格式，详见[格式表示](https://day.js.org/docs/en/display/format#list-of-all-available-formats)',
         en: 'format of the displayed value in the input box， see more at [formats](https://day.js.org/docs/en/display/format#list-of-all-available-formats)',
       },
       type: 'string',
