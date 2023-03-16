@@ -1,21 +1,21 @@
 import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
-  url: '',
+  url: 'component/breadcrumb.html#breadcrumbitem-api',
   attributes: [
     {
       name: 'to',
       description: {
-        cn: 'target route of the link, same as <code>to</code> of <code>vue-router</code>',
+        cn: '路由跳转目标，同 vue-router 的 `to` 属性',
         en: 'target route of the link, same as <code>to</code> of <code>vue-router</code>',
       },
-      type: 'string',
-      default: "''",
-      value: ['object'],
+      type: ['string', 'object'],
+      default: '—',
+      value: [],
     },
     {
       name: 'replace',
       description: {
-        cn: 'if <code>true</code>, the navigation will not leave a history record',
+        cn: '如果设置该属性为 `true`, 导航将不会留下历史记录',
         en: 'if <code>true</code>, the navigation will not leave a history record',
       },
       type: 'boolean',
@@ -26,7 +26,7 @@ const doc: TagDoc.TagDocInstance = {
   slots: [
     {
       name: 'default',
-      description: { cn: 'customize default content', en: 'customize default content' },
+      description: { cn: '自定义默认内容', en: 'customize default content' },
     },
   ],
 };

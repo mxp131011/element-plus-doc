@@ -114,5 +114,12 @@ const doc: TagDoc.TagDocInstance = {
       param: '',
     },
   ],
+  slots: [
+    {
+      name: 'default',
+      description: { cn: '自定义默认内容', en: 'customize default content.' },
+      subtags: ['Carousel-Item'],
+    },
+  ],
 };
 export default doc;

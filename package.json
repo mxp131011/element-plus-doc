@@ -18,7 +18,8 @@
     "element",
     "element-plus",
     "elementPlus",
-    "Documents"
+    "Documents",
+    "Doc"
   ],
   "activationEvents": [
     "onLanguage:vue",

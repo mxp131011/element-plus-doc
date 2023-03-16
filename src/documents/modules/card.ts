@@ -1,11 +1,11 @@
 import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
-  url: '',
+  url: 'component/card.html',
   attributes: [
     {
       name: 'header',
       description: {
-        cn: 'title of the card. Also accepts a DOM passed by <code>slot#header</code>',
+        cn: '卡片的标题 你既可以通过设置 header 来修改标题，也可以通过 `slot#header` 传入 DOM 节点',
         en: 'title of the card. Also accepts a DOM passed by <code>slot#header</code>',
       },
       type: 'string',
@@ -14,27 +14,27 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'body-style',
-      description: { cn: 'CSS style of card body', en: 'CSS style of card body' },
+      description: { cn: 'body 的 CSS 样式', en: 'CSS style of card body' },
       type: 'object',
       default: '—',
       value: ['codeCSSPropertiescode'],
     },
     {
       name: 'shadow',
-      description: { cn: 'when to show card shadows', en: 'when to show card shadows' },
+      description: { cn: '设置阴影显示时机', en: 'when to show card shadows' },
       type: 'enum',
-      default: 'never',
-      value: ['always'],
+      default: "'never'",
+      value: ['always', 'never', 'hover'],
     },
   ],
   slots: [
     {
       name: 'default',
-      description: { cn: 'customize default content', en: 'customize default content' },
+      description: { cn: '自定义默认内容', en: 'customize default content' },
     },
     {
       name: 'header',
-      description: { cn: 'content of the Card header', en: 'content of the Card header' },
+      description: { cn: '卡片标题内容', en: 'content of the Card header' },
     },
   ],
 };

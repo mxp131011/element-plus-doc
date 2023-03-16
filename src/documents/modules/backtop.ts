@@ -1,10 +1,10 @@
 import type { TagDoc } from '@/types/tag-doc';
 const doc: TagDoc.TagDocInstance = {
-  url: '',
+  url: 'component/backtop.html',
   attributes: [
     {
       name: 'target',
-      description: { cn: 'the target to trigger scroll.', en: 'the target to trigger scroll.' },
+      description: { cn: '触发滚动的对象', en: 'the target to trigger scroll.' },
       type: 'string',
       default: '—',
       value: [],
@@ -12,7 +12,7 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'visibility-height',
       description: {
-        cn: 'the button will not show until the scroll height reaches this value.',
+        cn: '滚动高度达到此参数值才出现',
         en: 'the button will not show until the scroll height reaches this value.',
       },
       type: 'number',
@@ -21,14 +21,14 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'right',
-      description: { cn: 'right distance.', en: 'right distance.' },
+      description: { cn: '控制其显示位置，距离页面右边距', en: 'right distance.' },
       type: 'number',
       default: '40',
       value: [],
     },
     {
       name: 'bottom',
-      description: { cn: 'bottom distance.', en: 'bottom distance.' },
+      description: { cn: '控制其显示位置，距离页面底部距离', en: 'bottom distance.' },
       type: 'number',
       default: '40',
       value: [],
@@ -37,15 +37,15 @@ const doc: TagDoc.TagDocInstance = {
   events: [
     {
       name: 'click',
-      description: { cn: 'triggers when click.', en: 'triggers when click.' },
+      description: { cn: '点击按钮触发的事件', en: 'triggers when click.' },
       type: 'function',
-      param: '',
+      param: '(evt: MouseEvent) => void',
     },
   ],
   slots: [
     {
       name: 'default',
-      description: { cn: 'customize default content.', en: 'customize default content.' },
+      description: { cn: '自定义默认内容', en: 'customize default content.' },
     },
   ],
 };
