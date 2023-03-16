@@ -2,9 +2,10 @@ import * as vscode from 'vscode';
 import type { BaseLanguage, BaseUrl } from '@/types/index';
 import { HoverProvierUtil } from './hover-provier-util';
 import { allDocuments } from '@/documents/index';
-import { directives } from '@/documents/directives/directive';
+import { getDirectives } from '@/documents/directives/directive';
 import { GetDocUtil } from './get-doc-util';
 import { getTag, toKebabCase } from '@/utils/global';
+import type { TagDoc } from '@/types/tag-doc';
 
 export class MyHoverProvier implements vscode.HoverProvider {
   /** 语言 */
@@ -29,22 +30,24 @@ export class MyHoverProvier implements vscode.HoverProvider {
     const range = hoverProvierUtil.getHoverRange(attr);
     const kebabCaseTag = toKebabCase(tag);
     const prefix = this.prefixList.find((pre) => kebabCaseTag.startsWith(`${pre}-`));
-
-    // 指令
+    const directives = getDirectives(this.officialWebsite);
+    // 如果有指令优先用指令
     if (tag && attr) {
       for (const iterator of directives) {
-        const directive = iterator.list.find((item) => item.name === 'attr');
+        const directive = iterator.list.find((item) => item.name === attr);
         if (directive) {
-          const md: vscode.MarkdownString | undefined = undefined;
+          let md: vscode.MarkdownString | undefined = undefined;
           if (directive.name === iterator.name) {
+            md = new GetDocUtil(this.lang, this.officialWebsite).getAllDirectiveDoc(iterator);
           } else {
-            md = new GetDocUtil(this.lang, this.officialWebsite).getSingleDoc(tagDoc, componentName, kebabCaseAttr);
+            md = new GetDocUtil(this.lang, this.officialWebsite).getSingleDirectiveDoc(directive, directive.name, iterator.url);
           }
-          return md;
+          return new vscode.Hover(md, range);
         }
       }
     }
 
+    // 不是指令这看是不是element-plus组件
     if (prefix) {
       // 如果只有以此前缀开头的标签才视作element-plus的标签
       let kebabCaseAttr = toKebabCase(attr === 'v-model' ? 'model-value' : attr);
@@ -56,13 +59,13 @@ export class MyHoverProvier implements vscode.HoverProvider {
         let md: vscode.MarkdownString | undefined = undefined;
         if (kebabCaseTag === kebabCaseAttr) {
           // 属性 和标签一样 显示全部
-          md = new GetDocUtil(this.lang, this.officialWebsite).getAllDoc(tagDoc, componentName);
+          md = new GetDocUtil(this.lang, this.officialWebsite).getAllDoc(tagDoc as TagDoc.TagDocInstance, componentName);
         } else if (kebabCaseAttr === 'ref') {
           // 如果是ref就显示整个对外暴露的文档
-          md = new GetDocUtil(this.lang, this.officialWebsite).getExposesDoc(tagDoc, componentName);
+          md = new GetDocUtil(this.lang, this.officialWebsite).getExposesDoc(tagDoc as TagDoc.TagDocInstance, componentName);
         } else {
           // 属性和标签不一样 显示标签下的某个属性的信息
-          md = new GetDocUtil(this.lang, this.officialWebsite).getSingleDoc(tagDoc, componentName, kebabCaseAttr);
+          md = new GetDocUtil(this.lang, this.officialWebsite).getSingleDoc(tagDoc as TagDoc.TagDocInstance, componentName, kebabCaseAttr);
         }
         return md && md.value !== '' ? new vscode.Hover(md, range) : null;
       }

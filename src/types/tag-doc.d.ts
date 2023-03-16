@@ -1,3 +1,5 @@
+import type { OfficialWebsite } from '@/types/index';
+
 type baseType =
   | '[Date, Date]'
   | '[number, number]'
@@ -76,7 +78,7 @@ export declare namespace TagDoc {
   };
 
   /** 指令 */
-  type Directives = { name: string; list: Attribute[] }[];
+  type Directive = { name: string; list: Attribute[]; url: OfficialWebsite };
 
   /** 标签文档实例 */
   interface TagDocInstance {

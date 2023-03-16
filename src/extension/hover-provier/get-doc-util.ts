@@ -1,5 +1,5 @@
 import { MarkdownString } from 'vscode';
-import type { BaseLanguage, BaseUrl } from '@/types/index';
+import type { BaseLanguage, BaseUrl, OfficialWebsite } from '@/types/index';
 import type { TagDoc } from '@/types/tag-doc';
 import { logo } from '@/utils/img-base64';
 
@@ -27,7 +27,7 @@ export class GetDocUtil {
     for (key in tagDoc) {
       const bodyList = this._getMDMultipleTableBody(tagDoc, key!);
       if (bodyList.length > 0) {
-        const titleList = key !== 'childAttributes' ? this._getMDTableTitle(tag, key!) : [];
+        const titleList = key !== 'childAttributes' ? this._getMDTableTitle(`el-${tag}`, key!) : [];
         [...titleList, ...bodyList].forEach((item) => {
           mdStr.appendMarkdown(item);
         });
@@ -47,7 +47,7 @@ export class GetDocUtil {
     mdStr.appendMarkdown(`&emsp;[官网链接](${this.officialWebsite}${tagDoc.url})</br>\r`);
     const bodyList = this._getMDMultipleTableBody(tagDoc, 'exposes');
     if (bodyList.length > 0) {
-      const titleList = this._getMDTableTitle(tag, 'exposes');
+      const titleList = this._getMDTableTitle(`el-${tag}`, 'exposes');
       [...titleList, ...bodyList].forEach((item) => {
         mdStr.appendMarkdown(item);
       });
@@ -71,7 +71,7 @@ export class GetDocUtil {
           const tagDocItem: TagDoc.Attribute | TagDoc.Event | TagDoc.Expose | TagDoc.Slot = (item as any[]).find((_item) => _item.name === attr);
           if (tagDocItem) {
             const bodyList = this._getMDSingleTableBody(tagDocItem, key!);
-            const titleList = this._getMDTableTitle(tag, key!);
+            const titleList = this._getMDTableTitle(`el-${tag}`, key!);
 
             [...titleList, ...bodyList].forEach((_item) => {
               mdStr.appendMarkdown(_item);
@@ -80,6 +80,43 @@ export class GetDocUtil {
         }
       }
     }
+    return mdStr;
+  }
+
+  /**
+   * 得到单个指令的某个属性的文档
+   */
+  public getSingleDirectiveDoc(dirDoc: TagDoc.Attribute, dir: string, url: OfficialWebsite) {
+    const mdStr = new MarkdownString('', true);
+    mdStr.supportHtml = true;
+    mdStr.appendMarkdown(`<img src="${logo}" width="15px" height="15px" />`);
+    mdStr.appendMarkdown(`&emsp;[官网链接](${url})</br>\r`);
+    const bodyList = this._getMDSingleTableBody(dirDoc, 'attributes');
+    const titleList = this._getMDTableTitle(dir, 'attributes');
+    [...titleList, ...bodyList].forEach((_item) => {
+      mdStr.appendMarkdown(_item);
+    });
+    return mdStr;
+  }
+
+  /**
+   * 得到这个指令所有的文档
+   */
+  public getAllDirectiveDoc(dirDoc: TagDoc.Directive) {
+    const mdStr = new MarkdownString('', true);
+    mdStr.supportHtml = true;
+    mdStr.appendMarkdown(`<img src="${logo}" width="15px" height="15px" />`);
+    mdStr.appendMarkdown(`&emsp;[官网链接](${dirDoc.url})</br>\r`);
+    this._getMDTableTitle(dirDoc.name, 'attributes').forEach((_item) => {
+      mdStr.appendMarkdown(_item);
+    });
+    dirDoc.list.forEach((row) => {
+      const docLang = this.lang === 'zh-CN' ? 'cn' : 'en';
+      const desc = row.description[docLang] || '—';
+      const type = this._getTypeMD(row);
+      mdStr.appendMarkdown(`| \`${row.name}\` |&emsp;&emsp;| ${desc} |&emsp;&emsp;| ${type} |&emsp;&emsp;| \`${row.default || '—'}\` | \r`);
+      mdStr.appendMarkdown(`|                 |&emsp;&emsp;|         |&emsp;&emsp;|         |&emsp;&emsp;|                           | \r`);
+    });
     return mdStr;
   }
 
@@ -181,22 +218,22 @@ export class GetDocUtil {
     const list: string[] = [];
     switch (key) {
       case 'attributes':
-        list.push(`### el-${tag} ${docTitle.attributes} </br></br>\r`);
+        list.push(`### ${tag} ${docTitle.attributes} </br></br>\r`);
         list.push(`| ${tableTitle.name} |&emsp;&emsp;| ${tableTitle.description} |&emsp;&emsp;| ${tableTitle.type} |&emsp;&emsp;| ${tableTitle.default} | \r`);
         list.push('|:-------------------|------------|:--------------------------|------------|:-------------------|------------|:----------------------| \r');
         break;
       case 'events':
-        list.push(`### el-${tag} ${docTitle.events} </br></br>\r`);
+        list.push(`### ${tag} ${docTitle.events} </br></br>\r`);
         list.push(`| ${tableTitle.name} |&emsp;&emsp;| ${tableTitle.description} |&emsp;&emsp;| ${tableTitle.type} |&emsp;&emsp;| ${tableTitle.parame} | \r`);
         list.push('|:-------------------|------------|:--------------------------|------------|:-------------------|------------|:---------------------| \r');
         break;
       case 'slots':
-        list.push(`### el-${tag} ${docTitle.slots} </br></br>\r`);
+        list.push(`### ${tag} ${docTitle.slots} </br></br>\r`);
         list.push(`| ${tableTitle.name} |&emsp;&emsp;| ${tableTitle.description} |&emsp;&emsp;| ${tableTitle.subtags} | \r`);
         list.push('|:-------------------|------------|:--------------------------|------------|:----------------------| \r');
         break;
       case 'exposes':
-        list.push(`### el-${tag} ${docTitle.exposes} </br></br>\r`);
+        list.push(`### ${tag} ${docTitle.exposes} </br></br>\r`);
         list.push(`| ${tableTitle.name} |&emsp;&emsp;| ${tableTitle.description} |&emsp;&emsp;| ${tableTitle.type} |&emsp;&emsp;| ${tableTitle.parame} | \r`);
         list.push('|:-------------------|------------|:--------------------------|------------|:------------------:|------------|:---------------------| \r');
         break;
@@ -205,6 +242,7 @@ export class GetDocUtil {
         list.push(`| ${tableTitle.name} |&emsp;&emsp;| ${tableTitle.description} |&emsp;&emsp;| ${tableTitle.type} |&emsp;&emsp;| ${tableTitle.default} | \r`);
         list.push('|:-------------------|------------|:--------------------------|------------|:-------------------|------------|:----------------------| \r');
         break;
+
       default:
         break;
     }
