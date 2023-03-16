@@ -4,23 +4,16 @@ import { useDocLink } from './extension/doc-link/use-doc-link';
 import type { BaseLanguage } from '@/types/index';
 import { MyHoverProvier } from './extension/hover-provier/my-hover-provier';
 import { MyCompletionItemProvider } from './extension/suggest/my-completion-item-provider';
-import { getOfficialWebsite } from '@/utils/global';
+import { getCustomPrefix, getOfficialWebsite } from '@/utils/global';
 
 /**
  * 激活的入口
  */
 export function activate(context: vscode.ExtensionContext) {
   console.log('插件已启用');
-  const customPrefixSet = vscode.workspace.getConfiguration().get('customPrefix');
 
-  // 得到自定义前缀
-  let customPrefix = typeof customPrefixSet === 'string' && customPrefixSet ? customPrefixSet : '';
-  customPrefix = customPrefix.replace(/[^a-zA-Z0-9，,]/g, '').replace('，', ',');
-  // 所有的前缀数组
-  let prefixList: string[] = customPrefix ? customPrefix.split(',') : [];
-  prefixList = prefixList.splice(0, 3);
-  prefixList.push('el');
-  prefixList = [...new Set(prefixList)]; // 去重
+  /** 得到包含el的自定义前缀 (仅保留前四个) */
+  const prefixList = getCustomPrefix();
 
   /** 语言 */
   const lang: BaseLanguage = vscode.env.language === 'zh-cn' ? 'zh-CN' : 'en-US';

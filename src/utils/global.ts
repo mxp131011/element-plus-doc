@@ -95,3 +95,21 @@ export function getOfficialWebsite(lang: BaseLanguage): BaseUrl {
   /** 最终的官网 */
   return lang === 'zh-CN' ? cnUrlNew : enUrlNew;
 }
+
+/**
+ * 得到包含el的自定义前缀 (仅保留前四个)
+ */
+export function getCustomPrefix(): string[] {
+  const customPrefixSet = workspace.getConfiguration().get('customPrefix');
+
+  // 得到自定义前缀
+  const customPrefix: string[] = Array.isArray(customPrefixSet) ? customPrefixSet : [];
+  const newList: string[] = [];
+  customPrefix.forEach((item) => {
+    const newItem = item.replace(/[^a-zA-Z0-9]/g, '');
+    newItem && newList.push(newItem);
+  });
+  newList.unshift('el');
+  const prefixList: string[] = [...new Set(newList)].splice(0, 3);
+  return prefixList;
+}

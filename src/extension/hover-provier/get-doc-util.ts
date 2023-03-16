@@ -22,7 +22,7 @@ export class GetDocUtil {
     let key: keyof TagDoc.TagDocInstance | undefined = undefined;
     const mdStr = new MarkdownString('', true);
     mdStr.supportHtml = true;
-    mdStr.appendMarkdown(`<img src="${logo}" width="40px" height="40px" />`);
+    mdStr.appendMarkdown(`<img src="${logo}" width="15px" height="15px" />`);
     mdStr.appendMarkdown(`&emsp;[官网链接](${this.officialWebsite}${tagDoc.url})</br>\r`);
     for (key in tagDoc) {
       const bodyList = this._getMDMultipleTableBody(tagDoc, key!);
@@ -43,7 +43,7 @@ export class GetDocUtil {
   public getExposesDoc(tagDoc: TagDoc.TagDocInstance, tag: string) {
     const mdStr = new MarkdownString('', true);
     mdStr.supportHtml = true;
-    mdStr.appendMarkdown(`<img src="${logo}" width="40px" height="40px" />`);
+    mdStr.appendMarkdown(`<img src="${logo}" width="15px" height="15px" />`);
     mdStr.appendMarkdown(`&emsp;[官网链接](${this.officialWebsite}${tagDoc.url})</br>\r`);
     const bodyList = this._getMDMultipleTableBody(tagDoc, 'exposes');
     if (bodyList.length > 0) {
@@ -62,7 +62,7 @@ export class GetDocUtil {
     let key: keyof TagDoc.TagDocInstance | undefined = undefined;
     const mdStr = new MarkdownString('', true);
     mdStr.supportHtml = true;
-    mdStr.appendMarkdown(`<img src="${logo}" width="40px" height="40px" />`);
+    mdStr.appendMarkdown(`<img src="${logo}" width="15px" height="15px" />`);
     mdStr.appendMarkdown(`&emsp;[官网链接](${this.officialWebsite}${tagDoc.url})</br>\r`);
     for (key in tagDoc) {
       if (key !== 'url' && key !== 'childAttributes') {
