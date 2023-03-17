@@ -5,7 +5,6 @@ import { allDocuments } from '@/documents/index';
 import { getDirectives } from '@/documents/directives/directive';
 import { GetDocUtil } from './get-doc-util';
 import { getTag, toKebabCase } from '@/utils/global';
-import type { TagDoc } from '@/types/tag-doc';
 
 export class MyHoverProvier implements vscode.HoverProvider {
   /** 语言 */
@@ -59,13 +58,13 @@ export class MyHoverProvier implements vscode.HoverProvider {
         let md: vscode.MarkdownString | undefined = undefined;
         if (kebabCaseTag === kebabCaseAttr) {
           // 属性 和标签一样 显示全部
-          md = new GetDocUtil(this.lang, this.officialWebsite).getAllDoc(tagDoc as TagDoc.TagDocInstance, componentName);
+          md = new GetDocUtil(this.lang, this.officialWebsite).getAllDoc(tagDoc, componentName);
         } else if (kebabCaseAttr === 'ref') {
           // 如果是ref就显示整个对外暴露的文档
-          md = new GetDocUtil(this.lang, this.officialWebsite).getExposesDoc(tagDoc as TagDoc.TagDocInstance, componentName);
+          md = new GetDocUtil(this.lang, this.officialWebsite).getExposesDoc(tagDoc, componentName);
         } else {
           // 属性和标签不一样 显示标签下的某个属性的信息
-          md = new GetDocUtil(this.lang, this.officialWebsite).getSingleDoc(tagDoc as TagDoc.TagDocInstance, componentName, kebabCaseAttr);
+          md = new GetDocUtil(this.lang, this.officialWebsite).getSingleDoc(tagDoc, componentName, kebabCaseAttr);
         }
         return md && md.value !== '' ? new vscode.Hover(md, range) : null;
       }
