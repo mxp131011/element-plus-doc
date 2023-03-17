@@ -42,29 +42,37 @@
       "properties": {
         "customPrefix": {
           "type": "array",
+          "uniqueItems": true,
           "items": {
             "type": "string",
             "pattern": "^[a-zA-Z]{1,10}$"
           },
           "maxItems": 3,
-          "default": [
-            "base"
-          ],
-          "description": "%contributes.properties.customPrefix.description%"
+          "default": [],
+          "markdownDescription": "%contributes.properties.customPrefix.description%"
+        },
+        "mapComponent": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^(el[A-Z])[a-zA-Z]*$"
+          },
+          "default": {},
+          "markdownDescription": "%contributes.properties.mapComponent.description%"
         },
         "website.chinese": {
           "format": "URI",
           "type": "string",
           "pattern": "^https?://([\\w-]+\\.)+[\\w-]+(/[\\w-./]*)?/$",
           "default": "https://element-plus.org/zh-CN/",
-          "description": "%contributes.properties.website.chinese.description%"
+          "markdownDescription": "%contributes.properties.website.chinese.description%"
         },
         "website.english": {
           "type": "string",
           "format": "URI",
           "pattern": "^https?://([\\w-]+\\.)+[\\w-]+(/[\\w-./]*)?/$",
           "default": "https://element-plus.org/en-US/",
-          "description": "%contributes.properties.website.english.description%"
+          "markdownDescription": "%contributes.properties.website.english.description%"
         }
       }
     },

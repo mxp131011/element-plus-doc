@@ -1,5 +1,5 @@
 {
-  "contributes.properties.customPrefix.description": "Set a custom prefix，Anything starting with this prefix or el defaults to element-plus components.",
-  "contributes.properties.website.chinese.description": "Chinese official website. Must end with a '/'",
-  "contributes.properties.website.english.description": "English official website. Must end with a '/'"
+  "contributes.properties.customPrefix.description": "Set a custom prefix，Anything starting with this prefix or `el` defaults to `element-plus` components.",
+  "contributes.properties.website.chinese.description": "Chinese official website. Must end with a `/` ",
+  "contributes.properties.website.english.description": "English official website. Must end with a `/` "
 }

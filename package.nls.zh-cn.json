@@ -1,5 +1,6 @@
 {
-  "contributes.properties.customPrefix.description": "设置自定义前缀，以此前缀开头或以el开头的都当作element-plus的组件",
-  "contributes.properties.website.chinese.description": "中文官网,必须以'/'结尾",
-  "contributes.properties.website.english.description": "英文官网,必须以'/'结尾"
+  "contributes.properties.customPrefix.description": "设置自定义前缀，以此前缀开头或以 `el` 开头的都当作 `element-plus` 的组件",
+  "contributes.properties.website.chinese.description": "中文官网,必须以 `/` 结尾",
+  "contributes.properties.website.english.description": "英文官网,必须以 `/` 结尾",
+  "contributes.properties.mapComponent.description": "自定义映射，如果自定义前缀还是无法满足需求可。设置此项，如: `<base-input-numb>` 组件想拥有 `<el-input>` 的文档或提示，则因该配置：`{ baseInputNumb: 'elInput' }`"
 }
