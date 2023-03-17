@@ -115,10 +115,15 @@ export function getCustomPrefix(): string[] {
 }
 
 /**
- * 得到映射组件
+ * 得到映射组件 (已经驼峰转横线)
  */
 export function getMapComponent(): Record<string, string> {
   /** 映射组件 */
   const mapComponent = workspace.getConfiguration().get<Record<string, string>>('mapComponent') || {};
-  return typeof mapComponent === 'object' && !Array.isArray(mapComponent) ? mapComponent : {};
+  const obj = typeof mapComponent === 'object' && !Array.isArray(mapComponent) ? mapComponent : {};
+  const newObj: Record<string, string> = {};
+  for (const key in obj) {
+    newObj[toKebabCase(key)] = toKebabCase(obj[key]);
+  }
+  return newObj;
 }

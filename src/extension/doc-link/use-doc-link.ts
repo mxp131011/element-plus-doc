@@ -17,10 +17,14 @@ export function useDocLink(
   for (const item of list) {
     const tag = toKebabCase(item.tag?.trim() || '');
     const prefix = prefixList.find((pre) => tag.startsWith(`${pre}-`));
-
     const mapComp = getMapComponent();
-
-    if (mapComp) {
+    if (tag in mapComp) {
+      const newTag = mapComp[tag]!;
+      const componentName = newTag.replace(`el-`, '');
+      if (componentName in allDocuments) {
+        const range = new vscode.Range(document.positionAt(item.start + 1), document.positionAt(item.start + Number(tag.length) + 1));
+        result.push({ range, target: vscode.Uri.parse(`${officialWebsite}${allDocuments[componentName]?.url}`), tooltip: '官方文档链接' });
+      }
     } else if (prefix) {
       // allDocuments包含了tag,则使用组件名称作为链接
       const componentName = tag.replace(`${prefix}-`, '');
