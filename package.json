@@ -4,7 +4,7 @@
   "description": "element-plus 的一个工具插件,用于智能提示，悬停显示文档等",
   "publisher": "mxp131011",
   "license": "SEE LICENSE IN LICENSE",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.76.0"
   },
