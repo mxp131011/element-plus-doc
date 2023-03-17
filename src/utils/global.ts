@@ -113,3 +113,12 @@ export function getCustomPrefix(): string[] {
   const prefixList: string[] = [...new Set(newList)].splice(0, 3);
   return prefixList;
 }
+
+/**
+ * 得到映射组件
+ */
+export function getMapComponent(): Record<string, string> {
+  /** 映射组件 */
+  const mapComponent = workspace.getConfiguration().get<Record<string, string>>('mapComponent') || {};
+  return typeof mapComponent === 'object' && !Array.isArray(mapComponent) ? mapComponent : {};
+}

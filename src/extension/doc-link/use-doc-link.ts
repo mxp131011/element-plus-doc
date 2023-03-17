@@ -1,7 +1,7 @@
 import { type Node } from 'vscode-html-languageservice';
 import * as vscode from 'vscode';
 import { allDocuments } from '@/documents/index';
-import { toKebabCase } from '@/utils/global';
+import { getMapComponent, toKebabCase } from '@/utils/global';
 import { type BaseUrl } from '@/types/index';
 
 /**
@@ -18,7 +18,10 @@ export function useDocLink(
     const tag = toKebabCase(item.tag?.trim() || '');
     const prefix = prefixList.find((pre) => tag.startsWith(`${pre}-`));
 
-    if (prefix) {
+    const mapComp = getMapComponent();
+
+    if (mapComp) {
+    } else if (prefix) {
       // allDocuments包含了tag,则使用组件名称作为链接
       const componentName = tag.replace(`${prefix}-`, '');
       if (componentName in allDocuments) {
