@@ -193,13 +193,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'popperRef',
       description: { cn: 'el-popper 组件实例', en: 'el-popper component instance' },
       type: 'object',
-      param: 'Ref<PopperInstance &#124; null>',
+      param: 'Ref&lt;PopperInstance &#124; null&gt;',
     },
     {
       name: 'contentRef',
       description: { cn: 'el-tooltip0-content 组件实例', en: 'el-tooltip-content component instance' },
       type: 'object',
-      param: 'Ref<TooltipContentInstance &#124; null>',
+      param: 'Ref&lt;TooltipContentInstance &#124; null&gt;',
     },
     {
       name: 'isFocusInsideContent',
@@ -208,19 +208,19 @@ const doc: TagDoc.TagDocInstance = {
         en: 'validate current focus event is trigger inside el-tooltip-content',
       },
       type: 'function',
-      param: '() => boolean &#124; undefined',
+      param: '() =&gt; boolean &#124; undefined',
     },
     {
       name: 'updatePopper',
       description: { cn: '更新 el-popper组件实例', en: 'update el-popper component instance' },
       type: 'function',
-      param: '() => void',
+      param: '() =&gt; void',
     },
     {
       name: 'onOpen',
       description: { cn: '用于手动显示tooltip', en: 'expose onOpen function to mange el-tooltip open state' },
       type: 'function',
-      param: '(event?: Event &#124; undefined) => void',
+      param: '(event?: Event &#124; undefined) =&gt; void',
     },
     {
       name: 'onClose',
@@ -232,7 +232,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'hide',
       description: { cn: '提供 hide 方法', en: 'expose hide function' },
       type: 'function',
-      param: '(event?: Event &#124; undefined) => void',
+      param: '(event?: Event &#124; undefined) =&gt; void',
     },
   ],
   slots: [

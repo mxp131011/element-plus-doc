@@ -85,13 +85,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'change',
       description: { cn: '当绑定值变化时触发', en: 'triggers when input value changes' },
       type: 'function',
-      param: '(value: string) => void',
+      param: '(value: string) =&gt; void',
     },
     {
       name: 'active-change',
       description: { cn: '面板中当前显示的颜色发生改变时触发', en: 'triggers when the current active color changes' },
       type: 'function',
-      param: '(value: string) => void',
+      param: '(value: string) =&gt; void',
     },
   ],
   exposes: [

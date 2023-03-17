@@ -53,13 +53,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'change',
       description: { cn: '时间差改变事件', en: 'Time difference change event' },
       type: 'function',
-      param: '(value: number) => void',
+      param: '(value: number) =&gt; void',
     },
     {
       name: 'finish',
       description: { cn: '倒计时结束事件', en: 'countdown end event' },
       type: 'function',
-      param: '() => void',
+      param: '() =&gt; void',
     },
   ],
 
@@ -82,7 +82,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'displayValue',
       description: { cn: '当前显示值', en: 'current display value' },
       type: 'object',
-      param: 'Ref<string>',
+      param: 'Ref&lt;string&gt;',
     },
   ],
 };

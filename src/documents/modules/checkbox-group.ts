@@ -78,7 +78,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'change',
       description: { cn: '当绑定值变化时触发的事件', en: 'triggers when the binding value changes' },
       type: 'function',
-      param: '(value: string[] &#124; number[]) => void',
+      param: '(value: string[] &#124; number[]) =&gt; void',
     },
   ],
   slots: [

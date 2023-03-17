@@ -182,8 +182,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'shortcuts',
       description: {
-        cn: '设置快捷选项，需要传入数组对象 (Array<{ text: string, value: Date &#124; Function }>)',
-        en: 'an object array to set shortcut options (Array<{ text: string, value: Date &#124; Function }>)',
+        cn: '设置快捷选项，需要传入数组对象 (Array&lt;{ text: string, value: Date &#124; Function }&gt;)',
+        en: 'an object array to set shortcut options (Array&lt;{ text: string, value: Date &#124; Function }&gt;)',
       },
       type: 'array',
       default: '—',

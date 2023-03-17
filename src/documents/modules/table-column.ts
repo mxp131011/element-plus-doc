@@ -204,8 +204,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'filters',
       description: {
-        cn: '数据过滤的选项， 数组格式，数组中的元素需要有 text 和 value 属性。 数组中的每个元素都需要有 text 和 value 属性。TS 类型：Array&#60;{text: string, value: string}>',
-        en: 'an array of data filtering options. For each element in this array, `text` and `value` are required. TS Type：Array&#60;{text: string, value: string}>',
+        cn: '数据过滤的选项， 数组格式，数组中的元素需要有 text 和 value 属性。 数组中的每个元素都需要有 text 和 value 属性。TS 类型：Array&#60;{text: string, value: string}&gt;',
+        en: 'an array of data filtering options. For each element in this array, `text` and `value` are required. TS Type：Array&#60;{text: string, value: string}&gt;',
       },
       type: 'array',
       default: '—',

@@ -127,19 +127,19 @@ const doc: TagDoc.TagDocInstance = {
       name: 'change',
       description: { cn: '绑定值被改变时触发', en: 'triggers when the value changes' },
       type: 'function',
-      param: '(currentValue: number &#124; undefined, oldValue: number &#124; undefined) => void',
+      param: '(currentValue: number &#124; undefined, oldValue: number &#124; undefined) =&gt; void',
     },
     {
       name: 'blur',
       description: { cn: '在组件 Input 失去焦点时触发', en: 'triggers when Input blurs' },
       type: 'function',
-      param: '(event: FocusEvent) => void',
+      param: '(event: FocusEvent) =&gt; void',
     },
     {
       name: 'focus',
       description: { cn: '在组件 Input 获得焦点时触发', en: 'triggers when Input focuses' },
       type: 'function',
-      param: '(event: FocusEvent) => void',
+      param: '(event: FocusEvent) =&gt; void',
     },
   ],
   exposes: [
@@ -147,13 +147,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'focus',
       description: { cn: '使 input 组件获得焦点', en: 'get focus the input component' },
       type: 'function',
-      param: '() => void',
+      param: '() =&gt; void',
     },
     {
       name: 'blur',
       description: { cn: '使 input 组件失去焦点', en: 'remove focus the input component' },
       type: 'function',
-      param: '() => void',
+      param: '() =&gt; void',
     },
   ],
 };

@@ -95,13 +95,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'confirm',
       description: { cn: '点击确认按钮时触发', en: 'triggers when click confirm button' },
       type: 'function',
-      param: '(e: MouseEvent) => void',
+      param: '(e: MouseEvent) =&gt; void',
     },
     {
       name: 'cancel',
       description: { cn: '点击取消按钮时触发', en: 'triggers when click cancel button' },
       type: 'function',
-      param: '(e: MouseEvent) => void',
+      param: '(e: MouseEvent) =&gt; void',
     },
   ],
   slots: [

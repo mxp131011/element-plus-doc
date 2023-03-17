@@ -11,7 +11,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'headers',
-      description: { cn: '设置上传的请求头部,TS类型为：Record&#60;string, any>', en: 'request headers. TS Type: Record&#60;string, any>' },
+      description: { cn: '设置上传的请求头部,TS类型为：Record&#60;string, any&gt;', en: 'request headers. TS Type: Record&#60;string, any&gt;' },
       type: 'object',
       default: '',
       value: [],
@@ -33,8 +33,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'data',
       description: {
-        cn: '上传时附带的额外参数,TS类型为：Record&#60;string, any>',
-        en: 'additions options of request. TS Type: Record&#60;string, any>',
+        cn: '上传时附带的额外参数,TS类型为：Record&#60;string, any&gt;',
+        en: 'additions options of request. TS Type: Record&#60;string, any&gt;',
       },
       type: 'object',
       default: '—',
@@ -81,8 +81,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'on-preview',
       description: {
-        cn: '点击文件列表中已上传的文件时的钩子,TS类型为：(uploadFile: UploadFile) => void',
-        en: 'hook function when clicking the uploaded files. TS Type: (uploadFile: UploadFile) => void',
+        cn: '点击文件列表中已上传的文件时的钩子,TS类型为：(uploadFile: UploadFile) =&gt; void',
+        en: 'hook function when clicking the uploaded files. TS Type: (uploadFile: UploadFile) =&gt; void',
       },
       type: 'function',
       default: '—',
@@ -91,8 +91,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'on-remove',
       description: {
-        cn: '文件列表移除文件时的钩子.TS类型为：(uploadFile: UploadFile, uploadFiles: UploadFiles) => void',
-        en: 'hook function when files are removed. TS Type：(uploadFile: UploadFile, uploadFiles: UploadFiles) => void',
+        cn: '文件列表移除文件时的钩子.TS类型为：(uploadFile: UploadFile, uploadFiles: UploadFiles) =&gt; void',
+        en: 'hook function when files are removed. TS Type：(uploadFile: UploadFile, uploadFiles: UploadFiles) =&gt; void',
       },
       type: 'function',
       default: '—',
@@ -101,8 +101,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'on-success',
       description: {
-        cn: '文件上传成功时的钩子 TS类型为：(response: any, uploadFile: UploadFile, uploadFiles: UploadFiles) => void',
-        en: 'hook function when uploaded successfully. TS Type：(response: any, uploadFile: UploadFile, uploadFiles: UploadFiles) => void',
+        cn: '文件上传成功时的钩子 TS类型为：(response: any, uploadFile: UploadFile, uploadFiles: UploadFiles) =&gt; void',
+        en: 'hook function when uploaded successfully. TS Type：(response: any, uploadFile: UploadFile, uploadFiles: UploadFiles) =&gt; void',
       },
       type: 'function',
       default: '—',
@@ -111,8 +111,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'on-error',
       description: {
-        cn: '文件上传失败时的钩子,TS类型为：(error: Error, uploadFile: UploadFile, uploadFiles: UploadFiles) => void',
-        en: 'hook function when some errors occurs. TS Type：(error: Error, uploadFile: UploadFile, uploadFiles: UploadFiles) => void',
+        cn: '文件上传失败时的钩子,TS类型为：(error: Error, uploadFile: UploadFile, uploadFiles: UploadFiles) =&gt; void',
+        en: 'hook function when some errors occurs. TS Type：(error: Error, uploadFile: UploadFile, uploadFiles: UploadFiles) =&gt; void',
       },
       type: 'function',
       default: '—',
@@ -121,8 +121,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'on-progress',
       description: {
-        cn: '文件上传时的钩子. TS类型： (evt: UploadProgressEvent, uploadFile: UploadFile, uploadFiles: UploadFiles) => void',
-        en: 'hook function when some progress occurs. TS Type：(evt: UploadProgressEvent, uploadFile: UploadFile, uploadFiles: UploadFiles) => void',
+        cn: '文件上传时的钩子. TS类型： (evt: UploadProgressEvent, uploadFile: UploadFile, uploadFiles: UploadFiles) =&gt; void',
+        en: 'hook function when some progress occurs. TS Type：(evt: UploadProgressEvent, uploadFile: UploadFile, uploadFiles: UploadFiles) =&gt; void',
       },
       type: 'function',
       default: '—',
@@ -131,8 +131,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'on-change',
       description: {
-        cn: '文件状态改变时的钩子，添加文件、上传成功和上传失败时都会被调用. TS类型：(uploadFile: UploadFile, uploadFiles: UploadFiles) => void ',
-        en: 'hook function when select file or upload file success or upload file fail. TS Type：(uploadFile: UploadFile, uploadFiles: UploadFiles) => void',
+        cn: '文件状态改变时的钩子，添加文件、上传成功和上传失败时都会被调用. TS类型：(uploadFile: UploadFile, uploadFiles: UploadFiles) =&gt; void ',
+        en: 'hook function when select file or upload file success or upload file fail. TS Type：(uploadFile: UploadFile, uploadFiles: UploadFiles) =&gt; void',
       },
       type: 'function',
       default: '—',
@@ -141,8 +141,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'on-exceed',
       description: {
-        cn: '当超出限制时，执行的钩子函数. TS类型： (files: File[], uploadFiles: UploadUserFile[]) => void',
-        en: 'hook function when limit is exceeded. TS Type：(files: File[], uploadFiles: UploadUserFile[]) => void',
+        cn: '当超出限制时，执行的钩子函数. TS类型： (files: File[], uploadFiles: UploadUserFile[]) =&gt; void',
+        en: 'hook function when limit is exceeded. TS Type：(files: File[], uploadFiles: UploadUserFile[]) =&gt; void',
       },
       type: 'function',
       default: '—',
@@ -161,8 +161,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'before-remove',
       description: {
-        cn: '删除文件之前的钩子，参数为上传的文件和文件列表， 若返回 `false` 或者返回 `Promise` 且被 `reject`，则停止删除。 TS类型：(uploadFile: UploadFile, uploadFiles: UploadFiles) => Awaitable&#60;boolean>',
-        en: 'hook function before removing a file with the file and file list as its parameters. If `false` is returned or a `Promise` is returned and then is rejected, removing will be aborted. TS Type：(uploadFile: UploadFile, uploadFiles: UploadFiles) => Awaitable&#60;boolean>',
+        cn: '删除文件之前的钩子，参数为上传的文件和文件列表， 若返回 `false` 或者返回 `Promise` 且被 `reject`，则停止删除。 TS类型：(uploadFile: UploadFile, uploadFiles: UploadFiles) =&gt; Awaitable&#60;boolean&gt;',
+        en: 'hook function before removing a file with the file and file list as its parameters. If `false` is returned or a `Promise` is returned and then is rejected, removing will be aborted. TS Type：(uploadFile: UploadFile, uploadFiles: UploadFiles) =&gt; Awaitable&#60;boolean&gt;',
       },
       type: 'function',
       default: '—',
@@ -195,8 +195,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'http-request',
       description: {
-        cn: '覆盖默认的 Xhr 行为，允许自行实现上传文件的请求。 TS类型：(options: UploadRequestOptions) => XMLHttpRequest &#124; Promise&#60;unknown>',
-        en: "override default xhr behavior, allowing you to implement your own upload-file's request. TS Type:(options: UploadRequestOptions) => XMLHttpRequest &#124; Promise&#60;unknown>",
+        cn: '覆盖默认的 Xhr 行为，允许自行实现上传文件的请求。 TS类型：(options: UploadRequestOptions) =&gt; XMLHttpRequest &#124; Promise&#60;unknown&gt;',
+        en: "override default xhr behavior, allowing you to implement your own upload-file's request. TS Type:(options: UploadRequestOptions) =&gt; XMLHttpRequest &#124; Promise&#60;unknown&gt;",
       },
       type: 'function',
       default: '',
@@ -222,13 +222,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'abort',
       description: { cn: '取消上传请求', en: 'cancel upload request.' },
       type: 'function',
-      param: '(file: UploadFile) => void',
+      param: '(file: UploadFile) =&gt; void',
     },
     {
       name: 'submit',
       description: { cn: '手动上传文件列表', en: 'upload the file list manually.' },
       type: 'function',
-      param: '() => void',
+      param: '() =&gt; void',
     },
     {
       name: 'clearFiles',
@@ -237,13 +237,13 @@ const doc: TagDoc.TagDocInstance = {
         en: 'clear the file list (this method is not supported in the `before-upload` hook).',
       },
       type: 'function',
-      param: '(status?: Array&#60;"ready" &#124; "uploading" &#124; "success" &#124; "fail">) => void',
+      param: '(status?: Array&#60;"ready" &#124; "uploading" &#124; "success" &#124; "fail"&gt;) =&gt; void',
     },
     {
       name: 'handleStart',
       description: { cn: '手动选择文件', en: 'select the file manually.' },
       type: 'function',
-      param: '(rawFile: UploadRawFile) => void',
+      param: '(rawFile: UploadRawFile) =&gt; void',
     },
     {
       name: 'handleRemove',
@@ -252,7 +252,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'remove the file manually. `file` and `rawFile` has been merged. `rawFile` will be removed in `v2.2.0`.',
       },
       type: 'function',
-      param: '(file: UploadFile &#124; UploadRawFile, rawFile?: UploadRawFile) => void',
+      param: '(file: UploadFile &#124; UploadRawFile, rawFile?: UploadRawFile) =&gt; void',
     },
   ],
   slots: [

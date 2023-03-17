@@ -74,11 +74,11 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'layout',
       description: {
-        cn: '组件布局，子组件名用逗号分隔,支持(sizes, prev, pager, next, jumper, ->, total, slot)',
-        en: 'layout of Pagination, elements separated with a comma. support(sizes, prev, pager, next, jumper, ->, total, slot)',
+        cn: '组件布局，子组件名用逗号分隔,支持(sizes, prev, pager, next, jumper, -&gt;, total, slot)',
+        en: 'layout of Pagination, elements separated with a comma. support(sizes, prev, pager, next, jumper, -&gt;, total, slot)',
       },
       type: 'string',
-      default: 'prev, pager, next, jumper, ->, total',
+      default: 'prev, pager, next, jumper, -&gt;, total',
       value: [],
     },
     {
@@ -149,13 +149,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'size-change',
       description: { cn: '`page-size` 改变时触发', en: 'triggers when `page-size` changes' },
       type: 'function',
-      param: '(value: number) => void',
+      param: '(value: number) =&gt; void',
     },
     {
       name: 'current-change',
       description: { cn: '`current-page` 改变时触发', en: 'triggers when `current-page` changes' },
       type: 'function',
-      param: '(value: number) => void',
+      param: '(value: number) =&gt; void',
     },
     {
       name: 'prev-click',
@@ -164,7 +164,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'triggers when the prev button is clicked and current page changes',
       },
       type: 'function',
-      param: '(value: number) => void',
+      param: '(value: number) =&gt; void',
     },
     {
       name: 'next-click',
@@ -173,7 +173,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'triggers when the next button is clicked and current page changes',
       },
       type: 'function',
-      param: '(value: number) => void',
+      param: '(value: number) =&gt; void',
     },
   ],
   slots: [

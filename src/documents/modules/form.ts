@@ -4,7 +4,7 @@ const doc: TagDoc.TagDocInstance = {
   attributes: [
     {
       name: 'model',
-      description: { cn: '表单数据对象。 TS类型:Record<string, any>', en: 'Data of form component. TS Type:Record<string, any>' },
+      description: { cn: '表单数据对象。 TS类型:Record&lt;string, any&gt;', en: 'Data of form component. TS Type:Record&lt;string, any&gt;' },
       type: 'object',
       default: '—',
       value: [],
@@ -131,7 +131,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'validate',
       description: { cn: '任一表单项被校验后触发', en: 'triggers after a form item is validated' },
       type: 'function',
-      param: '(prop: FormItemProp, isValid: boolean, message: string) => void',
+      param: '(prop: FormItemProp, isValid: boolean, message: string) =&gt; void',
     },
   ],
   exposes: [
@@ -142,13 +142,14 @@ const doc: TagDoc.TagDocInstance = {
         en: 'Validate the whole form. Receives a callback or returns `Promise`.',
       },
       type: 'function',
-      param: '(props?: Arrayable<FormItemProp>, callback?: (isValid: boolean, invalidFields?: ValidateFieldsError) => void) => Promise<void>',
+      param: '(props?: Arrayable&lt;FormItemProp&gt;, callback?: (isValid: boolean, invalidFields?: ValidateFieldsError) =&gt; void) =&gt; Promise&lt;void&gt;',
     },
     {
       name: 'validateField',
       description: { cn: '验证具体的某个字段。', en: 'Validate specified fields.' },
       type: 'function',
-      param: '(props?: FormItemProp &#124; FormItemProp[], callback?: (isValid: boolean, invalidFields?: ValidateFieldsError) => void) => Promise<void>',
+      param:
+        '(props?: FormItemProp &#124; FormItemProp[], callback?: (isValid: boolean, invalidFields?: ValidateFieldsError) =&gt; void) =&gt; Promise&lt;void&gt;',
     },
     {
       name: 'resetFields',
@@ -158,7 +159,7 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'scrollToField',
-      description: { cn: '(props?: FormItemProp &#124; FormItemProp[]) => void', en: 'Scroll to the specified fields.' },
+      description: { cn: '(props?: FormItemProp &#124; FormItemProp[]) =&gt; void', en: 'Scroll to the specified fields.' },
       type: 'function',
       param: '',
     },
@@ -166,7 +167,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'clearValidate',
       description: { cn: '清理某个字段的表单验证信息', en: 'Clear validation message for specified fields.' },
       type: 'function',
-      param: '(props?: FormItemProp &#124; FormItemProp[]) => void',
+      param: '(props?: FormItemProp &#124; FormItemProp[]) =&gt; void',
     },
   ],
   slots: [

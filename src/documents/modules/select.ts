@@ -293,8 +293,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'max-collapse-tags',
       description: {
-        cn: '需要显示的 Tag 的最大数量 只有当 `collapse-tags` 设置为 true 时才会生效。(versions >= ^2.3.0)',
-        en: 'The max tags number to be shown. To use this, `collapse-tags` must be true (versions >= ^2.3.0)',
+        cn: '需要显示的 Tag 的最大数量 只有当 `collapse-tags` 设置为 true 时才会生效。(versions &gt;= ^2.3.0)',
+        en: 'The max tags number to be shown. To use this, `collapse-tags` must be true (versions &gt;= ^2.3.0)',
       },
       type: 'number',
       default: '1',

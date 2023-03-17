@@ -50,13 +50,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'update',
       description: { cn: '手动更新固钉状态', en: 'update affix state manually' },
       type: 'function',
-      param: '() => void',
+      param: '() =&gt; void',
     },
     {
       name: 'updateRoot',
       description: { cn: '手动更新根元素的盒模型信息', en: 'update rootRect info' },
       type: 'function',
-      param: '() => void',
+      param: '() =&gt; void',
     },
   ],
   slots: [

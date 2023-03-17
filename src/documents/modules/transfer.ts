@@ -11,7 +11,10 @@ const doc: TagDoc.TagDocInstance = {
     },
     {
       name: 'data',
-      description: { cn: 'Transfer 的数据源. TS类型：Array<{ key, label, disabled }>', en: 'data source. TS Type：Array<{ key, label, disabled }>' },
+      description: {
+        cn: 'Transfer 的数据源. TS类型：Array&lt;{ key, label, disabled }&gt;',
+        en: 'data source. TS Type：Array&lt;{ key, label, disabled }&gt;',
+      },
       type: 'array',
       default: '[ ]',
       value: [],

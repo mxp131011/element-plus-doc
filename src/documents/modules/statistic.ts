@@ -19,8 +19,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'formatter',
       description: {
-        cn: '自定义数字格式化,TS 类型：(value: number) => string &#124; number',
-        en: 'Custom numerical presentation. TS Type: (value: number) => string &#124; number',
+        cn: '自定义数字格式化,TS 类型：(value: number) =&gt; string &#124; number',
+        en: 'Custom numerical presentation. TS Type: (value: number) =&gt; string &#124; number',
       },
       type: 'function',
       default: 'number`',

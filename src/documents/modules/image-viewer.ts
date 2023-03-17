@@ -66,13 +66,13 @@ const doc: TagDoc.TagDocInstance = {
         en: 'trigger when clicking on close button or when `hide-on-click-modal` enabled clicking on backdrop.',
       },
       type: 'function',
-      param: '() => void',
+      param: '() =&gt; void',
     },
     {
       name: 'switch',
       description: { cn: 'trigger when switching images.', en: 'trigger when switching images.' },
       type: 'function',
-      param: '(index: number) => void',
+      param: '(index: number) =&gt; void',
     },
   ],
   exposes: [

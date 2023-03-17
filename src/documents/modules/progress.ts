@@ -4,7 +4,7 @@ const doc: TagDoc.TagDocInstance = {
   attributes: [
     {
       name: 'percentage',
-      description: { cn: '百分比，`必填`', en: 'percentage, <strong>required</strong>' },
+      description: { cn: '百分比，`必填`', en: 'percentage, &lt;strong&gt;required&lt;/strong&gt;' },
       type: 'number',
       default: '0',
       value: [],

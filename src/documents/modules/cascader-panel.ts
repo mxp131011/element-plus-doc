@@ -12,8 +12,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'options',
       description: {
-        cn: '选项的数据源， value 和 label 可以通过 CascaderProps 自定义. (Record<string, unknown>[])',
-        en: 'data of the options, the key of `value` and `label` can be customize by `CascaderProps`. (Record<string, unknown>[])',
+        cn: '选项的数据源， value 和 label 可以通过 CascaderProps 自定义. (Record&lt;string, unknown&gt;[])',
+        en: 'data of the options, the key of `value` and `label` can be customize by `CascaderProps`. (Record&lt;string, unknown&gt;[])',
       },
       type: 'object',
       default: '—',
@@ -35,13 +35,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'change',
       description: { cn: '当选中节点变化时触发', en: 'triggers when the binding value changes' },
       type: 'function',
-      param: '(value: CascaderValue) => void',
+      param: '(value: CascaderValue) =&gt; void',
     },
     {
       name: 'expand-change',
       description: { cn: '当展开节点发生变化时触发', en: 'triggers when expand option changes' },
       type: 'function',
-      param: '(value: CascaderNodePathValue) => void',
+      param: '(value: CascaderNodePathValue) =&gt; void',
     },
     {
       name: 'close',
@@ -50,7 +50,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'close panel event, provided to Cascader to put away the panel judgment.',
       },
       type: 'function',
-      param: '() => void',
+      param: '() =&gt; void',
     },
   ],
   exposes: [
@@ -61,13 +61,13 @@ const doc: TagDoc.TagDocInstance = {
         en: 'get an array of currently selected node,(leafOnly) whether only return the leaf checked nodes, default is `false`',
       },
       type: 'function',
-      param: '(leafOnly: boolean) => CascaderNode[] &#124; undefined',
+      param: '(leafOnly: boolean) =&gt; CascaderNode[] &#124; undefined',
     },
     {
       name: 'clearCheckedNodes',
       description: { cn: '清空选中的节点', en: 'clear checked nodes' },
       type: 'function',
-      param: '() => void',
+      param: '() =&gt; void',
     },
   ],
   slots: [
@@ -124,7 +124,7 @@ const doc: TagDoc.TagDocInstance = {
         {
           name: 'lazyLoad',
           description: { cn: '加载动态数据的方法，仅在 `lazy` 为 true 时有效', en: 'method for loading child nodes data, only works when `lazy` is true' },
-          type: 'function(node: Node, resolve: Resolve) => void',
+          type: 'function(node: Node, resolve: Resolve) =&gt; void',
           default: 'true',
           value: [],
         },

@@ -13,7 +13,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'append-to-body',
       description: {
         cn: 'Drawer 自身是否插入至 body 元素上。嵌套的 Drawer 必须指定该属性并赋值为 `true`',
-        en: 'Controls should Drawer be inserted to DocumentBody Element, nested Drawer must assign this param to <strong>true</strong>',
+        en: 'Controls should Drawer be inserted to DocumentBody Element, nested Drawer must assign this param to `true`',
       },
       type: 'boolean',
       default: 'false',

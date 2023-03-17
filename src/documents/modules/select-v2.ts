@@ -228,8 +228,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'collapse-tags-tooltip',
       description: {
-        cn: '当鼠标悬停于折叠标签的文本时，是否显示所有选中的标签。 只有当 `collapse-tags` 设置为 true 时才会生效。(versions >= ^2.3.0)',
-        en: 'Twhether show all selected tags when mouse hover text of collapse-tags. To use this, `collapse-tags` must be true (versions >= ^2.3.0)',
+        cn: '当鼠标悬停于折叠标签的文本时，是否显示所有选中的标签。 只有当 `collapse-tags` 设置为 true 时才会生效。(versions &gt;= ^2.3.0)',
+        en: 'Twhether show all selected tags when mouse hover text of collapse-tags. To use this, `collapse-tags` must be true (versions &gt;= ^2.3.0)',
       },
       type: 'boolean',
       default: 'false',

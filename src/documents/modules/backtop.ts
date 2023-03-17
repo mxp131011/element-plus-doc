@@ -39,7 +39,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'click',
       description: { cn: '点击按钮触发的事件', en: 'triggers when click.' },
       type: 'function',
-      param: '(evt: MouseEvent) => void',
+      param: '(evt: MouseEvent) =&gt; void',
     },
   ],
   slots: [

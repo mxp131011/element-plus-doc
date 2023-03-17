@@ -173,15 +173,15 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'default',
       description: {
-        cn: '下拉菜单的内容。 注意：必须是有效的 html DOM 元素 (例如 `&lt;span>, &lt;button> etc.`) 或 el-component，以附加监听触发器',
-        en: 'content of Dropdown. Notice: Must be a valid html dom element (ex. `&lt;span>, &lt;button> etc.`) or `el-component`, to attach the trigger listener',
+        cn: '下拉菜单的内容。 注意：必须是有效的 html DOM 元素 (例如 `&lt;span&gt;, &lt;button&gt; etc.`) 或 el-component，以附加监听触发器',
+        en: 'content of Dropdown. Notice: Must be a valid html dom element (ex. `&lt;span&gt;, &lt;button&gt; etc.`) or `el-component`, to attach the trigger listener',
       },
     },
     {
       name: 'dropdown',
       description: {
-        cn: '下拉列表，通常是 `&lt;el-dropdown-menu>` 组件',
-        en: 'content of the Dropdown Menu, usually a `&lt;el-dropdown-menu>` element',
+        cn: '下拉列表，通常是 `&lt;el-dropdown-menu&gt;` 组件',
+        en: 'content of the Dropdown Menu, usually a `&lt;el-dropdown-menu&gt;` element',
       },
       subtags: ['Dropdown-Menu'],
     },

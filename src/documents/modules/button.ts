@@ -205,7 +205,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'button html element',
       },
       type: 'object',
-      param: 'Ref&#60;HTMLButtonElement>',
+      param: 'Ref&#60;HTMLButtonElement&gt;',
     },
     {
       name: 'size',
@@ -214,7 +214,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'button size',
       },
       type: 'object',
-      param: `ComputedRef&#60;'' &#124; 'small' &#124; 'default' &#124; 'large'>`,
+      param: `ComputedRef&#60;'' &#124; 'small' &#124; 'default' &#124; 'large'&gt;`,
     },
     {
       name: 'type',
@@ -223,7 +223,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'button type',
       },
       type: `object`,
-      param: `ComputedRef&#60;'' &#124; 'default' &#124; 'primary' &#124; 'success' &#124; 'warning' &#124; 'info' &#124; 'danger' &#124; 'text'>`,
+      param: `ComputedRef&#60;'' &#124; 'default' &#124; 'primary' &#124; 'success' &#124; 'warning' &#124; 'info' &#124; 'danger' &#124; 'text'&gt;`,
     },
     {
       name: 'disabled',
@@ -232,7 +232,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'button disabled',
       },
       type: 'object',
-      param: 'ComputedRef&#60;boolean>',
+      param: 'ComputedRef&#60;boolean&gt;',
     },
     {
       name: 'shouldAddSpace',
@@ -241,7 +241,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'whether adding space',
       },
       type: 'object',
-      param: 'ComputedRef&#60;boolean>',
+      param: 'ComputedRef&#60;boolean&gt;',
     },
   ],
 };

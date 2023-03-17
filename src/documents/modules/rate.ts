@@ -60,8 +60,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'colors',
       description: {
-        cn: 'icon 的颜色。 若传入数组，共有 3 个元素，为 3 个分段所对应的颜色；若传入对象，可自定义分段，键名为分段的界限值，键值为对应的颜色。 TS类型： string[] &#124; Record<number, string>',
-        en: 'colors for icons. If array, it should have 3 elements, each of which corresponds with a score level, else if object, the key should be threshold value between two levels, and the value should be corresponding color. TS Type： string[] &#124; Record<number, string>',
+        cn: 'icon 的颜色。 若传入数组，共有 3 个元素，为 3 个分段所对应的颜色；若传入对象，可自定义分段，键名为分段的界限值，键值为对应的颜色。 TS类型： string[] &#124; Record&lt;number, string&gt;',
+        en: 'colors for icons. If array, it should have 3 elements, each of which corresponds with a score level, else if object, the key should be threshold value between two levels, and the value should be corresponding color. TS Type： string[] &#124; Record&lt;number, string&gt;',
       },
       type: 'object',
       default: "['#F7BA2A', '#F7BA2A', '#F7BA2A']",
@@ -84,8 +84,8 @@ const doc: TagDoc.TagDocInstance = {
     {
       name: 'icons',
       description: {
-        cn: '图标组件 若传入数组，则需要传入 3 个元素，分别为 3 个部分所对应的类名；若传入对象，则可自定义分段，键名为分段的界限值，键值为对应的类名。 TS类型：string[] &#124; Component[] &#124; Record<number, string &#124; Component>',
-        en: 'icon components. If array, it should have 3 elements, each of which corresponds with a score level, else if object, the key should be threshold value between two levels, and the value should be corresponding icon component. TS Type: string[] &#124; Component[] &#124; Record<number, string &#124; Component>',
+        cn: '图标组件 若传入数组，则需要传入 3 个元素，分别为 3 个部分所对应的类名；若传入对象，则可自定义分段，键名为分段的界限值，键值为对应的类名。 TS类型：string[] &#124; Component[] &#124; Record&lt;number, string &#124; Component&gt;',
+        en: 'icon components. If array, it should have 3 elements, each of which corresponds with a score level, else if object, the key should be threshold value between two levels, and the value should be corresponding icon component. TS Type: string[] &#124; Component[] &#124; Record&lt;number, string &#124; Component&gt;',
       },
       type: 'object',
       default: '[StarFilled, StarFilled, StarFilled]',
@@ -170,7 +170,7 @@ const doc: TagDoc.TagDocInstance = {
       name: 'change',
       description: { cn: '分值改变时触发', en: 'Triggers when rate value is changed' },
       type: 'function',
-      param: '(value: number) => void',
+      param: '(value: number) =&gt; void',
     },
   ],
   exposes: [
@@ -178,13 +178,13 @@ const doc: TagDoc.TagDocInstance = {
       name: 'setCurrentValue',
       description: { cn: '设置当前值', en: 'set current value' },
       type: 'function',
-      param: '(value: number) => void',
+      param: '(value: number) =&gt; void',
     },
     {
       name: 'resetCurrentValue',
       description: { cn: '重置当前值', en: 'reset current value' },
       type: 'function',
-      param: '() => void',
+      param: '() =&gt; void',
     },
   ],
 };

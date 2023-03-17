@@ -117,19 +117,19 @@ const doc: TagDoc.TagDocInstance = {
       name: 'load',
       description: { cn: '图片加载成功触发', en: 'same as native load.' },
       type: 'function',
-      param: '(e: Event) => void',
+      param: '(e: Event) =&gt; void',
     },
     {
       name: 'error',
       description: { cn: '图片加载失败触发', en: 'same as native error.' },
       type: 'function',
-      param: '(e: Error) => void',
+      param: '(e: Error) =&gt; void',
     },
     {
       name: 'switch',
       description: { cn: '切换图像时触发。', en: 'trigger when switching images.' },
       type: 'function',
-      param: '(index: number) => void',
+      param: '(index: number) =&gt; void',
     },
     {
       name: 'close',
@@ -138,7 +138,7 @@ const doc: TagDoc.TagDocInstance = {
         en: 'trigger when clicking on close button or when `hide-on-click-modal` enabled clicking on backdrop.',
       },
       type: 'function',
-      param: '() => void',
+      param: '() =&gt; void',
     },
   ],
   slots: [
