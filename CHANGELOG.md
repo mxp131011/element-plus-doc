@@ -35,3 +35,4 @@
 
 1. 新增组件映射，如果自定义前缀还是无法满足需求，则可设置自定义映射组件，如：`<base-input-numb-for>` 组件想拥有 `<el-input>` 的文档或提示，则可在设置中配置：`{ baseInputNumbFor: 'elInput'` ，此时，`<base-input-numb-for>`就有了 `<el-input>` 的智能提示和此鼠标悬浮显示文档功能了
 2. 支持大写组件提示，如 `<EL-BUTTON></EL-BUTTON>`
+3. 修改`README.md` 介绍
