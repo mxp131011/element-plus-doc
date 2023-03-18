@@ -6,7 +6,7 @@
   },
   "slot": {
     "prefix": "slot",
-    "body": ["<slot name=\"$1\" />"],
+    "body": ["<slot name=\"$1\"></slot>"],
     "description": "插槽"
   },
   "elbutton": {
@@ -54,13 +54,13 @@
       "  class=\"inline-input w-50\"",
       "  placeholder=\"Please Input\"",
       "  @select=\"handleSelect\"",
-      "/>"
+      "></el-autocomplete>"
     ],
     "description": "自动补全输入框组件"
   },
   "icon": {
     "prefix": "el-icon",
-    "body": ["<i class=\"el-icon-$1\" />"],
+    "body": ["<i class=\"el-icon-$1\"></i>"],
     "description": "图标组件"
   },
   "tabs": {
@@ -196,7 +196,7 @@
   },
   "empty": {
     "prefix": "el-empty",
-    "body": ["<el-empty description=\"$1\" />"],
+    "body": ["<el-empty description=\"$1\"></el-empty>"],
     "description": "空状态组件"
   },
   "dropdown": {
@@ -246,7 +246,7 @@
       "  layout=\"total, sizes, prev, pager, next, jumper\"",
       "  @current-change=\"handleCurrentChange\"",
       "  @size-change=\"handleSizeChange\"",
-      "/>"
+      "></el-pagination>"
     ],
     "description": "分页组件"
   },
@@ -295,17 +295,17 @@
   },
   "calendar": {
     "prefix": "el-calendar",
-    "body": ["<el-calendar v-model=\"value\" />"],
+    "body": ["<el-calendar v-model=\"value\"></el-calendar>"],
     "description": "日历组件"
   },
   "image": {
     "prefix": "el-image",
-    "body": ["<el-image :src=\"$1\" :fit=\"$2\" />"],
+    "body": ["<el-image :src=\"$1\" :fit=\"$2\"></el-image>"],
     "description": "图片组件"
   },
   "backtop": {
     "prefix": "el-backtop",
-    "body": ["<el-backtop target=\"$1\" />"],
+    "body": ["<el-backtop target=\"$1\"></el-backtop>"],
     "description": "返回顶部组件"
   },
   "card": {
@@ -330,12 +330,12 @@
   },
   "switch": {
     "prefix": "el-switch",
-    "body": ["<el-switch v-model=\"value\" />"],
+    "body": ["<el-switch v-model=\"value\"></el-switch>"],
     "description": "开关组件"
   },
   "input": {
     "prefix": "el-input",
-    "body": ["<el-input placeholder=\"$1\" v-model=\"value\" />"],
+    "body": ["<el-input placeholder=\"$1\" v-model=\"value\"></el-input>"],
     "description": "输入框组件"
   },
   "select": {
@@ -347,39 +347,38 @@
       "    :key=\"item.value\"",
       "    :label=\"item.label\"",
       "    :value=\"item.value\"",
-      "   />",
-      "</el-select>"
+      "  ></el-select>"
     ],
     "description": "下拉框组件"
   },
   "input-number": {
     "prefix": "el-input-number",
-    "body": ["<el-input-number :min=\"$1\" :max=\"$2\" v-model=\"value\" :step=\"1\" />"],
+    "body": ["<el-input-number :min=\"$1\" :max=\"$2\" v-model=\"value\" :step=\"1\"></el-input-number>"],
     "description": "数字输入框组件"
   },
   "avatar": {
     "prefix": "el-avatar",
-    "body": ["<el-avatar :size=\"$1\" :src=\"$2\" />"],
+    "body": ["<el-avatar :size=\"$1\" :src=\"$2\"></el-avatar>"],
     "description": "头像组件"
   },
   "spin": {
     "prefix": "el-spin",
-    "body": ["<el-spin :size=\"default\"/>"],
+    "body": ["<el-spin :size=\"default\"></el-spin>"],
     "description": "加载中组件"
   },
   "divider": {
     "prefix": "el-divider",
-    "body": ["<el-divider />"],
+    "body": ["<el-divider></el-divider>"],
     "description": "分割线组件"
   },
   "skeleton": {
     "prefix": "el-skeleton",
-    "body": ["<el-skeleton :rows=\"10\" />"],
+    "body": ["<el-skeleton :rows=\"10\"></el-skeleton>"],
     "description": "骨架屏组件"
   },
   "alert": {
     "prefix": "el-alert",
-    "body": ["<el-alert type=\"$1\" title=\"$2\" closable />"],
+    "body": ["<el-alert type=\"$1\" title=\"$2\" closable></el-alert>"],
     "description": "警告提示组件"
   },
   "popconfirm": {
@@ -414,49 +413,44 @@
   },
   "slider": {
     "prefix": "el-slider",
-    "body": ["<el-slider v-model=\"value\" :step=\"1\" />"],
+    "body": ["<el-slider v-model=\"value\" :step=\"1\"></el-slider>"],
     "description": "滑动输入条"
   },
   "progress": {
     "prefix": "el-progress",
-    "body": ["<el-progress :percentage=\"$1\" :status=\"$2\" />"],
+    "body": ["<el-progress :percentage=\"$1\" :status=\"$2\"></el-progress>"],
     "description": "进度条组件"
   },
   "time-select": {
     "prefix": "el-time-select",
-    "body": ["<el-time-select v-model=\"value\" :picker-options=\"{ start: '00:00', step: '00:15', end: '24:00' }\" placeholder=\"$1\" />"],
+    "body": ["<el-time-select v-model=\"value\" :picker-options=\"{ start: '00:00', step: '00:15', end: '24:00' }\" placeholder=\"$1\"></el-time-select>"],
     "description": "时间选择器"
   },
   "time-picker": {
     "prefix": "el-time-picker",
-    "body": ["<el-time-picker v-model=\"value\" value-format=\"HH:mm:ss\" @change=\"getTime\" />"],
+    "body": ["<el-time-picker v-model=\"value\" value-format=\"HH:mm:ss\" @change=\"getTime\"></el-time-picker>"],
     "description": "时间选择器"
-  },
-  "date-picker": {
-    "prefix": "el-date-picker",
-    "body": ["<el-date-picker v-model=\"value\" type=\"datetime\" value-format=\"YYYY-MM-DD HH:mm:ss\" @change=\"getDate\" />"],
-    "description": "日期选择器"
   },
   "range-picker": {
     "prefix": "el-date-picker",
-    "body": ["<el-date-picker type=\"datetimerange\" v-model=\"value\" format=\"YYYY-MM-DD HH:mm:ss\" @change=\"getDateRange\" />"],
+    "body": ["<el-date-picker type=\"datetimerange\" v-model=\"value\" format=\"YYYY-MM-DD HH:mm:ss\" @change=\"getDateRange\"></el-date-picker>"],
     "description": "日期范围选择器"
   },
   "rate": {
     "prefix": "el-rate",
-    "body": ["<el-rate v-model=\"value\" :max=\"5\" allow-half />"],
+    "body": ["<el-rate v-model=\"value\" :max=\"5\" allow-half></el-rate>"],
     "description": "评分组件"
   },
   "color-picker": {
     "prefix": "el-color-picker",
-    "body": ["<el-color-picker v-model=\"color\" show-alpha />"],
+    "body": ["<el-color-picker v-model=\"color\" show-alpha></el-color-picker>"],
     "description": "颜色选择器"
   },
   "steps": {
     "prefix": "el-steps",
     "body": [
       "<el-steps :active=\"current\" direction=\"horizontal\" :status=\"status\">",
-      "  <el-step title=\"标题\" description=\"描述\" />",
+      "  <el-step title=\"标题\" description=\"描述\"></el-step>",
       "  <el-step>",
       "    <template slot=\"title\">",
       "      $1",
@@ -483,17 +477,17 @@
   },
   "transfer": {
     "prefix": "el-transfer",
-    "body": ["<el-transfer :data=\"data\" v-model=\"value\" />"],
+    "body": ["<el-transfer :data=\"data\" v-model=\"value\"></el-transfer>"],
     "description": "穿梭框组件"
   },
   "cascader": {
     "prefix": "el-cascader",
-    "body": ["<el-cascader v-model=\"value\" :options=\"options\" placeholder=\"Please select\" @change=\"onChange\" />"],
+    "body": ["<el-cascader v-model=\"value\" :options=\"options\" placeholder=\"Please select\" @change=\"onChange\"></el-cascader>"],
     "description": "级联选择组件"
   },
   "cascader-panel": {
     "prefix": "el-cascader-panel",
-    "body": ["<el-cascader-panel :options=\"options\" />"],
+    "body": ["<el-cascader-panel :options=\"options\"></el-cascader-panel>"],
     "description": "级联选择面板组件"
   },
   "upload": {
@@ -533,7 +527,7 @@
   },
   "tree": {
     "prefix": "el-tree",
-    "body": ["<el-tree :data=\"data\" :props=\"defaultProps\" @node-click=\"handleNodeClick\" />"],
+    "body": ["<el-tree :data=\"data\" :props=\"defaultProps\" @node-click=\"handleNodeClick\"></el-tree>"],
     "description": "树形结构组件"
   },
   "tree-select": {
@@ -543,7 +537,7 @@
   },
   "page-header": {
     "prefix": "el-page-header",
-    "body": ["<el-page-header content=\"$1\" @back=\"\\$router.back()\" />"],
+    "body": ["<el-page-header content=\"$1\" @back=\"\\$router.back()\"></el-page-header>"],
     "description": "页头组件"
   },
   "table": {
@@ -577,10 +571,10 @@
     "body": [
       "<el-form ref=\"form\" :model=\"form\" :rules=\"rules\" :label-width=\"80px\">",
       "  <el-form-item label=\"姓名\" prop=\"name\">",
-      "    <el-input placeholder=\"请填写姓名\" :maxLength=\"20\" v-model=\"form.name\" />",
+      "    <el-input placeholder=\"请填写姓名\" :maxLength=\"20\" v-model=\"form.name\"></el-input>",
       "  </el-form-item>",
       "  <el-form-item label=\"性别\" prop=\"sex\">",
-      "    <el-select placeholder=\"请选择性别\" :options=\"[{ label: '男', value: '男' }, { label: '女', value: '女' }]\" v-model=\"form.sex\" />",
+      "    <el-select placeholder=\"请选择性别\" :options=\"[{ label: '男', value: '男' }, { label: '女', value: '女' }]\" v-model=\"form.sex\"></el-select>",
       "  </el-form-item>",
       "</el-form>"
     ],

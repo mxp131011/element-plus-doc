@@ -1,6 +1,7 @@
 .vscode/**
 .vscode-test/**
 out/**
+md/**
 node_modules/**
 src/**
 component/**

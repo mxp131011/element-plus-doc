@@ -1,24 +1,25 @@
 {
-  "ElMessage.success": {
-    "prefix": "success",
-    "body": ["ElMessage.success({", "  message: '$1',", "  showClose: true,", "});"],
-    "description": "ElMessage.success"
-  },
   "ElMessage.info": {
     "prefix": "info",
     "body": ["ElMessage.info({", "  message: '$1',", "  showClose: true,", "});"],
-    "description": "ElMessage.info"
+    "description": "普通类型的消息提示 (ElMessage)"
   },
-  "ElMessage.error": {
-    "prefix": "error",
-    "body": ["ElMessage.error({", "  message: '$1',", "  showClose: true,", "});"],
-    "description": "ElMessage.error"
+  "ElMessage.success": {
+    "prefix": "success",
+    "body": ["ElMessage.success({", "  message: '$1',", "  showClose: true,", "});"],
+    "description": "成功类型的消息提示 (ElMessage)"
   },
   "ElMessage.warning": {
     "prefix": "warning",
     "body": ["ElMessage.warning({", "  message: '$1',", "  showClose: true,", "});"],
-    "description": "ElMessage.warning"
+    "description": "警告类型的消息提示 (ElMessage)"
   },
+  "ElMessage.error": {
+    "prefix": "error",
+    "body": ["ElMessage.error({", "  message: '$1',", "  showClose: true,", "});"],
+    "description": "错误类型的消息提示 (ElMessage)"
+  },
+
   "ElMessageBox.alert": {
     "prefix": "alert",
     "body": [
@@ -31,7 +32,7 @@
       "  }",
       "});"
     ],
-    "description": "ElMessageBox.alert"
+    "description": "alert消息弹出框 (ElMessageBox)"
   },
   "ElMessageBox.confirm": {
     "prefix": "confirm",
@@ -47,7 +48,7 @@
       "  ",
       "});"
     ],
-    "description": "ElMessageBox.confirm"
+    "description": "confirm消息弹出框 (ElMessageBox)"
   },
   "ElMessageBox.prompt": {
     "prefix": "prompt",
@@ -63,26 +64,26 @@
       "  ",
       "});"
     ],
-    "description": "ElMessageBox.prompt"
-  },
-  "ElNotification.success": {
-    "prefix": "success",
-    "body": ["ElNotification.success({", "  title: '成功',", "  message: '$1',", "});"],
-    "description": "ElNotification.success"
-  },
-  "ElNotification.warning": {
-    "prefix": "warning",
-    "body": ["ElNotification.warning({", "  title: '警告',", "  message: '$1',", "});"],
-    "description": "ElNotification.warning"
+    "description": "prompt消息弹出框 (ElMessageBox)"
   },
   "ElNotification.info": {
     "prefix": "info",
     "body": ["ElNotification.info({", "  title: '温馨提示',", "  message: '$1',", "});"],
-    "description": "ElNotification.info"
+    "description": "普通类型的消息通知 (ElNotification)"
+  },
+  "ElNotification.success": {
+    "prefix": "success",
+    "body": ["ElNotification.success({", "  title: '成功',", "  message: '$1',", "});"],
+    "description": "成功类型的消息通知 (ElNotification)"
+  },
+  "ElNotification.warning": {
+    "prefix": "warning",
+    "body": ["ElNotification.warning({", "  title: '警告',", "  message: '$1',", "});"],
+    "description": "警告类型的消息通知 (ElNotification)"
   },
   "ElNotification.error": {
     "prefix": "error",
     "body": ["ElNotification.error({", "  title: '错误',", "  message: '$1',", "});"],
-    "description": "ElNotification.error"
+    "description": "错误类型的消息通知 (ElNotification)"
   }
 }
