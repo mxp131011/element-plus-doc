@@ -3,7 +3,7 @@
     "baseUrl": "./", // 用于解析非相对模块名称的基目录
     "target": "ESNext", // 目标语言的版本
     "module": "CommonJS", // 生成代码的模板标准
-    "moduleResolution": "node", // 选择模块解析策略
+    "moduleResolution": "nodenext", // 选择模块解析策略
     "esModuleInterop": true,
     "types": ["webpack-env", "node"],
     "isolatedModules": true, // 将每个文件做为单独的模块 (vite所需)
@@ -42,5 +42,5 @@
     // "preserveValueImports": true, // 引入类型时必须标记为true （ts5.0废弃）
     // "importsNotUsedAsValues": "error", // 强制对类型使用“import type”而不是“import”(ts5.0废弃)
   },
-  "include": ["./src", "./md"]
+  "include": ["./src"]
 }

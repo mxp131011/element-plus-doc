@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+import fs from 'fs';
 import vueJson from '../public/snippets/vue.json';
 import jsJson from '../public/snippets/javascript.json';
 type AJSon = {
