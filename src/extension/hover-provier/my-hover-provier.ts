@@ -4,7 +4,7 @@ import { HoverProvierUtil } from './hover-provier-util';
 import { allDocuments } from '@/documents/index';
 import { getDirectives } from '@/documents/directives/directive';
 import { GetDocUtil } from './get-doc-util';
-import { getTag, toKebabCase } from '@/utils/global';
+import { getMapComponent, getTag, toKebabCase } from '@/utils/global';
 
 export class MyHoverProvier implements vscode.HoverProvider {
   /** 语言 */
@@ -24,7 +24,7 @@ export class MyHoverProvier implements vscode.HoverProvider {
 
   public provideHover(document: vscode.TextDocument, position: vscode.Position): vscode.ProviderResult<vscode.Hover> {
     const hoverProvierUtil = new HoverProvierUtil(document, position);
-    const tag: string | undefined = getTag(document, hoverProvierUtil.getTextBeforePosition(position), position);
+    let tag: string | undefined = getTag(document, hoverProvierUtil.getTextBeforePosition(position), position);
     const attr = hoverProvierUtil.getAttr();
     const range = hoverProvierUtil.getHoverRange(attr);
     const kebabCaseTag = toKebabCase(tag);
@@ -46,9 +46,14 @@ export class MyHoverProvier implements vscode.HoverProvider {
       }
     }
 
-    // 不是指令这看是不是element-plus组件
+    // 如果是映射组件就使用映射逐渐对应的值所谓tag
+    const mapComp = getMapComponent();
+    if (tag && tag in mapComp) {
+      tag = mapComp[tag];
+    }
+
     if (prefix) {
-      // 如果只有以此前缀开头的标签才视作element-plus的标签
+      // 以此前缀开头的标签视作element-plus的标签
       let kebabCaseAttr = toKebabCase(attr === 'v-model' ? 'model-value' : attr);
       const attrArr = kebabCaseAttr.split(':'); // 解决 v-model:model-value 形式的属性
       const componentName = kebabCaseTag.replace(`${prefix}-`, '');

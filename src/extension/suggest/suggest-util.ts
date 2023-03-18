@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import { allDocuments } from '@/documents/index';
 import type { BaseLanguage } from '@/types/index';
 import type { TagDoc } from '@/types/tag-doc';
-import { matchAttr } from '@/utils/global';
+import { getMapComponent, matchAttr } from '@/utils/global';
 
 /**
  *当输入单词或触发字符时补全
@@ -131,7 +131,18 @@ export class CompletionUtil {
    */
   public getTagSuggest(prefixList: string[]): vscode.CompletionItem[] {
     const completionItems: vscode.CompletionItem[] = [];
-    Object.keys(allDocuments).forEach((key) => {
+
+    for (const key in getMapComponent()) {
+      completionItems.push({
+        kind: vscode.CompletionItemKind.Class,
+        label: key,
+        sortText: `0${key}`,
+        detail: `ElementPlusDoc`,
+        insertText: new vscode.SnippetString().appendText(key).appendTabstop().appendText('>').appendTabstop().appendText(`</${key}>`),
+      });
+    }
+
+    for (const key in allDocuments) {
       prefixList.forEach((prefix) => {
         const tag = `${prefix}-${key}`;
         completionItems.push({
@@ -142,7 +153,8 @@ export class CompletionUtil {
           insertText: new vscode.SnippetString().appendText(tag).appendTabstop().appendText('>').appendTabstop().appendText(`</${tag}>`),
         });
       });
-    });
+    }
+
     return completionItems;
   }
 }

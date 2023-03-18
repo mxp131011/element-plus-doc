@@ -15,10 +15,11 @@ export function useDocLink(
   officialWebsite: BaseUrl
 ): vscode.ProviderResult<vscode.DocumentLink[]> {
   for (const item of list) {
-    const tag = toKebabCase(item.tag?.trim() || '');
+    const tag = toKebabCase(item.tag?.trim());
     const prefix = prefixList.find((pre) => tag.startsWith(`${pre}-`));
     const mapComp = getMapComponent();
     if (tag in mapComp) {
+      // 如果是映射组件则用映射组件
       const newTag = mapComp[tag]!;
       const componentName = newTag.replace(`el-`, '');
       if (componentName in allDocuments) {

@@ -63,21 +63,18 @@ export function matchAttr(txt: string): string {
 }
 
 /**
- * 驼峰转横线
+ * 驼峰转横线,且全部小写
  * @param str - 待转换的串
  */
 export function toKebabCase(str: string | undefined) {
-  if (str === undefined) {
-    return '';
+  let newStr = str || '';
+
+  // 如果已经是中横线写法就不处理 仅在最后转小写 （防止 BASE-INPUT 被转成 b-a-s-e--i-n-p-u-t）
+  if (str && str.indexOf('-') <= 1) {
+    newStr = str.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
+    newStr = newStr.startsWith('-') ? newStr.slice(1) : newStr; // 如果首字母是大写，会多一个_，这里去掉
   }
-  let temp = str.replace(/[A-Z]/g, (match) => {
-    return `-${match.toLowerCase()}`;
-  });
-  if (temp.startsWith('-')) {
-    // 如果首字母是大写，执行replace时会多一个_，这里需要去掉
-    temp = temp.slice(1);
-  }
-  return temp;
+  return newStr.toLowerCase();
 }
 
 /**
