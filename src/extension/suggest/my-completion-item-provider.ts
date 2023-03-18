@@ -1,7 +1,7 @@
 import { CompletionUtil } from './suggest-util';
 import type * as vscode from 'vscode';
 import { type BaseLanguage } from '@/types/index';
-import { getMapComponent, getTag, toKebabCase } from '@/utils/global';
+import { getTag, mapComponent, toKebabCase } from '@/utils/global';
 import { isAttrSuggest, isAttrValSuggest, isEventSuggest, isTagSuggest } from '@/utils/verify';
 
 /**
@@ -33,9 +33,8 @@ export class MyCompletionItemProvider implements vscode.CompletionItemProvider {
     const prefix = this.prefixList.find((pre) => kebabCaseTag.startsWith(`${pre}-`));
 
     // 如果是映射组件就使用映射逐渐对应的值所谓tag
-    const mapComp = getMapComponent();
-    if (tag && tag in mapComp) {
-      tag = mapComp[tag]!;
+    if (tag && tag in mapComponent) {
+      tag = mapComponent[tag]!;
     }
 
     // 如果只有以此前缀开头的标签才视作element-plus的标签
