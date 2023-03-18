@@ -4,8 +4,7 @@ import { HoverProvierUtil } from './hover-provier-util';
 import { allDocuments } from '@/documents/index';
 import { getDirectives } from '@/documents/directives/directive';
 import { GetDocUtil } from './get-doc-util';
-import { getMapComponent, getTag, toKebabCase } from '@/utils/global';
-
+import { getTag, mapComponent, toKebabCase } from '@/utils/global';
 export class MyHoverProvier implements vscode.HoverProvider {
   /** 语言 */
   private lang: BaseLanguage;
@@ -47,9 +46,8 @@ export class MyHoverProvier implements vscode.HoverProvider {
     }
 
     // 如果是映射组件就使用映射逐渐对应的值所谓tag
-    const mapComp = getMapComponent();
-    if (tag && tag in mapComp) {
-      tag = mapComp[tag];
+    if (tag && tag in mapComponent) {
+      tag = mapComponent[tag];
     }
 
     if (prefix) {

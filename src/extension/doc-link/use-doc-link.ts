@@ -1,7 +1,7 @@
 import { type Node } from 'vscode-html-languageservice';
 import * as vscode from 'vscode';
 import { allDocuments } from '@/documents/index';
-import { getMapComponent, toKebabCase } from '@/utils/global';
+import { mapComponent, toKebabCase } from '@/utils/global';
 import { type BaseUrl } from '@/types/index';
 
 /**
@@ -17,10 +17,10 @@ export function useDocLink(
   for (const item of list) {
     const tag = toKebabCase(item.tag?.trim());
     const prefix = prefixList.find((pre) => tag.startsWith(`${pre}-`));
-    const mapComp = getMapComponent();
-    if (tag in mapComp) {
+
+    if (tag in mapComponent) {
       // 如果是映射组件则用映射组件
-      const newTag = mapComp[tag]!;
+      const newTag = mapComponent[tag]!;
       const componentName = newTag.replace(`el-`, '');
       if (componentName in allDocuments) {
         const range = new vscode.Range(document.positionAt(item.start + 1), document.positionAt(item.start + Number(tag.length) + 1));

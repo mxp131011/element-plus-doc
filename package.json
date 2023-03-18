@@ -4,7 +4,7 @@
   "description": "element-plus 的一个工具插件,用于智能提示，悬停显示文档等",
   "publisher": "mxp131011",
   "license": "SEE LICENSE IN LICENSE",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "engines": {
     "vscode": "^1.76.0"
   },
@@ -40,7 +40,7 @@
     "configuration": {
       "title": "element-plus-doc",
       "properties": {
-        "customPrefix": {
+        "element-plus-doc.custom.prefix": {
           "type": "array",
           "uniqueItems": true,
           "items": {
@@ -49,25 +49,25 @@
           },
           "maxItems": 3,
           "default": [],
-          "markdownDescription": "%contributes.properties.customPrefix.description%"
+          "markdownDescription": "%contributes.properties.custom.prefix.description%"
         },
-        "mapComponent": {
+        "element-plus-doc.custom.mapping": {
           "type": "object",
           "additionalProperties": {
             "type": "string",
             "pattern": "^(el[A-Z])[a-zA-Z]*$"
           },
           "default": {},
-          "markdownDescription": "%contributes.properties.mapComponent.description%"
+          "markdownDescription": "%contributes.properties.custom.mapping.description%"
         },
-        "website.chinese": {
+        "element-plus-doc.website.chinese": {
           "format": "URI",
           "type": "string",
           "pattern": "^https?://([\\w-]+\\.)+[\\w-]+(/[\\w-./]*)?/$",
           "default": "https://element-plus.org/zh-CN/",
           "markdownDescription": "%contributes.properties.website.chinese.description%"
         },
-        "website.english": {
+        "element-plus-doc.website.english": {
           "type": "string",
           "format": "URI",
           "pattern": "^https?://([\\w-]+\\.)+[\\w-]+(/[\\w-./]*)?/$",

@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import { allDocuments } from '@/documents/index';
 import type { BaseLanguage } from '@/types/index';
 import type { TagDoc } from '@/types/tag-doc';
-import { getMapComponent, matchAttr } from '@/utils/global';
+import { mapComponent, matchAttr } from '@/utils/global';
 
 /**
  *当输入单词或触发字符时补全
@@ -132,7 +132,7 @@ export class CompletionUtil {
   public getTagSuggest(prefixList: string[]): vscode.CompletionItem[] {
     const completionItems: vscode.CompletionItem[] = [];
 
-    for (const key in getMapComponent()) {
+    for (const key in mapComponent) {
       completionItems.push({
         kind: vscode.CompletionItemKind.Class,
         label: key,

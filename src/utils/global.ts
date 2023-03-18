@@ -82,11 +82,11 @@ export function toKebabCase(str: string | undefined) {
  */
 export function getOfficialWebsite(lang: BaseLanguage): BaseUrl {
   /** 中文官网 */
-  const cnUrl = workspace.getConfiguration().get<string>('website.chinese') || '';
+  const cnUrl = workspace.getConfiguration().get<string>('element-plus-doc.website.chinese') || '';
   const cnUrlNew: BaseUrl = verifyUrl(cnUrl) ? cnUrl : 'https://element-plus.org/zh-CN/';
 
   /** 英文官网 */
-  const enUrl = workspace.getConfiguration().get<string>('website.english') || '';
+  const enUrl = workspace.getConfiguration().get<string>('element-plus-doc.website.english') || '';
   const enUrlNew: BaseUrl = verifyUrl(enUrl) ? enUrl : 'https://element-plus.org/en-US/';
 
   /** 最终的官网 */
@@ -97,7 +97,7 @@ export function getOfficialWebsite(lang: BaseLanguage): BaseUrl {
  * 得到包含el的自定义前缀 (仅保留前四个)
  */
 export function getCustomPrefix(): string[] {
-  const customPrefixSet = workspace.getConfiguration().get('customPrefix');
+  const customPrefixSet = workspace.getConfiguration().get('element-plus-doc.custom.prefix');
 
   // 得到自定义前缀
   const customPrefix: string[] = Array.isArray(customPrefixSet) ? customPrefixSet : [];
@@ -114,9 +114,9 @@ export function getCustomPrefix(): string[] {
 /**
  * 得到映射组件 (已经驼峰转横线)
  */
-export function getMapComponent(): Record<string, string> {
+function getMapComponent(): Record<string, string> {
   /** 映射组件 */
-  const mapComponent = workspace.getConfiguration().get<Record<string, string>>('mapComponent') || {};
+  const mapComponent = workspace.getConfiguration().get<Record<string, string>>('element-plus-doc.custom.mapping') || {};
   const obj = typeof mapComponent === 'object' && !Array.isArray(mapComponent) ? mapComponent : {};
   const newObj: Record<string, string> = {};
   for (const key in obj) {
@@ -124,3 +124,9 @@ export function getMapComponent(): Record<string, string> {
   }
   return newObj;
 }
+
+/**
+ * 得到映射组件 (已经驼峰转横线)
+ * 直接返回结果防止多次运行，提升性能
+ */
+export const mapComponent = getMapComponent();
