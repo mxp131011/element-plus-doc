@@ -40,6 +40,16 @@
     "configuration": {
       "title": "element-plus-doc",
       "properties": {
+        "element-plus-doc.custom.language": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "简体中文",
+            "English"
+          ],
+          "default": "auto",
+          "markdownDescription": "%contributes.properties.custom.language.description%"
+        },
         "element-plus-doc.custom.prefix": {
           "type": "array",
           "uniqueItems": true,

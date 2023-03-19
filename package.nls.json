@@ -1,5 +1,6 @@
 {
   "contributes.properties.custom.prefix.description": "Set a custom prefix，Anything starting with this prefix or `el` defaults to `element-plus` components.",
+  "contributes.properties.custom.language.description": "Set document language,We are only serving with Chinese and English.",
   "contributes.properties.custom.mapping.description": "User-defined mapping. If the user-defined prefixes still cannot meet requirements, you can configure this item. For example, the `<base-input-numb>` component wants to have the documentation or prompt for `<el-input>`, so the configuration: `{ baseInputNumb: 'elInput' }`",
   "contributes.properties.website.chinese.description": "Chinese official website. Must end with a `/` ",
   "contributes.properties.website.english.description": "English official website. Must end with a `/` "
