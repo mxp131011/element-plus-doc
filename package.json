@@ -44,8 +44,13 @@
           "type": "string",
           "enum": [
             "auto",
-            "简体中文",
-            "English"
+            "zh-CN",
+            "en-US"
+          ],
+          "markdownEnumDescriptions": [
+            "%contributes.properties.custom.language.auto%",
+            "%contributes.properties.custom.language.zh-CN%",
+            "%contributes.properties.custom.language.en-US%"
           ],
           "default": "auto",
           "markdownDescription": "%contributes.properties.custom.language.description%"

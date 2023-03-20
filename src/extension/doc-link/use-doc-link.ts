@@ -7,7 +7,7 @@ import { type BaseUrl } from '@/types/index';
 /**
  * 给element-plus的每个组件添加官方文档链接
  */
-export function useDocLink(
+export function getDocLink(
   list: Node[],
   prefixList: string[],
   result: vscode.DocumentLink[],
@@ -35,7 +35,7 @@ export function useDocLink(
       }
     }
     // 递归遍历
-    item.children && useDocLink(item.children, prefixList, result, document, officialWebsite);
+    item.children && getDocLink(item.children, prefixList, result, document, officialWebsite);
   }
 
   return result;

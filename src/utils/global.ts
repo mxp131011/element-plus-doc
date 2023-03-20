@@ -1,4 +1,4 @@
-import { type Position, type TextDocument, workspace } from 'vscode';
+import { type Position, type TextDocument, env, workspace } from 'vscode';
 import { verifyUrl } from '@/utils/verify';
 import type { BaseLanguage, BaseUrl } from '@/types/index';
 
@@ -75,6 +75,20 @@ export function toKebabCase(str: string | undefined) {
     newStr = newStr.startsWith('-') ? newStr.slice(1) : newStr; // 如果首字母是大写，会多一个_，这里去掉
   }
   return newStr.toLowerCase();
+}
+
+/**
+ * 得到官网
+ */
+export function getLanguage(): BaseLanguage {
+  // 自定义语言
+  let lang = workspace.getConfiguration().get<BaseLanguage | 'auto'>('element-plus-doc.custom.language') || 'auto';
+  lang = ['auto', 'zh-CN', 'en-US'].includes(lang) ? lang : 'auto';
+
+  // 系统默认语言
+  const defLang: BaseLanguage = env.language === 'zh-cn' ? 'zh-CN' : 'en-US';
+
+  return lang === 'auto' ? defLang : lang;
 }
 
 /**
