@@ -23,14 +23,14 @@ export class MyHoverProvier implements vscode.HoverProvider {
 
   public provideHover(document: vscode.TextDocument, position: vscode.Position): vscode.ProviderResult<vscode.Hover> {
     const hoverProvierUtil = new HoverProvierUtil(document, position);
-    let tag: string | undefined = getTag(document, hoverProvierUtil.getTextBeforePosition(position), position);
+    const tag: string = toKebabCase(getTag(document, hoverProvierUtil.getTextBeforePosition(position), position));
+    const newTag: string = tag && tag in mapComponent ? mapComponent[tag]! : tag; // 如果是映射组件就使用映射逐渐对应的值所对应的tag
     const attr = hoverProvierUtil.getAttr();
     const range = hoverProvierUtil.getHoverRange(attr);
-    const kebabCaseTag = toKebabCase(tag);
-    const prefix = this.prefixList.find((pre) => kebabCaseTag.startsWith(`${pre}-`));
+    const prefix = this.prefixList.find((pre) => newTag.startsWith(`${pre}-`));
     const directives = getDirectives(this.officialWebsite);
     // 如果有指令优先用指令
-    if (tag && attr) {
+    if (newTag && attr) {
       for (const iterator of directives) {
         const directive = iterator.list.find((item) => item.name === attr);
         if (directive) {
@@ -44,22 +44,16 @@ export class MyHoverProvier implements vscode.HoverProvider {
         }
       }
     }
-
-    // 如果是映射组件就使用映射逐渐对应的值所谓tag
-    if (tag && tag in mapComponent) {
-      tag = mapComponent[tag];
-    }
-
     if (prefix) {
       // 以此前缀开头的标签视作element-plus的标签
       let kebabCaseAttr = toKebabCase(attr === 'v-model' ? 'model-value' : attr);
       const attrArr = kebabCaseAttr.split(':'); // 解决 v-model:model-value 形式的属性
-      const componentName = kebabCaseTag.replace(`${prefix}-`, '');
+      const componentName = newTag.replace(`${prefix}-`, '');
       kebabCaseAttr = attrArr.length > 1 && attrArr[1] ? attrArr[1] : kebabCaseAttr; // 如果是v-model:model-value 形式的属性取冒号后面的
       if (componentName in allDocuments && Boolean(allDocuments[componentName])) {
         const tagDoc = allDocuments[componentName]!;
         let md: vscode.MarkdownString | undefined = undefined;
-        if (kebabCaseTag === kebabCaseAttr) {
+        if (tag === kebabCaseAttr) {
           // 属性 和标签一样 显示全部
           md = new GetDocUtil(this.lang, this.officialWebsite).getAllDoc(tagDoc, componentName);
         } else if (kebabCaseAttr === 'ref') {
@@ -71,6 +65,8 @@ export class MyHoverProvier implements vscode.HoverProvider {
         }
         return md && md.value !== '' ? new vscode.Hover(md, range) : null;
       }
+    } else {
+      console.log('aa5454a2====');
     }
     return null;
   }

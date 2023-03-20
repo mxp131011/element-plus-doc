@@ -16,19 +16,11 @@ export function getDocLink(
 ): vscode.ProviderResult<vscode.DocumentLink[]> {
   for (const item of list) {
     const tag = toKebabCase(item.tag?.trim());
-    const prefix = prefixList.find((pre) => tag.startsWith(`${pre}-`));
+    const newTag: string = tag && tag in mapComponent ? mapComponent[tag]! : tag; // 如果是映射组件就使用映射逐渐对应的值所对应的tag
+    const prefix = prefixList.find((pre) => newTag.startsWith(`${pre}-`));
 
-    if (tag in mapComponent) {
-      // 如果是映射组件则用映射组件
-      const newTag = mapComponent[tag]!;
-      const componentName = newTag.replace(`el-`, '');
-      if (componentName in allDocuments) {
-        const range = new vscode.Range(document.positionAt(item.start + 1), document.positionAt(item.start + Number(tag.length) + 1));
-        result.push({ range, target: vscode.Uri.parse(`${officialWebsite}${allDocuments[componentName]?.url}`), tooltip: '官方文档链接' });
-      }
-    } else if (prefix) {
-      // allDocuments包含了tag,则使用组件名称作为链接
-      const componentName = tag.replace(`${prefix}-`, '');
+    if (prefix) {
+      const componentName = newTag.replace(`${prefix}-`, '');
       if (componentName in allDocuments) {
         const range = new vscode.Range(document.positionAt(item.start + 1), document.positionAt(item.start + Number(tag.length) + 1));
         result.push({ range, target: vscode.Uri.parse(`${officialWebsite}${allDocuments[componentName]?.url}`), tooltip: '官方文档链接' });

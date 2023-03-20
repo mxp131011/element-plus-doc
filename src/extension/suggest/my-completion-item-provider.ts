@@ -27,19 +27,14 @@ export class MyCompletionItemProvider implements vscode.CompletionItemProvider {
   public provideCompletionItems(document: vscode.TextDocument, position: vscode.Position): vscode.CompletionItem[] | null {
     const completionUtil = new CompletionUtil(this.lang, document, position);
     const beforeText = completionUtil.getTextBeforePosition(position);
-    let tag: string = getTag(document, beforeText, position) || '';
-    const kebabCaseTag = toKebabCase(tag);
+    const tag: string = toKebabCase(getTag(document, beforeText, position));
+    const newTag: string = tag && tag in mapComponent ? mapComponent[tag]! : tag; // 如果是映射组件就使用映射逐渐对应的值所对应的tag
     const attr = completionUtil.getAttr();
-    const prefix = this.prefixList.find((pre) => kebabCaseTag.startsWith(`${pre}-`));
-
-    // 如果是映射组件就使用映射逐渐对应的值所谓tag
-    if (tag && tag in mapComponent) {
-      tag = mapComponent[tag]!;
-    }
+    const prefix = this.prefixList.find((pre) => newTag.startsWith(`${pre}-`));
 
     // 如果只有以此前缀开头的标签才视作element-plus的标签
     if (tag && prefix) {
-      const componentName = kebabCaseTag.replace(`${prefix}-`, '');
+      const componentName = newTag.replace(`${prefix}-`, '');
       if (isAttrValSuggest(attr)) {
         return completionUtil.getAttrValSuggest(componentName, attr); // 属性值的建议
       } else if (isEventSuggest(beforeText)) {
