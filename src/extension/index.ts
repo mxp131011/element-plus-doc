@@ -42,7 +42,7 @@ export function useRegisterDocumentLinkProvider(): vscode.Disposable {
   // 语言
   const lang: BaseLanguage = getLanguage();
   // 当用户输入那些字符时触发补全
-  const triggerCharacters = ['', ' ', ':', '<', '=', "'", '/', '@', '(', '-', '"', `""`, `=""`, `=''`, `="`, `='`];
+  const triggerCharacters = ['', ' ', ':', '<', "'", '/', '@', '(', '-', '"', `""`, `=`];
 
   /** 用户输入时添加智能补全 */
   return vscode.languages.registerCompletionItemProvider(
