@@ -347,7 +347,8 @@
       "    :key=\"item.value\"",
       "    :label=\"item.label\"",
       "    :value=\"item.value\"",
-      "  ></el-select>"
+      "  ></el-option>",
+      "></el-select>"
     ],
     "description": "下拉框组件"
   },
@@ -569,12 +570,12 @@
   "form": {
     "prefix": "el-form",
     "body": [
-      "<el-form ref=\"form\" :model=\"form\" :rules=\"rules\" :label-width=\"80px\">",
+      "<el-form ref=\"form\" :model=\"form\" :rules=\"rules\" label-width=\"80px\">",
       "  <el-form-item label=\"姓名\" prop=\"name\">",
       "    <el-input placeholder=\"请填写姓名\" :maxLength=\"20\" v-model=\"form.name\"></el-input>",
       "  </el-form-item>",
       "  <el-form-item label=\"性别\" prop=\"sex\">",
-      "    <el-select placeholder=\"请选择性别\" :options=\"[{ label: '男', value: '男' }, { label: '女', value: '女' }]\" v-model=\"form.sex\"></el-select>",
+      "    <el-select placeholder=\"请选择性别\" v-model=\"form.sex\"></el-select>",
       "  </el-form-item>",
       "</el-form>"
     ],
