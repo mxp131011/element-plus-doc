@@ -27,7 +27,6 @@ export class CompletionUtil {
    * 获取当前行的属性（如没有则返回空字符串）
    */
   public getAttr(): string {
-    console.log('属性====', this.getTextBeforePosition(this.position));
     const txt = this.getTextBeforePosition(this.position).replace(/"[^'"]*(\s*)[^'"]*$/, '');
     const end = this.position.character;
     const start = txt.lastIndexOf(' ', end) + 1;

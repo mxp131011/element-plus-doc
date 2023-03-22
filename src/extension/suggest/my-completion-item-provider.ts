@@ -26,34 +26,27 @@ export class MyCompletionItemProvider implements vscode.CompletionItemProvider {
    */
   public provideCompletionItems(document: vscode.TextDocument, position: vscode.Position): Promise<vscode.CompletionItem[] | null> {
     return new Promise<vscode.CompletionItem[] | null>((resolve, reject) => {
-      setTimeout(() => {
-        const completionUtil = new CompletionUtil(this.lang, document, position);
-        console.log('aaa====', vscode.window.activeTextEditor?.selection.active || position, position, vscode.window.activeTextEditor?.selection.active);
-        const beforeText = completionUtil.getTextBeforePosition(vscode.window.activeTextEditor?.selection.active || position);
-        const tag: string = toKebabCase(getTag(document, beforeText, position));
-        const newTag: string = tag && tag in mapComponent ? mapComponent[tag]! : tag; // 如果是映射组件就使用映射逐渐对应的值所对应的tag
-        const attr = completionUtil.getAttr();
-        const prefix = this.prefixList.find((pre) => newTag.startsWith(`${pre}-`));
+      const completionUtil = new CompletionUtil(this.lang, document, position);
+      const beforeText = completionUtil.getTextBeforePosition(vscode.window.activeTextEditor?.selection.active || position);
+      const tag: string = toKebabCase(getTag(document, beforeText, position));
+      const newTag: string = tag && tag in mapComponent ? mapComponent[tag]! : tag; // 如果是映射组件就使用映射逐渐对应的值所对应的tag
+      const attr = completionUtil.getAttr();
+      const prefix = this.prefixList.find((pre) => newTag.startsWith(`${pre}-`));
 
-        // 如果只有以此前缀开头的标签才视作element-plus的标签
-        if (tag && prefix) {
-          const componentName = newTag.replace(`${prefix}-`, '');
-          if (isAttrValSuggest(attr)) {
-            console.log('aaa1====', attr, prefix);
-            resolve(completionUtil.getAttrValSuggest(componentName, attr)); // 属性值的建议
-          } else if (isEventSuggest(beforeText)) {
-            console.log('aaa2====', attr, prefix);
-            resolve(completionUtil.getEventSuggest(componentName)); // 事件的建议
-          } else if (isAttrSuggest(beforeText)) {
-            console.log('aaa3====', attr, prefix);
-            resolve(completionUtil.getAttrSuggest(componentName)); // 属性的建议
-          }
-        } else if (isTagSuggest(tag, beforeText)) {
-          console.log('aaa4====', attr, prefix);
-          resolve(completionUtil.getTagSuggest(this.prefixList)); // 标签的建议
+      // 如果只有以此前缀开头的标签才视作element-plus的标签
+      if (tag && prefix) {
+        const componentName = newTag.replace(`${prefix}-`, '');
+        if (isAttrValSuggest(attr)) {
+          resolve(completionUtil.getAttrValSuggest(componentName, attr)); // 属性值的建议
+        } else if (isEventSuggest(beforeText)) {
+          resolve(completionUtil.getEventSuggest(componentName)); // 事件的建议
+        } else if (isAttrSuggest(beforeText)) {
+          resolve(completionUtil.getAttrSuggest(componentName)); // 属性的建议
         }
-        reject(null);
-      }, 300);
+      } else if (isTagSuggest(tag, beforeText)) {
+        resolve(completionUtil.getTagSuggest(this.prefixList)); // 标签的建议
+      }
+      reject(null);
     });
   }
 }
