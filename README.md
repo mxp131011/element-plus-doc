@@ -44,10 +44,6 @@
 10. 可在设置中修改 `element-plus` 中/英官网的地址
 11. 本插件仅支持中文和英文的提示文档，会根据 vscode 当前语言自动显示中文或英文的文档
 
-### 冲突
-
-1. 在系统设置 -> 扩展 -> html 中 启用自动创建 HTML 属性分配的引号(`{html.autoCreateQuotes:true}`) 会导致建议属性值建议无法显示(如在`el-button` 中输入 `size=""`正常应该会弹出`default`,`large`,`small` 等建议，但开启(`html.autoCreateQuotes`后无法弹出)，原因是在输入等号后，如果设置(`html.autoCreateQuotes:true`)会自动添加双引号导致的问题。建议关闭`html.autoCreateQuotes` 或者在引号中添加手动输入一个空格也会触发。
-
 ### 示例图
 
 1. 标签添加下划线 (图中所有有下划线的标签都支悬浮文档 和 持智能提示)
@@ -77,9 +73,7 @@
 7. [代码块智能提示]：在`js`、`ts`文件中或则`vue`文件的`<script></script>`标签内输入对应的代码会补全完整的代码。
 
    ![下划线](https://res.mxpkf.com/element-plus-doc/markdown/show_example_007.jpg)
-
-### 模板内的代码片段
-
+### 模板内的代码片段
 <table>
   <tr>
     <td> 输入字段 </td>
@@ -89,131 +83,80 @@
   <tr> <td> info </td> <td> 普通类型的消息提示 (ElMessage) </td><td></br>
 
 ```js
-ElMessage.info({
-  message: '',
-  showClose: true,
-});
+ElMessage.info({  message: '',  showClose: true,});
 ```
 
 </td></tr>
   <tr> <td> success </td> <td> 成功类型的消息提示 (ElMessage) </td><td></br>
 
 ```js
-ElMessage.success({
-  message: '',
-  showClose: true,
-});
+ElMessage.success({  message: '',  showClose: true,});
 ```
 
 </td></tr>
   <tr> <td> warning </td> <td> 警告类型的消息提示 (ElMessage) </td><td></br>
 
 ```js
-ElMessage.warning({
-  message: '',
-  showClose: true,
-});
+ElMessage.warning({  message: '',  showClose: true,});
 ```
 
 </td></tr>
   <tr> <td> error </td> <td> 错误类型的消息提示 (ElMessage) </td><td></br>
 
 ```js
-ElMessage.error({
-  message: '',
-  showClose: true,
-});
+ElMessage.error({  message: '',  showClose: true,});
 ```
 
 </td></tr>
   <tr> <td> alert </td> <td> alert消息弹出框 (ElMessageBox) </td><td></br>
 
 ```js
-ElMessageBox.alert('内容', '标题', {
-  confirmButtonText: '确定',
-  callback: (action) => {
-    if (action === 'confirm') {
-    }
-  },
-});
+ElMessageBox.alert('内容', '标题', {  confirmButtonText: '确定',  callback: action => {    if (action === 'confirm') {          }  }});
 ```
 
 </td></tr>
   <tr> <td> confirm </td> <td> confirm消息弹出框 (ElMessageBox) </td><td></br>
 
 ```js
-ElMessageBox.confirm('内容', '标题', {
-  {
-     confirmButtonText: '确定'
-     cancelButtonText: '取消'
-  }
-}).then(() => {
-
-}).catch(() => {
-
-});
+ElMessageBox.confirm('内容', '标题', {  {     confirmButtonText: '确定'     cancelButtonText: '取消'  }}).then(() => {  }).catch(() => {  });
 ```
 
 </td></tr>
   <tr> <td> prompt </td> <td> prompt消息弹出框 (ElMessageBox) </td><td></br>
 
 ```js
-ElMessageBox.prompt('内容', '标题', {
-  {
-     confirmButtonText: '确定'
-     cancelButtonText: '取消'
-  }
-}).then(() => {
-
-}).catch(() => {
-
-});
+ElMessageBox.prompt('内容', '标题', {  {     confirmButtonText: '确定'     cancelButtonText: '取消'  }}).then(() => {  }).catch(() => {  });
 ```
 
 </td></tr>
   <tr> <td> info </td> <td> 普通类型的消息通知 (ElNotification) </td><td></br>
 
 ```js
-ElNotification.info({
-  title: '温馨提示',
-  message: '',
-});
+ElNotification.info({  title: '温馨提示',  message: '',});
 ```
 
 </td></tr>
   <tr> <td> success </td> <td> 成功类型的消息通知 (ElNotification) </td><td></br>
 
 ```js
-ElNotification.success({
-  title: '成功',
-  message: '',
-});
+ElNotification.success({  title: '成功',  message: '',});
 ```
 
 </td></tr>
   <tr> <td> warning </td> <td> 警告类型的消息通知 (ElNotification) </td><td></br>
 
 ```js
-ElNotification.warning({
-  title: '警告',
-  message: '',
-});
+ElNotification.warning({  title: '警告',  message: '',});
 ```
 
 </td></tr>
   <tr> <td> error </td> <td> 错误类型的消息通知 (ElNotification) </td><td></br>
 
 ```js
-ElNotification.error({
-  title: '错误',
-  message: '',
-});
+ElNotification.error({  title: '错误',  message: '',});
 ```
 
-</td></tr></table>
-
-### JS/TS 内的代码片段
-
+</td></tr></table>### JS/TS 内的代码片段
 <table>
   <tr>
     <td> 输入字段 </td>
@@ -223,7 +166,7 @@ ElNotification.error({
   <tr> <td> template </td> <td> 模板 </td><td></br>
 
 ```html
-<template></template>
+<template>  </template>
 ```
 
 </td></tr>
@@ -272,28 +215,21 @@ ElNotification.error({
   <tr> <td> el-scrollbar </td> <td> 滚动条组件 </td><td></br>
 
 ```html
-<el-scrollbar height=""></el-scrollbar>
+<el-scrollbar height=""></el-scrollbar>
 ```
 
 </td></tr>
   <tr> <td> el-space </td> <td> 间距组件 </td><td></br>
 
 ```html
-<el-space wrap></el-space>
+<el-space wrap></el-space>
 ```
 
 </td></tr>
   <tr> <td> el-autocomplete </td> <td> 自动补全输入框组件 </td><td></br>
 
 ```html
-<el-autocomplete
-  v-model="state"
-  :fetch-suggestions="querySearch"
-  clearable
-  class="inline-input w-50"
-  placeholder="Please Input"
-  @select="handleSelect"
-></el-autocomplete>
+<el-autocomplete  v-model="state"  :fetch-suggestions="querySearch"  clearable  class="inline-input w-50"  placeholder="Please Input"  @select="handleSelect"></el-autocomplete>
 ```
 
 </td></tr>
@@ -307,9 +243,7 @@ ElNotification.error({
   <tr> <td> el-tabs </td> <td> 标签页组件 </td><td></br>
 
 ```html
-<el-tabs v-model="activeKey">
-  <el-tab-pane key="1" tab=""></el-tab-pane>
-</el-tabs>
+<el-tabs v-model="activeKey">  <el-tab-pane key="1" tab=""></el-tab-pane></el-tabs>
 ```
 
 </td></tr>
@@ -323,14 +257,7 @@ ElNotification.error({
   <tr> <td> el-container </td> <td> 布局组件 </td><td></br>
 
 ```html
-<el-container>
-  <el-aside width="200px">Sider</el-aside>
-  <el-container>
-    <el-header>Header</el-header>
-    <el-main>main</el-main>
-    <el-footer>footer</el-footer>
-  </el-container>
-</el-container>
+<el-container>  <el-aside width="200px">Sider</el-aside>  <el-container>    <el-header>Header</el-header>    <el-main>main</el-main>    <el-footer>footer</el-footer>  </el-container></el-container>
 ```
 
 </td></tr>
@@ -365,11 +292,7 @@ ElNotification.error({
   <tr> <td> el-breadcrumb </td> <td> 面包屑组件 </td><td></br>
 
 ```html
-<el-breadcrumb separator-class="el-icon-arrow-right">
-  <el-breadcrumb-item :to="{ path: '/' }"></el-breadcrumb-item>
-  <el-breadcrumb-item></el-breadcrumb-item>
-  <el-breadcrumb-item></el-breadcrumb-item>
-</el-breadcrumb>
+<el-breadcrumb separator-class="el-icon-arrow-right">  <el-breadcrumb-item :to="{ path: '/' }"></el-breadcrumb-item>  <el-breadcrumb-item></el-breadcrumb-item>  <el-breadcrumb-item></el-breadcrumb-item></el-breadcrumb>
 ```
 
 </td></tr>
@@ -383,21 +306,14 @@ ElNotification.error({
   <tr> <td> el-menu </td> <td> 菜单组件 </td><td></br>
 
 ```html
-<el-menu :default-active="current" mode="horizontal">
-  <el-menu-item index="1"></el-menu-item>
-  <el-menu-item index="2"></el-menu-item>
-</el-menu>
+<el-menu :default-active="current" mode="horizontal">  <el-menu-item index="1"></el-menu-item>  <el-menu-item index="2"></el-menu-item></el-menu>
 ```
 
 </td></tr>
   <tr> <td> el-submenu </td> <td> 子菜单组件 </td><td></br>
 
 ```html
-<el-submenu>
-  <span slot="title"></span>
-  <el-menu-item index="1"></el-menu-item>
-  <el-menu-item index="2"></el-menu-item>
-</el-submenu>
+<el-submenu>  <span slot="title"></span>  <el-menu-item index="1"></el-menu-item>  <el-menu-item index="2"></el-menu-item></el-submenu>
 ```
 
 </td></tr>
@@ -411,10 +327,7 @@ ElNotification.error({
   <tr> <td> el-timeline </td> <td> 时间轴组件 </td><td></br>
 
 ```html
-<el-timeline :reverse="false">
-  <el-timeline-item></el-timeline-item>
-  <el-timeline-item></el-timeline-item>
-</el-timeline>
+<el-timeline :reverse="false">  <el-timeline-item></el-timeline-item>  <el-timeline-item></el-timeline-item></el-timeline>
 ```
 
 </td></tr>
@@ -428,9 +341,7 @@ ElNotification.error({
   <tr> <td> el-collapse </td> <td> 折叠面板组件 </td><td></br>
 
 ```html
-<el-collapse v-model="activeKey">
-  <el-collapse-item name="1" title=""></el-collapse-item>
-</el-collapse>
+<el-collapse v-model="activeKey">  <el-collapse-item name="1" title=""></el-collapse-item></el-collapse>
 ```
 
 </td></tr>
@@ -444,9 +355,7 @@ ElNotification.error({
   <tr> <td> el-descriptions </td> <td> 描述列表组件 </td><td></br>
 
 ```html
-<el-descriptions title="">
-  <el-descriptions-item label=""></el-descriptions-item>
-</el-descriptions>
+<el-descriptions title="">  <el-descriptions-item label=""></el-descriptions-item></el-descriptions>
 ```
 
 </td></tr>
@@ -460,9 +369,7 @@ ElNotification.error({
   <tr> <td> el-result </td> <td> 结果组件 </td><td></br>
 
 ```html
-<el-result icon="" title="" sub-title="">
-  <template slot="extra"></template>
-</el-result>
+<el-result  icon=""  title=""  sub-title="">  <template slot="extra">      </template></el-result>
 ```
 
 </td></tr>
@@ -476,55 +383,35 @@ ElNotification.error({
   <tr> <td> el-dropdown </td> <td> 下拉菜单父组件 </td><td></br>
 
 ```html
-<el-dropdown>
-  <span></span>
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item></el-dropdown-item>
-    <el-dropdown-item disabled></el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+<el-dropdown>  <span></span>  <el-dropdown-menu slot="dropdown">    <el-dropdown-item>          </el-dropdown-item>    <el-dropdown-item disabled>          </el-dropdown-item>  </el-dropdown-menu></el-dropdown>
 ```
 
 </td></tr>
   <tr> <td> el-dropdown-menu </td> <td> 下拉菜单子组件 </td><td></br>
 
 ```html
-<el-dropdown-menu>
-  <el-dropdown-item></el-dropdown-item>
-  <el-dropdown-item disabled></el-dropdown-item>
-</el-dropdown-menu>
+<el-dropdown-menu>  <el-dropdown-item>      </el-dropdown-item>  <el-dropdown-item disabled>      </el-dropdown-item></el-dropdown-menu>
 ```
 
 </td></tr>
   <tr> <td> el-dropdown-item </td> <td> 下拉菜单子组件 </td><td></br>
 
 ```html
-<el-dropdown-item></el-dropdown-item>
+<el-dropdown-item>  </el-dropdown-item>
 ```
 
 </td></tr>
   <tr> <td> el-pagination </td> <td> 分页组件 </td><td></br>
 
 ```html
-<el-pagination
-  background
-  :total="total"
-  :page-size="100"
-  :page-sizes="[10, 25, 50, 100]"
-  layout="total, sizes, prev, pager, next, jumper"
-  @current-change="handleCurrentChange"
-  @size-change="handleSizeChange"
-></el-pagination>
+<el-pagination  background  :total="total"  :page-size="100"  :page-sizes="[10, 25, 50, 100]"  layout="total, sizes, prev, pager, next, jumper"  @current-change="handleCurrentChange"  @size-change="handleSizeChange"></el-pagination>
 ```
 
 </td></tr>
   <tr> <td> el-checkbox-group </td> <td> 多选框 el-checkbox形式编码 </td><td></br>
 
 ```html
-<el-checkbox-group v-model="value">
-  <el-checkbox :label=""></el-checkbox>
-  <el-checkbox :label=""></el-checkbox>
-</el-checkbox-group>
+<el-checkbox-group v-model="value">  <el-checkbox :label="">      </el-checkbox>  <el-checkbox :label="">      </el-checkbox></el-checkbox-group>
 ```
 
 </td></tr>
@@ -538,10 +425,7 @@ ElNotification.error({
   <tr> <td> el-radio-group </td> <td> 单选框组件 el-radio形式编码 </td><td></br>
 
 ```html
-<el-radio-group v-model="value">
-  <el-radio :label=""></el-radio>
-  <el-radio :label=""></el-radio>
-</el-radio-group>
+<el-radio-group v-model="value">  <el-radio :label="">      </el-radio>  <el-radio :label="">      </el-radio></el-radio-group>
 ```
 
 </td></tr>
@@ -555,7 +439,7 @@ ElNotification.error({
   <tr> <td> el-badge </td> <td> 徽标数组件 </td><td></br>
 
 ```html
-<el-badge :value="count"></el-badge>
+<el-badge :value="count">  </el-badge>
 ```
 
 </td></tr>
@@ -583,19 +467,14 @@ ElNotification.error({
   <tr> <td> el-card </td> <td> 卡片组件 </td><td></br>
 
 ```html
-<el-card>
-  <template slot="header"></template>
-</el-card>
+<el-card>  <template slot="header">      </template>  </el-card>
 ```
 
 </td></tr>
   <tr> <td> el-carousel </td> <td> 走马灯组件 </td><td></br>
 
 ```html
-<el-carousel height="400" autoplay :interval="3000" @change="onChange">
-  <el-carousel-item></el-carousel-item>
-  <el-carousel-item></el-carousel-item>
-</el-carousel>
+<el-carousel height="400" autoplay :interval="3000" @change="onChange">  <el-carousel-item></el-carousel-item>  <el-carousel-item></el-carousel-item></el-carousel>
 ```
 
 </td></tr>
@@ -623,13 +502,7 @@ ElNotification.error({
   <tr> <td> el-select </td> <td> 下拉框组件 </td><td></br>
 
 ```html
-<el-select v-model="value" placeholder="">
-  <el-option
-    v-for="item in options"
-    :key="item.value"
-    :label="item.label"
-    :value="item.value"
-  ></el-select>
+<el-select v-model="value" placeholder="">  <el-option    v-for="item in options"    :key="item.value"    :label="item.label"    :value="item.value"  ></el-option>></el-select>
 ```
 
 </td></tr>
@@ -678,23 +551,21 @@ ElNotification.error({
   <tr> <td> el-popconfirm </td> <td> 气泡二次确认组件 </td><td></br>
 
 ```html
-<el-popconfirm title="确认吗？" confirm-button-text="确认" cancel-button-text="取消" @confirm="confirm" @cancel="cancel">
-  <el-button type="link"></el-button>
-</el-popconfirm>
+<el-popconfirm  title="确认吗？"  confirm-button-text="确认"  cancel-button-text="取消"  @confirm="confirm"  @cancel="cancel">  <el-button type="link"></el-button></el-popconfirm>
 ```
 
 </td></tr>
   <tr> <td> el-popover </td> <td> 气泡组件 </td><td></br>
 
 ```html
-<el-popover width="200" title="" content="" trigger="hover" placement="bottom"></el-popover>
+<el-popover width="200" title="" content="" trigger="hover" placement="bottom" >  </el-popover>
 ```
 
 </td></tr>
   <tr> <td> el-tooltip </td> <td> 文字提示组件 </td><td></br>
 
 ```html
-<el-tooltip effect="dark" content="" placement="bottom"></el-tooltip>
+<el-tooltip effect="dark" content="" placement="bottom">  </el-tooltip>
 ```
 
 </td></tr>
@@ -757,25 +628,14 @@ ElNotification.error({
   <tr> <td> el-steps </td> <td> 步骤条组件 </td><td></br>
 
 ```html
-<el-steps :active="current" direction="horizontal" :status="status">
-  <el-step title="标题" description="描述"></el-step>
-  <el-step>
-    <template slot="title"></template>
-    <template slot="description"></template>
-  </el-step>
-</el-steps>
+<el-steps :active="current" direction="horizontal" :status="status">  <el-step title="标题" description="描述"></el-step>  <el-step>    <template slot="title">          </template>    <template slot="description">          </template>  </el-step></el-steps>
 ```
 
 </td></tr>
   <tr> <td> el-dialog </td> <td> 弹窗组件 </td><td></br>
 
 ```html
-<el-dialog title="title" width="600px" :visible.sync="visible" @close="onClose">
-  <span slot="footer" class="dialog-footer">
-    <el-button size="small" @click="handleCancel">取 消</el-button>
-    <el-button size="small" type="primary" @click="handleOk" :loading="confirmLoading">确 定</el-button>
-  </span>
-</el-dialog>
+<el-dialog title="title" width="600px" :visible.sync="visible" @close="onClose">  <span slot="footer" class="dialog-footer">    <el-button size="small" @click="handleCancel">取 消</el-button>    <el-button size="small" type="primary" @click="handleOk" :loading="confirmLoading">确 定</el-button>  </span></el-dialog>
 ```
 
 </td></tr>
@@ -803,29 +663,14 @@ ElNotification.error({
   <tr> <td> el-upload </td> <td> 上传文件组件 </td><td></br>
 
 ```html
-<el-upload
-  name="file"
-  multiple
-  :file-list="fileList"
-  :action="uploadUrl"
-  :on-preview="preview"
-  :on-remove="remove"
-  :on-exceed="handleExceed"
-  :before-remove="beforeRemove"
-  :limit="3"
->
-  <el-button size="small" type="primary">点击上传</el-button>
-  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-</el-upload>
+<el-upload  name="file"  multiple  :file-list="fileList"  :action="uploadUrl"  :on-preview="preview"  :on-remove="remove"  :on-exceed="handleExceed"  :before-remove="beforeRemove"  :limit="3">  <el-button size="small" type="primary">点击上传</el-button>  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div></el-upload>
 ```
 
 </td></tr>
   <tr> <td> el-drawer </td> <td> 抽屉组件 </td><td></br>
 
 ```html
-<el-drawer title="Title" direction="rtl" show-close :visible.sync="visible" :before-close="close">
-  <p></p>
-</el-drawer>
+<el-drawer  title="Title"  direction="rtl"  show-close  :visible.sync="visible"  :before-close="close">  <p></p></el-drawer>
 ```
 
 </td></tr>
@@ -839,7 +684,7 @@ ElNotification.error({
   <tr> <td> el-tree-select </td> <td> 树形选择器组件 </td><td></br>
 
 ```html
-<el-tree-select v-model="value" :data="data" :render-after-expand="true" show-checkbox></el-tree-select>
+<el-tree-select  v-model="value"  :data="data"  :render-after-expand="true"  show-checkbox>
 ```
 
 </td></tr>
@@ -853,57 +698,35 @@ ElNotification.error({
   <tr> <td> el-table </td> <td> 表格组件 </td><td></br>
 
 ```html
-<el-table :data="data" :scroll="{ x: 1200 }" :loading="loading" bordered rowKey="id" @change="changePage">
-  <el-table-column label="id" prop="id" width="100"></el-table-column>
-  <el-table-column label="name">
-    <template slot-scope="scope">
-      <span>{{ scope.\$index + 1 }}、{{ scope.row.name }}</span>
-    </template>
-  </el-table-column>
-  <el-table-column label="操作" width="100" fixed="right">
-    <template slot-scope="scope">
-      <el-button type="link" @click="toDo(scope.row)">修改</el-button>
-    </template>
-  </el-table-column>
-</el-table>
+<el-table  :data="data"  :scroll="{ x: 1200 }"  :loading="loading"  bordered  rowKey="id"  @change="changePage">  <el-table-column label="id" prop="id" width="100"></el-table-column>  <el-table-column label="name">    <template slot-scope="scope">      <span>{{ scope.\$index + 1 }}、{{ scope.row.name }}</span>    </template>  </el-table-column>  <el-table-column label="操作" width="100" fixed="right">    <template slot-scope="scope">      <el-button type="link" @click="toDo(scope.row)">修改</el-button>    </template>  </el-table-column></el-table>
 ```
 
 </td></tr>
   <tr> <td> el-form </td> <td> 表单组件 </td><td></br>
 
 ```html
-<el-form ref="form" :model="form" :rules="rules" :label-width="80px">
-  <el-form-item label="姓名" prop="name">
-    <el-input placeholder="请填写姓名" :maxLength="20" v-model="form.name"></el-input>
-  </el-form-item>
-  <el-form-item label="性别" prop="sex">
-    <el-select placeholder="请选择性别" :options="[{ label: '男', value: '男' }, { label: '女', value: '女' }]" v-model="form.sex"></el-select>
-  </el-form-item>
-</el-form>
+<el-form ref="form" :model="form" :rules="rules" label-width="80px">  <el-form-item label="姓名" prop="name">    <el-input placeholder="请填写姓名" :maxLength="20" v-model="form.name"></el-input>  </el-form-item>  <el-form-item label="性别" prop="sex">    <el-select placeholder="请选择性别" v-model="form.sex"></el-select>  </el-form-item></el-form>
 ```
 
 </td></tr>
   <tr> <td> el-form-item </td> <td> 表单子组件 </td><td></br>
 
 ```html
-<el-form-item label="" prop=""></el-form-item>
+<el-form-item label="" prop="">  </el-form-item>
 ```
 
 </td></tr>
   <tr> <td> el-row </td> <td> 栅格布局组件 </td><td></br>
 
 ```html
-<el-row :gutter="0">
-  <el-col :span="12"></el-col>
-  <el-col :span="12"></el-col>
-</el-row>
+<el-row :gutter="0">  <el-col :span="12"></el-col>  <el-col :span="12"></el-col></el-row>
 ```
 
 </td></tr>
   <tr> <td> el-col </td> <td> 栅格布局子组件 </td><td></br>
 
 ```html
-<el-col :span=""><el-col></el-col></el-col>
+<el-col :span=""><el-col>
 ```
 
-</td></tr></table></br>
+</td></tr></table></br>
