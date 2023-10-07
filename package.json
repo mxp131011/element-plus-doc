@@ -78,14 +78,14 @@
         "element-plus-doc.website.chinese": {
           "format": "URI",
           "type": "string",
-          "pattern": "^https?://([\\w-]+\\.)+[\\w-]+(/[\\w-./]*)?/$",
+          "pattern": "^https?:\/\/([\\w\\-]+\\.)+[\\w\\-]+(\/[\\w\\-.\/]*)?\/$",
           "default": "https://element-plus.org/zh-CN/",
           "markdownDescription": "%contributes.properties.website.chinese.description%"
         },
         "element-plus-doc.website.english": {
           "type": "string",
           "format": "URI",
-          "pattern": "^https?://([\\w-]+\\.)+[\\w-]+(/[\\w-./]*)?/$",
+          "pattern": "^https?:\/\/([\\w\\-]+\\.)+[\\w\\-]+(\/[\\w\\-.\/]*)?\/$",
           "default": "https://element-plus.org/en-US/",
           "markdownDescription": "%contributes.properties.website.english.description%"
         }
